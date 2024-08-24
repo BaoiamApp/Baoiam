@@ -63,7 +63,7 @@ const Navbar = () => {
     </div>
 
     {
-      showmenu && <div className='absolute w-[9rem] right-[0.5rem] mt-[3rem] bg-white'>
+      showmenu && <div className='absolute w-[9rem] right-[0.5rem] mt-[5.5rem] bg-white'>
          <ul className='flex flex-col  '>
             <li className='mx-5 my-1 lg:hidden'>Home</li>
             <li className='mx-5 my-1 lg:hidden'>About Us</li>
