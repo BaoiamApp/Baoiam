@@ -50,7 +50,7 @@ const Navbar = () => {
       </div>
 
 
-    <div className='bg-orange-400 xl:px-[2rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3  w-[9%]  px-14 rounded-lg text-white'><button>GCEP</button></div>
+    <div className='bg-orange-400 xl:px-[2rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3  w-[9%] md:pt-2  mt-1.5  px-14 rounded-lg text-white'><button>GCEP</button></div>
 
     <div className='flex '>
         <div className='border-2 hidden lg:hidden px-3 xl:pt-1.5 xl:block mr-[1rem] border-violet-700 rounded-lg text-violet-700'><button className='pr-2'>Login</button>
