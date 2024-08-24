@@ -1,8 +1,12 @@
 import React from 'react'
-
+import Courses from './Components/Courses'
+import Navbar from './Components/Navbar'
 const App = () => {
   return (
-    <div>App</div>
+    <>
+    <Navbar/>
+    <Courses/>
+    </>
   )
 }
 
