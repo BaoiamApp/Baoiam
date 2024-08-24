@@ -3,7 +3,7 @@
 // import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
-import img1 from '../images/img1.png'
+import img1 from '../../images/img1.png'
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false)
