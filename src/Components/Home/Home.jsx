@@ -1,9 +1,12 @@
 import React from 'react'
+import Courses from './Courses'
 
-function Home() {
-  return (
-    <div>Home</div>
-  )
+const Home = () => {
+    return (
+        <>
+            <Courses />
+        </>
+    )
 }
 
 export default Home
