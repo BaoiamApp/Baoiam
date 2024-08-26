@@ -43,52 +43,83 @@ const Navbar = () => {
 
               {show && (
                 <div
-                  className="absolute mt-8 bg-white text-sm p-1"
+                  className="absolute mt-8 bg-white text-sm p-1 hover:shadow-lg"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex">
-                    <ul className="mr-8">
-                      <li className="my-3 px-2">School</li>
-                      <li className="my-3 px-2">
-                        English speaking/Public speaking
-                      </li>
-                      <li className="my-3 px-2">Creative writing</li>
-                      <li className="my-3 px-2">Art and craft (DIY)</li>
-                      <li className="my-3 px-2">
-                        Critical thinking & problem solving
-                      </li>
-                      <li className="my-3 px-2">Life Skills</li>
-                      <li className="my-3 px-2">
-                        Photography & editing skills
-                      </li>
-                      <li className="my-3 px-2">Finance</li>
-                      <li className="my-3 px-2">
-                        Technology Development with AI and Coding
-                      </li>
-                      <li className="my-3 px-2">
-                        Entrepreneurship & Innovation
-                      </li>
-                      <li className="my-3 px-2">
-                        Social Media and Digital Marketing
-                      </li>
-                    </ul>
-                    <ul>
-                      <li className="my-3 px-2">College</li>
-                      <li className="my-3 px-2">Web Development</li>
-                      <li className="my-3 px-2">Graphic Designing</li>
-                      <li className="my-3 px-2">Human Resource</li>
-                      <li className="my-3 px-2">Data Analytics</li>
-                      <li className="my-3 px-2">Product Management</li>
-                      <li className="my-3 px-2">Android Development</li>
-                      <li className="my-3 px-2">Digital Marketing</li>
-                      <li className="my-3 px-2">SEO</li>
-                      <li className="my-3 px-2">UI UX Design</li>
-                      <li className="my-3 px-2">Software Testing</li>
-                      <li className="my-3 px-2">
-                        Entrepreneurship and Innovation
-                      </li>
-                    </ul>
+                  <div className="flex border-slate-500 left-1/2">
+                    {/* Card 1 */}
+                    <div className="p-4 border-r border-gray-200">
+                      <h3 className="font-bold mb-4 px-2 text-base">School</h3>
+                      <ul>
+                        <li className="my-3 px-2 cursor-pointer">
+                          English speaking/Public speaking
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Creative writing
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Art and craft (DIY)
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Critical thinking & problem solving
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Life Skills
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Photography & editing skills
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">Finance</li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Technology Development with AI and Coding
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Entrepreneurship & Innovation
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Social Media and Digital Marketing
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="p-4">
+                      <h3 className="font-bold mb-4 px-2 text-base">College</h3>
+                      <ul>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Web Development
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Graphic Designing
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Human Resource
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Data Analytics
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Product Management
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Android Development
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Digital Marketing
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">SEO</li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          UI UX Design
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Software Testing
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer">
+                          Entrepreneurship and Innovation
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               )}
