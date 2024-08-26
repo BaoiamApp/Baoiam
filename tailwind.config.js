@@ -6,10 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'img1': "url('./src/images/image.jpg')",
-        
-      }
     },
   },
   plugins: [],
