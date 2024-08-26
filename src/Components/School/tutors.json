@@ -1,0 +1,35 @@
+[
+    {
+      "image": "https://via.placeholder.com/300",
+      "title": "React Basics",
+      "tutorName": "John Doe",
+      "rating": 4,
+      "classes": 50,
+      "price": 29
+    },
+    {
+      "image": "https://via.placeholder.com/300",
+      "title": "Advanced CSS",
+      "tutorName": "Jane Smith",
+      "rating": 5,
+      "classes": 35,
+      "price": 39
+    },
+    {
+      "image": "https://via.placeholder.com/300",
+      "title": "JavaScript Mastery",
+      "tutorName": "Robert Johnson",
+      "rating": 3,
+      "classes": 45,
+      "price": 49
+    },
+    {
+      "image": "https://via.placeholder.com/300",
+      "title": "Node.js Essentials",
+      "tutorName": "Emily Brown",
+      "rating": 4,
+      "classes": 25,
+      "price": 25
+    }
+  ]
+  
