@@ -14,7 +14,7 @@ import React from 'react'
 
 const Courses = () => {
   return (
-    <div className='w-[100%] bg-gray-300 '>
+    <div className='w-[100%] bg-gray-400 '>
 
       <p className='text-center font-bold text-white text-[2rem] pt-[1rem]'>Explore Free Online Courses</p>
 

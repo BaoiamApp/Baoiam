@@ -57,7 +57,7 @@ const Navbar = () => {
       </div>
 
 
-    <div className='bg-orange-400 xl:px-[2rem] sm:mb-1 xl:w-[8%]  font-bold lg:block lg:p-0 lg:px-4 p-1 pl-3 xl:py-1 lg:mr-1 w-[9%] md:pt-2 lg:w-[7%]  mt-1.5  px-14 rounded-lg text-white'><button className='sm:pt-1 md:mb-1 lg:text-center md:mx-1.5'>GCEP</button></div>
+    <div className='bg-orange-400 xl:px-[2rem] sm:mb-1 xl:w-[8%]  font-bold lg:block lg:p-1 lg:px-3 p-1 pl-3 xl:py-1 lg:mr-1 w-[9%] md:pt-2 lg:w-[7%]  mt-1.5  px-14 rounded-lg text-white'><button className='sm:pt-1 md:mb-1 lg:text-center md:mx-1.5'>GCEP</button></div>
 
     <div className='flex '>
         <div className='border-2 xl:flex hidden lg:hidden px-3 xl:pt-2 mr-[1rem] border-violet-700 rounded-lg mb-1 text-violet-700'><button className='pr-2 '>Login</button>
