@@ -1,8 +1,16 @@
-// import { faBars, faCaretDown, faCaretUp, faLock, faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons'
-// import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from "react";
-import img1 from "../../images/img1.png";
+
+// import { FaBars } from "react-icons/fa";
+import { FaSignInAlt } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropup } from "react-icons/io";
+// testing
+import React, { useState } from 'react'
+import { CiSearch } from "react-icons/ci";
+import img1 from '../../images/img1.png';
+import { FaCaretUp } from 'react-icons/fa';
+import { FaBars, FaCaretDown, FaLock, FaMagnifyingGlass, FaRightToBracket, FaUser, } from 'react-icons/fa6';
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
