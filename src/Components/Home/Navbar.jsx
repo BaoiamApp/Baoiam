@@ -20,6 +20,7 @@ const Navbar = () => {
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
 
+  // comment
   return (
     <>
       <div className="flex justify-evenly bg-white p-[2rem]">
