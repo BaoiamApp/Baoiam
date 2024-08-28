@@ -1,12 +1,12 @@
 import React from 'react'
-import SliderHero from '../Components/School/SliderHero'
+import SliderHero from '../School/SliderHero'
 
 
 const Hero = () => {
   return (
-    <div className="bg-white flex flex-col lg:flex-row items-center justify-between h-screen p-6 lg:p-16">
+    <div className="bg-white flex flex-col pt-5 md:flex-row h-[100vh] md:h-[80vh] md:py-12 px-6 lg:px-16">
     {/* Left Side: Heading and Content */}
-    <div className="w-full h-screen flex gap-y-3 flex-col mt-5 lg:w-1/2 text-center lg:text-left lg:mt-36">
+    <div className="w-full flex gap-y-3 flex-col lg:w-1/2 text-center lg:text-left">
       <h1 className="text-black text-3xl sm:text-4xl lg:text-5xl font-bold">
         Empowering<span className="text-blue-500"> Education</span> </h1>
          <h1 className="text-black text-3xl sm:text-4xl lg:text-5xl font-bold"> With <span className="text-orange-500">Technology</span>
@@ -26,8 +26,8 @@ const Hero = () => {
     </div>
 
     {/* Right Side:Slider*/}
-    <div>
-      <img src='' alt='Right image'/>
+    <div className='w-full flex justify-center items-center h-full lg:w-1/2'>
+      <img  src='' alt='Right image'/>
     </div>
   </div>
   )

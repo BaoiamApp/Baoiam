@@ -18,7 +18,34 @@ function App() {
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
+  
 
   const data = {
     "Popular Courses": [
@@ -66,7 +93,7 @@ function App() {
   return (
     <div className="w-3/4 m-auto">
       {/* Navigation Bar */}
-      <div className="flex justify-between items-center py-5 border-b border-gray-300">
+      <div className="flex flex-col md:flex-row justify-between items-center py-5 border-b border-gray-300">
         {["Popular Courses", "Top Diplomas", "Top Certificates", "New Courses"].map((category) => (
           <div key={category} className="text-center">
             <a
@@ -98,7 +125,7 @@ function App() {
               className="slick-slide mx-2.5 px-4 bg-white shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 h-[450px] text-black rounded-xl"
             >
               <div
-                className={`h-56 rounded-t-xl bg-blue-500 flex justify-center items-center`}
+                className={`h-56 rounded-t-xl bg-blue-500 flex  justify-center items-center`}
               >
                 <img
                   src={d.img}

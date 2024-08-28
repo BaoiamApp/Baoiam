@@ -24,7 +24,7 @@ const School = () => {
         Whether you're looking to improve your skills or start a new learning journey, 
         we have something for everyone.
       </p>
-      <a href="#courses" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg">
+      <a href="#courses" className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
         Explore Courses
       </a>
     </div>
