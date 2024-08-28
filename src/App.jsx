@@ -4,6 +4,7 @@ import Navbar from './Components/Home/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import GSCB from './Components/GSCB/GSCB'
 import Home from './Components/Home/Home'
+import College from './Components/College/College'
 const App = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/gscb" element={<GSCB />} />
         <Route path="/" element={<Home />} />
+        <Route path="/courses/college/:courseName" element={<College />} />
       </Routes>
     <Footer/>
     </>

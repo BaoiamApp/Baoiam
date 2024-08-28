@@ -10,8 +10,11 @@ import { CiSearch } from "react-icons/ci";
 import img1 from '../../images/img1.png';
 import { FaCaretUp } from 'react-icons/fa';
 import { FaBars, FaCaretDown, FaLock, FaMagnifyingGlass, FaRightToBracket, FaUser, } from 'react-icons/fa6';
+import CoursesList from "../CoursesList";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate=useNavigate();
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
@@ -61,10 +64,15 @@ const Navbar = () => {
                     <div className="p-4 border-r border-gray-200">
                       <h3 className="font-bold mb-4 px-2 text-base">School</h3>
                       <ul>
+                      {CoursesList.school.map(course=>{
+                      return (
                         <li className="my-3 px-2 cursor-pointer">
-                          English speaking/Public speaking
+                          {course}
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
+                      )
+                    })}
+                        
+                        {/* <li className="my-3 px-2 cursor-pointer">
                           Creative writing
                         </li>
                         <li className="my-3 px-2 cursor-pointer">
@@ -88,7 +96,7 @@ const Navbar = () => {
                         </li>
                         <li className="my-3 px-2 cursor-pointer">
                           Social Media and Digital Marketing
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
 
@@ -96,7 +104,8 @@ const Navbar = () => {
                     <div className="p-4">
                       <h3 className="font-bold mb-4 px-2 text-base">College</h3>
                       <ul>
-                        <li className="my-3 px-2 cursor-pointer">
+                        
+                        {/* <li className="my-3 px-2 cursor-pointer">
                           Web Development
                         </li>
                         <li className="my-3 px-2 cursor-pointer">
@@ -126,7 +135,14 @@ const Navbar = () => {
                         </li>
                         <li className="my-3 px-2 cursor-pointer">
                           Entrepreneurship and Innovation
+                        </li> */}
+                        {CoursesList.college.map(course=>{
+                      return (
+                        <li className="my-3 px-2 cursor-pointer" onClick={()=>{navigate(`/courses/college/${course}`)}}>
+                          {course}
                         </li>
+                      )
+                    })}
                       </ul>
                     </div>
                   </div>
