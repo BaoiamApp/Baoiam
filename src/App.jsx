@@ -4,6 +4,10 @@ import Navbar from './Components/Home/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import GSCB from './Components/GSCB/GSCB'
 import Home from './Components/Home/Home'
+import School from './Components/School/School'
+import SkillCatalog from './Components/School/SkillCatalog'
+import CoursePage from './Components/School/CoursePage'
+
 const App = () => {
   const [dark,setDark] = useState(false);
 
@@ -17,11 +21,12 @@ const App = () => {
   return (
     <>
        <Navbar theme={theme} />
-
       <Routes>
+      <Route path="/" element={<Home />} />
         <Route path="/gscb" element={<GSCB />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/course" element={<School />} />
       </Routes>
+      
     <Footer/>
     </>
   )
