@@ -11,6 +11,7 @@ import img1 from '../../images/img1.png';
 import { FaCaretUp } from 'react-icons/fa';
 import { FaBars, FaCaretDown, FaLock, FaMagnifyingGlass, FaRightToBracket, FaUser, } from 'react-icons/fa6';
 import { LuMoonStar } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const Navbar = ({theme}) => {
   const [show, setShow] = useState(false);
@@ -62,9 +63,10 @@ const Navbar = ({theme}) => {
                     <div className="p-4 border-r border-gray-200">
                       <h3 className="font-bold mb-4 px-2 text-base">School</h3>
                       <ul>
-                        <li className="my-3 px-2 cursor-pointer">
+                        
+                        <Link to={"/course"}  className="my-3 px-2 cursor-pointer">
                           English speaking/Public speaking
-                        </li>
+                        </Link>
                         <li className="my-3 px-2 cursor-pointer">
                           Creative writing
                         </li>
@@ -171,7 +173,7 @@ const Navbar = ({theme}) => {
           <FaMagnifyingGlass className='text-gray-400 lg:text-xl xl:pl-2 xl:text-2xl text-[1.5rem] pt-1 mt-1 pl-2'/>
         </div>
 
-        <div className="bg-orange-400 xl:px-[1.8rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3 lg:w-[8%]  w-[9%] md:pt-2  mt-4 h-10  px-14 rounded-lg text-white">
+        <div className="bg-[#fbbf24] xl:px-[1.8rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3 lg:w-[8%]  w-[9%] md:pt-2  mt-4 h-10  px-14 rounded-lg text-white">
           <button className="lg:ml-1 ">GCEP</button>
         </div>
 
