@@ -10,8 +10,9 @@ import { CiSearch } from "react-icons/ci";
 import img1 from '../../images/img1.png';
 import { FaCaretUp } from 'react-icons/fa';
 import { FaBars, FaCaretDown, FaLock, FaMagnifyingGlass, FaRightToBracket, FaUser, } from 'react-icons/fa6';
+import { LuMoonStar } from "react-icons/lu";
 
-const Navbar = () => {
+const Navbar = ({theme}) => {
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
@@ -31,12 +32,12 @@ const Navbar = () => {
   // comment
   return (
     <>
-      <div className="flex justify-evenly bg-white p-[2rem]">
+      <div className="flex justify-evenly bg-white dark:bg-black p-[2rem]">
         <div>
           <img className="h-[3.5rem] w-[8rem]" src={img1} />
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:mt-5 dark:text-white lg:block">
           <ul className="flex ">
             <li className="mx-4">Home</li>
             <li className="mx-4">About Us</li>
@@ -159,34 +160,36 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="px-3 w-[20%] border-2 py-0.9 lg:py-0.1 hidden lg:px-3 lg:w-[29%] xl:w-[22vw] lg:rounded-lg lg:border-gray-400 xl:flex sm:block sm:py-2 sm:w-[50%] rounded-lg border-gray-400">
+        <div className="px-3 w-[20%] border-2 sm:flex lg:py-0.1 hidden lg:px-3 lg:w-[29%] xl:w-[22vw] md:mt-4 h-10 sm:mt-4 lg:rounded-lg lg:border-gray-400 xl:flex p-0.5 sm:w-[50%] rounded-lg border-gray-400">
           <input
-            className="w-[14rem] lg:text-[1rem] outline:none xl:w-[16rem]  sm:text-[2.3vw] sm:w-[85%] mr-2 "
+            className="w-[14rem] lg:text-[1rem] bg-transparent outline:none xl:w-[16rem]  sm:text-[2.3vw] h-8 sm:w-[85%] mr-2 "
             type="text"
             placeholder="Search for your favorite course"
           ></input>
 
           {/* <FontAwesomeIcon className='text-gray-400 lg:text-lg xl:pl-2 xl:text-xl text-xl pt-1 pl-2' icon={faMagnifyingGlass}/> */}
+          <FaMagnifyingGlass className='text-gray-400 lg:text-xl xl:pl-2 xl:text-2xl text-[1.5rem] pt-1 mt-1 pl-2'/>
         </div>
 
-        <div className="bg-orange-400 xl:px-[2rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3  w-[9%] md:pt-2  mt-1.5  px-14 rounded-lg text-white">
-          <button>GCEP</button>
+        <div className="bg-orange-400 xl:px-[1.8rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3 lg:w-[8%]  w-[9%] md:pt-2  mt-4 h-10  px-14 rounded-lg text-white">
+          <button className="lg:ml-1 ">GCEP</button>
         </div>
 
         <div className="flex ">
-          <div className="border-2 hidden lg:hidden px-3 xl:pt-1.5 xl:block mr-[1rem] border-violet-700 rounded-lg text-violet-700">
-            <button className="pr-2">Login</button>
+          <div className="border-2 hidden lg:hidden px-3 xl:py-1 xl:block mr-[1rem] border-violet-700 xl:h-9 xl:mt-4 rounded-lg text-violet-700">
+            <button className="pr-2 ">Login</button>
 
             {/* <FontAwesomeIcon icon={faLock} /> */}
           </div>
-          <div className="bg-violet-700 hidden xl:block xl:pt-1.5 lg:hidden text-white font-semibold border-2 border-blue-700 rounded-lg px-3 ">
+          <div className="bg-violet-700 hidden xl:block xl:py-1 lg:hidden text-white font-semibold xl:mt-4 xl:h-9 border-2 border-blue-700 rounded-lg px-3 ">
             <button>Sign Up</button>
           </div>
         </div>
 
         <div>
-          <div className="absolute lg:block top-[2rem] xl:hidden sm:top-[2.2rem] right-[2rem]">
+          <div className="absolute lg:block top-[2rem] lg:right-[2%] xl:hidden sm:top-[2.2rem] right-[2rem]">
             {/* <FontAwesomeIcon className='text-[2rem]' onClick={() => setShowmenu(!showmenu)} icon={faBars} /> */}
+            <FaBars className='text-[2rem] dark:text-white mt-4' onClick={() => setShowmenu(!showmenu)}/>
           </div>
 
           {showmenu && (
@@ -230,6 +233,8 @@ const Navbar = () => {
             </div>
           )}
         </div>
+
+        <LuMoonStar onClick={theme} className="text-[1.7rem] mr-9  cursor-pointer text-blue-700 mt-5"/>
       </div>
     </>
   );
