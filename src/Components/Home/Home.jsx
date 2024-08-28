@@ -3,9 +3,9 @@ import Courses from './Courses'
 import Swiper from './Swiper'
 import Hero from './Hero'
 import Categories from './Categories'
-
-
+import Partners from '../Partners/Partners'
 import JoinNow from "./JoinNow";
+
 
 const Home = () => {
     return (
@@ -14,6 +14,7 @@ const Home = () => {
             <Courses />
             <Swiper />
             <Categories />
+            <Partners/>
             <JoinNow />
         </>
     )
