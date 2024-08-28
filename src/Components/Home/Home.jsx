@@ -1,6 +1,7 @@
 import React from 'react'
 import Courses from './Courses'
 import Swiper from './Swiper'
+import Categories from './Categories'
 
 
 import JoinNow from "./JoinNow";
@@ -10,6 +11,7 @@ const Home = () => {
         <>
             <Courses />
             <Swiper />
+            <Categories />
             <JoinNow />
         </>
     )
