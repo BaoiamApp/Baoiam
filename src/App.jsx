@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Home/Navbar'
 import { Route, Routes } from 'react-router-dom'
@@ -10,10 +10,19 @@ import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 
 const App = () => {
+  const [dark,setDark] = useState(false);
+
+  const theme = ()=>{
+    setDark(true);
+    document.body.classList.toggle("dark");}
+
+
+ 
+     
   return (
     <>
-      <Navbar />
-      <Hero />
+       <Navbar theme={theme} />
+
       <Routes>
         <Route path="/gscb" element={<GSCB />} />
         <Route path="/:courseId" element={<CoursePage />} />
