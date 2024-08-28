@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa"; // Import the right arrow icon
 import {
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15
-} from "../../images/swiper-imgs/assets.js";
+} from "../../assets/swiper-imgs/assets";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("Popular Courses");

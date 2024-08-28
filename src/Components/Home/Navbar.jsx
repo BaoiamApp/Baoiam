@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import img1 from '../../images/img1.png';
+import img1 from '../../assets/img1.png';
 import { FaBars, FaMagnifyingGlass } from 'react-icons/fa6';
 import { LuMoonStar } from "react-icons/lu";
 import { Link } from "react-router-dom";

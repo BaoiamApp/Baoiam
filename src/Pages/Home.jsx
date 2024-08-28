@@ -4,6 +4,7 @@ import Swiper from '../Components/Home/Swiper'
 import Hero from '../Components/Home/Hero'
 import Categories from '../Components/Home/Categories'
 import JoinNow from "../Components/Home/JoinNow";
+import Partners from '../Components/Partners/Partners'
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Courses />
             <Swiper />
             <Categories />
+            <Partners />
             <JoinNow />
         </>
     )
