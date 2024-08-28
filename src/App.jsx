@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Home/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import GSCB from './Components/GSCB/GSCB'
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/gscb" element={<GSCB />} />
         <Route path="/" element={<Home />} />
       </Routes>
+    <Footer/>
     </>
   )
 }
