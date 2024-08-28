@@ -14,8 +14,8 @@ const WhyUs = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center">
-            <div className="bg-blue-500 p-4 rounded-full mb-4">
-              {/* Replace with an actual icon */}
+            <div className="bg-orange-600 p-4 rounded-full mb-4">
+              
               <svg
                 className="h-10 w-10 text-white"
                 fill="none"
@@ -38,7 +38,7 @@ const WhyUs = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="bg-blue-500 p-4 rounded-full mb-4">
+            <div className="bg-orange-600 p-4 rounded-full mb-4">
               <svg
                 className="h-10 w-10 text-white"
                 fill="none"
@@ -61,7 +61,7 @@ const WhyUs = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="bg-blue-500 p-4 rounded-full mb-4">
+            <div className="bg-orange-600 p-4 rounded-full mb-4">
               <svg
                 className="h-10 w-10 text-white"
                 fill="none"
@@ -84,7 +84,7 @@ const WhyUs = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="bg-blue-500 p-4 rounded-full mb-4">
+            <div className="bg-orange-600 p-4 rounded-full mb-4">
               <svg
                 className="h-10 w-10 text-white"
                 fill="none"
