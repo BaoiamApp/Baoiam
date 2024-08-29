@@ -1,8 +1,8 @@
 import React from 'react'
-import Trending from './Trending'
-import WhyUs from './WhyUs'
-import SkillCatalog from './SkillCatalog'
-import SliderHero from './SliderHero'
+import Trending from '../Components/School/Trending'
+import WhyUs from '../Components/School/WhyUs'
+import SkillCatalog from '../Components/School/SkillCatalog'
+import SliderHero from '../Components/School/SliderHero'
 
 const School = () => {
   return (
