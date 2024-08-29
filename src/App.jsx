@@ -1,30 +1,38 @@
-// src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/NavBar';
-import AboutUs from './pages/AboutUs';
+import React, { useState } from 'react'
+import Footer from './Components/Footer/Footer'
+import Navbar from './Components/Home/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import GSCB from './Pages/GSCB'
+import Home from './Pages/Home'
+import School from './Pages/School'
+import SkillCatalog from './Components/School/SkillCatalog'
+import CoursePage from './Components/School/CoursePage'
+import SignUp from './Pages/SignUp'
 
-function App() {
+const App = () => {
+  const [dark, setDark] = useState(false);
+
+  const theme = () => {
+    setDark(true);
+    document.body.classList.toggle("dark");
+  }
+
+
+
+
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+    <>
+      <Navbar theme={theme} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gscp" element={<GSCB />} />
+        <Route path="/course" element={<School />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+
+      <Footer />
+    </>
+  )
 }
 
-const Home = () => (
-  <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-4">Home Page</h1>
-    <p className="text-lg text-gray-700">
-      Welcome to the Home page.
-    </p>
-  </div>
-);
-
-export default App;
+export default App
