@@ -1,5 +1,5 @@
 import React from "react";
-import onlinelearning from "../../images/Onlinelearning.gif";
+import onlinelearning from "../../assets/Onlinelearning.gif";
 
 const Home = () => {
   return (

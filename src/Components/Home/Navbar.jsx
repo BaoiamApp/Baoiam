@@ -1,15 +1,21 @@
-
 // import { FaBars } from "react-icons/fa";
 import { FaSignInAlt } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
 // testing
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import img1 from '../../images/img1.png';
-import { FaCaretUp } from 'react-icons/fa';
-import { FaBars, FaCaretDown, FaLock, FaMagnifyingGlass, FaRightToBracket, FaUser, } from 'react-icons/fa6';
+import img1 from "../../images/img1.png";
+import { FaCaretUp } from "react-icons/fa";
+import {
+  FaBars,
+  FaCaretDown,
+  FaLock,
+  FaMagnifyingGlass,
+  FaRightToBracket,
+  FaUser,
+} from "react-icons/fa6";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -28,22 +34,21 @@ const Navbar = () => {
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
 
-  // comment
   return (
     <>
-      <div className="flex justify-evenly bg-white p-[2rem]">
+      <div className="flex justify-evenly items-center bg-white p-[2rem]">
         <div>
           <img className="h-[3.5rem] w-[8rem]" src={img1} />
         </div>
 
         <div className="hidden lg:block">
-          <ul className="flex ">
-            <li className="mx-4">Home</li>
-            <li className="mx-4">About Us</li>
+          <ul className="flex">
+            <li className="mx-4 cursor-pointer hover:underline">Home</li>
+            <li className="mx-4 cursor-pointer hover:underline">About Us</li>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col relative">
               <li
-                className="mx-4 cursor-pointer"
+                className="mx-4 cursor-pointer hover:underline"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -52,42 +57,56 @@ const Navbar = () => {
 
               {show && (
                 <div
-                  className="absolute mt-8 bg-white text-sm p-1 hover:shadow-lg"
+                  className="absolute mt-8 bg-white text-sm p-1 hover:shadow-xl left-1/2 transform -translate-x-1/2"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex border-slate-500 left-1/2">
+                  <div className="flex border-slate-500">
                     {/* Card 1 */}
-                    <div className="p-4 border-r border-gray-200">
+                    <div className="p-4 border-r border-gray-200 w-[20rem]">
                       <h3 className="font-bold mb-4 px-2 text-base">School</h3>
                       <ul>
-                        <li className="my-3 px-2 cursor-pointer">
-                          English speaking/Public speaking
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/English speaking/Public speaking">
+                            English speaking/Public speaking
+                          </a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Creative writing
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Creative writing">Creative writing</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Art and craft (DIY)
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Art and craft (DIY)">Art and craft (DIY)</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Critical thinking & problem solving
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Critical thinking & problem solving">
+                            Critical thinking & problem solving
+                          </a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Life Skills
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Life Skills">Life Skills</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Photography & editing skills
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Photography & editing skills">
+                            Photography & editing skills
+                          </a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">Finance</li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Technology Development with AI and Coding
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Finance">Finance</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Entrepreneurship & Innovation
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Technology Development with AI and Coding">
+                            Technology Development with AI and Coding
+                          </a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Social Media and Digital Marketing
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Entrepreneurship & Innovation">
+                            Entrepreneurship & Innovation
+                          </a>
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Social Media and Digital Marketing">
+                            Social Media and Digital Marketing
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -96,36 +115,40 @@ const Navbar = () => {
                     <div className="p-4">
                       <h3 className="font-bold mb-4 px-2 text-base">College</h3>
                       <ul>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Web Development
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Web Development">Web Development</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Graphic Designing
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Graphic Designing">Graphic Designing</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Human Resource
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Graphic Designing">Human Resource</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Data Analytics
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Data Analytics">Data Analytics</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Product Management
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Product Management">Product Management</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Android Development
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Android Development">Android Development</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Digital Marketing
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Digital Marketing">Digital Marketing</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">SEO</li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          UI UX Design
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/SEO">SEO</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Software Testing
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/UI UX Design">UI UX Design</a>
                         </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Entrepreneurship and Innovation
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Software Testing">Software Testing</a>
+                        </li>
+                        <li className="my-3 px-2 cursor-pointer hover:underline">
+                          <a href="/Software Testing">
+                            Entrepreneurship and Innovation
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -154,14 +177,14 @@ const Navbar = () => {
               )}
             </div> */}
 
-            <li className="mx-4">Blog</li>
-            <li className="mx-4">Contact</li>
+            <li className="mx-4 cursor-pointer hover:underline">Blog</li>
+            <li className="mx-4 cursor-pointer hover:underline">Contact</li>
           </ul>
         </div>
 
         <div className="px-3 w-[20%] border-2 py-0.9 lg:py-0.1 hidden lg:px-3 lg:w-[29%] xl:w-[22vw] lg:rounded-lg lg:border-gray-400 xl:flex sm:block sm:py-2 sm:w-[50%] rounded-lg border-gray-400">
           <input
-            className="w-[14rem] lg:text-[1rem] outline:none xl:w-[16rem]  sm:text-[2.3vw] sm:w-[85%] mr-2 "
+            className="w-[14rem] lg:text-[1rem] outline:none xl:w-[16rem]  sm:text-[2.3vw] sm:w-[85%] mr-2 focus:outline-none"
             type="text"
             placeholder="Search for your favorite course"
           ></input>
@@ -175,7 +198,7 @@ const Navbar = () => {
 
         <div className="flex ">
           <div className="border-2 hidden lg:hidden px-3 xl:pt-1.5 xl:block mr-[1rem] border-violet-700 rounded-lg text-violet-700">
-            <button className="pr-2">Login</button>
+            <button className="px-2 pb-2">Login</button>
 
             {/* <FontAwesomeIcon icon={faLock} /> */}
           </div>
