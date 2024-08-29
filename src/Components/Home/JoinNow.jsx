@@ -4,7 +4,7 @@ import onlinelearning from "../../assets/Onlinelearning.gif";
 const Home = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center h-full p-8 bg-white mt-12">
-      <div className="w-1/3 mr-6 w-full md:w-auto">
+      <div className="w-1/3 mr-6 md:w-auto">
         <img src={onlinelearning} alt="" />
       </div>
 

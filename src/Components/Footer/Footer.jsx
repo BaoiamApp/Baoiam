@@ -16,7 +16,7 @@ import { TiSocialFacebook } from "react-icons/ti";
 
 function Footer() {
   return (
-    <div className="w-full pt-8 pb-4 rounded-lg relative shadow-md bg-slate-200 text-black ">
+    <div className="w-full pt-8 pb-4 dark:bg-black dark:text-white rounded-lg relative shadow-md bg-slate-200 text-black ">
       <div className="flex flex-wrap gap-8 justify-between mx-auto w-10/12 py-2 items-center">
         <div className="brand-logo w-28 md:w-32">
           <img

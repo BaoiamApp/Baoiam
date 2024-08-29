@@ -1,23 +1,11 @@
-// import { FaBars } from "react-icons/fa";
-import { FaSignInAlt } from "react-icons/fa";
-import { FaRegUser } from "react-icons/fa";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { IoMdArrowDropup } from "react-icons/io";
-// testing
 import React, { useState } from "react";
-import { CiSearch } from "react-icons/ci";
-import img1 from "../../images/img1.png";
-import { FaCaretUp } from "react-icons/fa";
-import {
-  FaBars,
-  FaCaretDown,
-  FaLock,
-  FaMagnifyingGlass,
-  FaRightToBracket,
-  FaUser,
-} from "react-icons/fa6";
+import img1 from "../../assets/img1.png";
+import { FaBars, FaMagnifyingGlass } from "react-icons/fa6";
+import { LuMoonStar } from "react-icons/lu";
+import { Link } from "react-router-dom";
+import { CourseCate } from "../../Data";
 
-const Navbar = () => {
+const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
@@ -36,180 +24,110 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-evenly items-center bg-white p-[2rem]">
-        <div>
+      <div className="flex justify-evenly items-center bg-white dark:bg-black p-[2rem]">
+        <Link to={"/"}>
           <img className="h-[3.5rem] w-[8rem]" src={img1} />
-        </div>
+        </Link>
 
-        <div className="hidden lg:block">
-          <ul className="flex">
-            <li className="mx-4 cursor-pointer hover:underline">Home</li>
-            <li className="mx-4 cursor-pointer hover:underline">About Us</li>
+        <div className="hidden lg:mt-5 dark:text-white lg:block">
+          <ul className="flex ">
+            <Link to={"/"} className="mx-4">
+              Home
+            </Link>
+            <Link to={"/about-us"} className="mx-4">
+              About Us
+            </Link>
 
             <div className="flex flex-col relative">
               <li
-                className="mx-4 cursor-pointer hover:underline"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                className="mx-4 cursor-pointer"
               >
                 Courses
               </li>
 
               {show && (
                 <div
-                  className="absolute mt-8 bg-white text-sm p-1 hover:shadow-xl left-1/2 transform -translate-x-1/2"
+                  className="absolute top-[5.8rem] bg-white border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex border-slate-500">
-                    {/* Card 1 */}
-                    <div className="p-4 border-r border-gray-200 w-[20rem]">
-                      <h3 className="font-bold mb-4 px-2 text-base">School</h3>
-                      <ul>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/English speaking/Public speaking">
-                            English speaking/Public speaking
-                          </a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Creative writing">Creative writing</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Art and craft (DIY)">Art and craft (DIY)</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Critical thinking & problem solving">
-                            Critical thinking & problem solving
-                          </a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Life Skills">Life Skills</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Photography & editing skills">
-                            Photography & editing skills
-                          </a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Finance">Finance</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Technology Development with AI and Coding">
-                            Technology Development with AI and Coding
-                          </a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Entrepreneurship & Innovation">
-                            Entrepreneurship & Innovation
-                          </a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Social Media and Digital Marketing">
-                            Social Media and Digital Marketing
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Card 2 */}
-                    <div className="p-4">
-                      <h3 className="font-bold mb-4 px-2 text-base">College</h3>
-                      <ul>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Web Development">Web Development</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Graphic Designing">Graphic Designing</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Graphic Designing">Human Resource</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Data Analytics">Data Analytics</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Product Management">Product Management</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Android Development">Android Development</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Digital Marketing">Digital Marketing</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/SEO">SEO</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/UI UX Design">UI UX Design</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Software Testing">Software Testing</a>
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer hover:underline">
-                          <a href="/Software Testing">
-                            Entrepreneurship and Innovation
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                  <div className="flex left-1/2">
+                    {CourseCate.map((c, i) => {
+                      return (
+                        <div key={i} className="p-4">
+                          <h3 className="font-bold mb-2 px-2 text-base">
+                            {c.Cate}
+                          </h3>
+                          <ul className="flex flex-col">
+                            {c.subCate.map((sub, index) => {
+                              return (
+                                <Link
+                                  key={index}
+                                  to={`/course`}
+                                  className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                >
+                                  {sub.course}
+                                </Link>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
             </div>
-            {/* {show?<FontAwesomeIcon className='ml-1' icon={faCaretUp}/>:<FontAwesomeIcon className='ml-1' icon={faCaretDown}/>} */}
-            {/* <div className="flex flex-col">
-              <li
-                className="mx-4 cursor-pointer"
-                onClick={() => setShow(!show)}
-              >
-                Courses
-              </li>
 
-              {show && (
-                <div className="absolute mt-8 bg-white text-sm p-1">
-                  <ul>
-                    <li className="my-3 px-2">Engineering</li>
-                    <li className="my-3 px-2">Research</li>
-                    <li className="my-3 px-2">Data Analytics</li>
-                    <li className="my-3 px-2">AI</li>
-                  </ul>
-                </div>
-              )}
-            </div> */}
-
-            <li className="mx-4 cursor-pointer hover:underline">Blog</li>
-            <li className="mx-4 cursor-pointer hover:underline">Contact</li>
+            <Link to={"/blog"} className="mx-4">
+              Blog
+            </Link>
+            <Link to={"/contact"} className="mx-4">
+              Contact
+            </Link>
           </ul>
         </div>
 
-        <div className="px-3 w-[20%] border-2 py-0.9 lg:py-0.1 hidden lg:px-3 lg:w-[29%] xl:w-[22vw] lg:rounded-lg lg:border-gray-400 xl:flex sm:block sm:py-2 sm:w-[50%] rounded-lg border-gray-400">
+        <div className="px-3 w-[20%] border-2 sm:flex items-center lg:py-1 hidden lg:px-3 lg:w-[29%] xl:w-[22vw] md:mt-4 h-10 sm:mt-4 lg:rounded-lg lg:border-gray-400 xl:flex p-0.5 sm:w-[50%] rounded-lg border-gray-400">
           <input
-            className="w-[14rem] lg:text-[1rem] outline:none xl:w-[16rem]  sm:text-[2.3vw] sm:w-[85%] mr-2 focus:outline-none"
+            className="w-[14rem] lg:text-[1rem] bg-transparent outline:none xl:w-[16rem] sm:text-[2.3vw] h-8 sm:w-[85%] mr-2 focus:outline-none"
             type="text"
             placeholder="Search for your favorite course"
           ></input>
 
-          {/* <FontAwesomeIcon className='text-gray-400 lg:text-lg xl:pl-2 xl:text-xl text-xl pt-1 pl-2' icon={faMagnifyingGlass}/> */}
+          <FaMagnifyingGlass className="text-gray-400 lg:text-xl xl:pl-2 xl:text-2xl text-[1.5rem] pl-2" />
         </div>
 
-        <div className="bg-orange-400 xl:px-[2rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3  w-[9%] md:pt-2  mt-1.5  px-14 rounded-lg text-white">
-          <button>GCEP</button>
-        </div>
+        <Link
+          to={"/gscp"}
+          className="bg-[#fbbf24] xl:px-[1.8rem] xl:w-[8%]  font-bold lg:block lg:p-2 lg:px-4 p-1 pl-3 lg:w-[8%]  w-[9%] md:pt-2  mt-4 h-10  px-14 rounded-lg text-white"
+        >
+          <button className="lg:ml-1 ">GSCP</button>
+        </Link>
 
         <div className="flex ">
-          <div className="border-2 hidden lg:hidden px-3 xl:pt-1.5 xl:block mr-[1rem] border-violet-700 rounded-lg text-violet-700">
-            <button className="px-2 pb-2">Login</button>
-
-            {/* <FontAwesomeIcon icon={faLock} /> */}
-          </div>
-          <div className="bg-violet-700 hidden xl:block xl:pt-1.5 lg:hidden text-white font-semibold border-2 border-blue-700 rounded-lg px-3 ">
+          <Link
+            to={"/login"}
+            className="border hidden font-semibold lg:hidden px-3 xl:py-1 xl:block mr-[1rem] border-blue-400 hover:bg-blue-400 hover:text-white hover:border-white xl:h-9 xl:mt-4 rounded-lg text-blue-400"
+          >
+            <button className="px-2">Login</button>
+          </Link>
+          <Link
+            to={"/signup"}
+            className="bg-blue-400 hidden xl:block xl:py-1 lg:hidden text-white font-semibold xl:mt-4 xl:h-9 border border-white rounded-lg px-3 hover:text-blue-400 hover:bg-transparent hover:border-blue-400"
+          >
             <button>Sign Up</button>
-          </div>
+          </Link>
         </div>
 
         <div>
-          <div className="absolute lg:block top-[2rem] xl:hidden sm:top-[2.2rem] right-[2rem]">
-            {/* <FontAwesomeIcon className='text-[2rem]' onClick={() => setShowmenu(!showmenu)} icon={faBars} /> */}
+          <div className="absolute lg:block top-[2rem] lg:right-[2%] xl:hidden sm:top-[2.2rem] right-[2rem]">
+            <FaBars
+              className="text-[2rem] dark:text-white mt-4"
+              onClick={() => setShowmenu(!showmenu)}
+            />
           </div>
 
           {showmenu && (
@@ -218,7 +136,6 @@ const Navbar = () => {
                 <li className="mx-5 my-1 lg:hidden">Home</li>
                 <li className="mx-5 my-1 lg:hidden">About Us</li>
 
-                {/* {show ? <FontAwesomeIcon className='ml-1' icon={faCaretUp} /> : <FontAwesomeIcon className='ml-1' icon={faCaretDown} />} */}
                 <div className="flex flex-col">
                   <li
                     className="mx-5 cursor-pointer my-1 lg:hidden"
@@ -242,17 +159,20 @@ const Navbar = () => {
                 <li className="mx-5 my-1 lg:hidden">Blog</li>
                 <li className="mx-5 my-1 lg:hidden">Contact</li>
                 <li className="mx-3 my-1">
-                  {/* <FontAwesomeIcon icon={faRightToBracket} /> */}
                   <button className="ml-2">Sign Up</button>
                 </li>
                 <li className="mx-3 my-1">
-                  {/* <FontAwesomeIcon icon={faUser} /> */}
                   <button className="ml-2">Login</button>
                 </li>
               </ul>
             </div>
           )}
         </div>
+
+        <LuMoonStar
+          onClick={theme}
+          className="text-[1.7rem] mr-9  cursor-pointer text-blue-700 mt-5"
+        />
       </div>
     </>
   );
