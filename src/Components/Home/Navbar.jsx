@@ -54,11 +54,11 @@ const Navbar = ({ theme }) => {
                   <div className="flex left-1/2">
                     {CourseCate.map((c, i) => {
                       return <div key={i} className="p-4">
-                        <h3 className="font-bold mb-2 px-2 text-base">{c.Cate}</h3>
+                        <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
                         <ul className="flex flex-col">
 
                           {c.subCate.map((sub, index) => {
-                            return <Link key={index} to={`/course`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                            return <Link key={index} to={`/course/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
                               {sub.course}
                             </Link>
                           })}

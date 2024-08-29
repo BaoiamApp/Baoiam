@@ -8,6 +8,7 @@ import School from './Pages/School'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
+import Course from './Components/course/[id]/course'
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -26,7 +27,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gscp" element={<GSCB />} />
-        <Route path="/course" element={<School />} />
+        <Route path="/courses/school" element={<School />} />
+        <Route path="/course/:id" element={<Course />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
 

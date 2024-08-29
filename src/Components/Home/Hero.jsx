@@ -1,5 +1,6 @@
 import React from 'react'
 import SliderHero from '../School/SliderHero'
+import { HeroImage } from '../../assets/assets'
 
 
 const Hero = () => {
@@ -27,7 +28,7 @@ const Hero = () => {
 
     {/* Right Side:Slider*/}
     <div className='w-full flex justify-center items-center h-full lg:w-1/2'>
-      <img  src='' alt='Right image'/>
+      <img src={HeroImage} alt='Right image'/>
     </div>
   </div>
   )
