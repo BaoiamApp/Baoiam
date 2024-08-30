@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import img1 from '../../assets/img1.png';
 import { FaBars, FaMagnifyingGlass } from 'react-icons/fa6';
+import CoursesList from "../CoursesList";
+import { useNavigate } from "react-router-dom";
 import { LuMoonStar } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { CourseCate } from "../../Data";
 
 const Navbar = ({ theme }) => {
+  const navigate=useNavigate();
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);

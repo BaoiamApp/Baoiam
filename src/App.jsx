@@ -10,6 +10,7 @@ import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 import Course from './Components/course/[id]/course'
 
+import College from './Components/College/College'
 const App = () => {
   const [dark, setDark] = useState(false);
 
@@ -25,11 +26,13 @@ const App = () => {
     <>
       <Navbar theme={theme} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/gscp" element={<GSCB />} />
+      <Route path="/" element={<Home />} />
+        <Route path="/gscb" element={<GSCB />} />
+        {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path="/courses/school" element={<School />} />
         <Route path="/course/:id" element={<Course />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/courses/college/:courseName" element={<College />} />
       </Routes>
 
       <Footer />
