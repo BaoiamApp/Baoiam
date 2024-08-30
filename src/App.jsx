@@ -9,6 +9,7 @@ import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 
+import College from './Components/College/College'
 const App = () => {
   const [dark, setDark] = useState(false);
 
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/course:id" element={<CoursePage />} />
         <Route path="/course" element={<School />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/courses/college/:courseName" element={<College />} />
       </Routes>
 
       <Footer />
