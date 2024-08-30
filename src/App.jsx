@@ -8,7 +8,7 @@ import School from './Pages/School'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
-import Course from './Components/courses/course'
+import Course from './Components/courses/Course'
 
 import College from './Components/College/College'
 const App = () => {
