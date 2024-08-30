@@ -158,7 +158,7 @@ const Navbar = ({theme}) => {
             </div> */}
 
             <li className="mx-4">Blog</li>
-            <li className="mx-4">Contact</li>
+            <li className="mx-4"><Link to="/ContactUs">Contact</Link></li>
           </ul>
         </div>
 
@@ -222,7 +222,7 @@ const Navbar = ({theme}) => {
                 </div>
 
                 <li className="mx-5 my-1 lg:hidden">Blog</li>
-                <li className="mx-5 my-1 lg:hidden">Contact</li>
+                <li className="mx-5 my-1 lg:hidden "><Link to="/ContactUs">Contact</Link></li>
                 <li className="mx-3 my-1">
                   {/* <FontAwesomeIcon icon={faRightToBracket} /> */}
                   <button className="ml-2">Sign Up</button>
