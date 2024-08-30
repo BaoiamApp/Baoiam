@@ -18,8 +18,16 @@ export const CourseCate = [
           "Students are trained to understand and connect with their audience, tailoring their messages to different listeners and settings.",
         ],
         highlights: [
-          "Live online classes - learn from our experts live",
-          "Placement assistance - Access support for securing better jobs",
+          // {
+          //   icon: "MdOutlineClass",
+          //   head: "Live online classes",
+          //   desc: "learn from our experts live",
+          // },
+          // {
+          //   icon: "MdOutlineClass",
+          //   head: "Placement assistance",
+          //   desc: "Access support for securing better jobs",
+          // },
           "Internships get hands - on experience by working in several firms",
           "Letter of recommendation - enhance your credibility with endorsements from professionals",
           "Live projects - Hands on live project with expert guidance",
@@ -48,10 +56,7 @@ export const CourseCate = [
             courseItems: [
               "Live Classes",
               "Doubt clearing sessions",
-              "Structured courses & PDFs",
-              "Assessment & case study",
               "50+ Live projects & Internships",
-              "5+ Internship Opportunities",
               "Mentorship",
               "Interview preparation",
               "Resume building",
@@ -66,20 +71,15 @@ export const CourseCate = [
             courseItems: [
               "Live Classes",
               "Doubt clearing sessions",
-              "Structured courses & PDFs",
               "Assessment & case study",
               "50+ Live projects & Internships",
-              "5+ Internship Opportunities",
               "Mentorship",
               "Interview preparation",
               "Resume building",
               "Placement assistance",
-              "Network of top MNC industries & angels",
-              "investors",
               "Webinar and seminar access",
               "Placement Assessment",
               "Resource Hub",
-              "Placement assistance",
             ],
           },
           {
@@ -90,40 +90,11 @@ export const CourseCate = [
             courseItems: [
               "Live Classes",
               "Doubt clearing sessions",
-              "Structured courses & PDFs",
               "Assessment & case study",
               "50+ Live projects & Internships",
-              "5+ Internship Opportunities",
-              "Mentorship",
               "Interview preparation",
               "Resume building",
-              "Placement assistance",
               "Network of top MNC industries & angels",
-              "investors",
-              "Webinar and seminar access",
-              "Placement Assessment",
-              "Resource Hub",
-              "Placement assistance",
-            ],
-          },
-          {
-            id: 4,
-            name: "Premium Plus",
-            courseName: "English speaking/Public speaking",
-            price: 84999.0,
-            courseItems: [
-              "Live Classes",
-              "Doubt clearing sessions",
-              "Structured courses & PDFs",
-              "Assessment & case study",
-              "50+ Live projects & Internships",
-              "5+ Internship Opportunities",
-              "Mentorship",
-              "Interview preparation",
-              "Resume building",
-              "Placement assistance",
-              "Network of top MNC industries & angels",
-              "investors",
               "Webinar and seminar access",
               "Placement Assessment",
               "Resource Hub",
@@ -778,7 +749,8 @@ export const CourseCate = [
         course: "Technology Development with AI and Coding",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2326-1.png",
         desc: [
-          "Technology Development with AI and Coding Course Introducing the course focused on Technology Development with AI and Coding to the students. It is crucial for a person in contemporary society with the abundance of various technological advancements to know and even more to possess the skills in artificial intelligence and coding basics.","In this relation, the goals of this course include an understanding of skills and knowledge that will be effective as the student embarks on a future career in technology. Obtain general knowledge about the field of artificial intelligence like machine learning, neural networks, and data processing.",
+          "Technology Development with AI and Coding Course Introducing the course focused on Technology Development with AI and Coding to the students. It is crucial for a person in contemporary society with the abundance of various technological advancements to know and even more to possess the skills in artificial intelligence and coding basics.",
+          "In this relation, the goals of this course include an understanding of skills and knowledge that will be effective as the student embarks on a future career in technology. Obtain general knowledge about the field of artificial intelligence like machine learning, neural networks, and data processing.",
         ],
         overview: [
           "Become armored with contemporary information in AI and coding, which prepares you for future technologies. Discover the basic knowledge one must acquire to take up different popular occupations in the sphere of IT.",
@@ -807,7 +779,7 @@ export const CourseCate = [
           "6. Building AI Models - Training and testing AI models Hands-on project: Creating a simple AI model",
           "7. AI Applications and Ethics - Real-world AI applications (healthcare, finance, robotics), Discussing the ethical implications of AI",
           "8. Project Development - Project planning and development, Mid-project reviews and troubleshooting",
-          "9. Final Projects and Presentations - Final project completion and preparation for presentations, Presentation of projects and course review"
+          "9. Final Projects and Presentations - Final project completion and preparation for presentations, Presentation of projects and course review",
         ],
         plans: [
           {
@@ -923,5 +895,52 @@ export const CourseCate = [
       { id: 18, course: "Software Testing" },
       { id: 19, course: "Entrepreneurship and Innovation" },
     ],
+  },
+];
+
+// Contact form
+export const industry = [
+  {
+    id: 1,
+    label: "Technology - Hardware",
+    value: "Technology - Hardware",
+  },
+];
+
+export const interestedCheckbox = [
+  {
+    id: 1,
+    label: "Communication training",
+    value: "Communication training",
+  },
+  {
+    id: 2,
+    label: "Conferences",
+    value: "Conferences",
+  },
+  {
+    id: 3,
+    label: "Content collaboration",
+    value: "Content collaboration",
+  },
+  {
+    id: 4,
+    label: "Custom events",
+    value: "Custom events",
+  },
+  {
+    id: 5,
+    label: "Media",
+    value: "Media",
+  },
+  {
+    id: 6,
+    label: "Podcasts",
+    value: "Podcasts",
+  },
+  {
+    id: 7,
+    label: "Other (list below)",
+    value: "other",
   },
 ];

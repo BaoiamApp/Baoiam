@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { MdOutlineClass } from 'react-icons/md';
 
 const Course = () => {
 
@@ -68,23 +69,33 @@ const Course = () => {
             </div>
 
             {/* Course Highlights */}
-            <div className='py-8 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600'>
-                <h4 className='text-3xl font-semibold text-white mb-8 px-24'>Course <span className='border-b'>Highlights</span></h4>
+            <div className='py-8 px-24 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600'>
+                <h4 className='text-3xl font-semibold text-white mb-8'>Course <span className='border-b'>Highlights</span></h4>
+
+
+                {/* <div className='flex items-center flex-wrap gap-4 text-black'>
+                    {subCourse.highlights.map((h, i) => {
+                        return <div className='bg-white px-6 py-8 rounded-xl flex flex-col gap-4 w-64'>
+                            <p><span className='text-2xl font-semibold'>Live online classes</span> <br /> learn from our experts live</p>
+                        </div>
+                    })}
+
+                </div> */}
 
                 <Swiper
                     spaceBetween={30}
-                    slidesPerView={2}
+                    slidesPerView={3}
                     loop={true}
                     autoplay={{
                         delay: 1500,
                         disableOnInteraction: false,
                     }}
                     modules={[Autoplay]}
-                    className="my-4 px-8 w-full h-16 flex gap-4 overflow-hidden items-center"
+                    className="my-4 px-8 w-full h-28 flex gap-4 overflow-hidden items-center"
                 >
                     {subCourse.highlights.map((h, i) => {
                         return <SwiperSlide key={i} className='bg-white px-4 py-2 rounded-xl flex items-center gap-2 text-orange-500 tracking-tight'>
-                            <FaGraduationCap size={22} className='text-orange-600' /> {h}
+                            <span className='text-orange-500 text-5xl'>‣</span>{h}
                         </SwiperSlide>
                     })}
                 </Swiper>
@@ -109,7 +120,7 @@ const Course = () => {
                         }}
                         modules={[Navigation]} className='flex items-center w-[60%] px-8'>
                         {subCourse.plans.map((p, i) => {
-                            return <SwiperSlide key={i} className='group h-[50rem] w-fit flex flex-col text-white bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl p-4 hover:bg-gradient-to-b hover:from-white hover:to-white hover:border hover:border-orange-600 hover:text-orange-600'>
+                            return <SwiperSlide key={i} className='group h-[40rem] w-fit flex flex-col text-white bg-gradient-to-b from-orange-400 to-orange-600 rounded-2xl p-4 hover:bg-gradient-to-b hover:from-white hover:to-white hover:border hover:border-orange-600 hover:text-orange-600'>
                                 <h4 className='text-2xl font-bold mb-4 text-center'>{p.name}</h4>
                                 <p className='font-semibold  mb-2 text-2xl'>{p.courseName}</p>
                                 <p className='text-2xl font-bold my-2'>₹{p.price}/Full Course</p>
