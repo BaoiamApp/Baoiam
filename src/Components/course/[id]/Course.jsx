@@ -10,7 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { MdOutlineClass } from 'react-icons/md';
 
 const Course = () => {
 
@@ -23,7 +22,7 @@ const Course = () => {
     const [swiper, setSwiper] = useState(null);
 
     const handleNextClick = () => swiper.slideNext();
-    const handlePrevClick = () => swiper.slidePrev();
+    const handlePrevClick = () => swiper.slidePrev();    
 
     return (
         <div>
@@ -75,8 +74,9 @@ const Course = () => {
 
                 {/* <div className='flex items-center flex-wrap gap-4 text-black'>
                     {subCourse.highlights.map((h, i) => {
-                        return <div className='bg-white px-6 py-8 rounded-xl flex flex-col gap-4 w-64'>
-                            <p><span className='text-2xl font-semibold'>Live online classes</span> <br /> learn from our experts live</p>
+                        return <div key={i} className='bg-white px-6 py-8 rounded-xl flex flex-col gap-4 w-64'>
+                            {React.createElement(MDIcons["MdOutlineClass"])}
+                            <p><span className='text-2xl font-semibold'></span> <br /> learn from our experts live</p>
                         </div>
                     })}
 

@@ -19,15 +19,12 @@ const App = () => {
     document.body.classList.toggle("dark");
   }
 
-
-
-
   return (
     <>
       <Navbar theme={theme} />
       <Routes>
       <Route path="/" element={<Home />} />
-        <Route path="/gscb" element={<GSCB />} />
+        <Route path="/gscp" element={<GSCB />} />
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path="/courses/school" element={<School />} />
         <Route path="/course/:id" element={<Course />} />

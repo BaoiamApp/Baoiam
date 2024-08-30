@@ -18,16 +18,8 @@ export const CourseCate = [
           "Students are trained to understand and connect with their audience, tailoring their messages to different listeners and settings.",
         ],
         highlights: [
-          // {
-          //   icon: "MdOutlineClass",
-          //   head: "Live online classes",
-          //   desc: "learn from our experts live",
-          // },
-          // {
-          //   icon: "MdOutlineClass",
-          //   head: "Placement assistance",
-          //   desc: "Access support for securing better jobs",
-          // },
+          "Live online classes - learn from our experts live",
+          "Placement assistance - Access support for securing better jobs",
           "Internships get hands - on experience by working in several firms",
           "Letter of recommendation - enhance your credibility with endorsements from professionals",
           "Live projects - Hands on live project with expert guidance",
