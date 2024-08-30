@@ -66,32 +66,6 @@ const Navbar = ({ theme }) => {
                         </li>
                       )
                     })}
-                        
-                        {/* <li className="my-3 px-2 cursor-pointer">
-                          Creative writing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Art and craft (DIY)
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Critical thinking & problem solving
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Life Skills
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Photography & editing skills
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">Finance</li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Technology Development with AI and Coding
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Entrepreneurship & Innovation
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Social Media and Digital Marketing
-                        </li> */}
                       </ul>
                     </div>
 
@@ -99,38 +73,6 @@ const Navbar = ({ theme }) => {
                     <div className="p-4">
                       <h3 className="font-bold mb-4 px-2 text-base">College</h3>
                       <ul>
-                        
-                        {/* <li className="my-3 px-2 cursor-pointer">
-                          Web Development
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Graphic Designing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Human Resource
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Data Analytics
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Product Management
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Android Development
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Digital Marketing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">SEO</li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          UI UX Design
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Software Testing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Entrepreneurship and Innovation
-                        </li> */}
                         {CoursesList.college.map(course=>{
                       return (
                         <li className="my-3 px-2 cursor-pointer" onClick={()=>{navigate(`/courses/college/${course}`)}}>
