@@ -3,15 +3,16 @@ import Trending from './Trending'
 import WhyUs from './WhyUs'
 import SkillCatalog from './SkillCatalog'
 import SliderHero from './SliderHero'
+import TypewriterText from './TypewiterText'
 
 const School = () => {
   return (
     <>
+    <TypewriterText />
     <div className="pl-10 p-4 bg-white text-black">
     <h2 className="text-3xl font-bold mb-6">Courses 
     <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
     </h2>
-    
     <div className="flex pt-10 items-center justify-center p-6">
   <div className="flex flex-col-reverse lg:flex-row items-center max-w-6xl mx-auto w-full">
     

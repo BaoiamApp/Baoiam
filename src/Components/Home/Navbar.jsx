@@ -40,7 +40,7 @@ const Navbar = ({theme}) => {
 
         <div className="hidden lg:mt-5 dark:text-white lg:block">
           <ul className="flex ">
-            <li className="mx-4">Home</li>
+            <li href='/' className="mx-4">Home</li>
             <li className="mx-4">About Us</li>
 
             <div className="flex flex-col">
