@@ -9,6 +9,7 @@ function College() {
     const [catagory,setCatagory]=useState('');
     const [duration,setDuration]=useState('');
     const [difficultyList,setDifficultyList]=useState(['beginner','advanced']);
+    const [showFilters, setShowFilters] = useState(true)
 
     useEffect(()=>{
         console.log()
@@ -43,6 +44,7 @@ function College() {
                 </div>
             </div>
         </div>
+        {showFilters && <div className="sideFilterBar"></div>}
     </div>
   )
 }
