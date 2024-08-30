@@ -35,8 +35,8 @@ const CoursesList={
             "numberOfLearners": 120000,
             "difficulty":"beginner",
             "price":"2999",
-            "exPrice":"3999"
-            
+            "exPrice":"3999",            
+            "ratings":4,
           },
           {
             "courseName": "JavaScript Basics",
@@ -46,7 +46,8 @@ const CoursesList={
             "numberOfLearners": 150000,
             "difficulty":"intermediate",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -57,7 +58,8 @@ const CoursesList={
             "numberOfLearners": 200000,
             "difficulty":"advanced",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -68,7 +70,8 @@ const CoursesList={
             "numberOfLearners": 95000,
             "difficulty":"beginner",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -79,7 +82,8 @@ const CoursesList={
             "numberOfLearners": 110000,
             "difficulty":"beginner",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -90,7 +94,8 @@ const CoursesList={
             "numberOfLearners": 85000,
             "difficulty":"beginner",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -101,7 +106,8 @@ const CoursesList={
             "numberOfLearners": 70000,
             "difficulty":"intermediate",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -112,7 +118,8 @@ const CoursesList={
             "numberOfLearners": 30000,
             "difficulty":"advanced",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           },
           {
@@ -123,7 +130,8 @@ const CoursesList={
             "numberOfLearners": 120000,
             "difficulty":"intermediate",
             "price":"2999",
-            "exPrice":"3999"
+            "exPrice":"3999",
+            "ratings":4,
             
           }]
 }  
