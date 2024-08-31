@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { CourseCate } from '../../../Data'
-import { CourseDesc } from '../../../assets/assets';
+import { CourseCate } from '../../Data'
+import { CourseDesc } from '../../assets/assets';
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight, FaGraduationCap } from 'react-icons/fa6';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
