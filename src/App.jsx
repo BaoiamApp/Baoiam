@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import GSCB from './Pages/GSCB'
 import Home from './Pages/Home'
 import School from './Pages/School'
+import ContactUs from './Components/Contact/ContactUs';
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/course/:id" element={<Course />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/courses/college/:courseName" element={<College />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
 
       <Footer />
