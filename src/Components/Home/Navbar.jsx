@@ -86,7 +86,7 @@ const Navbar = ({ theme }) => {
               )}
             </div>
 
-            <Link to={'/blog'} className="mx-4">Blog</Link>
+            <Link to={'/blogs'} className="mx-4">Blog</Link>
             <Link to={'/contact'} className="mx-4">Contact</Link>
           </ul>
         </div>
