@@ -11,6 +11,7 @@ import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 import College from './Components/College/College'
 import SchoolCourse from './Pages/SchoolCourse'
+import Blogs from './Pages/Blogs'
 const App = () => {
   const [dark, setDark] = useState(false);
 
@@ -20,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className='dark:bg-black dark:text-white '>
       <Navbar theme={theme} />
       <Routes>
       <Route path="/" element={<Home />} />
@@ -32,10 +33,10 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/courses/college/:courseName" element={<College />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blogs" element={<Blogs />} />
       </Routes>
-
       <Footer />
-    </>
+    </div>
   )
 }
 
