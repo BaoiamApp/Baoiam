@@ -146,7 +146,7 @@ const Navbar = ({ theme }) => {
                 </div>
 
                 <li className="mx-5 my-1 lg:hidden">Blog</li>
-                <li className="mx-5 my-1 lg:hidden">Contact</li>
+                <li className="mx-5 my-1 lg:hidden "><Link to="/ContactUs">Contact</Link></li>
                 <li className="mx-3 my-1">
                   <button className="ml-2">Sign Up</button>
                 </li>
