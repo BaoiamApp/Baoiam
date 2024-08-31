@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className='dark:bg-black dark:text-white '>
       <Navbar theme={theme} />
       <Routes>
       <Route path="/" element={<Home />} />
@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/blogs" element={<Blogs />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 
