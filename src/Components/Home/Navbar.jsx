@@ -26,7 +26,7 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div className="flex justify-evenly items-center bg-white dark:bg-black p-[2rem]">
-        <Link to={'/'}>
+        <Link to={'/career'}>
           <img className="h-[3.5rem] w-[8rem]" src={img1} />
         </Link>
 
