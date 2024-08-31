@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { School } from '../../Data'
-import { CourseDesc2, CourseOverview } from '../../assets/assets';
+import { School } from '../Data'
+import { CourseDesc2, CourseOverview } from '../assets/assets';
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight, FaGraduationCap } from 'react-icons/fa6';
 import { MdCheck } from 'react-icons/md';
 

@@ -10,7 +10,7 @@ import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 import College from './Components/College/College'
-import SchoolCourse from './Components/School/SchoolCourse'
+import SchoolCourse from './Pages/SchoolCourse'
 const App = () => {
   const [dark, setDark] = useState(false);
 
