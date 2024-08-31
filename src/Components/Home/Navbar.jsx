@@ -54,92 +54,21 @@ const Navbar = ({ theme }) => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex border-slate-500 left-1/2">
-                    {/* Card 1 */}
-                    <div className="p-4 border-r border-gray-200">
-                      <h3 className="font-bold mb-4 px-2 text-base">School</h3>
-                      <ul>
-                      {CoursesList.school.map(course=>{
-                      return (
-                        <li className="my-3 px-2 cursor-pointer">
-                          {course}
-                        </li>
-                      )
-                    })}
-                        
-                        {/* <li className="my-3 px-2 cursor-pointer">
-                          Creative writing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Art and craft (DIY)
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Critical thinking & problem solving
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Life Skills
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Photography & editing skills
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">Finance</li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Technology Development with AI and Coding
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Entrepreneurship & Innovation
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Social Media and Digital Marketing
-                        </li> */}
-                      </ul>
-                    </div>
+                  <div className="flex left-1/2">
+                    {CourseCate.map((c, i) => {
+                      return <div key={i} className="p-4">
+                        <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
+                        <ul className="flex flex-col">
 
-                    {/* Card 2 */}
-                    <div className="p-4">
-                      <h3 className="font-bold mb-4 px-2 text-base">College</h3>
-                      <ul>
-                        
-                        {/* <li className="my-3 px-2 cursor-pointer">
-                          Web Development
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Graphic Designing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Human Resource
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Data Analytics
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Product Management
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Android Development
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Digital Marketing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">SEO</li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          UI UX Design
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Software Testing
-                        </li>
-                        <li className="my-3 px-2 cursor-pointer">
-                          Entrepreneurship and Innovation
-                        </li> */}
-                        {CoursesList.college.map(course=>{
-                      return (
-                        <li className="my-3 px-2 cursor-pointer" onClick={()=>{navigate(`/courses/college/${course}`)}}>
-                          {course}
-                        </li>
-                      )
+                          {c.subCate.map((sub, index) => {
+                            return <Link key={index} to={`/course/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                              {sub.course}
+                            </Link>
+                          })}
+
+                        </ul>
+                      </div>
                     })}
-                      </ul>
-                    </div>
                   </div>
                 </div>
               )}

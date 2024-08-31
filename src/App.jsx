@@ -8,6 +8,7 @@ import School from './Pages/School'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
+import Course from './Components/courses/Course'
 
 import College from './Components/College/College'
 const App = () => {
@@ -18,17 +19,15 @@ const App = () => {
     document.body.classList.toggle("dark");
   }
 
-
-
-
   return (
     <>
       <Navbar theme={theme} />
       <Routes>
       <Route path="/" element={<Home />} />
-        <Route path="/gscb" element={<GSCB />} />
-        <Route path="/course:id" element={<CoursePage />} />
-        <Route path="/course" element={<School />} />
+        <Route path="/gscp" element={<GSCB />} />
+        {/* <Route path="/course:id" element={<CoursePage />} /> */}
+        <Route path="/courses/school" element={<School />} />
+        <Route path="/course/:id" element={<Course />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/courses/college/:courseName" element={<College />} />
       </Routes>
