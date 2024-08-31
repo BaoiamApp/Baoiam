@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { SchoolCourse } from '../../../Data'
-import { CourseDesc, CourseDesc2, CourseOverview } from '../../../assets/assets';
+import { SchoolCourse } from '../../Data'
+import { CourseDesc2, CourseOverview } from '../../assets/assets';
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight, FaGraduationCap } from 'react-icons/fa6';
 import { MdCheck } from 'react-icons/md';
 
@@ -63,7 +63,7 @@ const Course = () => {
                         return <p key={i}>{d}</p>
                     })}
 
-                    <button className='pl-4 pr-6 py-2 border border-orange-400 text-orange-400 font-semibold rounded-r-full w-fit flex items-center gap-4 group hover:bg-orange-400 hover:text-white'>Enroll Now <FaArrowRightLong size={22} className='group-hover:animate-pulse' /> </button>
+                    <button className='pl-4 pr-6 py-2 border border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 hover:text-white'>Enroll Now <FaArrowRightLong size={22} className='group-hover:animate-pulse' /> </button>
                 </div>
 
                 <img src={CourseDesc2} alt="" className='w-full h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black' />
@@ -72,7 +72,7 @@ const Course = () => {
             {/* Course Overview */}
             <div className='px-24 my-12 py-12 flex justify-between gap-24 w-full'>
                 <div className='w-[40%]'>
-                    <img src={CourseOverview} alt="" className='w-full h-96 object-cover shadow-[20px_20px_#ea580c]' />
+                    <img src={CourseOverview} alt="" className='w-full h-96 object-cover shadow-[-20px_20px_#ea580c]' />
                 </div>
                 <div className='w-[60%]'>
                     <h4 className='text-4xl font-semibold mt-12 mb-4'>Course <span className='border-b border-orange-500 text-orange-500'>Overview</span></h4>
