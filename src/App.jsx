@@ -8,6 +8,11 @@ import School from './Pages/School'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
+import AboutUs from './Pages/AboutUs'
+import  TermsConditions from "./pages/TermsConditions"
+import  PrivacyPolicy from "./pages/PrivacyPolicy"
+
+
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -28,6 +33,9 @@ const App = () => {
         <Route path="/gscp" element={<GSCB />} />
         <Route path="/course" element={<School />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
       </Routes>
 
       <Footer />
