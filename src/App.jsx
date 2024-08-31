@@ -12,6 +12,7 @@ import SignUp from './Pages/SignUp'
 import College from './Components/College/College'
 import SchoolCourse from './Pages/SchoolCourse'
 import Blogs from './Pages/Blogs'
+import Career from './Components/Career/Career'
 const App = () => {
   const [dark, setDark] = useState(false);
 
@@ -21,10 +22,10 @@ const App = () => {
   }
 
   return (
-    <div className='dark:bg-black dark:text-white '>
+    <div className="dark:bg-black dark:text-white ">
       <Navbar theme={theme} />
       <Routes>
-      <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/gscp" element={<GSCB />} />
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path="/courses/school" element={<School />} />
@@ -34,10 +35,12 @@ const App = () => {
         <Route path="/courses/college/:courseName" element={<College />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blogs" element={<Blogs />} />
+
+        <Route path="/career" element={<Career />} />
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default App
