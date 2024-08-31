@@ -1,12 +1,14 @@
 import React from 'react'
-import Trending from './Trending'
-import WhyUs from './WhyUs'
-import SkillCatalog from './SkillCatalog'
-import SliderHero from './SliderHero'
+import Trending from '../Components/School/Trending'
+import WhyUs from '../Components/School/WhyUs'
+import SkillCatalog from '../Components/School/SkillCatalog'
+import SliderHero from '../Components/School/SliderHero'
+import TypewriterText from '../Components/School/TypewiterText'
 
 const School = () => {
   return (
     <>
+     <TypewriterText />
     <div className="pl-10 p-4 bg-white text-black">
     <h2 className="text-3xl font-bold mb-6">Courses 
     <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
