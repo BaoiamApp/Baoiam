@@ -11,7 +11,7 @@ const Hero = () => {
         Empowering<span className="text-blue-500"> Education</span> </h1>
          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold"> With <span className="text-orange-500">Technology</span>
        </h1>
-      <p className="mt-4 text-lg  text-black sm:text-xl lg:text-2xl">
+      <p className="mt-4 text-lg dark:text-white text-black sm:text-xl lg:text-2xl">
         Join thousands of learners from around the world who are mastering
         new skills, advancing their careers, and exploring new opportunities.
       </p>
