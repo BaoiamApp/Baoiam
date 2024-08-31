@@ -26,7 +26,7 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div className="flex justify-evenly items-center bg-white dark:bg-black p-[2rem]">
-        <Link to={'/'}>
+        <Link to={'/career'}>
           <img className="h-[3.5rem] w-[8rem]" src={img1} />
         </Link>
 
@@ -47,7 +47,7 @@ const Navbar = ({ theme }) => {
 
               {show && (
                 <div
-                  className="absolute top-[5.8rem] bg-white border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50"
+                  className="absolute top-[5.8rem] bg-white border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-gray-700"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
