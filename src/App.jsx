@@ -11,8 +11,8 @@ import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 
 import AboutUs from './Pages/AboutUs'
-import  TermsConditions from "./pages/TermsConditions"
-import  PrivacyPolicy from "./pages/PrivacyPolicy"
+import TermsConditions from "./Pages/TermsConditions"
+import PrivacyPolicy from "./Pages/PrivacyPolicy"
 import College from './Components/College/College'
 import SchoolCourse from './Components/School/SchoolCourse'
 import Blogs from './Pages/Blogs'
