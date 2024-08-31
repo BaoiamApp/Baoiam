@@ -1,4 +1,4 @@
-export const SchoolCourse = [
+export const School = [
   {
     id: 1,
     Cate: "School",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { SchoolCourse } from '../../Data'
+import { School } from '../../Data'
 import { CourseDesc2, CourseOverview } from '../../assets/assets';
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight, FaGraduationCap } from 'react-icons/fa6';
 import { MdCheck } from 'react-icons/md';
@@ -12,10 +12,10 @@ import * as SLIcons from 'react-icons/sl'
 import * as GOIcons from 'react-icons/go'
 import * as PiIcons from 'react-icons/pi'
 
-const Course = () => {
+const SchoolCourse = () => {
 
     const { id } = useParams();
-    const course = SchoolCourse.find((cate) => cate.subCate.find((subCate) => subCate.id === parseInt(id)));
+    const course = School.find((cate) => cate.subCate.find((subCate) => subCate.id === parseInt(id)));
     const subCourse = course.subCate.find((subCate) => subCate.id === parseInt(id));
 
     console.log(subCourse);
@@ -209,4 +209,4 @@ const Course = () => {
     )
 }
 
-export default Course
+export default SchoolCourse

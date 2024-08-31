@@ -5,7 +5,7 @@ import CoursesList from "../CoursesList";
 import { useNavigate } from "react-router-dom";
 import { LuMoonStar } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { CollegeCourse, SchoolCourse } from "../../Data";
+import { CollegeCourse, School } from "../../Data";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -52,7 +52,8 @@ const Navbar = ({ theme }) => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="flex left-1/2">
-                    {SchoolCourse.map((c, i) => {
+                    {/* School Course */}
+                    {School.map((c, i) => {
                       return <div key={i} className="p-4">
                         <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
                         <ul className="flex flex-col">
