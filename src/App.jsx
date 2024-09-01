@@ -9,6 +9,7 @@ import ContactUs from './Components/Contact/ContactUs';
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
+import Login from './Pages/Login'
 
 import AboutUs from './Pages/AboutUs'
 import TermsConditions from "./Pages/TermsConditions"
@@ -37,6 +38,11 @@ const App = () => {
         {/* School Course */}
         <Route path="/course/:id" element={<SchoolCourse />} />
         <Route path="/signup" element={<SignUp />} />
+
+        <Route path="/login" element={<Login />} />
+    
+
+
 
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
