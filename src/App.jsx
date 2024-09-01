@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import GSCB from "./Pages/GSCB";
 import Home from "./Pages/Home";
 import School from "./Pages/School";
+import PAP from "./Pages/PAP";
+import Checkout from "./Pages/Checkout";
 import SkillCatalog from "./Components/School/SkillCatalog";
 import CoursePage from "./Components/School/CoursePage";
 import SignUp from "./Pages/SignUp";
@@ -23,6 +25,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gscp" element={<GSCB />} />
+        <Route path="/pap" element={<PAP />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/course" element={<School />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
