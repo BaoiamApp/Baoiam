@@ -6,6 +6,8 @@ import GSCB from './Pages/GSCB'
 import Home from './Pages/Home'
 import School from './Pages/School'
 import ContactUs from './Components/Contact/ContactUs';
+import Maintenance from './Components/Contact/Maintenance';
+import ITIE from './Pages/ITIE'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
@@ -54,6 +56,8 @@ const App = () => {
 
         <Route path="/career" element={<Career />} />
 
+        <Route path="/Maintenance" element={<Maintenance />} />
+        <Route path="/ITIE" element={<ITIE />} />
       </Routes>
       <Footer />
     </div>
