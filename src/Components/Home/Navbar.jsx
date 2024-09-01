@@ -5,10 +5,9 @@ import CoursesList from "../CoursesList";
 import { useNavigate } from "react-router-dom";
 import { LuMoonStar } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { CourseCate } from "../../Data";
+import { CollegeCourse, School } from "../../Data";
 
 const Navbar = ({ theme }) => {
-  const navigate=useNavigate();
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
@@ -24,12 +23,10 @@ const Navbar = ({ theme }) => {
     const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
-
-  // comment
   return (
     <>
       <div className="flex justify-evenly items-center bg-white dark:bg-black p-[2rem]">
-        <Link to={'/'}>
+        <Link to={'/career'}>
           <img className="h-[3.5rem] w-[8rem]" src={img1} />
         </Link>
 
@@ -50,12 +47,27 @@ const Navbar = ({ theme }) => {
 
               {show && (
                 <div
-                  className="absolute top-[5.8rem] bg-white border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50"
+                  className="absolute top-[5.8rem] bg-white border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-gray-700"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="flex left-1/2">
-                    {CourseCate.map((c, i) => {
+                    {/* School Course */}
+                    {School.map((c, i) => {
+                      return <div key={i} className="p-4">
+                        <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
+                        <ul className="flex flex-col">
+
+                          {c.subCate.map((sub, index) => {
+                            return <Link key={index} to={`/course/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                              {sub.course}
+                            </Link>
+                          })}
+
+                        </ul>
+                      </div>
+                    })}
+                    {CollegeCourse.map((c, i) => {
                       return <div key={i} className="p-4">
                         <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
                         <ul className="flex flex-col">
@@ -74,7 +86,7 @@ const Navbar = ({ theme }) => {
               )}
             </div>
 
-            <Link to={'/blog'} className="mx-4">Blog</Link>
+            <Link to={'/blogs'} className="mx-4">Blog</Link>
             <Link to={'/contact'} className="mx-4">Contact</Link>
           </ul>
         </div>
