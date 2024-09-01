@@ -24,7 +24,7 @@ const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
 
 const Trending = () => {
   return (
-    <div className="container mx-auto pt-10 lg:pr-40 lg:pt-10">
+    <div className="container mx-auto pt-10 lg:pt-10">
       <div className="mb-8">
         <h1 className="text-3xl font-bold inline-block relative">
           Trending Courses

@@ -66,9 +66,9 @@ function Footer() {
             heading: "Contact Us",
             links: ["Entrepreneurship", "tutors@baoiam.com", "08069640635"],
           },
-        ].map((item) => {
+        ].map((item,index) => {
           return (
-            <div className="company">
+            <div key={index} className="company">
               <h1 className="mb-2 font-bold text-base uppercase">
                 {item.heading}
               </h1>

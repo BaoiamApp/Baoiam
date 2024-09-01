@@ -5,7 +5,8 @@ import CoursesList from "../CoursesList";
 import { useNavigate } from "react-router-dom";
 import { LuMoonStar } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { CourseCate } from "../../Data";
+import { CollegeCourse, SchoolCourse } from '../../Data';
+// import { CourseCate } from "../../Data";
 
 const Navbar = ({ theme }) => {
   const navigate=useNavigate();
@@ -54,7 +55,7 @@ const Navbar = ({ theme }) => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex left-1/2">
+                  {/* <div className="flex left-1/2">
                     {CourseCate.map((c, i) => {
                       return <div key={i} className="p-4">
                         <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
@@ -69,8 +70,40 @@ const Navbar = ({ theme }) => {
                         </ul>
                       </div>
                     })}
+                  </div> */}
+
+<div className="flex left-1/2">
+                    {SchoolCourse.map((c, i) => {
+                      return <div key={i} className="p-4">
+                        <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
+                        <ul className="flex flex-col">
+
+                          {c.subCate.map((sub, index) => {
+                            return <Link key={index} to={`/course/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                              {sub.course}
+                            </Link>
+                          })}
+
+                        </ul>
+                      </div>
+                    })}
+                    {CollegeCourse.map((c, i) => {
+                      return <div key={i} className="p-4">
+                        <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
+                        <ul className="flex flex-col">
+
+                          {c.subCate.map((sub, index) => {
+                            return <Link key={index} to={`/course/college/${sub.course}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                              {sub.course}
+                            </Link>
+                          })}
+
+                        </ul>
+                      </div>
+                    })}
                   </div>
                 </div>
+
               )}
             </div>
 

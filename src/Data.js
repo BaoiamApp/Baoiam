@@ -1,4 +1,4 @@
-export const CourseCate = [
+export const SchoolCourse = [
   {
     id: 1,
     Cate: "School",
@@ -129,6 +129,7 @@ export const CourseCate = [
       },
       {
         id: 2,
+        url: "/course/school/",
         course: "Creative writing",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2314.png",
         desc: [
@@ -289,6 +290,7 @@ export const CourseCate = [
       },
       {
         id: 3,
+        url: "/course/school/",
         course: "Art and craft (DIY)",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2313.png",
         desc: [
@@ -303,16 +305,48 @@ export const CourseCate = [
           "Art and Craft course also enhances students' self-confidence through successful completion of art and craft projects, promoting a positive sense of accomplishment and personal growth.",
         ],
         highlights: [
-          "Live online classes - learn from our experts live",
-          "Placement assistance - Access support for securing better jobs",
-          "Internships get hands - on experience by working in several firms",
-          "Letter of recommendation - enhance your credibility with endorsements from professionals",
-          "Live projects - Hands on live project with expert guidance",
-          "Doubt clearing sessions - get all your doubts cleared by your experts",
-          "Placement assessment - get all your doubts cleared by your experts",
-          "Certificate of completion - Evaluate your readiness for job opportunities",
-          "Mentorship sessions - validated your skills with a recognized certification",
-          "Digital resource hub - Guidance from industry experts",
+          {
+            icon: "MdOutlineClass",
+            head: "Live online classes",
+            desc: "learn from our experts live",
+          },
+          {
+            icon: "FcAssistant",
+            head: "Placement assistance",
+            desc: "Access support for securing better jobs",
+          },
+          {
+            icon: "GrUserWorker",
+            head: "Internships get hands",
+            desc: "on experience by working in several firms",
+          },
+          {
+            icon: "SlEnvolopeLetter",
+            head: "Letter of recommendation",
+            desc: "enhance your credibility with endorsements from professionals",
+          },
+          {
+            icon: "GoProjectRoadmap",
+            head: "Live projects",
+            desc: "Hands on live project with expert guidance",
+          },
+          {
+            icon: "MdOutlineLiveHelp",
+            head: "Doubt clearing sessions",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "MdOutlineAssessment",
+            head: "Placement assessment",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "PiCertificate",
+            head: "Certificate of completion",
+            desc: "Evaluate your readiness for job opportunities",
+          },
+          // "Mentorship sessions - validated your skills with a recognized certification",
+          // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
           "1. Introduction to Art and Craft - Exploring Art Creative Expression",
@@ -418,6 +452,7 @@ export const CourseCate = [
       },
       {
         id: 4,
+        url: "/course/school/",
         course: "Critical thinking & problem solving",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2318.png",
         desc: [
@@ -431,16 +466,48 @@ export const CourseCate = [
           "Connect classroom learning with real-world applications in order to apply your creative and problem-solving skills to practical, everyday problems.",
         ],
         highlights: [
-          "Live online classes - learn from our experts live",
-          "Placement assistance - Access support for securing better jobs",
-          "Internships get hands - on experience by working in several firms",
-          "Letter of recommendation - enhance your credibility with endorsements from professionals",
-          "Live projects - Hands on live project with expert guidance",
-          "Doubt clearing sessions - get all your doubts cleared by your experts",
-          "Placement assessment - get all your doubts cleared by your experts",
-          "Certificate of completion - Evaluate your readiness for job opportunities",
-          "Mentorship sessions - validated your skills with a recognized certification",
-          "Digital resource hub - Guidance from industry experts",
+          {
+            icon: "MdOutlineClass",
+            head: "Live online classes",
+            desc: "learn from our experts live",
+          },
+          {
+            icon: "FcAssistant",
+            head: "Placement assistance",
+            desc: "Access support for securing better jobs",
+          },
+          {
+            icon: "GrUserWorker",
+            head: "Internships get hands",
+            desc: "on experience by working in several firms",
+          },
+          {
+            icon: "SlEnvolopeLetter",
+            head: "Letter of recommendation",
+            desc: "enhance your credibility with endorsements from professionals",
+          },
+          {
+            icon: "GoProjectRoadmap",
+            head: "Live projects",
+            desc: "Hands on live project with expert guidance",
+          },
+          {
+            icon: "MdOutlineLiveHelp",
+            head: "Doubt clearing sessions",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "MdOutlineAssessment",
+            head: "Placement assessment",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "PiCertificate",
+            head: "Certificate of completion",
+            desc: "Evaluate your readiness for job opportunities",
+          },
+          // "Mentorship sessions - validated your skills with a recognized certification",
+          // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
           "1. Introduction to Creative Thinking - What is Creativity? Creative Mindsets",
@@ -546,6 +613,7 @@ export const CourseCate = [
       },
       {
         id: 5,
+        url: "/course/school/",
         course: "Life Skills",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2329.png",
         desc: [
@@ -559,16 +627,48 @@ export const CourseCate = [
           "Life skills course also helps to collaborate effectively in team settings and appreciate diverse perspectives, provide and receive constructive feedback to facilitate continuous improvement, and reflect on personal growth and the application of life skills in real-life scenarios.",
         ],
         highlights: [
-          "Live online classes - learn from our experts live",
-          "Placement assistance - Access support for securing better jobs",
-          "Internships get hands - on experience by working in several firms",
-          "Letter of recommendation - enhance your credibility with endorsements from professionals",
-          "Live projects - Hands on live project with expert guidance",
-          "Doubt clearing sessions - get all your doubts cleared by your experts",
-          "Placement assessment - get all your doubts cleared by your experts",
-          "Certificate of completion - Evaluate your readiness for job opportunities",
-          "Mentorship sessions - validated your skills with a recognized certification",
-          "Digital resource hub - Guidance from industry experts",
+          {
+            icon: "MdOutlineClass",
+            head: "Live online classes",
+            desc: "learn from our experts live",
+          },
+          {
+            icon: "FcAssistant",
+            head: "Placement assistance",
+            desc: "Access support for securing better jobs",
+          },
+          {
+            icon: "GrUserWorker",
+            head: "Internships get hands",
+            desc: "on experience by working in several firms",
+          },
+          {
+            icon: "SlEnvolopeLetter",
+            head: "Letter of recommendation",
+            desc: "enhance your credibility with endorsements from professionals",
+          },
+          {
+            icon: "GoProjectRoadmap",
+            head: "Live projects",
+            desc: "Hands on live project with expert guidance",
+          },
+          {
+            icon: "MdOutlineLiveHelp",
+            head: "Doubt clearing sessions",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "MdOutlineAssessment",
+            head: "Placement assessment",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "PiCertificate",
+            head: "Certificate of completion",
+            desc: "Evaluate your readiness for job opportunities",
+          },
+          // "Mentorship sessions - validated your skills with a recognized certification",
+          // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
           "1. Personal Management - Time Management; Goal Setting; Organization",
@@ -675,6 +775,7 @@ export const CourseCate = [
       },
       {
         id: 6,
+        url: "/course/school/",
         course: "Photography & editing skills",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2310.png",
         desc: [
@@ -688,16 +789,48 @@ export const CourseCate = [
           "By the end of this course you will gain confidence in your creative vision and powerful skills to edit emotions of any images with some mind blowing skills",
         ],
         highlights: [
-          "Live online classes - learn from our experts live",
-          "Placement assistance - Access support for securing better jobs",
-          "Internships get hands - on experience by working in several firms",
-          "Letter of recommendation - enhance your credibility with endorsements from professionals",
-          "Live projects - Hands on live project with expert guidance",
-          "Doubt clearing sessions - get all your doubts cleared by your experts",
-          "Placement assessment - get all your doubts cleared by your experts",
-          "Certificate of completion - Evaluate your readiness for job opportunities",
-          "Mentorship sessions - validated your skills with a recognized certification",
-          "Digital resource hub - Guidance from industry experts",
+          {
+            icon: "MdOutlineClass",
+            head: "Live online classes",
+            desc: "learn from our experts live",
+          },
+          {
+            icon: "FcAssistant",
+            head: "Placement assistance",
+            desc: "Access support for securing better jobs",
+          },
+          {
+            icon: "GrUserWorker",
+            head: "Internships get hands",
+            desc: "on experience by working in several firms",
+          },
+          {
+            icon: "SlEnvolopeLetter",
+            head: "Letter of recommendation",
+            desc: "enhance your credibility with endorsements from professionals",
+          },
+          {
+            icon: "GoProjectRoadmap",
+            head: "Live projects",
+            desc: "Hands on live project with expert guidance",
+          },
+          {
+            icon: "MdOutlineLiveHelp",
+            head: "Doubt clearing sessions",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "MdOutlineAssessment",
+            head: "Placement assessment",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "PiCertificate",
+            head: "Certificate of completion",
+            desc: "Evaluate your readiness for job opportunities",
+          },
+          // "Mentorship sessions - validated your skills with a recognized certification",
+          // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
           "1. Skill development",
@@ -802,6 +935,7 @@ export const CourseCate = [
       },
       {
         id: 7,
+        url: "/course/school/",
         course: "Technology Development with AI and Coding",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2326-1.png",
         desc: [
@@ -815,16 +949,48 @@ export const CourseCate = [
           "Learn programming languages like Python, Java, and programming C++. Solve problems generically by use of coded exercises or projects.",
         ],
         highlights: [
-          "Live online classes - learn from our experts live",
-          "Placement assistance - Access support for securing better jobs",
-          "Internships get hands - on experience by working in several firms",
-          "Letter of recommendation - enhance your credibility with endorsements from professionals",
-          "Live projects - Hands on live project with expert guidance",
-          "Doubt clearing sessions - get all your doubts cleared by your experts",
-          "Placement assessment - get all your doubts cleared by your experts",
-          "Certificate of completion - Evaluate your readiness for job opportunities",
-          "Mentorship sessions - validated your skills with a recognized certification",
-          "Digital resource hub - Guidance from industry experts",
+          {
+            icon: "MdOutlineClass",
+            head: "Live online classes",
+            desc: "learn from our experts live",
+          },
+          {
+            icon: "FcAssistant",
+            head: "Placement assistance",
+            desc: "Access support for securing better jobs",
+          },
+          {
+            icon: "GrUserWorker",
+            head: "Internships get hands",
+            desc: "on experience by working in several firms",
+          },
+          {
+            icon: "SlEnvolopeLetter",
+            head: "Letter of recommendation",
+            desc: "enhance your credibility with endorsements from professionals",
+          },
+          {
+            icon: "GoProjectRoadmap",
+            head: "Live projects",
+            desc: "Hands on live project with expert guidance",
+          },
+          {
+            icon: "MdOutlineLiveHelp",
+            head: "Doubt clearing sessions",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "MdOutlineAssessment",
+            head: "Placement assessment",
+            desc: "get all your doubts cleared by your experts",
+          },
+          {
+            icon: "PiCertificate",
+            head: "Certificate of completion",
+            desc: "Evaluate your readiness for job opportunities",
+          },
+          // "Mentorship sessions - validated your skills with a recognized certification",
+          // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
           "1. Introduction to Technology and Coding - Overview of technology trends and AI. Introduction to coding (basic concepts, algorithms)",
@@ -935,21 +1101,24 @@ export const CourseCate = [
       { id: 10, course: "Finance" },
     ],
   },
+];
+
+export const CollegeCourse = [
   {
-    id: 2,
+    id: 1,
     Cate: "College",
     link: "/courses/college",
     subCate: [
-      { id: 10, course: "Web Development" },
-      { id: 11, course: "Graphic Designing" },
-      { id: 12, course: "Human Resource" },
-      { id: 13, course: "Data Analytics" },
-      { id: 14, course: "Product Management" },
-      { id: 15, course: "Android Development" },
-      { id: 16, course: "Digital Marketing" },
-      { id: 17, course: "UI UX Design" },
-      { id: 18, course: "Software Testing" },
-      { id: 19, course: "Entrepreneurship and Innovation" },
+      { id: 1, course: "Web Development" },
+      { id: 2, course: "Graphic Designing" },
+      { id: 3, course: "Human Resource" },
+      { id: 4, course: "Data Analytics" },
+      { id: 5, course: "Product Management" },
+      { id: 6, course: "Android Development" },
+      { id: 7, course: "Digital Marketing" },
+      { id: 8, course: "UI UX Design" },
+      { id: 9, course: "Software Testing" },
+      { id: 10, course: "Entrepreneurship and Innovation" },
     ],
   },
 ];
