@@ -20,31 +20,30 @@ import icon7 from "../../images/online-lesson.png"
 const Career = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center overflow-x-hidden ">
-      <header className="  p-10 w-full flex flex-col lg:flex-row items-center lg:justify-between ">
-        <div className="lg:w-1/2 text-center lg:text-left lg:pl-20 animate-fade-in ">
-          <h1 className="text-4xl lg:text-6xl font-bold text-[#1f0a6b] mb-4 pb-5">
+      <header className="p-10 flex flex-col lg:flex-row items-center lg:justify-between w-full p-10">
+        <div className="lg:w-1/2 text-center lg:text-left lg:pl-10 animate-fade-in">
+          <h1 className="text-4xl lg:text-6xl font-bold text-[#1f0a6b] mb-6">
             Upskill your{" "}
             <span className="bg-gradient-to-r from-[#fc5305] to-[#fcbf05] text-transparent bg-clip-text">
               career
-            </span>
-            <br />
+            </span>{" "}
             journey with Us.
           </h1>
-          <p className="text-gray-800 mb-6 pb-5 ">
-            Come, join us & together we can transform the way the nation learns.
+          <p className="text-gray-800 mb-6 text-2xl mb-4">
+            Come, Join us & together we can transform the way nation learns.
             <br />
             Want to know how BAOIAM can help you?
           </p>
-          <button className="bg-gradient-to-r from-[#fc5305] to-[#fcbf05] text-white py-3 px-6 rounded-full hover:scale-105 transform transition duration-300 ease-in-out shadow-lg">
+          <button className="bg-gradient-to-r from-[#fc5305] to-[#fcbf05] text-white py-3 px-6 rounded-full hover:scale-105 transform transition duration-300 ease-in-out shadow-lg text-2xl">
             Contact Us
           </button>
         </div>
-        <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
-          <div className="w-70 h-70 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+        <div className="lg:w-50 mt-6 lg:mt-0 flex justify-center lg:justify-end">
+          <div className="relative w-full h-full  overflow-hidden shadow-lg">
             <img
-              src={image1}
+              src={image1} // Replace with your image path
               alt="Upskill your career"
-              className="w-full h-full object-cover"
+              className="object-cover pr-5"
             />
           </div>
         </div>
@@ -72,7 +71,7 @@ const Career = () => {
             {/* Box 1 */}
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-6">
-                <div className="bg-pink-200 text-pink-600 rounded-full p-4">
+                <div className="bg-white rounded-full p-4">
                   <img
                     src={icon2}
                     alt="Icon Description"
@@ -81,7 +80,7 @@ const Career = () => {
                 </div>
                 <div>
                   <h2 className="text-2xl font-semibold">Solution Oriented</h2>
-                  <p>
+                  <p className="text-lg">
                     If you have an entrepreneurial mindset & want to change
                     hundreds of lives literally.
                   </p>
@@ -91,7 +90,7 @@ const Career = () => {
             {/* Box 2 */}
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-6">
-                <div className="bg-pink-200 text-pink-600 rounded-full p-4">
+                <div className="bg-white rounded-full p-4">
                   <img
                     src={icon1}
                     alt="Icon Description"
@@ -100,7 +99,7 @@ const Career = () => {
                 </div>
                 <div>
                   <h2 className="text-2xl font-semibold">Self-Motivated</h2>
-                  <p>
+                  <p className="text-lg">
                     If you have perseverance & dedication to achieve your goals
                     and work best without supervision.
                   </p>
@@ -110,7 +109,7 @@ const Career = () => {
             {/* Box 3 */}
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-6">
-                <div className="bg-pink-200 text-pink-600 rounded-full p-4">
+                <div className="bg-white rounded-full p-4">
                   <img
                     src={icon7}
                     alt="Icon Description"
@@ -121,7 +120,7 @@ const Career = () => {
                   <h2 className="text-2xl font-semibold">
                     A Go-Getter & Passionate
                   </h2>
-                  <p>
+                  <p className="text-lg">
                     You have innovative ideas and an urge to implement them.
                     Also, your education lies beyond books.
                   </p>
@@ -140,14 +139,14 @@ const Career = () => {
               BAOIAM?
             </span>
           </h1>
-          <p>
+          <p className="text-lg">
             We believe in creating a holistic and dynamic workplace where you
             can create, innovate, and ideate & turn them into reality!
           </p>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-6">
-                <div className="bg-pink-200 text-pink-600 rounded-full p-4">
+                <div className="bg-white rounded-full p-4">
                   <img
                     src={icon4}
                     alt="Icon Description"
@@ -158,14 +157,16 @@ const Career = () => {
                   <h2 className="text-2xl font-semibold">
                     Employee-friendly policies
                   </h2>
-                  <p>Incentives | Paid leaves | Medical emergency leave</p>
+                  <p className="text-lg">
+                    Incentives | Paid leaves | Medical emergency leave
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-6">
-                <div className="bg-pink-200 text-pink-600 rounded-full p-4">
+                <div className="bg-white rounded-full p-4">
                   <img
                     src={icon5}
                     alt="Icon Description"
@@ -176,14 +177,14 @@ const Career = () => {
                   <h2 className="text-2xl font-semibold">
                     We've got your back
                   </h2>
-                  <p>Insurance cover | Family insurance</p>
+                  <p className="text-lg">Insurance cover | Family insurance</p>
                 </div>
               </div>
             </div>
 
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-6">
-                <div className="bg-pink-200 text-pink-600 rounded-full p-4">
+                <div className="bg-white text-pink-600 rounded-full p-4">
                   <img
                     src={icon6}
                     alt="Icon Description"
@@ -194,7 +195,7 @@ const Career = () => {
                   <h2 className="text-2xl font-semibold">
                     Unparalleled learning opportunities
                   </h2>
-                  <p>
+                  <p className="text-lg">
                     Best-in-class Mentors and Leaders | Accelerated growth |
                     Timely feedback
                   </p>
@@ -229,43 +230,36 @@ const Career = () => {
 
         {/* Image Section with Gradient Background */}
         <section className="relative">
-          <div
-            className="flex  p-16 "
-            style={{
-              background: "linear-gradient(90deg, #f7fafa, #b9e5ed)",
-            }}
-          >
-            <div className="flex flex-wrap justify-center gap-16">
-              <div
-                className="relative bg-gradient-to-br from-teal-300 via-green-300 to-lime-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-                style={{ width: "350px", height: "350px" }}
-              >
-                <img
-                  src={image4}
-                  alt="Group of individuals in a meeting"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
-              <div
-                className="relative bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-                style={{ width: "350px", height: "350px" }}
-              >
-                <img
-                  src={image5}
-                  alt="Individual giving a presentation"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
-              <div
-                className="relative bg-gradient-to-br from-yellow-300 via-red-300 to-orange-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-                style={{ width: "350px", height: "350px" }}
-              >
-                <img
-                  src={image3}
-                  alt="Individuals working on laptops"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
+          <div className="flex flex-wrap justify-center gap-16">
+            <div
+              className="relative bg-gradient-to-br from-teal-300 via-green-300 to-lime-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
+              style={{ width: "350px", height: "350px" }}
+            >
+              <img
+                src={image4}
+                alt="Group of individuals in a meeting"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <div
+              className="relative bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
+              style={{ width: "350px", height: "350px" }}
+            >
+              <img
+                src={image5}
+                alt="Individual giving a presentation"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <div
+              className="relative bg-gradient-to-br from-yellow-300 via-red-300 to-orange-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
+              style={{ width: "350px", height: "350px" }}
+            >
+              <img
+                src={image3}
+                alt="Individuals working on laptops"
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
           </div>
         </section>
