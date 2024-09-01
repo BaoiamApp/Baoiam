@@ -12,7 +12,7 @@ const Protocol = () => {
     <div className='mt-[4rem]'><h1 className='text-[2rem] my-2 text-center font-bold'>Virtues and protocols <span className='underline text-blue-700'>BAOIAM</span> works on</h1></div>
 
 
-   <div className='flex-col w-[100%] lg:flex lg:justify-evenly lg:flex-row lg:px-[1rem] lg:w-[100%] mx-[1rem]'>
+   <div className='flex-col w-[100%] lg:flex lg:justify-evenly lg:flex-row lg:px-[1rem] lg:w-[100%]'>
 
 
      <div className='w-[90%] lg:w-[30%] p-[2rem]  flex-col my-[0.5rem]'>

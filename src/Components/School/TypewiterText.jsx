@@ -4,9 +4,9 @@ import { FaSearch } from "react-icons/fa";
 
 const TypewriterText = () => {
   return (
-    <div className="flex flex-col items-center justify-center pt-10 bg-white px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center justify-center pt-10 dark:bg-black dark:text-white bg-white px-4 sm:px-6 lg:px-8">
       <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           Master{" "}
           <span className="text-orange-500">
             <Typewriter
@@ -26,13 +26,13 @@ const TypewriterText = () => {
             />
           </span>
         </h1>
-        <p className="mt-4 text-lg sm:text-xl lg:text-2xl text-gray-600">
+        <p className="mt-4 text-lg sm:text-xl lg:text-2xl">
           Learn and grow with the best courses available.
         </p>
         <div className="relative mt-8 w-full max-w-md mx-auto">
           <input
             type="text"
-            className="w-full px-4 py-3 pl-12 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 hover:shadow-md"
+            className="w-full px-4 bg-inherit py-3 pl-12 border rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 hover:shadow-md"
             placeholder="What do you want to learn today?"
           />
           <FaSearch className="absolute left-4 top-3.5 text-orange-500" />
