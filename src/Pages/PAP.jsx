@@ -2,7 +2,7 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "./style.css";
+// import "./style.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -48,14 +48,19 @@ const PAP = () => {
     },
   ];
 
-  // const handleReadMoreClick = (e) => {
-  //   e.preventDefault();
-  //   // Your "Read More" logic goes here
-  //   console.log("Read More clicked");
-  // };
-
   return (
     <div className="dark:bg-black dark:text-white">
+      <style>
+        {`
+          .swiper-button-next, .swiper-button-prev {
+            color: #f94327 !important;
+            font-size: 20px !important;
+          }
+          .swiper-button-disabled {
+            display: none !important;
+          }
+        `}
+      </style>
       {/* section 1 */}
       <div className="">
         <img src={banner_pap} alt="banner" />
@@ -343,24 +348,37 @@ const PAP = () => {
           pagination={{
             clickable: true,
             dynamicBullets: false,
+            el: ".swiper-pagination-bullet-custom",
           }}
-          navigation={true}
+          navigation={{
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+          }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
+          className="w-full h-full dark:bg-black dark:text-white"
         >
           {slides.map((slide, index) => (
-            <SwiperSlide key={index} className="">
+            <SwiperSlide
+              key={index}
+              className="text-center text-[18px] flex justify-center items-center bg-white"
+            >
               <div className="relative flex flex-col flex-wrap sm:flex-nowrap h-180 sm:h-104 border-3xl rounded-3xl border-slate-400 mb-12">
-                <div className="absolute -left-12 top-2 my-10 w-72 h-72 rounded-2xl opacity-80">
+                <div
+                  className="absolute -left-12 top-2 my-10 w-72 h-72 rounded-2xl opacity-80"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <img
                     src={slide.imgSrc}
                     alt={slide.title}
-                    className="object-cover rounded-2xl shadow-lg "
+                    className="block w-full h-full object-cover rounded-2xl shadow-lg"
                   />
                 </div>
-                {/* <div className="flex flex-col sm:flex-row"> */}
                 <div className="p-6 bg-white rounded-3xl border-slate-400 shadow-md max-w-xl h-104 text-right sm:max-w-xl md:h-96 md:max-w-2xl lg:max-w-3xl">
-                  <span className=" text-gray-500 text-sm block mb-2">
+                  <span className="text-gray-500 text-sm block mb-2">
                     {slide.date}
                   </span>
                   <div className="text-2xl font-bold text-[#031864] mb-4">
@@ -369,17 +387,22 @@ const PAP = () => {
                   <div className="w-1/2 ml-auto text-gray-700 mb-4 text-left">
                     {slide.text}
                   </div>
-                  {/* <button
-                    onClick={handleReadMoreClick}
-                    className="text-blue-500 font-semibold hover:underline"
-                  >
-                    READ MORE
-                  </button> */}
-                  {/* </div> */}
                 </div>
               </div>
             </SwiperSlide>
           ))}
+          <div
+            className="swiper-button-next swiper-button-next-custom"
+            style={{ color: "#f94327", fontSize: "20px" }}
+          />
+          <div
+            className="swiper-button-prev swiper-button-prev-custom"
+            style={{ color: "#f94327", fontSize: "20px" }}
+          />
+          <div
+            className="swiper-pagination-bullet swiper-pagination-bullet-custom"
+            style={{ display: "none" }}
+          />
         </Swiper>
       </div>
     </div>
