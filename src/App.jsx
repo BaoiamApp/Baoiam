@@ -10,7 +10,7 @@ import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 import Course from './Components/course/[id]/course'
 
-import College from './Components/College/College'
+import College from './Pages/College'
 const App = () => {
   const [dark, setDark] = useState(false);
 

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 const SortPopover = ({setFilteredCourses,courses }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -22,19 +23,30 @@ const SortPopover = ({setFilteredCourses,courses }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+const sortMixedArray = (arr,order) => {
+
+        const strings = arr.filter((item) => item.price === 'Free');
+        const numbers = arr.filter((item) => item.price !== 'Free');
+        strings.sort((a, b) => a.price.localeCompare(b.price));      
+        numbers.sort((a, b) =>  order==='asc'?(a.price.substr(1) - b.price.substr(1)):(b.price.substr(1) - a.price.substr(1)));
+        // Concatenate sorted strings first, then sorted numbers
+        
+        // console.log("strings",strings)
+        console.log("numbers",numbers.map(x=>x.price))
+        return order==='asc'?[...strings, ...numbers]:[...numbers,...strings];
+      };
+
 
   const sortCourses = (sortBy) => {
-    console.log("sorting....")
+    
     switch (sortBy) {
-      case 'Price: Low to High':
-        return [...courses].sort((a, b) => {
-            if(a.price === 'Free'){
-                return true;
-            }
-            a.price - b.price;
-        });
-      case 'Price: High to Low':
-        return [...courses].sort((a, b) => b.price - a.price);
+      case 'Price: Low to High':{
+        return sortMixedArray(courses,'asc')
+      }
+      case 'Price: High to Low':{
+        
+          return sortMixedArray(courses,'dec')
+      }
       case 'Duration: Low to High':
         return [...courses].sort((a, b) => a.courseDuration.split(" ")[0]- b.courseDuration.split(" ")[0]);
       case 'Duration: High to Low':
@@ -52,20 +64,8 @@ const SortPopover = ({setFilteredCourses,courses }) => {
         onClick={toggleDropdown}
         className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
       >
-        Sort
-        <svg
-          className="ml-2 -mr-1 h-5 w-5"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
+        Sort    
+        {!isDropdownOpen?<MdKeyboardArrowDown className="ml-2 -mr-1 h-5 w-5" size={20}/>:<MdKeyboardArrowUp className="ml-2 -mr-1 h-5 w-5" size={20}/>}
       </button>
 
       {/* Dropdown Menu */}

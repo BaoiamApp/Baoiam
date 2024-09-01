@@ -15,13 +15,8 @@ function CourseCard({ course }) {
           <p className="py-2 px-4 bg-blue-100 text-blue-500 font-semibold w-fit text-xs rounded-md text-nowrap my-4">
             {course.category}
           </p>
-          <div className="text-green-400 rounded-full shadow-md cursor-pointer">
-            {course.price === "Free" ? <MdOutlineMoneyOff size={22} /> : <div className="flex items-center group hover:pr-2">
-              <MdOutlineAttachMoney size={22} />
-              <div className="font-medium text-lg hidden group-hover:block transition duration-300 ease-in-out">
-                {course.price.substr(1)}
-                </div>
-            </div>}
+          <div className="text-amber-400 rounded-sm px-3 text-sm">
+            {course.difficultyLevel}
           </div>
         </div>
         <h3 className="text-gray-800 text-xl font-bold overflow-hidden text-ellipsis line-clamp-2 hover:line-clamp-none">
@@ -30,7 +25,7 @@ function CourseCard({ course }) {
         <p className="mt-4 text-sm text-gray-500 leading-relaxed">Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
           arcu.
         </p>
-        <div className="absolute bottom-4 w-full flex flex-col items-start gap-4">
+        <div className="absolute bottom-4 w-10/12 flex flex-col items-start gap-4">
           <div className="flex items-center text-gray-500 font-semibold space-x-4">
             <div className="flex items-center">
               <AiOutlineClockCircle className="mr-1" />
@@ -45,19 +40,19 @@ function CourseCard({ course }) {
               </span>
             </div>
           </div>
-          <div className="flex justify-between w-full items-center ">
+          <div className="flex justify-between gap-4 w-full items-center ">
             <button
               type="button"
-              className="px-4 py-2 pr-2 rounded-lg border-green-600 border text-sm tracking-wider outline-none text-green-600 hover:bg-green-600 hover:text-white transition-all duration-150 active:text-green-600 flex items-center "
+              className="p-2 rounded-lg text-sm tracking-wider outline-none text-green-600 flex items-center "
             >
-              More
-              <MdKeyboardArrowRight className="text-xl " />
+              {course.price}
+              {/* <MdKeyboardArrowRight className="text-xl " /> */}
             </button>
             <button
               type="button"
-              className="px-4 py-2 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-gradient-to-r from-indigo-800 to-indigo-500 hover:bg-blue-700 w-fit active:bg-blue-600  "
+              className="px-4 py-2 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-gradient-to-r from-indigo-800 to-indigo-500 w-fit"
             >
-              Start Learning
+              Read More
             </button>
           </div>
         </div>
