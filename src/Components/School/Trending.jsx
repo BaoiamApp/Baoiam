@@ -44,7 +44,10 @@ const Trending = () => {
           <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
         </h1>
       </div>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div
+        onClick={handleCardClick}
+        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
         {tutors.map((tutor, index) => (
           <TutorCard
             key={index}
