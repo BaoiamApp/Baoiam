@@ -66,7 +66,7 @@ const Career = () => {
             </span>{" "}
             If You Are
           </h1>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 pl-7">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-1 pl-7">
             {/* Box 1 */}
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-4 sm:p-6">
@@ -147,7 +147,7 @@ const Career = () => {
             We believe in creating a holistic and dynamic workplace where you
             can create, innovate, and ideate & turn them into reality!
           </p>
-          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 pl-7">
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-1 pl-7">
             {/* Box 1 */}
             <div className="flex bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
               <div className="flex items-start space-x-4 p-4 sm:p-6">
