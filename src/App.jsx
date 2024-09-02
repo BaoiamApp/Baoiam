@@ -35,7 +35,7 @@ const App = () => {
       <Navbar theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gscp" element={<GSCB />} />
+        <Route path="/gcsp" element={<GSCB />} />
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path="/pap" element={<PAP />} />
         <Route path="/checkout" element={<Checkout />} />
