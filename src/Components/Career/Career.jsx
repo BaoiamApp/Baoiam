@@ -239,21 +239,21 @@ const Career = () => {
         {/* Image Section with Gradient Background */}
         <section className="relative py-8 px-4">
           <div className="flex flex-wrap justify-center gap-8  md:gap-6 lg:gap-16">
-            <div className="relative w-1/2  md:w-1/4 lg:w-1/4 h-auto bg-gradient-to-br from-teal-300 via-green-300 to-lime-300 p-2 lg:p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="relative w-1/2  md:w-1/4 lg:w-1/5 h-auto bg-gradient-to-br from-teal-300 via-green-300 to-lime-300 p-2 lg:p-3 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={image4}
                 alt="Group of individuals in a meeting"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
-            <div className="relative w-1/2  md:w-1/4 lg:w-1/4 h-auto bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 p-2  lg:p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="relative w-1/2  md:w-1/4 lg:w-1/5 h-auto bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 p-2  lg:p-3 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={image5}
                 alt="Individual giving a presentation"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
-            <div className="relative w-1/2  md:w-1/4 lg:w-1/4 h-auto bg-gradient-to-br from-yellow-300 via-red-300 to-orange-300 p-2  lg:p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="relative w-1/2  md:w-1/4 lg:w-1/5 h-auto bg-gradient-to-br from-yellow-300 via-red-300 to-orange-300 p-2  lg:p-3 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={image3}
                 alt="Individuals working on laptops"
