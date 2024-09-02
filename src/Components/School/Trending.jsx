@@ -3,7 +3,7 @@ import { FaCheckCircle, FaStar } from "react-icons/fa";
 import tutors from "./tutors.json"; // Importing JSON data
 
 const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
-  <div className="bg-white shadow-md rounded-lg p-4 max-w-sm hover:scale-105 hover:duration-500 hover:shadow-lg hover:border hover:border-zinc-200">
+  <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-gray-200 shadow-md rounded-lg p-4 max-w-sm hover:scale-105 hover:duration-500 hover:shadow-lg hover:border hover:border-zinc-200">
     <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg" />
     <div className="mt-4">
       <h2 className="text-xl font-bold">{title}</h2>
@@ -24,14 +24,12 @@ const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
 
 const Trending = () => {
   return (
-    <div className="container mx-auto pt-10 lg:pt-10">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold inline-block relative">
+    <div className="container mx-auto pt-10 lg:pr-40 lg:pt-10">
+        <h1 className="text-3xl mb-8 font-bold inline-block relative">
           Trending Courses
           <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
         </h1>
-      </div>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-6  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {tutors.map((tutor, index) => (
           <TutorCard 
             key={index}

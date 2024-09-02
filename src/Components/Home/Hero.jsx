@@ -4,14 +4,14 @@ import Herobg from '../../assets/Hero.png'
 
 const Hero = () => {
   return (
-    <div className="bg-white my-16 flex flex-col-reverse md:flex-row h-[100vh] lg:h-[80vh] md:py-12 px-6 lg:px-16">
+    <div className="bg-white dark:bg-black dark:text-white my-16 flex flex-col-reverse md:flex-row h-[100vh] lg:h-[80vh] md:py-12 px-6 lg:px-16">
     {/* Left Side: Heading and Content */}
     <div className="w-full flex gap-y-1 flex-col lg:w-1/2 text-center lg:text-left">
-      <h1 className="text-black text-3xl sm:text-4xl lg:text-5xl font-bold">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
         Empowering<span className="text-blue-500"> Education</span> </h1>
-         <h1 className="text-black text-3xl sm:text-4xl lg:text-5xl font-bold"> With <span className="text-orange-500">Technology</span>
+         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold"> With <span className="text-orange-500">Technology</span>
        </h1>
-      <p className="mt-4 text-lg  text-black sm:text-xl lg:text-2xl">
+      <p className="mt-4 text-lg dark:text-white text-black sm:text-xl lg:text-2xl">
         Join thousands of learners from around the world who are mastering
         new skills, advancing their careers, and exploring new opportunities.
       </p>
@@ -19,7 +19,7 @@ const Hero = () => {
         <button className="bg-orange-600 text-white px-4 py-3 rounded-lg text-xl font-semibold hover:bg-gradient-to-r from-orange-500 to-violet-500 hover:ease-in hover:duration-300">
           Explore Courses
         </button>
-        <button className="bg-trasparent border border-black text-black text-xl px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 hover:text-white hover:border-white">
+        <button className="bg-trasparent border border-black dark:border-white text-xl px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 hover:text-white hover:border-white">
           Get Started
         </button>
       </div>

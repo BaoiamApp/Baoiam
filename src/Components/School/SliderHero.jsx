@@ -21,12 +21,12 @@ export default function App() {
         grabCursor={swiperSettings.grabCursor}
         modules={[EffectCards, Autoplay]}
         autoplay={swiperSettings.autoplay}
-        className={`mySwiper w-full h-full sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144`}
+        className={`w-full h-full md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144`}
       >
         {cards.map((card, index) => (
           <SwiperSlide
             key={index}
-            className="flex items-center justify-center rounded-xl text-2xl font-bold text-white"
+            className="flex items-center justify-center rounded-xl text-white"
             style={{
               backgroundColor: card.backgroundColor,
               backgroundImage: card.backgroundImage ? `url(${card.backgroundImage})` : 'none',

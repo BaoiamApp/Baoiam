@@ -87,8 +87,20 @@ function Footer() {
             <FaYoutube />
             <FaLinkedin />
           </div>
-        </div>
+          </div>
+
+          <div className=" lg:col-start-4 sm:col-start-2 ">
+          <div className="flex items-center gap-3">
+        <a href="/terms-conditions" className="text-black hover:underline">
+          Terms & Conditions
+        </a>
+        <a href="/privacy-policy" className="text-black hover:underline">
+          Privacy Policy
+        </a>
       </div>
+      </div>
+      
+</div>
       <hr className="w-11/12 border-2 border-slate-700 mx-auto" />
 
       <div className="flex justify-between py-4 items-center">
@@ -96,10 +108,9 @@ function Footer() {
           Copyright
           <FaRegCopyright /> 2023 BAOIAM. ALL Rights Reserved
         </div>
-        
-      </div>
-    </div>
-  );
+        </div>
+ </div>
+        );
 }
 
 export default Footer;

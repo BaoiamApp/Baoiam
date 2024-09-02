@@ -18,10 +18,11 @@ const SkillCatalog = () => {
   };
 
   return (
-    <div className="p-6">
-       <h2 className="text-3xl font-bold mb-6">Skill Catalog
-    <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
-    </h2>
+    <div className="container mx-auto pt-10 lg:pr-40 lg:pt-10">
+        <h1 className="text-3xl mb-8 font-bold inline-block relative">
+          Skill Catalog
+          <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
+        </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {courses.map((course) => (
           <div
