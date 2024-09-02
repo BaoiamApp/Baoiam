@@ -111,21 +111,21 @@ const Navbar = ({ theme }) => {
             <FaRegUser onClick={() => setUserDrop(!userDrop)} size={18} className='z-10 relative cursor-pointer' />
 
             {userDrop && (
-              <div class="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                {/* <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <div className="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600">
+                {/* <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                   <div>Bonnie Green</div>
-                  <div class="font-medium truncate">name@flowbite.com</div>
+                  <div className="font-medium truncate">name@flowbite.com</div>
                 </div> */}
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Login</a>
+                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Login
                   </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Sign Up
                   </li>
                 </ul>
-                {/* <div class="py-2">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                {/* <div className="py-2">
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                 </div> */}
               </div>
             )}
@@ -247,15 +247,15 @@ const Navbar = ({ theme }) => {
 
                 </ul>
 
-                <ul class="pt-4 mt-4 font-medium border-t border-gray-200 dark:border-gray-700">
-                  <li class="flex items-center p-2 font-medium text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                <ul className="pt-4 mt-4 font-medium border-t border-gray-200 dark:border-gray-700">
+                  <li className="flex items-center p-2 font-medium text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
                     Theme
                   </li>
-                  <li onClick={darkTheme} class="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                  <li onClick={darkTheme} className="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
 
                     <BsSun size={18} /> Light
                   </li>
-                  <li onClick={darkTheme} class="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                  <li onClick={darkTheme} className="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
 
                     <BsMoonStars size={18} /> Dark
                   </li>
