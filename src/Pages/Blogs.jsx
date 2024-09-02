@@ -70,7 +70,7 @@ const Blog = () => {
                 <h2 className="text-l  text-center mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {blog_list.map((item, i) =>
-                        <Link key={i} to="/">
+                        <Link key={i} to="/Blog_detail">
                         <div className="bg-white dark:bg-black dark:text-white shadow-lg rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                             <img className="w-full h-48 object-cover" src={item.imgSrc} alt={`Blog Post ${i}`} />
                             <div className="p-6">
