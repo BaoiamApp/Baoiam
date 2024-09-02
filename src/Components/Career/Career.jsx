@@ -21,7 +21,7 @@ const Career = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center overflow-x-hidden">
       <header className="p-4 sm:p-6 lg:p-10 flex flex-col lg:flex-row items-center lg:justify-between w-full">
-        <div className="lg:w-1/2 text-center lg:text-left lg:pl-10 animate-fade-in">
+        <div className="lg:w-1/2 text-center lg:text-left lg:pl-12 animate-fade-in  ">
           <h1 className=" text-4xl md:text-4xl sm:text-6xl lg:text-6xl font-bold text-[#1f0a6b] mb-4 sm:mb-6 md:m-4">
             Upskill your{" "}
             <span className="bg-gradient-to-r from-[#fc5305] to-[#fcbf05] text-transparent bg-clip-text">
@@ -38,8 +38,8 @@ const Career = () => {
             Contact Us
           </button>
         </div>
-        <div className="lg:w-50 mt-6 lg:mt-0 flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg overflow-hidden ">
+        <div className="lg:w-1/2 mt-6 lg:mt-0 flex lg:pl-6 justify-center ">
+          <div className="relative w-full h-full  max-w-sm sm:max-w-md lg:max-w-lg overflow-hidden ">
             <img
               src={image1} // Replace with your image path
               alt="Upskill your career"
@@ -81,7 +81,7 @@ const Career = () => {
                   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
                     Solution Oriented
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-base">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-lg">
                     If you have an entrepreneurial mindset & want to change
                     hundreds of lives literally.
                   </p>
@@ -102,7 +102,7 @@ const Career = () => {
                   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
                     Self-Motivated
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-base">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-lg">
                     If you have perseverance & dedication to achieve your goals
                     and work best without supervision.
                   </p>
@@ -136,8 +136,10 @@ const Career = () => {
 
       <div className="max-w-screen-xl mx-auto my-16 flex flex-col lg:flex-row items-center">
         <div className="flex-1">
-          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 lg:mb-10 text-[#1f0a6b]
-          pl-7">
+          <h1
+            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 lg:mb-10 text-[#1f0a6b]
+          pl-7"
+          >
             Why{" "}
             <span className="bg-gradient-to-r from-[#fc5305] to-[#fcbf05] text-transparent bg-clip-text">
               BAOIAM?
@@ -162,7 +164,7 @@ const Career = () => {
                   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
                     Employee-friendly policies
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-base">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-lg">
                     Incentives | Paid leaves | Medical emergency leave
                   </p>
                 </div>
@@ -182,7 +184,7 @@ const Career = () => {
                   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
                     We've got your back
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-base">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-lg">
                     Insurance cover | Family insurance
                   </p>
                 </div>
@@ -202,7 +204,7 @@ const Career = () => {
                   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
                     Unparalleled learning opportunities
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-base">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-lg">
                     Best-in-class Mentors and Leaders | Accelerated growth |
                     Timely feedback
                   </p>
@@ -236,46 +238,22 @@ const Career = () => {
 
         {/* Image Section with Gradient Background */}
         <section className="relative py-8 px-4">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
-            <div
-              className="relative bg-gradient-to-br from-teal-300 via-green-300 to-lime-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              style={{
-                width: "100%",
-                maxWidth: "350px",
-                height: "auto",
-                aspectRatio: "1 / 1",
-              }}
-            >
+          <div className="flex flex-wrap justify-center gap-8  md:gap-6 lg:gap-16">
+            <div className="relative w-1/2  md:w-1/4 lg:w-1/4 h-auto bg-gradient-to-br from-teal-300 via-green-300 to-lime-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={image4}
                 alt="Group of individuals in a meeting"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
-            <div
-              className="relative bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              style={{
-                width: "100%",
-                maxWidth: "350px",
-                height: "auto",
-                aspectRatio: "1 / 1",
-              }}
-            >
+            <div className="relative w-1/2  md:w-1/4 lg:w-1/4 h-auto bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={image5}
                 alt="Individual giving a presentation"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
-            <div
-              className="relative bg-gradient-to-br from-yellow-300 via-red-300 to-orange-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              style={{
-                width: "100%",
-                maxWidth: "350px",
-                height: "auto",
-                aspectRatio: "1 / 1",
-              }}
-            >
+            <div className="relative w-1/2  md:w-1/4 lg:w-1/4 h-auto bg-gradient-to-br from-yellow-300 via-red-300 to-orange-300 p-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={image3}
                 alt="Individuals working on laptops"
@@ -299,7 +277,7 @@ const Career = () => {
               Get a sneak-peek of what happens at BAOIAM
             </p>
           </div>
-          <div className="mt-8 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-8 w-full grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
             <div className="flex flex-col bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out overflow-hidden h-full">
               <img
