@@ -20,6 +20,7 @@ import College from './Components/College/College'
 import SchoolCourse from './Pages/SchoolCourse'
 import Blogs from './Pages/Blogs'
 import Career from './Components/Career/Career'
+import Blog_detail from './Pages/Blog_detail'
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -53,7 +54,7 @@ const App = () => {
         <Route path="/courses/college/:courseName" element={<College />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blogs" element={<Blogs />} />
-
+        <Route path="/Blog_detail" element={<Blog_detail />} />
         <Route path="/career" element={<Career />} />
 
         <Route path="/Maintenance" element={<Maintenance />} />
