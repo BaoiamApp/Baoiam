@@ -37,13 +37,13 @@ const Hero = () => {
         </div>
       </div>
 
-   
 
-    {/* Right Side:Slider*/}
-    <div className='w-full flex justify-center lg:items-center h-full lg:w-1/2'>
-      <img className='object-cover' src={Herobg} alt='Right image'/>
+
+      {/* Right Side:Slider*/}
+      <div className='w-full flex justify-center lg:items-center h-[60%] md:h-full lg:w-1/2'>
+        <img className='object-cover' src={Herobg} alt='Right image' />
+      </div>
     </div>
-  </div>
   )
 }
 
