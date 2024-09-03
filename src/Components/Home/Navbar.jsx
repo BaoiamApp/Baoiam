@@ -101,7 +101,7 @@ const Navbar = ({ theme }) => {
                         </Link>
                       })}
 
-                    </ul> 
+                    </ul>
 
                   </div>
                 })}
@@ -119,8 +119,8 @@ const Navbar = ({ theme }) => {
                     </ul>
                   </div>
                 })}
-              </div>
-            </div>
+              </div >
+            </div >
           )}
           <Link to={'/about-us'} onClick={() => handleLinkClick('About')} className={`mx-4 hover:text-indigo-500 ${linkActive === 'About' ? "text-indigo-600" : ""} `}>About Us</Link>
 
@@ -155,20 +155,8 @@ const Navbar = ({ theme }) => {
                   </li>
                 </ul>
                 {/* <div className="py-2">
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Login
-                  </li>
-                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Sign Up
-                  </li>
-                </ul>
-                {/* <div className="py-2">
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                 </div> */}
-              </div>
-            )}
-          </div>
               </div>
             )}
           </div>
