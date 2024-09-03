@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { School } from '../Data'
 import { CourseDesc2, CourseOverview } from '../assets/assets';
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight, FaGraduationCap } from 'react-icons/fa6';
@@ -157,7 +157,7 @@ const SchoolCourse = () => {
                             })}
                         </div>
 
-                        <div className="text-center text-sm text-gray-500 sm:text-base">Need help deciding? <a href="#" className="text-gray-600 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch</a>.</div>
+                        <div className="text-center text-sm text-gray-500 sm:text-base">Need help deciding? <Link to={'/'} className="text-gray-600 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch</Link>.</div>
                     </div>
                 </div>
             </div>

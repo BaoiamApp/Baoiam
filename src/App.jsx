@@ -30,11 +30,11 @@ const App = () => {
   }
 
   return (
-    <div className="dark:bg-black dark:text-white ">
+    <div className="dark:bg-black w-full h-full dark:text-white ">
       <Navbar theme={theme} />
       <Routes>
       <Route path="/" element={<Home />} />
-        <Route path="/gscp" element={<GSCB />} />
+        <Route path="/gcsp" element={<GSCB />} />
         <Route path="/courses/school" element={<School />} />
         {/* <Route path="/course/:id" element={<Course />} /> */}
         <Route path="/signup" element={<SignUp />} />

@@ -1,6 +1,5 @@
 export const School = [
   {
-    id: 1,
     Cate: "School",
     link: "/courses/school",
     subCate: [
