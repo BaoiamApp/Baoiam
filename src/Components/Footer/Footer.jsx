@@ -15,6 +15,34 @@ import {
 import { TiSocialFacebook } from "react-icons/ti";
 
 function Footer() {
+  const footerData=[
+    {
+      heading: "Quick Links",
+      links: [
+        "Home",
+        "Care",
+        "Hire From Us",
+        "BTH - Talent Hunt Exam",
+        "Refer and Earn",
+      ],
+    },
+    {
+      heading: "Other Links",
+      links: ["Blog", "Events and Contest", "Contact US"],
+    },
+    {
+      heading: "Courses",
+      links: [
+        "B Block Noida Sector 15 Uttar Pradesh",
+        "Product Management",
+        "SAP FICO",
+      ],
+    },
+    {
+      heading: "Contact Us",
+      links: ["Entrepreneurship", "tutors@baoiam.com", "08069640635"],
+    },
+  ];
   return (
     <div className="w-full pt-8 pb-4 dark:bg-black dark:text-white rounded-lg relative shadow-md bg-slate-200 text-black ">
       <div className="flex flex-wrap gap-8 justify-between mx-auto w-10/12 py-2 items-center">
@@ -33,42 +61,11 @@ function Footer() {
             <img src={PlayStore} alt='PlayStore' />   
           </div>
         </div>
-        {/* <p className="font-semibold">
-          Get connected with us on social networks:
-        </p> */}
       </div>
-      {/* <hr className="w-11/12 border-2 text-gray-400 mx-auto" /> */}
       <div className="grid lg:grid-cols-4 grid-cols-1 sm:grid-cols-2 m-8 gap-8 w-10/12 mx-auto">
-        {[
-          {
-            heading: "Quick Links",
-            links: [
-              "Home",
-              "Care",
-              "Hire From Us",
-              "BTH - Talent Hunt Exam",
-              "Refer and Earn",
-            ],
-          },
-          {
-            heading: "Other Links",
-            links: ["Blog", "Events and Contest", "Contact US"],
-          },
-          {
-            heading: "Courses",
-            links: [
-              "B Block Noida Sector 15 Uttar Pradesh",
-              "Product Management",
-              "SAP FICO",
-            ],
-          },
-          {
-            heading: "Contact Us",
-            links: ["Entrepreneurship", "tutors@baoiam.com", "08069640635"],
-          },
-        ].map((item) => {
+        {footerData.map((item,index) => {
           return (
-            <div className="company">
+            <div key={index} className="company">
               <h1 className="mb-2 font-bold text-base uppercase">
                 {item.heading}
               </h1>
