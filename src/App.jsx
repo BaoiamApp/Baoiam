@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
-import Footer from './Components/Footer/Footer'
-import Navbar from './Components/Home/Navbar'
-import { Route, Routes } from 'react-router-dom'
-import GSCB from './Pages/GSCB'
-import Home from './Pages/Home'
-import School from './Pages/School'
+import React, { useState } from "react";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/Home/Navbar";
+import { Route, Routes } from "react-router-dom";
+import GSCB from "./Pages/GSCB";
+import Home from "./Pages/Home";
+import School from "./Pages/School";
+import PAP from "./Pages/PAP";
+import Checkout from "./Pages/Checkout";
 import ContactUs from './Components/Contact/ContactUs';
+import SkillCatalog from "./Components/School/SkillCatalog";
+import CoursePage from "./Components/School/CoursePage";
+import SignUp from "./Pages/SignUp";
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
@@ -40,6 +45,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/gscp" element={<GSCB />} />
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
+        <Route path="/pap" element={<PAP />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/courses/school" element={<School />} />
         {/* School Course */}
         <Route path="/course/:id" element={<SchoolCourse />} />
@@ -63,4 +70,4 @@ const App = () => {
   );
 }
 
-export default App
+export default App;

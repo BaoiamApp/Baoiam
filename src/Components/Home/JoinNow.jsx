@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import onlinelearning from "../../assets/Onlinelearning.gif";
 
 const Home = () => {
