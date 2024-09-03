@@ -39,7 +39,7 @@ const Navbar = ({ theme }) => {
 
   return (
     <>
-      <div className="flex items-center justify-between px-4 py-2 bg-white dark:bg-black relative">
+      <div className="flex items-center justify-between px-4 py-2 bg-white dark:bg-black">
         {/* Logo */}
         <Link to={'/'} className='w-28 h-14'>
           <img src={img1} className='w-full h-full' alt="logo" />
@@ -62,7 +62,7 @@ const Navbar = ({ theme }) => {
 
           {show && (
             <div
-              className="absolute top-[4.5rem] bg-white border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-gray-700"
+              className="absolute top-[4.5rem] bg-white dark:bg-gray-700 dark:text-gray-200 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -108,7 +108,7 @@ const Navbar = ({ theme }) => {
         </div >
 
         {/* Last */}
-        <div className='flex items-center gap-4 text-white mt-2'>
+        <div className='flex items-center gap-4 text-black dark:text-white mt-2'>
           <div className='flex items-center gap-4'>
             <RiSearch2Line size={20} className='z-10' />
             <FaRegUser onClick={() => setUserDrop(!userDrop)} size={18} className='z-10 relative cursor-pointer' />
@@ -144,10 +144,8 @@ const Navbar = ({ theme }) => {
             <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">GCSP</span>
           </Link>
 
-          <div className='absolute -top-2 right-0 w-56 md:w-80 h-0 border-l-[100px] border-l-transparent border-t-[5rem] border-t-indigo-500 border-r-[0rem] border-r-transparent'></div>
-
           <span onClick={darkTheme} className='text-[1.7rem] z-10 cursor-pointer hidden lg:block'>
-            {isDark ? <BsMoonStars className='text-white' /> : <BsSun className='text-white' />}
+            {isDark ? <BsMoonStars className='text-white' /> : <BsSun className='text-orange-500' />}
           </span>
 
           <span onClick={() => setShowmenu(!showmenu)} className='z-10 block lg:hidden'>
