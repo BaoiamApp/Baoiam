@@ -12,6 +12,8 @@ import SignUp from './Pages/SignUp'
 import College from './Components/College/College'
 import SchoolCourse from './Components/School/SchoolCourse'
 import Blogs from './Pages/Blogs'
+import ProfilePage from './Components/profilePage/ProfilePage'
+import Profile2 from './Components/profilePage/Profile2'
 const App = () => {
   const [dark, setDark] = useState(false);
 
@@ -34,6 +36,9 @@ const App = () => {
         <Route path="/courses/college/:courseName" element={<College />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/profile" element={<Profile2 />} />
+        <Route path="/profilepage" element={<ProfilePage />} />
+
       </Routes>
       <Footer />
     </div>
