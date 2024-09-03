@@ -41,7 +41,7 @@ function College() {
 
     useEffect(() => {
         const applyFilters = () => {
-            let updatedCourses = CoursesList[params.courseName];
+            let updatedCourses = CoursesList[params.course];
 
             if (selectedCategory.length > 0) {
                 updatedCourses = updatedCourses.filter((course) =>
