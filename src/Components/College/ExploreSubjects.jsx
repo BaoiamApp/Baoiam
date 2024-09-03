@@ -3,7 +3,7 @@ import CoursesList from '../CoursesList';
 import { useParams } from 'react-router-dom';
 
 const ExploreSubjects = () => {
-    const course=useParams().courseName;
+    const course=useParams().course;
   const subjects = CoursesList[course].map(item=>item.courseName);
 
   return (
