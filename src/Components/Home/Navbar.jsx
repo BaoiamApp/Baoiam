@@ -36,6 +36,7 @@ const Navbar = ({ theme }) => {
     const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
+
   return (
     <>
       <div className="flex items-center justify-between px-4 py-2 bg-white dark:bg-black relative">
@@ -43,6 +44,7 @@ const Navbar = ({ theme }) => {
         <Link to={'/'} className='w-28 h-14'>
           <img src={img1} className='w-full h-full' alt="logo" />
         </Link>
+
 
         {/* NavLinks */}
         <div className='hidden lg:flex items-center justify-between mt-4'>
@@ -78,6 +80,7 @@ const Navbar = ({ theme }) => {
                       })}
 
                     </ul>
+
                   </div>
                 })}
                 {CollegeCourse.map((c, i) => {
