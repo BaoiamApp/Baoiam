@@ -8,9 +8,6 @@ import School from "./Pages/School";
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
 import ContactUs from './Components/Contact/ContactUs';
-import SkillCatalog from "./Components/School/SkillCatalog";
-import CoursePage from "./Components/School/CoursePage";
-import SignUp from "./Pages/SignUp";
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
