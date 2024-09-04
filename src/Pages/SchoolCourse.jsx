@@ -18,14 +18,14 @@ const SchoolCourse = () => {
     const course = School.find((cate) => cate.subCate.find((subCate) => subCate.id === parseInt(id)));
     const subCourse = course.subCate.find((subCate) => subCate.id === parseInt(id));
 
-    console.log(subCourse);
+    // console.log(subCourse?);
 
     const [swiper, setSwiper] = useState(null);
 
     const handleNextClick = () => swiper.slideNext();
     const handlePrevClick = () => swiper.slidePrev();
 
-    // For maping icons dynamically
+    // For? maping icons dynamically
     const highlightIcons = (icon) => {
         if (icon.startsWith("Md")) {
             return MDIcons[icon]
@@ -52,14 +52,14 @@ const SchoolCourse = () => {
         <div>
             {/* Banner */}
             <div className='lg:w-full lg:h-[68vh] xl:h-[80vh]'>
-                <img src={subCourse.banner} alt={`${subCourse.course} Banner`} className='w-full h-full object-cover object-top' />
+                <img src={subCourse?.banner} alt={`${subCourse?.course} Banner`} className='w-full h-full object-cover object-top' />
             </div>
 
             {/* Course Description */}
             <div className='flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12'>
                 <div className='flex flex-col gap-4'>
-                    <h3 className='text-[1.7rem] lg:text-4xl font-bold text-neutral-600'>{subCourse.course}</h3>
-                    {subCourse.desc.map((d, i) => {
+                    <h3 className='text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white'>{subCourse?.course}</h3>
+                    {subCourse?.desc?.map((d, i) => {
                         return <p className='text-[0.8rem] lg:text-base' key={i}>{d}</p>
                     })}
 
@@ -78,7 +78,7 @@ const SchoolCourse = () => {
                     <h4 className='text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mt-12 lg:mb-4'>Course <span className='border-b border-orange-500 text-orange-500'>Overview</span></h4>
 
                     <ul className='list-inside list-disc marker:text-orange-600 marker:text-xl flex flex-col gap-2 w-full'>
-                        {subCourse.overview.map((v, i) => {
+                        {subCourse?.overview?.map((v, i) => {
                             return <li key={i} className='font-medium text-[0.8rem] lg:text-base'>{v}</li>
                         })}
                     </ul>
@@ -87,10 +87,10 @@ const SchoolCourse = () => {
 
             {/* Course Curriculum */}
             <div className='w-full px-8 lg:px-24 my-12 md:my-20 h-full '>
-                <h4 className='text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4'>Course <span className='text-orange-500 border-b border-orange-500'>Curriculum</span></h4>
+                <h4 className='text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white'>Course <span className='text-orange-500 border-b border-orange-500'>Curriculum</span></h4>
 
                 <ul className='list-inside list-disc marker:text-orange-500 marker:text-xl'>
-                    {subCourse.curriculum.map((c, i) => {
+                    {subCourse?.curriculum?.map((c, i) => {
                         return <li key={i} className='py-1 text-[0.9rem] lg:text-base'>{c}</li>
                     })}
                 </ul>
@@ -101,7 +101,7 @@ const SchoolCourse = () => {
                 <h4 className='text-4xl font-semibold mb-8'>Course <span className='border-b text-orange-500 border-orange-500'>Highlights</span></h4>
 
                 <div className='flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black'>
-                    {subCourse.highlights.map((h, i) => {
+                    {subCourse?.highlights?.map((h, i) => {
                         return <div key={i} className='bg-white group hover:scale-105 shadow-2xl px-4 py-8 h-44 md:h-52 rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64'>
                             <span className='text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out'>{React.createElement(highlightIcons(h.icon))}</span>
                             <p className='tracking-tighter'><span className='text-2xl font-semibold leading-tight tracking-tighter'>{h.head}</span> <br /> {h.desc}</p>
@@ -114,13 +114,13 @@ const SchoolCourse = () => {
 
             {/* Join we us */}
             <div className='my-12 px-8 lg:px-24 w-full h-full'>
-                <div className="bg-white py-6 sm:py-8 lg:py-12">
+                <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
                     <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-                        <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 md:mb-8 lg:text-4xl xl:mb-12">Join With Us Find the <span className='text-orange-500 border-b border-orange-500'>Right Course</span></h2>
+                        <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">Join With Us Find the <span className='text-orange-500 border-b border-orange-500'>Right Course</span></h2>
 
                         <div className="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
 
-                            {subCourse.plans.map((p, i) => {
+                            {subCourse?.plans?.map((p, i) => {
                                 return <div key={i} className={`flex flex-col rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""} p-4 pt-6`}>
                                     <div className="mb-12">
                                         {p.name === "Premium" ? <>
@@ -128,16 +128,16 @@ const SchoolCourse = () => {
                                                 <span className="flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">most popular</span>
                                             </div>
                                         </> : ""}
-                                        <div className="mb-2 text-center text-2xl font-bold text-gray-800">{p.name}</div>
+                                        <div className="mb-2 text-center text-2xl font-bold text-gray-800 dark:text-white">{p.name}</div>
 
-                                        <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium">{p.courseName}</p>
+                                        <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">{p.courseName}</p>
 
                                         <div className="space-y-2">
 
-                                            {p.courseItems.map((item, index) => {
+                                            {p?.courseItems?.map((item, index) => {
                                                 return <div key={index} className="flex gap-2">
                                                     <MdCheck size={22} className='text-orange-500' />
-                                                    <span className="text-gray-600">{item}</span>
+                                                    <span className="text-gray-600 dark:text-white">{item}</span>
                                                 </div>
                                             })}
 
@@ -146,18 +146,18 @@ const SchoolCourse = () => {
 
                                     <div className="mt-auto flex flex-col gap-8">
                                         <div className="flex items-end justify-center gap-1">
-                                            <span className="self-start text-gray-600">₹</span>
-                                            <span className="text-4xl font-bold text-gray-800">{p.price}</span>
-                                            <span className="text-gray-500">/Full Course</span>
+                                            <span className="self-start text-gray-600 dark:text-white">₹</span>
+                                            <span className="text-4xl font-bold text-gray-800 dark:text-white">{p.price}</span>
+                                            <span className="text-gray-500 dark:text-white">/Full Course</span>
                                         </div>
 
-                                        <button className={`block rounded-lg ${p.name === "Premium" ? "bg-orange-500 text-white" : "bg-gray-500"} px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}>Buy Now</button>
+                                        <button className={`block rounded-lg ${p.name === "Premium" ? "bg-orange-500 text-white" : "bg-gray-500"} px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}>Enroll Now</button>
                                     </div>
                                 </div>
                             })}
                         </div>
 
-                        <div className="text-center text-sm text-gray-500 sm:text-base">Need help deciding? <Link to={'/'} className="text-gray-600 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch</Link>.</div>
+                        <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">Need help deciding? <Link to={'/'} className="text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch</Link>.</div>
                     </div>
                 </div>
             </div>
@@ -166,9 +166,9 @@ const SchoolCourse = () => {
             <div className='flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32'>
                 <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem]'>
                     <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>Easy EMI</p>
-                    <p className='text-neutral-600 mb-2 text-sm lg:text-base'>Easy monthly payment options with our emi facilities</p>
+                    <p className='text-neutral-600 dark:text-white mb-2 text-sm lg:text-base'>Easy monthly payment options with our emi facilities</p>
 
-                    <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600'>
+                    <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600 dark:text-white'>
                         <li className='text-sm lg:text-base'>No upfront payment required</li>
                         <li className='text-sm lg:text-base'>Fixed monthly installments</li>
                         <li className='text-sm lg:text-base'>Flexible repayment options</li>
@@ -177,9 +177,9 @@ const SchoolCourse = () => {
 
                 <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] h-[12.5rem] lg:h-[11.5rem]'>
                     <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>Pay After Placement</p>
-                    <p className='text-neutral-600 mb-2 text-sm lg:text-base'>Pay only when you get placed with our Pay After Placement support</p>
+                    <p className='text-neutral-600 dark:text-white mb-2 text-sm lg:text-base'>Pay only when you get placed with our Pay After Placement support</p>
 
-                    <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600'>
+                    <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600 dark:text-white'>
                         <li className='text-sm lg:text-base'>With our Pay After Placement program, you invest in your career development now and pay us only when yoy land a job.</li>
                     </ul>
                 </div>

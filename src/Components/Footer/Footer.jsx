@@ -5,12 +5,9 @@ import PlayStore from "../../assets/footer-desktop-playstore.svg";
 import {
   FaFacebook,
   FaGithub,
-  FaGoogle,
   FaInstagram,
   FaLinkedin,
-  FaRegCopyright,
-  FaXTwitter,
-  FaYoutube,
+  FaSquareXTwitter
 } from "react-icons/fa6";
 import { TiSocialFacebook } from "react-icons/ti";
 import { Logo } from "../../assets/assets";
@@ -18,7 +15,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-slate-400">
+    <footer className="bg-slate-400 dark:bg-[#100b41]">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -173,23 +170,23 @@ function Footer() {
               </ul>
               <div className="mt-8 flex justify-center gap-6 sm:justify-start">
                 {/* Facebook */}
-                <Link to={'/'} target="_blank" className="text-white transition hover:text-gray-500">
+                <Link to={'https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/'} target="_blank" className="text-white transition hover:text-gray-500">
                   <FaFacebook size={22} />
                 </Link>
 
                 {/* Instagram */}
-                <Link to={'/'} target="_blank" className="text-white transition hover:text-gray-500">
+                <Link to={'https://www.instagram.com/baoiam_innovations/'} target="_blank" className="text-white transition hover:text-gray-500">
                   <FaInstagram size={22} />
                 </Link>
 
                 {/* Linkedin */}
-                <Link to={'/'} target="_blank" className="text-white transition hover:text-gray-500">
+                <Link to={'https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/'} target="_blank" className="text-white transition hover:text-gray-500">
                   <FaLinkedin size={22} />
                 </Link>
 
-                {/* Github */}
-                <Link to={'/'} target="_blank" className="text-white transition hover:text-gray-500">
-                  <FaGithub size={22} />
+                {/* Twitter */}
+                <Link to={'https://twitter.com/BAOIAM1'} target="_blank" className="text-white transition hover:text-gray-500">
+                  <FaSquareXTwitter size={22} />
                 </Link>
 
               </div>
