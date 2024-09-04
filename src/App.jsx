@@ -4,6 +4,7 @@ import Navbar from "./Components/Home/Navbar";
 import { Route, Routes } from "react-router-dom";
 import GSCB from "./Pages/GSCB";
 import Home from "./Pages/Home";
+import AboutUs from "./Pages/AboutUs";
 import School from "./Pages/School";
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
@@ -24,6 +25,7 @@ const App = () => {
       <Navbar theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/gscp" element={<GSCB />} />
         <Route path="/pap" element={<PAP />} />
         <Route path="/checkout" element={<Checkout />} />
