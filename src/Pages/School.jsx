@@ -4,6 +4,7 @@ import WhyUs from '../Components/School/WhyUs'
 import SkillCatalog from '../Components/School/SkillCatalog'
 import SliderHero from '../Components/School/SliderHero'
 import TypewriterText from '../Components/School/TypewiterText'
+import { Link } from 'react-router-dom'
 
 const School = () => {
   return (
@@ -26,9 +27,9 @@ const School = () => {
         Whether you're looking to improve your skills or start a new learning journey, 
         we have something for everyone.
       </p>
-      <a href="#courses" className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
+      <Link to={'/courses'} className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
         Explore Courses
-      </a>
+      </Link>
     </div>
 
     
