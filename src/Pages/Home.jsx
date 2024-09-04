@@ -9,15 +9,15 @@ import Protocol from '../Components/Home/Protocol'
 import How from '../Components/Home/How'
 const Home = () => {
     return (
-        <>   
+        <>
             <Hero />
             <Courses />
             <Swiper />
             <Categories />
             <Partners />
-            <Protocol/>
+            <Protocol />
             <JoinNow />
-            <How/>
+            <How />
         </>
     )
 }
