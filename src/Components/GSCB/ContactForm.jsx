@@ -1,161 +1,100 @@
 import React from 'react'
-import { FaPhone } from 'react-icons/fa6'
-import { IoMdMail } from 'react-icons/io'
+import { industry, interestedCheckbox } from '../../Data'
 
 const ContactForm = () => {
 
-    const interestedCheckbox = [
-        {
-            id: 1,
-            label: 'Web Development',
-            value: 'Web Development',
-        },
-        {
-            id: 2,
-            label: 'Product Management',
-            value: 'Product Management',
-        },
-        {
-            id: 3,
-            label: 'Andriod Development',
-            value: 'Andriod Development',
-        },
-        {
-            id: 4,
-            label: 'Digital Marketing',
-            value: 'Digital Marketing',
-        },
-        {
-            id: 5,
-            label: 'SEO',
-            value: 'SEO',
-        },
-        {
-            id: 6,
-            label: 'Graphic Design',
-            value: 'Graphic Design',
-        },
-        {
-            id: 7,
-            label: 'Data Analytics',
-            value: 'Data Analytics',
-        },
-    ]
-
     return (
-        // <div className='mt-28 px-24 w-full'>
-        //     <h3 className='text-[3rem] font-medium'>Contact</h3>
-        //     <p className='mt-8 text-xl'>
-        //         "<span className='text-red-600'>*</span>"
-        //         indicates required fields
-        //     </p>
+        <div className='mt-20 w-[70%] p-4 mx-auto h-full'>
 
-        //     <form action='' className='flex flex-col gap-8 w-full mt-4'>
-        //         {/* Name */}
-        //         <div className='flex flex-col gap-4 w-full'>
-        //             <label htmlFor="name" className='text-lg font-semibold'>Name <span className='text-red-600'>*</span></label>
-        //             <div className='flex items-center justify-between gap-8'>
+            <h1 className='text-5xl font-semibold'>Contact</h1>
 
-        //                 <input type="text" required className='bg-transparent border w-1/2 border-gray-400 px-4 py-1 text-lg' />
+            <form action='' className='w-full h-full py-4 flex flex-col gap-4 text-black'>
 
-        //                 <input type="text" required className='bg-transparent border w-1/2 border-gray-400 px-4 py-1 text-lg' />
-
-        //             </div>
-        //         </div>
-
-        // {/* Email & Phone */}
-        // <div className='flex gap-8 justify-between w-full'>
-        //     <div className='flex flex-col gap-2 w-full'>
-        //         <label htmlFor="email" className='text-lg font-semibold'>Email <span className='text-red-600'>*</span></label>
-        //         <div className='flex flex-col gap-2 w-full'>
-        //             <input type="email" required id='email' className='bg-transparent border border-gray-400 px-4 py-1 text-lg' />
-        //         </div>
-        //     </div>
-        //     <div className='flex flex-col gap-2 w-full'>
-        //         <label htmlFor="name" className='text-lg font-semibold'>Phone</label>
-        //         <input type="tel" inputmode="numeric" maxLength={10} className='bg-transparent border border-gray-400 px-4 py-1 text-lg' />
-        //     </div>
-        // </div>
-
-        // {/* Interested */}
-        // <div className='flex flex-col gap-2 w-full'>
-        //     <h6 className='text-lg font-semibold'>I am interested in... <span className='text-red-600'>*</span></h6>
-
-        //     <div className='grid grid-cols-2 grid-rows-4'>
-        //         {interestedCheckbox.map((box, i) => {
-        //             return <div key={i} className='flex items-center gap-2'>
-
-        //                 <input type="checkbox" id={box.value} name={box.value} value={box.value} className='size-4' />
-        //                 <label htmlFor={box.value}>{box.label}</label>
-
-        //             </div>
-        //         })}
-        //     </div>
-
-        //     <div className='flex flex-col mt-8 gap-2'>
-        //         <label htmlFor="interested" className='text-lg font-semibold'>How can we help?</label>
-
-        //         <textarea name="" id="" rows={6} className='bg-transparent border border-gray-400 px-4 py-1 text-lg' ></textarea>
-        //     </div>
-
-        //     <button type='submit' className='px-6 py-2 mt-4 bg-red-600 rounded-full w-fit uppercase text-sm font-medium'>Submit</button>
-        // </div>
-        //     </form>
-        // </div>
-
-        <div className='mt-20 w-[80%] p-4 mx-auto flex h-full border border-black'>
-            <div className='w-[40%] h-[25rem] p-8 bg-black text-white'>
-                <h1 className='text-3xl'>Contact Information</h1>
-                <h3 className='text-sm mt-4'>Do you have any queries? Reach out to us and we are happy to help you!</h3>
-
-                <div className='flex flex-col gap-4 mt-8'>
-                    <div className='flex items-center gap-4'>
-                        <FaPhone size={22} /> <span>+91 8069640635</span>
-                    </div>
-                    <div className='flex items-center gap-4'>
-                        <IoMdMail size={22} /> <span>tutors@baoiam.com</span>
+                {/* Name */}
+                <div className='flex flex-col w-full'>
+                    <p className='text-lg font-medium'>Name <span className='text-red-600'>*</span></p>
+                    <div className='flex items-center justify-between gap-8 w-full'>
+                        <div className='w-1/2 flex flex-col'>
+                            <input type="text" id='first' className='px-4 py-1 border border-black/60 w-full' required />
+                            <label  htmlFor='first'>First</label>
+                        </div>
+                        <div className='w-1/2 flex flex-col'>
+                            <input type="text" id='last' className='px-4 py-1 border border-black/60 w-full' required />
+                            <label htmlFor='last'>Last</label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <form action='' className='w-[60%] h-full py-8 px-12 flex flex-col gap-4 text-black'>
+                {/* Company */}
+                <div className='flex gap-8 w-full'>
+                    <div className='flex-col flex w-1/2'>
+                        <label className='text-lg font-medium' htmlFor='company'>Company <span className='text-red-600'>*</span></label>
+                        <div className='w-full'>
+                            <input type="text" id='company' className='px-4 py-1 border border-black/60 w-full' required />
+                            <span>Who do you work for?</span>
+                        </div>
+                    </div>
 
-                <div className='flex items-center justify-between gap-8'>
+                    <div className='flex-col flex w-1/2'>
+                        <label className='text-lg font-medium' htmlFor='agency'>Company represented (if agency)</label>
 
-                    <input type="text" required placeholder='First Name' className='bg-transparent border-b w-1/2 border-black placeholder:text-black px-4 py-1 focus:outline-none' />
-
-                    <input type="text" required placeholder='Last Name' className='bg-transparent border-b w-1/2 border-black placeholder:text-black px-4 py-1 focus:outline-none' />
-
-
+                        <input type="text" id='agency' className='px-4 py-1 border border-black/60 w-full' />
+                    </div>
                 </div>
 
                 {/* Email & Phone */}
-                <div className='flex items-center justify-between gap-8'>
+                <div className='flex gap-8 w-full'>
+                    <div className='flex-col flex w-1/2'>
+                        <label className='text-lg font-medium' htmlFor='email'>Email <span className='text-red-600'>*</span></label>
+                        <input type="email" id='email' className='px-4 py-1 border border-black/60 w-full' required />
+                    </div>
 
-                    <input type="text" required placeholder='Email' className='bg-transparent border-b w-1/2 border-black placeholder:text-black px-4 py-1 focus:outline-none' />
+                    <div className='flex-col flex w-1/2'>
+                        <label className='text-lg font-medium' htmlFor='phone'>Phone</label>
 
-                    <input type="tel" inputmode="numeric" placeholder='Phone' maxLength={10} className='bg-transparent w-1/2 border-b border-black placeholder:text-black px-4 py-1 focus:outline-none' />
-
+                        <input type="tel" id='phone' inputMode='numeric' maxLength={10} className='px-4 py-1 border border-black/60 w-full' />
+                    </div>
                 </div>
 
+                {/* Job & Industry */}
+                <div className='flex gap-8 w-full'>
+                    <div className='flex-col flex w-1/2'>
+                        <label className='text-lg font-medium' htmlFor='job'>Job Title</label>
+                        <input type="text" id='job' className='px-4 py-1 border border-black/60 w-full' />
+                    </div>
 
-                {/* Interested */}
-                <div className='flex flex-col gap-4 w-full'>
-                    {/* <h6 className='font-medium'>I am interested in...</h6> */}
-
-                    <div className='w-full'>
-                        <select name="" id="" className='bg-transparent border-b w-full border-black placeholder:text-black px-4 py-1 focus:outline-none'>
-                            <option value="">Select</option>
-                            {interestedCheckbox.map((i) => {
+                    <div className='flex-col flex w-1/2'>
+                        <label className='text-lg font-medium' htmlFor='industry'>Industry</label>
+                        <select name="" id="industry" className='px-4 py-1 border border-black/60 w-full'>
+                            <option value="">Select an Industry</option>
+                            {industry.map((i) => {
                                 return <option key={i.id} value={i.value}>{i.label}</option>
                             })}
                         </select>
                     </div>
+                </div>
 
+                {/* Interested */}
+                <div>
+                    <p className='text-lg font-medium'>I am interested in... <span className='text-red-600'>*</span></p>
 
-                    <textarea name="" id="" placeholder='Write here your message' rows={4} className='bg-transparent border-b border-black placeholder:text-black px-4 py-1 text-lg focus:outline-none' ></textarea>
+                    <div className='grid grid-cols-2 mt-2'>
+                        {interestedCheckbox.map((c) => {
+                            return <div key={c.id} className='flex items-center'>
+                                <input type="checkbox" id={c.value} name={c.value} value={c.value} required />
+                                <label className="ml-2" htmlFor={c.value}>{c.label}</label>
+                            </div>
+                        })}
+                    </div>
+                </div>
 
-                    <button type='submit' className='px-6 py-2 mt-4 bg-black text-white rounded-md w-fit uppercase text-sm font-medium'>Submit</button>
+                {/* Textarea */}
+                <div className='w-full'>
+                    <label className='text-lg font-medium' htmlFor='help'>How can we help?</label>
+
+                    <textarea rows={4} id='help' className='px-4 py-1 border border-black/60 w-full mt-2'></textarea>
+
+                    <button type='submit' className='px-6 py-2 mt-4 uppercase rounded-full bg-black text-white'>Submit</button>
                 </div>
 
             </form>
