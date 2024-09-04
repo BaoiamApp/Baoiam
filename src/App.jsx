@@ -30,7 +30,7 @@ const App = () => {
   }
 
   return (
-    <div className="dark:bg-black w-full h-full dark:text-white ">
+    <div className="dark:bg-[#080529] w-full h-full dark:text-white ">
       <Navbar theme={theme} />
       <Routes>
       <Route path="/" element={<Home />} />
@@ -46,7 +46,7 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/courses/school" element={<School />} />
         {/* School Course */}
-        <Route path="/course/:id" element={<SchoolCourse />} />
+        <Route path="/course/school/:id" element={<SchoolCourse />} />
         <Route path="/signup" element={<SignUp />} />
 
         <Route path="/login" element={<Login />} />

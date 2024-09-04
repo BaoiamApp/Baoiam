@@ -12,7 +12,7 @@ import React from 'react'
 
 const Courses = () => {
   return (
-    <div className='w-[100%] dark:bg-black bg-gray-400 '>
+    <div className='w-[100%] dark:bg-[#080529] bg-gray-400 '>
 
       <p className='text-center font-bold text-white text-[1.6rem] md:text-[2rem] pt-[1rem]'>Explore Free Online Courses</p>
 
@@ -25,7 +25,7 @@ const Courses = () => {
             <FaCloud className='text-blue-400 text-[20vw] w-full sm:text-[10vw] lg:w-full lg:text-[3rem] mt-4' />
           </p>
           <p className='font-bold text-gray-600 mt-1  mb-1 sm:my-0 text-[7vw] sm:text-[4vw] lg:text-[1.1rem] lg:mt-2'>IT </p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem] lg:mb-2'> All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem] lg:mb-2'> All Courses
           </p></div>
 
 
@@ -35,7 +35,7 @@ const Courses = () => {
           <HiCodeBracket className='text-green-400 text-[20vw] w-full sm:text-[10vw] lg:w-full lg:text-[3rem] lg:mt-4' />
         </p>
           <p className='font-bold text-gray-600 sm:my-0 sm:text-[4vw] mt-1 mb-1 text-[5vw] lg:text-[1.1rem] lg:mt-2'>Web Development</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem] lg:mb-2'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem] lg:mb-2'>All Courses
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const Courses = () => {
           <FaLanguage className='text-yellow-400 text-[20vw] w-full sm:text-[10vw] lg:w-full lg:text-[3rem] lg:mt-4' />
         </p>
           <p className='font-bold text-gray-600 sm:my-0 sm:text-[4vw] mt-1 mb-1 text-[5vw] lg:text-[1.1rem] lg:mt-2'>Language</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'> All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'> All Courses
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const Courses = () => {
           <FaBusinessTime className='text-purple-600 text-[20vw] w-full sm:text-[10vw] lg:w-full lg:text-[3rem] lg:mt-4' />
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mt-1 mb-1 text-[5vw] lg:text-[1.1rem] lg:mt-2'>Business</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
 
 
@@ -62,7 +62,7 @@ const Courses = () => {
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mt-1 mb-1 text-[5vw]
        lg:text-[1.1rem] lg:mt-2'>Management</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
 
 
@@ -71,7 +71,7 @@ const Courses = () => {
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mt-1 mb-1 text-[5vw]
        lg:text-[1.1rem] lg:mt-2'>English</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
 
 
@@ -80,7 +80,7 @@ const Courses = () => {
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mt-1 mb-1 text-[5vw]
        lg:text-[1.1rem] lg:mt-2'>Personal Development</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
 
 
@@ -89,7 +89,7 @@ const Courses = () => {
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mb-1 mt-1 text-[5vw]
        lg:text-[1.1rem] lg:mt-2'>Sales & Marketing</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
 
 
@@ -98,7 +98,7 @@ const Courses = () => {
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mb-1 mt-1 text-[5vw]
        lg:text-[1.1rem] lg:mt-2'>Engineering </p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
 
 
@@ -108,7 +108,7 @@ const Courses = () => {
         </p>
           <p className='font-bold sm:my-0 sm:text-[4vw] text-gray-600 mt-1 xl:mt-0 mb-1 text-[5vw]
        lg:text-[1.1rem] lg:mt-2'>Teaching & Academics</p>
-          <p className='text-[5vw] sm:text-[3vw] lg:text-[1.1rem]'>All Courses
+          <p className='text-[5vw] sm:text-[3vw] dark:text-black lg:text-[1.1rem]'>All Courses
           </p></div>
       </div>
     </div>
