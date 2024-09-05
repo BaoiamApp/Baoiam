@@ -15,6 +15,7 @@ import Blogs from './Pages/Blogs'
 import AboutUs from './Pages/AboutUs'
 import  TermsConditions from "./pages/TermsConditions"
 import  PrivacyPolicy from "./pages/PrivacyPolicy"
+import ReturnPolicy from './Pages/ReturnPolicy'
 
 
 
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route path="/return-policy" element={<ReturnPolicy/>} />
       </Routes>
       <Footer />
     </div>

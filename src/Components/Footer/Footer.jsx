@@ -97,6 +97,9 @@ function Footer() {
         <a href="/privacy-policy" className="text-black hover:underline">
           Privacy Policy
         </a>
+        <a href="/return-policy" className="text-black hover:underline">
+       Return Policy
+        </a>
       </div>
       </div>
       
