@@ -20,10 +20,12 @@ import SchoolCourse from "./Pages/SchoolCourse";
 import Blogs from "./Pages/Blogs";
 import Career from "./Components/Career/Career";
 import Blog_detail from "./Pages/Blog_detail";
+
 import { OurTeam } from "./Pages/OurTeam";
 
 import ProfilePage from './Components/profile/ProfilePage'
 import SideBar from './Components/profile/SideBar'
+
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -39,9 +41,11 @@ const App = () => {
 
       <Navbar theme={theme} />
       <Routes>
+
         <Route path='/' element={<Home />} />
         <Route path='/gcsp' element={<GSCB />} />
         <Route path='/courses/school' element={<School />} />
+
         {/* <Route path="/course/:id" element={<Course />} /> */}
         <Route path='/signup' element={<SignUp />} />
         <Route path='/course/:course' element={<College />} />
@@ -55,8 +59,6 @@ const App = () => {
 
         <Route path="/course/school/:id" element={<SchoolCourse />} />
         <Route path="/signup" element={<SignUp />} />
-
-
         <Route path='/login' element={<Login />} />
 
         <Route path='/about-us' element={<AboutUs />} />
@@ -66,10 +68,11 @@ const App = () => {
         {/* <Route path="/courses/college/:courseName" element={<College />} /> */}
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/blogs' element={<Blogs />} />
-        <Route path='/Blog_detail' element={<Blog_detail />} />
+        <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path='/career' element={<Career />} />
         <Route path='/team' element={<OurTeam />} />
         <Route path="/profile" element={<SideBar />} />
+
       </Routes>
       <Footer />
     </div>
