@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CourseCard from '../Components/College/CourseCard'
 import CoursesList from '../Components/CoursesList'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import FilterSidebar from '../Components/College/CourseFilters';
 import SortPopover from '../Components/College/SortPopover';
 import CourseCarousel from '../Components/College/CourseCarousel';
@@ -78,9 +78,9 @@ function College() {
                     <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6">
                         Discover a diverse selection of courses designed to inspire learning and help you reach your academic and career goals. Whether you're exploring a new field or advancing your expertise, our programs provide the knowledge and skills you need for success. Start your educational journey with us today!
                     </p>
-                    <a href="#courses" className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
-                        Explore Courses
-                    </a>
+                    <Link to={'/courses'} className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
+                      Link Explore Courses
+                    </Link>
                 </div>
 
 
