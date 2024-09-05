@@ -7,17 +7,18 @@ import JoinNow from "../Components/Home/JoinNow";
 import Partners from '../Components/Home/Partners'
 import Protocol from '../Components/Home/Protocol'
 import How from '../Components/Home/How'
+import Slider from '../Components/Home/Slider'
 const Home = () => {
     return (
-        <>   
+        <>
             <Hero />
             <Courses />
-            <Swiper />
+            <Slider />
             <Categories />
             <Partners />
-            <Protocol/>
+            <Protocol />
             <JoinNow />
-            <How/>
+            <How />
         </>
     )
 }

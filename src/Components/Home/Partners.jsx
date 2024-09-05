@@ -40,16 +40,16 @@ const Partners = () => {
   const visibleImages = images.slice(currentIndex, currentIndex + imagesPerSlide);
 
   return (
-    <div className=' m-2 '>
+    <div className='m-2'>
       <h1 className="text-center text-3xl font-bold my-9">
         We are associated with businesses and non-profits
-        <span className='text-violet-500'> from startups to MNC's</span>
+        <span className='text-amber-500'> from startups to MNC's</span>
       </h1>
 
-      <div className=" bg-gradient-to-r from-violet-100 to-violet-300 border rounded-md px-5">
-        <div className="flex justify-between ">
+      <div className="px-5 ">
+        <div className="flex justify-between bg-[radial-gradient(circle,_white,_black)] bg-white/50 backdrop-blur-[100%] bg-opacity-20 drop-shadow-lg  border-white/20 rounded-md bg-clip-padding backdrop-filter border border-gray-100">
           {visibleImages.map((image, index) => (
-            <div key={index} className="w-full px-2">
+            <div key={index} className="w-full  px-2">
               <img
                 src={image}
                 alt={`Slide ${index}`}
