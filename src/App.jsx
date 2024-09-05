@@ -21,6 +21,7 @@ import SchoolCourse from './Pages/SchoolCourse'
 import Blogs from './Pages/Blogs'
 import Career from './Components/Career/Career'
 import Blog_detail from './Pages/Blog_detail'
+// import Enterpunership from './Pages/Enterpunership'
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/Blog_detail" element={<Blog_detail />} />
         <Route path="/career" element={<Career />} />
+        {/* <Route path="/entrepreneurship" element={<Enterpunership />} /> */}
 
         <Route path="/Maintenance" element={<Maintenance />} />
         <Route path="/ITIE" element={<ITIE />} />

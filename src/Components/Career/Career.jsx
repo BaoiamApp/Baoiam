@@ -191,7 +191,7 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="bg-white  p-8 w-full mt-8 lg:pl-8 mb-12 mb-0">
+      <section className="bg-white  p-8 w-full mt-8 lg:pl-8 mb-12 ">
         <div className="max-w-screen-lg mx-auto">
           <div className="flex flex-col lg:items-center">
             <h2 className="text-3xl lg:text-5xl font-bold text-[#1f0a6b] mb-6">

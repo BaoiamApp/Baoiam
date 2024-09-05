@@ -22,7 +22,7 @@ const faqs = [
       <div>
         <p>The sign-up procedure for our website consists of 4 simple steps:</p>
         <ul className="list-disc list-inside">
-          <li>Go to our website and click on the Login button and then the Signup button or just click this link <a  href="http://www.baoiam.com/Login/index.html" className="text-blue-600 underline">http://www.baoiam.com/Login/index.html</a></li>
+          <li>Go to our website and click on the Login button and then the Signup button or just click this link <a  href="http://www.baoiam.com/Login/index.html" className="text-blue-600 underline">baoiam.com</a></li>
           <li>Enter a Username of your choice.</li>
           <li>Enter your Email ID.</li>
           <li>Create a strong password with uppercase, lowercase, numbers, and special characters.</li>
@@ -155,8 +155,8 @@ const FaqItem = ({ question, answer }) => {
 
 const Faq = () => {
   return (
-    <div className="max-w-3xl mx-auto my-10">
-      <h2 className="text-3xl font-bold text-center mb-8 mx-5">
+    <div className="max-w-3xl mx-auto my-10 ">
+      <h2 className="text-3xl font-bold text-center mb-8 mx-5 ">
         Frequently Asked <span className="text-orange-500">Questions</span>
       </h2>
 

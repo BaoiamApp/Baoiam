@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import img2 from '../Images/ITIE/img2.jpeg'
 import intern from '../Images/ITIE/intern.jpg'
 import img1 from '../Images/ITIE/img1.jpg'
@@ -146,6 +147,7 @@ const testimonials = [
 
 
 const ITIE = () => {
+      const navigate = useNavigate();
   return (
     <div>
       {/* ITIE */}
@@ -161,7 +163,7 @@ const ITIE = () => {
           <p className="text-gray-600 mt-6">
             Our mission is all about learning and sharing. Our platform is designed to help you gain knowledge, share your expertise with others, and earn rewards along the way.
           </p>
-          <button className="mt-8 bg-gradient-to-r from-orange-400 to-orange-600 text-white py-2 px-6 rounded-full text-lg">
+          <button className="mt-8 bg-gradient-to-r from-orange-400 to-orange-600 text-white py-2 px-6 rounded-full text-lg" onClick={()=>navigate('/maintenance')}>
             I AM INTERESTED
           </button>
         </div>
@@ -195,7 +197,7 @@ const ITIE = () => {
       </div>
 
       {/* Course Highlight */}
-      <div className="max-w-5xl mx-10 md:mx-auto p-6 bg-white shadow-md rounded-2xl border-2 mt-16 mb-20 hover:scale-110 hover:shadow-2xl">
+      <div className="max-w-5xl mx-5 md:mx-auto p-4 bg-white shadow-md rounded-2xl border-2 mt-16 mb-20 hover:scale-110 hover:shadow-2xl">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 text-center mb-8">
           Course <span className="text-orange-500">Highlights</span>
         </h2>
@@ -299,7 +301,7 @@ const ITIE = () => {
       </div>
        {/* Amazing Career */}
 
-      <div className="flex flex-col items-center justify-center bg-orange-100 m-10 py-5 md:py-20 px-5 ">
+      <div className="flex flex-col items-center justify-center bg-orange-100 m-3 md:m-10 py-5 md:py-20 px-5 ">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-900 text-center">
           Amazing <span className="text-orange-500">Career</span>
         </h1>
