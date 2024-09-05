@@ -224,7 +224,7 @@ const jobs = [
             </div>
 
             {/* Stats Box */}
-            <div className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-18px] lg:left-auto lg:right-10 z-20 bg-white rounded-lg shadow-lg p-2 lg:p-4 md:p-4 flex items-center space-x-2 transition-transform animate-bounce hover:animate-none transition-transform duration-200 ease-in-out hover:scale-105">
+            <div className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-18px] lg:left-auto lg:right-10 z-20 bg-white rounded-lg shadow-lg p-2 lg:p-4 md:p-4 flex items-center space-x-2 transition-transform  transition-transform duration-200 ease-in-out hover:scale-105">
               <FiBarChart2 className="text-orange-500 w-8 h-8" />
               <div>
                 <p className="lg:text-xl  md:text-xl text-lg font-bold text-gray-800">
