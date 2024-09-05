@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import img1 from '../../assets/img1.png';
 import { FaBars, FaMagnifyingGlass, FaRegUser } from 'react-icons/fa6';
 import CoursesList from "../CoursesList";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CollegeCourse, School } from "../../Data";
 import { RxCross2 } from 'react-icons/rx';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
@@ -121,10 +121,12 @@ const Navbar = ({ theme }) => {
                 </div> */}
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                   <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Login
+                    <NavLink to="/login" >Loginnn</NavLink>
                   </li>
                   <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Sign Up
+                  <NavLink to="/signup" >Sign Up</NavLink>
+                    
+                    
                   </li>
                 </ul>
                 {/* <div className="py-2">
