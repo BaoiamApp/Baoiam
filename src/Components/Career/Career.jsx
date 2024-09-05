@@ -442,7 +442,7 @@ const jobs = [
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-700 rounded-full opacity-75 z-0 overflow-hidden"></div>
 
         {/* Image Gallery */}
-        <div className="relative z-10 w-1/3 md:w-1/4 grid grid-cols-2  gap-2 p-4  ">
+        <div className="relative z-10 w-1/2 md:w-1/4 grid grid-cols-2  gap-2 p-4  ">
           <div className="grid grid-cols-1 gap-2">
             <div className="col-span-1">
               <img
