@@ -22,47 +22,53 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 import { GiTeamIdea } from "react-icons/gi";
+import { FaArrowRight } from "react-icons/fa6";
+import { MdDesignServices } from "react-icons/md";
+import { FaBusinessTime } from "react-icons/fa";
+import { AiOutlineCode } from "react-icons/ai";
+import { BiSupport } from "react-icons/bi";
+import { RiBarChartBoxLine } from "react-icons/ri";
 
 const AboutUs = () => {
-  const [content, setContent] = useState(
-    "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
-  );
-  const [activeYear, setActiveYear] = useState("2019");
+  //   const [content, setContent] = useState(
+  //     "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
+  //   );
+  //   const [activeYear, setActiveYear] = useState("2019");
 
-  const handleDivClick = (year) => {
-    setActiveYear(year); // Set the clicked year as active
+  //   const handleDivClick = (year) => {
+  //     setActiveYear(year); // Set the clicked year as active
 
-    switch (year) {
-      case "2019":
-        setContent(
-          "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
-        );
-        break;
-      case "2020":
-        setContent(
-          "In 2020, we expanded our team and services, reaching new markets. Fueled by a commitment to innovation, Lunaria navigated challenges with resilience, expanding its services and client base. The firm's adaptability and visionary approach positioned it as a trusted partner, providing cutting-edge solutions and strategic insights amidst the evolving business environment. Lunaria's journey in 2020 shows its dedication to excellence and its important role in shaping the consulting landscape, this will influence Lunaria's sustainable development in the future."
-        );
-        break;
-      case "2021":
-        setContent(
-          "In the pivotal year of 2021, Baoiam Consulting Firm navigated the unprecedented challenges brought about by the global pandemic with remarkable resilience and strategic acumen. As the world faced uncertainty, Lunaria emerged as a steadfast partner, offering clients innovative solutions and strategic insights. The Lunaria consulting firm adaptability and visionary approach not only mitigated the impact of the crisis, but positioned Lunaria as a transformative force in the consulting landscape, exemplifying Lunaria's commitment to excellence and client-centric strategies during these critical times."
-        );
-        break;
-      case "2022":
-        setContent(
-          "In the aftermath of the pandemic in 2022, Baoiam Consulting Firm embarked on a robust business recovery journey. With a resilient spirit and strategic vision, the firm focused on rebuilding and strengthening its operations. Implementing innovative solutions, Lunaria played a pivotal role in guiding clients through the recovery phase, offering tailored strategies for renewed success. The post-pandemic era saw Lunaria's commitment to excellence shine, as it became a trusted partner in navigating the evolving business landscape, exemplifying adaptability, resilience, and a forward-thinking approach in sustainable client fostering."
-        );
-        break;
-      case "2023":
-        setContent(
-          "In 2023, Baoiam Consulting Firm has emerged as a standout leader in the industry, distinguished for its exceptional performance and client satisfaction. Renowned for innovative strategies, Lunaria continues to set the standard for excellence. With a dedicated team and a client-centric ethos, the firm consistently delivers transformative solutions. Lunaria's commitment to pushing boundaries and exceeding expectations positions it as a trailblazer, earning accolades and solidifying its status as one of the top consulting firms, driving success for clients in a rapidly evolving business landscape."
-        );
-        break;
-      default:
-        setContent("Click on a year to see the journey.");
-        break;
-    }
-  };
+  //     switch (year) {
+  //       case "2019":
+  //         setContent(
+  //           "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
+  //         );
+  //         break;
+  //       case "2020":
+  //         setContent(
+  //           "In 2020, we expanded our team and services, reaching new markets. Fueled by a commitment to innovation, Lunaria navigated challenges with resilience, expanding its services and client base. The firm's adaptability and visionary approach positioned it as a trusted partner, providing cutting-edge solutions and strategic insights amidst the evolving business environment. Lunaria's journey in 2020 shows its dedication to excellence and its important role in shaping the consulting landscape, this will influence Lunaria's sustainable development in the future."
+  //         );
+  //         break;
+  //       case "2021":
+  //         setContent(
+  //           "In the pivotal year of 2021, Baoiam Consulting Firm navigated the unprecedented challenges brought about by the global pandemic with remarkable resilience and strategic acumen. As the world faced uncertainty, Lunaria emerged as a steadfast partner, offering clients innovative solutions and strategic insights. The Lunaria consulting firm adaptability and visionary approach not only mitigated the impact of the crisis, but positioned Lunaria as a transformative force in the consulting landscape, exemplifying Lunaria's commitment to excellence and client-centric strategies during these critical times."
+  //         );
+  //         break;
+  //       case "2022":
+  //         setContent(
+  //           "In the aftermath of the pandemic in 2022, Baoiam Consulting Firm embarked on a robust business recovery journey. With a resilient spirit and strategic vision, the firm focused on rebuilding and strengthening its operations. Implementing innovative solutions, Lunaria played a pivotal role in guiding clients through the recovery phase, offering tailored strategies for renewed success. The post-pandemic era saw Lunaria's commitment to excellence shine, as it became a trusted partner in navigating the evolving business landscape, exemplifying adaptability, resilience, and a forward-thinking approach in sustainable client fostering."
+  //         );
+  //         break;
+  //       case "2023":
+  //         setContent(
+  //           "In 2023, Baoiam Consulting Firm has emerged as a standout leader in the industry, distinguished for its exceptional performance and client satisfaction. Renowned for innovative strategies, Lunaria continues to set the standard for excellence. With a dedicated team and a client-centric ethos, the firm consistently delivers transformative solutions. Lunaria's commitment to pushing boundaries and exceeding expectations positions it as a trailblazer, earning accolades and solidifying its status as one of the top consulting firms, driving success for clients in a rapidly evolving business landscape."
+  //         );
+  //         break;
+  //       default:
+  //         setContent("Click on a year to see the journey.");
+  //         break;
+  //     }
+  //   };
 
   const cardsData = [
     {
@@ -107,8 +113,64 @@ const AboutUs = () => {
   return (
     <div>
       {/* Section - 1 */}
-      <div className="flex relative gap-4 pb-20 w-full h-max text-white bg-indigo-900">
-        <div className="flex flex-col items-start mx-4 w-1/2 pt-24 pl-14 px-8">
+      <div className="flex flex-col text-white mb-16">
+        <div className="relative">
+          <img
+            className="w-full h-full object-cover"
+            src={aboutus4}
+            alt="image"
+          />
+        </div>
+        <div className="absolute inset-0 flex flex-col gap-6 items-start px-72 w-[78%] justify-center bg-opacity-50 text-white">
+          <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
+            <p className="text-amber-600 font-medium">
+              We are an EdTech Organization
+            </p>
+          </div>
+          <h2 className="text-5xl font-bold">
+            Think Big. We make IT, possible!
+          </h2>
+          <p className="font-medium">
+            We place you at the centre of information networks to advance your
+            strategic interests.
+          </p>
+          <button className="bg-amber-600 flex mt-2 rounded-3xl gap-1 justify-center items-center font-medium p-2 px-8">
+            Our Team
+            <FaArrowRight className="font-normal" size={18} />
+          </button>
+
+          <div className="absolute inset-x-0 -bottom-60 text-black font-bold text-center transform -translate-y-1/2 flex items-center justify-center gap-8">
+            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
+              <MdDesignServices size={48} className="text-amber-600 mb-2" />
+              <p>UI/UX Design Services</p>
+            </div>
+
+            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
+              <FaBusinessTime size={48} className="text-amber-600 mb-2" />
+              <p>Business Consultation</p>
+            </div>
+
+            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
+              <AiOutlineCode size={48} className="text-amber-600 mb-2" />
+              <p>Website Development</p>
+            </div>
+
+            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
+              <BiSupport size={48} className="text-amber-600 mb-2" />
+              <p>Support Management</p>
+            </div>
+
+            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
+              <RiBarChartBoxLine size={48} className="text-amber-600 mb-2" />
+              <p>Market Research</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Section - 2 */}
+      <div className="flex relative gap-4 pb-20 w-full h-screen">
+        <div className="flex flex-col items-start mx-4 w-1/2 pt-32 pl-14 px-8">
           <h2 className="text-6xl pb-8 font-bold">
             Students Success Is Our Focus
           </h2>
@@ -119,7 +181,7 @@ const AboutUs = () => {
             crafted to empower your growth and help you achieve your goals with
             confidence.
           </p>
-          <button className="bg-amber-600 rounded-md p-4 font-semibold text-lg">
+          <button className="bg-amber-600 text-white rounded-md p-4 font-semibold text-lg">
             Collaborate with us
           </button>
         </div>
@@ -148,7 +210,7 @@ const AboutUs = () => {
                 key={index}
                 className="text-center text-[18px] flex justify-center items-center"
               >
-                <div className="absolute top-0 flex flex-col border-3xl max-w-[90%] h-[100%] rounded-b-3xl border-slate-400 mb-12">
+                <div className="absolute flex flex-col border-3xl max-w-[90%] h-[100%] rounded-b-3xl border-slate-400 mb-12">
                   <div className="relative rounded-b-3xl mb-2 px-2 border-slate-400">
                     <img
                       src={slide.imgSrc}
@@ -158,20 +220,16 @@ const AboutUs = () => {
                     <div className="mt-2 mb-4 text-center">{slide.text}</div>
                   </div>
 
-                  <div className="absolute top-10 left-10 w-[82%] h-[90%] z-10 border-amber-600 border-4 rounded-2xl"></div>
+                  <div className="absolute top-10 left-10 w-[82%] h-[80%] z-10 border-amber-600 border-[3px] rounded-2xl"></div>
                 </div>
               </SwiperSlide>
             ))}
-            {/* <div
-              className="swiper-pagination-bullet swiper-pagination-bullet-custom"
-              style={{ display: "none" }}
-            /> */}
           </Swiper>
         </div>
       </div>
 
       {/* Section 2 */}
-      <div className="flex mx-auto gap-4 mb-16 justify-center items-center">
+      {/* <div className="flex mx-auto gap-4 mb-16 justify-center items-center">
         <div className="flex flex-col items-start gap-4 pt-16 ml-10 p-10 w-1/2">
           <h2 className="text-4xl font-bold">
             Our Vision for Better Result for Your Success
@@ -195,13 +253,11 @@ const AboutUs = () => {
         <div className="w-1/2">
           <div className="relative overflow-hidden rounded-b-2xl mb-2 px-2 max-w-[90%] h-full border-slate-400">
             <div className="absolute inset-0 bg-indigo-500 rounded-b-2xl mix-blend-multiply"></div>
-            {/* <div className="bg-blue-500 opacity-50  z-10"> */}
             <img
               src={aboutus5}
               alt="image"
               className="block max-w-full h-[60%] object-contain rounded-b-2xl shadow-lg"
             />
-            {/* </div> */}
             <div className="absolute inset-0 mt-2 flex mx-6 items-center justify-center mb-4">
               <p className="text-4xl text-white font-semibold">
                 "In the garden of achievement, diligent effort blossoms dreams
@@ -210,47 +266,10 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Section 3 */}
-      <div className="flex mx-auto bg-indigo-500 text-white gap-4 justify-start items-center">
-        {/* <div className="flex flex-col items-start gap-8 ml-10 p-10 w-1/2">
-          <h2 className="text-4xl font-bold">Baoiam Journey Through Time</h2>
-          <div className="flex gap-6 text-lg font-semibold">
-            <div
-              onClick={() => handleDivClick("Content for Div 1")}
-              className="flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20"
-            >
-              <p>2019</p>
-            </div>
-            <div className="flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20">
-              <p>2020</p>
-            </div>
-            <div className="flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20">
-              <p>2021</p>
-            </div>
-            <div className="flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20">
-              <p>2022</p>
-            </div>
-            <div className="flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20">
-              <p>2023</p>
-            </div>
-          </div>
-          <p className="text-lg mb-4">
-            {content} */}
-        {/* In 2019, Baoiam was founded in Noida. the inception of our
-            consulting firm was marked by an innovative spirit and a commitment
-            to deliver superior solutions. Throughout this journey, we forged a
-            robust foundation emphasizing service quality and steadfast
-            partnerships. Through unwavering dedication, we successfully
-            cultivated meaningful client relationships and achieved sustainable
-            growth. That year proved to be a historic milestone in shaping our
-            corporate identity, setting standards for excellence, and
-            reaffirming our commitment to client success through an innovative
-            consultative approach. */}
-        {/* </p>
-        </div> */}
-
+      {/* <div className="flex mx-auto bg-indigo-500 text-white gap-4 justify-start items-center">
         <div className="flex flex-col items-start gap-8 ml-10 p-10 w-1/2">
           <h2 className="text-4xl font-bold">Baoiam Journey Through Time</h2>
           <div className="flex gap-6 text-lg font-semibold">
@@ -260,7 +279,7 @@ const AboutUs = () => {
                 onClick={() => handleDivClick(year)}
                 className={`flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20 ${
                   activeYear === year ? "bg-amber-300" : ""
-                }`} // Conditional background color based on active year
+                }`} 
               >
                 <p>{year}</p>
               </div>
@@ -271,7 +290,6 @@ const AboutUs = () => {
 
         <div className="w-1/2 py-10">
           <div className="flex flex-col max-w-[90%] h-[70%] rounded-3xl mb-12 px-2">
-            {/* <div className="absolute inset-0 rounded-b-3xl"></div> */}
             <div className="relative">
               <img
                 src={aboutus5}
@@ -282,7 +300,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Section 4 */}
       <div className="flex flex-col gap-12 p-20">
@@ -298,7 +316,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="w-1/2">
-            <button className="bg-amber-400 ml-96 rounded-md p-4 text-white font-semibold text-lg">
+            <button className="bg-amber-600 ml-96 rounded-md p-4 text-white font-semibold text-lg">
               Collaborate with us
             </button>
           </div>
@@ -347,17 +365,12 @@ const AboutUs = () => {
       </div>
 
       {/* Section 5 */}
-      <div className="flex flex-col p-16 py-20 text-white bg-indigo-500">
-        <div className="flex flex-col gap-4">
-          <h2 className="text-4xl font-bold">
-            Introduce the Key Players in Baoiam
-          </h2>
-          <p className="text-lg w-[50%]">
-            Meet the driving forces behind Baoiam, the key players whose
-            dedication and expertise fuel our success and innovation every day.
-          </p>
+      <div className="flex flex-col p-16 py-20 gap-12">
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <p className="text-lg font-medium text-amber-600">Our Team</p>
+          <h2 className="text-4xl font-bold">Meet The Expert</h2>
         </div>
-        <div className="flex flex-wrap justify-between py-12 px-4">
+        <div className="flex flex-wrap justify-between px-4">
           {cardsData.map((card, index) => (
             <ContentCard
               key={index}
@@ -366,6 +379,14 @@ const AboutUs = () => {
               content={card.content}
             />
           ))}
+        </div>
+        <div className="flex justify-center mt-14 gap-10">
+          <button className="bg-amber-600 text-white rounded-md p-4 font-semibold text-lg">
+            Collaborate with us
+          </button>
+          <button className="rounded-md p-4 text-amber-600 border-2 border-amber-600 font-semibold text-lg">
+            See Other Members
+          </button>
         </div>
       </div>
     </div>
