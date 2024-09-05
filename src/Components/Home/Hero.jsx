@@ -34,8 +34,8 @@ const Hero = () => {
           >
             Get Started
           </button>
-        </div>
       </div>
+    </div>
 
 
 

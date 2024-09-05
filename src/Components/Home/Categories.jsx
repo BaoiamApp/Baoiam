@@ -2,39 +2,36 @@
 import React from "react";
 
 const Categories = () => {
-  const categories = [
-    "Information Systems",
-    "Human Resources",
-    "Business Management",
-    "Quality Control",
-    "Health Care",
-    "police tranning ",
-    "Management",
-    "Accounting",
-    "Health and Safety",
-  ];
+    const categories = [
+        'Information Systems',
+        'Human Resources',
+        'Business Management',
+        'Quality Control',
+        'Health Care',
+        'Police Training ',
+        'Management',
+        'Accounting',
+        'Health and Safety'
+    ];
 
-  return (
-    <div className="text-center p-4 md:p-6">
-      <h2 className="text-xl md:text-2xl font-bold mb-4">
-        Advance Your Career. Learn in . Boaiam
-      </h2>
-      <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6">
-        Upskill in business analytics, health care, graphic design, management,
-        and more.
-      </p>
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            className="px-4 py-2 md:px-6 md:py-2 border border-gray-300 rounded-full bg-gray-100 hover:bg-gray-200 transition text-sm md:text-base"
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <div className="text-center pt-11 pb-11">
+            <h1 className="text-3xl font-bold mb-4">Advance Your Career Learn in <span className='text-amber-500 underline'>Baoiam</span></h1>
+            <p className="text-xl md:text-lg mb-4 md:mb-6">
+                Upskill in business analytics, health care, graphic design, management, and more.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+                {categories.map((category, index) => (
+                    <button 
+                        key={index} 
+                        className="dark:bg-indigo-600 px-4 py-2 md:px-6 md:py-2 border border-none bg-slate-100 rounded-md text-sm md:text-base"
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
+        </div>
+    );
 };
 
 export default Categories;

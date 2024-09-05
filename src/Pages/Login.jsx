@@ -1,8 +1,10 @@
 import React from "react";
 import googleImage from '../assets/Images/google.svg'; 
 import exampleImage from '../assets/Images/image.jpeg';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
     return (
         <>
           <style>
@@ -100,7 +102,7 @@ const Login = () => {
                 </button>
                 <div className="text-center text-gray-400 animate-fadeIn">
                   Don't have an account?{" "}
-                  <span className="font-bold text-black cursor-pointer">
+                  <span onClick={()=>navigate("/profile")} className="font-bold text-black cursor-pointer hover:underline">
                     Sign up for free
                   </span>
                 </div>
