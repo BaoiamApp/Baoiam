@@ -109,8 +109,8 @@ const Navbar = ({ theme }) => {
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/course/${sub.course}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
-                          {sub.course}
+                        return <Link key={index} to={`/course/${sub.courseName}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
+                          {sub.courseName}
                         </Link>
                       })}
 

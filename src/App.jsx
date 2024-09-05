@@ -51,7 +51,8 @@ const App = () => {
 
         {/* <Route path="/course/:id" element={<Course />} /> */}
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/course/:course' element={<College />} />
+        <Route path='/courses/college' element={<College />} />
+        <Route path='/course/:course' element={<div>colleg Sub Category</div>} />
         {/* <Route path='/' element={<Home />} /> */}
         <Route path='/gscp' element={<GSCB />} />
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
