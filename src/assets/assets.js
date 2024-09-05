@@ -1,3 +1,6 @@
+// Logo
+export {default as Logo} from './img1.png'
+
 // Course Section
 export {default as CourseDesc} from './course/course-desc.png'
 export {default as CourseDesc2} from './course/course-desc2.png'
