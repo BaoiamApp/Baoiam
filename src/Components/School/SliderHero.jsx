@@ -15,20 +15,19 @@ import swiperSettings from './SwiperSettings.json';
 
 export default function App() {
   return (
-    <div className="">
+    
       <Swiper
         effect={swiperSettings.effect}
         grabCursor={swiperSettings.grabCursor}
         modules={[EffectCards, Autoplay]}
         autoplay={swiperSettings.autoplay}
-        className={`w-full h-full md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144`}
+        className={`w-full h-full md:w-80 md:h-96 lg:w-100 lg:h-120`}
       >
         {cards.map((card, index) => (
           <SwiperSlide
             key={index}
-            className="flex items-center justify-center rounded-xl text-white"
-            style={{
-              backgroundColor: card.backgroundColor,
+            className="w-full h-full flex items-center justify-center rounded-xl text-white"
+            style={{ height:'100%' ,width:'100%',
               backgroundImage: card.backgroundImage ? `url(${card.backgroundImage})` : 'none',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
@@ -36,7 +35,7 @@ export default function App() {
           ></SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    
   );
 }
 
