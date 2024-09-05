@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCheckCircle, FaStar } from "react-icons/fa";
 import tutors from "./tutors.json"; // Importing JSON data
+import { useNavigate } from "react-router-dom";
 
 const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
   <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-gray-200 border border-slate-300 shadow-lg rounded-lg p-4 max-w-sm hover:scale-105 hover:duration-500 hover:shadow-lg">
@@ -13,7 +14,10 @@ const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
       </div>
       <div className="flex items-center mt-2">
         {[...Array(5)].map((_, i) => (
-          <FaStar key={i} className={i < rating ? 'text-yellow-400' : 'text-gray-300'} />
+          <FaStar
+            key={i}
+            className={i < rating ? "text-yellow-400" : "text-gray-300"}
+          />
         ))}
       </div>
       <div className="mt-2 text-gray-500">Classes: {classes}</div>
@@ -23,15 +27,25 @@ const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
 );
 
 const Trending = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate("/checkout");
+  };
   return (
+    <>
     <div className="container mx-auto pt-10 lg:pr-40 lg:pt-10">
         <h1 className="text-3xl mb-8 font-bold inline-block relative">
           Trending Courses
           <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
         </h1>
-      <div className="grid gap-6  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      </div>
+      <div
+        onClick={handleCardClick}
+        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
         {tutors.map((tutor, index) => (
-          <TutorCard 
+          <TutorCard
             key={index}
             image={tutor.image}
             title={tutor.title}
@@ -42,7 +56,7 @@ const Trending = () => {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

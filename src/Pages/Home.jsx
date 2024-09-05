@@ -10,15 +10,15 @@ import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
 const Home = () => {
     return (
-        <>   
+        <>
             <Hero />
             <Courses />
             <Slider />
             <Categories />
             <Partners />
-            <Protocol/>
+            <Protocol />
             <JoinNow />
-            <How/>
+            <How />
         </>
     )
 }
