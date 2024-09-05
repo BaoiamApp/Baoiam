@@ -10,11 +10,11 @@ const Hero = () => {
     navigate("/pap");
   };
   return (
-    <div className="bg-white dark:bg-black dark:text-white my-16 flex flex-col-reverse md:flex-row h-[100vh] lg:h-[80vh] md:py-12 px-6 lg:px-16">
+    <div className="bg-white dark:bg-[#080529] dark:text-white my-16 flex flex-col-reverse md:flex-row h-[100vh] lg:h-[80vh] md:py-12 px-6 lg:px-16">
       {/* Left Side: Heading and Content */}
       <div className="w-full flex gap-y-1 flex-col lg:w-1/2 text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-          Empowering<span className="text-blue-500"> Education</span>{" "}
+          Empowering<span className="text-indigo-500"> Education</span>{" "}
         </h1>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           {" "}
@@ -37,13 +37,13 @@ const Hero = () => {
         </div>
       </div>
 
-   
 
-    {/* Right Side:Slider*/}
-    <div className='w-full flex justify-center lg:items-center h-full lg:w-1/2'>
-      <img className='object-cover' src={Herobg} alt='Right image'/>
+
+      {/* Right Side:Slider*/}
+      <div className='w-full flex justify-center lg:items-center h-[60%] md:h-full lg:w-1/2'>
+        <img className='object-cover' src={Herobg} alt='Right image' />
+      </div>
     </div>
-  </div>
   )
 }
 
