@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from "react";
 import image1 from "../../images/pngegg.png";
-import image0 from "../../images/pngegg (1).png"
+import image0 from "../../images/pngegg (2).png"
 import image2 from "../../images/teamwork00.webp";
-import image3 from "../../images/teamwork10.webp";
-import image4 from "../../images/teamwork15.jpg";
-import image5 from "../../images/teamwork0.webp";
+import image3 from "../../images/images new.jpeg";
+import image4 from "../../images/images new1.jpeg";
+import image5 from "../../images/download new.jpeg";
 import image7 from "../../images/Biaoam.webp";
 import image8 from "../../images/teamwork13.avif";
 import image9 from "../../images/teamwork14.avif";
 import image10 from "../../images/teamwork6.webp";
 import image11 from "../../images/pngegg (3).png"
-import icon1 from "../../images/graduated (3).png";
-import icon2 from "../../images/knowledge.png";
-import icon3 from "../../images/education.png";
-import icon4 from "../../images/deep-learning.png";
-import icon5 from "../../images/academic.png";
-import icon6 from "../../images/machine-learning.png";
-import icon7 from "../../images/online-lesson.png";
-
+import icon1 from "../../images/graduation-hat.png";
+import icon2 from "../../images/learning.png";
+import icon3 from "../../images/office-building.png";
+import icon4 from "../../images/reading-book.png";
+import icon5 from "../../images/thinking.png";
+import icon6 from "../../images/code.png";
+import icon7 from "../../images/location.png";
+import icon8 from "../../images/briefcase (1).png"
+import { FaGoogle, FaSlack, FaDribbble } from "react-icons/fa"; // For example icons
+import { FiBarChart2 } from "react-icons/fi";
 const Career = () => {
  
 
@@ -25,22 +27,22 @@ const Career = () => {
 const benefits = [
   {
     title: "Large Beautiful Office",
-    description: "Enjoy a spacious and beautiful office environment.",
+    description: "Enjoy a spacious beautiful office .",
     icon: icon1,
   },
   {
     title: "Great Co-Workers",
-    description: "Work with amazing and supportive colleagues.",
+    description: "Work with supportive colleagues.",
     icon: icon2,
   },
   {
     title: "Easy Location",
-    description: "Conveniently located office for easy commute.",
+    description: "Conveniently located office .",
     icon: icon3,
   },
   {
     title: "Education Opportunities",
-    description: "Access to continuous learning and development.",
+    description: "Continuous learning and development.",
     icon: icon4,
   },
   {
@@ -50,19 +52,19 @@ const benefits = [
   },
   {
     title: "Performance Awards",
-    description: "Get rewarded for your hard work and achievements.",
+    description: "Get rewarded .",
     icon: icon6,
   },
 
   {
     title: "Performance Awards",
-    description: "Get rewarded for your hard work and achievements.",
+    description: "Get rewarded .",
     icon: icon6,
   },
 
   {
     title: "Performance Awards",
-    description: "Get rewarded for your hard work and achievements.",
+    description: "Get rewarded .",
     icon: icon6,
   },
 ];
@@ -77,16 +79,19 @@ const features = [
 
 const slides = [
   {
-    image:image5,
-    content: "This is the content for slide 1.",
+    image: image5,
+    content:
+      "The best part of working at Hubstaff will forever be the flexibility in my schedule that allows me to see my wife and kids throughout the day. Besides that, I have the opportunity to work with incredibly talented and unique people from all over the world. I love it here..",
   },
   {
-    image:image3,
-    content: "This is the content for slide 2.",
+    image: image3,
+    content:
+      "The best part of working at Hubstaff will forever be the flexibility in my schedule that allows me to see my wife and kids throughout the day. Besides that, I have the opportunity to work with incredibly talented and unique people from all over the world. I love it here..",
   },
   {
     image: image4,
-    content: "This is the content for slide 3.",
+    content:
+      "The best part of working at Hubstaff will forever be the flexibility in my schedule that allows me to see my wife and kids throughout the day. Besides that, I have the opportunity to work with incredibly talented and unique people from all over the world. I love it here..",
   },
 ];
 
@@ -161,73 +166,102 @@ const jobs = [
 
   return (
     <div className="min-h-screen flex flex-col justify-center item-center   text-white relative overflow-x-hidden lg:pb-0">
-      <div
-        className="h-screen bg-[#c7d2fe] p-10 sm:p-6 lg:p-10 flex flex-col items-center justify-center lg:flex-row w-full relative overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(252, 191, 5, 0.2) 0%, transparent 70%), radial-gradient(circle at 20% 80%, rgba(252, 83, 5, 0.15) 0%, transparent 60%)",
-        }}
-      >
-        {/* Background Circular Effects */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-r from-[#6366f1] to-[#4338ca] rounded-full opacity-75 z-0 opacity-20"></div>
-        <div className="absolute top-1/2 -left-32 w-96 h-96 bg-gradient-to-r from-[#6366f1] to-[#4338ca] rounded-full opacity-75 z-0 opacity-20"></div>
+      <div className="min-h-screen bg-[#fcfdff] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center justify-center lg:flex-row w-full relative overflow-hidden">
+        {/* Main Content Section */}
+        <main className="flex flex-col lg:flex-row items-center lg:justify-between w-full lg:px-20 py-8 lg:py-12">
+          {/* Text Section */}
+          <div className="text-center lg:text-left lg:w-1/2 space-y-6">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-[#0a0a0a] ">
+              Upskills Your{" "}
+              <span className="bg-gradient-to-r from-[#f97316] to-[#f59e0b] text-transparent bg-clip-text">
+                Career
+              </span>
+              <br />
+              Journey With Us.
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-[#0a0a0a] ">
+              Amet nulla ornare neque, in diam ultrices et phasellus<br/> mattis.
+              Eget eget ut eget nibh.
+            </p>
 
-        <div className="flex flex-col space-y-6 z-10 px-4 md:px-12 items-center justify-center w-full lg:w-1/2 pt-0 ">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#0a0a0a]">
-            Upskill your{" "}
-            <span className="bg-gradient-to-r from-[#4338ca] to-[#6366f1] text-transparent bg-clip-text">
-              career
-            </span>{" "}
-            journey with Us.
-          </h1>
+            {/* Search Bar */}
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <input
+                type="text"
+                placeholder="Type"
+                className="border border-gray-300 rounded-lg p-3 w-full sm:w-auto flex-grow"
+              />
+              <button className="bg-black text-white px-6 py-3 rounded-lg transition duration-300 ease-in-out hover:bg-[#d97706] hover:shadow-lg mt-2 sm:mt-0">
+                Search
+              </button>
+            </div>
+          </div>
 
-          <p className="text-lg text-sm md:text-xl max-w-xl text-[#0a0a0a]">
-            Work at the most dynamic agency & unlock your true potential.
-          </p>
+          {/* Image and Icons Section */}
+          <div className="relative mt-8 lg:mt-0 lg:w-1/2 flex justify-center ">
+            {/* Yellow Circle and Main Image */}
+            <div className="relative w-full flex justify-center">
+              <div className="  bg-yellow-300 w-[300px] h-[300px]  md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full absolute -top-2 -left-3 md:top-10 md:-left-3 lg:-top-10 lg:-left-1 "></div>
+              <img
+                src={image0} // Replace with your image source
+                alt="Job Finder Illustration"
+                className=" relative w-full h-auto  z-10 lg:pl-10 "
+              />
+            </div>
 
-          <button className="bg-[#4338ca] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#fc3003] hover:text-white transition w-48">
-            Explore Careers
-          </button>
-        </div>
+            {/* Floating Icons */}
+            <div className="absolute top-[-20px] left-12 lg:left-20">
+              <FaSlack className="text-blue-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+            </div>
+            <div className="absolute top-24 left-[-10px] lg:left-[-20px]">
+              <FaGoogle className="text-red-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+            </div>
+            <div className="absolute top-[-10px] right-12 lg:right-40">
+              <FaDribbble className="text-pink-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+            </div>
+            <div className="absolute top-8 right-12 lg:right-10">
+              <FiBarChart2 className="text-green-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+            </div>
 
-        <div className="relative pr-20 lg:w-full w-1/2 lg:w-1/3 h-full bottom-2 sm:w-1/3 sm:pt-10 ">
-          <img
-            fetchpriority="high"
-            decoding="async"
-            src={image0}
-            alt="Illustration"
-            className="w-full  max-w-lg h-auto mx-auto z-10 lg:pt-20"
-          />
-        </div>
+            {/* Stats Box */}
+            <div className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-18px] lg:left-auto lg:right-10 z-20 bg-white rounded-lg shadow-lg p-4 flex items-center space-x-2 transition-transform animate-bounce hover:animate-none transition-transform duration-200 ease-in-out hover:scale-105">
+              <FiBarChart2 className="text-orange-500 w-8 h-8" />
+              <div>
+                <p className="text-xl font-bold text-gray-800">20K+</p>
+                <p className="text-sm text-gray-500">People got hired</p>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
 
       <div className="bg-white flex flex-col">
-        <main className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-15 lg:px-28 xl:px-32 m-4 md:m-8 ">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-center  text-[#3730a3] pt-4 sm:pt-5 mb-0">
+        <main className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-15 lg:px-0 xl:px-0 m-4 md:m-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-center text-[#0a0a0a] pt-4 sm:pt-5 mb-0">
             Your Life At BAOIAM
           </h1>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="p-4 md:p-6 flex items-start bg-white hover:bg-gray-100 transition border border-gray-300 rounded-lg shadow-sm lg:mt-0"
+                className="p-4 md:p-6 flex flex-col items-center bg-white hover:bg-gray-100 transition border border-gray-300 rounded-lg shadow-sm lg:mt-0"
               >
-                {/* Image on the Left */}
+                {/* Image Icon */}
                 <img
                   src={benefit.icon}
                   alt={benefit.title}
-                  className="w-12 h-12 mr-4"
+                  className="w-12 h-12 mb-4"
                 />
 
-                {/* Content on the Right */}
-                <div className="flex flex-col">
-                  <h2 className="text-lg md:text-xl font-bold text-gray-900">
-                    {benefit.title}
-                  </h2>
-                  <p className="text-gray-700 text-sm md:text-base">
-                    {benefit.description}
-                  </p>
-                </div>
+                {/* Title */}
+                <h2 className="text-lg md:text-lg font-bold text-gray-900 text-center mb-2">
+                  {benefit.title}
+                </h2>
+
+                {/* Description */}
+                <p className="text-sm text-gray-600 text-center">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -237,7 +271,7 @@ const jobs = [
       <div className="flex flex-col md:flex-row items-center bg-white px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 py-8 mx-0 mt-5 lg:mt-2 w-full">
         {/* Left Section */}
         <div className="md:w-1/2 text-left mb-8 md:mb-0 md:pr-8 lg:pr-16 xl:pr-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3730a3] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  text-[#0a0a0a] mb-4">
             Why We Are Most Popular
           </h2>
           <p className="text-gray-600 mb-8">
@@ -329,7 +363,12 @@ const jobs = [
 
         {/* Left Section */}
         <div className="md:w-1/2 text-left pl-0 md:pl-8 lg:pl-12 xl:pl-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3730a3] mb-4">
+          <img
+            src={icon8} // Replace iconSrc with the path to your icon image
+            alt="Icon"
+            className="w-12 h-12 mb-4"
+          />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  text-[#0a0a0a] mb-4">
             Trusted & Popular Job Portal
           </h2>
           <p className="text-gray-600 mb-8 text-base sm:text-lg lg:text-xl">
@@ -339,6 +378,15 @@ const jobs = [
             commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum
             suspendisse ultrices gravida.
           </p>
+
+          <div className="flex space-x-4">
+            <button className=" bg-[#6366f1] text-white px-6 py-3  font-semibold hover:bg-[#1e3a8a] transition">
+              Post a Job
+            </button>
+            <button className="bg-gray-200  text-[#6366f1] px-6 py-3  font-semibold hover:bg-gray-300 transition">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
 
@@ -346,10 +394,10 @@ const jobs = [
       <div className="bg-white py-4 px-2">
         {/* Header Section */}
         <div className="max-w-screen-lg mx-auto text-center">
-          <div className="text-3xl sm:text-4xl md:text-5xl font-bold  text-[#3730a3] mb-4">
+          <div className="text-3xl sm:text-4xl md:text-5xl font-bold  text-[#0a0a0a] mb-4">
             Experience Life at BAOIAM
           </div>
-          <div className="text-base sm:text-lg md:text-xl text-[#1f0a6b]">
+          <div className="text-base sm:text-lg md:text-xl text-gray-700">
             We're building a workspace environment that promotes growth, both
             personally, professionally & mentally.
           </div>
@@ -357,7 +405,7 @@ const jobs = [
       </div>
 
       {/* Slide Section */}
-      <div className="relative w-full h-80 sm:h-96 overflow-hidden mt-8 flex items-center justify-center p-4 sm:p-6 md:p-10">
+      <div className=" h-screen relative w-full h-80 sm:h-96 overflow-hidden mt-8 flex items-center justify-center p-4 sm:p-6 md:p-10">
         <div
           className="flex transition-transform ease-in-out duration-1000"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -367,15 +415,15 @@ const jobs = [
               key={index}
               className="w-full h-full flex-shrink-0 flex items-center justify-center"
             >
-              <div className="flex flex-col sm:flex-row w-full h-full">
+              <div className="flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl transform transition-transform hover:scale-105 hover:shadow-3xl bg-white">
                 {/* Left side - Content */}
-                <div className="flex-1 flex items-center justify-center p-4 sm:p-6">
-                  <p className="text-lg sm:text-xl md:text-2xl text-black text-center sm:text-left">
+                <div className="flex-1 flex justify-center p-4 sm:p-6">
+                  <p className="text-lg sm:text-sm md:text-xl text-black text-center sm:text-left">
                     {slide.content}
                   </p>
                 </div>
                 {/* Right side - Image */}
-                <div className="flex-1">
+                <div className="flex-1 h-full">
                   <img
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
@@ -393,8 +441,43 @@ const jobs = [
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-700 rounded-full opacity-75 z-0 overflow-hidden"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-700 rounded-full opacity-75 z-0 overflow-hidden"></div>
 
+        {/* Image Gallery */}
+        <div className="relative z-10 w-1/3 md:w-1/4 grid grid-cols-2  gap-2 p-4  ">
+          <div className="grid grid-cols-1 gap-2">
+            <div className="col-span-1">
+              <img
+                src={image8}
+                alt="Team Member 1"
+                className="w-full h-full  object-cover"
+              />
+            </div>
+            <div className="col-span-1 row-span-4">
+              <img
+                src={image2}
+                alt="Team Member 2"
+                className="w-full h-full  object-cover"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-2">
+            <div className="col-span-1 row-span-4">
+              <img
+                src={image9}
+                alt="Team Member 3"
+                className="w-full h-full  object-cover"
+              />
+            </div>
+            <div className="col-span-1">
+              <img
+                src={image8}
+                alt="Team Member 4"
+                className="w-full h-full  object-cover"
+              />
+            </div>
+          </div>
+        </div>
         {/* Text Content */}
-        <div className="relative z-10 w-full md:w-1/2 text-left p-4">
+        <div className="relative z-10 w-full md:w-1/2 text-left p-4 md:pl-8">
           <h1 className="text-3xl font-bold mb-4">
             Take a closer look at the Baoiam team
           </h1>
@@ -414,38 +497,6 @@ const jobs = [
             climb, and practice yoga — as reported in our #wellness Slack
             channel.
           </p>
-        </div>
-
-        {/* Image Gallery */}
-        <div className="relative z-10 w-full md:w-1/2 grid grid-cols-2 gap-4 p-4">
-          <div className="relative">
-            <img
-              src={image10}
-              alt="Team Member 1"
-              className="w-full h-auto rounded-lg relative z-20"
-            />
-          </div>
-          <div className="relative">
-            <img
-              src={image10}
-              alt="Team Member 2"
-              className="w-full h-auto rounded-lg relative z-20"
-            />
-          </div>
-          <div className="relative">
-            <img
-              src={image10}
-              alt="Team Member 3"
-              className="w-full h-auto rounded-lg relative z-20"
-            />
-          </div>
-          <div className="relative">
-            <img
-              src={image10}
-              alt="Team Member 4"
-              className="w-full h-auto rounded-lg relative z-20"
-            />
-          </div>
         </div>
       </section>
     </div>
