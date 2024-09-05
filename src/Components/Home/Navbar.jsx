@@ -62,7 +62,7 @@ const Navbar = ({ theme }) => {
 
   return (
     <>
-      <div className={`flex items-center justify-between px-4 py-2 z-[100] ${isTransparent ? 'bg-white dark:bg-black' : 'bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0'}`}>
+      <div className={`flex items-center justify-between px-4 py-2 z-[100] ${isTransparent ? 'bg-white dark:bg-[#080529]' : 'bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0'}`}>
         {/* Logo */}
         <Link to={'/'} className='w-28 h-14'>
           <img src={img1} className='w-full h-full' alt="logo" />
@@ -96,7 +96,7 @@ const Navbar = ({ theme }) => {
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/course/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                        return <Link key={index} to={`/course/school/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
                           {sub.course}
                         </Link>
                       })}
@@ -111,7 +111,7 @@ const Navbar = ({ theme }) => {
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/course/${sub.course}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200">
+                        return <Link key={index} to={`/course/${sub.course}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
                           {sub.course}
                         </Link>
                       })}
@@ -119,7 +119,7 @@ const Navbar = ({ theme }) => {
                     </ul>
                   </div>
                 })}
-              </div >
+              </div>
             </div >
           )}
           <Link to={'/about-us'} onClick={() => handleLinkClick('About')} className={`mx-4 hover:text-indigo-500 ${linkActive === 'About' ? "text-indigo-600" : ""} `}>About Us</Link>
@@ -147,12 +147,12 @@ const Navbar = ({ theme }) => {
                   <div className="font-medium truncate">name@flowbite.com</div>
                 </div> */}
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <Link to={'/login'} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     Login
-                  </li>
-                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  </Link>
+                  <Link to={'/signup'} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     Sign Up
-                  </li>
+                  </Link>
                 </ul>
                 {/* <div className="py-2">
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
@@ -168,8 +168,8 @@ const Navbar = ({ theme }) => {
           <Link to={'/gcsp'} className="relative px-6 py-2 ml-2 overflow-hidden font-medium text-indigo-500 dark:text-white dark:bg-black bg-gray-100 border border-gray-100 rounded-full hidden md:block shadow-inner group">
             <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-indigo-600 group-hover:w-full ease"></span>
             <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-indigo-600 group-hover:w-full ease"></span>
-            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-indiborder-indigo-600 group-hover:h-full ease"></span>
-            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-indiborder-indigo-600 group-hover:h-full ease"></span>
+            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-r-2 group-hover:h-full ease"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-l-2 group-hover:h-full ease"></span>
             <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-indigo-600 opacity-0 group-hover:opacity-100"></span>
             <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">GCSP</span>
           </Link>
