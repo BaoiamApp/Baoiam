@@ -12,15 +12,15 @@ import React from 'react'
 
 const Courses = () => {
   return (
-    <div className='w-[100%] dark:bg-black bg-gray-400 '>
+    <div className='w-[100%] dark:bg-black'>
 
-      <p className='text-center font-bold text-white text-[1.6rem] md:text-[2rem] pt-[1rem]'>Explore Free Online Courses</p>
+      <p className='text-center font-bold text-[1.6rem] md:text-[2rem] pt-[1rem]'>Explore Free Online Courses</p>
 
       <div className='grid grid-rows-10 grid-cols-1 gap-2 pb-[5%] pt-[2%] px-[5%] sm:grid sm:grid-rows-5 sm:grid-cols-2 lg:grid lg:grid-rows-2 lg:grid-cols-5 lg:gap-[3rem] lg:w-[94%]
       lg:px-[7%]
       '>
 
-        <div className='w-[70vw] mx-auto sm:w-[45vw] lg:w-[16vw] rounded-2xl p-[5%]  border-2 border-gray-200 bg-white  text-center'>
+        <div className='w-[70vw] mx-auto sm:w-[45vw] lg:w-[16vw] rounded-2xl p-[5%]  border-2 border-gray-200  text-center'>
           <p className='mb-[0.7rem] xl:h-[4rem] xl:mb-0 lg:mb-[0.1rem]'>
             <FaCloud className='text-blue-400 text-[20vw] w-full sm:text-[10vw] lg:w-full lg:text-[3rem] mt-4' />
           </p>
