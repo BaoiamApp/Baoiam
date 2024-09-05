@@ -80,8 +80,8 @@ export default function SliderSection() {
         }}
       >
         {categories[selectedCategory]?.map((slide, index) => (
-          <SwiperSlide key={index} className="lg:p-6 pl-4 lg:pr-6">
-            <div className="card bg-white/50 backdrop-blur-[100%] bg-opacity-20 drop-shadow-lg border border-white/20 p-6 text-center rounded-lg shadow-lg hover:scale-105 duration-300 ease-out">
+          <SwiperSlide key={index}>
+            <div className="card bg-gradient-to-tr from-slate-300/50 backdrop-filter backdrop-blur-3xl bg-opacity-500 drop-shadow-2xl  border-white/20  p-6 text-center  hover:scale-105 duration-300 ease-out">
               <div className="image-container mb-4">
                 <img
                   src={slide.img}
