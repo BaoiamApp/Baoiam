@@ -180,8 +180,8 @@ const jobs = [
               Journey With Us.
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#0a0a0a] ">
-              Amet nulla ornare neque, in diam ultrices et phasellus<br/> mattis.
-              Eget eget ut eget nibh.
+              Amet nulla ornare neque, in diam ultrices et phasellus
+              <br /> mattis. Eget eget ut eget nibh.
             </p>
 
             {/* Search Bar */}
@@ -201,7 +201,7 @@ const jobs = [
           <div className="relative mt-8 lg:mt-0 lg:w-1/2 flex justify-center ">
             {/* Yellow Circle and Main Image */}
             <div className="relative w-full flex justify-center">
-              <div className="  bg-yellow-300 w-[300px] h-[300px]  md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full absolute -top-2 -left-3 md:top-10 md:-left-3 lg:-top-10 lg:-left-1 "></div>
+              <div className="absolute  bg-yellow-300 w-[50vw] h-[50vw]  md:w-[378px] md:h-[378px] lg:w-[400px] lg:h-[400px] rounded-full absolute -top-0 -left-3 md:top-10 md:-left-3 lg:-top-10 lg:-left-1 "></div>
               <img
                 src={image0} // Replace with your image source
                 alt="Job Finder Illustration"
@@ -211,24 +211,28 @@ const jobs = [
 
             {/* Floating Icons */}
             <div className="absolute top-[-20px] left-12 lg:left-20">
-              <FaSlack className="text-blue-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+              <FaSlack className="text-blue-600 bg-white p-1 lg:p-2 md:p-2 sm:p-2 rounded-full shadow-lg lg:w-12 lg:h-12   md:w-12 md:h-12 sm:w-10 sm:h-10 w-6 h-6" />
             </div>
             <div className="absolute top-24 left-[-10px] lg:left-[-20px]">
-              <FaGoogle className="text-red-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+              <FaGoogle className="text-red-600 bg-white p-1 lg:p-2 md:p-2 sm:p-2 rounded-full shadow-lg lg:w-12 lg:h-12   md:w-12 md:h-12 sm:w-10 sm:h-10 w-6 h-6" />
             </div>
-            <div className="absolute top-[-10px] right-12 lg:right-40">
-              <FaDribbble className="text-pink-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+            <div className="absolute top-[-10px] right-20 lg:right-40 md:right-40 sm:right-40">
+              <FaDribbble className="text-pink-600 bg-white p-1 lg:p-2 md:p-2 sm:p-2 rounded-full shadow-lg lg:w-12 lg:h-12   md:w-12 md:h-12 sm:w-10 sm:h-10 w-6 h-6" />
             </div>
-            <div className="absolute top-8 right-12 lg:right-10">
-              <FiBarChart2 className="text-green-600 bg-white p-2 rounded-full shadow-lg w-12 h-12" />
+            <div className="absolute top-8 right-9 lg:right-10 ">
+              <FiBarChart2 className="text-green-600 bg-white p-1 lg:p-2 md:p-2 sm:p-2 rounded-full shadow-lg lg:w-12 lg:h-12   md:w-12 md:h-12 sm:w-10 sm:h-10 w-6 h-6" />
             </div>
 
             {/* Stats Box */}
-            <div className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-18px] lg:left-auto lg:right-10 z-20 bg-white rounded-lg shadow-lg p-4 flex items-center space-x-2 transition-transform animate-bounce hover:animate-none transition-transform duration-200 ease-in-out hover:scale-105">
+            <div className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-18px] lg:left-auto lg:right-10 z-20 bg-white rounded-lg shadow-lg p-2 lg:p-4 md:p-4 flex items-center space-x-2 transition-transform animate-bounce hover:animate-none transition-transform duration-200 ease-in-out hover:scale-105">
               <FiBarChart2 className="text-orange-500 w-8 h-8" />
               <div>
-                <p className="text-xl font-bold text-gray-800">20K+</p>
-                <p className="text-sm text-gray-500">People got hired</p>
+                <p className="lg:text-xl  md:text-xl text-lg font-bold text-gray-800">
+                  20K+
+                </p>
+                <p className="lg:text-sm  md:text-sm text-xs text-gray-500">
+                  People got hired
+                </p>
               </div>
             </div>
           </div>
@@ -407,18 +411,18 @@ const jobs = [
       {/* Slide Section */}
       <div className=" h-screen relative w-full h-80 sm:h-96 overflow-hidden mt-8 flex items-center justify-center p-4 sm:p-6 md:p-10">
         <div
-          className="flex transition-transform ease-in-out duration-1000"
+          className="flex transition-transform ease-in-out duration-1000 "
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="w-full h-full flex-shrink-0 flex items-center justify-center"
+              className="w-full h-full flex-shrink-0 flex items-center justify-center "
             >
-              <div className="flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl transform transition-transform hover:scale-105 hover:shadow-3xl bg-white">
+              <div className="flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl transform transition-transform hover:scale-105 hover:shadow-3xl bg-white m-5 ">
                 {/* Left side - Content */}
                 <div className="flex-1 flex justify-center p-4 sm:p-6">
-                  <p className="text-lg sm:text-sm md:text-xl text-black text-center sm:text-left">
+                  <p className="text-lg sm:text-sm md:text-xl lg:text-xl text-black text-center sm:text-left">
                     {slide.content}
                   </p>
                 </div>
@@ -442,7 +446,7 @@ const jobs = [
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-700 rounded-full opacity-75 z-0 overflow-hidden"></div>
 
         {/* Image Gallery */}
-        <div className="relative z-10 w-1/2 md:w-1/4 grid grid-cols-2  gap-2 p-4  ">
+        <div className="relative z-10 w-full lg:w-1/4 md:w-1/2 sm:w-1/2 grid grid-cols-2  gap-2 p-4  ">
           <div className="grid grid-cols-1 gap-2">
             <div className="col-span-1">
               <img
