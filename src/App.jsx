@@ -22,6 +22,9 @@ import Career from "./Components/Career/Career";
 import Blog_detail from "./Pages/Blog_detail";
 import { OurTeam } from "./Pages/OurTeam";
 
+import ProfilePage from './Components/profile/ProfilePage'
+import SideBar from './Components/profile/SideBar'
+
 const App = () => {
   const [dark, setDark] = useState(false);
 
@@ -66,6 +69,7 @@ const App = () => {
         <Route path='/Blog_detail' element={<Blog_detail />} />
         <Route path='/career' element={<Career />} />
         <Route path='/team' element={<OurTeam />} />
+        <Route path="/profile" element={<SideBar />} />
       </Routes>
       <Footer />
     </div>

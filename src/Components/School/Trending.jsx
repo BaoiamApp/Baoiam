@@ -4,7 +4,7 @@ import tutors from "./tutors.json"; // Importing JSON data
 import { useNavigate } from "react-router-dom";
 
 const TutorCard = ({ image, title, tutorName, rating, classes, price }) => (
-  <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-gray-200 shadow-md rounded-lg p-4 max-w-sm hover:scale-105 hover:duration-500 hover:shadow-lg hover:border hover:border-zinc-200">
+  <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-gray-200 border border-slate-300 shadow-lg rounded-lg p-4 max-w-sm hover:scale-105 hover:duration-500 hover:shadow-lg">
     <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg" />
     <div className="mt-4">
       <h2 className="text-xl font-bold">{title}</h2>
