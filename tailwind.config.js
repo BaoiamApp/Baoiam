@@ -7,6 +7,9 @@ export default {
   darkMode:"class",
   theme: {
     extend: {
+      screens: {
+        "xs": { max: "375px" },
+       },
     },
   },
   plugins: [],
