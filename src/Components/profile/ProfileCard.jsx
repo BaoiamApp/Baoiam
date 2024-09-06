@@ -1,32 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { FiEdit } from 'react-icons/fi';
 
-const ProfileCard = ({ onEdit }) => {
-  const [profileData, setProfileData] = useState({
-    name: '',
-    profileImage: ''
-  });
-
-  // Load saved profile data from localStorage when the component mounts
-  useEffect(() => {
-    const savedData = localStorage.getItem('formData');
-    if (savedData) {
-      const parsedData = JSON.parse(savedData);
-      setProfileData({
-        name: parsedData.name || 'No name provided',
-        profileImage: parsedData.profileImage || ''
-      });
-    }
-  }, []);
-
+const ProfileCard = ({name,profileImage,editUserInfo, onEdit }) => {
   return (
     <div className="lg:w-96 relative bg-gradient-to-tr from-slate-300/50 backdrop-filter backdrop-blur-3xl bg-opacity-500 drop-shadow-2xl border-white/20 p-4 rounded-lg shadow-md text-center dark:border dark:border-gray-200">
       <img
-        src={profileData.profileImage || "https://via.placeholder.com/150"}
+        src={profileImage || "https://via.placeholder.com/150"}
         alt="Profilephoto"
         className="w-40 h-40 rounded-full mx-auto"
       />
-      <h2 className="mt-4 text-xl font-semibold">{profileData.name}</h2>
+      <h2 className="mt-4 text-xl font-semibold">{name}</h2>
       <button
         onClick={onEdit}
         className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
