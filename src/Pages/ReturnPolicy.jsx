@@ -18,7 +18,7 @@ const ReturnPolicy = () => {
         <p className="text-gray-700 mb-4">
           We understand that it may be difficult for people new to the world of online learning to feel confident and fully understand the power of an online course or a career development program. Especially, when such a program requires extensive investment of time, energy, and money.
         </p>
-        <p className="text-gray-700 mb-6">
+        <p className="mb-3 sm:mb-4">
           What we can do here to allay such fears is to offer a money-back guarantee. Hence, we are introducing this refund policy as laid down in the following few paragraphs.
         </p>
       </section>
