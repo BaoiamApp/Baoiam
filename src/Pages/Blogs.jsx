@@ -340,13 +340,12 @@ const Blog = () => {
                   key={id}
                   className="flex justify-center p-4 " // Center items in the slider
                 >
-                  <div className="shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out">
-                    <img
-                      onMouseEnter={() => authorCardMouseEnter(id)}
-                      onMouseLeave={() => authorCardMouseLeave()}
-                      src={item.imgSrc}
-                      className="rounded-md w-full"
-                    />
+                  <div
+                    onMouseEnter={() => authorCardMouseEnter(id)}
+                    onMouseLeave={() => authorCardMouseLeave()}
+                    className="shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out"
+                  >
+                    <img src={item.imgSrc} className="rounded-md w-full" />
                     <h2
                       className={`${
                         authorDetailsVisible.display &&

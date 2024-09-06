@@ -250,55 +250,52 @@ const Blog_detail = () => {
             <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
               Product Development
             </div>
-            <div className="text-[20px] mx-8 xs:text-[14px] bg-[#F3E8FF] px-3 py-2 rounded-lg  cursor-pointer transition-all dark:border-[1px] ">
+            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
               Entrepreneurship
             </div>
-            <div className="text-[20px] mx-8 xs:text-[14px] bg-[#F3E8FF] px-3 py-2 rounded-lg  cursor-pointer transition-all dark:border-[1px] ">
+            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
               Java Full-Stack Developer Roadmap
             </div>
-            <div className="text-[20px]  mx-8  bg-[#F3E8FF] xs:text-[14px] px-3 py-2 rounded-lg  cursor-pointer transition-all dark:border-[1px] ">
+            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
               Android Development
             </div>
-            <div className="text-[20px] mx-8 max-sm:text-[17.3px]  bg-[#F3E8FF] xs:text-[14px] px-3 py-2 rounded-lg  cursor-pointer transition-all dark:border-[1px] ">
+            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
               Marketing
             </div>
-            <div className="text-[20px] max-sm:text-[17.3px] mx-8  bg-[#F3E8FF] px-3 py-2 mb-5 xs:text-[14px] rounded-lg  cursor-pointer transition-all dark:border-[1px] ">
+            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
               Artificial Intelligence
             </div>
           </div>
 
-          <div className="w-[100%] mt-20 dark:text-white max-sm:px-1 rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] flex flex-col gap-2 ">
+          <div className="w-[100%] mt-20 dark:text-white xs:px-1 rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] flex flex-col gap-2 ">
             <h2 className="text-[2rem]  font-bold text-center xs:text-[23px] mt-5">
               Related Blogs
             </h2>
 
             <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
               <img
-                className="w-[6rem] max-sm:w-[5.7rem] max-sm:h-[5.7rem]"
+                className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]"
                 src={code}
               />
-              <p className="w-[60%]  max-sm:w[80%] max-sm:text-center max-sm:text-[0.9rem] font-bold text-[1rem]">
+              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
                 The Best Graphic Design Careers — for Beginners and
                 Professionals{" "}
               </p>
             </div>
 
             <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
-              <img
-                className="w-[6rem] max-sm:w-[5.7rem] max-sm:h-[5.7rem]"
-                src={ai}
-              />
-              <p className="w-[60%]  font-bold text-[1rem]">
+              <img className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]" src={ai} />
+              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
                 The Top Technical Skills All Employees Need in 2022
               </p>
             </div>
 
             <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
               <img
-                className="w-[6rem] max-sm:w-[5.7rem] max-sm:h-[5.7rem]"
+                className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]"
                 src={marketing}
               />
-              <p className="w-[60%]  font-bold text-[1rem]">
+              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
                 Types Of Quantitative Research for Students and Researchers
               </p>
             </div>
