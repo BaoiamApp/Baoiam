@@ -32,19 +32,17 @@ const School = () => {
       </Link>
     </div>
 
-    
-    <div className="w-full lg:w-1/2 flex justify-center lg:justify-end lg:pr-20">
-      <SliderHero />
-    </div>
-  </div>
-</div>
+            <div className="h-96 md:h-full w-full md:w-[40%] pt-8 md:pt-0">
+              <SliderHero />
+            </div>
+          </div>
+        </div>
+        <SkillCatalog />
+        <Trending />
+        <WhyUs />
+      </div>
+    </>
+  );
+};
 
-    <Trending />
-    <SkillCatalog/>
-    <WhyUs />
-  </div>
-  </>
-  )
-}
-
-export default School
+export default School;
