@@ -1,21 +1,21 @@
 import React from "react";
-import image1 from "../../images/onlineLearning2.avif";
-import image2 from "../../images/teamwork00.webp";
-import image3 from "../../images/teamwork10.webp";
-import image4 from "../../images/teamwork15.jpg";
-import image5 from "../../images/teamwork0.webp";
-import image7 from "../../images/Biaoam.webp";
-import image8 from "../../images/teamwork13.avif";
-import image9 from "../../images/teamwork14.avif";
-import image10 from "../../images/teamwork6.webp";
-import icon1 from "../../images/graduated (3).png";
-import icon2 from "../../images/knowledge.png"
-import icon3 from "../../images/education.png";
-import icon4 from "../../images/deep-learning.png"
-import icon5 from "../../images/academic.png";
-import icon6 from "../../images/machine-learning.png";
-import icon7 from "../../images/online-lesson.png"
+import image8 from "../../assets/ITIE&Entre/teamwork13.avif";
+import image9 from "../../assets/ITIE&Entre/teamwork14.avif";
+import image10 from "../../assets/ITIE&Entre/teamwork6.webp";
+import icon1 from "../../assets/ITIE&Entre/graduated (3).png";
+import icon2 from "../../assets/ITIE&Entre/knowledge.png"
+import icon3 from "../../assets/ITIE&Entre/education.png";
+import icon4 from "../../assets/ITIE&Entre/deep-learning.png"
+import icon5 from "../../assets/ITIE&Entre/academic.png";
+import icon6 from "../../assets/ITIE&Entre/machine-learning.png";
+import icon7 from "../../assets/ITIE&Entre/online-lesson.png"
 
+import image1 from "../../assets/ITIE&Entre/onlineLearning2.avif";
+import image2 from "../../assets/ITIE&Entre/teamwork12.avif";
+import image3 from "../../assets/ITIE&Entre/teamwork10.webp";
+import image4 from "../../assets/ITIE&Entre/teamwork15.jpg";
+import image5 from "../../assets/ITIE&Entre/teamwork0.webp";
+import image7 from "../../assets/ITIE&Entre/Biaoam.webp";
 
 const Career = () => {
   return (
@@ -263,6 +263,7 @@ const Career = () => {
           </div>
         </section>
       </div>
+
 
       <section className="bg-white p-8 w-full mt-8 mb-12">
         <div className="max-w-screen-xl mx-auto">
