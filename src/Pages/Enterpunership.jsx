@@ -84,7 +84,7 @@ const Enterpunership = () => {
 
     const { id } = useParams();
     const course = School.find((cate) => cate.subCate.find((subCate) => subCate.id === parseInt(id)));
-    const subCourse = course.subCate.find((subCate) => subCate.id === parseInt(id));
+    // const subCourse = course.subCate.find((subCate) => subCate.id === parseInt(id));
 
     const navigate = useNavigate();
 
@@ -186,7 +186,7 @@ const Enterpunership = () => {
             <div className='py-8 px-8 lg:px-24 w-full h-full'>
                 <h4 className='text-4xl font-semibold mb-8 text-orange-500  '>Course <span className='border-b text-black border-orange-500'>Highlights</span></h4>
 
-                <div className='flex items-center justify-center md:justify-stretch flex-wrap gap-x-6 gap-y-4 text-black'>
+                {/* <div className='flex items-center justify-center md:justify-stretch flex-wrap gap-x-6 gap-y-4 text-black'>
                     {subCourse.highlights.map((h, i) => {
                         return <div key={i} className='bg-white group hover:scale-105 shadow-2xl px-4 py-8  md:h-52 rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64 h-auto'>
                             <span className='text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out'>{React.createElement(highlightIcons(h.icon))}</span>
@@ -194,7 +194,7 @@ const Enterpunership = () => {
                         </div>
                     })}
 
-                </div>
+                </div> */}
 
             </div>
 
@@ -316,7 +316,7 @@ const Enterpunership = () => {
                         Join With Us Find the <span className='text-orange-500 border-b border-orange-500'>Right Course</span>
                     </h2>
 
-                    <div className="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
+                    {/* <div className="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
                         {subCourse.plans.map((p, i) => {
                             return (
                                 <div key={i} className={`flex flex-col rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""} p-4 pt-6`}>
@@ -346,7 +346,7 @@ const Enterpunership = () => {
                                             <span className="text-gray-500">/Full Course</span>
                                         </div>
 
-                                        {/* Updated Button with Navigation */}
+                                       
                                         <button
                                             className={`block rounded-lg ${p.name === "Premium" ? "bg-orange-500 text-white" : "bg-gray-500"} px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                                             onClick={() => navigate('/maintenance')}
@@ -357,7 +357,7 @@ const Enterpunership = () => {
                                 </div>
                             );
                         })}
-                    </div>
+                    </div> */}
 
                     <div className="text-center text-sm text-gray-500 sm:text-base">
                         Need help deciding? <a href="#" className="text-gray-600 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch</a>.

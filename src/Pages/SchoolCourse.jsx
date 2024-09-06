@@ -4,7 +4,6 @@ import { School } from '../Data'
 import { CourseDesc2, CourseOverview } from '../assets/assets';
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight, FaGraduationCap } from 'react-icons/fa6';
 import { MdCheck } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
 
 import * as MDIcons from 'react-icons/md'
 import * as FCIcons from 'react-icons/fc'
@@ -13,8 +12,6 @@ import * as SLIcons from 'react-icons/sl'
 import * as GOIcons from 'react-icons/go'
 import * as PiIcons from 'react-icons/pi'
 
-import Enterpunership from './Enterpunership'
-
 const SchoolCourse = () => {
 
     const { id } = useParams();
@@ -22,9 +19,6 @@ const SchoolCourse = () => {
     const subCourse = course.subCate.find((subCate) => subCate.id === parseInt(id));
 
     // console.log(subCourse?);
-
-    const navigate = useNavigate();
-
 
     const [swiper, setSwiper] = useState(null);
 
@@ -104,7 +98,7 @@ const SchoolCourse = () => {
 
             {/* Course Highlights */}
             <div className='py-8 px-8 lg:px-24 w-full h-full'>
-                <h4 className='text-4xl font-semibold mb-8 text-orange-500  '>Course <span className='border-b text-black border-orange-500'>Highlights</span></h4>
+                <h4 className='text-4xl font-semibold mb-8'>Course <span className='border-b text-orange-500 border-orange-500'>Highlights</span></h4>
 
                 <div className='flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black'>
                     {subCourse?.highlights?.map((h, i) => {
@@ -118,7 +112,7 @@ const SchoolCourse = () => {
 
             </div>
 
-            {/* //! Join with us */}
+            {/* Join we us */}
             <div className='my-12 px-8 lg:px-24 w-full h-full'>
                 <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
                     <div className="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -129,7 +123,7 @@ const SchoolCourse = () => {
                             {subCourse?.plans?.map((p, i) => {
                                 return <div key={i} className={`flex flex-col rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""} p-4 pt-6`}>
                                     <div className="mb-12">
-                                        {p.name === "Premium" && (
+                                        {p.name === "Premium" ? <>
                                             <div className="absolute inset-x-0 -top-3 flex justify-center">
                                                 <span className="flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">most popular</span>
                                             </div>
@@ -145,7 +139,8 @@ const SchoolCourse = () => {
                                                     <MdCheck size={22} className='text-orange-500' />
                                                     <span className="text-gray-600 dark:text-white">{item}</span>
                                                 </div>
-                                            ))}
+                                            })}
+
                                         </div>
                                     </div>
 
@@ -155,26 +150,21 @@ const SchoolCourse = () => {
                                             <span className="text-4xl font-bold text-gray-800 dark:text-white">{p.price}</span>
                                             <span className="text-gray-500 dark:text-white">/Full Course</span>
                                         </div>
-                                        {/* Updated Button with Navigation */}
-                                        <button
-                                            className={`block rounded-lg ${p.name === "Premium" ? "bg-orange-500 text-white" : "bg-gray-500"} px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
-                                            onClick={() => navigate('/maintenance')}
-                                        >
-                                            Enroll Now
-                                        </button>
+
+                                        <button className={`block rounded-lg ${p.name === "Premium" ? "bg-orange-500 text-white" : "bg-gray-500"} px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}>Enroll Now</button>
                                     </div>
                                 </div>
-                            );
-                        })}
-                    </div>
-                        <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">Need help deciding? <Link to={'/'} className="text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch.</Link></div>
+                            })}
+                        </div>
+
+                        <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">Need help deciding? <Link to={'/'} className="text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400">Get in touch</Link>.</div>
                     </div>
                 </div>
             </div>
-        </div>
+
             {/* Emi & Placement */}
-            <div className='flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32 '>
-                <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] '>
+            <div className='flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32'>
+                <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem]'>
                     <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>Easy EMI</p>
                     <p className='text-neutral-600 dark:text-white mb-2 text-sm lg:text-base'>Easy monthly payment options with our emi facilities</p>
 
@@ -185,7 +175,7 @@ const SchoolCourse = () => {
                     </ul>
                 </div>
 
-                <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] lg:h-[11.5rem] h-auto'>
+                <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] h-[12.5rem] lg:h-[11.5rem]'>
                     <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>Pay After Placement</p>
                     <p className='text-neutral-600 dark:text-white mb-2 text-sm lg:text-base'>Pay only when you get placed with our Pay After Placement support</p>
 
@@ -195,29 +185,26 @@ const SchoolCourse = () => {
                 </div>
             </div>
 
-
             {/* Amazing Offer */}
             <div className='py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600 text-center'>
                 <h4 className='text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4'>Amazing <span className='border-b'>Career</span></h4>
                 <p className='text-sm lg:text-lg'>Grab these exclusive offers available only once a year.</p>
 
-                <div className='flex items-center flex-col  md:flex-row gap-5 sm:gap-11  justify-center md:w-full mt-8 '>
-                    <div className='bg-white w-72 rounded-3xl px-6 py-4 shadow-xl '>
+                <div className='flex items-center flex-col md:flex-row gap-4 justify-center w-full mt-8'>
+                    <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl'>
                         <p className='text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2'>BUY 2 COURSES & GET</p>
                         <p className='mb-2 text-2xl font-bold text-orange-500'>15% OFF</p>
                     </div>
-                    <div className='bg-white w-72 rounded-3xl px-6 py-4 shadow-xl'>
+                    <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl'>
                         <p className='text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2'>BUY 3 COURSES & GET</p>
                         <p className='mb-2 text-2xl font-bold text-orange-500'>20% OFF</p>
                     </div>
-                    <div className='bg-white w-72 rounded-3xl px-6 py-4 shadow-xl'>
+                    <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl'>
                         <p className='text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2'>BUY 4 COURSES & GET</p>
                         <p className='mb-2 text-2xl font-bold text-orange-500'>25% OFF</p>
                     </div>
                 </div>
             </div>
-
-            <Enterpunership/>
         </div>
     )
 }

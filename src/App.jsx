@@ -11,7 +11,7 @@ import ITIE from './Pages/ITIE'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
-import Login from './Pages/Login'
+
 import AboutUs from './Pages/AboutUs'
 import TermsConditions from "./Pages/TermsConditions"
 import PrivacyPolicy from "./Pages/PrivacyPolicy"
@@ -24,12 +24,11 @@ import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
 import College from "./Pages/College";
 import Login from "./Pages/Login";
-import TermsConditions from "./Pages/TermsConditions";
-import PrivacyPolicy from "./Pages/PrivacyPolicy";
-import SchoolCourse from "./Pages/SchoolCourse";
-import Blogs from "./Pages/Blogs";
-import Career from "./Components/Career/Career";
-import Blog_detail from "./Pages/Blog_detail";
+
+
+
+
+
 import { OurTeam } from "./Pages/OurTeam";
 import ProfilePage from './Components/profile/ProfilePage'
 import SideBar from './Components/profile/SideBar'
