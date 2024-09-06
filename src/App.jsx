@@ -4,10 +4,11 @@ import Navbar from "./Components/Home/Navbar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import GSCB from "./Pages/GSCB";
 import Home from "./Pages/Home";
+import AboutUs from "./Pages/AboutUs";
 import School from "./Pages/School";
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
-import ContactUs from './Components/Contact/ContactUs';
+import ContactUs from "./Components/Contact/ContactUs";
 import SkillCatalog from "./Components/School/SkillCatalog";
 import CoursePage from "./Components/School/CoursePage";
 import SignUp from "./Pages/auth/SignUp";
@@ -34,10 +35,12 @@ const App = () => {
   const theme = () => {
     setDark(true);
     document.body.classList.toggle("dark");
-  }
+  };
 
   return (
-    <div className="dark:bg-black dark:text-white ">
+
+    <div className='dark:bg-black w-full h-full dark:text-white '>
+
       <Navbar theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -63,17 +66,14 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
-
-        <Route path="/courses/college/:courseName" element={<College />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/Blog_detail" element={<Blog_detail />} />
         <Route path="/career" element={<Career />} />
-
       </Routes>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
