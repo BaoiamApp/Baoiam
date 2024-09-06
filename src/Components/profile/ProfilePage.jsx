@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProfileCard from './ProfileCard';
 import InfoCard from './InfoCard';
 import CertificateCard from './CertificateCard';
@@ -22,6 +22,7 @@ function ProfilePage() {
   const handleEditClick = () => setIsEditing(true);
   const handleClose = () => setIsEditing(false);
   const handleSave = (data) => setUserInfo(data);
+  useEffect(()=>{ console.log("changed",userInfo.name )},[userInfo])
 
   return (
     <div className="flex lg:pr-20 dark:bg-black dark:text-white">
@@ -31,6 +32,7 @@ function ProfilePage() {
               <ProfileCard
                 name={userInfo.name}
                 profileImage={userInfo.profileImage}
+                editUserInfo={setUserInfo}
                 onEdit={handleEditClick}
               />
             </div>

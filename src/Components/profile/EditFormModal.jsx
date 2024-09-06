@@ -13,6 +13,10 @@ const EditFormModal = ({ isOpen, onClose, onSave, initialData }) => {
     localStorage.setItem('formData', JSON.stringify(formData));
   }, [formData]);
 
+  // useEffect(()=>{
+    
+  // },[formData.name,formData.email,formData.college,formData.mobile,formData.dob])
+
   // Form validation logic
   const validateForm = () => {
     const newErrors = {};
@@ -45,9 +49,9 @@ const EditFormModal = ({ isOpen, onClose, onSave, initialData }) => {
       newErrors.location = 'Location is required';
     }
 
-    if (!formData.profileImage) {
-      newErrors.profileImage = 'Profile image is required';
-    }
+    // if (!formData.profileImage) {
+    //   newErrors.profileImage = 'Profile image is required';
+    // }
 
     return newErrors;
   };
@@ -78,7 +82,7 @@ const EditFormModal = ({ isOpen, onClose, onSave, initialData }) => {
     }
 
     // Trigger save and close modal
-    onSave(formData);
+    onSave({...formData});
     onClose();
   };
 
