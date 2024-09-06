@@ -14,7 +14,6 @@ import CoursePage from "./Components/School/CoursePage";
 import SignUp from "./Pages/SignUp";
 import College from "./Pages/College";
 import Login from "./Pages/Login";
-import AboutUs from "./Pages/AboutUs";
 
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
