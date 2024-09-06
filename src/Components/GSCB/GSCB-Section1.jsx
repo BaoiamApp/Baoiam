@@ -1,11 +1,51 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Section2 = () => {
+  const [lettersRef, setlettersRef] = useArrayRef();
+  const triggerRef = useRef(null);
+
+  function useArrayRef() {
+    const lettersRef = useRef([]);
+    lettersRef.current = [];
+    return [lettersRef, (ref) => ref && lettersRef.current.push(ref)];
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+  const text =
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga consequuntur aliquam voluptatum temporibus fugiat vitae amet doloribus cum repudiandae officiis a quidem, quas illo? Voluptatum earum aliquid quasi consequuntur, sapiente nam hic!";
+
   useEffect(() => {
+    const anim = gsap.to(lettersRef.current, {
+      scrollTrigger: {
+        trigger: triggerRef.current,
+        scrub: 6,
+        start: "top 60%",
+        end: "bottom 85%",
+      },
+      color:'black',
+      stagger: 0.1,
+    });
+
+    gsap.fromTo(
+      ".border-expand",
+      {
+        scaleX: 0,
+        transformOrigin: "center",
+      },
+      {
+        scaleX: 1,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".border-expand",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 6,
+        },
+      }
+    );
     gsap.fromTo(
       ".what",
       {
@@ -16,7 +56,7 @@ const Section2 = () => {
         opacity: 1,
         delay: 0.1,
         y: 0,
-        duration: 0.7,
+        duration: 0.5,
         ease: "power2.out",
         stagger: 0.3,
         scrollTrigger: {
@@ -26,48 +66,55 @@ const Section2 = () => {
         },
       }
     );
-
-    gsap.fromTo(
-      ".border-expand",
-      {
-        scaleX: 0,
-        transformOrigin: "center",
-      },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".border-expand",
-          start: "top 80%",
-          end: "top 50%",
-        },
-      }
-    );
-  }, []);
+    return () => {
+      anim.kill();
+    };
+  },[lettersRef]);
 
   return (
-    <section className="w-full h-screen flex flex-col items-center justify-evenly xs:w-full xs:h-screen xs:flex xs:justify-evenly">
-      <div className="w-11/12 h-1 bg-black border-expand xs:w-11/12 xs:h-1 xs:bg-black xs:border-expand"></div>
-      <div className="flex flex-col items-center xs:gap-3">
-        <h2 className="text-[4rem] text-center what xs:text-3xl">
-          Whatever your brand challenge,
-        </h2>
-        <h2 className="text-[4rem] text-center what xs:text-3xl">
-          Baoiam Partnerships has a
-        </h2>
-        <h2 className="text-[4rem] text-center what xs:text-3xl">solution.</h2>
+    <section className=" w-full h-screen flex items-center justify-evenly flex-col">
+      <span className="w-11/12 h-1 bg-black border-expand dark:bg-[#EB0027]"></span>
+      <div ref={triggerRef} className="px-12 xs:px-8">
+        {text.split("").map((letter, index) => (
+          <span
+            className="font-roboto leading-[6vw] font-medium text-[3.4vw] text-white dark:text-red-900 dark:drop-shadow-[0_0_0.03rem_#EB0027]   drop-shadow-[0_0_0.03rem_rgb(2,2,2)] xs:leading-[10vw]  xs:font-medium xs:text-[7vw]  xs:text-white"
+            key={index}
+            ref={setlettersRef}
+          >
+            {letter}
+          </span>
+        ))}
       </div>
+
       <div className="what">
-        <button className="px-6 py-3 border border-black hover:bg-black hover:text-white transition-all ease-in-out text-lg rounded-full talk-btn xs:px-4 xs:py-2 xs:text-base">
-          let's talk about it
-        </button>
+        <a
+          href="#_"
+          className="relative inline-flex items-center px-12 py-2 overflow-hidden text-lg font-medium text-black dark:text-white dark:bg-[#EB0027] dark:border-[#EB0027] border-2 border-black rounded-full hover:text-white  dark:hover:text-[#EB0027] dark:hover:bg-[#EB0027] group"
+        >
+          <span className="absolute left-0 block w-full h-0 transition-all bg-black opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+          <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              strokeWidth="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </span>
+          <span className="relative">Click</span>
+        </a>
       </div>
-      <div className="w-11/12 h-1 bg-black border-expand"></div>
+
+      <span className="w-11/12 h-1 bg-black border-expand dark:bg-[#EB0027]"></span>
     </section>
   );
 };
 
 export default Section2;
-
-
