@@ -1,58 +1,85 @@
 import react, { useState } from "react";
 import { Link } from "react-router-dom";
+import screen_time from "../assets/Blogs/screen_time.png";
+import ed_tech from "../assets/Blogs/ed_tech.png";
+import era_of_early_childhood from "../assets/Blogs/era_of_early_childhood.jpg";
+import ed_tech_enhances_critical_thinking from "../assets/Blogs/ed_tech_enhances_critical_thinking.png";
+import new_excited_tech_edu1 from "../assets/Blogs/new_excited_tech_edu1.jpg";
+import web_dev1 from "../assets/Blogs/web_dev1.png";
+import financial_literacy from "../assets/Blogs/financial_literacy.jpg";
+import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
+import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
 import Slider from "react-slick";
 const blog_list = [
   {
-    title: "Do consectetur",
+    title: "Akshay Saini",
     titleColor: "blue-500",
-    imgSrc:
-      "https://images.stockcake.com/public/1/e/2/1e293f13-b9c4-4686-a619-b0f15eb2bf92_large/public-speaking-engagement-stockcake.jpg",
+    imgSrc: screen_time,
     text: "Balancing Screen Time: Healthy Technology Use In Education",
     info: "Dec 22, 2022 • 10 mins read",
   },
   {
-    title: "Consequat labore",
-    titleColor: "green-500",
-    imgSrc:
-      "https://images.stockcake.com/public/0/2/3/0237c9b3-e99d-46bd-94e7-71321adb8a7b_large/vr-experience-session-stockcake.jpg",
+    title: "Amily Clarke",
+    titleColor: "blue-500",
+
+    imgSrc: ed_tech,
     text: "Challenges of Implementing Ed-Tech Companies And How  to Overcome Them.",
     info: "Nov 20, 2022 • 10 mins read",
   },
   {
-    title: "Laboris nulla",
-    titleColor: "purple-500",
-    imgSrc:
-      "https://images.stockcake.com/public/5/b/1/5b1ea019-4bdf-4a6b-90c6-3a5a205d6642_large/coding-at-night-stockcake.jpg",
+    title: "John Watson",
+    titleColor: "blue-500",
+
+    imgSrc: era_of_early_childhood,
     text: "The era of early childhood education:  take up changes, block challenges and, exercise of strategic tools ",
     info: "Nov 13, 2022 • 3 mins read",
   },
   {
-    title: "Do consectetur",
+    title: "Jason Adam",
     titleColor: "blue-500",
-    imgSrc:
-      "https://images.stockcake.com/public/e/f/f/eff84666-437b-4119-beb2-5f8bd2cdf873_large/exciting-science-experiment-stockcake.jpg",
+
+    imgSrc: ed_tech_enhances_critical_thinking,
     text: "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
     info: "Oct 17, 2022 • 5 mins read",
   },
   {
-    title: "Consequat labore",
-    titleColor: "green-500",
-    imgSrc:
-      "https://images.stockcake.com/public/5/4/b/54bd0d8a-3792-4034-b8e3-72c9cfeee380_large/crumpled-english-ball-stockcake.jpg",
+    title: "Mary Smith",
+    titleColor: "blue-500",
+
+    imgSrc: new_excited_tech_edu1,
     text: "New and Exciting Technology in Education",
     info: "Oct 10, 2022 • 10 mins read",
   },
   {
-    title: "Laboris nulla",
-    titleColor: "purple-500",
-    imgSrc:
-      "https://images.stockcake.com/public/f/7/3/f7325e33-7285-48c6-9820-522c3e3be550_large/graduate-puzzle-piece-stockcake.jpg",
+    title: "John Statham",
+    titleColor: "blue-500",
+
+    imgSrc: web_dev1,
     text: "The path to a successful tech career: The Importance of web development skills",
     info: "Sep 19, 2022 • 8 mins read",
   },
   {
+    title: "John Statham",
+    titleColor: "blue-500",
+    info: "Sep 24, 2022 • 14 mins read",
+    imgSrc: financial_literacy,
     text: "Mastering Financial Literacy for All: Essential Skills for a Brighter Future",
+  },
+  {
+    text: "Unlocking the Future of Education: Ed-Tech Latest Trends ",
+    info: "Oct 19, 2022 • 8 mins read",
+    titleColor: "blue-500",
+
+    imgSrc: ed_tech_latest_trends,
+    title: "Akshay Saini",
+  },
+  {
+    info: "Sep 13, 2022 • 5 mins read",
+    text: "What is software testing and its importance?",
+    titleColor: "blue-500",
+    imgSrc: software_testing,
+    title: "Amily Clarke",
   },
 ];
 
@@ -233,22 +260,26 @@ const Blog = () => {
         <h2 className="text-l  text-center mb-8">
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {blog_list.map((item, i) => (
             <Link key={i} to={`/Blog_detail/${i}`}>
-              <div className="bg-white dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className="bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <img
                   className="w-full h-48 object-cover"
                   src={item.imgSrc}
                   alt={`Blog Post ${i}`}
                 />
-                <div className="p-6">
+                <div className="p-6 flex-grow">
                   <span
                     className={`text-sm text-${item.titleColor} font-semibold`}
                   >
                     {item.title}
                   </span>
-                  <h2 className="text-lg font-bold my-2">{item.text}</h2>
+                  <h2 className="text-lg font-bold my-2">
+                    {item.text.length > 30
+                      ? item.text.substring(0, 30) + "..."
+                      : item.text}
+                  </h2>
                   <p className="text-sm">{item.info}</p>
                 </div>
               </div>
