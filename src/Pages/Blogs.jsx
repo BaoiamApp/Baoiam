@@ -162,7 +162,7 @@ const Blog = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className}  w-10 absolute right-10 rounded h-10 bg-transparent transition`}
+        className={`${className} w-5 flex rounded-full absolute z-10 h-5 bg-gray-700 dark:bg-gray-700 dark:text-white transition hover:bg-gray-700`}
         style={{
           ...style,
           display: "flex",
@@ -178,7 +178,7 @@ const Blog = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className}  w-10 rounded mr-20 absolute left-10 z-10 h-14 bg-transparent transition`}
+        className={`${className} w-5 flex rounded-full mr-20 absolute z-10 h-5 bg-gray-700 dark:bg-gray-700 dark:text-white transition hover:bg-gray-700`}
         style={{
           ...style,
           display: "flex",
@@ -332,24 +332,27 @@ const Blog = () => {
         </div> */}
         {/* <div className="relative">
           <div className="rounded-md grid grid-cols-2 place-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> */}
-        <div className="mx-auto w-full">
+        <div className=" w-full px-3 flex justify-center flex-col">
           <Slider {...settings}>
             {authors_info.map((item, id) => {
               return (
                 <div
                   key={id}
-                  className="flex justify-center p-4" // Center items in the slider
-                  onMouseEnter={() => authorCardMouseEnter(id)}
-                  onMouseLeave={() => authorCardMouseLeave()}
+                  className="flex justify-center p-4 " // Center items in the slider
                 >
-                  <div className="shadow-xl hover:bg-gradient-to-b  max-w-xs lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out">
-                    <img src={item.imgSrc} className="rounded-md w-full" />
+                  <div className="shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out">
+                    <img
+                      onMouseEnter={() => authorCardMouseEnter(id)}
+                      onMouseLeave={() => authorCardMouseLeave()}
+                      src={item.imgSrc}
+                      className="rounded-md w-full"
+                    />
                     <h2
                       className={`${
                         authorDetailsVisible.display &&
                         authorDetailsVisible.id == id
-                          ? "text-sm absolute bottom-5 text-black bg-[#ffffff80] px-2 py-1 rounded font-bold sm:text-base md:text-lg lg:text-md mt-3 mb-3 ml-5"
-                          : "hidden"
+                          ? "text-sm w-full absolute bottom-5 bg-white text-black  px-2 py-1 rounded font-bold sm:text-base md:text-lg lg:text-md mt-3 mb-3"
+                          : "hidden top-20"
                       }`}
                     >
                       {item.name}
