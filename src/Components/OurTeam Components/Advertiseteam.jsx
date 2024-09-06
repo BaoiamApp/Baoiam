@@ -11,19 +11,16 @@ export const Advertiseteam = () => {
   const [advTeam, setAdvTeam] = useState(AdverseTeam);
   return (
     <>
-      <div className='text-center text-xl md:text-3xl p-6 py-8 tracking-wide leading-4 font-bold '>
+      <div className='text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold '>
         {" "}
         Advertistment Team
       </div>
-      <div className=' flex flex-col p-4  md:items-center  justify-around md:flex-row  gap-4'>
-        <div className='md:w-[60%]'>
+      <div className=' flex flex-col p-2  md:items-center  justify-around md:flex-row  gap-2'>
+        <div className='md:w-[65%]'>
           <div>
             <Swiper
               keyboard={{
                 enabled: true,
-              }}
-              pagination={{
-                clickable: true,
               }}
               navigation={true}
               Scrollbar={{ draggable: true }}
@@ -31,7 +28,7 @@ export const Advertiseteam = () => {
               spaceBetween={20}
               breakpoints={{
                 320: {
-                  slidesPerView: 3,
+                  slidesPerView: 1,
                 },
                 768: {
                   slidesPerView: 4,
@@ -39,12 +36,12 @@ export const Advertiseteam = () => {
               }}
               onSlideChange={() => console.log("hi")}
               onSwiper={(swiper) => console.log("")}
-              className=' md:h-[350px] w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+              className=' md:h-[350px] w-[60%] md:w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-6'
             >
               {AdverseTeam?.map((el) => {
                 return (
                   <SwiperSlide
-                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[130px] md:h-[300px] w-[130px] flex flex-col justify-center items-center gap-4'
+                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[300px] flex flex-col justify-center items-center gap-4'
                     key={el.id}
                   >
                     <img
