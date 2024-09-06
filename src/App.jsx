@@ -10,7 +10,7 @@ import Maintenance from './Components/Contact/Maintenance';
 import ITIE from './Pages/ITIE'
 import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
-import SignUp from './Pages/SignUp'
+// import SignUp from './Pages/SignUp'
 
 import AboutUs from './Pages/AboutUs'
 import TermsConditions from "./Pages/TermsConditions"
@@ -23,7 +23,7 @@ import Enterpunership from './Pages/Enterpunership'
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
 import College from "./Pages/College";
-import Login from "./Pages/Login";
+
 
 
 
@@ -32,9 +32,19 @@ import Login from "./Pages/Login";
 import { OurTeam } from "./Pages/OurTeam";
 import ProfilePage from './Components/profile/ProfilePage'
 import SideBar from './Components/profile/SideBar'
-import AnimatedForm from "./Pages/AnimatedForm";
-import AnimatedLogin from "./Pages/AnimatedLogin";
-import AnimatedSignup from "./Pages/AnimatedSignup";
+
+// import AnimatedForm from "./Pages/AnimatedForm";
+// import AnimatedLogin from "./Pages/AnimatedLogin";
+// import AnimatedSignup from "./Pages/AnimatedSignup";
+
+
+
+import ActivateEmail from "./Pages/auth/ActivateEmail";
+import ForgetPassword from "./Pages/auth/ForgetPassword";
+import ResetPassword from "./Pages/auth/ResetPassword";
+import SignUp from "./Pages/auth/SignUp";
+import Login from './Pages/auth/Login'
+
 
 
 const App = () => {
@@ -67,8 +77,7 @@ const App = () => {
         {/* School Course */}
 
         <Route path="/course/school/:id" element={<SchoolCourse />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path='/login' element={<Login />} />
+    
         <Route path='/terms-conditions' element={<TermsConditions />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/contact' element={<ContactUs />} />
@@ -83,8 +92,10 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/courses/school" element={<School />} />
         <Route path="/course/:id" element={<SchoolCourse />} />
-        <Route path="/signup" element={<AnimatedSignup />} />
-        <Route path="/login" element={<AnimatedLogin />} />
+
+        {/* <Route path="/signup" element={<AnimatedSignup />} />
+        <Route path="/login" element={<AnimatedLogin />} /> */}
+        
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
@@ -96,6 +107,19 @@ const App = () => {
 
         <Route path="/Maintenance" element={<Maintenance />} />
         <Route path="/ITIE" element={<ITIE />} />
+
+        {/* accounts */}
+
+
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/activate/:uid/:token" element={<ActivateEmail />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
+
+        {/* accounts */}
+
+
       </Routes>
       <Footer />
     </div>
@@ -103,4 +127,3 @@ const App = () => {
 };
 
 export default App;
-
