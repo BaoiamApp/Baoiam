@@ -1,6 +1,5 @@
 export const School = [
   {
-    id: 1,
     Cate: "School",
     link: "/courses/school",
     subCate: [
@@ -1109,16 +1108,106 @@ export const CollegeCourse = [
     Cate: "College",
     link: "/courses/college",
     subCate: [
-      { id: 1, course: "Web Development" },
-      { id: 2, course: "Graphic Designing" },
-      { id: 3, course: "Human Resource" },
-      { id: 4, course: "Data Analytics" },
-      { id: 5, course: "Product Management" },
-      { id: 6, course: "Android Development" },
-      { id: 7, course: "Digital Marketing" },
-      { id: 8, course: "UI UX Design" },
-      { id: 9, course: "Software Testing" },
-      { id: 10, course: "Entrepreneurship and Innovation" },
+      {
+        "courseName": "Web Development",
+        "category": "Technology",
+        "difficultyLevel": "Intermediate",
+        "price": "Free",
+        "language": "English",
+        "courseDuration": "8 weeks",
+        "numberOfLearners": 15000,
+        "courseURL": "https://example.com/web-development"
+      },
+      {
+        "courseName": "Graphic Designing",
+        "category": "Design",
+        "difficultyLevel": "Beginner",
+        "price": "$49",
+        "language": "English",
+        "courseDuration": "6 weeks",
+        "numberOfLearners": 10000,
+        "courseURL": "https://example.com/graphic-designing"
+      },
+      {
+        "courseName": "Human Resource",
+        "category": "Business",
+        "difficultyLevel": "Intermediate",
+        "price": "$79",
+        "language": "English",
+        "courseDuration": "4 weeks",
+        "numberOfLearners": 8000,
+        "courseURL": "https://example.com/human-resource"
+      },
+      {
+        "courseName": "Data Analytics",
+        "category": "Technology",
+        "difficultyLevel": "Advanced",
+        "price": "$99",
+        "language": "English",
+        "courseDuration": "10 weeks",
+        "numberOfLearners": 12000,
+        "courseURL": "https://example.com/data-analytics"
+      },
+      {
+        "courseName": "Product Management",
+        "category": "Business",
+        "difficultyLevel": "Intermediate",
+        "price": "$69",
+        "language": "English",
+        "courseDuration": "5 weeks",
+        "numberOfLearners": 9000,
+        "courseURL": "https://example.com/product-management"
+      },
+      {
+        "courseName": "Android Development",
+        "category": "Technology",
+        "difficultyLevel": "Advanced",
+        "price": "$89",
+        "language": "English",
+        "courseDuration": "8 weeks",
+        "numberOfLearners": 14000,
+        "courseURL": "https://example.com/android-development"
+      },
+      {
+        "courseName": "Digital Marketing",
+        "category": "Marketing",
+        "difficultyLevel": "Beginner",
+        "price": "Free",
+        "language": "English",
+        "courseDuration": "6 weeks",
+        "numberOfLearners": 11000,
+        "courseURL": "https://example.com/digital-marketing"
+      },
+      {
+        "courseName": "UI UX Design",
+        "category": "Design",
+        "difficultyLevel": "Intermediate",
+        "price": "$59",
+        "language": "English",
+        "courseDuration": "7 weeks",
+        "numberOfLearners": 13000,
+        "courseURL": "https://example.com/ui-ux-design"
+      },
+      {
+        "courseName": "Software Testing",
+        "category": "Technology",
+        "difficultyLevel": "Advanced",
+        "price": "$75",
+        "language": "English",
+        "courseDuration": "6 weeks",
+        "numberOfLearners": 9000,
+        "courseURL": "https://example.com/software-testing"
+      },
+      {
+        "courseName": "Entrepreneurship and Innovation",
+        "category": "Business",
+        "difficultyLevel": "Advanced",
+        "price": "$109",
+        "language": "English",
+        "courseDuration": "9 weeks",
+        "numberOfLearners": 7000,
+        "courseURL": "https://example.com/entrepreneurship-innovation"
+      }
     ],
   },
 ];
