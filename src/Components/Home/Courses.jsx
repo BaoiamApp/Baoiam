@@ -20,7 +20,7 @@ const Courses = () => {
       lg:px-[7%]
       '>
 
-        <div className='w-[70vw] mx-auto sm:w-[45vw] lg:w-[16vw] rounded-2xl p-[5%]  border-2 border-gray-200  text-center'>
+        <div className='w-[70vw] mx-auto sm:w-[45vw] lg:w-[16vw] rounded-2xl p-[5%]  border-2 border-gray-200 bg-white  text-center'>
           <p className='mb-[0.7rem] xl:h-[4rem] xl:mb-0 lg:mb-[0.1rem]'>
             <FaCloud className='text-blue-400 text-[20vw] w-full sm:text-[10vw] lg:w-full lg:text-[3rem] mt-4' />
           </p>
