@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Home/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import GSCB from "./Pages/GSCB";
 import Home from "./Pages/Home";
 import School from "./Pages/School";
@@ -10,8 +10,8 @@ import Checkout from "./Pages/Checkout";
 import ContactUs from './Components/Contact/ContactUs';
 import SkillCatalog from "./Components/School/SkillCatalog";
 import CoursePage from "./Components/School/CoursePage";
-import SignUp from "./Pages/SignUp";
-import Login from './Pages/Login'
+import SignUp from "./Pages/auth/SignUp";
+import Login from './Pages/auth/Login'
 
 import AboutUs from './Pages/AboutUs'
 import TermsConditions from "./Pages/TermsConditions"
@@ -21,8 +21,14 @@ import SchoolCourse from './Pages/SchoolCourse'
 import Blogs from './Pages/Blogs'
 import Career from './Components/Career/Career'
 import Blog_detail from './Pages/Blog_detail'
+import queryString from "query-string";
+import ActivateEmail from "./Pages/auth/ActivateEmail";
+import ForgetPassword from "./Pages/auth/ForgetPassword";
+import ResetPassword from "./Pages/auth/ResetPassword";
 
 const App = () => {
+
+
   const [dark, setDark] = useState(false);
 
   const theme = () => {
@@ -36,15 +42,20 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gcsp" element={<GSCB />} />
-        {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path="/pap" element={<PAP />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/courses/school" element={<School />} />
-        {/* School Course */}
+     
         <Route path="/course/:id" element={<SchoolCourse />} />
         <Route path="/signup" element={<SignUp />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/activate/:uid/:token" element={<ActivateEmail />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
+
+
     
 
 

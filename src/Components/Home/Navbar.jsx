@@ -120,12 +120,12 @@ const Navbar = ({ theme }) => {
                   <div className="font-medium truncate">name@flowbite.com</div>
                 </div> */}
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <Link to={"/login"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     Login
-                  </li>
-                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  </Link>
+                  <Link to={"/signup"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                     Sign Up
-                  </li>
+                  </Link>
                 </ul>
                 {/* <div className="py-2">
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
