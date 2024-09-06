@@ -4,11 +4,13 @@ import { industry, interestedCheckbox } from "../../Data";
 const ContactForm = () => {
   return (
     <div className="mt-20 w-[70%] p-4 mx-auto h-full xs:w-full xs:p-4 xs:mt-10 xs:h-full xs:py-2">
-      <h1 className="text-5xl font-semibold xs:text-3xl xs:text-center">Contact</h1>
+      <h1 className="text-5xl font-semibold xs:text-3xl xs:text-center">
+        Contact
+      </h1>
 
       <form
         action=""
-        className="w-full h-full py-4 flex flex-col gap-4 text-black xs:flex xs:flex-col xs:gap-4 "
+        className="w-full h-full py-4 flex flex-col gap-4 text-black dark:text-white xs:flex xs:flex-col xs:gap-4 "
       >
         {/* Name */}
         <div className="flex flex-col w-full xs:flex-col">
@@ -23,7 +25,9 @@ const ContactForm = () => {
                 className="px-4 py-2 border border-black/60 w-full xs:py-1"
                 required
               />
-              <label htmlFor="first" className="text-sm xs:text-xs">First</label>
+              <label htmlFor="first" className="text-sm xs:text-xs">
+                First
+              </label>
             </div>
             <div className="w-1/2 flex flex-col xs:w-full">
               <input
@@ -32,7 +36,9 @@ const ContactForm = () => {
                 className="px-4 py-2 border border-black/60 w-full xs:py-1"
                 required
               />
-              <label htmlFor="last" className="text-sm xs:text-xs">Last</label>
+              <label htmlFor="last" className="text-sm xs:text-xs">
+                Last
+              </label>
             </div>
           </div>
         </div>
@@ -40,7 +46,10 @@ const ContactForm = () => {
         {/* Company */}
         <div className="flex gap-8 w-full xs:flex-col xs:gap-4">
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="company">
+            <label
+              className="text-lg font-medium xs:text-base"
+              htmlFor="company"
+            >
               Company <span className="text-red-600">*</span>
             </label>
             <input
@@ -53,7 +62,10 @@ const ContactForm = () => {
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="agency">
+            <label
+              className="text-lg font-medium xs:text-base"
+              htmlFor="agency"
+            >
               Company represented (if agency)
             </label>
             <input
@@ -106,7 +118,10 @@ const ContactForm = () => {
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="industry">
+            <label
+              className="text-lg font-medium xs:text-base"
+              htmlFor="industry"
+            >
               Industry
             </label>
             <select
@@ -159,7 +174,7 @@ const ContactForm = () => {
           ></textarea>
           <button
             type="submit"
-            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white xs:px-4 xs:py-2 xs:mt-2"
+            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white border-black xs:px-4 xs:py-2 xs:mt-2 dark:bg-[#EB0027] dark:hover:bg-transparent dark:hover:border-[#EB0027] border dark:hover:text-[#EB0027]"
           >
             Submit
           </button>
