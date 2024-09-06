@@ -47,7 +47,7 @@ const SearchBox = () => {
                     {searchBox && (
                         <div className='bg-white w-96 h-fit max-h-80 overflow-auto rounded-md py-4 flex flex-col'>
                             {filteredCourses.map((c, i) => {
-                                return <Link to={`/course/${c.id}`} onClick={() => setBoxOpen(false)} className='py-2 px-6 hover:bg-gray-200' key={i}>{c.course}</Link>
+                                return <Link to={`/course/school/${c.id}`} onClick={() => setBoxOpen(false)} className='py-2 px-6 hover:bg-gray-200' key={i}>{c.course}</Link>
                             })}
                         </div>
                     )}

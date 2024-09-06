@@ -34,7 +34,7 @@ const ChatBot = () => {
         <>
             <button
                 onClick={() => setChatOpen(!chatOpen)}
-                className="fixed bottom-4 right-4 inline-flex items-center justify-center text-xs font-medium disabled:pointer-events-none disabled:opacity-50 border rounded-full w-12 h-12 bg-indigo-600 hover:bg-indigo-400 m-0 cursor-pointer border-gray-200 bg-none p-0 normal-case leading-5"
+                className="fixed bottom-8 right-8 inline-flex items-center justify-center text-xs font-medium disabled:pointer-events-none disabled:opacity-50 border rounded-full w-14 h-14 bg-indigo-600 hover:bg-indigo-400 m-0 cursor-pointer border-gray-200 bg-none p-0 normal-case leading-5"
                 type="button"
             >
                 <svg
@@ -54,7 +54,7 @@ const ChatBot = () => {
             </button>
 
             {chatOpen && (
-                <div className="fixed bottom-20 right-2 md:right-8 w-72 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 bg-white dark:bg-[#15104d] rounded-2xl shadow-md">
+                <div className="fixed bottom-24 right-2 md:right-8 w-72 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 bg-white dark:bg-[#15104d] rounded-2xl shadow-md">
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="text-lg font-bold dark:text-white">Chatbot</h2>
                         <button
@@ -76,7 +76,7 @@ const ChatBot = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="overflow-y-auto h-64">
+                    <div className="overflow-y-auto py-4 h-72">
                         {messages.map((message, index) => (
                             <div key={index} className="mb-2">
                                 <span className="text-gray-700 dark:text-white font-bold">You:</span>
@@ -87,7 +87,7 @@ const ChatBot = () => {
                             </div>
                         ))}
                     </div>
-                    <form onSubmit={handleSubmit} className="flex items-center border border-black dark:border-white rounded-full overflow-hidden">
+                    <form onSubmit={handleSubmit} className="flex items-center border border-black dark:border-white rounded-full overflow-hidden mt-4">
                         <input
                             type="text"
                             name="userInput"
