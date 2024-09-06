@@ -7,15 +7,18 @@ import EditFormModal from './EditFormModal';
 
 function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
-  const [userInfo, setUserInfo] = useState({
-    name: 'Anuj Tiwari',
-    profileImage: '',
-    email: 'anuj@gmail.com',
-    college: 'ABC University',
-    mobile: '1234567890',
-    dob: '01/01/2000',
-    location: 'Noida, In',
-  });
+  const [userInfo, setUserInfo] = useState(()=>{
+      const savedData = localStorage.getItem('formData');
+      return savedData?JSON.parse(savedData):{
+        name: 'Anuj Tiwari',
+        profileImage: '',
+        email: 'anuj@gmail.com',
+        college: 'ABC University',
+        mobile: '1234567890',
+        dob: '01/01/2000',
+        location: 'Noida, In',
+      }
+    });
   const [certificates] = useState([]);
   const [courses] = useState([]);
 
