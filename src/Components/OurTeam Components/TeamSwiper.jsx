@@ -21,9 +21,6 @@ export const TeamSwiper = () => {
           keyboard={{
             enabled: true,
           }}
-          pagination={{
-            clickable: true,
-          }}
           navigation={true}
           Scrollbar={{ draggable: true }}
           modules={[Keyboard, Pagination, Navigation, Scrollbar]}
@@ -43,7 +40,7 @@ export const TeamSwiper = () => {
           {data?.map((el) => {
             return (
               <SwiperSlide
-                className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[130px] w-[140px] md:h-[300px] md:w-[130px] flex flex-col justify-center items-center gap-4'
+                className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[150px] w-[150px] md:h-[300px] md:w-[130px] flex flex-col justify-center items-center gap-4'
                 key={el.id}
               >
                 <img
