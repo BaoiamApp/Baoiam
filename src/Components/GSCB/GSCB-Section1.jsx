@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Section2 = () => {
+const Section2 = ({ dark }) => {
   const [lettersRef, setlettersRef] = useArrayRef();
   const triggerRef = useRef(null);
 
@@ -24,7 +24,7 @@ const Section2 = () => {
         start: "top 60%",
         end: "bottom 85%",
       },
-      color:'black',
+      color: "black",
       stagger: 0.1,
     });
 
@@ -69,15 +69,15 @@ const Section2 = () => {
     return () => {
       anim.kill();
     };
-  },[lettersRef]);
+  }, [lettersRef, dark]);
 
   return (
-    <section className=" w-full h-screen flex items-center justify-evenly flex-col">
+    <section className=" w-full h-screen flex items-center justify-evenly flex-col xs:py-0">
       <span className="w-11/12 h-1 bg-black border-expand dark:bg-[#EB0027]"></span>
-      <div ref={triggerRef} className="px-12 xs:px-8">
+      <div ref={triggerRef} className="px-12  xs:px-8">
         {text.split("").map((letter, index) => (
           <span
-            className="font-roboto leading-[6vw] font-medium text-[3.4vw] text-white dark:text-red-900 dark:drop-shadow-[0_0_0.03rem_#EB0027]   drop-shadow-[0_0_0.03rem_rgb(2,2,2)] xs:leading-[10vw]  xs:font-medium xs:text-[7vw]  xs:text-white"
+            className="font-roboto leading-[6vw] font-medium text-white text-[3.4vw] dark:drop-shadow-[0_0_0.03rem_#EB0027]   drop-shadow-[0_0_0.03rem_rgb(2,2,2)] xs:leading-[9vw]   xs:font-medium xs:text-[6vw]  xs:text-white"
             key={index}
             ref={setlettersRef}
           >
@@ -118,3 +118,4 @@ const Section2 = () => {
 };
 
 export default Section2;
+
