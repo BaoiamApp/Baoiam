@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Trending from '../Components/School/Trending'
 import WhyUs from '../Components/School/WhyUs'
 import SkillCatalog from '../Components/School/SkillCatalog'
@@ -6,7 +7,14 @@ import SliderHero from '../Components/School/SliderHero'
 import TypewriterText from '../Components/School/TypewiterText'
 import { Link } from 'react-router-dom'
 
+
 const School = () => {
+  const navigate = useNavigate(); 
+
+  const handleExploreCourses = () => {
+    navigate('/ITIE'); 
+  };
+
   return (
     <>
      <TypewriterText />

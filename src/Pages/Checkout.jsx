@@ -140,7 +140,7 @@ const Checkout = () => {
                   <p className="text-orange-600">Ebook</p>
                 </div>
               </div>
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap sm:flex-nowrap">
                 <div className="rounded-md bg-green-200 p-1 h-fit w-full">
                   <p className="text-green-700 px-1 font-medium text-xs">
                     Save 100%
