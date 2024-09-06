@@ -64,8 +64,8 @@ const Navbar = ({ theme }) => {
     <>
       <div className={`flex items-center justify-between px-4 py-2 z-[100] ${isTransparent ? 'bg-white dark:bg-[#080529]' : 'bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0'}`}>
         {/* Logo */}
-        <Link to={"/"} className="w-28 h-14">
-          <img src={img1} className="w-full h-full" alt="logo" />
+        <Link to={'/profile'} className='w-28 h-14'>
+          <img src={img1} className='w-full h-full' alt="logo" />
         </Link>
 
         {/* NavLinks */}
