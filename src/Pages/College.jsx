@@ -10,6 +10,7 @@ import { Autoplay, EffectCards } from 'swiper/modules';
 import cards from '../Components/School/cards.json';
 import Testimonials from '../Components/College/Testimonials';
 import ExploreSubjects from '../Components/College/ExploreSubjects';
+import { CollegeCourse } from '../Data';
 
 function College() {
     const swiperSettings = {
@@ -22,13 +23,13 @@ function College() {
         "className": "mySwiper w-full h-full sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144"
     }
     const params = useParams();
-    const [filteredCourses, setFilteredCourses] = useState([]);
+    const allCourses=CollegeCourse[0].subCate;
+    const [filteredCourses, setFilteredCourses] = useState([...allCourses]);
     const [duration, setDuration] = useState('');
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [selectedPrice, setSelectedPrice] = useState([]);
     const [selectedDifficulty, setSelectedDifficulty] = useState([]);
     const [showFilters, setShowFilters] = useState(false);
-
 
     const isPriceInRange = (coursePrice, range) => {
         console.log(range);
@@ -41,7 +42,7 @@ function College() {
 
     useEffect(() => {
         const applyFilters = () => {
-            let updatedCourses = CoursesList[params.course];
+            let updatedCourses =allCourses;
 
             if (selectedCategory.length > 0) {
                 updatedCourses = updatedCourses.filter((course) =>
