@@ -3,6 +3,16 @@ import { FiEdit, FiMail, FiPhone, FiCalendar, FiMapPin } from 'react-icons/fi';
 import { FaUniversity } from 'react-icons/fa';
 
 const InfoCard = ({ onEdit,...userInfo }) => {
+  // const [formData, setFormData] = useState({...userInfo});
+
+  // // Load saved data from localStorage when the component mounts
+  // useEffect(() => {
+  //   const savedData = localStorage.getItem('formData');
+  //   if (savedData) {
+  //     setFormData(JSON.parse(savedData));
+  //   }
+  // }, []);
+
   return (
     <div className="bg-gradient-to-tr max-w-96 from-slate-300/50 backdrop-filter backdrop-blur-3xl bg-opacity-500 drop-shadow-2xl border-white/20 p-4 rounded-lg shadow-md dark:border dark:border-gray-200">
       <div className="flex flex-col mt-6 lg:mt-0 space-y-4">
