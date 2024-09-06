@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import image1 from "../../images/onlineLearning2.avif";
 import image2 from "../../images/teamwork00.webp";
 import image3 from "../../images/teamwork10.webp";
@@ -16,6 +17,14 @@ import icon5 from "../../images/academic.png";
 import icon6 from "../../images/machine-learning.png";
 import icon7 from "../../images/online-lesson.png"
 
+=======
+import image1 from "../../assets/ITIE&Entre/onlineLearning2.avif";
+import image2 from "../../assets/ITIE&Entre/teamwork12.avif";
+import image3 from "../../assets/ITIE&Entre/teamwork10.webp";
+import image4 from "../../assets/ITIE&Entre/teamwork15.jpg";
+import image5 from "../../assets/ITIE&Entre/teamwork0.webp";
+import image7 from "../../assets/ITIE&Entre/Biaoam.webp";
+>>>>>>> 1950aab (minor updates)
 
 const Career = () => {
   return (

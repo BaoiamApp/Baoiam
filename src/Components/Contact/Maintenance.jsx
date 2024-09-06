@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; 
-import Error from '../../images/Error.svg'; 
+import Error from '../../assets/ITIE&Entre//Error.svg'; 
 
 const Maintenance = () => {
   const navigate = useNavigate(); 

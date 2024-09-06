@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import img2 from '../Images/ITIE/img2.jpeg'
-import intern from '../Images/ITIE/intern.jpg'
-import img1 from '../Images/ITIE/img1.jpg'
+import img2 from '../assets/ITIE&Entre/ITIE/img2.jpeg'
+import intern from '../assets/ITIE&Entre/ITIE/intern.jpg'
+import img1 from '../assets/ITIE&Entre/ITIE/img1.jpg'
 import { PiGraduationCapFill } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
@@ -13,8 +13,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import dummy1 from '../images/ITIE/dummy1.png'
-import dummy2 from '../Images/ITIE/dummy2.png'
+import dummy1 from '../assets/ITIE&Entre/ITIE/dummy1.png'
+import dummy2 from '../assets/ITIE&Entre/ITIE/dummy2.png'
 
 const highlights = [
   { title: "Live Online Classes", description: "At your own schedule" },

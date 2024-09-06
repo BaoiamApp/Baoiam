@@ -7,17 +7,17 @@ import { CourseDesc2, CourseOverview } from '../assets/assets';
 import { MdCheck } from 'react-icons/md';
 import Faq from './Faq'
 
-import img1 from '../images/Entrepreneurship/img1.png'
-import img2 from '../images/Entrepreneurship/img2.png'
-import img3 from '../images/Entrepreneurship/img3.jpg'
+import img1 from '../assets/ITIE&Entre/Entrepreneurship/img1.png'
+import img2 from '../assets/ITIE&Entre/Entrepreneurship/img2.png'
+import img3 from '../assets/ITIE&Entre/Entrepreneurship/img3.jpg'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import dummy1 from '../images/ITIE/dummy1.png'
-import dummy2 from '../Images/ITIE/dummy2.png'
+import dummy1 from '../assets/ITIE&Entre/ITIE/dummy1.png'
+import dummy2 from '../assets/ITIE&Entre/ITIE/dummy2.png'
 
 import * as MDIcons from 'react-icons/md'
 import * as FCIcons from 'react-icons/fc'
@@ -89,7 +89,7 @@ const Enterpunership = () => {
     const navigate = useNavigate();
 
 
-    console.log(subCourse);
+    // console.log(subCourse);
 
     const [swiper, setSwiper] = useState(null);
 
