@@ -45,9 +45,9 @@ const EditFormModal = ({ isOpen, onClose, onSave, initialData }) => {
       newErrors.location = 'Location is required';
     }
 
-    if (!formData.profileImage) {
-      newErrors.profileImage = 'Profile image is required';
-    }
+    // if (!formData.profileImage) {
+    //   newErrors.profileImage = 'Profile image is required';
+    // }
 
     return newErrors;
   };

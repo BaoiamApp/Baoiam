@@ -46,8 +46,8 @@ function SideBar() {
     }
 
     return (
-        <div className='flex flex-col lg:flex-row md:flex-row px-8 text-xl lg:px-36'>
-            <div className='flex flex-row lg:flex-col md:flex-col items-center border border-indigo-500 p-6 md:items-start mt-4 rounded-3xl md:pl-6 gap-6 md:gap-4 md:h-[28rem]'>
+        <div className='flex flex-col bg-blue-600 p-5 lg:flex-row md:flex-row px-8 lg:gap-5 text-xl'>
+            <div className='flex flex-row lg:flex-col bg-red-600 md:flex-col items-center border p-6 md:items-start mt-4 rounded-3xl md:pl-6 gap-6 md:gap-4 md:h-[28rem]'>
                 <h2 className='hidden sm:flex font-semibold pt-4 md:text-[20px]'>My Account</h2>
 
                 <div
@@ -79,7 +79,7 @@ function SideBar() {
                 </div>
             </div>
 
-            <div className='w-full h-full lg:pl-8'>
+            <div className='w-full h-full'>
                 {renderContent(isTabActive)}
             </div>
         </div>

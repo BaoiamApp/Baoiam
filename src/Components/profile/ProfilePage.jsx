@@ -24,8 +24,8 @@ function ProfilePage() {
   const handleSave = (data) => setUserInfo(data);
 
   return (
-    <div className="flex lg:pr-20 dark:bg-black dark:text-white">
-      <div className="w-full p-6">
+    <div className="flex dark:bg-black dark:text-white">
+      <div className="w-full">
           <div className="flex flex-col mb-5 lg:flex-row justify-center gap-4">
             <div className="lg:flex-row">
               <ProfileCard
