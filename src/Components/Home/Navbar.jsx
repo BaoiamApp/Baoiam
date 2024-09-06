@@ -3,7 +3,7 @@ import img1 from '../../assets/img1.png';
 import { FaBars, FaMagnifyingGlass, FaRegUser } from 'react-icons/fa6';
 import CoursesList from "../CoursesList";
 import { Link, NavLink } from "react-router-dom";
-import { CollegeCourse, School } from "../../Data";
+import { CollegeCourse, OtherCourse, School } from "../../Data";
 import { RxCross2 } from 'react-icons/rx';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -82,7 +82,7 @@ const Navbar = ({ theme }) => {
 
           {show && (
             <div
-              className="absolute top-[4.5rem] bg-white dark:bg-gray-700 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-white"
+              className="absolute top-[4.5rem] left-52 bg-white dark:bg-gray-700 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-white"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -90,7 +90,7 @@ const Navbar = ({ theme }) => {
                 {/* School Course */}
                 {School.map((c, i) => {
                   return <div key={i} className="p-4">
-                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
+                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base text-amber-500 hover:underline">{c.Cate}</Link>
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
@@ -105,7 +105,7 @@ const Navbar = ({ theme }) => {
                 })}
                 {CollegeCourse.map((c, i) => {
                   return <div key={i} className="p-4">
-                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base">{c.Cate}</Link>
+                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base text-amber-500 hover:underline">{c.Cate}</Link>
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
@@ -115,6 +115,21 @@ const Navbar = ({ theme }) => {
                       })}
 
                     </ul>
+                  </div>
+                })}
+                {OtherCourse.map((c, i) => {
+                  return <div key={i} className="p-4">
+                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base text-amber-500 hover:underline">{c.Cate}</Link>
+                    <ul className="flex flex-col">
+
+                      {c.subCate.map((sub, index) => {
+                        return <Link key={index} to={`/`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
+                          {sub.course}
+                        </Link>
+                      })}
+
+                    </ul>
+
                   </div>
                 })}
               </div>
@@ -149,9 +164,9 @@ const Navbar = ({ theme }) => {
                     <NavLink to="/login" >Loginnn</NavLink>
                   </Link>
                   <Link to={'/signup'} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                  <NavLink to="/signup" >Sign Up</NavLink>
-                    
-                    
+                    <NavLink to="/signup" >Sign Up</NavLink>
+
+
                   </Link>
                 </ul>
                 {/* <div className="py-2">
@@ -184,16 +199,6 @@ const Navbar = ({ theme }) => {
               <aside className="fixed lg:hidden top-0 right-0 z-40 w-80 h-screen transition-transform -translate-x-0">
                 <div className="h-full px-3 py-4 overflow-y-auto bg-white border dark:text-white dark:bg-black">
 
-                  {/* <div className='flex items-center justify-around min-[200px]:gap-20 min-[425px]:gap-12 mb-4'>
-                  <div className="opacity-0 flex gap-4 items-center">
-                    <Link to={'/login'} className="border font-semibold px-4 py-1 border-blue-400 hover:bg-blue-400 hover:text-white hover:border-white rounded-lg text-blue-400">
-                      Login
-                    </Link>
-                    <Link to={'/signup'} className="bg-blue-400 px-4 py-1 text-white font-semibold border border-white rounded-lg hover:text-blue-400 hover:bg-transparent hover:border-blue-400">
-                      Sign Up
-                    </Link>
-                  </div>
-                </div> */}
                   <RxCross2 className='text-black ml-64' onClick={() => setShowmenu(!showmenu)} size={25} />
 
                   <ul className="space-y-2 font-medium">
