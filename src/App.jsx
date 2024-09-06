@@ -29,6 +29,9 @@ import { OurTeam } from "./Pages/OurTeam";
 import ProfilePage from './Components/profile/ProfilePage'
 import SideBar from './Components/profile/SideBar'
 
+import AnimatedForm from "./Pages/AnimatedForm";
+import AnimatedLogin from "./Pages/AnimatedLogin";
+import AnimatedSignup from "./Pages/AnimatedSignup";
 
 
 const App = () => {
@@ -49,11 +52,11 @@ const App = () => {
         <Route path="/gcsp" element={<GSCB />} />
         <Route path="/courses/school" element={<School />} />
         {/* <Route path="/course/:id" element={<Course />} /> */}
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/course/:course" element={<College />} />
-        <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/gscp" element={<GSCB />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/courses/college' element={<College />} />
+        <Route path='/course/:course' element={<div>colleg Sub Category</div>} />
+
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path='/pap' element={<PAP />} />
         <Route path='/checkout' element={<Checkout />} />
@@ -65,15 +68,27 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/terms-conditions' element={<TermsConditions />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-
-        {/* <Route path="/courses/college/:courseName" element={<College />} /> */}
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path='/career' element={<Career />} />
         <Route path='/team' element={<OurTeam />} />
         <Route path="/profile" element={<SideBar />} />
-
+        <Route path="/course/:course" element={<College />} />
+        <Route path="/gscp" element={<GSCB />} />
+        <Route path="/pap" element={<PAP />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/courses/school" element={<School />} />
+        <Route path="/course/:id" element={<SchoolCourse />} />
+        <Route path="/signup" element={<AnimatedSignup />} />
+        <Route path="/login" element={<AnimatedLogin />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/Blog_detail" element={<Blog_detail />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
       <Footer />
     </div>

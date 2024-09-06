@@ -1109,120 +1109,105 @@ export const CollegeCourse = [
     link: "/courses/college",
     subCate: [
       {
-        id: 1, 
-        course: "Web Development", 
-        "Web Development": [
-          {
-            "courseName": "Introduction to HTML and CSS",
-            "category": "Frontend Development",
-            "courseDuration": "4 weeks",
-            "courseURL": "https://www.example.com/html-css-course",
-            "numberOfLearners": 120000,
-            "difficultyLevel": "Beginner",
-            "price": "Free",
-            "language": "English"
-          },
-          {
-            "courseName": "JavaScript Basics",
-            "category": "Frontend Development",
-            "courseDuration": "6 weeks",
-            "courseURL": "https://www.example.com/javascript-basics",
-            "numberOfLearners": 150000,
-            "difficultyLevel": "Beginner",
-            "price": "$49",
-            "language": "English"
-          },
-          {
-            "courseName": "React for Beginners",
-            "category": "Frontend Development",
-            "courseDuration": "8 weeks",
-            "courseURL": "https://www.example.com/react-course",
-            "numberOfLearners": 200000,
-            "difficultyLevel": "Intermediate",
-            "price": "$99",
-            "language": "English"
-          },
-          {
-            "courseName": "Node.js and Express",
-            "category": "Backend Development",
-            "courseDuration": "5 weeks",
-            "courseURL": "https://www.example.com/node-express-course",
-            "numberOfLearners": 95000,
-            "difficultyLevel": "Intermediate",
-            "price": "$79",
-            "language": "English"
-          },
-          {
-            "courseName": "Full-Stack Web Development with MERN",
-            "category": "Full Stack Development",
-            "courseDuration": "12 weeks",
-            "courseURL": "https://www.example.com/fullstack-mern-course",
-            "numberOfLearners": 110000,
-            "difficultyLevel": "Advanced",
-            "price": "$199",
-            "language": "English"
-          },
-          {
-            "courseName": "Responsive Web Design",
-            "category": "Frontend Development",
-            "courseDuration": "3 weeks",
-            "courseURL": "https://www.example.com/responsive-web-design",
-            "numberOfLearners": 85000,
-            "difficultyLevel": "Beginner",
-            "price": "Free",
-            "language": "Spanish"
-          },
-          {
-            "courseName": "Python Django for Web Development",
-            "category": "Backend Development",
-            "courseDuration": "7 weeks",
-            "courseURL": "https://www.example.com/python-django-course",
-            "numberOfLearners": 70000,
-            "difficultyLevel": "Intermediate",
-            "price": "$49",
-            "language": "English"
-          },
-          {
-            "courseName": "Introduction to Web Accessibility",
-            "category": "Web Accessibility",
-            "courseDuration": "2 weeks",
-            "courseURL": "https://www.example.com/web-accessibility-course",
-            "numberOfLearners": 30000,
-            "difficultyLevel": "Beginner",
-            "price": "Free",
-            "language": "French"
-          },
-          {
-            "courseName": "Advanced CSS and Sass",
-            "category": "Frontend Development",
-            "courseDuration": "5 weeks",
-            "courseURL": "https://www.example.com/advanced-css-sass",
-            "numberOfLearners": 120000,
-            "difficultyLevel": "Advanced",
-            "price": "$99",
-            "language": "English"
-          },
-          {
-            "courseName": "Building RESTful APIs with Node.js",
-            "category": "Backend Development",
-            "courseDuration": "6 weeks",
-            "courseURL": "https://www.example.com/restful-apis-nodejs",
-            "numberOfLearners": 100000,
-            "difficultyLevel": "Intermediate",
-            "price": "$79",
-            "language": "English"
-          }
-        ]
+        "courseName": "Web Development",
+        "category": "Technology",
+        "difficultyLevel": "Intermediate",
+        "price": "Free",
+        "language": "English",
+        "courseDuration": "8 weeks",
+        "numberOfLearners": 15000,
+        "courseURL": "https://example.com/web-development"
       },
-      { id: 2, course: "Graphic Designing" },
-      { id: 3, course: "Human Resource" },
-      { id: 4, course: "Data Analytics" },
-      { id: 5, course: "Product Management" },
-      { id: 6, course: "Android Development" },
-      { id: 7, course: "Digital Marketing" },
-      { id: 8, course: "UI UX Design" },
-      { id: 9, course: "Software Testing" },
-      { id: 10, course: "Entrepreneurship and Innovation" },
+      {
+        "courseName": "Graphic Designing",
+        "category": "Design",
+        "difficultyLevel": "Beginner",
+        "price": "$49",
+        "language": "English",
+        "courseDuration": "6 weeks",
+        "numberOfLearners": 10000,
+        "courseURL": "https://example.com/graphic-designing"
+      },
+      {
+        "courseName": "Human Resource",
+        "category": "Business",
+        "difficultyLevel": "Intermediate",
+        "price": "$79",
+        "language": "English",
+        "courseDuration": "4 weeks",
+        "numberOfLearners": 8000,
+        "courseURL": "https://example.com/human-resource"
+      },
+      {
+        "courseName": "Data Analytics",
+        "category": "Technology",
+        "difficultyLevel": "Advanced",
+        "price": "$99",
+        "language": "English",
+        "courseDuration": "10 weeks",
+        "numberOfLearners": 12000,
+        "courseURL": "https://example.com/data-analytics"
+      },
+      {
+        "courseName": "Product Management",
+        "category": "Business",
+        "difficultyLevel": "Intermediate",
+        "price": "$69",
+        "language": "English",
+        "courseDuration": "5 weeks",
+        "numberOfLearners": 9000,
+        "courseURL": "https://example.com/product-management"
+      },
+      {
+        "courseName": "Android Development",
+        "category": "Technology",
+        "difficultyLevel": "Advanced",
+        "price": "$89",
+        "language": "English",
+        "courseDuration": "8 weeks",
+        "numberOfLearners": 14000,
+        "courseURL": "https://example.com/android-development"
+      },
+      {
+        "courseName": "Digital Marketing",
+        "category": "Marketing",
+        "difficultyLevel": "Beginner",
+        "price": "Free",
+        "language": "English",
+        "courseDuration": "6 weeks",
+        "numberOfLearners": 11000,
+        "courseURL": "https://example.com/digital-marketing"
+      },
+      {
+        "courseName": "UI UX Design",
+        "category": "Design",
+        "difficultyLevel": "Intermediate",
+        "price": "$59",
+        "language": "English",
+        "courseDuration": "7 weeks",
+        "numberOfLearners": 13000,
+        "courseURL": "https://example.com/ui-ux-design"
+      },
+      {
+        "courseName": "Software Testing",
+        "category": "Technology",
+        "difficultyLevel": "Advanced",
+        "price": "$75",
+        "language": "English",
+        "courseDuration": "6 weeks",
+        "numberOfLearners": 9000,
+        "courseURL": "https://example.com/software-testing"
+      },
+      {
+        "courseName": "Entrepreneurship and Innovation",
+        "category": "Business",
+        "difficultyLevel": "Advanced",
+        "price": "$109",
+        "language": "English",
+        "courseDuration": "9 weeks",
+        "numberOfLearners": 7000,
+        "courseURL": "https://example.com/entrepreneurship-innovation"
+      }
     ],
   },
 ];
