@@ -12,11 +12,9 @@ import SkillCatalog from './Components/School/SkillCatalog'
 import CoursePage from './Components/School/CoursePage'
 import SignUp from './Pages/SignUp'
 import Login from './Pages/Login'
-
 import AboutUs from './Pages/AboutUs'
 import TermsConditions from "./Pages/TermsConditions"
 import PrivacyPolicy from "./Pages/PrivacyPolicy"
-
 import SchoolCourse from './Pages/SchoolCourse'
 import Blogs from './Pages/Blogs'
 import Career from './Components/Career/Career'
@@ -25,11 +23,16 @@ import Enterpunership from './Pages/Enterpunership'
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
 import College from "./Pages/College";
+import Login from "./Pages/Login";
+import TermsConditions from "./Pages/TermsConditions";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import SchoolCourse from "./Pages/SchoolCourse";
+import Blogs from "./Pages/Blogs";
+import Career from "./Components/Career/Career";
+import Blog_detail from "./Pages/Blog_detail";
 import { OurTeam } from "./Pages/OurTeam";
-
 import ProfilePage from './Components/profile/ProfilePage'
 import SideBar from './Components/profile/SideBar'
-
 import AnimatedForm from "./Pages/AnimatedForm";
 import AnimatedLogin from "./Pages/AnimatedLogin";
 import AnimatedSignup from "./Pages/AnimatedSignup";
@@ -49,17 +52,15 @@ const App = () => {
 
       <Navbar theme={theme} />
       <Routes>
-
-        <Route path='/' element={<Home />} />
-        <Route path='/gcsp' element={<GSCB />} />
-        <Route path='/courses/school' element={<School />} />
-
+        <Route path="/" element={<Home />} />
+        <Route path="/gcsp" element={<GSCB />} />
+        <Route path="/courses/school" element={<School />} />
         {/* <Route path="/course/:id" element={<Course />} /> */}
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/courses/college' element={<College />} />
         <Route path='/course/:course' element={<div>colleg Sub Category</div>} />
-        {/* <Route path='/' element={<Home />} /> */}
-        <Route path='/gscp' element={<GSCB />} />
+
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path='/pap' element={<PAP />} />
         <Route path='/checkout' element={<Checkout />} />
@@ -69,7 +70,6 @@ const App = () => {
         <Route path="/course/school/:id" element={<SchoolCourse />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/about-us' element={<AboutUs />} />
         <Route path='/terms-conditions' element={<TermsConditions />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/contact' element={<ContactUs />} />
