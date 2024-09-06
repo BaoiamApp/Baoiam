@@ -8,7 +8,7 @@ const TypewriterText = () => {
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           Master{" "}
-          <span className="text-orange-500">
+          <span className="text-amber-400">
             <Typewriter
               options={{
                 strings: [
@@ -32,10 +32,10 @@ const TypewriterText = () => {
         <div className="relative mt-8 w-full max-w-md mx-auto">
           <input
             type="text"
-            className="w-full px-4 bg-inherit py-3 pl-12 border rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 hover:shadow-md"
+            className="w-full px-4 bg-inherit py-3 pl-12 border shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
             placeholder="What do you want to learn today?"
           />
-          <FaSearch className="absolute left-4 top-3.5 text-orange-500" />
+          <FaSearch className="absolute left-4 top-3.5 text-amber-400" />
         </div>
       </div>
     </div>
