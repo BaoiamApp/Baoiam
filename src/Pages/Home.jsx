@@ -8,6 +8,7 @@ import Partners from '../Components/Home/Partners'
 import Protocol from '../Components/Home/Protocol'
 import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
+import Phone from '../Components/Home/Phone'
 const Home = () => {
     return (
         <>
@@ -19,6 +20,7 @@ const Home = () => {
             <Protocol />
             <JoinNow />
             <How />
+            <Phone />
         </>
     )
 }

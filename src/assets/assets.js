@@ -14,3 +14,15 @@ export {default as Impact} from './GSCP/impact.png'
 export {default as Trust} from './GSCP/trust.png'
 export {default as Value} from './GSCP/value.png'
 export {default as GSCP} from './GSCP/GSCP.png'
+
+// PAP
+export {default as PHero} from './PAP/pap-hero.png'
+
+// Phone
+export {default as App_phone} from './phone.png'
+
+// Apple Store
+export {default as Apple} from './footer-desktop-appstore.svg'
+
+// Google Play Store
+export {default as Google_play} from './footer-desktop-playstore.svg'

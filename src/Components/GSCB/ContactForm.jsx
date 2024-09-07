@@ -4,15 +4,17 @@ import { industry, interestedCheckbox } from "../../Data";
 const ContactForm = () => {
   return (
     <div className="mt-20 w-[70%] p-4 mx-auto h-full xs:w-full xs:p-4 xs:mt-10 xs:h-full xs:py-2">
-      <h1 className="text-5xl font-semibold xs:text-3xl xs:text-center">Contact</h1>
+      <h1 className="text-5xl font-semibold xs:text-3xl xs:text-center">
+        Contact
+      </h1>
 
       <form
         action=""
-        className="w-full h-full py-4 flex flex-col gap-4 text-black xs:flex xs:flex-col xs:gap-4 "
+        className="w-full h-full py-4 flex flex-col gap-4 text-black  xs:flex xs:flex-col xs:gap-4 "
       >
         {/* Name */}
         <div className="flex flex-col w-full xs:flex-col">
-          <p className="text-lg font-medium xs:text-base">
+          <p className="text-lg font-medium xs:text-base dark:text-white">
             Name <span className="text-red-600">*</span>
           </p>
           <div className="flex items-center justify-between gap-8 w-full xs:flex-col xs:gap-4 xs:w-full">
@@ -23,7 +25,9 @@ const ContactForm = () => {
                 className="px-4 py-2 border border-black/60 w-full xs:py-1"
                 required
               />
-              <label htmlFor="first" className="text-sm xs:text-xs">First</label>
+              <label htmlFor="first" className="text-sm xs:text-xs dark:text-white">
+                First
+              </label>
             </div>
             <div className="w-1/2 flex flex-col xs:w-full">
               <input
@@ -32,7 +36,9 @@ const ContactForm = () => {
                 className="px-4 py-2 border border-black/60 w-full xs:py-1"
                 required
               />
-              <label htmlFor="last" className="text-sm xs:text-xs">Last</label>
+              <label htmlFor="last" className="text-sm xs:text-xs dark:text-white">
+                Last
+              </label>
             </div>
           </div>
         </div>
@@ -40,7 +46,10 @@ const ContactForm = () => {
         {/* Company */}
         <div className="flex gap-8 w-full xs:flex-col xs:gap-4">
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="company">
+            <label
+              className="text-lg font-medium xs:text-base dark:text-white"
+              htmlFor="company"
+            >
               Company <span className="text-red-600">*</span>
             </label>
             <input
@@ -49,11 +58,14 @@ const ContactForm = () => {
               className="px-4 py-2 border border-black/60 w-full xs:py-1"
               required
             />
-            <span className="text-sm xs:text-xs">Who do you work for?</span>
+            <span className="text-sm xs:text-xs dark:text-white">Who do you work for?</span>
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="agency">
+            <label
+              className="text-lg font-medium xs:text-base dark:text-white"
+              htmlFor="agency"
+            >
               Company represented (if agency)
             </label>
             <input
@@ -67,7 +79,7 @@ const ContactForm = () => {
         {/* Email & Phone */}
         <div className="flex gap-8 w-full xs:flex-col xs:gap-4">
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="email">
+            <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="email">
               Email <span className="text-red-600">*</span>
             </label>
             <input
@@ -79,7 +91,7 @@ const ContactForm = () => {
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="phone">
+            <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="phone">
               Phone
             </label>
             <input
@@ -95,7 +107,7 @@ const ContactForm = () => {
         {/* Job & Industry */}
         <div className="flex gap-8 w-full xs:flex-col xs:gap-4">
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="job">
+            <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="job">
               Job Title
             </label>
             <input
@@ -106,17 +118,20 @@ const ContactForm = () => {
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base" htmlFor="industry">
+            <label
+              className="text-lg font-medium xs:text-base dark:text-white"
+              htmlFor="industry"
+            >
               Industry
             </label>
             <select
               name=""
               id="industry"
-              className="px-4 py-2 border border-black/60 w-full xs:py-1"
+              className="px-4 py-2 border border-black/60 w-full xs:py-1 "
             >
               <option value="">Select an Industry</option>
               {industry.map((i) => (
-                <option key={i.id} value={i.value}>
+                <option className="dark:text-white" key={i.id} value={i.value}>
                   {i.label}
                 </option>
               ))}
@@ -126,7 +141,7 @@ const ContactForm = () => {
 
         {/* Interested */}
         <div className="w-full xs:w-full">
-          <p className="text-lg font-medium xs:text-base">
+          <p className="text-lg font-medium xs:text-base dark:text-white">
             I am interested in... <span className="text-red-600">*</span>
           </p>
           <div className="grid grid-cols-2 gap-4 mt-2 xs:grid-cols-1 xs:gap-2">
@@ -139,7 +154,7 @@ const ContactForm = () => {
                   value={c.value}
                   required
                 />
-                <label className="ml-2 xs:text-sm" htmlFor={c.value}>
+                <label className="ml-2 xs:text-sm dark:text-white" htmlFor={c.value}>
                   {c.label}
                 </label>
               </div>
@@ -149,7 +164,7 @@ const ContactForm = () => {
 
         {/* Textarea */}
         <div className="w-full xs:w-full">
-          <label className="text-lg font-medium xs:text-base" htmlFor="help">
+          <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="help">
             How can we help?
           </label>
           <textarea
@@ -159,7 +174,7 @@ const ContactForm = () => {
           ></textarea>
           <button
             type="submit"
-            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white xs:px-4 xs:py-2 xs:mt-2"
+            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white border-black xs:px-4 xs:py-2 xs:mt-2 dark:bg-[#EB0027] dark:hover:bg-transparent dark:hover:border-[#EB0027] border dark:hover:text-[#EB0027]"
           >
             Submit
           </button>
