@@ -11,7 +11,7 @@ const Sidebar = () => {
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) => 
     activeTab === tab 
-      ? 'bg-white text-black p-3 rounded-l-2xl flex items-center cursor-pointer' 
+      ? 'bg-white text-black p-3 rounded-tl-3xl rounded-bl-3xl flex items-center cursor-pointer' 
       : 'hover:bg-white hover:text-black p-3 rounded-l-2xl flex items-center cursor-pointer text-white';
 
   // Function to render content based on the active tab
@@ -24,7 +24,7 @@ const Sidebar = () => {
       case 'achievements':
         return <Certificate />;
       case 'management':
-        return <ProfileManage/>; // Replace with the actual Profile Management component
+        return <ProfileManage />; // Replace with the actual Profile Management component
       default:
         return <ProfilePage />;
     }
@@ -33,14 +33,14 @@ const Sidebar = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="bg-indigo-800 w-[20%] pl-10 text-white flex flex-col rounded-tr-3xl">
+      <div className="bg-indigo-900 shadow-inner w-[20%] pl-10 text-white flex flex-col rounded-tr-3xl">
         {/* Dashboard Heading */}
         <h2 className="text-3xl font-bold mt-5 mb-8">My Account</h2>
 
         {/* Sidebar Tabs */}
         <ul className="space-y-6">
           {/* My Profile Tab */}
-          <li onClick={() => setActiveTab('profile')} className={`${tabClassNames('profile')}`}>
+          <li onClick={() => setActiveTab('profile')} className={tabClassNames('profile')}>
             <FaUser className="mr-3" />
             <span className="text-lg">My Profile</span>
           </li>
