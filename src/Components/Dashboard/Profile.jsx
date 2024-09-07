@@ -17,21 +17,21 @@ function Profile() {
   };
 
   return (
-    <div className="relative bg-white p-4 rounded-lg  shadow-md">
+    <div className="relative bg-white p-4 rounded-lg shadow-md">
       <button
         onClick={handleEditProfile}
         className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
       >
         <FiEdit size={20} />
       </button>
-      <h2 className="text-xl font-bold mb-4">Profile Management</h2>
+      <h2 className="md:text-xl text-lg mt-4 font-bold mb-4">Profile Management</h2>
 
-      <div className="flex flex-col lg:flex-row  items-center gap-4">
+      <div className="flex flex-col lg:flex-row gap-4 xl:gap-8 xl:py-4">
         <div className="profile-pic">
           <img
             src={HeroDp || "https://via.placeholder.com/150"}
             alt="Profilephoto"
-            className="w-40 h-40 rounded-full mx-auto"
+            className="md:w-40 md:h-40 w-20 h-20 rounded-full mx-auto"
           />
           <div className="flex items-center gap-2 my-4 justify-center socials">
             <FaFacebook/>

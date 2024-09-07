@@ -4,6 +4,7 @@ import ProfilePage from './ProfilePage';
 import Certificate from './Certificate'; // Import the Certificate component
 import Courses from './Courses'; // Import the Courses component
 import ProfileManage from './ProfileManage';
+import { MdAccountCircle } from 'react-icons/md';
 
 const Sidebar = () => {
   const [activeTab, setActiveTab] = useState('profile'); // Default active tab
@@ -11,8 +12,8 @@ const Sidebar = () => {
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
     activeTab === tab
-      ? 'bg-white text-black p-4 rounded-l-full flex items-center cursor-pointer relative'
-      : 'hover:bg-white hover:text-black p-4 rounded-l-full flex items-center cursor-pointer text-white relative';
+      ? 'bg-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative'
+      : 'p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative';
 
   // Function to render content based on the active tab
   const renderContent = () => {
@@ -29,50 +30,52 @@ const Sidebar = () => {
         return <ProfilePage />;
     }
   };
+  const ActiveTabColor=(tab)=>{
+    return activeTab===tab?'text-gray-900 text-lg':' text-lg';
+  }
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen pt-8">
       {/* Sidebar */}
-      <div className="bg-indigo-800 w-[20%] pl-10 text-white flex flex-col rounded-tr-3xl">
-        {/* Dashboard Heading */}
-        <h2 className="text-3xl font-bold mt-5 mb-8">My Account</h2>
+      <div className="bg-indigo-800 pl-[4%] text-white flex  flex-col rounded-tr-3xl">
+        {/* Dashboard Heading */}   <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 mb-8 hidden md:inline-block">My Account</h2>
 
         {/* Sidebar Tabs */}
-        <ul className="space-y-6">
+        <ul className="my-8 md:my-2">
           {/* My Profile Tab */}
           <li onClick={() => setActiveTab('profile')} className={`${tabClassNames('profile')}`}>
-            <FaUser className="mr-3" />
-            <span className="text-lg">My Profile</span>
+            <FaUser className={ActiveTabColor("profile")}  />
+            <span className=" hidden md:inline-block">My Profile</span>
           </li>
 
           {/* All Courses Tab */}
           <li onClick={() => setActiveTab('courses')} className={tabClassNames('courses')}>
-            <FaGraduationCap className="mr-3" />
-            <span className="text-lg">All Courses</span>
+            <FaGraduationCap className={ActiveTabColor("courses")}  />
+            <span className=" hidden md:inline-block">All Courses</span>
           </li>
 
           {/* Achievements Tab */}
           <li onClick={() => setActiveTab('achievements')} className={tabClassNames('achievements')}>
-            <FaTrophy className="mr-3" />
-            <span className="text-lg">Achievements</span>
+            <FaTrophy className={ActiveTabColor("achievements")}  />
+            <span className=" hidden md:inline-block">Achievements</span>
           </li>
 
           {/* Profile Management Tab */}
           <li onClick={() => setActiveTab('management')} className={tabClassNames('management')}>
-            <FaCog className="mr-3" />
-            <span className="text-lg">Profile Management</span>
+            <FaCog className={ActiveTabColor("management")}  />
+            <span className=" hidden md:inline-block">Profile Management</span>
           </li>
 
           {/* Logout Tab */}
           <li onClick={() => setActiveTab('logout')} className={tabClassNames('logout')}>
-            <FaSignOutAlt className="mr-3 " />
-            <span className="text-lg">Logout</span>
+            <FaSignOutAlt className={ActiveTabColor("logout")}  />
+            <span className=" hidden md:inline-block">Logout</span>
           </li>
         </ul>
       </div>
 
       {/* Main Content Area */}
-      <div className="w-[80%] p-6 bg-white">
+      <div className="w-full p-6 bg-white">
         {renderContent()}
       </div>
     </div>
