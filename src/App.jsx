@@ -61,7 +61,7 @@ const App = () => {
 
       <Navbar theme={theme} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}  />
         <Route path="/gcsp" element={<GSCB />} />
         <Route path="/courses/school" element={<School />} />
         {/* <Route path="/course/:id" element={<Course />} /> */}
@@ -121,7 +121,7 @@ const App = () => {
 
 
       </Routes>
-      <Footer />
+      <Footer dark={dark} />
     </div>
   );
 };

@@ -41,13 +41,13 @@ const Partners = () => {
 
   return (
     <div className='m-2'>
-      <h1 className="text-center text-3xl font-bold my-9">
+      <h1 className="text-center text-3xl w-[90%] w-[60%] mx-auto font-bold my-9">
         We are associated with businesses and non-profits
-        <span className='text-amber-500'> from startups to MNC's</span>
+        <span className='text-indigo-600'> from startups to MNC's</span>
       </h1>
 
-      <div className="px-5 ">
-        <div className="flex justify-between bg-[radial-gradient(circle,_white,_black)] bg-white/50 backdrop-blur-[100%] bg-opacity-20 drop-shadow-lg  border-white/20 rounded-md bg-clip-padding backdrop-filter border border-gray-100">
+      <div className="px-5 bg-indigo-50">
+        <div className="flex justify-between">
           {visibleImages.map((image, index) => (
             <div key={index} className="w-full  px-2">
               <img

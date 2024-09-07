@@ -15,9 +15,9 @@ const Categories = () => {
     ];
 
     return (
-        <div className="text-center pt-11 pb-11">
-            <h1 className="text-3xl font-bold mb-4">Advance Your Career Learn in <span className='text-amber-500 underline'>Baoiam</span></h1>
-            <p className="text-xl md:text-lg mb-4 md:mb-6">
+        <div className="text-center pt-11 pb-11 mx-auto ">
+            <h1 className="text-3xl font-bold mx-auto mb-4">Advance Your Career Learn in <span className='text-indigo-600'>Baoiam</span></h1>
+            <p className="text-xl w-[90%] mx-auto md:text-lg mb-4 md:mb-6">
                 Upskill in business analytics, health care, graphic design, management, and more.
             </p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-4">
