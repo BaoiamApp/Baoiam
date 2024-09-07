@@ -19,7 +19,7 @@ export const WebDevTeam = () => {
       </div>
       <div className=' flex flex-col p-4  md:items-center  justify-around md:flex-row  gap-4'>
         <div className='w-[80%] m-auto md:w-[25%] '>
-          <p className='text-sm text-center  md:text-lg text-[#544D4F]'>
+          <p className='text-sm text-center dark:text-slate-300 md:text-lg text-[#544D4F]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
