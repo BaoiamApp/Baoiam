@@ -9,10 +9,10 @@ const Sidebar = () => {
   const [activeTab, setActiveTab] = useState('profile'); // Default active tab
 
   // Function to determine class names for the tabs based on active state
-  const tabClassNames = (tab) => 
-    activeTab === tab 
-      ? 'bg-white text-black p-3 rounded-l-2xl flex items-center cursor-pointer' 
-      : 'hover:bg-white hover:text-black p-3 rounded-l-2xl flex items-center cursor-pointer text-white';
+  const tabClassNames = (tab) =>
+    activeTab === tab
+      ? 'bg-white text-black p-4 rounded-l-full flex items-center cursor-pointer relative'
+      : 'hover:bg-white hover:text-black p-4 rounded-l-full flex items-center cursor-pointer text-white relative';
 
   // Function to render content based on the active tab
   const renderContent = () => {
@@ -24,7 +24,7 @@ const Sidebar = () => {
       case 'achievements':
         return <Certificate />;
       case 'management':
-        return <ProfileManage/>; // Replace with the actual Profile Management component
+        return <ProfileManage />; // Replace with the actual Profile Management component
       default:
         return <ProfilePage />;
     }
@@ -73,7 +73,7 @@ const Sidebar = () => {
 
       {/* Main Content Area */}
       <div className="w-[80%] p-6 bg-white">
-        {renderContent()} 
+        {renderContent()}
       </div>
     </div>
   );
