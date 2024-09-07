@@ -68,7 +68,7 @@ export const Advertiseteam = () => {
           </div>
         </div>
         <div className='w-[80%] m-auto md:w-[30%] '>
-          <p className='text-sm text-center  md:text-lg text-[#544D4F]'>
+          <p className='text-sm text-center dark:text-slate-300 md:text-lg text-[#544D4F]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
