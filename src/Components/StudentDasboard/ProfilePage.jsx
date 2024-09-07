@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Profile from '../Dashboard/Profile'
 const ProfilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <div>
+      <Profile />     
+    </div>
   )
 }
 
