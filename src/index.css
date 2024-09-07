@@ -4,16 +4,48 @@
 @tailwind utilities;
 
 /* ScrollBar */
-html, body{
-    scroll-behavior: smooth;
-    ::-webkit-scrollbar{
-        width: 2px;
-    }
-    ::-webkit-scrollbar-thumb{
-        background-color: #747474;
-    
-    }
-    font-family: "Noto Sans", sans-serif;
+html,
+body {
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #747474;
+  }
+   font-family: "Noto Sans", sans-serif;
+}
+/* Custom styles for Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #1e40af;
+  transform: scale(1.1);
 }
 
 @keyframes scroll {

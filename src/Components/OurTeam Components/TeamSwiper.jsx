@@ -13,7 +13,7 @@ export const TeamSwiper = () => {
 
   return (
     <>
-      <div className='text-center text-xl md:text-3xl p-6 py-8 tracking-wide leading-4 font-bold'>
+      <div className='text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold'>
         Our Team
       </div>
       <div className='p-6'>
