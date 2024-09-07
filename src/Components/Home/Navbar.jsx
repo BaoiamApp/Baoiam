@@ -9,6 +9,7 @@ import { BsMoonStars, BsSun } from 'react-icons/bs';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { RiMenu3Line, RiSearch2Line } from 'react-icons/ri';
 import SearchBox from './SearchBox';
+import logo from '../../assets/BAOAM.png'
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -62,15 +63,16 @@ const Navbar = ({ theme }) => {
 
   return (
     <>
-      <div className={`flex items-center justify-between px-4 py-2 z-[100] ${isTransparent ? 'bg-white dark:bg-[#080529]' : 'bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0'}`}>
+      <div className={`flex z-50 items-center justify-between px-4 py-2 z-[100] ${isTransparent ? 'bg-white dark:bg-[#080529]' : 'bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0'}`}>
         {/* Logo */}
-        <Link to={'/profile'} className='w-28 h-14'>
-          <img src={img1} className='w-full h-full' alt="logo" />
+
+        <Link to={'/profile'} className={`${isDark ? 'w-36 h-20' : 'w-40 h-20'}`}>
+          <img src={isDark? logo: img1} className={`w-full h-full ${isDark? 'object contain' : 'object-contain'}`} alt="logo" />
         </Link>
 
         {/* NavLinks */}
-        <div className='hidden lg:flex items-center justify-between mt-4'>
-          <Link to={'/'} onClick={() => handleLinkClick('Home')} className={`mx-4 ${linkActive === 'Home' ? "text-indigo-600" : ""}`}>Home</Link>
+        <div className={`hidden lg:flex items-center ${isDark ? 'font-semibold' : 'font-medium'} justify-between mt-4`}>
+          <Link to={'/'} onClick={() => handleLinkClick('Home')} className={`mx-4  ${linkActive === 'Home' ? "text-orange-500" : ""}`}>Home</Link>
           <li
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -82,7 +84,7 @@ const Navbar = ({ theme }) => {
 
           {show && (
             <div
-              className="absolute top-[4.5rem] left-52 bg-white dark:bg-gray-700 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-white"
+              className="absolute top-[4.5rem] font-normal left-52 bg-white dark:bg-gray-700 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-white"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -90,11 +92,11 @@ const Navbar = ({ theme }) => {
                 {/* School Course */}
                 {School.map((c, i) => {
                   return <div key={i} className="p-4">
-                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base text-amber-500 hover:underline">{c.Cate}</Link>
+                    <Link to={`${c.link}`} className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline">{c.Cate}</Link>
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/course/school/${sub.id}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
+                        return <Link key={index} to={`/course/school/${sub.id}`} className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
                           {sub.course}
                         </Link>
                       })}
@@ -105,11 +107,11 @@ const Navbar = ({ theme }) => {
                 })}
                 {CollegeCourse.map((c, i) => {
                   return <div key={i} className="p-4">
-                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base text-amber-500 hover:underline">{c.Cate}</Link>
+                    <Link to={`${c.link}`} className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline">{c.Cate}</Link>
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/course/${sub.courseName}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
+                        return <Link key={index} to={`/course/${sub.courseName}`} className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
                           {sub.courseName}
                         </Link>
                       })}
@@ -119,11 +121,11 @@ const Navbar = ({ theme }) => {
                 })}
                 {OtherCourse.map((c, i) => {
                   return <div key={i} className="p-4">
-                    <Link to={`${c.link}`} className="font-bold mb-2 px-2 text-base text-amber-500 hover:underline">{c.Cate}</Link>
+                    <Link to={`${c.link}`} className="font-semibold mb-2 px-2 text-base text-slate-800 hover:underline">{c.Cate}</Link>
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
+                        return <Link key={index} to={`/`} className="px-2 py-1 rounded-md text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
                           {sub.course}
                         </Link>
                       })}
@@ -179,16 +181,17 @@ const Navbar = ({ theme }) => {
           <span onClick={darkTheme} className='text-xl cursor-pointer hidden lg:block'>
             {isDark ? <BsMoonStars /> : <BsSun />}
           </span>
-
-          <Link to={'/gcsp'} className="relative px-6 py-2 ml-2 overflow-hidden font-medium text-indigo-500 dark:text-white dark:bg-black bg-gray-100 border border-gray-100 rounded-full hidden md:block shadow-inner group">
-            <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-indigo-600 group-hover:w-full ease"></span>
+          <Link to={'/gcsp'} className="relative group">
+          {/* <Link to={'/gcsp'} className="relative px-6 py-2 ml-2 overflow-hidden font-medium text-indigo-500 dark:text-white dark:bg-black bg-gray-100 border border-gray-100 rounded-full hidden md:block shadow-inner group"> */}
+            {/* <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-indigo-600 group-hover:w-full ease"></span>
             <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-indigo-600 group-hover:w-full ease"></span>
             <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-r-2 group-hover:h-full ease"></span>
             <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-l-2 group-hover:h-full ease"></span>
             <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-indigo-600 opacity-0 group-hover:opacity-100"></span>
             <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
               GSCP
-            </span>
+            </span> */}
+            <button type="button" class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center me-14 ">GCEP</button>
           </Link>
           <span onClick={() => setShowmenu(!showmenu)} className='block lg:hidden'>
             <RiMenu3Line size={22} />
