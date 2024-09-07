@@ -8,7 +8,7 @@ function Courses() {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
+    <div className="bg-white p-4 rounded-lg  shadow-md">
       <h2 className="text-xl font-bold mb-4">My Courses</h2>
       <ul>
         {courses.map((course) => (
