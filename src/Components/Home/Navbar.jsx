@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import img1 from '../../assets/img1.png';
 import { FaBars, FaMagnifyingGlass, FaRegUser } from 'react-icons/fa6';
 import CoursesList from "../CoursesList";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CollegeCourse, School } from "../../Data";
 import { RxCross2 } from 'react-icons/rx';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
@@ -64,10 +64,9 @@ const Navbar = ({ theme }) => {
     <>
       <div className={`flex items-center justify-between px-4 py-2 z-[100] ${isTransparent ? 'bg-white dark:bg-[#080529]' : 'bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0'}`}>
         {/* Logo */}
-        <Link to={'/'} className='w-28 h-14'>
-          <img src={img1} className='w-full h-full' alt="logo" />
+        <Link to={"/"} className="w-28 h-14">
+          <img src={img1} className="w-full h-full" alt="logo" />
         </Link>
-
 
         {/* NavLinks */}
         <div className='hidden lg:flex items-center justify-between mt-4'>
@@ -78,7 +77,6 @@ const Navbar = ({ theme }) => {
             className="mx-4 cursor-pointer flex gap-2 items-center"
           >
             Courses
-
             {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </li>
 
@@ -111,8 +109,8 @@ const Navbar = ({ theme }) => {
                     <ul className="flex flex-col">
 
                       {c.subCate.map((sub, index) => {
-                        return <Link key={index} to={`/course/${sub.course}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
-                          {sub.course}
+                        return <Link key={index} to={`/course/${sub.courseName}`} className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500">
+                          {sub.courseName}
                         </Link>
                       })}
 
@@ -148,10 +146,12 @@ const Navbar = ({ theme }) => {
                 </div> */}
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                   <Link to={'/login'} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Login
+                    <NavLink to="/login" >Loginnn</NavLink>
                   </Link>
                   <Link to={'/signup'} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Sign Up
+                  <NavLink to="/signup" >Sign Up</NavLink>
+                    
+                    
                   </Link>
                 </ul>
                 {/* <div className="py-2">
@@ -171,9 +171,10 @@ const Navbar = ({ theme }) => {
             <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-r-2 group-hover:h-full ease"></span>
             <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-l-2 group-hover:h-full ease"></span>
             <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-indigo-600 opacity-0 group-hover:opacity-100"></span>
-            <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">GCSP</span>
+            <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+              GSCP
+            </span>
           </Link>
-
           <span onClick={() => setShowmenu(!showmenu)} className='block lg:hidden'>
             <RiMenu3Line size={22} />
           </span>
