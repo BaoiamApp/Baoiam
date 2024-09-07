@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Trending from '../Components/School/Trending'
 import WhyUs from '../Components/School/WhyUs'
 import SkillCatalog from '../Components/School/SkillCatalog'
@@ -6,7 +7,14 @@ import SliderHero from '../Components/School/SliderHero'
 import TypewriterText from '../Components/School/TypewiterText'
 import { Link } from 'react-router-dom'
 
+
 const School = () => {
+  const navigate = useNavigate(); 
+
+  const handleExploreCourses = () => {
+    navigate('/ITIE'); 
+  };
+
   return (
     <>
      <TypewriterText />
@@ -32,19 +40,17 @@ const School = () => {
       </Link>
     </div>
 
-    
-    <div className="w-full lg:w-1/2 flex justify-center lg:justify-end lg:pr-20">
-      <SliderHero />
-    </div>
-  </div>
-</div>
+            <div className="h-96 md:h-full w-full md:w-[40%] pt-8 md:pt-0">
+              <SliderHero />
+            </div>
+          </div>
+        </div>
+        <SkillCatalog />
+        <Trending />
+        <WhyUs />
+      </div>
+    </>
+  );
+};
 
-    <Trending />
-    <SkillCatalog/>
-    <WhyUs />
-  </div>
-  </>
-  )
-}
-
-export default School
+export default School;

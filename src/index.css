@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,7 @@ body {
   ::-webkit-scrollbar-thumb {
     background-color: #747474;
   }
+   font-family: "Noto Sans", sans-serif;
 }
 /* Custom styles for Swiper navigation buttons */
 .swiper-button-next,
@@ -45,3 +47,17 @@ body {
   background-color: #1e40af;
   transform: scale(1.1);
 }
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+  

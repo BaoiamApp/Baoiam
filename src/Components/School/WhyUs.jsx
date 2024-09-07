@@ -16,7 +16,7 @@ const WhyUs = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center">
-            <div className="bg-orange-600 p-4 rounded-full mb-4">
+            <div className="bg-indigo-600 p-4 rounded-full mb-4">
               <FiCheckCircle className="h-10 w-10 text-white" />
             </div>
             <h3 className="text-xl font-bold">Quality</h3>
@@ -26,7 +26,7 @@ const WhyUs = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="bg-orange-600 p-4 rounded-full mb-4">
+            <div className="bg-indigo-600 p-4 rounded-full mb-4">
               <FiTrendingUp className="h-10 w-10 text-white" />
             </div>
             <h3 className="text-xl font-bold ">Innovation</h3>
@@ -36,7 +36,7 @@ const WhyUs = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="bg-orange-600 p-4 rounded-full mb-4">
+            <div className="bg-indigo-600 p-4 rounded-full mb-4">
               <FiClock className="h-10 w-10 text-white" />
             </div>
             <h3 className="text-xl font-bold">Reliability</h3>
@@ -46,7 +46,7 @@ const WhyUs = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="bg-orange-600 p-4 rounded-full mb-4">
+            <div className="bg-indigo-600 p-4 rounded-full mb-4">
               <FaHandsHelping className="h-10 w-10 text-white" />
             </div>
             <h3 className="text-xl font-bold">Support</h3>
