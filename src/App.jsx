@@ -44,6 +44,7 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from './Pages/auth/Login'
+import Dashboard from './Components/Dashboard/Dashboard'
 
 
 
@@ -85,7 +86,9 @@ const App = () => {
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path='/career' element={<Career />} />
         <Route path='/team' element={<OurTeam />} />
-        <Route path="/profile" element={<SideBar />} />
+        {/* <Route path="/profile" element={<SideBar />} /> */}
+        <Route path="/profile" element={<Dashboard />} />
+
         <Route path="/course/:course" element={<College />} />
         <Route path="/gscp" element={<GSCB />} />
         <Route path="/pap" element={<PAP />} />
