@@ -30,8 +30,8 @@ import College from "./Pages/College";
 
 
 import { OurTeam } from "./Pages/OurTeam";
-import ProfilePage from './Components/profile/ProfilePage'
-import SideBar from './Components/profile/SideBar'
+// import ProfilePage from './Components/profile/ProfilePage'
+import SideBar from './Components/StudentDasboard/SideBar'
 
 // import AnimatedForm from "./Pages/AnimatedForm";
 // import AnimatedLogin from "./Pages/AnimatedLogin";
@@ -86,8 +86,8 @@ const App = () => {
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path='/career' element={<Career />} />
         <Route path='/team' element={<OurTeam />} />
-        {/* <Route path="/profile" element={<SideBar />} /> */}
-        <Route path="/profile" element={<Dashboard />} />
+        <Route path="/profile" element={<SideBar />} />
+        {/* <Route path="/profile" element={<Dashboard />} /> */}
 
         <Route path="/course/:course" element={<College />} />
         <Route path="/gscp" element={<GSCB />} />
