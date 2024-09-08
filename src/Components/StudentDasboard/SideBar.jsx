@@ -38,7 +38,7 @@ const Sidebar = () => {
     <div className="flex pt-8">
       {/* Sidebar */}
       <div className="bg-indigo-600 pl-[4%] text-white flex  flex-col rounded-tr-3xl">
-        {/* Dashboard Heading */}   <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 mb-8 hidden md:inline-block">My Account</h2>
+        {/* Dashboard Heading */}   <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 lg:mr-[0.2rem] mb-8 hidden md:inline-block">My Account</h2>
 
         {/* Sidebar Tabs */}
         <ul className="my-8 md:my-2">
@@ -51,7 +51,7 @@ const Sidebar = () => {
           {/* All Courses Tab */}
           <li onClick={() => setActiveTab('courses')} className={tabClassNames('courses')}>
             <FaGraduationCap className={ActiveTabColor("courses")}  />
-            <span className=" hidden md:inline-block">All Courses</span>
+            <span className=" hidden md:inline-block">My Courses</span>
           </li>
 
           {/* Achievements Tab */}

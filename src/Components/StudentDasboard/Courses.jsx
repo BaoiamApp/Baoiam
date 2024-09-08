@@ -12,7 +12,7 @@ const courses = [
 const Courses = () => {
   return (
     <section className="p-6 bg-gray-100">
-      <h2 className="text-3xl font-semibold mb-6 text-center">All Courses</h2>
+      <h2 className="text-3xl font-semibold mb-6 text-center">All Enrolled Courses</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {courses.map((course) => (
           <div key={course.id} className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
