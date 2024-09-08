@@ -2,7 +2,8 @@ import React from "react";
 import ContactForm from "../Components/GSCB/ContactForm";
 import Section2 from "../Components/GSCB/GSCB-Section2";
 import Section1 from "../Components/GSCB/GSCB-Section1";
-import Header from "../Components/GSCB/GSCB-Header";
+import Header from "../Components/GSCB/GSCB-Hero";
+import GSCPBottom from "../Components/GSCB/GSCP-Section3";
 
 const GSCB = () => {
   return (
@@ -17,6 +18,9 @@ const GSCB = () => {
 
       {/* Contact */}
       <ContactForm />
+
+      {/* GSCPBottom */}
+      <GSCPBottom />
     </>
   );
 };
