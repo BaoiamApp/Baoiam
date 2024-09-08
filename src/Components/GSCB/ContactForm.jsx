@@ -25,7 +25,10 @@ const ContactForm = () => {
                 className="px-4 py-2 border border-black/60 w-full xs:py-1"
                 required
               />
-              <label htmlFor="first" className="text-sm xs:text-xs dark:text-white">
+              <label
+                htmlFor="first"
+                className="text-sm xs:text-xs dark:text-white"
+              >
                 First
               </label>
             </div>
@@ -36,7 +39,10 @@ const ContactForm = () => {
                 className="px-4 py-2 border border-black/60 w-full xs:py-1"
                 required
               />
-              <label htmlFor="last" className="text-sm xs:text-xs dark:text-white">
+              <label
+                htmlFor="last"
+                className="text-sm xs:text-xs dark:text-white"
+              >
                 Last
               </label>
             </div>
@@ -58,7 +64,9 @@ const ContactForm = () => {
               className="px-4 py-2 border border-black/60 w-full xs:py-1"
               required
             />
-            <span className="text-sm xs:text-xs dark:text-white">Who do you work for?</span>
+            <span className="text-sm xs:text-xs dark:text-white">
+              Who do you work for?
+            </span>
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
@@ -79,7 +87,10 @@ const ContactForm = () => {
         {/* Email & Phone */}
         <div className="flex gap-8 w-full xs:flex-col xs:gap-4">
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="email">
+            <label
+              className="text-lg font-medium xs:text-base dark:text-white"
+              htmlFor="email"
+            >
               Email <span className="text-red-600">*</span>
             </label>
             <input
@@ -91,7 +102,10 @@ const ContactForm = () => {
           </div>
 
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="phone">
+            <label
+              className="text-lg font-medium xs:text-base dark:text-white"
+              htmlFor="phone"
+            >
               Phone
             </label>
             <input
@@ -107,7 +121,10 @@ const ContactForm = () => {
         {/* Job & Industry */}
         <div className="flex gap-8 w-full xs:flex-col xs:gap-4">
           <div className="flex-col flex w-1/2 xs:w-full">
-            <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="job">
+            <label
+              className="text-lg font-medium xs:text-base dark:text-white"
+              htmlFor="job"
+            >
               Job Title
             </label>
             <input
@@ -154,7 +171,10 @@ const ContactForm = () => {
                   value={c.value}
                   required
                 />
-                <label className="ml-2 xs:text-sm dark:text-white" htmlFor={c.value}>
+                <label
+                  className="ml-2 xs:text-sm dark:text-white"
+                  htmlFor={c.value}
+                >
                   {c.label}
                 </label>
               </div>
@@ -164,7 +184,10 @@ const ContactForm = () => {
 
         {/* Textarea */}
         <div className="w-full xs:w-full">
-          <label className="text-lg font-medium xs:text-base dark:text-white" htmlFor="help">
+          <label
+            className="text-lg font-medium xs:text-base dark:text-white"
+            htmlFor="help"
+          >
             How can we help?
           </label>
           <textarea
@@ -174,7 +197,7 @@ const ContactForm = () => {
           ></textarea>
           <button
             type="submit"
-            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white border-black xs:px-4 xs:py-2 xs:mt-2 dark:bg-[#EB0027] dark:hover:bg-transparent dark:hover:border-[#EB0027] border dark:hover:text-[#EB0027]"
+            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white border-black xs:px-4 xs:py-2 xs:mt-2 dark:bg-[#EB0027] dark:hover:bg-transparent dark:hover:border-[#EB0027] border dark:hover:text-[#EB0027] xs:text-[3vw] xs:px-[15px] py-[3.4px]"
           >
             Submit
           </button>
