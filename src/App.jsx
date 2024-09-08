@@ -30,8 +30,8 @@ import College from "./Pages/College";
 
 
 import { OurTeam } from "./Pages/OurTeam";
-import ProfilePage from './Components/profile/ProfilePage'
-import SideBar from './Components/profile/SideBar'
+// import ProfilePage from './Components/profile/ProfilePage'
+import SideBar from './Components/StudentDasboard/SideBar'
 
 // import AnimatedForm from "./Pages/AnimatedForm";
 // import AnimatedLogin from "./Pages/AnimatedLogin";
@@ -44,6 +44,7 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from './Pages/auth/Login'
+import Dashboard from './Components/Dashboard/Dashboard'
 
 
 
@@ -86,6 +87,8 @@ const App = () => {
         <Route path='/career' element={<Career />} />
         <Route path='/team' element={<OurTeam />} />
         <Route path="/profile" element={<SideBar />} />
+        {/* <Route path="/profile" element={<Dashboard />} /> */}
+
         <Route path="/course/:course" element={<College />} />
         <Route path="/gscp" element={<GSCB />} />
         <Route path="/pap" element={<PAP />} />
