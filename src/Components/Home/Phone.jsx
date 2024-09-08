@@ -6,8 +6,8 @@ const Phone = () => {
     const [inputValue, setInputValue] = useState('Email')
 
     return (
-        <div className='flex items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row my-12 py-12 px-8 lg:px-20'>
-            <div className='w-80 h-full lg:h-96'>
+        <div className='flex bg-amber-50 dark:bg-black dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20'>
+            <div className='w-40 md:w-80 h-full lg:h-96'>
                 <img src={App_phone} className='w-full h-full' alt="" />
             </div>
             <div className=''>
@@ -29,9 +29,9 @@ const Phone = () => {
                     </div>
 
                     <div className='flex items-center flex-col md:flex-row gap-4'>
-                        {inputValue === 'Email' ? <input className='outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-2 w-60' required type="email" placeholder='Email' /> : <input className='outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-1 w-60' required type="tel" inputMode='numeric' maxLength={10} placeholder='Phone' />}
+                        {inputValue === 'Email' ? <input className='outline-none rounded-full border border-black px-2 py-1 lg:px-4 lg:py-2 w-60' required type="email" placeholder='Email' /> : <input className='outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-1 w-60' required type="tel" inputMode='numeric' maxLength={10} placeholder='Phone' />}
 
-                        <button type="submit" className='text-sm px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-indigo-700 text-white rounded-md'>Enroll Today</button>
+                        <button type="submit" className='text-sm px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-indigo-700 text-white rounded-full'>Join now</button>
                     </div>
                 </form>
 

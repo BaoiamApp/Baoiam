@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContentCard from "../Components/AboutUs/ContentCard";
+import ValueCard from "../Components/AboutUs/ValueCard";
+import HeroCard from "../Components/AboutUs/HeroCard";
+import ProgressBar from "../Components/AboutUs/ProgressBar";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,12 +23,13 @@ import {
   FaEye,
   FaLightbulb,
   FaChartLine,
+  FaMedal,
 } from "react-icons/fa";
 import { GiTeamIdea } from "react-icons/gi";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaUsers } from "react-icons/fa6";
 import { MdDesignServices } from "react-icons/md";
 import { FaBusinessTime } from "react-icons/fa";
-import { AiOutlineCode } from "react-icons/ai";
+import { AiOutlineCode, AiOutlineClockCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 
@@ -86,6 +90,11 @@ const AboutUs = () => {
       title: "Henrik Johansson",
       content: "VP of Product Development",
     },
+    {
+      imageSrc: Liam,
+      title: "Liam Anderson",
+      content: "CEO & Founder",
+    },
   ];
 
   const slides = [
@@ -111,20 +120,21 @@ const AboutUs = () => {
     },
   ];
   return (
+    // <div className="dark:bg-black dark:text-white">
     <div>
       {/* Section - 1 */}
-      <div className="flex flex-col text-white mb-16">
-        <div className="relative">
+      <div className="relative mx-auto h-3/4 w-full text-white">
+        <div className="h-3/4 w-full">
           <img
             className="w-full h-full object-cover"
             src={aboutus4}
             alt="image"
           />
         </div>
-        <div className="absolute inset-0 flex flex-col gap-6 items-start px-72 w-[78%] justify-center bg-opacity-50 text-white">
+        <div className="absolute inset-0 flex flex-col gap-6 items-start md:px-24 lg:px-48 xl:px-72 w-[78%] h-[60%] justify-center bg-opacity-50 text-white">
           <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
             <p className="text-amber-600 font-medium">
-              We are an EdTech Organization
+              We are an EdTech Organization ~
             </p>
           </div>
           <h2 className="text-5xl font-bold">
@@ -134,44 +144,24 @@ const AboutUs = () => {
             We place you at the centre of information networks to advance your
             strategic interests.
           </p>
-          <button className="bg-amber-600 flex mt-2 rounded-3xl gap-1 justify-center items-center font-medium p-2 px-8">
+          <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Our Team
             <FaArrowRight className="font-normal" size={18} />
           </button>
-
-          <div className="absolute inset-x-0 -bottom-60 text-black font-bold text-center transform -translate-y-1/2 flex items-center justify-center gap-8">
-            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
-              <MdDesignServices size={48} className="text-amber-600 mb-2" />
-              <p>UI/UX Design Services</p>
-            </div>
-
-            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
-              <FaBusinessTime size={48} className="text-amber-600 mb-2" />
-              <p>Business Consultation</p>
-            </div>
-
-            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
-              <AiOutlineCode size={48} className="text-amber-600 mb-2" />
-              <p>Website Development</p>
-            </div>
-
-            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
-              <BiSupport size={48} className="text-amber-600 mb-2" />
-              <p>Support Management</p>
-            </div>
-
-            <div className="flex flex-col bg-white w-[15%] p-6 items-center">
-              <RiBarChartBoxLine size={48} className="text-amber-600 mb-2" />
-              <p>Market Research</p>
-            </div>
-          </div>
+        </div>
+        <div className="relative mx-auto inset-x-0 transform -translate-y-1/2 w-full text-black font-bold text-center flex items-center justify-center gap-8">
+          <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
+          <HeroCard Icon={FaBusinessTime} title="Business Consultation" />
+          <HeroCard Icon={AiOutlineCode} title="Website Development" />
+          <HeroCard Icon={BiSupport} title="Support Management" />
+          <HeroCard Icon={RiBarChartBoxLine} title="Market Research" />
         </div>
       </div>
 
       {/* Section - 2 */}
-      <div className="flex relative gap-4 pb-20 w-full h-screen">
-        <div className="flex flex-col items-start mx-4 w-1/2 pt-32 pl-14 px-8">
-          <h2 className="text-6xl pb-8 font-bold">
+      <div className="flex flex-row-reverse relative gap-4 pb-20 w-full h-screen">
+        <div className="flex flex-col items-start mx-4 w-1/2 pt-28 px-8">
+          <h2 className="text-6xl pb-8 font-semibold">
             Students Success Is Our Focus
           </h2>
           <p className="pb-12">
@@ -181,7 +171,7 @@ const AboutUs = () => {
             crafted to empower your growth and help you achieve your goals with
             confidence.
           </p>
-          <button className="bg-amber-600 text-white rounded-md p-4 font-semibold text-lg">
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>
@@ -210,7 +200,7 @@ const AboutUs = () => {
                 key={index}
                 className="text-center text-[18px] flex justify-center items-center"
               >
-                <div className="absolute flex flex-col border-3xl max-w-[90%] h-[100%] rounded-b-3xl border-slate-400 mb-12">
+                <div className="absolute flex top-16 flex-col border-3xl max-w-[90%] h-[100%] rounded-b-3xl border-slate-400 mb-12">
                   <div className="relative rounded-b-3xl mb-2 px-2 border-slate-400">
                     <img
                       src={slide.imgSrc}
@@ -220,11 +210,138 @@ const AboutUs = () => {
                     <div className="mt-2 mb-4 text-center">{slide.text}</div>
                   </div>
 
-                  <div className="absolute top-10 left-10 w-[82%] h-[80%] z-10 border-amber-600 border-[3px] rounded-2xl"></div>
+                  <div className="absolute top-7 left-7 w-[82%] h-[80%] z-10 border-indigo-700 border-[3px] rounded-2xl"></div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+      </div>
+
+      {/* Section 3 */}
+      <div className="flex mx-auto gap-8 p-10 mb-16 justify-center items-center">
+        <div className="flex flex-col items-start justify-center pr-10 gap-4 ml-10 w-1/2">
+          <h3 className="text-amber-600 text-2xl font-semibold">About Us</h3>
+          <h2 className="text-4xl font-semibold">
+            The Easiest Way to Manage Personal Finances
+          </h2>
+          <p className="text-lg text-slate-600">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts. Separated they
+            live in Bookmarksgrove right at the coast of the Semantics, a large
+            language ocean.
+          </p>
+          <div className="flex gap-8">
+            <div className="flex gap-4">
+              <div className="text-indigo-700 p-4 w-fit bg-gray-200 rounded-xl">
+                <AiOutlineClockCircle size={32} />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-bold text-2xl text-slate-600">5</h3>
+                <p className="text-slate-500">Years of Experience</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="text-indigo-700 p-4 w-fit bg-gray-200 rounded-xl">
+                <FaUsers size={32} />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-bold text-2xl text-slate-600">45</h3>
+                <p className="text-slate-500">Team Members</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/2">
+          <div className="w-full md:w-[80%]">
+            <img
+              src={aboutus5}
+              alt="image"
+              className="w-full md:w-72 h-72 rounded-tl-2xl rounded-br-2xl lg:w-full lg:h-96 object-cover shadow-[15px_20px_#4338ca] lg:shadow-[20px_25px_#4338ca]"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Section 4 */}
+      <div className="flex items-center gap-4 py-10 mb-10 max-w-6xl mx-auto">
+        <div className="flex flex-col mt-6 gap-8 mb-10 max-w-xs">
+          <h2 className="text-amber-600 font-medium text-xl">Our Values</h2>
+          <h3 className="text-4xl font-semibold">
+            The Values We Maintain At Work
+          </h3>
+          <p className="text-lg text-slate-500">
+            We are a team with a variety of skills, each member contributes
+            their expertise, and works professionally among members and clients.
+          </p>
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            Collaborate with us
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ValueCard
+            Icon={FaHandsHelping}
+            title="Dedication"
+            description="Dedication at work is the key to sustained excellence and success."
+          />
+          <ValueCard
+            Icon={FaEye}
+            title="Clarity"
+            description="Clear objectives at work pave the way for strategic success."
+          />
+          <ValueCard
+            Icon={FaLightbulb}
+            title="Innovation"
+            description="Embracing innovation fosters creativity and growth."
+          />
+          <ValueCard
+            Icon={GiTeamIdea}
+            title="Synergy"
+            description="Workplace synergy through teamwork cultivates a culture of collaboration."
+          />
+          <ValueCard
+            Icon={FaChartLine}
+            title="Improvement"
+            description="Commitment to improvement fuels a culture of continuous success."
+          />
+          <ValueCard
+            Icon={FaMedal}
+            title="Excellence"
+            description="Striving for the highest standards in everything we do."
+          />
+        </div>
+      </div>
+
+      {/* Section 5 */}
+      <div className="flex mx-auto gap-4 p-10 justify-center items-center">
+        <div className="w-1/2 pl-20">
+          <div className="w-full md:w-[80%]">
+            <img
+              src={aboutus5}
+              alt="image"
+              className="w-full h-full md:w-60 rounded-tl-2xl rounded-br-2xl lg:w-full object-cover shadow-[-15px_-20px_#4338ca] lg:shadow-[-20px_-25px_#4338ca]"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col items-start justify-center pr-10 gap-4 w-1/2">
+          <h3 className="text-amber-600 text-2xl font-semibold">Who We Are</h3>
+          <h2 className="text-4xl font-semibold">
+            Get Expert Advice And Start Saving
+          </h2>
+          <p className="text-lg text-slate-600">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts. Separated they
+            live in Bookmarksgrove right at the coast of the Semantics, a large
+            language ocean.
+          </p>
+          <div className="w-full text-slate-800 mx-auto mt-6 space-y-6">
+            <ProgressBar percentage={86} title="UI/UX Design" />
+            <ProgressBar percentage={80} title="Business Consultation" />
+            <ProgressBar percentage={78} title="Website Development" />
+            <ProgressBar percentage={83} title="Market Research" />
+          </div>
         </div>
       </div>
 
@@ -302,75 +419,13 @@ const AboutUs = () => {
         </div>
       </div> */}
 
-      {/* Section 4 */}
-      <div className="flex flex-col gap-12 p-20">
-        <div className="flex justify-between items-center">
-          <div className="w-1/2 flex flex-col gap-8">
-            <h2 className="text-4xl font-bold">
-              The Values We Maintain At Work
-            </h2>
-            <p className="text-lg text-slate-500">
-              We are a team with a variety of skills, each member contributes
-              their expertise, and works professionally among members and
-              clients.
-            </p>
-          </div>
-          <div className="w-1/2">
-            <button className="bg-amber-600 ml-96 rounded-md p-4 text-white font-semibold text-lg">
-              Collaborate with us
-            </button>
-          </div>
-        </div>
-        <div className="flex text-center items-center">
-          <div className="flex flex-col items-center justify-center gap-4 w-1/3">
-            <FaHandsHelping className="text-4xl text-indigo-500" />
-            <h3 className="text-lg font-semibold">Dedication</h3>
-            <p className="text-lg text-slate-500">
-              Dedication at work is the key to sustained excellence and success.
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4 w-1/3">
-            <FaEye className="text-4xl text-indigo-500" />
-            <h3 className="text-lg font-semibold">Clarity</h3>
-            <p className="text-lg text-slate-500">
-              Clear objectives at work pave the way for strategic success.
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-4 w-1/3">
-            <FaLightbulb className="text-4xl text-indigo-500" />
-            <h3 className="text-lg font-semibold">Innovation</h3>
-            <p className="text-lg text-slate-500">
-              Clear objectives at work pave the way for strategic success.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center gap-10 text-center">
-          <div className="flex flex-col items-center justify-center gap-4 w-1/3">
-            <GiTeamIdea className="text-4xl text-indigo-500" />
-            <h3 className="text-lg font-semibold">Synergy</h3>
-            <p className="text-lg text-slate-500">
-              Workplace synergy through teamwork cultivates a culture of
-              collaboration.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-center w-1/3">
-            <FaChartLine className="text-4xl text-indigo-500" />
-            <h3 className="text-lg font-semibold">Improvement</h3>
-            <p className="text-lg text-slate-500">
-              Commitment to improvement fuels a culture of continuous success.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Section 5 */}
+      {/* Section 6 */}
       <div className="flex flex-col p-16 py-20 gap-12">
         <div className="flex flex-col gap-4 justify-center items-center">
-          <p className="text-lg font-medium text-amber-600">Our Team</p>
+          <p className="text-xl font-semibold text-amber-600">Our Team</p>
           <h2 className="text-4xl font-bold">Meet The Expert</h2>
         </div>
-        <div className="flex flex-wrap justify-between px-4">
+        <div className="flex flex-wrap justify-between px-2">
           {cardsData.map((card, index) => (
             <ContentCard
               key={index}
@@ -380,11 +435,11 @@ const AboutUs = () => {
             />
           ))}
         </div>
-        <div className="flex justify-center mt-14 gap-10">
-          <button className="bg-amber-600 text-white rounded-md p-4 font-semibold text-lg">
+        <div className="flex justify-center gap-10">
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
-          <button className="rounded-md p-4 text-amber-600 border-2 border-amber-600 font-semibold text-lg">
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 bg-clip-text text-transparent border-2 border-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden font-medium border border-indigo-600 rounded-full">
             See Other Members
           </button>
         </div>
