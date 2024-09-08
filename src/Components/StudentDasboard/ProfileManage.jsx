@@ -12,13 +12,13 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
 
   const [formData,setFormData]=useState(()=>{
     return {
-      first:fName,
-      middle:mName,
-      last:lName,
-      mobile:'',
-      dob:'',
-      college:'',
-      location:'',
+      first:fName || '',
+      middle:mName||'',
+      last:lName || '',
+      mobile:userInfo.mobile,
+      dob:userInfo.dob,
+      college:userInfo.college,
+      location:userInfo.location,
     }
   })
 
@@ -49,7 +49,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
   useEffect(()=>{
     setUserInfo((old)=>{
       return {
-        name:`${old.first,old.middle,old.last}`,
+        name:`${old.first} ${old.middle} ${old.last}`,
         ...formData,
       }
     })
@@ -66,7 +66,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <button
             type="button"
             onClick={() => handleEditToggle('personalInfo')}
-            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
           >
             {isEditable.personalInfo ? 'Save' : 'Edit'}
           </button>
@@ -163,7 +163,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <button
             type="button"
             onClick={() => handleEditToggle('socialLinks')}
-            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
           >
             {isEditable.socialLinks ? 'Save' : 'Edit'}
           </button>
@@ -210,7 +210,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <button
             type="button"
             onClick={() => handleEditToggle('email')}
-            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
           >
             {isEditable.email ? 'Save' : 'Edit'}
           </button>
@@ -236,7 +236,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
 
                 />}
             </div>
-            {/* Confirm New Email */}
+            {/* Confirm Email */}
             <div>
               {!isEditable.email ? <label className="block text-gray-700">Confirm New Email</label> :
                 <input
@@ -256,46 +256,43 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <button
             type="button"
             onClick={() => handleEditToggle('password')}
-            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
           >
             {isEditable.password ? 'Save' : 'Edit'}
           </button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Password */}
             <div>
-              {editSection.password && (
-                <label className="block text-gray-700">Current Password</label>
-              )}
+             {!isEditable.password? <label className="block text-gray-700">Current Password</label>:
               <input
                 type="password"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.password ? '' : 'bg-transparent cursor-not-allowed'}`}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Current Password"
 
               />
+             }
             </div>
             {/* New Password */}
             <div>
-              {editSection.password && (
-                <label className="block text-gray-700">New Password</label>
-              )}
+             {!isEditable.password? <label className="block text-gray-700">New Password</label>:
               <input
                 type="password"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.password ? '' : 'bg-transparent cursor-not-allowed'}`}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="New Password"
 
               />
+             }
             </div>
             {/* Confirm New Password */}
             <div>
-              {editSection.password && (
-                <label className="block text-gray-700">Confirm New Password</label>
-              )}
+             {!isEditable.password? <label className="block text-gray-700">Confirm New Password</label>:
               <input
                 type="password"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.password ? '' : 'bg-transparent cursor-not-allowed'}`}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Confirm New Password"
 
               />
+             }
             </div>
           </div>
         </div>
