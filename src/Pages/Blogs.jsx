@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import screen_time from "../assets/Blogs/screen_time.png";
 import ed_tech from "../assets/Blogs/ed_tech.png";
@@ -166,6 +166,12 @@ const authors_info = [
 ];
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -297,7 +303,7 @@ const Blog = () => {
         </div>
       </div>
       {/* readers section */}
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl mb-5 font-bold text-center">
           What Our Readers Are Saying.
         </h1>
@@ -324,23 +330,12 @@ const Blog = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Authors section */}
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
+      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
         <h1 className="text-3xl mb-5 font-bold text-center">
           Meet Our Authors
         </h1>
-        {/* <div className="absolute px-3 py-2 rounded-md bg-white border-black border-[2px] top-56 text-2xl font-bold cursor-pointer z-10">
-          &lt;
-        </div>
-        <div
-          className="z-10 px-3 py-2 rounded-md bg-white border-black border-[2px] absolute top-56 text-2xl font-bold cursor-pointer right-10"
-          onClick={nextPage}
-        >
-          &gt;
-        </div> */}
-        {/* <div className="relative">
-          <div className="rounded-md grid grid-cols-2 place-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> */}
         <div className=" w-full px-3 flex justify-center flex-col  blog-carousel">
           <Slider {...settings}>
             {authors_info.map((item, id) => {
@@ -376,9 +371,7 @@ const Blog = () => {
           </Slider>
         </div>
 
-        {/* </div>
-        </div> */}
-      </div>
+     </div> */}
     </div>
   );
 };

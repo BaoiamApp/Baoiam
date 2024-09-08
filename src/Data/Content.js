@@ -9,7 +9,7 @@ const blog_contents = [
   },
   {
     heading1: "Balancing Screen Time: Healthy Technology Use In Education",
-    p1: " Learn how to balance screen time effectively while using technology in education. Know about strategies like digital detox, parental controls, and digital literacy. Discover performance monitoring tools like AppDynamics and DataDog to stay healthy and productive while learning in the digital age.",
+    p1: " Learn how to balance screen time effectively while using technology in education. Know about strategies like digital detox, parental controls, and digital literacy. Discover performance monitoring tools like AppDynamics and DataDog to stay healthy and productive while learning in the digital age.", 
     heading2: "The Importance of Healthy Technology Use In Education",
     p2: "As technology has become an integral part of our life, it is really necessary to understand the importance of healthy technology use to maintain your overall well being while learning. ",
     points1: [

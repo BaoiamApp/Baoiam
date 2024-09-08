@@ -220,12 +220,12 @@ const Blog_detail = () => {
 
   return (
     <>
-      <div className="h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-indigo-300">
-        <p className="font-bold text-sm dark:text-black">
+      <div className="h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] dark:border-white dark:border-2 py-[2.5rem] flex-col my-[2rem] bg-indigo-300 dark:bg-black ">
+        <p className="font-bold text-sm dark:text-black dark:text-white">
           {" "}
           HOME / ARTICLES / SINGLE ARTICLE{" "}
         </p>
-        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black">
+        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-white">
           All That Is Wrong With Codding In The Field Of Apprentices
         </h1>
       </div>
@@ -332,17 +332,17 @@ const Blog_detail = () => {
         <h2 className="text-[1.13rem] mb-1">Comment</h2>
         <textarea
           rows="8"
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
+          className="bg-gray-100 w-[100%] p-5 dark:text-black focus:outline-none"
           cols="80"
         ></textarea>
         <h2 className="text-[1.13rem] mt-5 mb-1">Name</h2>
         <input
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
+          className="bg-gray-100 w-[100%] p-5 dark:text-black focus:outline-none"
           type="text"
         />
         <h2 className="text-[1.13rem] mt-5 mb-1">Email</h2>
         <input
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
+          className="bg-gray-100 w-[100%] p-5 dark:text-black focus:outline-none"
           type="text"
         />
         <div>
