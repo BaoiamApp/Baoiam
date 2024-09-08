@@ -5,15 +5,15 @@ import Notifications from '../Dashboard/Notifications'
 import CoursesMain from './CoursesMain'
 const ProfilePage = () => {
   return (
-    <div className='grid grid-col-1 md:grid-col-2 lg:grid-col-4'>
-      
-      <Profile />     
-      <Notifications/>
-      
-      
-     <CoursesMain/>
-      <Recommendations />
-      
+    <div className=''>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+        <Profile />
+        <Notifications />
+        <CoursesMain />
+        <Recommendations />
+      </div>
+
     </div>
   )
 }

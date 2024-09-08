@@ -9,10 +9,10 @@ const CoursesMain = () => {
   ];
 
   return (
-    <div className="max-w-4xl bg-slate-100 mx-auto p-4 rounded-lg shadow-md">
+    <div className="w-full bg-slate-100 mx-auto p-4 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-center">Courses</h2>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex flex-col gap-6">
         {courses.map((course, index) => (
           <div key={index} className="bg-white w-full shadow-md rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-4">{course.name}</h3>

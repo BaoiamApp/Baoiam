@@ -75,7 +75,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full h-full p-6 bg-white">
+      <div className="w-full p-6 bg-white">
         {renderContent()}
       </div>
     </div>
