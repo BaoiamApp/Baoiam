@@ -8,13 +8,17 @@ const Certificate = () => {
       {/* Tab Buttons */}
       <div className="flex justify-center space-x-4">
         <button
-          className={`py-2 px-4 ${activeTab === 'certificates' ? 'border-b-2 border-blue-500 font-bold' : ''}`}
+          className={`py-2 px-4 focus:outline-none ${
+            activeTab === 'certificates' ? 'border-b-2 border-blue-500 font-bold' : ''
+          }`}
           onClick={() => setActiveTab('certificates')}
         >
           Certificates
         </button>
         <button
-          className={`py-2 px-4 ${activeTab === 'badges' ? 'border-b-2 border-blue-500 font-bold' : ''}`}
+          className={`py-2 px-4 focus:outline-none ${
+            activeTab === 'badges' ? 'border-b-2 border-blue-500 font-bold' : ''
+          }`}
           onClick={() => setActiveTab('badges')}
         >
           Badges
@@ -22,22 +26,22 @@ const Certificate = () => {
       </div>
 
       {/* Content Div for Certificates/Badges */}
-      <div className="mt-6 border rounded-lg shadow-lg p-6">
+      <div className="mt-6 border rounded-lg shadow-lg p-6 bg-white">
         {activeTab === 'certificates' ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Certificates Div */}
             <div className="border p-4 rounded-lg">
               <h2 className="text-lg font-semibold">Certificate Title</h2>
-              <p className="text-sm">Description or issuer of the certificate</p>
+              <p className="text-sm text-gray-600">Description or issuer of the certificate</p>
             </div>
             {/* Add more certificates here */}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Badges Div */}
             <div className="border p-4 rounded-lg">
               <h2 className="text-lg font-semibold">Badge Title</h2>
-              <p className="text-sm">Description or level of the badge</p>
+              <p className="text-sm text-gray-600">Description or level of the badge</p>
             </div>
             {/* Add more badges here */}
           </div>
@@ -46,6 +50,5 @@ const Certificate = () => {
     </div>
   );
 };
-
 
 export default Certificate;

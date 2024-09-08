@@ -7,7 +7,7 @@ function Notifications() {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
+    <div className="bg-slate-100  p-4 rounded-lg shadow-md">
       <h2 className="text-xl font-bold mb-4">Notifications</h2>
       <ul>
         {notifications.map((notification) => (

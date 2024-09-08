@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaUser, FaGraduationCap, FaTrophy, FaCog, FaSignOutAlt } from 'react-icons/fa';
-import Profile from './Profile';
+import ProfilePage from './ProfilePage';
 import Certificate from './Certificate'; // Import the Certificate component
 import Courses from './Courses'; // Import the Courses component
 import ProfileManage from './ProfileManage';
@@ -19,7 +19,7 @@ const Sidebar = () => {
   const renderContent = () => {
     switch (activeTab) {
       case 'profile':
-        return <Profile />;
+        return <ProfilePage />;
       case 'courses':
         return <Courses />;
       case 'achievements':
@@ -27,7 +27,7 @@ const Sidebar = () => {
       case 'management':
         return <ProfileManage />; // Replace with the actual Profile Management component
       default:
-        return <Profile />;
+        return <ProfilePage />;
     }
   };
   const ActiveTabColor=(tab)=>{
@@ -63,7 +63,7 @@ const Sidebar = () => {
           {/* Profile Management Tab */}
           <li onClick={() => setActiveTab('management')} className={tabClassNames('management')}>
             <FaCog className={ActiveTabColor("management")}  />
-            <span className=" hidden md:inline-block">Profile Management</span>
+            <span className=" hidden md:inline-block">Manage</span>
           </li>
 
           {/* Logout Tab */}
@@ -75,7 +75,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 bg-white">
+      <div className="w-full h-full p-6 bg-white">
         {renderContent()}
       </div>
     </div>

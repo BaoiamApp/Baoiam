@@ -4,6 +4,7 @@ import { FiCalendar, FiEdit, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 import { FaUniversity } from 'react-icons/fa';
 import HeroDp from '../../assets/Images/dp.jpg'
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaX, FaXTwitter } from 'react-icons/fa6';
+import Recommendations from './Recommendations';
 
 function Profile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,14 +18,14 @@ function Profile() {
   };
 
   return (
-    <div className="relative bg-white p-4 rounded-lg shadow-md">
+    <div className="relative bg-slate-100 p-4 rounded-lg shadow-md">
       <button
         onClick={handleEditProfile}
         className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
       >
         <FiEdit size={20} />
       </button>
-      <h2 className="md:text-xl text-lg mt-4 font-bold mb-4">Profile Management</h2>
+      
 
       <div className="flex flex-col lg:flex-row gap-4 xl:gap-8 xl:py-4">
         <div className="profile-pic">
@@ -68,8 +69,7 @@ function Profile() {
           </div>
         </div>
       </div>
-
-
+      
       {/* <button 
         className="mt-4 bg-blue-600 text-white p-2 rounded-md"
         onClick={handleEditProfile}
