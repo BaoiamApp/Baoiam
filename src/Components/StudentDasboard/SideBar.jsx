@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaUser, FaGraduationCap, FaTrophy, FaCog, FaSignOutAlt } from 'react-icons/fa';
 import ProfilePage from './ProfilePage';
 import Certificate from './Certificate'; // Import the Certificate component
@@ -6,8 +6,26 @@ import Courses from './Courses'; // Import the Courses component
 import ProfileManage from './ProfileManage';
 import { MdAccountCircle } from 'react-icons/md';
 
+
 const Sidebar = () => {
   const [activeTab, setActiveTab] = useState('profile'); // Default active tab
+  const [userInfo, setUserInfo] = useState(() => {
+    const savedData = localStorage.getItem('userInfo');
+    return savedData ? JSON.parse(savedData) : {
+      name: 'John Doe',
+      email: 'example@mail.com',
+      college: 'ABC University',
+      mobile: '1234567890',
+      dob: '01/01/2000',
+      location: 'Noida, In',
+    }
+  });
+
+  useEffect(()=>{
+    console.log(userInfo)
+    localStorage.setItem("userInfo",JSON.stringify(userInfo))
+  },[userInfo])
+
 
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
@@ -19,13 +37,13 @@ const Sidebar = () => {
   const renderContent = () => {
     switch (activeTab) {
       case 'profile':
-        return <ProfilePage />;
+        return <ProfilePage userInfo={userInfo} />;
       case 'courses':
         return <Courses />;
       case 'achievements':
         return <Certificate />;
       case 'management':
-        return <ProfileManage />; // Replace with the actual Profile Management component
+        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo}/>; // Replace with the actual Profile Management component
       default:
         return <ProfilePage />;
     }

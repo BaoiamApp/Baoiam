@@ -6,22 +6,9 @@ import HeroDp from '../../assets/Images/dp.jpg'
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaX, FaXTwitter } from 'react-icons/fa6';
 import Recommendations from './Recommendations';
 
-function Profile() {
+function Profile({userInfo}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const [errors, setErrors] = useState({});
-
-  const [userInfo, setUserInfo] = useState(() => {
-    const savedData = localStorage.getItem('userInfo');
-    return savedData ? JSON.parse(savedData) : {
-      name: 'John Doe',
-      profileImage: { HeroDp },
-      email: 'example@mail.com',
-      college: 'ABC University',
-      mobile: '1234567890',
-      dob: '01/01/2000',
-      location: 'Noida, In',
-    }
-  });
 
   const handleChangeProfile=()=>{
     console.log("Change DP");
