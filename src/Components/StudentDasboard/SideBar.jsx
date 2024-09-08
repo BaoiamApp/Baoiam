@@ -35,9 +35,9 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="flex h-screen pt-8">
+    <div className="flex pt-8">
       {/* Sidebar */}
-      <div className="bg-indigo-800 pl-[4%] text-white flex  flex-col rounded-tr-3xl">
+      <div className="bg-indigo-600 pl-[4%] text-white flex  flex-col rounded-tr-3xl">
         {/* Dashboard Heading */}   <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 mb-8 hidden md:inline-block">My Account</h2>
 
         {/* Sidebar Tabs */}

@@ -4,7 +4,7 @@ const Certificate = () => {
   const [activeTab, setActiveTab] = useState('certificates');
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
+    <div className="max-w-screen mx-auto p-4">
       {/* Tab Buttons */}
       <div className="flex justify-center space-x-4">
         <button
