@@ -73,7 +73,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* First Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.fName}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.fName || "Enter First Name"}</label> :
                 <input
                   type="text"
                   className="py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
@@ -85,7 +85,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             </div>
             {/* Middle Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mName}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mName || "Enter Middle Name"}</label> :
                 <input
                   type="text"
                   className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
@@ -98,7 +98,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             </div>
             {/* Last Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.lName}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.lName || "Enter Last Name"}</label> :
                 <input
                   type="text"
                   className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
@@ -111,7 +111,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             </div>
             {/* Mobile Number */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mobile}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
                 type="tel"
                 className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Mobile Number"
@@ -124,7 +124,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             {/* Date of Birth */}
             <div>
               {!isEditable.personalInfo ?
-                <label className="block py-1 px-4 text-gray-700">{fName.dob}</label> : <input
+                <label className="block py-1 px-4 text-gray-700">{fName.dob || "Enter Date of Birth"}</label> : <input
                   type="date"
                   className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                   name='dob'
@@ -222,7 +222,8 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
                   type="email"
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Current Email Address"
-
+                  onChange={handleInputChange}
+                  name='email'
                 />}
             </div>
            :<div>
@@ -233,7 +234,8 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
                   type="email"
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="New Email Address"
-
+ onChange={handleInputChange}
+                  name='email'
                 />}
             </div>
             {/* Confirm Email */}
