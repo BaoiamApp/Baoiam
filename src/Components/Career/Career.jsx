@@ -18,6 +18,18 @@ import icon5 from "../../images/thinking.png";
 import icon6 from "../../images/code.png";
 import icon7 from "../../images/location.png";
 import icon8 from "../../images/briefcase (1).png"
+import icon9 from "../../images/app-store.png";
+import icon10 from "../../images/mobile-banking.png"
+import icon11 from "../../images/apple.png";
+import icon12 from "../../images/customer-service.png";
+import icon13 from "../../images/huawei.png";
+import icon14 from "../../images/lunch-break.png";
+import icon15 from "../../images/teamwork.png";
+import icon16 from "../../images/threads.png";
+import icon17 from "../../images/trophy.png";
+import icon18 from "../../images/twitter.png";
+import icon19 from "../../images/microsoft.png"
+
 import { FaGoogle, FaSlack, FaDribbble } from "react-icons/fa"; // For example icons
 import { FiBarChart2 } from "react-icons/fi";
 const Career = () => {
@@ -28,17 +40,17 @@ const benefits = [
   {
     title: "Large Beautiful Office",
     description: "Enjoy a spacious beautiful office .",
-    icon: icon1,
+    icon: icon3,
   },
   {
     title: "Great Co-Workers",
     description: "Work with supportive colleagues.",
-    icon: icon2,
+    icon: icon15,
   },
   {
     title: "Easy Location",
     description: "Conveniently located office .",
-    icon: icon3,
+    icon: icon7,
   },
   {
     title: "Education Opportunities",
@@ -48,24 +60,24 @@ const benefits = [
   {
     title: "Free Lunch & Snacks",
     description: "Enjoy free meals and snacks every day.",
-    icon: icon5,
+    icon: icon14,
   },
   {
     title: "Performance Awards",
     description: "Get rewarded .",
-    icon: icon6,
-  },
-
-  {
-    title: "Performance Awards",
-    description: "Get rewarded .",
-    icon: icon6,
+    icon: icon17,
   },
 
   {
-    title: "Performance Awards",
-    description: "Get rewarded .",
-    icon: icon6,
+    title: "Technical Support",
+    description: "You get support .",
+    icon: icon12,
+  },
+
+  {
+    title: "Finance And Banking",
+    description: "You get finance support .",
+    icon: icon10,
   },
 ];
 
@@ -102,42 +114,42 @@ const jobs = [
     company: "Microsoft",
     team: "Visual Design-Team Landing",
     location: "Copenhagen (Full-time)",
-    logo: icon1,
+    logo: icon19,
   },
   {
     title: "Product Designer",
     company: "Behance",
     team: "UI Design-Web Apps Team",
     location: "Copenhagen (Full-time)",
-    logo:icon2,
+    logo:icon18,
   },
   {
     title: "Product Manager",
     company: "Daily Mail",
     team: "Product Manager-Mobile Team",
     location: "Copenhagen (Full-time)",
-    logo:icon3,
+    logo:icon16,
   },
   {
     title: "Product Designer",
     company: "Etsy",
     team: "UI Design-Web Apps Team",
     location: "Copenhagen (Full-time)",
-    logo: icon4,
+    logo: icon13,
   },
   {
     title: "Product Manager",
     company: "Apple",
     team: "Product Manager-Mobile Team",
     location: "Copenhagen (Full-time)",
-    logo: icon5,
+    logo: icon11,
   },
   {
     title: "Product Manager",
     company: "Patch",
     team: "Product Manager-Mobile Team",
     location: "Copenhagen (Full-time)",
-    logo:icon6,
+    logo:icon9,
   },
 ];
 
@@ -315,7 +327,7 @@ const jobs = [
         </div>
       </div>
 
-      <div className="min-h-screen bg-[#e0e7ff] flex flex-col items-center justify-center p-8">
+      <div className="min-h-screen bg-amber-50 flex flex-col items-center justify-center p-8">
         <h1 className="text-5xl font-bold mb-8 text-gray-900">Featured Jobs</h1>
         <p className="text-gray-600 mb-8 ">
           Hand-picked jobs featured depending on popularity and benefits
@@ -324,7 +336,7 @@ const jobs = [
           {jobs.map((job, index) => (
             <div
               key={index}
-              className="p-6 flex flex-col   border border-gray-200 rounded-lg border border-gray-900 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              className="p-6 flex flex-col   border border-gray-200 rounded-lg border border-gray-900 hover:shadow-xl transition-shadow duration-300 ease-in-out "
             >
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
                 {job.title}
@@ -333,19 +345,25 @@ const jobs = [
                 <p className="text-gray-700 mb-1 ">{job.team}</p>
                 <p className="text-gray-700 mb-4">{job.location}</p>
               </div>
-              <div className="flex flex-row space-x-4 items-center justify-between ">
-                <img
-                  src={job.logo}
-                  alt={job.company}
-                  className="w-10 h-10 mb-4  border-2 border-gray-300 rounded-full bg-white"
-                />
-                <button className="bg-[#474541] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-[#f59e0b] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300  ">
+              <div className="flex flex-row items-center justify-between">
+                <div className="flex items-center">
+                  <img
+                    src={job.logo}
+                    alt={job.company}
+                    className="lg:w-10 lg:h-10 md:w-10 md:h-10 sm:w-10 sm:h-10 w-5 h-5 mb-4 border-2 border-gray-300 rounded-full bg-white"
+                  />
+                  <p className="text-gray-700 mb-4 ml-0">{job.company}</p>
+                </div>
+                <button className="bg-black text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300 text-sm lg:text-base md:text-base sm:text-base">
                   Apply Now
                 </button>
               </div>
             </div>
           ))}
         </div>
+        <button className="bg-black text-white font-semibold mt-10 py-2 px-4 rounded-lg shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300">
+          Find More Jobs{" ->"}
+        </button>
       </div>
 
       <div className="flex flex-col md:flex-row items-center bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-4 mt-10 lg:mt-7 w-full">
@@ -355,9 +373,9 @@ const jobs = [
             <img
               src={image11}
               alt="Why We Are Most Popular"
-              className="rounded-lg w-full"
+              className="rounded-lg w-[90%] h-[90%]"
             />
-            <div className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-lg flex items-center">
+            <div className="absolute top-10 right-10 bg-white p-2 rounded-full shadow-lg flex items-center">
               <span className="text-sm font-medium text-gray-700">
                 100% Trusted
               </span>
@@ -395,7 +413,7 @@ const jobs = [
       </div>
 
       {/* Header Section */}
-      <div className="bg-white py-4 px-2">
+      <div className="bg-white py-10 px-2">
         {/* Header Section */}
         <div className="max-w-screen-lg mx-auto text-center">
           <div className="text-3xl sm:text-4xl md:text-5xl font-bold  text-[#0a0a0a] mb-4">
@@ -409,20 +427,20 @@ const jobs = [
       </div>
 
       {/* Slide Section */}
-      <div className=" h-screen relative w-full h-80 sm:h-96 overflow-hidden mt-8 flex items-center justify-center p-4 sm:p-6 md:p-10">
+      <div className=" relative w-full overflow-hidden    items-center justify-center sm:p-6 md:p-10 m-0">
         <div
-          className="flex transition-transform ease-in-out duration-1000 "
+          className="flex transition-transform ease-in-out duration-1000"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="w-full h-full flex-shrink-0 flex items-center justify-center "
+              className="w-full h-full flex-shrink-0 flex items-center justify-center"
             >
-              <div className="flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl transform transition-transform hover:scale-105 hover:shadow-3xl bg-white m-5 ">
+              <div className="flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl transform transition-transform hover:scale-105 hover:shadow-3xl bg-white m-5">
                 {/* Left side - Content */}
-                <div className="flex-1 flex justify-center p-4 sm:p-6">
-                  <p className="text-lg sm:text-sm md:text-xl lg:text-xl text-black text-center sm:text-left">
+                <div className="flex-1 flex justify-center  m-0 sm:p-4">
+                  <p className="text-base sm:text-sm md:text-lg lg:text-xl text-black text-center sm:text-left">
                     {slide.content}
                   </p>
                 </div>
@@ -440,10 +458,10 @@ const jobs = [
         </div>
       </div>
 
-      <section className="relative bg-blue-900 text-white flex flex-col md:flex-row items-center justify-center p-8 mt-8 overflow-hidden">
+      <section className="relative bg-indigo-700 text-white flex flex-col md:flex-row items-center justify-center p-8 mt-8 overflow-hidden ">
         {/* Background Circles */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-700 rounded-full opacity-75 z-0 overflow-hidden"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-700 rounded-full opacity-75 z-0 overflow-hidden"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-amber-400 rounded-full opacity-80 z-0 overflow-hidden "></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-400 rounded-full opacity-80 z-0 overflow-hidden"></div>
 
         {/* Image Gallery */}
         <div className="relative z-10 w-full lg:w-1/4 md:w-1/2 sm:w-1/2 grid grid-cols-2  gap-2 p-4  ">
@@ -482,7 +500,7 @@ const jobs = [
         </div>
         {/* Text Content */}
         <div className="relative z-10 w-full md:w-1/2 text-left p-4 md:pl-8">
-          <h1 className="text-3xl font-bold mb-4">
+          <h1 className="text-5xl font-bold mb-4">
             Take a closer look at the Baoiam team
           </h1>
           <p className="mb-4">
