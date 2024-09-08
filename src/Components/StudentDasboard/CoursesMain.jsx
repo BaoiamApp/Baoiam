@@ -10,15 +10,15 @@ const CoursesMain = () => {
 
   return (
     <div className="w-full bg-slate-100 mx-auto p-4 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center">Courses</h2>
+      <h2 className="text-2xl font-bold  text-center">Courses</h2>
       
       <div className="flex flex-col gap-6">
         {courses.map((course, index) => (
-          <div key={index} className="bg-white w-full shadow-md rounded-lg p-6">
-            <h3 className="text-lg font-semibold mb-4">{course.name}</h3>
+          <div key={index} className="bg-white w-full flex flex-col gap-2 shadow-md rounded-lg py-3 px-4">
+            <h3 className="text-lg font-semibold ">{course.name}</h3>
             
             {/* Progress Bar */}
-            <div className="h-4 bg-gray-200 rounded-full mb-4">
+            <div className="h-4 bg-gray-200 rounded-full ">
               <div 
                 className={`h-full rounded-full ${course.progress === 100 ? 'bg-green-500' : 'bg-blue-500'}`}
                 style={{ width: `${course.progress}%` }}
