@@ -13,7 +13,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
   const [formData,setFormData]=useState(()=>{
     return {
       first:fName || '',
-      middle:mName||'',
+      middle:lName?mName:'',
       last:lName || '',
       mobile:userInfo.mobile,
       dob:userInfo.dob,
@@ -49,6 +49,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
   useEffect(()=>{
     setUserInfo((old)=>{
       return {
+        name:`${old.first} ${old.middle} ${old.last}`,
         name:`${old.first} ${old.middle} ${old.last}`,
         ...formData,
       }
