@@ -12,13 +12,13 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
 
   const [formData,setFormData]=useState(()=>{
     return {
-      first:fName,
-      middle:mName,
-      last:lName,
-      mobile:'',
-      dob:'',
-      college:'',
-      location:'',
+      first:fName || '',
+      middle:lName?mName:'',
+      last:lName || '',
+      mobile:userInfo.mobile,
+      dob:userInfo.dob,
+      college:userInfo.college,
+      location:userInfo.location,
     }
   })
 
@@ -49,7 +49,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
   useEffect(()=>{
     setUserInfo((old)=>{
       return {
-        name:`${old.first,old.middle,old.last}`,
+        name:`${old.first} ${old.middle} ${old.last}`,
         ...formData,
       }
     })
@@ -263,33 +263,36 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Password */}
             <div>
-              <label className="block text-gray-700">Current Password</label>
+             {!isEditable.password? <label className="block text-gray-700">Current Password</label>:
               <input
                 type="password"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Current Password"
 
               />
+             }
             </div>
             {/* New Password */}
             <div>
-              <label className="block text-gray-700">New Password</label>
+             {!isEditable.password? <label className="block text-gray-700">New Password</label>:
               <input
                 type="password"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="New Password"
 
               />
+             }
             </div>
             {/* Confirm New Password */}
             <div>
-              <label className="block text-gray-700">Confirm New Password</label>
+             {!isEditable.password? <label className="block text-gray-700">Confirm New Password</label>:
               <input
                 type="password"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Confirm New Password"
 
               />
+             }
             </div>
           </div>
         </div>
