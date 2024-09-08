@@ -1,7 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const ProfileManage = () => {
-  const [editSection, setEditSection] = useState({
+const ProfileManage = ({userInfo,setUserInfo}) => {
+
+  // name: 'John Doe',
+  // email: 'example@mail.com',
+  // college: 'ABC University',
+  // mobile: '1234567890',
+  // dob: '01/01/2000',
+  // location: 'Noida, In',
+  const [fName,mName,lName]=userInfo.name.split(" ");
+
+  const [formData,setFormData]=useState(()=>{
+    return {
+      first:fName,
+      middle:mName,
+      last:lName,
+      mobile:'',
+      dob:'',
+      college:'',
+      location:'',
+    }
+  })
+
+  const [isEditable, setIsEditable] = useState({
     personalInfo: false,
     socialLinks: false,
     email: false,
@@ -9,11 +30,32 @@ const ProfileManage = () => {
   });
 
   const handleEditToggle = (section) => {
-    setEditSection((prevState) => ({
+    setIsEditable((prevState) => ({
       ...prevState,
       [section]: !prevState[section],
     }));
   };
+
+  const handleInputChange=(e)=>{
+    const {name,value}=e.target;
+    setFormData(old=>{
+      return {
+        ...old,
+        [name]:[value],
+      }
+    })
+  }
+
+  useEffect(()=>{
+    setUserInfo((old)=>{
+      return {
+        name:`${old.first,old.middle,old.last}`,
+        ...formData,
+      }
+    })
+  },[formData])
+  useEffect(()=>{
+    console.log(userInfo)},[])
 
   return (
     <section className="max-w-4xl mx-auto p-6 bg-gray-100 mb-12">
@@ -26,91 +68,91 @@ const ProfileManage = () => {
             onClick={() => handleEditToggle('personalInfo')}
             className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
           >
-            {editSection.personalInfo ? 'Save' : 'Edit'}
+            {isEditable.personalInfo ? 'Save' : 'Edit'}
           </button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* First Name */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">First Name</label>
-              )}
-              <input
-                type="text"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="First Name"
-                disabled={!editSection.personalInfo}
-              />
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.fName}</label> :
+                <input
+                  type="text"
+                  className="py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="First Name"
+                  onChange={handleInputChange}
+                  name="first"
+
+                />}
             </div>
             {/* Middle Name */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">Middle Name</label>
-              )}
-              <input
-                type="text"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="Middle Name"
-                disabled={!editSection.personalInfo}
-              />
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mName}</label> :
+                <input
+                  type="text"
+                  className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Middle Name"
+                  onChange={handleInputChange}
+                  name="middle"
+
+                />
+              }
             </div>
             {/* Last Name */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">Last Name</label>
-              )}
-              <input
-                type="text"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="Last Name"
-                disabled={!editSection.personalInfo}
-              />
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.lName}</label> :
+                <input
+                  type="text"
+                  className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Last Name"
+                  onChange={handleInputChange}
+                  name="last"
+
+                />
+              }
             </div>
             {/* Mobile Number */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">Mobile Number</label>
-              )}
-              <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mobile}</label> : <input
                 type="tel"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
+                className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Mobile Number"
-                disabled={!editSection.personalInfo}
+                onChange={handleInputChange}
+                name="mobile"
+
               />
+              }
             </div>
             {/* Date of Birth */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">Date of Birth</label>
-              )}
-              <input
-                type="date"
-                className={`mt-1 block px-2 py-2 w-full border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
-                disabled={!editSection.personalInfo}
-              />
+              {!isEditable.personalInfo ?
+                <label className="block py-1 px-4 text-gray-700">{fName.dob}</label> : <input
+                  type="date"
+                  className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  name='dob'
+                />
+              }
             </div>
             {/* College/School */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">College/School</label>
-              )}
-              <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">College/School</label> : <input
                 type="text"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
+                className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="College or School Name"
-                disabled={!editSection.personalInfo}
+                onChange={handleInputChange}
+                name="college"
+
               />
+              }
             </div>
             {/* Location */}
             <div>
-              {editSection.personalInfo && (
-                <label className="block text-gray-700">Location</label>
-              )}
-              <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">Location</label> : <input
                 type="text"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.personalInfo ? '' : 'bg-transparent cursor-not-allowed'}`}
+                className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Location"
-                disabled={!editSection.personalInfo}
+                onChange={handleInputChange}
+                name="location"
               />
+              }
             </div>
           </div>
         </div>
@@ -123,44 +165,41 @@ const ProfileManage = () => {
             onClick={() => handleEditToggle('socialLinks')}
             className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
           >
-            {editSection.socialLinks ? 'Save' : 'Edit'}
+            {isEditable.socialLinks ? 'Save' : 'Edit'}
           </button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* LinkedIn */}
             <div>
-              {editSection.socialLinks && (
-                <label className="block text-gray-700">LinkedIn</label>
-              )}
-              <input
-                type="url"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.socialLinks ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="LinkedIn Profile URL"
-                disabled={!editSection.socialLinks}
-              />
+              {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">LinkedIn</label> :
+                <input
+                  type="url"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="LinkedIn Profile URL"
+
+                />
+              }
             </div>
             {/* GitHub */}
             <div>
-              {editSection.socialLinks && (
-                <label className="block text-gray-700">GitHub</label>
-              )}
-              <input
-                type="url"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.socialLinks ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="GitHub Profile URL"
-                disabled={!editSection.socialLinks}
-              />
+              {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">GitHub</label> :
+                <input
+                  type="url"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="GitHub Profile URL"
+
+                />
+              }
             </div>
             {/* LeetCode */}
             <div>
-              {editSection.socialLinks && (
-                <label className="block text-gray-700">LeetCode</label>
-              )}
-              <input
-                type="url"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.socialLinks ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="LeetCode Profile URL"
-                disabled={!editSection.socialLinks}
-              />
+              {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">LeetCode</label> :
+                <input
+                  type="url"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="LeetCode Profile URL"
+
+                />
+              }
             </div>
           </div>
         </div>
@@ -173,45 +212,41 @@ const ProfileManage = () => {
             onClick={() => handleEditToggle('email')}
             className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
           >
-            {editSection.email ? 'Save' : 'Edit'}
+            {isEditable.email ? 'Save' : 'Edit'}
           </button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Email */}
-            <div className="col-span-1 sm:col-span-2">
-              {editSection.email && (
-                <label className="block text-gray-700">Current Email</label>
-              )}
-              <input
-                type="email"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.email ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="Current Email Address"
-                disabled={!editSection.email}
-              />
+            {!isEditable.email?<div className="col-span-1 sm:col-span-2">
+              {!isEditable.email ? <label className="block text-gray-700">Current Email</label> :
+                <input
+                  type="email"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Current Email Address"
+
+                />}
             </div>
-            {/* New Email */}
+           :<div>
+             {/* New Email */}
             <div>
-              {editSection.email && (
-                <label className="block text-gray-700">New Email</label>
-              )}
-              <input
-                type="email"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.email ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="New Email Address"
-                disabled={!editSection.email}
-              />
+              {!isEditable.email ? <label className="block text-gray-700">New Email</label> :
+                <input
+                  type="email"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="New Email Address"
+
+                />}
             </div>
             {/* Confirm New Email */}
             <div>
-              {editSection.email && (
-                <label className="block text-gray-700">Confirm New Email</label>
-              )}
-              <input
-                type="email"
-                className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.email ? '' : 'bg-transparent cursor-not-allowed'}`}
-                placeholder="Confirm New Email"
-                disabled={!editSection.email}
-              />
+              {!isEditable.email ? <label className="block text-gray-700">Confirm New Email</label> :
+                <input
+                  type="email"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Confirm New Email"
+
+                />}
             </div>
+           </div>}
           </div>
         </div>
 
@@ -223,7 +258,7 @@ const ProfileManage = () => {
             onClick={() => handleEditToggle('password')}
             className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
           >
-            {editSection.password ? 'Save' : 'Edit'}
+            {isEditable.password ? 'Save' : 'Edit'}
           </button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Password */}
@@ -235,7 +270,7 @@ const ProfileManage = () => {
                 type="password"
                 className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.password ? '' : 'bg-transparent cursor-not-allowed'}`}
                 placeholder="Current Password"
-                disabled={!editSection.password}
+
               />
             </div>
             {/* New Password */}
@@ -247,7 +282,7 @@ const ProfileManage = () => {
                 type="password"
                 className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.password ? '' : 'bg-transparent cursor-not-allowed'}`}
                 placeholder="New Password"
-                disabled={!editSection.password}
+
               />
             </div>
             {/* Confirm New Password */}
@@ -259,7 +294,7 @@ const ProfileManage = () => {
                 type="password"
                 className={`mt-1 block w-full px-2 py-2 border-gray-300 rounded-md shadow-sm ${editSection.password ? '' : 'bg-transparent cursor-not-allowed'}`}
                 placeholder="Confirm New Password"
-                disabled={!editSection.password}
+
               />
             </div>
           </div>
