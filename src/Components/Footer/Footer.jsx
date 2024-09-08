@@ -10,21 +10,22 @@ import {
   FaSquareXTwitter
 } from "react-icons/fa6";
 import { TiSocialFacebook } from "react-icons/ti";
-import { Logo } from "../../assets/assets";
+import Logo from "../../assets/img1.png";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import AppStorePng from '../../assets/Images/Stores/AppStoreDark.png'
 import PlayStorePng from '../../assets/Images/PlayStore.png'
 import CoursesList from "../CoursesList";
+import logo from '../../assets/logo.jpeg'
 
-function Footer() {
+function Footer({dark}) {
   return (
-    <footer className="bg-zinc-100 dark:bg-[#100b41]">
+    <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="flex gap-8 flex-col md:flex-row">
           <div className="">
-            <Link to={'/'} className="flex justify-center text-teal-600 sm:justify-start h-24 w-48">
-              <img src={Logo} className="w-full h-full" alt="" />
+            <Link to={'/'} className={`flex justify-center text-teal-600 sm:justify-start ${dark ? 'h-40 w-40' : 'h-24 w-48'}`}>
+              <img src={dark ? logo : Logo} className="w-full h-full object-cover" alt="Baoiam Innovation brand image." />
             </Link>
 
             {/* <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
@@ -35,22 +36,22 @@ function Footer() {
 
           </div>
 
-          <div className="grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-4" >
+          <div className="grid grid-cols-1 gap-8 dark:text-white  md:grid-cols-2 lg:grid-cols-4" >
             {/* Company */}
             <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black text-nowrap">Company</p>
+              <p className="text-lg font-medium text-black dark:text-white text-nowrap">Company</p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link to={'/about-us'} className="text-black text-nowrap flex items-center">
+                <Link to={'/about-us'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} />About Us
                 </Link>
-                <Link to={'/hire'} className="text-black text-nowrap flex items-center">
+                <Link to={'/hire'} className="text-black text-nowrap dark:text-white  flex items-center">
                   <MdKeyboardArrowRight size={20} /> Hire from us
                 </Link>
-                <Link to={'/team'} className="text-black text-nowrap flex items-center">
+                <Link to={'/team'} className="text-black text-nowrap dark:text-white flex items-center">
                   <MdKeyboardArrowRight size={20} /> Our Team
                 </Link>
-                <Link to={'/faqs'} className="text-black text-nowrap flex items-center">
+                <Link to={'/faqs'} className="text-black text-nowrap dark:text-white  flex items-center">
                   <MdKeyboardArrowRight size={20} /> FAQs
                 </Link>
               </div>
@@ -58,22 +59,22 @@ function Footer() {
 
             {/* Join Us */}
             <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black text-nowrap">Join Us</p>
+              <p className="text-lg font-medium text-black dark:text-white text-nowrap">Join Us</p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link to={'/gcsp'} className="text-black text-nowrap flex items-center">
+                <Link to={'/gcsp'} className="text-black text-nowrap dark:text-white flex items-center">
                   <MdKeyboardArrowRight size={20} /> GCSP
                 </Link>
-                <Link to={'/entrepreneurship'} className="text-black text-nowrap flex items-center">
+                <Link to={'/entrepreneurship'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Entrepreneurship
                 </Link>
-                <Link to={'/career'} className="text-black text-nowrap flex items-center">
+                <Link to={'/career'} className="text-black text-nowrap dark:text-white flex items-center">
                   <MdKeyboardArrowRight size={20} /> Career
                 </Link>
-                <Link to={'/partner'} className="text-black text-nowrap flex items-center">
+                <Link to={'/partner'} className="text-black text-nowrap dark:text-white flex items-center">
                   <MdKeyboardArrowRight size={20} /> Partner with us
                 </Link>
-                <Link to={'/affiliate'} className="text-black text-nowrap flex items-center">
+                <Link to={'/affiliate'} className="text-black text-nowrap dark:text-white flex items-center">
                   <MdKeyboardArrowRight size={20} /> Become an affiliate
                 </Link>
               </div>
@@ -81,16 +82,16 @@ function Footer() {
 
             {/* Help & Support */}
             <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black text-nowrap">Help & Support</p>
+              <p className="text-lg font-medium text-black dark:text-white text-nowrap">Help & Support</p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link to={'/terms-conditions'} className="text-black text-nowrap flex items-center">
+                <Link to={'/terms-conditions'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Terms & Conditions
                 </Link>
-                <Link to={'/refund-policy'} className="text-black text-nowrap flex items-center">
+                <Link to={'/refund-policy'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Refund policy
                 </Link>
-                <Link to={'/privacy-policy'} className="text-black text-nowrap flex items-center">
+                <Link to={'/privacy-policy'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Privacy policy
                 </Link>
 
@@ -99,7 +100,7 @@ function Footer() {
 
             {/* Contact Us */}
             <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black text-nowrap">Contact Us</p>
+              <p className="text-lg font-medium text-black dark:text-white text-nowrap">Contact Us</p>
 
               <ul className="mt-4 space-y-4 text-sm">
                 {/* Mail */}
@@ -107,7 +108,7 @@ function Footer() {
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="size-5 shrink-0 text-black"
+                    className="size-5 shrink-0 text-black dark:text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -119,14 +120,14 @@ function Footer() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="flex-1 text-black">tutors@baoiam.com</span>
+                  <span className="flex-1 dark:text-white text-black">tutors@baoiam.com</span>
                 </li>
 
                 {/* Phone */}
                 <li className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="size-5 shrink-0 text-black"
+                    className="size-5 shrink-0 text-black dark:text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -139,7 +140,7 @@ function Footer() {
                     />
                   </svg>
 
-                  <span className="flex-1 text-black">08069640635</span>
+                  <span className="flex-1 text-black dark:text-white">08069640635</span>
                 </li>
 
                 {/* Address */}
@@ -148,7 +149,7 @@ function Footer() {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="size-5 shrink-0 text-black"
+                    className="size-5 shrink-0 text-black dark:text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -166,7 +167,7 @@ function Footer() {
                     />
                   </svg>
 
-                  <address className="-mt-0.5 flex-1 not-italic text-black">
+                  <address className="-mt-0.5 flex-1 dark:text-white not-italic text-black">
                     B Block Noida Sector 15 Uttar Pradesh
                   </address>
                 </li>
@@ -185,22 +186,22 @@ function Footer() {
           </div>
           <div className="flex justify-start col-span-full md:col-start-2 lg:col-start-4 gap-6 sm:justify-start">
             {/* Facebook */}
-            <Link to={'https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/'} target="_blank" className="text-black text-nowrap flex items-center hover:text-gray-500">
+            <Link to={'https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/'} target="_blank" className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500">
               <FaFacebook size={22} />
             </Link>
 
             {/* Instagram */}
-            <Link to={'https://www.instagram.com/baoiam_innovations/'} target="_blank" className="text-black text-nowrap flex items-center hover:text-gray-500">
+            <Link to={'https://www.instagram.com/baoiam_innovations/'} target="_blank" className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500">
               <FaInstagram size={22} />
             </Link>
 
             {/* Linkedin */}
-            <Link to={'https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/'} target="_blank" className="text-black text-nowrap flex items-center hover:text-gray-500">
+            <Link to={'https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/'} target="_blank" className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500">
               <FaLinkedin size={22} />
             </Link>
 
             {/* Twitter */}
-            <Link to={'https://twitter.com/BAOIAM1'} target="_blank" className="text-black text-nowrap flex items-center hover:text-gray-500">
+            <Link to={'https://twitter.com/BAOIAM1'} target="_blank" className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500">
               <FaSquareXTwitter size={22} />
             </Link>
 
@@ -210,10 +211,10 @@ function Footer() {
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="flex items-center justify-between text-left">
             <p className="text-sm flex items-center gap-2 text-black">
-              <span className="block sm:inline">All rights reserved.</span>
+              <span className="block dark:text-white sm:inline">All rights reserved.</span>
             </p>
 
-            <p className="text-sm text-black order-first">&copy; 2023 BAOIAM</p>
+            <p className="text-sm dark:text-white text-black order-first">&copy; 2023 BAOIAM</p>
           </div>
         </div>
       </div>

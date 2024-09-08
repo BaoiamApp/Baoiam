@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { School } from '../../Data';
 
 const ChatBot = () => {
     const [response, setResponse] = useState('');
@@ -7,6 +8,8 @@ const ChatBot = () => {
     const [botResponse, setBotResponse] = useState('');
     const [userInput, setUserInput] = useState('');
     const [conversation, setConversation] = useState({});
+
+    const course = School[0].subCate;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -17,19 +20,21 @@ const ChatBot = () => {
         let response;
         if (userInputValue.toLowerCase() === 'hi' || userInputValue.toLowerCase() === 'hello') {
             response = 'Hello! How can I assist you today?';
+        } else if (userInputValue.toLowerCase() === 'Courses List' || userInputValue.toLowerCase() === 'courses' || userInputValue.toLowerCase() === 'Show me courses' || userInputValue.toLowerCase() === 'School Courses') {
+            response = course.map((c) => {
+                return <p key={c.id}>{c.course}</p>
+            });
         } else {
             response = 'Sorry, I didn\'t understand that. Can you please rephrase?';
         }
         setBotResponse(response);
-        setUserInput(''); // Clear the input field
+        setUserInput('');
 
-        // Update conversation state
         setConversation((prevConversation) => ({
             ...prevConversation,
             [messages.length]: response,
         }));
     };
-
     return (
         <>
             <button
@@ -77,15 +82,17 @@ const ChatBot = () => {
                         </button>
                     </div>
                     <div className="overflow-y-auto py-4 h-72">
-                        {messages.map((message, index) => (
-                            <div key={index} className="mb-2">
-                                <span className="text-gray-700 dark:text-white font-bold">You:</span>
-                                <span className="text-gray-700 dark:text-white ml-2">{message.user}</span>
-                                <br />
-                                <span className="text-gray-700 dark:text-white font-bold">Chatbot:</span>
-                                <span className="text-gray-700 dark:text-white ml-2">{conversation[index]}</span>
-                            </div>
-                        ))}
+                        <div className="overflow-y-auto py-4 h-72">
+                            {messages.map((message, index) => (
+                                <div key={index} className="mb-2">
+                                    <span className="text-gray-700 dark:text-white font-bold">You:</span>
+                                    <span className="text-gray-700 dark:text-white ml-2">{message.user}</span>
+                                    <br />
+                                    <span className="text-gray-700 dark:text-white font-bold">Chatbot:</span>
+                                    {conversation[index]}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                     <form onSubmit={handleSubmit} className="flex items-center border border-black dark:border-white rounded-full overflow-hidden mt-4">
                         <input

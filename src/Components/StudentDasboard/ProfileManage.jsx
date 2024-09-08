@@ -1,40 +1,238 @@
-import React from 'react';
-import { FaLock, FaCreditCard, FaEnvelope } from 'react-icons/fa';
+import React, { useState } from 'react';
 
 const ProfileManage = () => {
+  const [editSection, setEditSection] = useState({
+    personalInfo: false,
+    socialLinks: false,
+    email: false,
+    password: false,
+  });
+
+  const handleEditToggle = (section) => {
+    setEditSection((prevState) => ({
+      ...prevState,
+      [section]: !prevState[section],
+    }));
+  };
+
   return (
-    <section className="p-6 bg-gray-100 mb-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Change Password */}
-        <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-6 text-center">
-          <FaLock className="text-4xl text-blue-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-bold mb-2">Change Password</h3>
-          <p className="text-gray-600">Update your password for security reasons.</p>
-          <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-            Change Password
+    <section className="max-w-4xl mx-auto p-6 bg-gray-100 mb-12">
+      <form className="space-y-8">
+        {/* Personal Information Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl font-bold mb-4">Personal Information</h3>
+          <button
+            type="button"
+            onClick={() => handleEditToggle('personalInfo')}
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
+          >
+            {editSection.personalInfo ? 'Save' : 'Edit'}
           </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* First Name */}
+            <div>
+              <label className="block text-gray-700">First Name</label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="First Name"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+            {/* Middle Name */}
+            <div>
+              <label className="block text-gray-700">Middle Name</label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Middle Name"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+            {/* Last Name */}
+            <div>
+              <label className="block text-gray-700">Last Name</label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Last Name"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+            {/* Mobile Number */}
+            <div>
+              <label className="block text-gray-700">Mobile Number</label>
+              <input
+                type="tel"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Mobile Number"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+            {/* Date of Birth */}
+            <div>
+              <label className="block text-gray-700">Date of Birth</label>
+              <input
+                type="date"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+            {/* College/School */}
+            <div>
+              <label className="block text-gray-700">College/School</label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="College or School Name"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+            {/* Location */}
+            <div>
+              <label className="block text-gray-700">Location</label>
+              <input
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Location"
+                disabled={!editSection.personalInfo}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Change Payment Method */}
-        <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-6 text-center">
-          <FaCreditCard className="text-4xl text-green-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-bold mb-2">Change Payment Method</h3>
-          <p className="text-gray-600">Update your saved payment methods here.</p>
-          <button className="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
-            Change Payment Method
+        {/* Social Links Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl font-bold mb-4">Social Links</h3>
+          <button
+            type="button"
+            onClick={() => handleEditToggle('socialLinks')}
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
+          >
+            {editSection.socialLinks ? 'Save' : 'Edit'}
           </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* LinkedIn */}
+            <div>
+              <label className="block text-gray-700">LinkedIn</label>
+              <input
+                type="url"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="LinkedIn Profile URL"
+                disabled={!editSection.socialLinks}
+              />
+            </div>
+            {/* GitHub */}
+            <div>
+              <label className="block text-gray-700">GitHub</label>
+              <input
+                type="url"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="GitHub Profile URL"
+                disabled={!editSection.socialLinks}
+              />
+            </div>
+            {/* LeetCode */}
+            <div>
+              <label className="block text-gray-700">LeetCode</label>
+              <input
+                type="url"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="LeetCode Profile URL"
+                disabled={!editSection.socialLinks}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Change Email */}
-        <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-6 text-center">
-          <FaEnvelope className="text-4xl text-red-500 mb-4 mx-auto" />
-          <h3 className="text-xl font-bold mb-2">Change Email</h3>
-          <p className="text-gray-600">Update your email address for account notifications.</p>
-          <button className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
-            Change Email
+        {/* Email Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl font-bold mb-4">Email</h3>
+          <button
+            type="button"
+            onClick={() => handleEditToggle('email')}
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
+          >
+            {editSection.email ? 'Save' : 'Edit'}
           </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Current Email */}
+            <div className="col-span-1 sm:col-span-2">
+              <label className="block text-gray-700">Current Email</label>
+              <input
+                type="email"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Current Email Address"
+                disabled={!editSection.email}
+              />
+            </div>
+            {/* New Email */}
+            <div>
+              <label className="block text-gray-700">New Email</label>
+              <input
+                type="email"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="New Email Address"
+                disabled={!editSection.email}
+              />
+            </div>
+            {/* Confirm Email */}
+            <div>
+              <label className="block text-gray-700">Confirm New Email</label>
+              <input
+                type="email"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Confirm New Email"
+                disabled={!editSection.email}
+              />
+            </div>
+          </div>
         </div>
-      </div>
+
+        {/* Password Section */}
+        <div className="bg-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl font-bold mb-4">Password</h3>
+          <button
+            type="button"
+            onClick={() => handleEditToggle('password')}
+            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
+          >
+            {editSection.password ? 'Save' : 'Edit'}
+          </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Current Password */}
+            <div>
+              <label className="block text-gray-700">Current Password</label>
+              <input
+                type="password"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Current Password"
+                disabled={!editSection.password}
+              />
+            </div>
+            {/* New Password */}
+            <div>
+              <label className="block text-gray-700">New Password</label>
+              <input
+                type="password"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="New Password"
+                disabled={!editSection.password}
+              />
+            </div>
+            {/* Confirm New Password */}
+            <div>
+              <label className="block text-gray-700">Confirm New Password</label>
+              <input
+                type="password"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                placeholder="Confirm New Password"
+                disabled={!editSection.password}
+              />
+            </div>
+          </div>
+        </div>
+      </form>
     </section>
   );
 };
