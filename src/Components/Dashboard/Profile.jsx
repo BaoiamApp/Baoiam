@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import Modal from '../Dashboard/Modal';
 import { FiCalendar, FiEdit, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 import { FaUniversity } from 'react-icons/fa';
 import HeroDp from '../../assets/Images/dp.jpg'
@@ -24,8 +24,7 @@ function Profile() {
       >
         <FiEdit size={20} />
       </button>
-      <h2 className="text-xl font-bold mb-4">Profile Management</h2>
-
+  
       <div className="flex flex-col lg:flex-row  items-center gap-4">
         <div className="profile-pic">
           <img

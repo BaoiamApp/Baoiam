@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile from '../Dashboard/Profile'
+import Profile from './Profile'
 const ProfilePage = () => {
   return (
     <div>
