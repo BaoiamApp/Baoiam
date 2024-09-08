@@ -3,12 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {
-      screens: {
-        xs: { max: "640px" },
-        md: { max: "768px" },
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
