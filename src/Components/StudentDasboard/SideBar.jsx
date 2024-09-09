@@ -12,12 +12,17 @@ const Sidebar = () => {
   const [userInfo, setUserInfo] = useState(() => {
     const savedData = localStorage.getItem('userInfo');
     return savedData ? JSON.parse(savedData) : {
-      name: 'John Doe',
-      email: 'example@mail.com',
-      college: 'ABC University',
-      mobile: '1234567890',
-      dob: '01/01/2000',
-      location: 'Noida, In',
+      name: 'Name not provided',
+      email: 'Email not provided',
+      college: 'College not provided',
+      mobile: 'Mobile not provided',
+      dob: 'DOB not provided',
+      location: 'Location not provided',
+      socialLinks:{
+        linkedIn:'',
+        gitHub:'',
+        leetCode:'',
+      }
     }
   });
 
