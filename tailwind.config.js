@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: { max: "641px" },
-        md: { max: "769px" },
+        "max-xs": { max: "640px" },
+        "max-md": { max: "768px" },
       },
     },
   },
