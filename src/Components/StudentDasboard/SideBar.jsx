@@ -98,7 +98,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 overflow-scroll rounded-3xl mx-2">
+      <div className="w-full p-6 rounded-3xl mx-2">
         {renderContent()}
       </div>
     </div>
