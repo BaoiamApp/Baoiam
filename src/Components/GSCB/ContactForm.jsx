@@ -197,7 +197,7 @@ const ContactForm = () => {
           ></textarea>
           <button
             type="submit"
-            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white border-black xs:px-4 xs:py-2 xs:mt-2 dark:bg-[#EB0027] dark:hover:bg-transparent dark:hover:border-[#EB0027] border dark:hover:text-[#EB0027] xs:text-[3vw] xs:px-[15px] py-[3.4px]"
+            className="px-6 py-2 mt-4 uppercase rounded-full bg-black text-white border-black  xs:mt-2 dark:bg-[#EB0027] dark:hover:bg-transparent dark:hover:border-[#EB0027] border dark:hover:text-[#EB0027] xs:text-[3vw] xs:px-[17px] xs:py-[4.5px]"
           >
             Submit
           </button>

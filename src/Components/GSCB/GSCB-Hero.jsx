@@ -86,7 +86,7 @@ const HeroSection = () => {
         >
           Learn more about the Make Academic Alliance →
         </a>
-        <button className="effect enlarge shadow-[inset_0_0_0_1px_#616467] dark:border-[white] text-black px-[30px] py-[8px] rounded-full border-[1px] font-bold bg-black text-white hover:bg-transparent hover:text-black dark:text-neutral-200 hover:transition duration-200 xs:px-[12px] py-[5px] xs:text-[2.5vw]">
+        <button className="effect enlarge shadow-[inset_0_0_0_1px_#616467] dark:border-[white] text-black px-[30px] py-[9px] rounded-full border-[1px] font-bold bg-black text-white hover:dark:bg-white hover:dark:text-black hover:bg-transparent hover:text-black dark:text-neutral-200 hover:transition duration-200 xs:px-[12px] xs:py-[4px] xs:text-[2.5vw]">
           Click Me
         </button>
       </div>
@@ -101,8 +101,8 @@ const HeroSection = () => {
           Your browser does not support HTML5 video.
         </video>
 
-        <div className="absolute top-0 left-0 shadow-[inset_0px_0px_103px_0px_rgba(0,0,0,0.75)] pointer-events-none">
-          <div className="w-full h-full shadow-[inset_0px_0px_103px_0px_rgba(0,0,0,0.75)] opacity-35"></div>
+        <div className="absolute top-0 left-0  pointer-events-none">
+          <div className="w-full h-full bg-black opacity-35"></div>
         </div>
 
         <div className="text-white font-extrabold flex flex-col items-center justify-center w-full h-full relative text-center">
