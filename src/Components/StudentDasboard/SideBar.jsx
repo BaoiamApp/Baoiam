@@ -4,28 +4,32 @@ import ProfilePage from './ProfilePage';
 import Certificate from './Certificate'; // Import the Certificate component
 import Courses from './Courses'; // Import the Courses component
 import ProfileManage from './ProfileManage';
+import { MdAccountCircle } from 'react-icons/md';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-
+import { RiSecurePaymentFill } from "react-icons/ri";
+import Payment from "./Payment";
 
 const Sidebar = () => {
-  const [activeTab, setActiveTab] = useState('profile'); // Default active tab
+  const [activeTab, setActiveTab] = useState("profile"); // Default active tab
   const [isSidebarOpen,setIsSidebarOpen]=useState(false);
   const [userInfo, setUserInfo] = useState(() => {
-    const savedData = localStorage.getItem('userInfo');
-    return savedData ? JSON.parse(savedData) : {
-      name: 'Name not provided',
-      email: 'Email not provided',
-      college: 'College not provided',
-      mobile: 'Mobile not provided',
-      dob: 'DOB not provided',
-      location: 'Location not provided',
-      socialLinks:{
-        linkedIn:'',
-        gitHub:'',
-        leetCode:'',
-      }
-    }
+    const savedData = localStorage.getItem("userInfo");
+    return savedData
+      ? JSON.parse(savedData)
+      : {
+          name: "Name not provided",
+          email: "Email not provided",
+          college: "College not provided",
+          mobile: "Mobile not provided",
+          dob: "DOB not provided",
+          location: "Location not provided",
+          socialLinks: {
+            linkedIn: "",
+            gitHub: "",
+            leetCode: "",
+          },
+        };
   });
 
   
@@ -37,36 +41,37 @@ const Sidebar = () => {
     setIsSidebarOpen(true)
   }
 
-  useEffect(()=>{
-    console.log(userInfo)
-    localStorage.setItem("userInfo",JSON.stringify(userInfo))
-  },[userInfo])
-
+  useEffect(() => {
+    console.log(userInfo);
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  }, [userInfo]);
 
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
     activeTab === tab
-      ? 'bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative'
-      : 'p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative';
+      ? "bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative"
+      : "p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative";
 
   // Function to render content based on the active tab
   const renderContent = () => {
     switch (activeTab) {
-      case 'profile':
+      case "profile":
         return <ProfilePage userInfo={userInfo} />;
-      case 'courses':
+      case "courses":
         return <Courses />;
-      case 'achievements':
+      case "achievements":
         return <Certificate />;
-      case 'management':
-        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo}/>; // Replace with the actual Profile Management component
+      case "payments":
+        return <Payment />;
+      case "management":
+        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo} />; // Replace with the actual Profile Management component
       default:
-        return <ProfilePage userInfo={userInfo}/>;
+        return <ProfilePage userInfo={userInfo} />;
     }
   };
-  const ActiveTabColor=(tab)=>{
-    return activeTab===tab?' text-lg':' text-lg';
-  }
+  const ActiveTabColor = (tab) => {
+    return activeTab === tab ? " text-lg" : " text-lg";
+  };
 
   return (
     <div className="flex relative h-full pt-8 transition duration-500">
@@ -107,18 +112,33 @@ const Sidebar = () => {
           </li>
 
           {/* Achievements Tab */}
+        
           <li onClick={() => setActiveTab('achievements')} className={tabClassNames('achievements')}>
             <FaTrophy className={ActiveTabColor("achievements")}  />
             <span className=" ">Achievements</span>
           </li>
 
+          {/* Payment */}
+          <li
+            onClick={() => setActiveTab("payments")}
+            className={tabClassNames("payments")}
+          >
+            <RiSecurePaymentFill className={ActiveTabColor("payments")} />
+            <span className=" hidden md:inline-block">Payment</span>
+          </li>
+
           {/* Profile Management Tab */}
-          <li onClick={() => setActiveTab('management')} className={tabClassNames('management')}>
-            <FaCog className={ActiveTabColor("management")}  />
-            <span className=" ">Manage</span>
+          <li
+            onClick={() => setActiveTab("management")}
+            className={tabClassNames("management")}
+          >
+            <FaCog className={ActiveTabColor("management")} />
+            <span className=" hidden md:inline-block">Manage</span>
           </li>
 
           {/* Logout Tab */}
+         
+           
           <li onClick={() => setActiveTab('logout')} className={tabClassNames('logout')}>
             <FaSignOutAlt className={ActiveTabColor("logout")}  />
             <span className=" ">Logout</span>
@@ -127,9 +147,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 rounded-3xl mx-2">
-        {renderContent()}
-      </div>
+      <div className="w-full p-6 rounded-3xl mx-2">{renderContent()}</div>
     </div>
   );
 };

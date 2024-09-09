@@ -11,6 +11,7 @@ function Recommendations() {
       name: "Advanced React Patterns",
       description:
         "Master React patterns and advanced concepts to build scalable applications.",
+        price:'$10',
       image:
         "https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png",
     },
@@ -19,6 +20,7 @@ function Recommendations() {
       name: "Fullstack Web Development",
       description:
         "Become a fullstack developer by learning both frontend and backend technologies.",
+        price:'$10',
       image:
         "https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png",
     },
@@ -27,6 +29,7 @@ function Recommendations() {
       name: "Advanced React Patterns",
       description:
         "Master React patterns and advanced concepts to build scalable applications.",
+        price:'$10',
       image:
         "https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png",
     },
@@ -35,6 +38,7 @@ function Recommendations() {
       name: "Fullstack Web Development",
       description:
         "Become a fullstack developer by learning both frontend and backend technologies.",
+        price:'$10',
       image:
         "https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png",
     },
@@ -43,6 +47,7 @@ function Recommendations() {
       name: "Advanced React Patterns",
       description:
         "Master React patterns and advanced concepts to build scalable applications.",
+        price:'$10',
       image:
         "https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png",
     },
@@ -51,6 +56,7 @@ function Recommendations() {
       name: "Fullstack Web Development",
       description:
         "Become a fullstack developer by learning both frontend and backend technologies.",
+        price:'$10',
       image:
         "https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png",
     }
@@ -62,35 +68,41 @@ function Recommendations() {
 
       <div className="flex  flex-col gap-6">
         {recommendedCourses.map((course) => (
-          <div
-            key={course.id}
-            className="w-full flex flex-col xl:flex-row  hover:shadow-md hover:shadow-black dark:border dark:border-white  items-center gap-4 shadow-lg rounded-lg p-4 md:p-6"
-          >
-            {/* Course Image */}
-            <div className="w-full xl:w-fit ">
-              <img
-                src={course.image}
-                alt={course.name}
-                className="object-cover xl:w-32 xl:h-32  rounded-lg"
-              />
-            </div>
-            {/* Course Info */}
-            <div className="flex flex-col flex-1 text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-semibold">{course.name}</h3>
-              <p className="text-sm md:text-base mt-2">{course.description}</p>
+        <div
+        key={course.id}
+        className="w-full flex flex-col xl:flex-row hover:shadow-md hover:shadow-black dark:border dark:border-white items-center gap-4 shadow-lg rounded-lg p-4 md:p-6"
+      >
+        {/* Course Image */}
+        <div className="w-full xl:w-fit">
+          <img
+            src={course.image}
+            alt={course.name}
+            className="object-cover xl:w-32 xl:h-32 rounded-lg"
+          />
+        </div>
+        {/* Course Info */}
+        <div className="flex flex-col flex-1 text-center md:text-left">
+          <h3 className="text-lg md:text-xl font-semibold">{course.name}</h3>
+          <p className="text-sm md:text-base mt-2">{course.description}</p>
+      
+          <div className="flex flex-col md:flex-row justify-between items-center mt-2">
+            {/* Price Section */}
+            <p className="text-sm md:text-base font-bold text-white mb-4 md:mb-0">
+              {course.price}
+            </p>
+      
+            {/* Enroll Button */}
+            <button
+              onClick={() => navigate("/courses/college")}
+              className="relative xl:w-auto inline-flex items-center justify-center bg-black py-2 px-4 overflow-hidden text-white font-semibold rounded-full group"
+            >
 
-              <button
-                onClick={() => navigate("/courses/college")}
-                className="relative xl:w-2/3 mx-auto inline-flex items-center justify-center mt-3 bg-gradient-to-r from-indigo-700 to-indigo-500 py-2 px-4 overflow-hidden text-white font-semibold border border-indigo-600 rounded-full hover:text-indigo-600 group"
-              >
-                <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
-                <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-                  <IoIosArrowRoundForward size={30} />
-                </span>
-                <span className="text-nowrap relative">Enroll Now</span>
-              </button>
-            </div>
+              <span className="relative">Enroll Now</span>
+            </button>
           </div>
+        </div>
+      </div>
+      
         ))}
       </div>
     </div>
