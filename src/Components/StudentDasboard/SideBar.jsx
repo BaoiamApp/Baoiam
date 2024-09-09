@@ -1,106 +1,140 @@
-import React, { useEffect, useState } from 'react';
-import { FaUser, FaGraduationCap, FaTrophy, FaCog, FaSignOutAlt } from 'react-icons/fa';
-import ProfilePage from './ProfilePage';
-import Certificate from './Certificate'; // Import the Certificate component
-import Courses from './Courses'; // Import the Courses component
-import ProfileManage from './ProfileManage';
-import { MdAccountCircle } from 'react-icons/md';
-
+import React, { useEffect, useState } from "react";
+import {
+  FaUser,
+  FaGraduationCap,
+  FaTrophy,
+  FaCog,
+  FaSignOutAlt,
+} from "react-icons/fa";
+import { RiSecurePaymentFill } from "react-icons/ri";
+import ProfilePage from "./ProfilePage";
+import Certificate from "./Certificate"; // Import the Certificate component
+import Courses from "./Courses"; // Import the Courses component
+import ProfileManage from "./ProfileManage";
+import Payment from "./Payment";
+import { MdAccountCircle } from "react-icons/md";
 
 const Sidebar = () => {
-  const [activeTab, setActiveTab] = useState('profile'); // Default active tab
+  const [activeTab, setActiveTab] = useState("profile"); // Default active tab
   const [userInfo, setUserInfo] = useState(() => {
-    const savedData = localStorage.getItem('userInfo');
-    return savedData ? JSON.parse(savedData) : {
-      name: 'Name not provided',
-      email: 'Email not provided',
-      college: 'College not provided',
-      mobile: 'Mobile not provided',
-      dob: 'DOB not provided',
-      location: 'Location not provided',
-      socialLinks:{
-        linkedIn:'',
-        gitHub:'',
-        leetCode:'',
-      }
-    }
+    const savedData = localStorage.getItem("userInfo");
+    return savedData
+      ? JSON.parse(savedData)
+      : {
+          name: "Name not provided",
+          email: "Email not provided",
+          college: "College not provided",
+          mobile: "Mobile not provided",
+          dob: "DOB not provided",
+          location: "Location not provided",
+          socialLinks: {
+            linkedIn: "",
+            gitHub: "",
+            leetCode: "",
+          },
+        };
   });
 
-  useEffect(()=>{
-    console.log(userInfo)
-    localStorage.setItem("userInfo",JSON.stringify(userInfo))
-  },[userInfo])
-
+  useEffect(() => {
+    console.log(userInfo);
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  }, [userInfo]);
 
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
     activeTab === tab
-      ? 'bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative'
-      : 'p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative';
+      ? "bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative"
+      : "p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative";
 
   // Function to render content based on the active tab
   const renderContent = () => {
     switch (activeTab) {
-      case 'profile':
+      case "profile":
         return <ProfilePage userInfo={userInfo} />;
-      case 'courses':
+      case "courses":
         return <Courses />;
-      case 'achievements':
+      case "achievements":
         return <Certificate />;
-      case 'management':
-        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo}/>; // Replace with the actual Profile Management component
+      case "payments":
+        return <Payment />;
+      case "management":
+        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo} />; // Replace with the actual Profile Management component
       default:
-        return <ProfilePage userInfo={userInfo}/>;
+        return <ProfilePage userInfo={userInfo} />;
     }
   };
-  const ActiveTabColor=(tab)=>{
-    return activeTab===tab?' text-lg':' text-lg';
-  }
+  const ActiveTabColor = (tab) => {
+    return activeTab === tab ? " text-lg" : " text-lg";
+  };
 
   return (
     <div className="flex h-full pt-8">
       {/* Sidebar */}
       <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 dark:bg-black dark:text-white pl-[4%] text-white flex  flex-col rounded-tr-2xl">
-        {/* Dashboard Heading */}   <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 lg:mr-[0.2] mb-8 hidden md:inline-block">My Account</h2>
-
+        {/* Dashboard Heading */}{" "}
+        <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 lg:mr-[0.2] mb-8 hidden md:inline-block">
+          My Account
+        </h2>
         {/* Sidebar Tabs */}
         <ul className="my-8 md:my-2">
           {/* My Profile Tab */}
-          <li onClick={() => setActiveTab('profile')} className={`${tabClassNames('profile')}`}>
-            <FaUser className={ActiveTabColor("profile")}  />
+          <li
+            onClick={() => setActiveTab("profile")}
+            className={`${tabClassNames("profile")}`}
+          >
+            <FaUser className={ActiveTabColor("profile")} />
             <span className=" hidden md:inline-block">My Profile</span>
           </li>
 
           {/* All Courses Tab */}
-          <li onClick={() => setActiveTab('courses')} className={tabClassNames('courses')}>
-            <FaGraduationCap className={ActiveTabColor("courses")}  />
+          <li
+            onClick={() => setActiveTab("courses")}
+            className={tabClassNames("courses")}
+          >
+            <FaGraduationCap className={ActiveTabColor("courses")} />
             <span className=" hidden md:inline-block">My Courses</span>
           </li>
 
           {/* Achievements Tab */}
-          <li onClick={() => setActiveTab('achievements')} className={tabClassNames('achievements')}>
-            <FaTrophy className={ActiveTabColor("achievements")}  />
+          <li
+            onClick={() => setActiveTab("achievements")}
+            className={tabClassNames("achievements")}
+          >
+            <FaTrophy className={ActiveTabColor("achievements")} />
             <span className=" hidden md:inline-block">Achievements</span>
           </li>
 
+          {/* Payment */}
+          <li
+            onClick={() => setActiveTab("payments")}
+            className={tabClassNames("payments")}
+          >
+            <RiSecurePaymentFill className={ActiveTabColor("payments")} />
+            <span className=" hidden md:inline-block">Payment</span>
+          </li>
+
           {/* Profile Management Tab */}
-          <li onClick={() => setActiveTab('management')} className={tabClassNames('management')}>
-            <FaCog className={ActiveTabColor("management")}  />
+          <li
+            onClick={() => setActiveTab("management")}
+            className={tabClassNames("management")}
+          >
+            <FaCog className={ActiveTabColor("management")} />
             <span className=" hidden md:inline-block">Manage</span>
           </li>
 
           {/* Logout Tab */}
-          <li onClick={() => setActiveTab('logout')} className={tabClassNames('logout')}>
-            <FaSignOutAlt className={ActiveTabColor("logout")}  />
+          <li
+            onClick={() => setActiveTab("logout")}
+            className={tabClassNames("logout")}
+          >
+            <FaSignOutAlt className={ActiveTabColor("logout")} />
             <span className=" hidden md:inline-block">Logout</span>
           </li>
         </ul>
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 rounded-3xl mx-2">
-        {renderContent()}
-      </div>
+      <div className="w-full p-6 rounded-3xl mx-2">{renderContent()}</div>
     </div>
   );
 };
