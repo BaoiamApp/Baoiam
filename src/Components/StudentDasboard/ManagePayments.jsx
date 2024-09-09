@@ -160,7 +160,7 @@ const ManagePayments = () => {
             placeholder="yourname@upi"
             className="w-full outline-none"
           />
-          <p className="text-nowrap text-green-500 hover:text-green-700 ">verify</p>
+          <p className="text-nowrap text-green-500 hover:text-green-700 cursor-pointer">verify</p>
           </div>
         </div>
       )}
