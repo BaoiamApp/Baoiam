@@ -57,9 +57,13 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
   }
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value,type } = e.target;
     setFormData(old => {
-      return {
+
+      return type==='url'?{
+        ...old,
+        socialLinks:{...old.socialLinks,[name]:value}
+      }: {
         ...old,
         [name]: [value],
       }
@@ -286,6 +290,8 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="LinkedIn Profile URL"
+                  onChange={handleInputChange}
+                  name='linkedIn'
 
                 />
               }
@@ -297,6 +303,8 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="GitHub Profile URL"
+                  onChange={handleInputChange}
+                  name='gitHub'
 
                 />
               }
@@ -308,6 +316,8 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="LeetCode Profile URL"
+                  onChange={handleInputChange}
+                  name='leetCode'
 
                 />
               }

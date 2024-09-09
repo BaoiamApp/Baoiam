@@ -57,10 +57,10 @@ function Recommendations() {
   ];
 
   return (
-    <div className="bg-indigo-800 h-full dark:border dark:border-white  text-white p-4 rounded-lg shadow-md">
-      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center ">Recommended Courses</h2>
+    <div className="bg-indigo-800 h-4/6 overflow-scroll relative dark:border dark:border-white flex flex-col items-center  text-white px-4 rounded-lg shadow-md">
+      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center w-full py-4 mt-2 sticky top-0 z-50 bg-indigo-800  shadow-2xl ">Recommended Courses</h2>
 
-      <div className="flex h-full overflow-scroll flex-col gap-6">
+      <div className="flex  flex-col gap-6">
         {recommendedCourses.map((course) => (
           <div
             key={course.id}
@@ -68,17 +68,17 @@ function Recommendations() {
           >
             {/* Course Image */}
             <div className="w-full xl:w-fit ">
-            <img
-              src={course.image}
-              alt={course.name}
-              className="object-cover xl:w-32 xl:h-32  rounded-lg"
-            />
-</div>
+              <img
+                src={course.image}
+                alt={course.name}
+                className="object-cover xl:w-32 xl:h-32  rounded-lg"
+              />
+            </div>
             {/* Course Info */}
             <div className="flex flex-col flex-1 text-center md:text-left">
               <h3 className="text-lg md:text-xl font-semibold">{course.name}</h3>
               <p className="text-sm md:text-base mt-2">{course.description}</p>
-              
+
               <button
                 onClick={() => navigate("/courses/college")}
                 className="relative xl:w-2/3 mx-auto inline-flex items-center justify-center mt-3 bg-gradient-to-r from-indigo-700 to-indigo-500 py-2 px-4 overflow-hidden text-white font-semibold border border-indigo-600 rounded-full hover:text-indigo-600 group"

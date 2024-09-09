@@ -6,11 +6,12 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaXTwitter } 
 import Recommendations from './Recommendations';
 import HeroDp from '../../assets/Images/dp.jpg'
 import { SiLeetcode } from "react-icons/si";
+import { useNavigate } from 'react-router-dom';
+
 
 function Profile({userInfo}) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [profileImage, setProfileImage] = useState(HeroDp || "https://via.placeholder.com/150");
-
+  const navigate=useNavigate();
   // Load profile image from local storage
   useEffect(() => {
     const storedImage = localStorage.getItem('profileImage');
@@ -39,7 +40,7 @@ function Profile({userInfo}) {
     <div className="relative bg-slate-100 dark:bg-black dark:text-white dark:border dark:border-white p-4 md:p-6 rounded-lg shadow-md">
       <div className="flex flex-col lg:flex-row gap-4 xl:gap-8 xl:py-4">
         <div className="profile-pic">
-          <div className="relative aspect-square mx-auto md:w-40 md:h-40 w-20 h-20">
+          <div className="relative flex bg-gray-300 rounded-full items-center justify-center aspect-square mx-auto md:w-40 md:h-40 w-20 h-20">
             <img
               src={profileImage}
               alt="Profile"
@@ -59,9 +60,9 @@ function Profile({userInfo}) {
             />
           </div>
           <div className="flex items-center gap-2 my-4 justify-center socials">
-            <FaLinkedin />
-            <FaGithub />
-            <SiLeetcode />
+            <FaLinkedin onClick={()=>{navigate(`${userInfo.socialLinks.linkedIn}`)}}/>
+            <FaGithub onClick={()=>{navigate(userInfo.socialLinks.gitHub)}}/>
+            <SiLeetcode onClick={()=>{navigate(userInfo.socialLinks.leetCode)}}/>
           </div>
         </div>
         <div className="info">
