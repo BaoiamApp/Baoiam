@@ -17,14 +17,14 @@ function Profile({userInfo}) {
 
 
   return (
-    <div className="relative bg-slate-100 p-4 rounded-lg shadow-md">
-      <div className="flex flex-alg:flex-row gap-4 xl:gap-8 xl:py-4">
+    <div className="relative bg-slate-100 p-4 md:p-6 rounded-lg shadow-md">
+      <div className="flex flex-col lg:flex-row gap-4 xl:gap-8 xl:py-4">
         <div className="profile-pic">
-          <div className='relative'>
+          <div className='relative  aspect-square mx-auto  md:w-40 md:h-40 w-20 h-20'>
           <img
             src={HeroDp || "https://via.placeholder.com/150"}
             alt="Profilephoto"
-            className="md:w-40 md:h-40 w-20 h-20 rounded-full mx-auto"
+            className="object-cover rounded-full mx-auto"
           />
           <button
             onClick={handleChangeProfile}
@@ -43,7 +43,7 @@ function Profile({userInfo}) {
         </div>
         <div className="info">
           <div className="flex flex-col mt-6 lg:mt-0 space-y-4">
-            <p className='uppercase font-bold text-lg'>{userInfo.name}</p>
+            <p className='uppercase font-bold text-lg'>{userInfo.name || 'John Doe'}</p>
 
             <div className="flex items-center">
               <FiMail className="mr-2" />
