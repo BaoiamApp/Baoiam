@@ -37,7 +37,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
   };
 
   const validateEmail=(name,value)=>{
-
+    
   }
 
   const handleInputChange = (e) => {
@@ -55,7 +55,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
         [name]: [value],
       }
     })
-  }
+  } 
 
   useEffect(() => {
     setUserInfo((old) => {
@@ -86,10 +86,10 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* First Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{formData.first}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{formData.first}</label> :
                 <input
                   type="text"
-                  className="py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="First Name"
                   onChange={handleInputChange}
                   name="first"
@@ -98,10 +98,10 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* Middle Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{formData.middle}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{formData.middle}</label> :
                 <input
                   type="text"
-                  className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Middle Name"
                   onChange={handleInputChange}
                   name="middle"
@@ -111,10 +111,10 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* Last Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{formData.last}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{formData.last}</label> :
                 <input
                   type="text"
-                  className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Last Name"
                   onChange={handleInputChange}
                   name="last"
@@ -123,9 +123,9 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* Mobile Number */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
                 type="tel"
-                className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Mobile Number"
                 onChange={handleInputChange}
                 name="mobile"
@@ -135,9 +135,9 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             {/* Date of Birth */}
             <div>
               {!isEditable.personalInfo ?
-                <label className="block py-1 px-4 text-gray-700">{userInfo.dob}</label> : <input
+                <label className="block py-1 px-2 text-gray-700">{userInfo.dob}</label> : <input
                   type="date"
-                  className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   name='dob'
                   onChange={handleInputChange}
 
@@ -146,9 +146,9 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* College/School */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.college}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.college}</label> : <input
                 type="text"
-                className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="College or School Name"
                 onChange={handleInputChange}
                 name="college"
@@ -158,9 +158,9 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* Location */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.location}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.location}</label> : <input
                 type="text"
-                className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
+                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Location"
                 onChange={handleInputChange}
                 name="location"
@@ -189,7 +189,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Current Email Address"
                   onChange={handleInputChange}
-                  name='email'
+                  name='oldEmail'
                 />}
             </div>
               : <div>
@@ -197,7 +197,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                 <div>
                   {!isEditable.email ? <label className="block text-gray-700">New Email</label> :
                     <input
-                      type="email"
+                      type="newEmail"
                       className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                       placeholder="New Email Address"
                       onChange={handleInputChange}
@@ -208,7 +208,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                 <div>
                   {!isEditable.email ? <label className="block text-gray-700">Confirm New Email</label> :
                     <input
-                      type="email"
+                      type="confirmEmail"
                       className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                       placeholder="Confirm New Email"
                     />}
