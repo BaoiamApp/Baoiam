@@ -33,7 +33,7 @@ const ManagePayments = () => {
               key={method.id}
               className={`flex-1 text-center py-2 ${
                 paymentMethod === method.id
-                  ? 'text-blue-600 border-b-2 border-blue-600'
+                  ? 'text-blue-600 z-10 border-b-2 border-blue-600'
                   : 'text-gray-500'
               }`}
               onClick={() => setPaymentMethod(method.id)}
@@ -46,9 +46,6 @@ const ManagePayments = () => {
           className="absolute bottom-0 left-0 h-0.5 bg-gray-200 transition-all duration-300"
           style={{
             width: '100%',
-            transform: `translateX(${
-              paymentMethods.findIndex((m) => m.id === paymentMethod) * 100
-            }%)`,
           }}
         />
       </div>
