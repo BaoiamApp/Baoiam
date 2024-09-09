@@ -4,7 +4,6 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 function Recommendations() {
   const navigate = useNavigate();
-
   const recommendedCourses = [
     {
       id: 1,
@@ -64,7 +63,7 @@ function Recommendations() {
 
   return (
     <div className="bg-indigo-800 h-screen overflow-scroll relative dark:border dark:border-white flex flex-col items-center  text-white px-4 rounded-lg shadow-md">
-      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center w-full py-4 mt-2 sticky top-0 z-30 bg-indigo-800  shadow-2xl ">Recommended Courses</h2>
+      <h2 className="text-xl lg:text-2xl font-bold mb-4 text-center w-full px-4  py-4 mt-2 sticky top-0 left-0 right-0 z-20 bg-indigo-800  shadow-2xl md:text-base">Recommended Courses</h2>
 
       <div className="flex  flex-col gap-6">
         {recommendedCourses.map((course) => (
@@ -85,7 +84,7 @@ function Recommendations() {
           <h3 className="text-lg md:text-xl font-semibold">{course.name}</h3>
           <p className="text-sm md:text-base mt-2">{course.description}</p>
       
-          <div className="flex flex-col md:flex-row justify-between items-center mt-2">
+          <div className="flex flex-col md:flex-row justify-between items-center mt-6">
             {/* Price Section */}
             <p className="text-sm md:text-base font-bold text-white mb-4 md:mb-0">
               {course.price}
@@ -94,10 +93,9 @@ function Recommendations() {
             {/* Enroll Button */}
             <button
               onClick={() => navigate("/courses/college")}
-              className="relative xl:w-auto inline-flex items-center justify-center bg-white py-2 px-4 overflow-hidden text-black font-semibold rounded-full group"
+              className="relative xl:w-auto flex items-center justify-center bg-white py-2 px-3 lg:py-2 lg:px-4 md:py-1 md:px-2 overflow-hidden text-black font-semibold rounded-full group"
             >
-
-              <span className="relative">Enroll Now</span>
+              <span className=" md:text-sm ">Enroll Now</span>
             </button>
           </div>
         </div>

@@ -411,7 +411,7 @@ const Navbar = ({ theme }) => {
             <aside className="fixed lg:hidden top-0 right-0 z-40 w-80 h-screen transition-transform -translate-x-0">
               <div className="h-full px-3 py-4 overflow-y-auto bg-white border dark:text-white dark:bg-black">
                 <RxCross2
-                  className="text-black ml-64"
+                  className="text-black dark:text-white ml-64"
                   onClick={() => setShowmenu(!showmenu)}
                   size={25}
                 />

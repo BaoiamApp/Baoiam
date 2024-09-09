@@ -36,7 +36,7 @@ function Profile({userInfo}) {
   };
 
   return (
-    <div className="relative bg-slate-100 dark:bg-black dark:text-white dark:border dark:border-white p-4 md:p-6 rounded-lg shadow-md">
+    <div className="relative bg-slate-100 dark:bg-black dark:text-white dark:border dark:border-white p-4 py-8 md:p-6 rounded-lg shadow-md">
       <div className="flex flex-col lg:flex-row gap-4 xl:gap-8 xl:py-4">
         <div className="profile-pic">
           <div className="relative flex bg-gray-300 rounded-full items-center justify-center aspect-square mx-auto md:w-40 md:h-40 w-20 h-20">
@@ -65,7 +65,7 @@ function Profile({userInfo}) {
           </div>
         </div>
         <div className="info">
-          <div className="flex flex-col mt-6 lg:mt-0 space-y-4">
+          <div className="flex flex-col lg:mt-0 space-y-4">
             <p className="uppercase font-bold text-lg">{userInfo.name || 'John Doe'}</p>
 
             <div className="flex items-center">

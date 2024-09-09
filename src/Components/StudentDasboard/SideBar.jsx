@@ -95,14 +95,14 @@ const Sidebar = () => {
           onClick={closeSidebar}
         ></div>
       )}
-      <div className={`absolute md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64 bg-gradient-to-r z-40 text-white from-indigo-700 to-indigo-500 dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${
+      <div className={`fixed md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64 bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full "
         }`}>
           <button className='absolute top-4 right-4 md:hidden'>
             <IoCloseSharp onClick={closeSidebar} size={24}/>
           </button>
         {/* Dashboard Heading */}   
-        <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base font-bold">My Account</h2>
+        <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base text-white font-bold">My Account</h2>
 
         {/* Sidebar Tabs */}
         <ul className="my-6">
@@ -131,16 +131,16 @@ const Sidebar = () => {
             className={tabClassNames("payments")}
           >
             <RiSecurePaymentFill className={ActiveTabColor("payments")} />
-            <span className=" hidden md:inline-block">Payment</span>
+            <span className=" ">Payment</span>
           </li>
 
           {/* Profile Management Tab */}
           <li
             onClick={() => setActiveTab("management")}
-            className={tabClassNames("management")}
+            className={`${tabClassNames("management")} `}
           >
             <FaCog className={ActiveTabColor("management")} />
-            <span className=" hidden md:inline-block">Manage</span>
+            <span className=" ">Manage</span>
           </li>
 
           {/* Logout Tab */}
