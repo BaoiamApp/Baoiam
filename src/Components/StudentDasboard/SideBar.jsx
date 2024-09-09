@@ -9,6 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import Payment from "./Payment";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Sidebar = () => {
   const [activeTab, setActiveTab] = useState("profile"); // Default active tab
@@ -71,6 +72,12 @@ const Sidebar = () => {
   };
   const ActiveTabColor = (tab) => {
     return activeTab === tab ? " text-lg" : " text-lg";
+  };
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleLogoutClick = () => {
+    // Perform any logout logic here (e.g., clearing authentication tokens)
+    navigate('/'); // Redirect to the home page
   };
 
   return (
@@ -139,10 +146,13 @@ const Sidebar = () => {
           {/* Logout Tab */}
          
            
-          <li onClick={() => setActiveTab('logout')} className={tabClassNames('logout')}>
-            <FaSignOutAlt className={ActiveTabColor("logout")}  />
-            <span className=" ">Logout</span>
-          </li>
+          <li 
+      onClick={handleLogoutClick} 
+      className={tabClassNames('logout')}
+    >
+      <FaSignOutAlt className={ActiveTabColor("logout")} />
+      <span className="">Logout</span>
+    </li>
         </ul>
       </div>
 
