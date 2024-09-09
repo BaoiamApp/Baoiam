@@ -44,8 +44,6 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from './Pages/auth/Login'
-import Dashboard from './Components/Dashboard/Dashboard'
-
 
 
 const App = () => {
