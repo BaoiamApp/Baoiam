@@ -28,10 +28,17 @@ import {
 import { PHero } from "../assets/assets";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { WiStars } from "react-icons/wi";
-import { IoTelescope } from 'react-icons/io5'
+import { IoTelescope } from "react-icons/io5";
 import { MdPalette } from "react-icons/md";
 import { FaGavel, FaGear, FaShield, FaTree } from "react-icons/fa6";
-import { BsClipboardCheckFill, BsFillPuzzleFill, BsGraphUpArrow, BsMegaphoneFill, BsPeopleFill, BsRobot } from "react-icons/bs";
+import {
+  BsClipboardCheckFill,
+  BsFillPuzzleFill,
+  BsGraphUpArrow,
+  BsMegaphoneFill,
+  BsPeopleFill,
+  BsRobot,
+} from "react-icons/bs";
 
 const PAP = () => {
   const slides = [
@@ -60,7 +67,7 @@ const PAP = () => {
       <style>
         {`
           .swiper-button-next, .swiper-button-prev {
-            color: #f94327 !important;
+            color: #f59e0b !important;
             font-size: 20px !important;
           }
           .swiper-button-disabled {
@@ -73,20 +80,31 @@ const PAP = () => {
         {/* <img src={banner_pap} alt="banner" /> */}
 
         <div className="w-full text-center md:text-left md:w-[60%]">
-          <span className="text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center"><WiStars className="animate-pulse" size={25} /> Invest in your future, pay after it's proven.</span>
-          <h1 className="text-4xl lg:text-6xl mb-4 font-medium">Pay After
-            <span className="font-light italic text-indigo-600"> Placement</span>
+          <span className="text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
+            <WiStars className="animate-pulse" size={25} /> Invest in your
+            future, pay after it's proven.
+          </span>
+          <h1 className="text-4xl lg:text-6xl mb-4 font-medium">
+            Pay After
+            <span className="font-light italic text-indigo-600">
+              {" "}
+              Placement
+            </span>
           </h1>
 
-          <p className="text-sm lg:text-base md:w-3/4">The exclusive learning platform for tomorrow's entrepreneur! Fuel you entrepreneurship spirit with BAOIAM - "the launchpad for budding entrepreneurs: Learn, innovate, succeed"</p>
+          <p className="text-sm lg:text-base md:w-3/4">
+            The exclusive learning platform for tomorrow's entrepreneur! Fuel
+            you entrepreneurship spirit with BAOIAM - "the launchpad for budding
+            entrepreneurs: Learn, innovate, succeed"
+          </p>
 
-            <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
-              <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
-              <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-                <IoIosArrowRoundForward size={30} />
-              </span>
-              <span class="relative">Attend Info Session</span>
-            </button>
+          <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+            <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+            <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+              <IoIosArrowRoundForward size={30} />
+            </span>
+            <span class="relative">Attend Info Session</span>
+          </button>
         </div>
         <div className="w-full md:w-[40%]">
           <div className="w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
@@ -98,13 +116,15 @@ const PAP = () => {
       {/* section 2 */}
       <div className="my-6 py-6 text-center">
         <h2 className="lg:leading-[4rem] text-2xl font-bold text-indigo-700 mb-8 sm:text-3xl md:text-4xl lg:text-5xl">
-          Mentored by the <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
+          Mentored by the{" "}
+          <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             visionary entrepreneurs
-          </span> of today
+          </span>{" "}
+          of today
         </h2>
         <p className="text-gray-500 text-base lg:text-lg mb-12">
-          Harnessing the wisdom of today's entrepreneurial gems, a new
-          era of startup-focused business education is born.
+          Harnessing the wisdom of today's entrepreneurial gems, a new era of
+          startup-focused business education is born.
         </p>
 
         <div className="flex p-4 pb-12 justify-evenly items-center flex-wrap gap-6">
@@ -167,9 +187,11 @@ const PAP = () => {
       {/* section 3 */}
       <div className="flex flex-col items-center text-center pb-24">
         <h2 className="text-2xl font-bold text-indigo-700 sm:text-3xl sm:mb-8 md:text-4xl lg:text-5xl">
-          Become a <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
+          Become a{" "}
+          <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             budding
-          </span> Startup Leader
+          </span>{" "}
+          Startup Leader
         </h2>
         <p className="text-gray-500 my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg">
           Develop an entrepreneurial mindset and become a visionary leader that
@@ -177,57 +199,129 @@ const PAP = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-3 gap-x-8 text-left text-[#031864] font-semibold">
           <ul>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <IoTelescope className="text-indigo-600 group-hover:text-white" size={22} /> Visionary Thinking</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <IoTelescope
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Visionary Thinking
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <MdPalette className="text-indigo-600 group-hover:text-white" size={22} /> Creativity & Innovation</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <MdPalette
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Creativity & Innovation
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <FaShield className="text-indigo-600 group-hover:text-white" size={22} /> Risk Management</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <FaShield
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Risk Management
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <FaTree className="text-indigo-600 group-hover:text-white" size={22} /> Resilience & Persistence</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <FaTree
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Resilience & Persistence
+              </span>
             </li>
           </ul>
           <ul>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <BsFillPuzzleFill className="text-indigo-600 group-hover:text-white" size={22} /> Adaptability</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <BsFillPuzzleFill
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Adaptability
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <FaGavel className="text-indigo-600 group-hover:text-white" size={22} /> Leadership</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <FaGavel
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Leadership
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <BsGraphUpArrow className="text-indigo-600 group-hover:text-white" size={22} /> Financial Management</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <BsGraphUpArrow
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Financial Management
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <BsPeopleFill className="text-indigo-600 group-hover:text-white" size={22} /> Networking & Relationship Building</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <BsPeopleFill
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Networking & Relationship Building
+              </span>
             </li>
           </ul>
           <ul>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <BsMegaphoneFill className="text-indigo-600 group-hover:text-white" size={22} /> Communication & Salesmanship</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <BsMegaphoneFill
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Communication & Salesmanship
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <FaGear className="text-indigo-600 group-hover:text-white" size={22} /> Problem Solving</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <FaGear
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Problem Solving
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <BsClipboardCheckFill className="text-indigo-600 group-hover:text-white" size={22} /> Product Management & Interpersonal Skills</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <BsClipboardCheckFill
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Product Management & Interpersonal Skills
+              </span>
             </li>
-            <li
-              className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"> <span className="relative z-10 flex items-center gap-4 py-4 px-4">
-                <BsRobot className="text-indigo-600 group-hover:text-white" size={22} /> Leveraging AI & technology for automation</span>
+            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
+              {" "}
+              <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                <BsRobot
+                  className="text-indigo-600 group-hover:text-white"
+                  size={22}
+                />{" "}
+                Leveraging AI & technology for automation
+              </span>
             </li>
           </ul>
         </div>
@@ -239,11 +333,13 @@ const PAP = () => {
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             PLACEMENT
           </span>{" "}
-           HUNGER FOR SUCCESS
+          HUNGER FOR SUCCESS
         </h2>
         <p className="text-gray-500 text-base mx-12 mt-2 mb-4 p-4 lg:text-lg font-medium">
-          <span className="text-indigo-800">The Placement Bootcamp Program</span> : A 6 month program for startup
-          founders of tomorrow
+          <span className="text-indigo-800">
+            The Placement Bootcamp Program
+          </span>{" "}
+          : A 6 month program for startup founders of tomorrow
         </p>
 
         <div className="flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-4">
@@ -259,7 +355,7 @@ const PAP = () => {
             <p className="ml-10 mb-4 pr-8 text-base md:text-xl text-indigo-800 font-bold">
               Unleash your potential and shape the future of business with us
             </p>
-  
+
             <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-2xl group hover:bg-gray-50">
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span class="relative">Click here</span>
@@ -292,10 +388,10 @@ const PAP = () => {
         <div className="flex flex-wrap gap-4 mb-20 py-10 max-w-7xl mx-auto justify-evenly">
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <AcademicCapIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-[#031864] font-bold mb-4 px-4">
+            <p className="text-indigo-700 font-bold mb-4 px-4">
               Foundation and Knowledge Acquisition:
             </p>
-            <p className="mb-4 px-4 text-[#031864]">
+            <p className="mb-4 px-4 text-indigo-700">
               Lay a strong foundation and acquire the necessary knowledge and
               skills. Study various aspects of entrepreneurship, including
               market analysis, business planning, financial management,
@@ -308,10 +404,10 @@ const PAP = () => {
 
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <WrenchScrewdriverIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-[#031864] font-bold mb-4 px-4">
+            <p className="text-indigo-700 font-bold mb-4 px-4">
               Skill Development and Practical Application:
             </p>
-            <p className="mb-4 px-4 text-[#031864]">
+            <p className="mb-4 px-4 text-indigo-700">
               Focus on skill development and practical application. Hands-on
               learning experiences, such as workshops, simulations, and
               real-world projects. Activities that enhance their critical
@@ -324,10 +420,10 @@ const PAP = () => {
 
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <UserGroupIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-[#031864] font-bold mb-4 px-4">
+            <p className="text-indigo-700 font-bold mb-4 px-4">
               Mentorship, Networking, and Launch:
             </p>
-            <p className="mb-4 px-4 text-[#031864]">
+            <p className="mb-4 px-4 text-indigo-700">
               Get an opportunity to connect with experienced entrepreneurs,
               industry experts, and mentors who provide guidance and support.
               Receive feedback on their business ideas, refine their strategies,
@@ -340,10 +436,10 @@ const PAP = () => {
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <LightBulbIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-[#031864] font-bold mb-4 px-4">
+            <p className="text-indigo-700 font-bold mb-4 px-4">
               Nurturing a leader:
             </p>
-            <p className="mb-4 px-4 text-[#031864]">
+            <p className="mb-4 px-4 text-indigo-700">
               Leadership plays a very crucial and multifaceted role in
               entrepreneurial business. Therefore, it is important to nurture a
               leader who can set a clear vision for the business, develop a
@@ -358,10 +454,10 @@ const PAP = () => {
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <DeviceTabletIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-[#031864] font-bold mb-4 px-4">
+            <p className="text-indigo-700 font-bold mb-4 px-4">
               Exposure to new business trends and technology:
             </p>
-            <p className="mb-4 px-4 text-[#031864]">
+            <p className="mb-4 px-4 text-indigo-700">
               Stay informed about new businesses and technology is essential for
               identifying the unique factors that set a business apart.
               Utilizing new and advanced technology can improve efficiency,
@@ -374,10 +470,10 @@ const PAP = () => {
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <PresentationChartBarIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-[#031864] font-bold mb-4 px-4">
+            <p className="text-indigo-700 font-bold mb-4 px-4">
               Business Idea Presentation:
             </p>
-            <p className="mb-4 px-4 text-[#031864]">
+            <p className="mb-4 px-4 text-indigo-700">
               The final business idea will be presented to a panel of experts
               and potential investors. The most promising ideas will have the
               opportunity to secure investment from the panel. Other business
@@ -390,7 +486,7 @@ const PAP = () => {
 
       {/* Section 6 */}
       <div className="flex flex-col justify-center items-center mb-10 ">
-        <h2 className="text-2xl font-bold text-indigo-700 mb-10 sm:mb-16 sm:text-3xl md:text-4xl lg:text-5xl">
+        <h2 className="text-2xl font-bold text-indigo-700 text-center mb-10 sm:mb-16 sm:text-3xl md:text-4xl lg:text-5xl">
           BAOIAM’IONS{" "}
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             EXPERIENCE
@@ -419,11 +515,11 @@ const PAP = () => {
           {slides.map((slide, index) => (
             <SwiperSlide
               key={index}
-              className="text-center text-[18px] flex justify-center items-center bg-white"
+              className="text-center text-[18px] flex justify-center items-center"
             >
-              <div className="relative flex flex-col flex-wrap sm:flex-nowrap h-180 sm:h-104 border-3xl rounded-3xl border-slate-400 mb-12">
+              <div className="relative flex flex-col h-auto md:h-[26rem] border-3xl rounded-3xl border-slate-400 mb-12">
                 <div
-                  className="absolute -left-12 top-2 my-10 w-72 h-72 rounded-2xl opacity-80"
+                  className="absolute -left-12 top-2 my-10 w-60 h-60 sm:w-72 sm:h-72 rounded-2xl opacity-80 z-10"
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -436,11 +532,11 @@ const PAP = () => {
                     className="block w-full h-full object-cover rounded-2xl shadow-lg"
                   />
                 </div>
-                <div className="p-6 bg-white rounded-3xl border-slate-400 shadow-md max-w-xl h-104 text-right sm:max-w-xl md:h-96 md:max-w-2xl lg:max-w-3xl">
+                <div className="p-6 bg-white rounded-3xl border-slate-400 h-auto shadow-md max-w-xl text-right sm:max-w-xl md:h-[26rem] md:max-w-2xl lg:max-w-3xl">
                   <span className="text-gray-500 text-sm block mb-2">
                     {slide.date}
                   </span>
-                  <div className="text-2xl font-bold text-[#031864] mb-4">
+                  <div className="text-xl sm:text-2xl font-bold text-indigo-700 mb-4">
                     {slide.title}
                   </div>
                   <div className="w-1/2 ml-auto text-gray-700 mb-4 text-left">
@@ -452,11 +548,11 @@ const PAP = () => {
           ))}
           <div
             className="swiper-button-next swiper-button-next-custom"
-            style={{ color: "#f94327", fontSize: "20px" }}
+            style={{ color: "#f59e0b", fontSize: "20px" }}
           />
           <div
             className="swiper-button-prev swiper-button-prev-custom"
-            style={{ color: "#f94327", fontSize: "20px" }}
+            style={{ color: "#f59e0b", fontSize: "20px" }}
           />
           <div
             className="swiper-pagination-bullet swiper-pagination-bullet-custom"
