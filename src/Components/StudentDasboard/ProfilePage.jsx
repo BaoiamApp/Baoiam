@@ -1,7 +1,7 @@
 import React from 'react'
-import Profile from '../Dashboard/Profile'
-import Recommendations from '../Dashboard/Recommendations'
-import Notifications from '../Dashboard/Notifications'
+import Profile from './Profile'
+import Recommendations from './Recommendations'
+import Notifications from './Notifications'
 import CoursesMain from './CoursesMain'
 const ProfilePage = ({userInfo}) => {
   return (

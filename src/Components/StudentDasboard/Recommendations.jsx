@@ -94,7 +94,7 @@ function Recommendations() {
             {/* Enroll Button */}
             <button
               onClick={() => navigate("/courses/college")}
-              className="relative xl:w-auto inline-flex items-center justify-center bg-black py-2 px-4 overflow-hidden text-white font-semibold rounded-full group"
+              className="relative xl:w-auto inline-flex items-center justify-center bg-white py-2 px-4 overflow-hidden text-black font-semibold rounded-full group"
             >
 
               <span className="relative">Enroll Now</span>

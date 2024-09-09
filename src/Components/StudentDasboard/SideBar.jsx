@@ -105,7 +105,7 @@ const Sidebar = () => {
         <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base font-bold">My Account</h2>
 
         {/* Sidebar Tabs */}
-        <ul className="my-8 md:my-2">
+        <ul className="my-6">
           {/* My Profile Tab */}
           <li onClick={() => setActiveTab('profile')} className={`${tabClassNames('profile')}`}>
             <FaUser className={ActiveTabColor("profile")}  />
@@ -157,7 +157,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 rounded-3xl mx-2">{renderContent()}</div>
+      <div className="w-full md:p-6 p-4 rounded-3xl ">{renderContent()}</div>
     </div>
   );
 };

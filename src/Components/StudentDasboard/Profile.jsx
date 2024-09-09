@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Modal from '../Dashboard/Modal';
 import { FiCalendar, FiEdit, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 import { FaUniversity } from 'react-icons/fa';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaXTwitter } from 'react-icons/fa6';
-import Recommendations from './Recommendations';
+import Recommendations from '../StudentDasboard/Recommendations';
 import HeroDp from '../../assets/Images/dp.jpg'
 import { SiLeetcode } from "react-icons/si";
 import { useNavigate } from 'react-router-dom';
