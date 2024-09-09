@@ -9,12 +9,12 @@ const CoursesMain = () => {
   ];
 
   return (
-    <div className="w-full bg-slate-100 mx-auto p-4 rounded-lg shadow-md">
+    <div className="w-full bg-slate-100 dark:bg-black dark:text-white dark:border dark:border-white  mx-auto p-4 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-5 text-center">Courses</h2>
       
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col max-h-full overflow-scroll gap-6">
         {courses.map((course, index) => (
-          <div key={index} className="bg-white w-full flex items-center gap-4 shadow-md rounded-3xl py-3 px-4">
+          <div key={index} className=" w-full flex flex-col dark:border dark:border-white lg:flex-row items-center gap-4 shadow-md rounded-3xl py-3 px-4">
             
             {/* Course Image */}
             <img 
