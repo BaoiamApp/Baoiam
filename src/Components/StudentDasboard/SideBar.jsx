@@ -45,7 +45,7 @@ const Sidebar = () => {
       case 'management':
         return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo}/>; // Replace with the actual Profile Management component
       default:
-        return <ProfilePage />;
+        return <ProfilePage userInfo={userInfo}/>;
     }
   };
   const ActiveTabColor=(tab)=>{
@@ -93,7 +93,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 bg-white">
+      <div className="w-full p-6 bg-white rounded-3xl mx-2">
         {renderContent()}
       </div>
     </div>
