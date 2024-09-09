@@ -93,7 +93,7 @@ const Sidebar = () => {
         <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base font-bold">My Account</h2>
 
         {/* Sidebar Tabs */}
-        <ul className="my-8 md:my-2">
+        <ul className="my-6">
           {/* My Profile Tab */}
           <li onClick={() => setActiveTab('profile')} className={`${tabClassNames('profile')}`}>
             <FaUser className={ActiveTabColor("profile")}  />
