@@ -83,10 +83,10 @@ const AllBuys = () => {
             <img
               src={purchase.image}
               alt={purchase.courseName}
-              className="w-full md:w-32 md:h-32 object-cover rounded-lg mb-4 md:mb-0"
+              className="w-full lg:w-32 my-2 md:h-32 object-cover rounded-lg mb-4 md:mb-0"
             />
             <div className="flex-1 md:ml-4">
-              <h3 className="text-lg font-semibold mb-2">{purchase.courseName}</h3>
+              <h3 className="text-lg font-semibold my-2">{purchase.courseName}</h3>
               <p className="flex items-center mb-1">
                 <FaCalendarDay className="mr-2" />
                 {purchase.dateOfPurchase}

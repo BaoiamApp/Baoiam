@@ -154,11 +154,14 @@ const ManagePayments = () => {
       {paymentMethod === 'upi' && (
         <div className="space-y-4">
           <p className="text-sm text-gray-700">Enter your UPI ID to make the payment</p>
+          <div className='border border-gray-300 flex rounded-md shadow-sm p-2 items-center px-4'>
           <input
             type="text"
             placeholder="yourname@upi"
-            className="block w-full border border-gray-300 rounded-md shadow-sm p-2"
+            className="w-full outline-none"
           />
+          <p className="text-nowrap text-green-500 hover:text-green-700 ">verify</p>
+          </div>
         </div>
       )}
 

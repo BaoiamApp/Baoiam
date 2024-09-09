@@ -157,7 +157,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 rounded-3xl mx-2">{renderContent()}</div>
+      <div className="w-full md:p-6 p-4 rounded-3xl ">{renderContent()}</div>
     </div>
   );
 };

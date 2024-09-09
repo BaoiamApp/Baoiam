@@ -32,7 +32,7 @@ const Payment = () => {
       </div>
 
    
-      <div className="mt-6 border rounded-lg shadow-lg p-6 bg-white dark:bg-black dark:text-white dark:border dark:border-white">
+      <div className="mt-6 border rounded-lg shadow-lg lg:p-6 bg-white dark:bg-black dark:text-white dark:border dark:border-white">
         {activeTab === "allbuys" ? (
           <div className="">
             <AllBuys/>
