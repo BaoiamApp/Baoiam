@@ -50,7 +50,6 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
     setUserInfo((old)=>{
       return {
         name:`${old.first} ${old.middle} ${old.last}`,
-        name:`${old.first} ${old.middle} ${old.last}`,
         ...formData,
       }
     })
