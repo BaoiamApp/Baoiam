@@ -35,7 +35,7 @@ const Sidebar = () => {
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
     activeTab === tab
-      ? 'bg-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative'
+      ? 'bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative'
       : 'p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative';
 
   // Function to render content based on the active tab
@@ -54,13 +54,13 @@ const Sidebar = () => {
     }
   };
   const ActiveTabColor=(tab)=>{
-    return activeTab===tab?'text-gray-900 text-lg':' text-lg';
+    return activeTab===tab?' text-lg':' text-lg';
   }
 
   return (
     <div className="flex h-full pt-8">
       {/* Sidebar */}
-      <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 pl-[4%] text-white flex  flex-col rounded-tr-3xl">
+      <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 dark:bg-black dark:text-white pl-[4%] text-white flex  flex-col rounded-tr-2xl">
         {/* Dashboard Heading */}   <h2 className="xl:text-3xl md:text-lg text-base font-bold mt-5 lg:mr-[0.2] mb-8 hidden md:inline-block">My Account</h2>
 
         {/* Sidebar Tabs */}
@@ -98,7 +98,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full p-6 bg-white rounded-3xl mx-2">
+      <div className="w-full p-6 rounded-3xl mx-2">
         {renderContent()}
       </div>
     </div>

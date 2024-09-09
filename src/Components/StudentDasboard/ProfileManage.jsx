@@ -80,10 +80,10 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
   }, [userInfo])
 
   return (
-    <section className="max-w-4xl mx-auto p-6">
+    <section className="max-w-4xl dark:bg-black dark:text-white mx-auto p-6">
       <form className="space-y-8">
         {/* Personal Information Section */}
-        <div className="bg-white p-6 rounded-lg shadow-md relative">
+        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
           <h3 className="text-xl font-bold mb-4">Personal Information</h3>
           <button
             type="button"
@@ -99,6 +99,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                 <input
                   type="text"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="First Name"
                   onChange={handleInputChange}
                   name="first"
@@ -112,6 +113,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                 <input
                   type="text"
                   className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
+                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Last Name"
                   onChange={handleInputChange}
                   name="last"
@@ -122,6 +124,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             <div>
               {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
                 type="tel"
+                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Mobile Number"
                 onChange={handleInputChange}
@@ -135,6 +138,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                 <label className="block py-1 px-2 text-gray-700">{userInfo.dob}</label> : <input
                   type="date"
                   className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
+                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   name='dob'
                   onChange={handleInputChange}
 
@@ -145,6 +149,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             <div>
               {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.college}</label> : <input
                 type="text"
+                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="College or School Name"
                 onChange={handleInputChange}
@@ -158,6 +163,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
               {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.location}</label> : <input
                 type="text"
                 className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
+                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Location"
                 onChange={handleInputChange}
                 name="location"
@@ -168,8 +174,8 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
         </div>
 
         {/* Email Section */}
-        <div className="bg-white p-6 rounded-lg shadow-md relative">
-          <h3 className="text-xl font-bold mb-4">Email</h3>
+        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl py-1 px-2 font-bold mb-4">Email</h3>
           <button
             type="button"
             onClick={()=>handleEditToggle('email')}
@@ -226,8 +232,8 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
 
 
         {/* Password Section */}
-        <div className="bg-white p-6 rounded-lg shadow-md relative">
-          <h3 className="text-xl font-bold mb-4">Password</h3>
+        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl py-1 px-2 font-bold mb-4">Password</h3>
           <button
             type="button"
             onClick={() => handleEditToggle('password')}
@@ -238,30 +244,30 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Password */}
             <div>
-              {!isEditable.password ? <label className="block text-gray-700">Current Password</label> :
+              {!isEditable.password ? <label className="block py-1 px-2 ">Current Password</label> :
                 <input
                   type="password"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block  w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Current Password"
                 />
               }
             </div>
             {/* New Password */}
             <div>
-              {!isEditable.password ? <label className="block text-gray-700">New Password</label> :
+              {!isEditable.password ? <label className="block py-1 px-2 ">New Password</label> :
                 <input
                   type="password"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="New Password"
                 />
               }
             </div>
             {/* Confirm New Password */}
             <div>
-              {!isEditable.password ? <label className="block text-gray-700">Confirm New Password</label> :
+              {!isEditable.password ? <label className="block py-1 px-2">Confirm New Password</label> :
                 <input
                   type="password"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Confirm New Password"
                 />
               }
@@ -269,7 +275,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           </div>
         </div>
         {/* Social Links Section */}
-        <div className="bg-white p-6 rounded-lg shadow-md relative">
+        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
           <h3 className="text-xl font-bold mb-4">Social Links</h3>
           <button
             type="button"
@@ -284,7 +290,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
               {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">{userInfo.socialLinks.linkedIn}</label> :
                 <input
                   type="url"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="LinkedIn Profile URL"
 
                 />
@@ -295,7 +301,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
               {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">{userInfo.socialLinks.gitHub}</label> :
                 <input
                   type="url"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="GitHub Profile URL"
 
                 />
@@ -306,7 +312,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
               {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">{userInfo.socialLinks.leetCode}</label> :
                 <input
                   type="url"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="LeetCode Profile URL"
 
                 />
