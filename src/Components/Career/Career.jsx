@@ -1,37 +1,22 @@
-import React, { useState, useEffect } from "react";
-import image1 from "../../images/pngegg.png";
-import image0 from "../../images/pngegg (2).png"
-import image2 from "../../images/teamwork00.webp";
-import image3 from "../../images/images new.jpeg";
-import image4 from "../../images/images new1.jpeg";
-import image5 from "../../images/download new.jpeg";
-import image7 from "../../images/Biaoam.webp";
-import image8 from "../../images/teamwork13.avif";
-import image9 from "../../images/teamwork14.avif";
-import image10 from "../../images/teamwork6.webp";
-import image11 from "../../images/pngegg (3).png"
-import icon1 from "../../images/graduation-hat.png";
-import icon2 from "../../images/learning.png";
-import icon3 from "../../images/office-building.png";
-import icon4 from "../../images/reading-book.png";
-import icon5 from "../../images/thinking.png";
-import icon6 from "../../images/code.png";
-import icon7 from "../../images/location.png";
-import icon8 from "../../images/briefcase (1).png"
-import icon9 from "../../images/app-store.png";
-import icon10 from "../../images/mobile-banking.png"
-import icon11 from "../../images/apple.png";
-import icon12 from "../../images/customer-service.png";
-import icon13 from "../../images/huawei.png";
-import icon14 from "../../images/lunch-break.png";
-import icon15 from "../../images/teamwork.png";
-import icon16 from "../../images/threads.png";
-import icon17 from "../../images/trophy.png";
-import icon18 from "../../images/twitter.png";
-import icon19 from "../../images/microsoft.png"
+import React from "react";
+import image8 from "../../assets/ITIE&Entre/teamwork13.avif";
+import image9 from "../../assets/ITIE&Entre/teamwork14.avif";
+import image10 from "../../assets/ITIE&Entre/teamwork6.webp";
+import icon1 from "../../assets/ITIE&Entre/graduated (3).png";
+import icon2 from "../../assets/ITIE&Entre/knowledge.png"
+import icon3 from "../../assets/ITIE&Entre/education.png";
+import icon4 from "../../assets/ITIE&Entre/deep-learning.png"
+import icon5 from "../../assets/ITIE&Entre/academic.png";
+import icon6 from "../../assets/ITIE&Entre/machine-learning.png";
+import icon7 from "../../assets/ITIE&Entre/online-lesson.png"
 
-import { FaGoogle, FaSlack, FaDribbble } from "react-icons/fa"; // For example icons
-import { FiBarChart2 } from "react-icons/fi";
+import image1 from "../../assets/ITIE&Entre/onlineLearning2.avif";
+import image2 from "../../assets/ITIE&Entre/teamwork12.avif";
+import image3 from "../../assets/ITIE&Entre/teamwork10.webp";
+import image4 from "../../assets/ITIE&Entre/teamwork15.jpg";
+import image5 from "../../assets/ITIE&Entre/teamwork0.webp";
+import image7 from "../../assets/ITIE&Entre/Biaoam.webp";
+
 const Career = () => {
  
 
@@ -458,20 +443,38 @@ const jobs = [
         </div>
       </div>
 
-      <section className="relative bg-indigo-700 text-white flex flex-col md:flex-row items-center justify-center p-8 mt-8 overflow-hidden ">
-        {/* Background Circles */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-amber-400 rounded-full opacity-80 z-0 overflow-hidden "></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-400 rounded-full opacity-80 z-0 overflow-hidden"></div>
 
-        {/* Image Gallery */}
-        <div className="relative z-10 w-full lg:w-1/4 md:w-1/2 sm:w-1/2 grid grid-cols-2  gap-2 p-4  ">
-          <div className="grid grid-cols-1 gap-2">
-            <div className="col-span-1">
+      <section className="bg-white p-8 w-full mt-8 mb-12">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col lg:items-center text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1f0a6b] mb-6">
+              Hear from the{" "}
+              <span className="bg-gradient-to-r from-[#fc5305] to-[#fcbf05] text-transparent bg-clip-text">
+                team
+              </span>
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-[#1f0a6b] mt-4 lg:w-3/4 mx-auto">
+              Get a sneak-peek of what happens at BAOIAM
+            </p>
+          </div>
+          <div className="mt-8 w-full grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6">
+            {/* Card 1 */}
+            <div className="flex flex-col bg-[#f1ebf5] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out overflow-hidden h-full">
               <img
-                src={image8}
-                alt="Team Member 1"
-                className="w-full h-full  object-cover"
+                src={image7}
+                alt="Team member"
+                className="w-full h-48 object-cover sm:h-60 lg:h-64"
               />
+              <div className="p-6 flex-1">
+                <p className="text-gray-600 italic">
+                  BAOIAM has a great work culture &amp; professional environment
+                  for its interns. I learned that every company or organisation
+                  has its own culture.
+                </p>
+                <p className="text-gray-700 font-bold mt-4 text-lg sm:text-xl">
+                  - Shreya Choudhary
+                </p>
+              </div>
             </div>
             <div className="col-span-1 row-span-4">
               <img

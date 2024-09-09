@@ -1,43 +1,37 @@
-import React from 'react'
-import { GoGear } from "react-icons/go";
+import React from 'react';
+import { GoGear, GoProjectRoadmap, GoGlobe } from "react-icons/go";
 import { IoPeopleOutline } from "react-icons/io5";
-import { GoProjectRoadmap } from "react-icons/go";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
-import { GoGlobe } from "react-icons/go";
 
 const How = () => {
   return (
     <>
-    <div className=' flex justify-center my-4'>
-        <div className='w-[80%] xl:w-[85%] '>
-        <h1 className='text-[2rem] my-5 text-center font-bold'>How we <span className='text-blue-600 underline'>Work?</span></h1>
-        <p className='text-center text-[1.1rem]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tempora aliquam eos voluptatum vero, asperiores ipsa quas perspiciatis dolor, repellat eius dolorem ducimus at, fugit corporis enim consequuntur. Error ab quo tempore minima sed, nobis aperiam cupiditate perferendis amet! Ab quisquam debitis ipsa obcaecati enim reprehenderit officia libero veritatis iusto?</p></div>
-    </div>
-
-
-
-    <div className='grid grid-cols-1 grid-rows-5 lg:gap-1 sm:gap-10 lg:grid lg:grid-cols-5 lg:grid-rows-1 w-[80%] xl:w-[86%] xl:mx-[7%] my-[4rem] mx-[10%]'>
-      <div className='mx-3 my-1   '>
-         <div className='text-[3rem] flex justify-center'><div className='rounded-full p-3 text-blue-700 border-2 border-blue-950'><GoGear/></div></div> <h2 className='text-[1.2rem] text-center font-bold my-4'>Learn with top experts</h2> <p className='text-center'>Get your confusion replaced with confidence and doubt with solution under the guidance of our top experts</p>
-      </div>
-      <div className='m-3 my-1'>
-         <div className='text-[3rem] flex justify-center'><div className='rounded-full p-3 text-blue-700 border-2 border-blue-950'><IoPeopleOutline/></div></div> <h2 className='text-[1.2rem] text-center font-bold my-4'>Community discussion</h2> <p className='text-center'>attend the regular and
-        planned community discussions to share and support innovative ideas and dreams </p>
-         </div>
-      <div className='m-3 my-1'> 
-        <div className='text-[3rem] flex justify-center'><div className='rounded-full p-3 text-blue-700 border-2 border-blue-950'><GoProjectRoadmap/></div></div> <h2 className='text-[1.2rem] text-center font-bold my-4'>Live corporate Projects</h2> <p className='text-center'>work on live projects and get the practical knowledge required to boost up your carrer</p>
-         </div>
-      <div className='m-3 my-1'>
-         <div className='text-[3rem] flex justify-center'><div className='rounded-full p-3 text-blue-700 border-2 border-blue-950'><HiOutlineRocketLaunch/></div></div> <h2 className='text-[1.2rem] font-bold text-center my-4'>Placement assistance</h2> <p className='text-center'>learn to crack interviews from our experienced trainers and get placed at top companies</p>
-          </div>
-      <div className='m-3 my-1'> 
-        <div className='text-[3rem]  flex justify-center'><div className='rounded-full p-3 text-blue-700 border-2 border-blue-950'><GoGlobe/></div></div> <h2 className='text-[1.2rem] text-center font-bold my-4'>Networking & investment </h2> <p className='text-center'>master the art of networking by enhancing your communication skills and get the financial aid to start your business</p> 
+      <div className="flex justify-center my-4">
+        <div className="w-[80%] xl:w-[85%] text-center">
+          <h1 className="text-[2rem] my-5 font-bold">How we <span className="text-indigo-600">Work?</span></h1>
+          <p className="mx-auto w-[80%]">We create high-quality courses mentored by experts, offering full-time support, live corporate training, placement help, and networking opportunities.</p>
         </div>
-    </div>
+      </div>
 
-
+      <div className="grid grid-cols-1 sm:gap-10 lg:grid-cols-5 w-[80%] xl:w-[86%] my-[4rem] mx-auto">
+        <IconBox icon={<GoGear />} title="Expert Guidance" text="Boost your confidence with guidance from top experts." />
+        <IconBox icon={<IoPeopleOutline />} title="Community Support" text="Join discussions and share ideas with a supportive community." />
+        <IconBox icon={<GoProjectRoadmap />} title="Live Projects" text="Gain practical knowledge by working on live corporate projects." />
+        <IconBox icon={<HiOutlineRocketLaunch />} title="Placement Help" text="Learn interview skills and land top jobs with our guidance." />
+        <IconBox icon={<GoGlobe />} title="Networking & Funding" text="Enhance networking and secure financial aid for your business." />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default How
+const IconBox = ({ icon, title, text }) => (
+  <div className="p-2 text-center">
+    <div className="text-[3rem] flex justify-center mb-4">
+      <div className="rounded-full p-3 text-indigo-600 border-2 border-indigo-600">{icon}</div>
+    </div>
+    <h2 className="text-nowrap font-bold mb-4">{title}</h2>
+    <p>{text}</p>
+  </div>
+);
+
+export default How;
