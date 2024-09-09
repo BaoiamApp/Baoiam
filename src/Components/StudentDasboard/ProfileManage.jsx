@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ProfileManage = ({userInfo,setUserInfo}) => {
+const ProfileManage = ({ userInfo, setUserInfo }) => {
 
   // name: 'John Doe',
   // email: 'example@mail.com',
@@ -8,17 +8,17 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
   // mobile: '1234567890',
   // dob: '01/01/2000',
   // location: 'Noida, In',
-  const [fName,mName,lName]=userInfo.name.split(" ");
+  const [fName, mName, lName] = userInfo.name.split(" ");
 
-  const [formData,setFormData]=useState(()=>{
+  const [formData, setFormData] = useState(() => {
     return {
-      first:fName || '',
-      middle:lName?mName:'',
-      last:lName || '',
-      mobile:userInfo.mobile,
-      dob:userInfo.dob,
-      college:userInfo.college,
-      location:userInfo.location,
+      first: fName || '',
+      middle: lName ? mName : '',
+      last: lName || '',
+      mobile: userInfo.mobile,
+      dob: userInfo.dob,
+      college: userInfo.college,
+      location: userInfo.location,
     }
   })
 
@@ -36,26 +36,27 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
     }));
   };
 
-  const handleInputChange=(e)=>{
-    const {name,value}=e.target;
-    setFormData(old=>{
-      return {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(old => {
+      return { 
         ...old,
-        [name]:[value],
+        [name]: [value],
       }
-    })
+    }) 
   }
 
-  useEffect(()=>{
-    setUserInfo((old)=>{
+  useEffect(() => {
+    setUserInfo((old) => {
       return {
-        name:`${old.first} ${old.middle} ${old.last}`,
+        name: `${old.first} ${old.middle} ${old.last}`,
         ...formData,
       }
     })
-  },[formData])
-  useEffect(()=>{
-    console.log(userInfo)},[])
+  }, [formData])
+  useEffect(() => {
+    console.log(userInfo)
+  }, [])
 
   return (
     <section className="max-w-4xl mx-auto p-6 bg-gray-100 mb-12">
@@ -73,7 +74,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* First Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.fName}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.fName || "Enter First Name"}</label> :
                 <input
                   type="text"
                   className="py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
@@ -85,7 +86,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             </div>
             {/* Middle Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mName}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mName || "Enter Middle Name"}</label> :
                 <input
                   type="text"
                   className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
@@ -98,7 +99,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             </div>
             {/* Last Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.lName}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.lName || "Enter Last Name"}</label> :
                 <input
                   type="text"
                   className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
@@ -111,7 +112,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             </div>
             {/* Mobile Number */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mobile}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-4 text-gray-700">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
                 type="tel"
                 className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Mobile Number"
@@ -124,7 +125,7 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
             {/* Date of Birth */}
             <div>
               {!isEditable.personalInfo ?
-                <label className="block py-1 px-4 text-gray-700">{fName.dob}</label> : <input
+                <label className="block py-1 px-4 text-gray-700">{fName.dob || "Enter Date of Birth"}</label> : <input
                   type="date"
                   className=" py-1 px-4 block w-full border-gray-300 rounded-md shadow-sm"
                   name='dob'
@@ -216,37 +217,38 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           </button>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Email */}
-            {!isEditable.email?<div className="col-span-1 sm:col-span-2">
+            {!isEditable.email ? <div className="col-span-1 sm:col-span-2">
               {!isEditable.email ? <label className="block text-gray-700">Current Email</label> :
                 <input
                   type="email"
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   placeholder="Current Email Address"
-
+                  onChange={handleInputChange}
+                  name='email'
                 />}
             </div>
-           :<div>
-             {/* New Email */}
-            <div>
-              {!isEditable.email ? <label className="block text-gray-700">New Email</label> :
-                <input
-                  type="email"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="New Email Address"
-
-                />}
-            </div>
-            {/* Confirm Email */}
-            <div>
-              {!isEditable.email ? <label className="block text-gray-700">Confirm New Email</label> :
-                <input
-                  type="email"
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="Confirm New Email"
-
-                />}
-            </div>
-           </div>}
+              : <div>
+                {/* New Email */}
+                <div>
+                  {!isEditable.email ? <label className="block text-gray-700">New Email</label> :
+                    <input
+                      type="email"
+                      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                      placeholder="New Email Address"
+                      onChange={handleInputChange}
+                      name='email'
+                    />}
+                </div>
+                {/* Confirm Email */}
+                <div>
+                  {!isEditable.email ? <label className="block text-gray-700">Confirm New Email</label> :
+                    <input
+                      type="email"
+                      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                      placeholder="Confirm New Email"
+                    />}
+                </div>
+              </div>}
           </div>
         </div>
 
@@ -263,36 +265,36 @@ const ProfileManage = ({userInfo,setUserInfo}) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Current Password */}
             <div>
-             {!isEditable.password? <label className="block text-gray-700">Current Password</label>:
-              <input
-                type="password"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                placeholder="Current Password"
+              {!isEditable.password ? <label className="block text-gray-700">Current Password</label> :
+                <input
+                  type="password"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Current Password"
 
-              />
-             }
+                />
+              }
             </div>
             {/* New Password */}
             <div>
-             {!isEditable.password? <label className="block text-gray-700">New Password</label>:
-              <input
-                type="password"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                placeholder="New Password"
+              {!isEditable.password ? <label className="block text-gray-700">New Password</label> :
+                <input
+                  type="password"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="New Password"
 
-              />
-             }
+                />
+              }
             </div>
             {/* Confirm New Password */}
             <div>
-             {!isEditable.password? <label className="block text-gray-700">Confirm New Password</label>:
-              <input
-                type="password"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                placeholder="Confirm New Password"
+              {!isEditable.password ? <label className="block text-gray-700">Confirm New Password</label> :
+                <input
+                  type="password"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Confirm New Password"
 
-              />
-             }
+                />
+              }
             </div>
           </div>
         </div>

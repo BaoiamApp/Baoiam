@@ -1,8 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Marquee from "react-fast-marquee";
 
-const Section2 = ({ dark }) => {
+const marquee_imgs = [
+  "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F4XvJVi6UxVYuBoNcqtYnUO%2F51dc6ab3d5fb7a294e9c1ae82ec60c6f%2FGroup_86352.png&w=1200&q=90",
+  "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F2WBizctzgyfHmlJ4ij7XKG%2Fd6357a445dd2d11ef7cd043b5eec7185%2FGroup_86351.png&w=750&q=90",
+  "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F2vSJPjxsts6ozhd7QCTXgS%2F33323dbc6e5b6484e6b1631130e96a27%2FGroup_86347.png&w=1080&q=90",
+  "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F3DzWyNVXsTpnjKt4veGa37%2F4bd2c6121f835c28d9c180895dbc8de2%2FGroup_86348.png&w=1920&q=90",
+  "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F16BgY5izUWIBlgThVza7hW%2F21150260e1b094f455c474b5aec0a994%2FGroup_86349.png&w=828&q=90",
+  "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F3QtrtKRIon2vI1Y7KkuX9U%2F619b3d342fd9f6206cab033c7f2e42d0%2FGroup_86350.png&w=1200&q=90",
+];
+
+const Section1 = ({ dark }) => {
   const [lettersRef, setlettersRef] = useArrayRef();
   const triggerRef = useRef(null);
 
@@ -14,70 +24,58 @@ const Section2 = ({ dark }) => {
 
   gsap.registerPlugin(ScrollTrigger);
   const text =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga consequuntur aliquam voluptatum temporibus fugiat vitae amet doloribus cum repudiandae officiis a quidem, quas illo? Voluptatum earum aliquid quasi consequuntur, sapiente nam hic!";
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga coillo? Voluptatum earum aliquid quasi consequuntur, sapiente nam hic!";
 
   useEffect(() => {
+    const color = dark ? "white" : "black";
     const anim = gsap.to(lettersRef.current, {
       scrollTrigger: {
         trigger: triggerRef.current,
         scrub: 6,
-        start: "top 60%",
+        start: "top 90%",
         end: "bottom 85%",
       },
-      color: "black",
+      color: color,
       stagger: 0.1,
     });
-
-    gsap.fromTo(
-      ".border-expand",
-      {
-        scaleX: 0,
-        transformOrigin: "center",
-      },
-      {
-        scaleX: 1,
-        duration: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".border-expand",
-          start: "top 80%",
-          end: "top 50%",
-          scrub: 6,
-        },
-      }
-    );
-    gsap.fromTo(
-      ".what",
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        delay: 0.1,
-        y: 0,
-        duration: 0.5,
-        ease: "power2.out",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: ".what",
-          start: "top 80%",
-          end: "top 50%",
-        },
-      }
-    );
     return () => {
       anim.kill();
     };
-  }, [lettersRef, dark]);
+  }, [lettersRef]);
 
   return (
-    <section className=" w-full h-screen flex items-center justify-evenly flex-col xs:py-0">
-      <span className="w-11/12 h-1 bg-black border-expand dark:bg-[#EB0027]"></span>
-      <div ref={triggerRef} className="px-12  xs:px-8">
+    <section className="flex items-center justify-evenly flex-col">
+      <div className="mt-[40px] text-center relative">
+        <h2 className="text-[2vw] xs:text-[4vw] xs:font-[600] md:text-[3vw] ">
+          Trusted by a global community of progressive educators
+        </h2>
+
+        <div className="mt-[30px] relative">
+          <div className="absolute top-0 left-0 w-[200px] h-full bg-gradient-to-r from-white to-transparent dark:from-black dark:to-transparent z-10 pointer-events-none"></div>
+
+          <div className="absolute top-0 right-0 w-[200px] h-full bg-gradient-to-l from-white to-transparent dark:from-black dark:to-transparent z-10 pointer-events-none"></div>
+
+          <Marquee className="w-[80vw] mb-[4rem] xs:mb-[0rem]" speed={100}>
+            {marquee_imgs.map((el, i) => (
+              <div key={i} className="mr-[-5rem] xs:mr-[-6rem]">
+                <img
+                  className="w-[30%] dark:invert dark:brightness-0 dark:contrast-200"
+                  src={el}
+                  alt="img"
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+
+      <div
+        ref={triggerRef}
+        className="px-[6vw] xs:px-4 xs:py-8 md:py-0 text-center"
+      >
         {text.split("").map((letter, index) => (
           <span
-            className="font-roboto leading-[6vw] font-medium text-white text-[3.4vw] dark:drop-shadow-[0_0_0.03rem_#EB0027]   drop-shadow-[0_0_0.03rem_rgb(2,2,2)] xs:leading-[9vw]   xs:font-medium xs:text-[6vw]  xs:text-white"
+            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-[3vw] xs:leading-[6vw] xs:font-medium xs:text-[4.5vw] md:text-[4.5vw] md:leading-[7vw] xs:text-white"
             key={index}
             ref={setlettersRef}
           >
@@ -85,37 +83,8 @@ const Section2 = ({ dark }) => {
           </span>
         ))}
       </div>
-
-      <div className="what">
-        <a
-          href="#_"
-          className="relative inline-flex items-center px-12 py-2 overflow-hidden text-lg font-medium text-black dark:text-white dark:bg-[#EB0027] dark:border-[#EB0027] border-2 border-black rounded-full hover:text-white  dark:hover:text-[#EB0027] dark:hover:bg-[#EB0027] group"
-        >
-          <span className="absolute left-0 block w-full h-0 transition-all bg-black opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-          <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              strokeWidth="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              ></path>
-            </svg>
-          </span>
-          <span className="relative">Click</span>
-        </a>
-      </div>
-
-      <span className="w-11/12 h-1 bg-black border-expand dark:bg-[#EB0027]"></span>
     </section>
   );
 };
 
-export default Section2;
-
+export default Section1;
