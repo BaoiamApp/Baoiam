@@ -58,7 +58,7 @@ function Recommendations() {
 
   return (
     <div className="bg-indigo-800 h-screen overflow-scroll relative dark:border dark:border-white flex flex-col items-center  text-white px-4 rounded-lg shadow-md">
-      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center w-full py-4 mt-2 sticky top-0 z-50 bg-indigo-800  shadow-2xl ">Recommended Courses</h2>
+      <h2 className="text-xl md:text-2xl font-bold mb-4 text-center w-full py-4 mt-2 sticky top-0 z-30 bg-indigo-800  shadow-2xl ">Recommended Courses</h2>
 
       <div className="flex  flex-col gap-6">
         {recommendedCourses.map((course) => (
