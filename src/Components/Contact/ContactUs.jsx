@@ -210,7 +210,7 @@ const ContactUs = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="relative p-6 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 border h-80 md:h-72"
+              className="relative p-6 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 border h-80 md:h-72 flex items-center justify-center"
             >
               <div className="flex justify-center">{card.icon}</div>
 
@@ -281,7 +281,7 @@ const ContactUs = () => {
         </div>
 
 
-        <div className="w-full max-w-2xl bg-amber-50 p-8 rounded-xl shadow-lg flex flex-col">
+        <div className="w-full max-w-2xl bg-gray-100 p-8 rounded-xl shadow-lg flex flex-col">
           <h2 className="text-3xl font-bold text-indigo-700 mb-4 text-center">
             Get in Touch
           </h2>
