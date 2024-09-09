@@ -112,12 +112,7 @@ const Sidebar = () => {
           </li>
 
           {/* Achievements Tab */}
-          <li
-            onClick={() => setActiveTab("achievements")}
-            className={tabClassNames("achievements")}
-          >
-            <FaTrophy className={ActiveTabColor("achievements")} />
-            <span className=" hidden md:inline-block">Achievements</span>
+        
           <li onClick={() => setActiveTab('achievements')} className={tabClassNames('achievements')}>
             <FaTrophy className={ActiveTabColor("achievements")}  />
             <span className=" ">Achievements</span>
@@ -143,8 +138,7 @@ const Sidebar = () => {
 
           {/* Logout Tab */}
          
-            <FaSignOutAlt className={ActiveTabColor("logout")} />
-            <span className=" hidden md:inline-block">Logout</span>
+           
           <li onClick={() => setActiveTab('logout')} className={tabClassNames('logout')}>
             <FaSignOutAlt className={ActiveTabColor("logout")}  />
             <span className=" ">Logout</span>
