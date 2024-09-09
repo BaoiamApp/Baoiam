@@ -67,6 +67,7 @@ const AllBuys = () => {
         {Array(fullStars).fill(<FaStar className="text-yellow-500" />)}
         {halfStar && <FaStarHalfAlt className="text-yellow-500" />}
         {Array(emptyStars).fill(<FaStar className="text-gray-300" />)}
+        
       </div>
     );
   };
