@@ -11,11 +11,11 @@ const courses = [
 
 const Courses = () => {
   return (
-    <section className="p-6 bg-gray-100">
-      <h2 className="text-3xl font-semibold mb-6 text-center">All Courses</h2>
+    <section className="p-6 bg-slate-100 dark:bg-black dark:text-white  ">
+      <h2 className="text-3xl font-semibold mb-6 text-center">All Enrolled Courses</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {courses.map((course) => (
-          <div key={course.id} className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+          <div key={course.id} className="shadow-md dark:border dark:border-white rounded-lg overflow-hidden transition-transform transform hover:scale-105">
             <img
               src={course.image}
               alt={course.title}
@@ -23,8 +23,8 @@ const Courses = () => {
             />
             <div className="p-4">
               <h3 className="text-xl font-bold">{course.title}</h3>
-              <p className="text-gray-600 mt-2">{course.description}</p>
-              <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+              <p className="mt-2">{course.description}</p>
+              <button className="mt-4 bg-gradient-to-r from-indigo-700 to-indigo-500 text-white py-2 px-4 rounded hover:bg-gradient-to-l">
                 View Course
               </button>
             </div>
