@@ -6,6 +6,8 @@ import StudentProgress from './StudentProgress';
 import Assignments from './Assignment';
 import CreateCourse from './CreateCourse';
 import ProfileManage from './ProfileManage';
+import Logout from './Logout';
+
 
 
 const TeacherDashboard = () => {
@@ -40,7 +42,7 @@ const TeacherDashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="lg:ml-1/4 ml-0 w-full p-6">
+      <div className="lg:ml-1/4 ml-0 w-full py-6 md:p-x-6">
         <button className="lg:hidden mb-6 text-black" onClick={() => setIsOpen(!isOpen)}>
           <FaBars className="text-2xl" />
         </button>

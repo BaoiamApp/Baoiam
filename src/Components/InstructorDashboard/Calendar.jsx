@@ -6,7 +6,7 @@ const Calendar = () => {
   const currentDay = currentDate.getDate();
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
+    <div className="bg-white p-4 my-4 rounded-lg shadow">
       <h2 className="text-xl text-center font-semibold mb-4">Today</h2>
       
       {/* Days of the week */}
@@ -21,7 +21,7 @@ const Calendar = () => {
         {Array.from({ length: 31 }, (_, i) => i + 1).map(date => (
           <div
             key={date}
-            className={`text-center p-2 ${date === currentDay ? 'bg-indigo-900 text-white rounded-full' : ''}`}
+            className={`text-center p-2 ${date === currentDay ? 'bg-indigo-900 text-white aspect-square w-10 rounded-full' : ''}`}
           >
             {date}
           </div>

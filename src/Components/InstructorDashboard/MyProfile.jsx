@@ -41,11 +41,9 @@ const MyProfile = () => {
       </div>
       </div>
       {/* Calendar and Tasks Card */}
-      <div className="bg-indigo-600 shadow-lg rounded-lg p-6 w-full lg:w-1/3">
-        <div className="p-4 rounded-lg mb-4">
+      <div className="bg-indigo-600 shadow-lg rounded-lg py-6 px-4 md:px-6 max-w-sm mx-auto lg:w-1/3">
           {/* Here you can integrate a calendar library */}
           <Calendar/>
-        </div>
         <div className="bg-indigo-100 p-4 rounded-lg">
           <h4 className="text-lg font-semibold">Upcoming Tasks</h4>
           <ul className="list-disc pl-6 mt-2">
