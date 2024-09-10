@@ -7,15 +7,21 @@ const Calendar = () => {
 
   return (
     <div className="bg-white p-4 rounded-lg shadow">
-      <h2 className="text-xl font-semibold mb-4">Calendar</h2>
+      <h2 className="text-xl text-center font-semibold mb-4">Today</h2>
+      
+      {/* Days of the week */}
       <div className="grid grid-cols-7 gap-2">
         {days.map(day => (
           <div key={day} className="text-center font-medium">{day}</div>
         ))}
+      </div>
+      
+      {/* Dates */}
+      <div className="grid grid-cols-7 gap-2 mt-2 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7">
         {Array.from({ length: 31 }, (_, i) => i + 1).map(date => (
           <div
             key={date}
-            className={`text-center p-2 ${date === currentDay ? 'bg-blue-500 text-white rounded-full' : ''}`}
+            className={`text-center p-2 ${date === currentDay ? 'bg-indigo-900 text-white rounded-full' : ''}`}
           >
             {date}
           </div>
