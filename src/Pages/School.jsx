@@ -23,7 +23,7 @@ const School = () => {
     <span className="block h-1 w-20 bg-red-500 rounded-full mt-2"></span>
     </h2>
     
-    <div className="container flex pt-10 items-center justify-center p-6">
+    <div className="container flex pt-10 items-center justify-center p-6 w-fit mx-auto">
   <div className="flex flex-col-reverse lg:flex-row items-center mx-auto w-full">
     
     <div className="w-full lg:w-1/2 text-center lg:text-left">

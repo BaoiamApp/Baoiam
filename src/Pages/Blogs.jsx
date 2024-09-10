@@ -1,58 +1,87 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import screen_time from "../assets/Blogs/screen_time.png";
+import ed_tech from "../assets/Blogs/ed_tech.png";
+import era_of_early_childhood from "../assets/Blogs/era_of_early_childhood.jpg";
+import ed_tech_enhances_critical_thinking from "../assets/Blogs/ed_tech_enhances_critical_thinking.png";
+import new_excited_tech_edu1 from "../assets/Blogs/new_excited_tech_edu1.jpg";
+import web_dev1 from "../assets/Blogs/web_dev1.png";
+import financial_literacy from "../assets/Blogs/financial_literacy.jpg";
+import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
+import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
 import Slider from "react-slick";
+import "./Blogs.css";
+import { Autoplay } from "swiper/modules";
 const blog_list = [
   {
-    title: "Do consectetur",
+    title: "Akshay Saini",
     titleColor: "blue-500",
-    imgSrc:
-      "https://images.stockcake.com/public/1/e/2/1e293f13-b9c4-4686-a619-b0f15eb2bf92_large/public-speaking-engagement-stockcake.jpg",
+    imgSrc: screen_time,
     text: "Balancing Screen Time: Healthy Technology Use In Education",
     info: "Dec 22, 2022 • 10 mins read",
   },
   {
-    title: "Consequat labore",
-    titleColor: "green-500",
-    imgSrc:
-      "https://images.stockcake.com/public/0/2/3/0237c9b3-e99d-46bd-94e7-71321adb8a7b_large/vr-experience-session-stockcake.jpg",
+    title: "Amily Clarke",
+    titleColor: "blue-500",
+
+    imgSrc: ed_tech,
     text: "Challenges of Implementing Ed-Tech Companies And How  to Overcome Them.",
     info: "Nov 20, 2022 • 10 mins read",
   },
   {
-    title: "Laboris nulla",
-    titleColor: "purple-500",
-    imgSrc:
-      "https://images.stockcake.com/public/5/b/1/5b1ea019-4bdf-4a6b-90c6-3a5a205d6642_large/coding-at-night-stockcake.jpg",
+    title: "John Watson",
+    titleColor: "blue-500",
+
+    imgSrc: era_of_early_childhood,
     text: "The era of early childhood education:  take up changes, block challenges and, exercise of strategic tools ",
     info: "Nov 13, 2022 • 3 mins read",
   },
   {
-    title: "Do consectetur",
+    title: "Jason Adam",
     titleColor: "blue-500",
-    imgSrc:
-      "https://images.stockcake.com/public/e/f/f/eff84666-437b-4119-beb2-5f8bd2cdf873_large/exciting-science-experiment-stockcake.jpg",
+
+    imgSrc: ed_tech_enhances_critical_thinking,
     text: "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
     info: "Oct 17, 2022 • 5 mins read",
   },
   {
-    title: "Consequat labore",
-    titleColor: "green-500",
-    imgSrc:
-      "https://images.stockcake.com/public/5/4/b/54bd0d8a-3792-4034-b8e3-72c9cfeee380_large/crumpled-english-ball-stockcake.jpg",
+    title: "Mary Smith",
+    titleColor: "blue-500",
+
+    imgSrc: new_excited_tech_edu1,
     text: "New and Exciting Technology in Education",
     info: "Oct 10, 2022 • 10 mins read",
   },
   {
-    title: "Laboris nulla",
-    titleColor: "purple-500",
-    imgSrc:
-      "https://images.stockcake.com/public/f/7/3/f7325e33-7285-48c6-9820-522c3e3be550_large/graduate-puzzle-piece-stockcake.jpg",
+    title: "John Statham",
+    titleColor: "blue-500",
+
+    imgSrc: web_dev1,
     text: "The path to a successful tech career: The Importance of web development skills",
     info: "Sep 19, 2022 • 8 mins read",
   },
   {
+    title: "John Statham",
+    titleColor: "blue-500",
+    info: "Sep 24, 2022 • 14 mins read",
+    imgSrc: financial_literacy,
     text: "Mastering Financial Literacy for All: Essential Skills for a Brighter Future",
+  },
+  {
+    text: "Unlocking the Future of Education: Ed-Tech Latest Trends ",
+    info: "Oct 19, 2022 • 8 mins read",
+    titleColor: "blue-500",
+
+    imgSrc: ed_tech_latest_trends,
+    title: "Akshay Saini",
+  },
+  {
+    info: "Sep 13, 2022 • 5 mins read",
+    text: "What is software testing and its importance?",
+    titleColor: "blue-500",
+    imgSrc: software_testing,
+    title: "Amily Clarke",
   },
 ];
 
@@ -128,14 +157,26 @@ const authors_info = [
     imgSrc:
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Zlc3Npb25hbCUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D",
   },
+  {
+    name: "Ron Clinton",
+    noOfBlogs: 2,
+    imgSrc:
+      "https://plus.unsplash.com/premium_photo-1682430161913-db0d5d64e8ef?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
 ];
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className}  w-10 absolute right-10 rounded h-10 bg-transparent transition`}
+        className={`${className} w-5 flex rounded-full absolute z-10 h-5 bg-gray-700 dark:bg-gray-700 dark:text-white transition hover:bg-gray-700`}
         style={{
           ...style,
           display: "flex",
@@ -151,7 +192,7 @@ const Blog = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className}  w-10 rounded mr-20 absolute left-10 z-10 h-14 bg-transparent transition`}
+        className={`${className} w-5 flex rounded-full mr-20 absolute z-10 h-5 bg-gray-700 dark:bg-gray-700 dark:text-white transition hover:bg-gray-700`}
         style={{
           ...style,
           display: "flex",
@@ -167,6 +208,9 @@ const Blog = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
+    centerMode: true,
+    autoplay: true,
+    cssEase: "linear",
     slidesToScroll: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -174,8 +218,8 @@ const Blog = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
           dots: true,
         },
@@ -183,9 +227,9 @@ const Blog = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          // initialSlide: 2,
         },
       },
       {
@@ -233,22 +277,24 @@ const Blog = () => {
         <h2 className="text-l  text-center mb-8">
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {blog_list.map((item, i) => (
             <Link key={i} to={`/Blog_detail/${i}`}>
-              <div className="bg-white dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className="bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                 <img
                   className="w-full h-48 object-cover"
                   src={item.imgSrc}
                   alt={`Blog Post ${i}`}
                 />
-                <div className="p-6">
+                <div className="p-6 flex-grow">
                   <span
                     className={`text-sm text-${item.titleColor} font-semibold`}
                   >
                     {item.title}
                   </span>
-                  <h2 className="text-lg font-bold my-2">{item.text}</h2>
+                  <h2 className="text-lg font-bold my-2 truncate">
+                    {item.text}
+                  </h2>
                   <p className="text-sm">{item.info}</p>
                 </div>
               </div>
@@ -257,7 +303,7 @@ const Blog = () => {
         </div>
       </div>
       {/* readers section */}
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl mb-5 font-bold text-center">
           What Our Readers Are Saying.
         </h1>
@@ -284,41 +330,32 @@ const Blog = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Authors section */}
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
+      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
         <h1 className="text-3xl mb-5 font-bold text-center">
           Meet Our Authors
         </h1>
-        {/* <div className="absolute px-3 py-2 rounded-md bg-white border-black border-[2px] top-56 text-2xl font-bold cursor-pointer z-10">
-          &lt;
-        </div>
-        <div
-          className="z-10 px-3 py-2 rounded-md bg-white border-black border-[2px] absolute top-56 text-2xl font-bold cursor-pointer right-10"
-          onClick={nextPage}
-        >
-          &gt;
-        </div> */}
-        {/* <div className="relative">
-          <div className="rounded-md grid grid-cols-2 place-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> */}
-        <div className="mx-auto w-full">
+        <div className=" w-full px-3 flex justify-center flex-col  blog-carousel">
           <Slider {...settings}>
             {authors_info.map((item, id) => {
               return (
                 <div
                   key={id}
-                  className="flex justify-center p-4" // Center items in the slider
-                  onMouseEnter={() => authorCardMouseEnter(id)}
-                  onMouseLeave={() => authorCardMouseLeave()}
+                  className="flex justify-center p-4 sm:p-6" // Center items in the slider
                 >
-                  <div className="shadow-xl hover:bg-gradient-to-b  max-w-xs lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out">
+                  <div
+                    onMouseEnter={() => authorCardMouseEnter(id)}
+                    onMouseLeave={() => authorCardMouseLeave()}
+                    className="shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out"
+                  >
                     <img src={item.imgSrc} className="rounded-md w-full" />
                     <h2
                       className={`${
                         authorDetailsVisible.display &&
                         authorDetailsVisible.id == id
-                          ? "text-sm absolute bottom-5 text-black bg-[#ffffff80] px-2 py-1 rounded font-bold sm:text-base md:text-lg lg:text-md mt-3 mb-3 ml-5"
-                          : "hidden"
+                          ? "text-sm w-full absolute bottom-5 bg-white text-black  px-2 py-1 rounded font-bold sm:text-base md:text-lg lg:text-md mt-3 mb-3"
+                          : "hidden top-20"
                       }`}
                     >
                       {item.name}
@@ -334,9 +371,7 @@ const Blog = () => {
           </Slider>
         </div>
 
-        {/* </div>
-        </div> */}
-      </div>
+     </div> */}
     </div>
   );
 };
