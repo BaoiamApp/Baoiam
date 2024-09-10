@@ -9,6 +9,7 @@ export default {
       //   "max-md": { max: "768px" },
       // },
     },
+
   },
   plugins: [],
 };
