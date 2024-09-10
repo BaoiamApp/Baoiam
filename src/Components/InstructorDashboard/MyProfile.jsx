@@ -41,7 +41,7 @@ const MyProfile = () => {
       </div>
       </div>
       {/* Calendar and Tasks Card */}
-      <div className="bg-indigo-600 shadow-lg rounded-lg py-6 px-4 md:px-6 max-w-sm mx-auto lg:w-1/3">
+      <div className="bg-indigo-600 shadow-lg rounded-lg py-6 px-4 md:px-6 max-w-sm w-xs mx-auto">
           {/* Here you can integrate a calendar library */}
           <Calendar/>
         <div className="bg-indigo-100 p-4 rounded-lg">

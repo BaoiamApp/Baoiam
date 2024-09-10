@@ -17,7 +17,7 @@ const Calendar = () => {
       </div>
       
       {/* Dates */}
-      <div className="grid grid-cols-7 gap-2 mt-2 sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-7">
+      <div className="grid grid-cols-7 gap-2 mt-2">
         {Array.from({ length: 31 }, (_, i) => i + 1).map(date => (
           <div
             key={date}

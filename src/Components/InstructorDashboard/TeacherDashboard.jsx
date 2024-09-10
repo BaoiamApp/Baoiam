@@ -7,13 +7,19 @@ import Assignments from './Assignment';
 import CreateCourse from './CreateCourse';
 import ProfileManage from './ProfileManage';
 import Logout from './Logout';
+import { IoCloseSharp } from 'react-icons/io5';
 
 
 
 const TeacherDashboard = () => {
   const [activeTab, setActiveTab] = useState('My Profile');
   const [isOpen, setIsOpen] = useState(false);
-
+  const openSidebar=()=>{
+    setIsOpen(true)
+}
+  const closeSidebar=()=>{
+    setIsOpen(false)
+}
   const tabs = [
     { name: 'My Profile', icon: <FaUser /> },
     { name: 'My Courses', icon: <FaBook /> },
@@ -27,10 +33,12 @@ const TeacherDashboard = () => {
   return (
     <div className="min-h-screen flex">
       {/* Sidebar */}
-      <div className={`lg:w-1/4 w-full lg:block ${isOpen ? 'block' : 'hidden'} text-white bg-indigo-700 p-6 fixed lg:static h-full`}>
-        <div className="flex items-center justify-between lg:justify-start mb-6">
+      <div className={`lg:w-1/3 w-sm ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:h-auto lg:translate-x-0 duration-200 text-white z-50 bg-indigo-700 p-6 fixed lg:static h-full`}>
+        <div className="flex items-center justify-end">
+          <IoCloseSharp className="lg:hidden cursor-pointer text-2xl"  onClick={closeSidebar}/>
+        </div>
+        <div className="flex items-center justify-center mb-6">
           <h1 className="text-2xl font-bold">My Account</h1>
-          <FaBars className="lg:hidden cursor-pointer text-2xl" onClick={() => setIsOpen(!isOpen)} />
         </div>
         <ul>
           {tabs.map((tab, idx) => (
@@ -40,10 +48,10 @@ const TeacherDashboard = () => {
           ))}
         </ul>
       </div>
-
+     {isOpen && <div className='fixed w-full h-full bg-black opacity-30 z-40' onClick={closeSidebar}></div>}
       {/* Main Content */}
-      <div className="lg:ml-1/4 ml-0 w-full py-6 md:p-x-6">
-        <button className="lg:hidden mb-6 text-black" onClick={() => setIsOpen(!isOpen)}>
+      <div className="lg:ml-1/4 ml-0 w-full py-6 px-2 md:px-6">
+        <button className="lg:hidden mb-6 text-black" onClick={openSidebar}>
           <FaBars className="text-2xl" />
         </button>
         <div>
