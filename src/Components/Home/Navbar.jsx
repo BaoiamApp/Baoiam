@@ -88,7 +88,7 @@ const Navbar = ({ theme }) => {
         {/* Logo */}
 
         <Link
-          to={"/profile"}
+          to={"/instructor-dashboard"}
           className={`${isDark ? "w-36 h-20" : "w-40 h-20"}`}
         >
           <img
