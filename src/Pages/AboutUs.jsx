@@ -129,17 +129,17 @@ const AboutUs = () => {
     // <div className="dark:bg-black dark:text-white">
     <div>
       {/* Section - 1 */}
-      <div className="mx-auto h-fit sm:h-screen w-full text-white">
-        <div className="relative mx-auto h-screen w-full text-white">
-          <div className="h-[55%] md:h-[70%] w-full image-container">
+      <div className="mx-auto h-fit md:h-screen w-full text-white">
+        <div className="relative mx-auto h-fit md:h-screen w-full text-white">
+          <div className="h-[22rem] sm:h-[23rem] md:h-[70%] w-full image-container">
             <img
               className="w-full h-full object-cover"
               src={aboutus4}
               alt="image"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-black content-overlay flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[55%] md:h-[70%] pt-20 justify-start opacity-60 text-white">
-            {/* bg-#2a272a/30 */}
+          <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
+            {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
               <p className="text-amber-600 font-medium">
                 We are an EdTech Organization ~
@@ -157,7 +157,7 @@ const AboutUs = () => {
               <FaArrowRight className="font-normal" size={18} />
             </button>
           </div>
-          <div className="absolute mx-auto top-[99%] mb-40 sm:top-[85%] md:inset-x-0 md:top-auto gap-4 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
+          <div className="relative -bottom-[28rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-32 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center justify-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
             {/* <div className="absolute mx-auto sm:inset-x-0 transform -translate-y-1/2 w-full text-black font-bold text-center flex items-center justify-center gap-8"> */}
             <div className="sm:col-span-3 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
