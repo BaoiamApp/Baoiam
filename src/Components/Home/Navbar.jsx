@@ -79,7 +79,7 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div
-        className={`flex z-50 items-center justify-between px-4 py-2 z-[100] ${
+        className={`flex z-50 items-center justify-between px-4 py-2 ${
           isTransparent
             ? "bg-white dark:bg-[#080529]"
             : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"

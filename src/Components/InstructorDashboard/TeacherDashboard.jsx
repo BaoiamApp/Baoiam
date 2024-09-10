@@ -33,10 +33,8 @@ const TeacherDashboard = () => {
   return (
     <div className="min-h-screen flex">
       {/* Sidebar */}
-      <div className={`lg:w-1/3 w-sm ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:h-auto lg:translate-x-0 duration-200 text-white z-50 bg-indigo-700 p-6 fixed lg:static h-full`}>
-        <div className="flex items-center justify-end">
-          <IoCloseSharp className="lg:hidden cursor-pointer text-2xl"  onClick={closeSidebar}/>
-        </div>
+      <div className={`lg:w-1/3 w-sm ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:h-auto lg:translate-x-0 duration-200 text-white z-40 bg-indigo-700 p-6 fixed lg:static h-full`}>
+        <IoCloseSharp className="lg:hidden absolute top-3 right-3 cursor-pointer text-2xl"  onClick={closeSidebar}/>
         <div className="flex items-center justify-center mb-6">
           <h1 className="text-2xl font-bold">My Account</h1>
         </div>
@@ -48,7 +46,7 @@ const TeacherDashboard = () => {
           ))}
         </ul>
       </div>
-     {isOpen && <div className='fixed w-full h-full bg-black opacity-30 z-40' onClick={closeSidebar}></div>}
+     {isOpen && <div className='fixed w-full h-full bg-black opacity-30 z-30' onClick={closeSidebar}></div>}
       {/* Main Content */}
       <div className="lg:ml-1/4 ml-0 w-full py-6 px-2 md:px-6">
         <button className="lg:hidden mb-6 text-black" onClick={openSidebar}>

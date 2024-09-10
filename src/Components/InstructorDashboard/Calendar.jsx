@@ -63,16 +63,16 @@ const Calendar = () => {
 
   return (
     <div className="bg-white p-4 my-4 rounded-lg shadow max-w-xl mx-auto">
-      <h2 className="text-xl text-center font-semibold mb-4">
+      <h2 className="text-2xl text-center font-semibold my-4">
         {currentDate.toLocaleDateString('default', { month: 'long', year: 'numeric' })}
       </h2>
 
       {/* Month Navigation */}
       <div className="flex justify-between mb-4">
-        <button onClick={() => handleMonthChange(-1)} className="bg-indigo-600 text-white px-4 py-2 rounded">
+        <button onClick={() => handleMonthChange(-1)} className="bg-indigo-600 w-24 text-white px-4 py-2 rounded">
           Previous
         </button>
-        <button onClick={() => handleMonthChange(1)} className="bg-indigo-600 text-white px-4 py-2 rounded">
+        <button onClick={() => handleMonthChange(1)} className="bg-indigo-600 w-24 text-white px-4 py-2 rounded">
           Next
         </button>
       </div>
