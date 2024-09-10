@@ -100,7 +100,7 @@ const Calendar = () => {
             <div
               key={date}
               onClick={() => setSelectedDate(date)}
-              className={`text-center p-2 aspect-square cursor-pointer border rounded-lg
+              className={`text-center text-sm md:text-base w-8 lg:w-10 flex items-center justify-center aspect-square cursor-pointer border rounded-lg
                 ${date === currentDay && month === new Date().getMonth() ? 'bg-indigo-900 text-white' : ''}
                 ${tasks[taskKey] ? 'border-2 border-green-600' : ''}
               `}
