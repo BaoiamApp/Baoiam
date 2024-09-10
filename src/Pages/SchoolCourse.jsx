@@ -18,6 +18,7 @@ import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
+import Review from "../Components/Review/Review"
 
 const SchoolCourse = () => {
   const { id } = useParams();
@@ -316,6 +317,8 @@ const SchoolCourse = () => {
           </div>
         </div>
       </div>
+
+      <Review />
 
       {/* Emi & Placement */}
       <div className="w-full h-auto flex justify-center items-center relative">
