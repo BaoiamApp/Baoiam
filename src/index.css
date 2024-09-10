@@ -47,17 +47,3 @@ body {
   background-color: #1e40af;
   transform: scale(1.1);
 }
-
-@keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  .animate-scroll {
-    animation: scroll 20s linear infinite;
-  }
-  
