@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import code from "../assets/code.jpg";
 import ai from "../assets/ai.webp";
@@ -11,7 +11,13 @@ import critical from "../assets/critical.jpg";
 import content_data from "../Data/Content.js";
 import { useParams } from "react-router-dom";
 import data2 from "../Data/Content2.js";
+import { toast } from "react-toastify";
+import axios from "axios";
 const Blog_detail = () => {
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const [email, setEmail] = useState("");
+
   const { id } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,6 +25,26 @@ const Blog_detail = () => {
     console.log(content_data[id].heading1);
     return () => {};
   }, []);
+
+  const handlePostSubmit = () => {
+    console.log("hi");
+    if (email === "" || comment === "" || !name === "") {
+      toast.error("Please fill in all the fields");
+    }
+
+    axios
+      .post("", {
+        comment: comment,
+        name: name,
+        email: email,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   // const data = [
   //   {
@@ -212,17 +238,17 @@ const Blog_detail = () => {
 
   return (
     <>
-      <div className="h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-purple-100">
-        <p className="font-bold text-sm dark:text-black">
+      <div className='h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-purple-100'>
+        <p className='font-bold text-sm dark:text-black'>
           {" "}
           HOME / ARTICLES / SINGLE ARTICLE{" "}
         </p>
-        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black">
+        <h1 className='text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black'>
           All That Is Wrong With Codding In The Field Of Apprentices
         </h1>
       </div>
-      <div className="w-[80%] lg:flex lg:flex-row  flex-col gap-[2rem] mx-[10%] mt-[10%]">
-        <div className="w-[100%] lg:w-[70%] lg:flex lg:flex-col  flex-col">
+      <div className='w-[80%] lg:flex lg:flex-row  flex-col gap-[2rem] mx-[10%] mt-[10%]'>
+        <div className='w-[100%] lg:w-[70%] lg:flex lg:flex-col  flex-col'>
           {/* {data.map((d) => {
             return (
               <>
@@ -242,60 +268,60 @@ const Blog_detail = () => {
           </div>
         </div>
 
-        <div className="w-[100%] lg:w-[40%] mt-5">
-          <div className="w-[100%]  rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] dark:text-black flex flex-col gap-2 ">
-            <h2 className="text-[30px] xs:text-[23px] py-5  font-bold text-center dark:text-white">
+        <div className='w-[100%] lg:w-[40%] mt-5'>
+          <div className='w-[100%]  rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] dark:text-black flex flex-col gap-2 '>
+            <h2 className='text-[30px] xs:text-[23px] py-5  font-bold text-center dark:text-white'>
               Categories
             </h2>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
+            <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Product Development
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
+            <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Entrepreneurship
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
+            <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Java Full-Stack Developer Roadmap
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
+            <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Android Development
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
+            <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Marketing
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
+            <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Artificial Intelligence
             </div>
           </div>
 
-          <div className="w-[100%] mt-20 dark:text-white xs:px-1 rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] flex flex-col gap-2 ">
-            <h2 className="text-[2rem]  font-bold text-center xs:text-[23px] mt-5">
+          <div className='w-[100%] mt-20 dark:text-white xs:px-1 rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] flex flex-col gap-2 '>
+            <h2 className='text-[2rem]  font-bold text-center xs:text-[23px] mt-5'>
               Related Blogs
             </h2>
 
-            <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
+            <div className='flex items-center justify-center xs:dark:shadow-none hover:shadow-lg duration-200 hover:scale-105 hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer'>
               <img
-                className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]"
+                className='w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]'
                 src={code}
               />
-              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+              <p className='w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]'>
                 The Best Graphic Design Careers — for Beginners and
                 Professionals{" "}
               </p>
             </div>
 
-            <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
-              <img className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]" src={ai} />
-              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+            <div className='flex items-center justify-center xs:dark:shadow-none hover:shadow-lg duration-200 hover:scale-105 hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer'>
+              <img className='w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]' src={ai} />
+              <p className='w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]'>
                 The Top Technical Skills All Employees Need in 2022
               </p>
             </div>
 
-            <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
+            <div className='flex items-center justify-center xs:dark:shadow-none hover:shadow-lg duration-200 hover:scale-105 hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer'>
               <img
-                className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]"
+                className='w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]'
                 src={marketing}
               />
-              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+              <p className='w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]'>
                 Types Of Quantitative Research for Students and Researchers
               </p>
             </div>
@@ -303,75 +329,85 @@ const Blog_detail = () => {
         </div>
       </div>
 
-      <div className="mb-5 mx-[10%] w-[80%] lg:w-[50%] mt-[2rem]">
-        <h1 className="text-[1.3rem] font-bold">Leave a Reply </h1>
-        <p className="text-[1.02rem] my-[1.2rem]">
+      <div className='mb-5 mx-[10%] w-[80%] lg:w-[50%] mt-[2rem]'>
+        <h1 className='text-[1.3rem] font-bold'>Leave a Reply </h1>
+        <p className='text-[1.02rem] my-[1.2rem]'>
           Your email address will not be published. Required fields are marked{" "}
         </p>
-        <h2 className="text-[1.13rem] mb-1">Comment</h2>
+        <h2 className='text-[1.13rem] mb-1'>Comment</h2>
         <textarea
-          rows="8"
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
-          cols="80"
+          rows='8'
+          className='bg-gray-100 w-[100%] p-5 dark:text-black'
+          cols='80'
+          type='text'
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
         ></textarea>
-        <h2 className="text-[1.13rem] mt-5 mb-1">Name</h2>
+        <h2 className='text-[1.13rem] mt-5 mb-1'>Name</h2>
         <input
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
-          type="text"
+          className='bg-gray-100 w-[100%] p-5 dark:text-black'
+          type='text'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
-        <h2 className="text-[1.13rem] mt-5 mb-1">Email</h2>
+        <h2 className='text-[1.13rem] mt-5 mb-1'>Email</h2>
         <input
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
-          type="text"
+          className='bg-gray-100 w-[100%] p-5 dark:text-black'
+          type='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <div>
-          <button className=" bg-black text-white p-3 rounded-lg mt-9 dark:bg-white dark:text-black">
+          <button
+            onClick={handlePostSubmit}
+            className=' bg-black text-white p-3 rounded-lg mt-9 dark:bg-white dark:text-black'
+          >
             Post Comment
           </button>
         </div>
       </div>
 
-      <h2 className="text-[2rem] ml-[10%] font-bold mt-[4rem] xs:top-10 relative top-6 xs:text-[1.325rem]">
+      <h2 className='text-[2rem] ml-[10%] font-bold mt-[4rem] xs:top-10 relative top-6 xs:text-[1.325rem]'>
         Other Blogs
       </h2>
-      <div className="mx-[10%] mb-5 md:flex-row w-[80%] md:gap-[2rem] flex-col mt-[2rem] flex justify-evenly">
-        <div className="mt-5 w-[100%] p-[2rem] shadow-gray-400 shadow-sm">
-          <div className="w-[100%]">
-            <img className="w-[100%] " src={carrer1} />
+      <div className='mx-[10%]  mb-5 md:flex-row w-[80%] md:gap-[2rem] flex-col mt-[2rem] flex justify-evenly'>
+        <div className='mt-5 w-[100%] p-[2rem] hover:shadow-lg duration-200 hover:scale-105 shadow-gray-400 shadow-sm'>
+          <div className='w-[100%]'>
+            <img className='w-[100%] ' src={carrer1} />
           </div>
           <div>
-            <h2 className="text-[1.3rem] my-3 md:text-[1.2rem] font-bold xs:text-[0.98rem]">
+            <h2 className='text-[1.3rem] my-3 md:text-[1.2rem] font-bold xs:text-[0.98rem]'>
               The Best Graphic Design Careers — for Beginners and Professionals
             </h2>
-            <p className="text-[1.2rem] md:text-[1.1rem] font-semibold xs:text-[0.98rem]">
+            <p className='text-[1.2rem] md:text-[1.1rem] font-semibold xs:text-[0.98rem]'>
               Read More ➭
             </p>
           </div>
         </div>
 
-        <div className="mt-5 w-[100%] p-[2rem] shadow-gray-400 shadow-sm">
-          <div className="w-[100%]">
-            <img className="w-[100%] " src={datasc} />
+        <div className='mt-5 w-[100%] p-[2rem] hover:shadow-lg duration-200 hover:scale-105 shadow-gray-400 shadow-sm'>
+          <div className='w-[100%]'>
+            <img className='w-[100%] ' src={datasc} />
           </div>
           <div>
-            <h2 className="text-[1.3rem] my-3 md:text-[1.2rem] font-bold xs:text-[0.98rem]">
+            <h2 className='text-[1.3rem] my-3 md:text-[1.2rem] font-bold xs:text-[0.98rem]'>
               The Top Technical Skills All Employees Need in 2022
             </h2>
-            <p className="text-[1.2rem] md:text-[1.1rem] font-semibold xs:text-[0.98rem]">
+            <p className='text-[1.2rem] md:text-[1.1rem] font-semibold xs:text-[0.98rem]'>
               Read More ➭
             </p>
           </div>
         </div>
 
-        <div className="mt-5 w-[100%] p-[2rem] shadow-gray-400 shadow-sm">
-          <div className="w-[100%]">
-            <img className="w-[100%] " src={business} />
+        <div className='mt-5 w-[100%] p-[2rem] hover:shadow-lg duration-200 hover:scale-105 shadow-gray-400 shadow-sm'>
+          <div className='w-[100%]'>
+            <img className='w-[100%] ' src={business} />
           </div>
           <div>
-            <h2 className="text-[1.3rem] my-3 md:text-[1.2rem] font-bold xs:text-[0.98rem]">
+            <h2 className='text-[1.3rem] my-3 md:text-[1.2rem] font-bold xs:text-[0.98rem]'>
               Types Of Quantitative Research for Students and Researchers
             </h2>
-            <p className="text-[1.2rem] md:text-[1.1rem] font-semibold xs:text-[0.98rem]">
+            <p className='text-[1.2rem] md:text-[1.1rem] font-semibold xs:text-[0.98rem]'>
               Read More ➭
             </p>
           </div>

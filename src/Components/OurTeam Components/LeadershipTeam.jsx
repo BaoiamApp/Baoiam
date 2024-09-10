@@ -18,7 +18,7 @@ export const LeadershipTeam = () => {
         {" "}
         Leadership Team
       </div>
-      <div className=' flex flex-col   md:items-center  justify-between md:flex-row  gap-2'>
+      <div className=' flex flex-col p-2 md:items-center  justify-between md:flex-row  gap-2'>
         <div className='w-[80%] m-auto md:w-[25%] '>
           <p className='text-sm text-center dark:text-slate-300  md:text-lg  text-[#544D4F]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

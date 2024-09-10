@@ -16,6 +16,12 @@ export const Advertiseteam = () => {
         Advertistment Team
       </div>
       <div className=' flex flex-col p-2  md:items-center  justify-around md:flex-row  gap-2'>
+        <div className='w-[80%] m-auto md:w-[30%] '>
+          <p className='text-sm text-center dark:text-slate-300 md:text-lg text-[#544D4F]'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
         <div className='md:w-[65%]'>
           <div>
             <Swiper
@@ -66,12 +72,6 @@ export const Advertiseteam = () => {
               })}
             </Swiper>
           </div>
-        </div>
-        <div className='w-[80%] m-auto md:w-[30%] '>
-          <p className='text-sm text-center dark:text-slate-300 md:text-lg text-[#544D4F]'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
         </div>
       </div>
     </>
