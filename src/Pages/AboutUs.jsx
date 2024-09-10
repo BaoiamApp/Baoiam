@@ -152,7 +152,7 @@ const AboutUs = () => {
               We place you at the centre of information networks to advance your
               strategic interests.
             </p>
-            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
               <FaArrowRight className="font-normal" size={18} />
             </button>
@@ -238,7 +238,7 @@ const AboutUs = () => {
             crafted to empower your growth and help you achieve your goals with
             confidence.
           </p>
-          <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-6 lg:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+          <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-6 lg:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>
@@ -300,7 +300,7 @@ const AboutUs = () => {
             We are a team with a variety of skills, each member contributes
             their expertise, and works professionally among members and clients.
           </p>
-          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>

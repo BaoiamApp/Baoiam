@@ -122,7 +122,7 @@ const PAP = () => {
           </span>{" "}
           of today
         </h2>
-        <p className="text-gray-500 text-base lg:text-lg mb-12">
+        <p className="text-gray-500 font-semibold text-base lg:text-lg mb-12">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
@@ -193,7 +193,7 @@ const PAP = () => {
           </span>{" "}
           Startup Leader
         </h2>
-        <p className="text-gray-500 my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg">
+        <p className="text-gray-500 font-semibold my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg">
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
@@ -335,7 +335,7 @@ const PAP = () => {
           </span>{" "}
           HUNGER FOR SUCCESS
         </h2>
-        <p className="text-gray-500 text-base mx-12 mt-2 mb-4 p-4 lg:text-lg font-medium">
+        <p className="text-gray-500 text-base mx-12 mt-2 mb-4 p-4 lg:text-lg font-semibold">
           <span className="text-indigo-800">
             The Placement Bootcamp Program
           </span>{" "}
@@ -356,7 +356,7 @@ const PAP = () => {
               Unleash your potential and shape the future of business with us
             </p>
 
-            <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-2xl group hover:bg-gray-50">
+            <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span class="relative">Click here</span>
             </button>
@@ -380,7 +380,7 @@ const PAP = () => {
             BOOTCAMP PROGRAM
           </span>
         </h2>
-        <p className="mt-4 mx-12 mb-8 px-6 pr-8 text-base text-gray-500 pb-6 lg:text-lg">
+        <p className="mt-4 mx-12 mb-8 px-6 pr-8 text-base font-semibold text-gray-500 pb-6 lg:text-lg">
           A transformational journey designed to create budding founders of
           future unicorns
         </p>
@@ -391,7 +391,7 @@ const PAP = () => {
             <p className="text-indigo-700 font-bold mb-4 px-4">
               Foundation and Knowledge Acquisition:
             </p>
-            <p className="mb-4 px-4 text-indigo-700">
+            <p className="mb-4 px-4 text-gray-500">
               Lay a strong foundation and acquire the necessary knowledge and
               skills. Study various aspects of entrepreneurship, including
               market analysis, business planning, financial management,
@@ -407,7 +407,7 @@ const PAP = () => {
             <p className="text-indigo-700 font-bold mb-4 px-4">
               Skill Development and Practical Application:
             </p>
-            <p className="mb-4 px-4 text-indigo-700">
+            <p className="mb-4 px-4 text-gray-500">
               Focus on skill development and practical application. Hands-on
               learning experiences, such as workshops, simulations, and
               real-world projects. Activities that enhance their critical
@@ -423,7 +423,7 @@ const PAP = () => {
             <p className="text-indigo-700 font-bold mb-4 px-4">
               Mentorship, Networking, and Launch:
             </p>
-            <p className="mb-4 px-4 text-indigo-700">
+            <p className="mb-4 px-4 text-gray-500">
               Get an opportunity to connect with experienced entrepreneurs,
               industry experts, and mentors who provide guidance and support.
               Receive feedback on their business ideas, refine their strategies,
@@ -439,7 +439,7 @@ const PAP = () => {
             <p className="text-indigo-700 font-bold mb-4 px-4">
               Nurturing a leader:
             </p>
-            <p className="mb-4 px-4 text-indigo-700">
+            <p className="mb-4 px-4 text-gray-500">
               Leadership plays a very crucial and multifaceted role in
               entrepreneurial business. Therefore, it is important to nurture a
               leader who can set a clear vision for the business, develop a
@@ -457,7 +457,7 @@ const PAP = () => {
             <p className="text-indigo-700 font-bold mb-4 px-4">
               Exposure to new business trends and technology:
             </p>
-            <p className="mb-4 px-4 text-indigo-700">
+            <p className="mb-4 px-4 text-gray-500">
               Stay informed about new businesses and technology is essential for
               identifying the unique factors that set a business apart.
               Utilizing new and advanced technology can improve efficiency,
@@ -473,7 +473,7 @@ const PAP = () => {
             <p className="text-indigo-700 font-bold mb-4 px-4">
               Business Idea Presentation:
             </p>
-            <p className="mb-4 px-4 text-indigo-700">
+            <p className="mb-4 px-4 text-gray-500">
               The final business idea will be presented to a panel of experts
               and potential investors. The most promising ideas will have the
               opportunity to secure investment from the panel. Other business
@@ -532,14 +532,14 @@ const PAP = () => {
                     className="block w-full h-full object-cover rounded-2xl shadow-lg"
                   />
                 </div>
-                <div className="p-6 bg-white rounded-3xl border-slate-400 h-auto shadow-md max-w-xl text-right sm:max-w-xl md:h-[26rem] md:max-w-2xl lg:max-w-3xl">
+                <div className="p-6 rounded-3xl border-slate-400 h-auto shadow-md max-w-xl text-right sm:max-w-xl md:h-[26rem] md:max-w-2xl lg:max-w-3xl">
                   <span className="text-gray-500 text-sm block mb-2">
                     {slide.date}
                   </span>
                   <div className="text-xl sm:text-2xl font-bold text-indigo-700 mb-4">
                     {slide.title}
                   </div>
-                  <div className="w-1/2 ml-auto text-gray-700 mb-4 text-left">
+                  <div className="w-1/2 ml-auto text-gray-500 mb-4 text-left">
                     {slide.text}
                   </div>
                 </div>
