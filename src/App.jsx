@@ -21,6 +21,7 @@ import Blogs from './Pages/Blogs'
 import Career from './Components/Career/Career'
 import Blog_detail from './Pages/Blog_detail'
 import HelpCenter from "./Pages/HelpCenter";
+import HireFromUs from "./Pages/HireFromUs";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -63,6 +64,7 @@ const App = () => {
         <Route path="/career" element={<Career />} />
 
         <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/hire-from-us" element={<HireFromUs />} />
 
       </Routes>
       <Footer />
