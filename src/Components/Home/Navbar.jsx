@@ -3,7 +3,7 @@ import img1 from "../../assets/img1.png";
 import { FaBars, FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 import CoursesList from "../CoursesList";
 import { Link, NavLink } from "react-router-dom";
-import { CollegeCourse, OtherCourse, School } from "../../Data";
+import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import { RxCross2 } from "react-icons/rx";
 import { BsMoonStars, BsSun } from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -184,7 +184,7 @@ const Navbar = ({ theme }) => {
                   </div>
                 )}
                 {!courses[1] ? (
-                  CollegeCourse.map((c, i) => {
+                  CollegeCourseData.map((c, i) => {
                     return (
                       <div key={i} className="p-4">
                         <Link
@@ -235,7 +235,7 @@ const Navbar = ({ theme }) => {
                   </div>
                 )}
                 {!courses[2] ? (
-                  OtherCourse.map((c, i) => {
+                  OtherCourseData.map((c, i) => {
                     return (
                       <div key={i} className="p-4">
                         <Link
@@ -250,7 +250,7 @@ const Navbar = ({ theme }) => {
                             return (
                               <Link
                                 key={index}
-                                to={`/`}
+                                to={`/course/other/${sub.id}`}
                                 className="px-2 py-1 rounded-md text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                               >
                                 {sub.course}
@@ -441,42 +441,78 @@ const Navbar = ({ theme }) => {
                         >
                           School
                         </li>
-                        {schoolCate && (
+                        {!courses[0] ? (
+                          schoolCate && (
+                            <div className="absolute top-56 md:top-24 w-72 right-4 md:right-80 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
+                              {School.map((c, i) => {
+                                return (
+                                  <div key={i} className="p-4">
+                                    <Link
+                                      onClick={() => {
+                                        setShowmenu(!showmenu);
+                                        setSubCateDrop(!subCateDrop);
+                                      }}
+                                      to={`${c.link}`}
+                                      className="font-bold mb-2 px-2 text-base"
+                                    >
+                                      {c.Cate}
+                                    </Link>
+                                    <ul className="flex flex-col">
+                                      {c.subCate.map((sub, index) => {
+                                        return (
+                                          <Link
+                                            onClick={() => {
+                                              setShowmenu(!showmenu);
+                                              setSubCateDrop(!subCateDrop);
+                                              setSchoolCate(!schoolCate);
+                                            }}
+                                            key={index}
+                                            to={`/course/school/${sub.id}`}
+                                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                          >
+                                            {sub.course}
+                                          </Link>
+                                        );
+                                      })}
+                                    </ul>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )
+                        ) : (
                           <div className="absolute top-56 md:top-24 w-72 right-4 md:right-80 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
-                            {School.map((c, i) => {
-                              return (
-                                <div key={i} className="p-4">
-                                  <Link
-                                    onClick={() => {
-                                      setShowmenu(!showmenu);
-                                      setSubCateDrop(!subCateDrop);
-                                    }}
-                                    to={`${c.link}`}
-                                    className="font-bold mb-2 px-2 text-base"
-                                  >
-                                    {c.Cate}
-                                  </Link>
-                                  <ul className="flex flex-col">
-                                    {c.subCate.map((sub, index) => {
-                                      return (
-                                        <Link
-                                          onClick={() => {
-                                            setShowmenu(!showmenu);
-                                            setSubCateDrop(!subCateDrop);
-                                            setSchoolCate(!schoolCate);
-                                          }}
-                                          key={index}
-                                          to={`/course/${sub.id}`}
-                                          className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                                        >
-                                          {sub.course}
-                                        </Link>
-                                      );
-                                    })}
-                                  </ul>
-                                </div>
-                              );
-                            })}
+                            <div key={i} className="p-4">
+                              <Link
+                                onClick={() => {
+                                  setShowmenu(!showmenu);
+                                  setSubCateDrop(!subCateDrop);
+                                }}
+                                // to={`${c?.link}`}
+                                to={`/course/${courses[0].name}`}
+                                className="font-bold mb-2 px-2 text-base"
+                              >
+                                {courses[0].name}
+                              </Link>
+                              <ul className="flex flex-col">
+                                {courses[0].subcategories.map((sub, index) => {
+                                  return (
+                                    <Link
+                                      onClick={() => {
+                                        setShowmenu(!showmenu);
+                                        setSubCateDrop(!subCateDrop);
+                                        setSchoolCate(!schoolCate);
+                                      }}
+                                      key={index}
+                                      to={`/course/school/${sub.id}`}
+                                      className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  );
+                                })}
+                              </ul>
+                            </div>
                           </div>
                         )}
                         <li
@@ -487,40 +523,44 @@ const Navbar = ({ theme }) => {
                         </li>
                         {collegeCate && (
                           <div className="absolute top-64 right-4 w-72 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto dark:text-gray-700">
-                            {CollegeCourse.map((c, i) => {
-                              return (
-                                <div key={i} className="p-4">
-                                  <Link
-                                    onClick={() => {
-                                      setShowmenu(!showmenu);
-                                      setSubCateDrop(!subCateDrop);
-                                    }}
-                                    to={`${c.link}`}
-                                    className="font-bold mb-2 px-2 text-base"
-                                  >
-                                    {c.Cate}
-                                  </Link>
-                                  <ul className="flex flex-col">
-                                    {c.subCate.map((sub, index) => {
-                                      return (
-                                        <Link
-                                          onClick={() => {
-                                            setShowmenu(!showmenu);
-                                            setSubCateDrop(!subCateDrop);
-                                            setCollegeCate(!collegeCate);
-                                          }}
-                                          key={index}
-                                          to={`/course/${sub.id}`}
-                                          className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                                        >
-                                          {sub.courseName}
-                                        </Link>
-                                      );
-                                    })}
-                                  </ul>
-                                </div>
-                              );
-                            })}
+                            {!courses[1] ? (
+                              CollegeCourseData.map((c, i) => {
+                                return (
+                                  <div key={i} className="p-4">
+                                    <Link
+                                      onClick={() => {
+                                        setShowmenu(!showmenu);
+                                        setSubCateDrop(!subCateDrop);
+                                      }}
+                                      to={`${c.link}`}
+                                      className="font-bold mb-2 px-2 text-base"
+                                    >
+                                      {c.Cate}
+                                    </Link>
+                                    <ul className="flex flex-col">
+                                      {c.subCate.map((sub, index) => {
+                                        return (
+                                          <Link
+                                            onClick={() => {
+                                              setShowmenu(!showmenu);
+                                              setSubCateDrop(!subCateDrop);
+                                              setCollegeCate(!collegeCate);
+                                            }}
+                                            key={index}
+                                            to={`/course/college/${sub.id}`}
+                                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                          >
+                                            {sub.courseName}
+                                          </Link>
+                                        );
+                                      })}
+                                    </ul>
+                                  </div>
+                                );
+                              })
+                            ) : (
+                              <div></div>
+                            )}
                           </div>
                         )}
                       </ul>

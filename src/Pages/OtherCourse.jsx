@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { School } from "../Data";
+import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
   FaArrowRight,
@@ -21,20 +21,22 @@ import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
 
-const SchoolCourse = () => {
+const OtherCourse = () => {
   const planRef = useRef();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const { id } = useParams();
-  const course = School.find((cate) =>
-    cate.subCate.find((subCate) => subCate.id === parseInt(id))
+  const course = OtherCourseData.find((cate) =>
+    cate.subCate.find((subCate) => parseInt(subCate.id) === parseInt(id))
   );
+  console.log("other course:", course);
   const subCourse = course.subCate.find(
     (subCate) => subCate.id === parseInt(id)
   );
   //   const [subCourse, setsubCourse] = useState([]);
+  console.log("sub other course:", subCourse);
   const [courseDetails, setCourseDetails] = useState({});
   const getCourseDetails = async () => {
     try {
@@ -99,14 +101,15 @@ const SchoolCourse = () => {
               : courseDetails.title}
           </h3>
           {Object.keys(courseDetails).length == 0 ? (
-            subCourse?.desc?.map((d, i) => {
-              return (
-                <p className="text-[0.8rem] lg:text-base" key={i}>
-                  {d}
-                </p>
-              );
-            })
+            subCourse?.desc
           ) : (
+            // subCourse?.desc?.map((d, i) => {
+            //   return (
+            //     <p className="text-[0.8rem] lg:text-base" key={i}>
+            //       {d}
+            //     </p>
+            //   );
+            // })
             <p className="text-[0.8rem] lg:text-base">
               {courseDetails.description}
             </p>
@@ -160,7 +163,8 @@ const SchoolCourse = () => {
                       key={i}
                       className="font-medium text-[0.8rem] lg:text-base"
                     >
-                      {v}
+                      <span className="font-bold">{v.split(":")[0]}:</span>
+                      {v.split(":")[1]}
                     </li>
                   );
                 })
@@ -191,7 +195,13 @@ const SchoolCourse = () => {
           {subCourse?.curriculum?.map((c, i) => {
             return (
               <li key={i} className="py-1 text-[0.9rem] lg:text-base">
-                {c.substring(2, c.length)}
+                {/* {c.substring(2, c.length)} */}
+                <span className="font-semibold text-[#F97316]"> {c.weekTitle}</span>
+                <ul className="list-disc ml-10">
+                  {c.topics.map((topic, i) => (
+                    <li>{topic}</li>
+                  ))}
+                </ul>
               </li>
             );
           })}
@@ -393,4 +403,4 @@ const SchoolCourse = () => {
   );
 };
 
-export default SchoolCourse;
+export default OtherCourse;
