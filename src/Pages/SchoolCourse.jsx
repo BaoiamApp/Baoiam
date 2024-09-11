@@ -333,15 +333,15 @@ const SchoolCourse = () => {
         </div>
       </div>
 
-      <Review />
+      {/* <Review /> */}
 
-      <div className="mt-10 mb-10">
+      {/* <div className="mt-10 mb-10">
         {" "}
         <TestimonialCard />
-      </div>
-      <div className="mt-10 mb-10">
+      </div> */}
+      {/* <div className="mt-10 mb-10">
         <Featured />
-      </div>
+      </div> */}
 
       {/* Emi & Placement */}
       <div className="w-full h-auto flex justify-center items-center relative">
