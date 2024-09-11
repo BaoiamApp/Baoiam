@@ -1,13 +1,26 @@
 import React from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { FaArrowRight, FaArrowRightArrowLeft, FaGraduationCap } from "react-icons/fa6";
-import { MdKeyboardArrowRight, MdOutlineAttachMoney, MdOutlineMoneyOff } from "react-icons/md";
+import {
+  FaArrowRight,
+  FaArrowRightArrowLeft,
+  FaGraduationCap,
+} from "react-icons/fa6";
+import {
+  MdKeyboardArrowRight,
+  MdOutlineAttachMoney,
+  MdOutlineMoneyOff,
+} from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function CourseCard({ course }) {
+  const navigate = useNavigate();
   return (
     <div className="bg-white relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] rounded-lg overflow-hidden pb-16 mx-auto font-[sans-serif] mt-4">
       <div className="min-h-fit">
-        <img src="https://readymadeui.com/Imagination.webp" className="w-full" />
+        <img
+          src="https://readymadeui.com/Imagination.webp"
+          className="w-full"
+        />
       </div>
 
       <div className="px-6 pb-12">
@@ -22,8 +35,9 @@ function CourseCard({ course }) {
         <h3 className="text-gray-800 text-xl font-bold overflow-hidden text-ellipsis line-clamp-2 hover:line-clamp-none">
           {course.courseName}
         </h3>
-        <p className="mt-4 text-sm text-gray-500 leading-relaxed">Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-          arcu.
+        <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+          Course Description Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Sed auctor auctor arcu.
         </p>
         <div className="absolute bottom-4 w-10/12 flex flex-col items-start gap-4">
           <div className="flex items-center text-gray-500 font-semibold space-x-4">
@@ -49,6 +63,9 @@ function CourseCard({ course }) {
               {/* <MdKeyboardArrowRight className="text-xl " /> */}
             </button>
             <button
+              onClick={() => {
+                navigate(`/course/college/${course.id}`);
+              }}
               type="button"
               className="px-4 py-2 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-gradient-to-r from-indigo-800 to-indigo-500 w-fit"
             >
