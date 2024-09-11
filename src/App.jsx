@@ -19,6 +19,8 @@ import SchoolCourse from './Pages/SchoolCourse'
 import Blogs from './Pages/Blogs'
 import Career from './Components/Career/Career'
 import Blog_detail from './Pages/Blog_detail'
+import HelpCenter from "./Pages/HelpCenter";
+import HireFromUs from "./Pages/HireFromUs";
 import Enterpunership from './Pages/Enterpunership'
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
@@ -122,6 +124,11 @@ const App = () => {
 
         {/* accounts */}
 
+
+        
+
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/hire-from-us" element={<HireFromUs />} />
 
       </Routes>
       <Footer dark={dark} />
