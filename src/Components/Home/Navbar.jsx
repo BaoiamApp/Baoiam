@@ -3,7 +3,7 @@ import img1 from "../../assets/img1.png";
 import { FaBars, FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 import CoursesList from "../CoursesList";
 import { Link, NavLink } from "react-router-dom";
-import { CollegeCourse, OtherCourse, School } from "../../Data";
+import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import { RxCross2 } from "react-icons/rx";
 import { BsMoonStars, BsSun } from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -79,7 +79,7 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div
-        className={`flex z-50 items-center justify-between px-4 py-2 z-[100] ${
+        className={`flex z-50 items-center justify-between px-4 py-2 ${
           isTransparent
             ? "bg-white dark:bg-[#080529]"
             : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
@@ -88,7 +88,7 @@ const Navbar = ({ theme }) => {
         {/* Logo */}
 
         <Link
-          to={"/profile"}
+          to={"/instructor-dashboard"}
           className={`${isDark ? "w-36 h-20" : "w-40 h-20"}`}
         >
           <img
@@ -184,7 +184,7 @@ const Navbar = ({ theme }) => {
                   </div>
                 )}
                 {!courses[1] ? (
-                  CollegeCourse.map((c, i) => {
+                  CollegeCourseData.map((c, i) => {
                     return (
                       <div key={i} className="p-4">
                         <Link
@@ -235,7 +235,7 @@ const Navbar = ({ theme }) => {
                   </div>
                 )}
                 {!courses[2] ? (
-                  OtherCourse.map((c, i) => {
+                  OtherCourseData.map((c, i) => {
                     return (
                       <div key={i} className="p-4">
                         <Link
@@ -250,7 +250,7 @@ const Navbar = ({ theme }) => {
                             return (
                               <Link
                                 key={index}
-                                to={`/`}
+                                to={`/course/other/${sub.id}`}
                                 className="px-2 py-1 rounded-md text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                               >
                                 {sub.course}
@@ -384,15 +384,6 @@ const Navbar = ({ theme }) => {
             {isDark ? <BsSun /> : <BsMoonStars />}
           </span>
           <Link to={"/gcsp"} className="relative group">
-            {/* <Link to={'/gcsp'} className="relative px-6 py-2 ml-2 overflow-hidden font-medium text-indigo-500 dark:text-white dark:bg-black bg-gray-100 border border-gray-100 rounded-full hidden md:block shadow-inner group"> */}
-            {/* <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-indigo-600 group-hover:w-full ease"></span>
-            <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-indigo-600 group-hover:w-full ease"></span>
-            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-r-2 group-hover:h-full ease"></span>
-            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 border-indigo-600 border-l-2 group-hover:h-full ease"></span>
-            <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-indigo-600 opacity-0 group-hover:opacity-100"></span>
-            <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
-              GSCP
-            </span> */}
             <button
               type="button"
               class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center me-14 "
@@ -411,7 +402,7 @@ const Navbar = ({ theme }) => {
             <aside className="fixed lg:hidden top-0 right-0 z-40 w-80 h-screen transition-transform -translate-x-0">
               <div className="h-full px-3 py-4 overflow-y-auto bg-white border dark:text-white dark:bg-black">
                 <RxCross2
-                  className="text-black ml-64"
+                  className="text-black dark:text-white ml-64"
                   onClick={() => setShowmenu(!showmenu)}
                   size={25}
                 />
@@ -441,42 +432,78 @@ const Navbar = ({ theme }) => {
                         >
                           School
                         </li>
-                        {schoolCate && (
+                        {!courses[0] ? (
+                          schoolCate && (
+                            <div className="absolute top-56 md:top-24 w-72 right-4 md:right-80 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
+                              {School.map((c, i) => {
+                                return (
+                                  <div key={i} className="p-4">
+                                    <Link
+                                      onClick={() => {
+                                        setShowmenu(!showmenu);
+                                        setSubCateDrop(!subCateDrop);
+                                      }}
+                                      to={`${c.link}`}
+                                      className="font-bold mb-2 px-2 text-base"
+                                    >
+                                      {c.Cate}
+                                    </Link>
+                                    <ul className="flex flex-col">
+                                      {c.subCate.map((sub, index) => {
+                                        return (
+                                          <Link
+                                            onClick={() => {
+                                              setShowmenu(!showmenu);
+                                              setSubCateDrop(!subCateDrop);
+                                              setSchoolCate(!schoolCate);
+                                            }}
+                                            key={index}
+                                            to={`/course/school/${sub.id}`}
+                                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                          >
+                                            {sub.course}
+                                          </Link>
+                                        );
+                                      })}
+                                    </ul>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )
+                        ) : (
                           <div className="absolute top-56 md:top-24 w-72 right-4 md:right-80 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
-                            {School.map((c, i) => {
-                              return (
-                                <div key={i} className="p-4">
-                                  <Link
-                                    onClick={() => {
-                                      setShowmenu(!showmenu);
-                                      setSubCateDrop(!subCateDrop);
-                                    }}
-                                    to={`${c.link}`}
-                                    className="font-bold mb-2 px-2 text-base"
-                                  >
-                                    {c.Cate}
-                                  </Link>
-                                  <ul className="flex flex-col">
-                                    {c.subCate.map((sub, index) => {
-                                      return (
-                                        <Link
-                                          onClick={() => {
-                                            setShowmenu(!showmenu);
-                                            setSubCateDrop(!subCateDrop);
-                                            setSchoolCate(!schoolCate);
-                                          }}
-                                          key={index}
-                                          to={`/course/${sub.id}`}
-                                          className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                                        >
-                                          {sub.course}
-                                        </Link>
-                                      );
-                                    })}
-                                  </ul>
-                                </div>
-                              );
-                            })}
+                            <div key={i} className="p-4">
+                              <Link
+                                onClick={() => {
+                                  setShowmenu(!showmenu);
+                                  setSubCateDrop(!subCateDrop);
+                                }}
+                                // to={`${c?.link}`}
+                                to={`/course/${courses[0].name}`}
+                                className="font-bold mb-2 px-2 text-base"
+                              >
+                                {courses[0].name}
+                              </Link>
+                              <ul className="flex flex-col">
+                                {courses[0].subcategories.map((sub, index) => {
+                                  return (
+                                    <Link
+                                      onClick={() => {
+                                        setShowmenu(!showmenu);
+                                        setSubCateDrop(!subCateDrop);
+                                        setSchoolCate(!schoolCate);
+                                      }}
+                                      key={index}
+                                      to={`/course/school/${sub.id}`}
+                                      className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  );
+                                })}
+                              </ul>
+                            </div>
                           </div>
                         )}
                         <li
@@ -487,40 +514,44 @@ const Navbar = ({ theme }) => {
                         </li>
                         {collegeCate && (
                           <div className="absolute top-64 right-4 w-72 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto dark:text-gray-700">
-                            {CollegeCourse.map((c, i) => {
-                              return (
-                                <div key={i} className="p-4">
-                                  <Link
-                                    onClick={() => {
-                                      setShowmenu(!showmenu);
-                                      setSubCateDrop(!subCateDrop);
-                                    }}
-                                    to={`${c.link}`}
-                                    className="font-bold mb-2 px-2 text-base"
-                                  >
-                                    {c.Cate}
-                                  </Link>
-                                  <ul className="flex flex-col">
-                                    {c.subCate.map((sub, index) => {
-                                      return (
-                                        <Link
-                                          onClick={() => {
-                                            setShowmenu(!showmenu);
-                                            setSubCateDrop(!subCateDrop);
-                                            setCollegeCate(!collegeCate);
-                                          }}
-                                          key={index}
-                                          to={`/course/${sub.id}`}
-                                          className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                                        >
-                                          {sub.courseName}
-                                        </Link>
-                                      );
-                                    })}
-                                  </ul>
-                                </div>
-                              );
-                            })}
+                            {!courses[1] ? (
+                              CollegeCourseData.map((c, i) => {
+                                return (
+                                  <div key={i} className="p-4">
+                                    <Link
+                                      onClick={() => {
+                                        setShowmenu(!showmenu);
+                                        setSubCateDrop(!subCateDrop);
+                                      }}
+                                      to={`${c.link}`}
+                                      className="font-bold mb-2 px-2 text-base"
+                                    >
+                                      {c.Cate}
+                                    </Link>
+                                    <ul className="flex flex-col">
+                                      {c.subCate.map((sub, index) => {
+                                        return (
+                                          <Link
+                                            onClick={() => {
+                                              setShowmenu(!showmenu);
+                                              setSubCateDrop(!subCateDrop);
+                                              setCollegeCate(!collegeCate);
+                                            }}
+                                            key={index}
+                                            to={`/course/college/${sub.id}`}
+                                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                          >
+                                            {sub.courseName}
+                                          </Link>
+                                        );
+                                      })}
+                                    </ul>
+                                  </div>
+                                );
+                              })
+                            ) : (
+                              <div></div>
+                            )}
                           </div>
                         )}
                       </ul>

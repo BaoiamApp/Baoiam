@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
+  FaArrowRight,
   FaArrowRightLong,
   FaChevronLeft,
   FaChevronRight,
+  FaDownload,
   FaDownLong,
   FaGraduationCap,
 } from "react-icons/fa6";
@@ -19,6 +21,11 @@ import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
 const SchoolCourse = () => {
+  const planRef = useRef();
+  const enrollNowScroll = () => {
+    planRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const { id } = useParams();
   const course = School.find((cate) =>
     cate.subCate.find((subCate) => subCate.id === parseInt(id))
@@ -106,17 +113,18 @@ const SchoolCourse = () => {
             </p>
           )}
 
-          <div className="flex xs:flex-col xs:gap-5 gap-10">
-            <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
+          <div className="flex flex-col md:flex-row lg:flex-row  gap-2">
+            <button
+              onClick={enrollNowScroll}
+              className="pl-4 mr-6 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
+            >
               Enroll Now{" "}
-              <FaArrowRightLong
-                size={22}
-                className="group-hover:animate-pulse"
-              />{" "}
+              <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
             </button>
             <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
               Download Brochure{" "}
-              <FaDownLong size={22} className="group-hover:animate-pulse" />{" "}
+              {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
+              <FaDownload size={18} />
             </button>
           </div>
         </div>
@@ -222,7 +230,11 @@ const SchoolCourse = () => {
       </div>
 
       {/* Join we us */}
-      <div className="my-12 px-8 lg:px-24 w-full h-full">
+      <div
+        id="plans"
+        ref={planRef}
+        className="my-12 px-8 lg:px-24 w-full h-full"
+      >
         <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">

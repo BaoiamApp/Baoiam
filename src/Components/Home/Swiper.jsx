@@ -27,7 +27,7 @@ function App() {
   const settings = {
     speed: 500,
     slidesToShow: 3,
-    spaceBetween:20,
+    spaceBetween: 20,
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -35,7 +35,7 @@ function App() {
       {
         breakpoint: 1024,
         settings: {
-          spaceBetween:40,
+          spaceBetween: 40,
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
@@ -213,38 +213,34 @@ function App() {
       </div>
 
       {/* Slider */}
-     <div className="dark:bg-black dark:text-white w-full mt-10">
-  <Slider {...settings}
-  className="flex gap-8">
-    
-    {data[selectedCategory].map((d, index) => (
-      <div
-        key={index}
-        style={{margin:'10px'}}
-        className="bg-indigo-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-2 m-5 border-slate-300 slick-slide gap-5 p-4 shadow-lg rounded-xl dark:bg-black dark:text-white w-[90%] mt-10"
-      >
-        
-        <div
-          className={`h-40 w-full rounded-t-xl bg-amber-100 flex justify-center items-center`}
-        >
-          <img
-            src={d.img}
-            alt={d.name}
-            className="h-full w-full rounded-full border-4 border-white"
-          />
-        </div>
-        <div className="flex flex-col justify-center items-center gap-4 p-4">
-          <p className="text-2xl font-semibold">{d.name}</p>
-          <p className="text-center">{d.review}</p>
-          <button className="bg-gradient-to-r from-indigo-800 to-indigo-500 text-white text-xl px-6 py-2 rounded-xl hover:bg-gradient-to-l transition duration-300">
-            Read More
-          </button>
-        </div>
+      <div className="dark:bg-black dark:text-white w-full mt-10">
+        <Slider {...settings} className="flex gap-8">
+          {data[selectedCategory].map((d, index) => (
+            <div
+              key={index}
+              style={{ margin: "10px" }}
+              className="bg-indigo-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-2 m-5 border-slate-300 slick-slide gap-5 p-4 shadow-lg rounded-xl dark:bg-black dark:text-white w-[90%] mt-10"
+            >
+              <div
+                className={`h-40 w-full rounded-t-xl bg-amber-100 flex justify-center items-center`}
+              >
+                <img
+                  src={d.img}
+                  alt={d.name}
+                  className="h-full w-full rounded-full border-4 border-white"
+                />
+              </div>
+              <div className="flex flex-col justify-center items-center gap-4 p-4">
+                <p className="text-2xl font-semibold">{d.name}</p>
+                <p className="text-center">{d.review}</p>
+                <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 text-white text-xl px-6 py-2 rounded-xl hover:bg-gradient-to-l transition duration-300">
+                  Read More
+                </button>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
-    ))}
-  </Slider>
-</div>
-
     </div>
   );
 }
