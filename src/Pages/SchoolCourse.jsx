@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa6";
 import { MdCheck } from "react-icons/md";
 
+
 import * as MDIcons from "react-icons/md";
 import * as FCIcons from "react-icons/fc";
 import * as GRIcons from "react-icons/gr";
@@ -19,6 +20,8 @@ import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
 import Review from "../Components/Review/Review"
+import TestimonialCard from "../Components/Review/ReviewNext";
+import Featured from "../Components/Review/FeaturedReview";
 
 const SchoolCourse = () => {
   const { id } = useParams();
@@ -319,6 +322,14 @@ const SchoolCourse = () => {
       </div>
 
       <Review />
+
+      <div className="mt-10 mb-10">
+        {" "}
+        <TestimonialCard />
+      </div>
+      <div className="mt-10 mb-10">
+        <Featured />
+      </div>
 
       {/* Emi & Placement */}
       <div className="w-full h-auto flex justify-center items-center relative">
