@@ -89,9 +89,9 @@ const UserProfileSection = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-purple-100 overflow-hidden md:max-w-2xl mb-10 p-10">
+    <div className="max-w-md mx-auto bg-indigo-100 overflow-hidden md:max-w-2xl mb-10 p-10">
       <h2 className="text-2xl font-bold mb-6">Featured Reviews</h2>
-      <div className="bg-purple-100 p-6">
+      <div className="bg-indigo-100 p-6">
         {profiles.slice(0, visibleReviews).map((profile, index) => (
           <div key={index} className="mb-6">
             <div className="flex items-center mb-4">
