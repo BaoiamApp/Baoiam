@@ -234,9 +234,9 @@ const ContactUs = () => {
       </section>
 
       <section className="py-8 md:py-16 text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">Join us on Slack</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">Join us on WhatApp</h2>
         <p className="mb-6 text-gray-500 text-lg md:text-xl lg:text-2xl max-w-xl mx-auto">
-          Join our <span className='text-amber-600 font-semibold'>Slack Community</span>, our exclusive community of the world's most passionate Observability pros.
+          Join our <span className='text-amber-600 font-semibold'>WhatsApp Community</span>, our exclusive community of the world's most passionate Observability pros.
         </p>
         <button className="bg-amber-500 hover:bg-amber-600 font-semibold text-white py-2 px-4 md:py-3 md:px-6 rounded-md transition-transform transform hover:scale-105">
           Join Now

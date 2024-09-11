@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CourseCard from '../Components/College/CourseCard'
 import CoursesList from '../Components/CoursesList'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import FilterSidebar from '../Components/College/CourseFilters';
 import SortPopover from '../Components/College/SortPopover';
 import CourseCarousel from '../Components/College/CourseCarousel';
@@ -10,6 +10,7 @@ import { Autoplay, EffectCards } from 'swiper/modules';
 import cards from '../Components/School/cards.json';
 import Testimonials from '../Components/College/Testimonials';
 import ExploreSubjects from '../Components/College/ExploreSubjects';
+import { CollegeCourse } from '../Data';
 
 function College() {
     const swiperSettings = {
@@ -22,13 +23,13 @@ function College() {
         "className": "mySwiper w-full h-full sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144"
     }
     const params = useParams();
-    const [filteredCourses, setFilteredCourses] = useState([]);
+    const allCourses=CollegeCourse[0].subCate;
+    const [filteredCourses, setFilteredCourses] = useState([...allCourses]);
     const [duration, setDuration] = useState('');
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [selectedPrice, setSelectedPrice] = useState([]);
     const [selectedDifficulty, setSelectedDifficulty] = useState([]);
     const [showFilters, setShowFilters] = useState(false);
-
 
     const isPriceInRange = (coursePrice, range) => {
         console.log(range);
@@ -41,7 +42,7 @@ function College() {
 
     useEffect(() => {
         const applyFilters = () => {
-            let updatedCourses = CoursesList[params.course];
+            let updatedCourses =allCourses;
 
             if (selectedCategory.length > 0) {
                 updatedCourses = updatedCourses.filter((course) =>
@@ -78,9 +79,9 @@ function College() {
                     <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6">
                         Discover a diverse selection of courses designed to inspire learning and help you reach your academic and career goals. Whether you're exploring a new field or advancing your expertise, our programs provide the knowledge and skills you need for success. Start your educational journey with us today!
                     </p>
-                    <a href="#courses" className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
-                        Explore Courses
-                    </a>
+                    <Link to={'/courses'} className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg">
+                      Link Explore Courses
+                    </Link>
                 </div>
 
 
