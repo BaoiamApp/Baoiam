@@ -106,14 +106,8 @@
 
 
 import React from 'react';
-
 import background from "../../assets/ContactUs/background.jpg";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneAlt, faHeadset, faInfoCircle, faUsers, faUserGroup, faHandshake } from '@fortawesome/free-solid-svg-icons';
-
-
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import {FaPhoneAlt, FaHeadset, FaInfoCircle, FaUsers, FaUserGroup, FaHandshake, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 
 
@@ -122,40 +116,40 @@ const ContactUs = () => {
     <div className="ContactUs">
 
       <section className="bg-cover bg-center min-h-screen h-auto text-center text-white flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-12" style={{ backgroundImage: `url(${background})` }}>
-        <div className="h-full flex flex-col justify-center items-center bg-black bg-opacity-50 p-4 sm:p-6 md:p-8 lg:p-12">
+        <div className="h-full flex flex-col justify-center items-center bg-black bg-opacity-50 p-4 sm:p-6 md:p-8 lg:p-12 w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">How can we help?</h1>
           <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl text-center">Get in touch and let us know how we can help.</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mt-8 md:mt-10 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mt-8 md:mt-10 w-full justify-center">
             {[
                 {
                   title: 'Contact sales',
                   description: 'Talk to our sales team about purchasing',
                   buttonText: 'Contact Sales',
-                  icon: <FontAwesomeIcon icon={faPhoneAlt} className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5" />,
+                  icon: <FaPhoneAlt className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5" />,
                 },
                 {
                   title: 'Contact support',
                   description: 'Submit a request to get help from our friendly support experts',
                   buttonText: 'Get Support',
-                  icon: <FontAwesomeIcon icon={faHeadset} className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>,
+                  icon: <FaHeadset className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>,
                 },
                 {
                   title: 'Visit our help center',
                   description: 'Read helpful articles, watch tutorials, and get help',
                   buttonText: 'Help Center',
-                  icon: <FontAwesomeIcon icon={faInfoCircle} className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>,
+                  icon: <FaInfoCircle className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>,
                 },
                 {
                   title: 'Community',
                   description: 'Search, share, and learn from other scheduling enthusiasts',
                   buttonText: 'Join Community',
-                  icon: <FontAwesomeIcon icon={faUsers} className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>
+                  icon: <FaUsers className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>
                 }
             ].map((card, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-between h-64 md:h-80 w-60 md:w-72 p-4 md:p-6 bg-white rounded-2xl shadow-lg border-2 transition-transform transform hover:scale-105 group"
+                className="flex flex-col justify-between h-64 md:h-80 w-full max-w-xs p-4 md:p-6 bg-white rounded-2xl shadow-lg border-2 transition-transform transform hover:scale-105 group"
               >
                 <div className="flex justify-center">
                   {card.icon}
@@ -185,7 +179,7 @@ const ContactUs = () => {
 
         </div>
       </section>
-      
+
 
       <section className="py-16 mt-8 bg-white text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-indigo-700 mb-8">More ways to reach us</h2>
@@ -199,13 +193,13 @@ const ContactUs = () => {
               title: 'Join our team',
               description: 'Interested in applying for a position? View our careers page for open positions and apply.',
               buttonText: 'Join Sales',
-              icon: <FontAwesomeIcon icon={faUserGroup} className="text-indigo-600 text-4xl absolute top-4 left-6" />,
+              icon: <FaUserGroup className="text-indigo-600 text-4xl absolute top-4 left-6" />,
             },
             {
               title: 'Become a partner',
               description: 'For general queries, including partnership opportunities.',
               buttonText: 'Get in touch with partners',
-              icon: <FontAwesomeIcon icon={faHandshake} className="text-indigo-600 text-4xl absolute top-4 left-6" />,
+              icon: <FaHandshake className="text-indigo-600 text-4xl absolute top-4 left-6" />,
             },
           ].map((card, index) => (
             <div
