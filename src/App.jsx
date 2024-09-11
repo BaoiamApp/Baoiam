@@ -19,6 +19,8 @@ import SchoolCourse from "./Pages/SchoolCourse";
 import Blogs from "./Pages/Blogs";
 import Career from "./Components/Career/Career";
 import Blog_detail from "./Pages/Blog_detail";
+import HelpCenter from "./Pages/HelpCenter";
+import HireFromUs from "./Pages/HireFromUs";
 import Enterpunership from "./Pages/Enterpunership";
 import PAP from "./Pages/PAP";
 import Checkout from "./Pages/Checkout";
@@ -37,7 +39,7 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
-import Dashboard from "./Components/Dashboard/Dashboard";
+import TeacherDashboard from './Components/InstructorDashboard/TeacherDashboard'
 import CollegeCourse from "./Pages/CollegeCourse";
 import OtherCourse from "./Pages/OtherCourse";
 
@@ -84,6 +86,7 @@ const App = () => {
         <Route path="/team" element={<OurTeam />} />
         <Route path="/profile" element={<SideBar />} />
         {/* <Route path="/profile" element={<Dashboard />} /> */}
+        <Route path="/instructor-dashboard" element={<TeacherDashboard />} />
 
         <Route path="/course/:course" element={<College />} />
         <Route path="/gscp" element={<GSCB />} />
@@ -116,6 +119,13 @@ const App = () => {
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
 
         {/* accounts */}
+
+
+        
+
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/hire-from-us" element={<HireFromUs />} />
+
       </Routes>
       <Footer dark={dark} />
     </div>

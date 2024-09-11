@@ -46,7 +46,7 @@ const Section1 = ({ dark }) => {
   return (
     <section className="flex items-center justify-evenly flex-col">
       <div className="mt-[40px] text-center relative">
-        <h2 className="text-[2vw] xs:text-[4vw] xs:font-[600] md:text-[3vw] ">
+        <h2 className="text-[2vw] max-xs:text-[4vw] max-xs:font-[600] max-md:text-[3vw] ">
           Trusted by a global community of progressive educators
         </h2>
 
@@ -55,9 +55,9 @@ const Section1 = ({ dark }) => {
 
           <div className="absolute top-0 right-0 w-[200px] h-full bg-gradient-to-l from-white to-transparent dark:from-black dark:to-transparent z-10 pointer-events-none"></div>
 
-          <Marquee className="w-[80vw] mb-[4rem] xs:mb-[0rem]" speed={100}>
+          <Marquee className="w-[80vw] mb-[4rem] max-xs:mb-[0rem]" speed={100}>
             {marquee_imgs.map((el, i) => (
-              <div key={i} className="mr-[-5rem] xs:mr-[-6rem]">
+              <div key={i} className="mr-[-5rem] max-xs:mr-[-6rem]">
                 <img
                   className="w-[30%] dark:invert dark:brightness-0 dark:contrast-200"
                   src={el}
@@ -71,11 +71,11 @@ const Section1 = ({ dark }) => {
 
       <div
         ref={triggerRef}
-        className="px-[6vw] xs:px-4 xs:py-8 md:py-0 text-center"
+        className="px-[6vw] max-xs:px-4 max-xs:py-8 max-md:py-0 text-center"
       >
         {text.split("").map((letter, index) => (
           <span
-            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-[3vw] xs:leading-[6vw] xs:font-medium xs:text-[4.5vw] md:text-[4.5vw] md:leading-[7vw] xs:text-white"
+            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-[3vw] max-xs:leading-[6vw] max-xs:font-medium max-xs:text-[4.5vw] max-md:text-[4.5vw] max-md:leading-[7vw] max-xs:text-white"
             key={index}
             ref={setlettersRef}
           >

@@ -19,7 +19,7 @@ const Hero = () => {
           {" "}
           Accelerate your <span className="text-orange-500">Career.</span>
         </h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-300 text-black lg:text-lg">
+        <p className="mt-4 text-gray-600 dark:text-gray-300 lg:text-lg">
         Gain a competitive edge with exclusive access to top CEOs and industry leaders. Elevate your skills and unlock new opportunities with our expert-led courses.
  </p>
         <div className="mt-8 flex justify-center text-sm lg:justify-start space-x-4">
