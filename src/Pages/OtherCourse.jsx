@@ -193,16 +193,17 @@ const OtherCourse = () => {
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md">
           {subCourse?.curriculum?.map((c, i) => {
-            return (
-              <li key={i} className="py-1 text-[0.9rem] lg:text-base">
-                {/* {c.substring(2, c.length)} */}
-                <span className="font-semibold text-[#F97316]"> {c.weekTitle}</span>
-                <ul className="list-disc ml-10">
-                  {c.topics.map((topic, i) => (
-                    <li>{topic}</li>
-                  ))}
+            return c.weekTitle ? (
+              <details className="mb-2">
+                <summary className="font-semibold">{c.weekTitle}</summary>
+                <ul className="list-disc pl-10 max-w-[380px]">
+                  {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
                 </ul>
-              </li>
+              </details>
+            ) : (
+              <ul className="list-disc ml-5 font-semibold text-[#F97316]">
+                {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
+              </ul>
             );
           })}
         </ul>

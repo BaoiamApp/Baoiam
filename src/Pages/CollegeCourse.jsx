@@ -200,16 +200,12 @@ const CollegeCourse = () => {
               );
             else
               return c.weekTitle ? (
-                <li>
-                  <span className="font-semibold text-[#F97316]">
-                    {c.weekTitle}
-                  </span>
-                  <ul className="list-disc ml-10">
-                    {c.topics.map((topic, id) => (
-                      <li>{topic}</li>
-                    ))}
+                <details className="mb-2">
+                  <summary className="font-semibold">{c.weekTitle}</summary>
+                  <ul className="list-disc pl-10 max-w-[380px]">
+                    {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
                   </ul>
-                </li>
+                </details>
               ) : (
                 <ul className="list-disc ml-5 font-semibold text-[#F97316]">
                   {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
