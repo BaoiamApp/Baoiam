@@ -34,14 +34,14 @@ export default function SliderSection() {
 
   return (
     <div className="slider-section w-full py-10 relative overflow-hidden">
-      <div className="text-center mb-8">
+      <div className="text-center mb-0 lg:mb-8">
         <h2 className="text-4xl font-bold mb-4">Explore Our Courses</h2>
-        <div className="flex flex-col gap-3 items-center md:flex-row justify-center  ">
+        <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
           {categoryKeys.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 border-2 py-2 w-fit rounded-lg ${
+              className={`px-4 border-2 py-2 w-fit text-xs md:text-sm rounded-lg ${
                 selectedCategory === category
                   ? 'bg-black text-white rounded-xl text-sm transition-all ease-in-out duration-300'
                   : 'bg-white text-black'
@@ -64,7 +64,7 @@ export default function SliderSection() {
           prevEl: '.swiper-button-prev',
         }}
         pagination={{ clickable: true }}
-        className="swiper-container px-6 md:px-16"
+        className="swiper-container py-8 px-6 md:px-16"
         onSlideChange={handleSlideChange}
         breakpoints={{
           320: {
@@ -83,7 +83,7 @@ export default function SliderSection() {
       >
         {categories[selectedCategory]?.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="card dark:bg-white/10 dark:border bg-gradient-to-tr from-amber-100 rounded-xl m-2 to-slate-500/70 backdrop-filter backdrop-blur-3xl bg-opacity-500 text-center hover:scale-105 duration-300 ease-out">
+            <div className="card dark:bg-white/10 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out">
               <div className="image-container mb-4">
                 <img
                   src={slide.img}
@@ -106,11 +106,11 @@ export default function SliderSection() {
 
       {/* Custom Navigation Buttons Positioned on the Sliders */}
       <div className="absolute top-[60%] left-2 transform z-10">
-        <button className="swiper-button-prev text-indigo-600 hover:text-indigo-600 transition">
+        <button className="swiper-button-prev text-indigo-600 hover:text-white transition">
         </button>
       </div>
       <div className="absolute top-[60%] right-2 transform z-10">
-        <button className="swiper-button-next text-indigo-500 hover:text-indigo-600 transition">
+        <button className="swiper-button-next text-indigo-500 hover:text-white transition">
         </button>
       </div>
     </div>

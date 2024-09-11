@@ -190,7 +190,7 @@ const CollegeCourse = () => {
           </span>
         </h4>
 
-        <ul className="list-inside list-disc marker:text-orange-500 marker:text-md max-w-[550px]">
+        <ul className="list-inside list-disc marker:text-orange-500 marker:text-md mt-4">
           {subCourse?.curriculum?.map((c, i) => {
             if (typeof c === "string")
               return (
@@ -200,9 +200,10 @@ const CollegeCourse = () => {
               );
             else
               return c.weekTitle ? (
-                <details className="mb-2">
-                  <summary className="font-semibold">{c.weekTitle}</summary>
-                  <ul className="list-disc pl-10 max-w-[380px]">
+                <details className="mb-2 border px-6 py-2 w-[40rem] ">
+                  <summary className="font-semibold cursor-pointer list-none">{c.weekTitle}</summary>
+                  <hr className="my-2" />
+                  <ul className="list-disc pl-10 ">
                     {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
                   </ul>
                 </details>
