@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { School } from "../Data";
+import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
   FaArrowRight,
@@ -13,7 +13,6 @@ import {
 } from "react-icons/fa6";
 import { MdCheck } from "react-icons/md";
 
-
 import * as MDIcons from "react-icons/md";
 import * as FCIcons from "react-icons/fc";
 import * as GRIcons from "react-icons/gr";
@@ -21,24 +20,23 @@ import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
-import Review from "../Components/Review/Review"
-import TestimonialCard from "../Components/Review/ReviewNext";
-import Featured from "../Components/Review/FeaturedReview";
 
-const SchoolCourse = () => {
+const OtherCourse = () => {
   const planRef = useRef();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const { id } = useParams();
-  const course = School.find((cate) =>
-    cate.subCate.find((subCate) => subCate.id === parseInt(id))
+  const course = OtherCourseData.find((cate) =>
+    cate.subCate.find((subCate) => parseInt(subCate.id) === parseInt(id))
   );
+  console.log("other course:", course);
   const subCourse = course.subCate.find(
     (subCate) => subCate.id === parseInt(id)
   );
   //   const [subCourse, setsubCourse] = useState([]);
+  console.log("sub other course:", subCourse);
   const [courseDetails, setCourseDetails] = useState({});
   const getCourseDetails = async () => {
     try {
@@ -103,14 +101,15 @@ const SchoolCourse = () => {
               : courseDetails.title}
           </h3>
           {Object.keys(courseDetails).length == 0 ? (
-            subCourse?.desc?.map((d, i) => {
-              return (
-                <p className="text-[0.8rem] lg:text-base" key={i}>
-                  {d}
-                </p>
-              );
-            })
+            subCourse?.desc
           ) : (
+            // subCourse?.desc?.map((d, i) => {
+            //   return (
+            //     <p className="text-[0.8rem] lg:text-base" key={i}>
+            //       {d}
+            //     </p>
+            //   );
+            // })
             <p className="text-[0.8rem] lg:text-base">
               {courseDetails.description}
             </p>
@@ -164,7 +163,8 @@ const SchoolCourse = () => {
                       key={i}
                       className="font-medium text-[0.8rem] lg:text-base"
                     >
-                      {v}
+                      <span className="font-bold">{v.split(":")[0]}:</span>
+                      {v.split(":")[1]}
                     </li>
                   );
                 })
@@ -193,10 +193,17 @@ const SchoolCourse = () => {
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md">
           {subCourse?.curriculum?.map((c, i) => {
-            return (
-              <li key={i} className="py-1 text-[0.9rem] lg:text-base">
-                {c.substring(2, c.length)}
-              </li>
+            return c.weekTitle ? (
+              <details className="mb-2">
+                <summary className="font-semibold">{c.weekTitle}</summary>
+                <ul className="list-disc pl-10 max-w-[380px]">
+                  {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
+                </ul>
+              </details>
+            ) : (
+              <ul className="list-disc ml-5 font-semibold text-[#F97316]">
+                {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
+              </ul>
             );
           })}
         </ul>
@@ -333,16 +340,6 @@ const SchoolCourse = () => {
         </div>
       </div>
 
-      <Review />
-
-      <div className="mt-10 mb-10">
-        {" "}
-        <TestimonialCard />
-      </div>
-      <div className="mt-10 mb-10">
-        <Featured />
-      </div>
-
       {/* Emi & Placement */}
       <div className="w-full h-auto flex justify-center items-center relative">
         <div className="relative xs:w-[300px] w-[350px] lg:w-[530px] mx-auto">
@@ -407,4 +404,4 @@ const SchoolCourse = () => {
   );
 };
 
-export default SchoolCourse;
+export default OtherCourse;
