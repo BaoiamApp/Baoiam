@@ -1,20 +1,46 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoCallSharp } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import gsap from "gsap";
 
 const ContactUs = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    navigate('/Maintenance'); 
+    e.preventDefault();
+    navigate("/Maintenance");
   };
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".animes9",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        duration: 1,
+        x: 0,
+        ease: "back.inOut",
+        stagger: 0.2,
+      }
+    );
+    gsap.fromTo(
+      ".anime10",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        duration: 1,
+        x: 0,
+        ease: "back.inOut",
+        stagger: 0.2,
+      }
+    );
+  },[]);
 
   return (
     <div className="flex flex-col -mt-20 md:flex-row justify-between items-center p-8 min-h-screen">
-      <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start p-8">
+      <div className="animes9 md:w-1/2 flex flex-col justify-center items-center md:items-start p-8">
         <h2 className="text-4xl text-center md:text-left text-orange-400">
           Connect with us for more information!
         </h2>
@@ -39,14 +65,16 @@ const ContactUs = () => {
             </div>
             <div className="ml-4">
               <p className="text-gray-700">Email:</p>
-              <p className="text-xl font-semibold text-gray-900">tutors@baoiam.com</p>
+              <p className="text-xl font-semibold text-gray-900">
+                tutors@baoiam.com
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Right Side - Contact Form */}
-      <div className="md:w-1/2 bg-gradient-to-r from-orange-300 to-orange-500 p-8 rounded-xl shadow-2xl flex flex-col justify-center items-center">
+      <div className="anime10 md:w-1/2 bg-gradient-to-r from-orange-300 to-orange-500 p-8 rounded-xl shadow-2xl flex flex-col justify-center items-center">
         <h3 className="text-2xl mb-6 text-center text-white font-medium">
           Send a Message
         </h3>

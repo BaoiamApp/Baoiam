@@ -45,8 +45,13 @@ const Section1 = ({ dark }) => {
 
   return (
     <section className="flex items-center justify-evenly flex-col">
+<<<<<<< HEAD
       <div className="mt-[40px] text-center relative">
         <h2 className="text-[2vw] max-xs:text-[4vw] max-xs:font-[600] max-md:text-[3vw] ">
+=======
+      <div className=" text-center relative mt-[40px] ">
+        <h2 className="text-[3vw] sm:text-[3vw] sm:font-[400] font-[600] md:text-[2vw]  md:font-[400]">
+>>>>>>> bda10e6 (applied Gsap)
           Trusted by a global community of progressive educators
         </h2>
 
@@ -55,9 +60,15 @@ const Section1 = ({ dark }) => {
 
           <div className="absolute top-0 right-0 w-[200px] h-full bg-gradient-to-l from-white to-transparent dark:from-black dark:to-transparent z-10 pointer-events-none"></div>
 
+<<<<<<< HEAD
           <Marquee className="w-[80vw] mb-[4rem] max-xs:mb-[0rem]" speed={100}>
             {marquee_imgs.map((el, i) => (
               <div key={i} className="mr-[-5rem] max-xs:mr-[-6rem]">
+=======
+          <Marquee className="w-[80vw] mb-[0rem] sm:mb-[4rem]" speed={100}>
+            {marquee_imgs.map((el, i) => (
+              <div key={i} className="mr-[-5rem] sm:mr-[-6rem]">
+>>>>>>> bda10e6 (applied Gsap)
                 <img
                   className="w-[30%] dark:invert dark:brightness-0 dark:contrast-200"
                   src={el}
@@ -71,11 +82,19 @@ const Section1 = ({ dark }) => {
 
       <div
         ref={triggerRef}
+<<<<<<< HEAD
         className="px-[6vw] max-xs:px-4 max-xs:py-8 max-md:py-0 text-center"
       >
         {text.split("").map((letter, index) => (
           <span
             className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-[3vw] max-xs:leading-[6vw] max-xs:font-medium max-xs:text-[4.5vw] max-md:text-[4.5vw] max-md:leading-[7vw] max-xs:text-white"
+=======
+        className="px-4 py-[10px] sm:py-0 md:px-[6vw] text-center"
+      >
+        {text.split("").map((letter, index) => (
+          <span
+            className="leading-[6vw] font-medium text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-[4.5vw] sm:leading-[7vw] sm:font-[400]  sm:text-[4.5vw] md:font-normal md:text-[3vw]  md:leading-[5vw]"
+>>>>>>> bda10e6 (applied Gsap)
             key={index}
             ref={setlettersRef}
           >

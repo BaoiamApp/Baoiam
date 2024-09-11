@@ -85,21 +85,33 @@ const Cards = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <section className="w-full h-full grid grid-cols-3 gap-8 mt-24 px-24 items-center  max-xs:flex max-xs:flex-col max-xs:items-center max-xs:gap-6 max-xs:px-3 max-xs:m-auto">
+=======
+    <section className=" flex flex-col items-center gap-6 px-3 md:gap-8 md:mt-24 md:px-24 sm:grid-cols-1 sm:px-4 md:grid md:items-center md:grid-cols-3">
+>>>>>>> bda10e6 (applied Gsap)
       {section2.map((info, index) => {
         const cardClass =
           index === 0 ? "card-1" : index === 1 ? "card-2" : "card-3";
         return (
           <div
             key={index}
+<<<<<<< HEAD
             className={`group flex flex-col gap-8 relative max-xs:flex max-xs:flex-col max-xs:gap-4  max-xs:m-auto ${cardClass}`}
           >
             <img
               className="w-full h-[32rem] max-xs:w-[35rem] max-xs:h-[15rem] object-cover"
+=======
+            className={`group md:gap-8 w-full h-[15rem] md:h-[32rem] overflow-hidden relative ${cardClass}`}
+          >
+            <img
+              className="w-full h-full object-cover"
+>>>>>>> bda10e6 (applied Gsap)
               src={info.img}
               alt={`img${index + 1}`}
             />
 
+<<<<<<< HEAD
             <div className="flex flex-col gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/50 transition-all ease-linear text-center pt-24 text-white max-xs:pt-2">
               <h3 className="text-5xl font-bold max-xs:text-4xl">
                 {info.title}.
@@ -111,6 +123,19 @@ const Cards = () => {
                 {info.subtitle}
               </h5>
               <h6 className="text-lg tracking-tight max-xs:text-xs">
+=======
+            <div className="flex flex-col gap-4 opacity-0 group-hover:opacity-100 absolute inset-0 z-10 bg-black/50 transition-all ease-linear text-center pt-2 sm:pt-4 md:pt-24 text-white">
+              <h3 className="text-3xl font-bold sm:text-3xl md:text-5xl">
+                {info.title}.
+              </h3>
+              <h4 className="text-2xl font-bold text-red-600 sm:text-2xl md:text-4xl">
+                {info.num}
+              </h4>
+              <h5 className="text-xl font-semibold sm:text-lg md:text-2xl">
+                {info.subtitle}
+              </h5>
+              <h6 className="text-xs tracking-tight sm:text-sm md:text-lg">
+>>>>>>> bda10e6 (applied Gsap)
                 {info.desc}
               </h6>
             </div>

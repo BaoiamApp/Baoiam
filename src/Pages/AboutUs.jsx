@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
@@ -41,6 +41,7 @@ import { FaBusinessTime } from "react-icons/fa";
 import { AiOutlineCode, AiOutlineClockCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
+import gsap from "gsap";
 
 const AboutUs = () => {
   const [data, setData] = useState(swiperData);
@@ -125,6 +126,168 @@ const AboutUs = () => {
   //   },
   // ];
 
+  useEffect(() => {
+    gsap.fromTo(
+      ".about1",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+      }
+    );
+
+    gsap.fromTo(
+      ".about2",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        delay: 0.5,
+        duration: 1,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about3",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about4",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        delay: 0.5,
+        duration: 1,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd2",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about5",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd2",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about6",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: ".aboutd3",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about7",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 3,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd3",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about8",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        duration: 1,
+        x: 0,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd4",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about9",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        x: 0,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".aboutd4",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".about10",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".aboutd5",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+  }, []);
+
   return (
     // <div className="dark:bg-black dark:text-white">
     <div>
@@ -140,26 +303,26 @@ const AboutUs = () => {
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-black content-overlay flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[55%] md:h-[70%] pt-20 justify-start opacity-60 text-white">
             {/* bg-#2a272a/30 */}
-            <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
-              <p className="text-amber-600 font-medium">
+            <div className="about1 rounded-3xl py-2 px-4 w-fit bg-white z-10">
+              <p className=" text-amber-600 font-medium">
                 We are an EdTech Organization ~
               </p>
             </div>
-            <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
+            <h2 className="about1 text-2xl font-bold md:text-4xl sm:text-3xl">
               Think Big. We make IT, possible!
             </h2>
-            <p className="font-medium">
+            <p className="about1 font-medium">
               We place you at the centre of information networks to advance your
               strategic interests.
             </p>
-            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            <button className="about1 flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
               <FaArrowRight className="font-normal" size={18} />
             </button>
           </div>
-          <div className="absolute mx-auto top-[99%] mb-40 sm:top-[85%] md:inset-x-0 md:top-auto gap-4 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
+          <div className="about1 absolute mx-auto top-[99%] mb-40 sm:top-[85%] md:inset-x-0 md:top-auto gap-4 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
             {/* <div className="absolute mx-auto sm:inset-x-0 transform -translate-y-1/2 w-full text-black font-bold text-center flex items-center justify-center gap-8"> */}
-            <div className="sm:col-span-3 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
+            <div className=" sm:col-span-3 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
               <HeroCard Icon={FaBusinessTime} title="Business Consultation" />
               <HeroCard Icon={AiOutlineCode} title="Website Development" />
@@ -173,9 +336,9 @@ const AboutUs = () => {
       </div>
 
       {/* Section - 2 */}
-      <div className="flex gap-4 sm:mt-32 md:mt-0 px-20 pb-20 w-full items-stretch">
+      <div className="aboutd flex gap-4 sm:mt-32 md:mt-0 px-20 pb-20 w-full items-stretch">
         <div className="w-full md:w-1/2 h-full ml-6">
-          <div className="w-full md:w-[85%] h-3/4 rounded-b-3xl mb-2 px-2 border-slate-400">
+          <div className="about2 w-full md:w-[85%] h-3/4 rounded-b-3xl mb-2 px-2 border-slate-400">
             <img
               src={aboutus5}
               alt="image"
@@ -227,7 +390,7 @@ const AboutUs = () => {
           </Swiper> */}
         </div>
 
-        <div className="flex flex-col gap-8 justify-center items-start w-1/2 mr-8">
+        <div className="about3 flex flex-col gap-8 justify-center items-start w-1/2 mr-8">
           <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold">
             Students Success Is Our Focus
           </h2>
@@ -245,8 +408,8 @@ const AboutUs = () => {
       </div>
 
       {/* Section 3 */}
-      <div className="flex mx-auto gap-8 p-10 mb-16 justify-center items-center">
-        <div className="flex flex-col items-start justify-center pr-10 gap-4 ml-10 w-1/2">
+      <div className="aboutd2 flex mx-auto gap-8 p-10 mb-16 justify-center items-center">
+        <div className="about4 flex flex-col items-start justify-center pr-10 gap-4 ml-10 w-1/2">
           <h3 className="text-amber-600 text-2xl font-semibold">About Us</h3>
           <h2 className="text-4xl font-semibold">
             The Easiest Way to Manage Personal Finances
@@ -278,7 +441,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="about5 w-1/2">
           <div className="w-full md:w-[80%]">
             <img
               src={aboutus5}
@@ -290,22 +453,24 @@ const AboutUs = () => {
       </div>
 
       {/* Section 4 */}
-      <div className="flex items-center gap-4 py-10 mb-10 max-w-6xl mx-auto">
-        <div className="flex flex-col mt-6 gap-8 mb-10 max-w-xs">
-          <h2 className="text-amber-600 font-medium text-xl">Our Values</h2>
-          <h3 className="text-4xl font-semibold">
+      <div className="aboutd3 flex items-center gap-4 py-10 mb-10 max-w-6xl mx-auto">
+        <div className=" flex flex-col mt-6 gap-8 mb-10 max-w-xs">
+          <h2 className="about6 text-amber-600 font-medium text-xl">
+            Our Values
+          </h2>
+          <h3 className="about6 text-4xl font-semibold">
             The Values We Maintain At Work
           </h3>
-          <p className="text-lg text-slate-500">
+          <p className="about6 text-lg text-slate-500">
             We are a team with a variety of skills, each member contributes
             their expertise, and works professionally among members and clients.
           </p>
-          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+          <button className="about6 bg-gradient-to-r from-indigo-700 to-indigo-500 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="about7 grid grid-cols-1 md:grid-cols-3 gap-8">
           <ValueCard
             Icon={FaHandsHelping}
             title="Dedication"
@@ -340,9 +505,9 @@ const AboutUs = () => {
       </div>
 
       {/* Section 5 */}
-      <div className="flex mx-auto gap-4 p-10 justify-center items-center">
-        <div className="w-1/2 pl-20">
-          <div className="w-full md:w-[80%]">
+      <div className="aboutd4 flex mx-auto gap-4 p-10 justify-center items-center">
+        <div className="about8 w-1/2 pl-20">
+          <div className=" w-full md:w-[80%]">
             <img
               src={aboutus5}
               alt="image"
@@ -351,7 +516,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-start justify-center pr-10 gap-4 w-1/2">
+        <div className="about9 flex flex-col items-start justify-center pr-10 gap-4 w-1/2">
           <h3 className="text-amber-600 text-2xl font-semibold">Who We Are</h3>
           <h2 className="text-4xl font-semibold">
             Get Expert Advice And Start Saving
@@ -446,10 +611,10 @@ const AboutUs = () => {
       </div> */}
 
       {/* Section 6 */}
-      <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
-        Our Team
+      <div className="aboutd5 text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
+        <h1 className="about10">Our Team</h1>
       </div>
-      <div className="p-6">
+      <div className="about10 p-6">
         <Swiper
           keyboard={{
             enabled: true,

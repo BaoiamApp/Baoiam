@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -39,6 +39,7 @@ import {
   BsPeopleFill,
   BsRobot,
 } from "react-icons/bs";
+import gsap from "gsap";
 
 const PAP = () => {
   const slides = [
@@ -62,6 +63,144 @@ const PAP = () => {
     },
   ];
 
+  useEffect(() => {
+    gsap.fromTo(
+      ".animes16",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+      }
+    );
+
+    gsap.fromTo(
+      ".anime-img7",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        delay: 0.8,
+        duration: 1,
+        ease: "back.inOut",
+      }
+    );
+
+    gsap.fromTo(
+      ".animes17",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".pap-1",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".animes18",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".pap-2",
+          start: "top 100%",
+          end: "bottom 90%",
+        },
+      }
+    );
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pap-3",
+        start: "top 100%",
+        end: "bottom 90%",
+      },
+    });
+
+    tl.fromTo(
+      ".animes19",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+      }
+    );
+
+    tl.fromTo(
+      ".animes20",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "back.inOut",
+      },
+      "-=0.5"
+    );
+
+    tl.fromTo(
+      ".animes21",
+      { opacity: 0, x: 30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "back.inOut",
+      },
+    );
+
+    gsap.fromTo(
+      ".sneak",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".pap4",
+          top: "top 1%",
+          end: "bottom 50%",
+          markers: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".rev",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".pap5",
+          top: "top 1%",
+          end: "bottom 50%",
+        },
+      }
+    );
+  }, []);
+
   return (
     <div className="dark:bg-black dark:text-white">
       <style>
@@ -80,25 +219,25 @@ const PAP = () => {
         {/* <img src={banner_pap} alt="banner" /> */}
 
         <div className="w-full text-center md:text-left md:w-[60%]">
-          <span className="text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
+          <span className="animes16 text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
             <WiStars className="animate-pulse" size={25} /> Invest in your
             future, pay after it's proven.
           </span>
-          <h1 className="text-4xl lg:text-6xl mb-4 font-medium">
+          <h1 className="animes16 text-4xl lg:text-6xl mb-4 font-medium">
             Pay After
-            <span className="font-light italic text-indigo-600">
+            <span className="animes16 font-light italic text-indigo-600">
               {" "}
               Placement
             </span>
           </h1>
 
-          <p className="text-sm lg:text-base md:w-3/4">
+          <p className="animes16 text-sm lg:text-base md:w-3/4">
             The exclusive learning platform for tomorrow's entrepreneur! Fuel
             you entrepreneurship spirit with BAOIAM - "the launchpad for budding
             entrepreneurs: Learn, innovate, succeed"
           </p>
 
-          <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+          <button class="animes16 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
             <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
             <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <IoIosArrowRoundForward size={30} />
@@ -106,7 +245,7 @@ const PAP = () => {
             <span class="relative">Attend Info Session</span>
           </button>
         </div>
-        <div className="w-full md:w-[40%]">
+        <div className="anime-img7 w-full md:w-[40%]">
           <div className="w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
             <img src={PHero} className="w-full h-full object-cover" alt="" />
           </div>
@@ -114,20 +253,20 @@ const PAP = () => {
       </div>
 
       {/* section 2 */}
-      <div className="my-6 py-6 text-center">
-        <h2 className="lg:leading-[4rem] text-2xl font-bold text-indigo-700 mb-8 sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="my-6 py-6 text-center pap-1">
+        <h2 className="animes17 lg:leading-[4rem] text-2xl font-bold text-indigo-700 mb-8 sm:text-3xl md:text-4xl lg:text-5xl">
           Mentored by the{" "}
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             visionary entrepreneurs
           </span>{" "}
           of today
         </h2>
-        <p className="text-gray-500 text-base lg:text-lg mb-12">
+        <p className="animes17 text-gray-500 text-base lg:text-lg mb-12">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
 
-        <div className="flex p-4 pb-12 justify-evenly items-center flex-wrap gap-6">
+        <div className="animes17 flex p-4 pb-12 justify-evenly items-center flex-wrap gap-6">
           <div className=" rounded-xl hover:shadow-lg max-w-xs sm:max-w-[38%] lg:max-w-[23%] w-full">
             <img
               className="mt-4 mb-2 w-full object-cover"
@@ -185,19 +324,19 @@ const PAP = () => {
       </div>
 
       {/* section 3 */}
-      <div className="flex flex-col items-center text-center pb-24">
-        <h2 className="text-2xl font-bold text-indigo-700 sm:text-3xl sm:mb-8 md:text-4xl lg:text-5xl">
+      <div className="pap-2 flex flex-col items-center text-center pb-24">
+        <h2 className="animes18 text-2xl font-bold text-indigo-700 sm:text-3xl sm:mb-8 md:text-4xl lg:text-5xl">
           Become a{" "}
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             budding
           </span>{" "}
           Startup Leader
         </h2>
-        <p className="text-gray-500 my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg">
+        <p className="animes18 text-gray-500 my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg">
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-3 gap-x-8 text-left text-[#031864] font-semibold">
+        <div className="animes18 grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-3 gap-x-8 text-left text-[#031864] font-semibold">
           <ul>
             <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
               {" "}
@@ -328,22 +467,22 @@ const PAP = () => {
       </div>
 
       {/* section 4 */}
-      <div className="flex flex-col items-center pb-24 px-8 text-center">
-        <h2 className="text-2xl font-bold text-indigo-600 mb-6 sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="pap-3 flex flex-col items-center pb-24 px-8 text-center">
+        <h2 className="animes19 text-2xl font-bold text-indigo-600 mb-6 sm:text-3xl md:text-4xl lg:text-5xl">
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             PLACEMENT
           </span>{" "}
           HUNGER FOR SUCCESS
         </h2>
-        <p className="text-gray-500 text-base mx-12 mt-2 mb-4 p-4 lg:text-lg font-medium">
+        <p className="animes19 text-gray-500 text-base mx-12 mt-2 mb-4 p-4 lg:text-lg font-medium">
           <span className="text-indigo-800">
             The Placement Bootcamp Program
           </span>{" "}
           : A 6 month program for startup founders of tomorrow
         </p>
 
-        <div className="flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-4">
-          <div className="w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
+        <div className="pap-4 flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-4">
+          <div className="animes20 w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
             <p className="ml-10 mb-4 pr-8 text-base text-gray-500 md:text-xl">
               Join us on this transformative journey as we empower you to become
               the driving force behind India's startup ecosystem. Whether you
@@ -362,9 +501,9 @@ const PAP = () => {
             </button>
           </div>
 
-          <div className="max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6">
+          <div className=" max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6">
             <img
-              className="max-w-full max-h-full rounded-2xl object-contain"
+              className="animes21 max-w-full max-h-full rounded-2xl object-contain"
               src={placement}
               alt="image"
             />
@@ -373,19 +512,19 @@ const PAP = () => {
       </div>
 
       {/* section 5 */}
-      <div className="flex flex-col items-center text-center px-12">
-        <h2 className="text-2xl font-bold text-indigo-700 mb-6 sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="pap4 flex flex-col items-center text-center px-12">
+        <h2 className="sneak text-2xl font-bold text-indigo-700 mb-6 sm:text-3xl md:text-4xl lg:text-5xl">
           SNEAK PEEK OF{" "}
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             BOOTCAMP PROGRAM
           </span>
         </h2>
-        <p className="mt-4 mx-12 mb-8 px-6 pr-8 text-base text-gray-500 pb-6 lg:text-lg">
+        <p className="sneak mt-4 mx-12 mb-8 px-6 pr-8 text-base text-gray-500 pb-6 lg:text-lg">
           A transformational journey designed to create budding founders of
           future unicorns
         </p>
 
-        <div className="flex flex-wrap gap-4 mb-20 py-10 max-w-7xl mx-auto justify-evenly">
+        <div className="sneak flex flex-wrap gap-4 mb-20 py-10 max-w-7xl mx-auto justify-evenly">
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2">
             <AcademicCapIcon className="h-12 w-12 text-amber-500 mb-4" />
             <p className="text-indigo-700 font-bold mb-4 px-4">
@@ -485,8 +624,8 @@ const PAP = () => {
       </div>
 
       {/* Section 6 */}
-      <div className="flex flex-col justify-center items-center mb-10 ">
-        <h2 className="text-2xl font-bold text-indigo-700 text-center mb-10 sm:mb-16 sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="pap5 flex flex-col justify-center items-center mb-10 ">
+        <h2 className="rev text-2xl font-bold text-indigo-700 text-center mb-10 sm:mb-16 sm:text-3xl md:text-4xl lg:text-5xl">
           BAOIAM’IONS{" "}
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             EXPERIENCE
@@ -510,7 +649,7 @@ const PAP = () => {
             prevEl: ".swiper-button-prev-custom",
           }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="w-full h-full dark:bg-black dark:text-white"
+          className="rev w-full h-full dark:bg-black dark:text-white"
         >
           {slides.map((slide, index) => (
             <SwiperSlide
