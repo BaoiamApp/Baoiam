@@ -16,7 +16,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
       college: userInfo.college,
       location: userInfo.location,
       socialLinks:{
-        linkedIn:userInfo.socialLinks.linkedIn ||'',
+        linkedIn:userInfo.socialLinks.linkedIn,
         gitHub:userInfo.socialLinks.gitHub,
         leetCode:userInfo.socialLinks.leetCode,
       }
