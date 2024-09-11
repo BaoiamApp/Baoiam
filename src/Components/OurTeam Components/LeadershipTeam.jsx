@@ -14,25 +14,22 @@ export const LeadershipTeam = () => {
 
   return (
     <>
-      <div className='text-center text-xl md:text-3xl p-6 py-8 tracking-wide leading-4 font-bold '>
+      <div className='text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold '>
         {" "}
         Leadership Team
       </div>
-      <div className=' flex flex-col p-4  md:items-center  justify-around md:flex-row  gap-4'>
-        <div className='w-[80%] m-auto md:w-[30%] '>
-          <p className='text-sm text-center  md:text-lg text-[#544D4F]'>
+      <div className=' flex flex-col   md:items-center  justify-between md:flex-row  gap-2'>
+        <div className='w-[80%] m-auto md:w-[25%] '>
+          <p className='text-sm text-center dark:text-slate-300  md:text-lg  text-[#544D4F]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div className='md:w-[60%]'>
+        <div className='md:w-[65%]'>
           <div>
             <Swiper
               keyboard={{
                 enabled: true,
-              }}
-              pagination={{
-                clickable: true,
               }}
               navigation={true}
               Scrollbar={{ draggable: true }}
@@ -40,7 +37,7 @@ export const LeadershipTeam = () => {
               spaceBetween={20}
               breakpoints={{
                 320: {
-                  slidesPerView: 3,
+                  slidesPerView: 1,
                 },
                 768: {
                   slidesPerView: 4,
@@ -48,12 +45,12 @@ export const LeadershipTeam = () => {
               }}
               onSlideChange={() => console.log("hi")}
               onSwiper={(swiper) => console.log("")}
-              className=' md:h-[350px] w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+              className=' md:h-[350px] w-[60%]  md:w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-6'
             >
               {teamData?.map((el) => {
                 return (
                   <SwiperSlide
-                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[130px] md:h-[300px] w-[130px] flex flex-col justify-center items-center gap-4'
+                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md  h-[300px]  flex flex-col justify-center items-center gap-4'
                     key={el.id}
                   >
                     <img

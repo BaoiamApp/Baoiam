@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import code from "../assets/code.jpg";
 import ai from "../assets/ai.webp";
@@ -11,6 +11,14 @@ import critical from "../assets/critical.jpg";
 import content_data from "../Data/Content.js";
 import { useParams } from "react-router-dom";
 import data2 from "../Data/Content2.js";
+import {
+  FaBullhorn,
+  FaClipboardList,
+  FaLightbulb,
+  FaMugHot,
+  FaRobot,
+} from "react-icons/fa6";
+import { FaMobileAlt } from "react-icons/fa";
 const Blog_detail = () => {
   const { id } = useParams();
   useEffect(() => {
@@ -212,30 +220,17 @@ const Blog_detail = () => {
 
   return (
     <>
-      <div className="h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-purple-100">
-        <p className="font-bold text-sm dark:text-black">
+      <div className="h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] dark:border-white dark:border-2 py-[2.5rem] flex-col my-[2rem] bg-indigo-300 dark:bg-black ">
+        <p className="font-bold text-sm dark:text-black dark:text-white">
           {" "}
           HOME / ARTICLES / SINGLE ARTICLE{" "}
         </p>
-        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black">
+        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-white">
           All That Is Wrong With Codding In The Field Of Apprentices
         </h1>
       </div>
       <div className="w-[80%] lg:flex lg:flex-row  flex-col gap-[2rem] mx-[10%] mt-[10%]">
         <div className="w-[100%] lg:w-[70%] lg:flex lg:flex-col  flex-col">
-          {/* {data.map((d) => {
-            return (
-              <>
-                <div className="w-[100%] lg:w-[90%] flex flex-col">
-                  <h2 className="text-[1.9rem] p-3 mt-[2rem] font-bold">
-                    {d.heading}
-                  </h2>
-                  <p className="p-3">{d.data}</p>
-                </div>
-              </>
-            );
-          })} */}
-
           <div>
             <div dangerouslySetInnerHTML={{ __html: data2[id].head }}></div>
             <div dangerouslySetInnerHTML={{ __html: data2[id].body }}></div>
@@ -243,27 +238,53 @@ const Blog_detail = () => {
         </div>
 
         <div className="w-[100%] lg:w-[40%] mt-5">
-          <div className="w-[100%]  rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] dark:text-black flex flex-col gap-2 ">
-            <h2 className="text-[30px] xs:text-[23px] py-5  font-bold text-center dark:text-white">
+          <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-lg pb-5 lg:h-auto h-[45%] shadow-md shadow-[#00000081] dark:text-white flex flex-col gap-4">
+            <h2 className="text-3xl xs:text-2xl py-5 font-bold text-center dark:text-white">
               Categories
             </h2>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
-              Product Development
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaClipboardList className=" w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="whitespace-normal leading-tight">
+                  Product Development
+                </span>
+              </div>
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
-              Entrepreneurship
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaLightbulb className=" w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="truncate">Entrepreneurship</span>
+              </div>
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
-              Java Full-Stack Developer Roadmap
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3">
+                <FaMugHot className="text-2xl text-indigo-700 dark:text-indigo-300 flex-shrink-0" />
+                <span className="whitespace-normal leading-tight">
+                  Java Full-Stack Developer Roadmap
+                </span>
+              </div>
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
-              Android Development
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaMobileAlt className="xs:text-2xl w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="whitespace-normal leading-tight">
+                  Android Development
+                </span>
+              </div>
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
-              Marketing
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaBullhorn className="xs:text-2xl w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="truncate">Marketing</span>
+              </div>
             </div>
-            <div className="text-[20px] xs:text-[14px] mx-8  bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] ">
-              Artificial Intelligence
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaRobot className="text-2xl text-indigo-700 dark:text-indigo-300 flex-shrink-0" />
+                <span className="whitespace-normal leading-tight">
+                  Artificial Intelligence
+                </span>
+              </div>
             </div>
           </div>
 
@@ -272,30 +293,30 @@ const Blog_detail = () => {
               Related Blogs
             </h2>
 
-            <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
+            <div className="flex items-center justify-center dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md  dark:bg-[#374151] mx-4 py-4 cursor-pointer">
               <img
                 className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]"
                 src={code}
               />
-              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+              <p className="w-[60%] dark:text-white  text-indigo-600 xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
                 The Best Graphic Design Careers — for Beginners and
                 Professionals{" "}
               </p>
             </div>
 
-            <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
+            <div className="flex items-center justify-center dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md  dark:bg-[#374151] mx-4 py-4 cursor-pointer">
               <img className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]" src={ai} />
-              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+              <p className="w-[60%] dark:text-white  xs:w-[90%] text-indigo-600 xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
                 The Top Technical Skills All Employees Need in 2022
               </p>
             </div>
 
-            <div className="flex items-center justify-center xs:dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer">
+            <div className="flex items-center justify-center dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md  dark:bg-[#374151] mx-4 py-4 cursor-pointer">
               <img
                 className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]"
                 src={marketing}
               />
-              <p className="w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+              <p className="w-[60%] text-indigo-600 dark:text-white   xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
                 Types Of Quantitative Research for Students and Researchers
               </p>
             </div>
@@ -311,17 +332,17 @@ const Blog_detail = () => {
         <h2 className="text-[1.13rem] mb-1">Comment</h2>
         <textarea
           rows="8"
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
+          className="bg-gray-100 w-[100%] p-5 dark:text-black focus:outline-none"
           cols="80"
         ></textarea>
         <h2 className="text-[1.13rem] mt-5 mb-1">Name</h2>
         <input
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
+          className="bg-gray-100 w-[100%] p-5 dark:text-black focus:outline-none"
           type="text"
         />
         <h2 className="text-[1.13rem] mt-5 mb-1">Email</h2>
         <input
-          className="bg-gray-100 w-[100%] p-5 dark:text-black"
+          className="bg-gray-100 w-[100%] p-5 dark:text-black focus:outline-none"
           type="text"
         />
         <div>

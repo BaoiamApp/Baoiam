@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import screen_time from "../assets/Blogs/screen_time.png";
 import ed_tech from "../assets/Blogs/ed_tech.png";
@@ -11,6 +11,8 @@ import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
 import Slider from "react-slick";
+import "./Blogs.css";
+import { Autoplay } from "swiper/modules";
 const blog_list = [
   {
     title: "Akshay Saini",
@@ -155,9 +157,21 @@ const authors_info = [
     imgSrc:
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Zlc3Npb25hbCUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D",
   },
+  {
+    name: "Ron Clinton",
+    noOfBlogs: 2,
+    imgSrc:
+      "https://plus.unsplash.com/premium_photo-1682430161913-db0d5d64e8ef?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
 ];
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -194,6 +208,9 @@ const Blog = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
+    centerMode: true,
+    autoplay: true,
+    cssEase: "linear",
     slidesToScroll: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -201,8 +218,8 @@ const Blog = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
           dots: true,
         },
@@ -210,9 +227,9 @@ const Blog = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          // initialSlide: 2,
         },
       },
       {
@@ -275,10 +292,8 @@ const Blog = () => {
                   >
                     {item.title}
                   </span>
-                  <h2 className="text-lg font-bold my-2">
-                    {item.text.length > 30
-                      ? item.text.substring(0, 30) + "..."
-                      : item.text}
+                  <h2 className="text-lg font-bold my-2 truncate">
+                    {item.text}
                   </h2>
                   <p className="text-sm">{item.info}</p>
                 </div>
@@ -288,7 +303,7 @@ const Blog = () => {
         </div>
       </div>
       {/* readers section */}
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl mb-5 font-bold text-center">
           What Our Readers Are Saying.
         </h1>
@@ -315,30 +330,19 @@ const Blog = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Authors section */}
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
+      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
         <h1 className="text-3xl mb-5 font-bold text-center">
           Meet Our Authors
         </h1>
-        {/* <div className="absolute px-3 py-2 rounded-md bg-white border-black border-[2px] top-56 text-2xl font-bold cursor-pointer z-10">
-          &lt;
-        </div>
-        <div
-          className="z-10 px-3 py-2 rounded-md bg-white border-black border-[2px] absolute top-56 text-2xl font-bold cursor-pointer right-10"
-          onClick={nextPage}
-        >
-          &gt;
-        </div> */}
-        {/* <div className="relative">
-          <div className="rounded-md grid grid-cols-2 place-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"> */}
-        <div className=" w-full px-3 flex justify-center flex-col">
+        <div className=" w-full px-3 flex justify-center flex-col  blog-carousel">
           <Slider {...settings}>
             {authors_info.map((item, id) => {
               return (
                 <div
                   key={id}
-                  className="flex justify-center p-4 " // Center items in the slider
+                  className="flex justify-center p-4 sm:p-6" // Center items in the slider
                 >
                   <div
                     onMouseEnter={() => authorCardMouseEnter(id)}
@@ -367,9 +371,7 @@ const Blog = () => {
           </Slider>
         </div>
 
-        {/* </div>
-        </div> */}
-      </div>
+     </div> */}
     </div>
   );
 };
