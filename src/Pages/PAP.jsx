@@ -178,7 +178,6 @@ const PAP = () => {
           trigger: ".pap4",
           top: "top 1%",
           end: "bottom 50%",
-          markers: true,
         },
       }
     );
