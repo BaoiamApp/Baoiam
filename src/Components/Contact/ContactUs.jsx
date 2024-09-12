@@ -118,6 +118,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 
 const ContactUs = () => {
+  document.title = 'Baoiam - Contact Us'
   return (
     <div className="ContactUs">
 
