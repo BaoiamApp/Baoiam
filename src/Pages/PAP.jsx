@@ -115,31 +115,39 @@ const PAP = () => {
 
       {/* section 2 */}
       <div className="my-6 py-6 text-center">
-        <h2 className="lg:leading-[4rem] text-2xl font-bold text-indigo-700 mb-8 sm:text-3xl md:text-4xl lg:text-5xl">
+        <h2 className="lg:leading-[4rem] text-2xl font-bold text-indigo-700 mb-2 sm:text-3xl md:text-4xl">
           Mentored by the{" "}
           <span className="text-transparent bg-clip-text bg-amber-500 border-b-2 border-amber-500">
             visionary entrepreneurs
           </span>{" "}
           of today
         </h2>
-        <p className="text-gray-500 font-semibold text-base lg:text-lg mb-12">
+        <p className="text-gray-500 font-semibold text-base mb-12">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
 
-        <div className="flex p-4 pb-12 justify-evenly items-center flex-wrap gap-6">
-          <div className=" rounded-xl hover:shadow-lg max-w-xs sm:max-w-[38%] lg:max-w-[23%] w-full">
-            <img
-              className="mt-4 mb-2 w-full object-cover"
-              src={Chitranshu}
-              alt="image"
-            />
-            <h2 className="text-transparent bg-clip-text bg-amber-500 font-bold mb-2 text-center">
-              Chitranshu Kankar
-            </h2>
-            <p className="mb-4 text-gray-500 text-lg text-center">Sales</p>
-          </div>
+        <div className="px-8">
+          <div className="flex flex-col bg-white shadow-xl px-8 pb-8 border-t-4 rounded-xl border-indigo-600 w-[30rem]">
+            <div className="size-16 relative bottom-8">
+              <img
+                className="w-full h-full rounded-full object-cover"
+                src={Chitranshu}
+                alt="image"
+              />
+            </div>
+            <div className="text-left">
+              <h2 className="text-xl font-semibold mb-1">
+                Chitranshu Kankar
+              </h2>
+              <p className="text-gray-400">Sales</p>
 
+              <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem cum error atque odit sit voluptates, laboriosam nostrum ipsa dicta qui distinctio id aliquam velit.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="flex p-4 pb-12 justify-evenly items-center flex-wrap gap-6">
           <div className=" rounded-xl hover:shadow-lg max-w-xs sm:max-w-[38%] lg:max-w-[23%] w-full">
             <img
               className="mt-4 mb-2 w-full object-cover"
@@ -181,7 +189,7 @@ const PAP = () => {
               User Experience
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* section 3 */}

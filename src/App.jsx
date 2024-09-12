@@ -11,7 +11,6 @@ import ITIE from "./Pages/ITIE";
 import AboutUs from "./Pages/AboutUs";
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
-import SchoolCourse from "./Pages/SchoolCourse";
 import Blogs from "./Pages/Blogs";
 import Career from "./Components/Career/Career";
 import Blog_detail from "./Pages/Blog_detail";
@@ -29,8 +28,7 @@ import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
 import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
-import CollegeCourse from "./Pages/CollegeCourse";
-import OtherCourse from "./Pages/OtherCourse";
+import CourseDetailsPage from "./Pages/CourseDetailsPage";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -47,7 +45,7 @@ const App = () => {
       <Routes>
         {/* NavLinks */}
         <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/gcep" element={<GSCB />} />
         <Route path="/pap" element={<PAP />} />
         <Route path="/contact" element={<ContactUs />} />
@@ -58,33 +56,15 @@ const App = () => {
 
         {/* Courses */}
         <Route path="/courses/school" element={<School />} />
-        <Route path="/course/school/:id" element={<SchoolCourse />} />
-        <Route path="/course/college/:id" element={<CollegeCourse />} />
-        <Route path="/courses/school" element={<School />} />
         <Route path="/courses/college" element={<College />} />
-        <Route path="/course/:course" element={<College />} />
-        <Route path="/course/other/:id" element={<OtherCourse />} />
+        <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
 
         <Route
           path="/course/:course"
           element={<div>colleg Sub Category</div>}
         />
 
-        {/* <Route path="/course:id" element={<CoursePage />} /> */}
-        <Route path="/pap" element={<PAP />} />
-        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
-
-        <Route path="/courses/school" element={<School />} />
-        {/* School Course */}
-        <Route path="/course/school/:id" element={<SchoolCourse />} />
-        {/* College Course */}
-        <Route path="/course/college/:id" element={<CollegeCourse />} />
-        {/* Other courses */}
-        <Route path="/course/other/:id" element={<OtherCourse />} />
-        <Route path="/terms-conditions" element={<TermsConditions />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/blogs" element={<Blogs />} />
+        {/* Blog */}
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path="/Blog_detail" element={<Blog_detail />} />
 
@@ -106,11 +86,8 @@ const App = () => {
         {/* Privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-        
-
-        
         {/* Checkout */}
-       
+        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
 
         {/* Profile & Dashboard */}
         <Route path="/profile" element={<SideBar />} />
@@ -124,9 +101,10 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
 
-        {/* accounts */}
-
+        {/* Help */}
         <Route path="/help-center" element={<HelpCenter />} />
+
+        {/* Hire */}
         <Route path="/hire-from-us" element={<HireFromUs />} />
       </Routes>
       <Footer dark={dark} />

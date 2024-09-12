@@ -135,8 +135,7 @@ const Navbar = ({ theme }) => {
             Home
           </Link>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onClick={() => setShow(!show)}
             className="mx-4 cursor-pointer flex gap-2 items-center"
           >
             Courses
@@ -146,39 +145,11 @@ const Navbar = ({ theme }) => {
           {show && (
             <div
               className="absolute top-[4.5rem] font-normal left-52 bg-white dark:bg-gray-700 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-white"
-              onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               <div className="flex left-1/2">
                 {/* School Course */}
-                {!courses[0] ? (
-                  School.map((c, i) => {
-                    return (
-                      <div key={i} className="p-4">
-                        <Link
-                          to={`${c.link}`}
-                          className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline"
-                        >
-                          {c.Cate}
-                          {/* {courses[0].name} */}
-                        </Link>
-                        <ul className="flex flex-col">
-                          {c.subCate.map((sub, index) => {
-                            return (
-                              <Link
-                                key={index}
-                                to={`/course/school/${sub.id}`}
-                                className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
-                              >
-                                {sub.course}
-                              </Link>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    );
-                  })
-                ) : (
+                {courses[0] && (
                   <div className="p-4">
                     <Link
                       to={`/courses/school`}
@@ -192,7 +163,7 @@ const Navbar = ({ theme }) => {
                         return (
                           <Link
                             key={index}
-                            to={`/course/school/${sub.id}`}
+                            to={`/course/${sub.name}/${sub.id}`}
                             className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                           >
                             {sub.name}
@@ -202,34 +173,7 @@ const Navbar = ({ theme }) => {
                     </ul>
                   </div>
                 )}
-                {!courses[1] ? (
-                  CollegeCourseData.map((c, i) => {
-                    return (
-                      <div key={i} className="p-4">
-                        <Link
-                          to={`${c.link}`}
-                          className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline"
-                        >
-                          {c.Cate}
-                        </Link>
-                        <ul className="flex flex-col">
-                          {c.subCate.map((sub, index) => {
-                            return (
-                              <Link
-                                key={index}
-                                // to={`/course/${sub.courseName}`}
-                                to={`/course/college/${sub.id}`}
-                                className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
-                              >
-                                {sub.courseName}
-                              </Link>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    );
-                  })
-                ) : (
+                {courses[1] && (
                   <div className="p-4">
                     <Link
                       to={`/courses/college`}
@@ -243,7 +187,7 @@ const Navbar = ({ theme }) => {
                         return (
                           <Link
                             key={index}
-                            to={`/course/college/${sub.id}`}
+                            to={`/course/${sub.name}/${sub.id}`}
                             className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                           >
                             {sub.name}
@@ -253,34 +197,7 @@ const Navbar = ({ theme }) => {
                     </ul>
                   </div>
                 )}
-                {!courses[2] ? (
-                  OtherCourseData.map((c, i) => {
-                    return (
-                      <div key={i} className="p-4">
-                        <Link
-                          to={`${c.link}`}
-                          className="font-semibold mb-2 px-2 text-base text-slate-800 hover:underline"
-                        >
-                          {c.Cate}
-                        </Link>
-                        <ul className="flex flex-col">
-                          {c.subCate.map((sub, index) => {
-                            // {c.subCate.map((sub, index) => {
-                            return (
-                              <Link
-                                key={index}
-                                to={`/course/other/${sub.id}`}
-                                className="px-2 py-1 rounded-md text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
-                              >
-                                {sub.course}
-                              </Link>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    );
-                  })
-                ) : (
+                {courses[2] && (
                   <div className="p-4">
                     <Link
                       to={`/courses/other`}
@@ -294,7 +211,7 @@ const Navbar = ({ theme }) => {
                         return (
                           <Link
                             key={index}
-                            to={`/course/other/${sub.id}`}
+                            to={`/course/${sub.name}/${sub.id}`}
                             className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                           >
                             {sub.name}
