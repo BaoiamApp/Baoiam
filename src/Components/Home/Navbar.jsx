@@ -107,7 +107,7 @@ const Navbar = ({ theme }) => {
 
         <Link
           rel="canonical"
-          to={"/instructor-dashboard"}
+          to={"/"}
           className={`${isDark ? "w-36 h-20" : "w-40 h-20"}`}
         >
           <img
