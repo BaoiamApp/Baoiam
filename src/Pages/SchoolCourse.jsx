@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
+  FaArrowRight,
   FaArrowRightLong,
   FaChevronLeft,
   FaChevronRight,
+  FaDownload,
+  FaDownLong,
   FaGraduationCap,
 } from "react-icons/fa6";
 import { MdCheck } from "react-icons/md";
@@ -16,11 +19,12 @@ import * as GRIcons from "react-icons/gr";
 import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
+import axios from "axios";
 
 const SchoolCourse = () => {
-  const navigate = useNavigate();
-  const handleEnrollnavigate = () => {
-    navigate("/checkout");
+  const planRef = useRef();
+  const enrollNowScroll = () => {
+    planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const { id } = useParams();
@@ -30,7 +34,19 @@ const SchoolCourse = () => {
   const subCourse = course.subCate.find(
     (subCate) => subCate.id === parseInt(id)
   );
-
+  //   const [subCourse, setsubCourse] = useState([]);
+  const [courseDetails, setCourseDetails] = useState({});
+  const getCourseDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://api.baoiam.com/api/courses?subcategory=${id}`
+      );
+      console.log(data);
+      setCourseDetails(data);
+    } catch (error) {
+      console.log(error.stack);
+    }
+  };
   // console.log(subCourse?);
 
   const [swiper, setSwiper] = useState(null);
@@ -57,38 +73,59 @@ const SchoolCourse = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    getCourseDetails();
+    return () => {};
+  }, [id]);
+
   return (
     <div>
       {/* Banner */}
-      <div className='lg:w-full lg:h-[68vh] xl:h-[80vh]'>
+      {/* <div className="lg:w-full lg:h-[68vh] xl:h-[80vh]">
         <img
           src={subCourse?.banner}
           alt={`${subCourse?.course} Banner`}
-          className='w-full h-full object-cover object-top'
+          className="w-full h-full object-cover object-top"
         />
-      </div>
+      </div> */}
 
       {/* Course Description */}
       <div className='flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12'>
         <div className='flex flex-col gap-4'>
           <h3 className='text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white'>
-            {subCourse?.course}
+            {Object.keys(courseDetails).length == 0
+              ? subCourse?.course
+              : courseDetails.title}
           </h3>
-          {subCourse?.desc?.map((d, i) => {
-            return (
-              <p className='text-[0.8rem] lg:text-base' key={i}>
-                {d}
-              </p>
-            );
-          })}
+          {Object.keys(courseDetails).length == 0 ? (
+            subCourse?.desc?.map((d, i) => {
+              return (
+                <p className='text-[0.8rem] lg:text-base' key={i}>
+                  {d}
+                </p>
+              );
+            })
+          ) : (
+            <p className='text-[0.8rem] lg:text-base'>
+              {courseDetails.description}
+            </p>
+          )}
 
-          <button
-            onClick={handleEnrollnavigate}
-            className='pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 hover:text-white'
-          >
-            Enroll Now{" "}
-            <FaArrowRightLong size={22} className='group-hover:animate-pulse' />{" "}
-          </button>
+          <div className='flex flex-col md:flex-row lg:flex-row  gap-2'>
+            <button
+              onClick={enrollNowScroll}
+              className='pl-4 mr-6 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white'
+            >
+              Enroll Now{" "}
+              <FaArrowRight size={22} className='group-hover:animate-pulse' />{" "}
+            </button>
+            <button className='pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white'>
+              Download Brochure{" "}
+              {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
+              <FaDownload size={18} />
+            </button>
+          </div>
         </div>
 
         <img
@@ -115,20 +152,34 @@ const SchoolCourse = () => {
             </span>
           </h4>
 
-          <ul className='list-inside list-disc marker:text-orange-600 marker:text-xl flex flex-col gap-2 w-full'>
-            {subCourse?.overview?.map((v, i) => {
-              return (
-                <li key={i} className='font-medium text-[0.8rem] lg:text-base'>
-                  {v}
-                </li>
-              );
-            })}
+          <ul className='list-inside list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full'>
+            {!courseDetails.program_overview
+              ? subCourse?.overview?.map((v, i) => {
+                  return (
+                    <li
+                      key={i}
+                      className='font-medium text-[0.8rem] lg:text-base'
+                    >
+                      {v}
+                    </li>
+                  );
+                })
+              : courseDetails.program_overview.split(".").map((v, i) => {
+                  return (
+                    <li
+                      key={i}
+                      className='font-medium text-[0.8rem] lg:text-base'
+                    >
+                      {v + "."}
+                    </li>
+                  );
+                })}
           </ul>
         </div>
       </div>
 
       {/* Course Curriculum */}
-      <div className='w-full px-8 lg:px-24 my-12 md:my-20 h-full '>
+      <div className='w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center'>
         <h4 className='text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white'>
           Course{" "}
           <span className='text-orange-500 border-b border-orange-500'>
@@ -136,11 +187,11 @@ const SchoolCourse = () => {
           </span>
         </h4>
 
-        <ul className='list-inside list-disc marker:text-orange-500 marker:text-xl'>
+        <ul className='list-inside list-disc marker:text-orange-500 marker:text-md'>
           {subCourse?.curriculum?.map((c, i) => {
             return (
               <li key={i} className='py-1 text-[0.9rem] lg:text-base'>
-                {c}
+                {c.substring(2, c.length)}
               </li>
             );
           })}
@@ -161,7 +212,7 @@ const SchoolCourse = () => {
             return (
               <div
                 key={i}
-                className='bg-white group hover:scale-105 shadow-2xl px-4 py-8 h-44 md:h-52 rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64'
+                className='bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 md:h-[210px] rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64'
               >
                 <span className='text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out'>
                   {React.createElement(highlightIcons(h.icon))}
@@ -170,7 +221,7 @@ const SchoolCourse = () => {
                   <span className='text-2xl font-semibold leading-tight tracking-tighter'>
                     {h.head}
                   </span>{" "}
-                  <br /> {h.desc}
+                  <br /> <span>{h.desc}</span>
                 </p>
               </div>
             );
@@ -179,7 +230,11 @@ const SchoolCourse = () => {
       </div>
 
       {/* Join we us */}
-      <div className='my-12 px-8 lg:px-24 w-full h-full'>
+      <div
+        id='plans'
+        ref={planRef}
+        className='my-12 px-8 lg:px-24 w-full h-full'
+      >
         <div className='bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12'>
           <div className='mx-auto max-w-screen-xl px-4 md:px-8'>
             <h2 className='mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12'>
@@ -189,12 +244,12 @@ const SchoolCourse = () => {
               </span>
             </h2>
 
-            <div className='mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8'>
+            <div className='mb-6 flex justify-center flex-wrap gap-10'>
               {subCourse?.plans?.map((p, i) => {
                 return (
                   <div
                     key={i}
-                    className={`flex flex-col rounded-lg border ${
+                    className={`flex  flex-col  rounded-lg border ${
                       p.name === "Premium" ? "border-orange-500 relative" : ""
                     } p-4 pt-6`}
                   >
@@ -246,8 +301,7 @@ const SchoolCourse = () => {
                       </div>
 
                       <button
-                        onClick={handleEnrollnavigate}
-                        className={`block rounded-lg ${
+                        className={`block  rounded-lg ${
                           p.name === "Premium"
                             ? "bg-orange-500 text-white"
                             : "bg-gray-500"
@@ -276,43 +330,37 @@ const SchoolCourse = () => {
       </div>
 
       {/* Emi & Placement */}
-      <div className='flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32'>
-        <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem]'>
-          <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>
-            Easy EMI
-          </p>
-          <p className='text-neutral-600 dark:text-white mb-2 text-sm lg:text-base'>
-            Easy monthly payment options with our emi facilities
-          </p>
-
-          <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600 dark:text-white'>
-            <li className='text-sm lg:text-base'>
-              No upfront payment required
-            </li>
-            <li className='text-sm lg:text-base'>Fixed monthly installments</li>
-            <li className='text-sm lg:text-base'>Flexible repayment options</li>
-          </ul>
-        </div>
-
-        <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] h-[12.5rem] lg:h-[11.5rem]'>
-          <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>
-            Pay After Placement
-          </p>
-          <p className='text-neutral-600 dark:text-white mb-2 text-sm lg:text-base'>
-            Pay only when you get placed with our Pay After Placement support
-          </p>
-
-          <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600 dark:text-white'>
-            <li className='text-sm lg:text-base'>
-              With our Pay After Placement program, you invest in your career
-              development now and pay us only when yoy land a job.
-            </li>
-          </ul>
+      <div className='w-full h-auto flex justify-center items-center relative'>
+        <div className='relative xs:w-[300px] w-[350px] lg:w-[530px] mx-auto'>
+          <img
+            className='z-0 opacity-40 absolute inset-0 w-full h-full object-cover'
+            src='https://images.stockcake.com/public/1/a/3/1a34b575-b411-49cf-8943-922dcb8fc637_large/payment-in-progress-stockcake.jpg'
+            alt='EMI background'
+          />
+          <div className='relative z-20 w-full text-white p-4 flex justify-center flex-col text-center'>
+            <p className='font-semibold text-black text-[1.2rem] lg:text-2xl mb-2 dark:text-white'>
+              Easy EMI
+            </p>
+            <p className='text-black dark:text-white mb-2 text-sm lg:text-base'>
+              Easy monthly payment options with our emi facilities
+            </p>
+            <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-black dark:text-white'>
+              <li className='text-sm lg:text-base'>
+                No upfront payment required
+              </li>
+              <li className='text-sm lg:text-base'>
+                Fixed monthly installments
+              </li>
+              <li className='text-sm lg:text-base'>
+                Flexible repayment options
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       {/* Amazing Offer */}
-      <div className='py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600 text-center'>
+      <div className='py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-[#F6A611] dark:bg-gray-700 text-center'>
         <h4 className='text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4'>
           Amazing <span className='border-b'>Career</span>
         </h4>
@@ -321,20 +369,20 @@ const SchoolCourse = () => {
         </p>
 
         <div className='flex items-center flex-col md:flex-row gap-4 justify-center w-full mt-8'>
-          <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl'>
-            <p className='text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2'>
+          <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 '>
+            <p className='text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2'>
               BUY 2 COURSES & GET
             </p>
             <p className='mb-2 text-2xl font-bold text-orange-500'>15% OFF</p>
           </div>
-          <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl'>
-            <p className='text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2'>
+          <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 '>
+            <p className='text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2'>
               BUY 3 COURSES & GET
             </p>
             <p className='mb-2 text-2xl font-bold text-orange-500'>20% OFF</p>
           </div>
-          <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl'>
-            <p className='text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2'>
+          <div className='bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 '>
+            <p className='text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2'>
               BUY 4 COURSES & GET
             </p>
             <p className='mb-2 text-2xl font-bold text-orange-500'>25% OFF</p>

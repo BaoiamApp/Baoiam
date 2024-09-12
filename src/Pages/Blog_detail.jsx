@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import code from "../assets/code.jpg";
 import ai from "../assets/ai.webp";
 import marketing from "../assets/marketing.jpg";
@@ -11,8 +10,33 @@ import critical from "../assets/critical.jpg";
 import content_data from "../Data/Content.js";
 import { useParams } from "react-router-dom";
 import data2 from "../Data/Content2.js";
+import { FaUserCircle } from "react-icons/fa";
+import {
+  FaBullhorn,
+  FaClipboardList,
+  FaLightbulb,
+  FaMugHot,
+  FaRobot,
+} from "react-icons/fa6";
+import { FaMobileAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 import axios from "axios";
+
+const getcmt = [
+  {
+    id: 1,
+    name: "Ayesha",
+    comment:
+      " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
+  },
+  {
+    id: 1,
+    name: "Ayesha",
+    comment:
+      " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
+  },
+];
+
 const Blog_detail = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
@@ -328,13 +352,45 @@ const Blog_detail = () => {
           </div>
         </div>
       </div>
+      {/* reply section */}
 
+      <div className='w-[80%] m-auto py-6 flex '>
+        {getcmt ? (
+          <div className='flex flex-col gap-4'>
+            <h2 className='font-semibold text-lg text-md'>Comments</h2>
+            <div>
+              <div className=' flex flex-col gap-6'>
+                {getcmt.map((el, index) => (
+                  <>
+                    <div className='border-2 hover:shadow-lg duration-200 hover:scale-105 shadow-gray-400 shadow-sm p-4 bg-zinc-50 rounded-md flex gap-2 items-start'>
+                      <div className='w-[40px] h-[40px] rounded-full flex items-center justify-center'>
+                        <FaUserCircle className='h-full w-full text-zinc-400' />
+                      </div>
+                      <div key={index} className='flex flex-col gap-2'>
+                        <div className='flex gap-2'>
+                          <p className='font-semibold'>{el.name}</p>
+                          <p className='text-zinc-500'>3hr ago</p>
+                        </div>
+                        <p className='text-[#444444]'>{el.comment}</p>
+                      </div>
+                    </div>
+                  </>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+
+      {/* end here */}
       <div className='mb-5 mx-[10%] w-[80%] lg:w-[50%] mt-[2rem]'>
         <h1 className='text-[1.3rem] font-bold'>Leave a Reply </h1>
         <p className='text-[1.02rem] my-[1.2rem]'>
           Your email address will not be published. Required fields are marked{" "}
         </p>
-        <h2 className='text-[1.13rem] mb-1'>Comment</h2>
+        <h2 className='text-[1.13rem] font-bold mb-1'>Add a Response</h2>
         <textarea
           rows='8'
           className='bg-gray-100 w-[100%] p-5 dark:text-black'
@@ -343,7 +399,7 @@ const Blog_detail = () => {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
-        <h2 className='text-[1.13rem] mt-5 mb-1'>Name</h2>
+        {/* <h2 className='text-[1.13rem] mt-5 mb-1'>Name</h2>
         <input
           className='bg-gray-100 w-[100%] p-5 dark:text-black'
           type='text'
@@ -356,7 +412,7 @@ const Blog_detail = () => {
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        />
+        /> */}
         <div>
           <button
             onClick={handlePostSubmit}
