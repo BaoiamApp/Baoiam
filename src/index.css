@@ -47,12 +47,3 @@ body {
   background-color: #1e40af;
   transform: scale(1.1);
 }
-
-.shadow-border{
-  box-shadow: inset 3px 1px 10px rgba( 255, 255, 255, 0.50 );
-}
-
-.glass{
-  border-block: 2px solid rgba( 255, 255, 255,0.50 );
-  border-left: 2px solid rgba( 255, 255, 255, 0.50 );
-}
