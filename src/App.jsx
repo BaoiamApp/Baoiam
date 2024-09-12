@@ -28,7 +28,7 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
-import TeacherDashboard from './Components/InstructorDashboard/TeacherDashboard'
+import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CollegeCourse from "./Pages/CollegeCourse";
 import OtherCourse from "./Pages/OtherCourse";
 
@@ -70,7 +70,21 @@ const App = () => {
           element={<div>colleg Sub Category</div>}
         />
 
-        {/* Blogs */}
+        {/* <Route path="/course:id" element={<CoursePage />} /> */}
+        <Route path="/pap" element={<PAP />} />
+        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
+
+        <Route path="/courses/school" element={<School />} />
+        {/* School Course */}
+        <Route path="/course/school/:id" element={<SchoolCourse />} />
+        {/* College Course */}
+        <Route path="/course/college/:id" element={<CollegeCourse />} />
+        {/* Other courses */}
+        <Route path="/course/other/:id" element={<OtherCourse />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path="/Blog_detail" element={<Blog_detail />} />
 
@@ -92,14 +106,11 @@ const App = () => {
         {/* Privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-        {/* Help Center */}
-        <Route path="/help-center" element={<HelpCenter />} />
+        
 
-        {/* Hire from us */}
-        <Route path="/hire-from-us" element={<HireFromUs />} />
-
+        
         {/* Checkout */}
-        <Route path="/checkout" element={<Checkout />} />
+       
 
         {/* Profile & Dashboard */}
         <Route path="/profile" element={<SideBar />} />
@@ -113,6 +124,10 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
 
+        {/* accounts */}
+
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/hire-from-us" element={<HireFromUs />} />
       </Routes>
       <Footer dark={dark} />
     </div>
