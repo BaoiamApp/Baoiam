@@ -10,6 +10,7 @@ import { InstructorSlider } from '../Components/School/InstructorSlider';
 
 
 const School = () => {
+  document.title = 'Baoiam - School'
   const navigate = useNavigate(); 
 
   const handleExploreCourses = () => {

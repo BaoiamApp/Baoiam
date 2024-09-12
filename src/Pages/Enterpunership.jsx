@@ -86,6 +86,7 @@ const cards = [
 ];
 
 const Enterpunership = () => {
+  document.title = 'Baoiam - Entrepreneurship'
   useEffect(() => {
     window.scrollTo(0, 0);
 

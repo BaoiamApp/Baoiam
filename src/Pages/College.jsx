@@ -13,6 +13,7 @@ import ExploreSubjects from "../Components/College/ExploreSubjects";
 import { CollegeCourseData } from "../Data";
 
 function College() {
+  document.title = 'Baoiam - College'
   const swiperSettings = {
     effect: "cards",
     grabCursor: true,
