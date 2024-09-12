@@ -284,7 +284,7 @@ const Blog = () => {
                 <img
                   className="w-full h-48 object-cover"
                   src={item.imgSrc}
-                  alt={`Blog Post ${i}`}
+                  alt={`${item.title}`}
                 />
                 <div className="p-6 flex-grow">
                   <span
@@ -301,77 +301,7 @@ const Blog = () => {
             </Link>
           ))}
         </div>
-      </div>
-      {/* readers section */}
-      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl mb-5 font-bold text-center">
-          What Our Readers Are Saying.
-        </h1>
-
-        <div className="flex justify-center">
-          <div className="grid mx-auto sm:grid-cols-3 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6">
-            {readers_impact.map((item, i) => {
-              return (
-                <div className="py-3 px-4 mt-10 w-full max-w-[450px]  sm:max-w-[300px] lg:max-w-[450px] dark:shadow-md bg-gradient-to-b cursor-pointer hover:scale-105 transition-all dark:bg-black shadow-lg rounded-md from-[#a5b4fc] to-[#ffffff] dark:from-black dark:shadow-transparent dark:hover:shadow-sm dark:hover:shadow-gray-200 shadow-gray-400 relative ease-in-out">
-                  {" "}
-                  <img
-                    src={item.imgSrc}
-                    className="rounded-full object-cover w-[95px] relative bottom-10 h-[95px] xs:w-[75px] xs:h-[75px]"
-                  />
-                  <div className="absolute top-5 right-8">
-                    <StarIcon className="h-8 w-8 text-yellow-400" />
-                  </div>
-                  <div className="relative bottom-5 dark:text-white">
-                    <h3 className="m-0 font-bold text-lg">{item.name}</h3>
-                    <h5 className="text-xs">{item.comment}</h5>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div> */}
-      {/* Authors section */}
-      {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
-        <h1 className="text-3xl mb-5 font-bold text-center">
-          Meet Our Authors
-        </h1>
-        <div className=" w-full px-3 flex justify-center flex-col  blog-carousel">
-          <Slider {...settings}>
-            {authors_info.map((item, id) => {
-              return (
-                <div
-                  key={id}
-                  className="flex justify-center p-4 sm:p-6" // Center items in the slider
-                >
-                  <div
-                    onMouseEnter={() => authorCardMouseEnter(id)}
-                    onMouseLeave={() => authorCardMouseLeave()}
-                    className="shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out"
-                  >
-                    <img src={item.imgSrc} className="rounded-md w-full" />
-                    <h2
-                      className={`${
-                        authorDetailsVisible.display &&
-                        authorDetailsVisible.id == id
-                          ? "text-sm w-full absolute bottom-5 bg-white text-black  px-2 py-1 rounded font-bold sm:text-base md:text-lg lg:text-md mt-3 mb-3"
-                          : "hidden top-20"
-                      }`}
-                    >
-                      {item.name}
-                      <br />
-                      <span className="text-sm sm:text-xs">
-                        Number of blogs: {item.noOfBlogs}
-                      </span>
-                    </h2>
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
-
-     </div> */}
+      </div>      
     </div>
   );
 };

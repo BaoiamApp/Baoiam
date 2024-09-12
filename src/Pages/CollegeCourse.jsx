@@ -31,25 +31,20 @@ const CollegeCourse = () => {
   const course = CollegeCourseData.find((cate) =>
     cate.subCate.find((subCate) => parseInt(subCate.id) === parseInt(id))
   );
-  //   console.log("college course:", course);
-  const subCourse = course.subCate.find(
-    (subCate) => subCate.id === parseInt(id)
-  );
-  //   const [subCourse, setsubCourse] = useState([]);
-  //   console.log("sub course:", subCourse);
+  const subCourse = course;
   const [courseDetails, setCourseDetails] = useState({});
   const getCourseDetails = async () => {
     try {
       const { data } = await axios.get(
         `https://api.baoiam.com/api/courses?subcategory=${id}`
       );
-      console.log(data);
-      setCourseDetails(data);
+      // console.log(data);
+      setCourseDetails(data[0]);
     } catch (error) {
       console.log(error.stack);
     }
   };
-  // console.log(subCourse?);
+  console.log(courseDetails.curriculum);
 
   const [swiper, setSwiper] = useState(null);
 
@@ -78,42 +73,21 @@ const CollegeCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getCourseDetails();
-    return () => {};
+    return () => { };
   }, [id]);
 
   return (
     <div>
-      {/* Banner */}
-      {/* <div className="lg:w-full lg:h-[68vh] xl:h-[80vh]">
-        <img
-          src={subCourse?.banner}
-          alt={`${subCourse?.course} Banner`}
-          className="w-full h-full object-cover object-top"
-        />
-      </div> */}
 
       {/* Course Description */}
       <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12">
         <div className="flex flex-col gap-4">
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
-            {Object.keys(courseDetails).length == 0
-              ? subCourse?.courseName
-              : courseDetails.title}
+            {courseDetails?.title}
           </h3>
-          {Object.keys(courseDetails).length == 0 ? (
-            subCourse?.desc
-          ) : (
-            // subCourse?.desc?.map((d, i) => {
-            //   return (
-            //     <p className="text-[0.8rem] lg:text-base" key={i}>
-            //       {d}
-            //     </p>
-            //   );
-            // })
-            <p className="text-[0.8rem] lg:text-base">
-              {courseDetails.description}
-            </p>
-          )}
+          <p className="text-[0.8rem] lg:text-base">
+            {courseDetails?.description}
+          </p>
 
           <div className="flex flex-col md:flex-row lg:flex-row  gap-2">
             <button
@@ -156,27 +130,11 @@ const CollegeCourse = () => {
           </h4>
 
           <ul className="list-inside list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
-            {!courseDetails.program_overview
-              ? subCourse?.overview?.map((v, i) => {
-                  return (
-                    <li
-                      key={i}
-                      className="font-medium text-[0.8rem] lg:text-base"
-                    >
-                      {v}
-                    </li>
-                  );
-                })
-              : courseDetails.program_overview.split(".").map((v, i) => {
-                  return (
-                    <li
-                      key={i}
-                      className="font-medium text-[0.8rem] lg:text-base"
-                    >
-                      {v + "."}
-                    </li>
-                  );
-                })}
+            <li
+              className="font-medium text-[0.8rem] lg:text-base"
+            >
+              {courseDetails.program_overview}
+            </li>
           </ul>
         </div>
       </div>
@@ -184,35 +142,26 @@ const CollegeCourse = () => {
       {/* Course Curriculum */}
       <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
         <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
-          Course{" "}
+          Course
           <span className="text-orange-500 border-b border-orange-500">
             Curriculum
           </span>
         </h4>
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md mt-4">
-          {subCourse?.curriculum?.map((c, i) => {
-            if (typeof c === "string")
-              return (
-                <li key={i} className="py-1 text-[0.9rem] lg:text-base">
-                  {c?.yes && c?.yes != true ? c.substring(2, c.length) : c}
-                </li>
-              );
-            else
-              return c.weekTitle ? (
-                <details className="mb-2 border px-6 py-2 w-[40rem] ">
-                  <summary className="font-semibold cursor-pointer list-none">{c.weekTitle}</summary>
-                  <hr className="my-2" />
-                  <ul className="list-disc pl-10 ">
-                    {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
-                  </ul>
-                </details>
-              ) : (
-                <ul className="list-disc ml-5 font-semibold text-[#F97316]">
-                  {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
-                </ul>
-              );
-          })}
+          {/* {courseDetails.curriculum?.map((c, i) => {
+            return <details key={i} className="mb-2 border px-6 py-2 w-[40rem] ">
+              <summary className="font-semibold cursor-pointer list-none">{c.weekTitle}</summary>
+              <hr className="my-2" />
+              <ul className="list-disc pl-10 ">
+                {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
+              </ul>
+            </details>
+          })} */}
+          {/* {courseDetails.curriculum.map((c,i) => {
+            return <li>{c}</li>
+          })} */}
+          <li>{courseDetails.curriculum}</li>
         </ul>
       </div>
 
@@ -267,9 +216,8 @@ const CollegeCourse = () => {
                 return (
                   <div
                     key={i}
-                    className={`flex  flex-col  rounded-lg border ${
-                      p.name === "Premium" ? "border-orange-500 relative" : ""
-                    } p-4 pt-6`}
+                    className={`flex  flex-col  rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""
+                      } p-4 pt-6`}
                   >
                     <div className="mb-12">
                       {p.name === "Premium" ? (
@@ -319,11 +267,10 @@ const CollegeCourse = () => {
                       </div>
 
                       <button
-                        className={`block  rounded-lg ${
-                          p.name === "Premium"
-                            ? "bg-orange-500 text-white"
-                            : "bg-gray-500"
-                        } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                        className={`block  rounded-lg ${p.name === "Premium"
+                          ? "bg-orange-500 text-white"
+                          : "bg-gray-500"
+                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                       >
                         Enroll Now
                       </button>

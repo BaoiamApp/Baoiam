@@ -31,12 +31,8 @@ const OtherCourse = () => {
   const course = OtherCourseData.find((cate) =>
     cate.subCate.find((subCate) => parseInt(subCate.id) === parseInt(id))
   );
-  console.log("other course:", course);
-  const subCourse = course.subCate.find(
-    (subCate) => subCate.id === parseInt(id)
-  );
-  //   const [subCourse, setsubCourse] = useState([]);
-  console.log("sub other course:", subCourse);
+  console.log(course);
+  const subCourse = course;
   const [courseDetails, setCourseDetails] = useState({});
   const getCourseDetails = async () => {
     try {
@@ -44,17 +40,12 @@ const OtherCourse = () => {
         `https://api.baoiam.com/api/courses?subcategory=${id}`
       );
       console.log(data);
-      setCourseDetails(data);
+      setCourseDetails(data[0]);
     } catch (error) {
       console.log(error.stack);
     }
   };
-  // console.log(subCourse?);
-
-  const [swiper, setSwiper] = useState(null);
-
-  const handleNextClick = () => swiper.slideNext();
-  const handlePrevClick = () => swiper.slidePrev();
+  console.log(courseDetails.program_overview);
 
   // For? maping icons dynamically
   const highlightIcons = (icon) => {
@@ -78,7 +69,7 @@ const OtherCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getCourseDetails();
-    return () => {};
+    return () => { };
   }, [id]);
 
   return (
@@ -156,7 +147,7 @@ const OtherCourse = () => {
           </h4>
 
           <ul className="list-inside list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
-            {!courseDetails.program_overview
+            {/* {!courseDetails.program_overview
               ? subCourse?.overview?.map((v, i) => {
                   return (
                     <li
@@ -177,7 +168,8 @@ const OtherCourse = () => {
                       {v + "."}
                     </li>
                   );
-                })}
+                })} */}
+            <li dangerouslySetInnerHTML={{ __html: courseDetails.program_overview }} className=""></li>
           </ul>
         </div>
       </div>
@@ -260,9 +252,8 @@ const OtherCourse = () => {
                 return (
                   <div
                     key={i}
-                    className={`flex  flex-col  rounded-lg border ${
-                      p.name === "Premium" ? "border-orange-500 relative" : ""
-                    } p-4 pt-6`}
+                    className={`flex  flex-col  rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""
+                      } p-4 pt-6`}
                   >
                     <div className="mb-12">
                       {p.name === "Premium" ? (
@@ -312,11 +303,10 @@ const OtherCourse = () => {
                       </div>
 
                       <button
-                        className={`block  rounded-lg ${
-                          p.name === "Premium"
+                        className={`block  rounded-lg ${p.name === "Premium"
                             ? "bg-orange-500 text-white"
                             : "bg-gray-500"
-                        } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                       >
                         Enroll Now
                       </button>

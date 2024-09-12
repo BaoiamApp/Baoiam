@@ -1438,7 +1438,6 @@ export const CollegeCourseData = [
     id: 1,
     Cate: "College",
     link: "/courses/college",
-
     subCate: [
       {
         id: 11,

@@ -47,7 +47,7 @@ const App = () => {
       <Routes>
         {/* NavLinks */}
         <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/gcep" element={<GSCB />} />
         <Route path="/pap" element={<PAP />} />
         <Route path="/contact" element={<ContactUs />} />
