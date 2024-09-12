@@ -10,7 +10,12 @@ import critical from "../assets/critical.jpg";
 import content_data from "../Data/Content.js";
 import { useParams } from "react-router-dom";
 import data2 from "../Data/Content2.js";
+<<<<<<< HEAD
 import { FaUserCircle } from "react-icons/fa";
+=======
+import { toast } from "react-toastify";
+import axios from "axios";
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
 import {
   FaBullhorn,
   FaClipboardList,
@@ -19,6 +24,7 @@ import {
   FaRobot,
 } from "react-icons/fa6";
 import { FaMobileAlt } from "react-icons/fa";
+<<<<<<< HEAD
 import { toast } from "react-toastify";
 import axios from "axios";
 
@@ -36,6 +42,8 @@ const getcmt = [
       " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
   },
 ];
+=======
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
 
 const Blog_detail = () => {
   const [name, setName] = useState("");
@@ -262,6 +270,7 @@ const Blog_detail = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <div className='h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-purple-100'>
         <p className='font-bold text-sm dark:text-black'>
           {" "}
@@ -286,11 +295,25 @@ const Blog_detail = () => {
             );
           })} */}
 
+=======
+      <div className="h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] dark:border-white dark:border-2 py-[2.5rem] flex-col my-[2rem] bg-indigo-300 dark:bg-black ">
+        <p className="font-bold text-sm dark:text-black dark:text-white">
+          {" "}
+          HOME / ARTICLES / SINGLE ARTICLE{" "}
+        </p>
+        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-white">
+          All That Is Wrong With Codding In The Field Of Apprentices
+        </h1>
+      </div>
+      <div className="w-[80%] lg:flex lg:flex-row  flex-col gap-[2rem] mx-[10%] mt-[10%]">
+        <div className="w-[100%] lg:w-[70%] lg:flex lg:flex-col  flex-col">
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           <div>
             <div dangerouslySetInnerHTML={{ __html: data2[id].head }}></div>
             <div dangerouslySetInnerHTML={{ __html: data2[id].body }}></div>
           </div>
         </div>
+<<<<<<< HEAD
 
         <div className='w-[100%] lg:w-[40%] mt-5'>
           <div className='w-[100%]  rounded pb-5 lg:h-auto h-[45%]  dark:border-white dark:border-[1px] shadow-md shadow-[#00000081] dark:text-black flex flex-col gap-2 '>
@@ -314,6 +337,56 @@ const Blog_detail = () => {
             </div>
             <div className='text-[20px] xs:text-[14px] mx-8 hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 bg-[#F3E8FF] px-3 py-2  rounded-lg cursor-pointer transition-all dark:border-[1px] '>
               Artificial Intelligence
+=======
+        <div className="w-[100%] lg:w-[40%] mt-5">
+          <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-lg pb-5 lg:h-auto h-[45%] shadow-md shadow-[#00000081] dark:text-white flex flex-col gap-4">
+            <h2 className="text-3xl xs:text-2xl py-5 font-bold text-center dark:text-white">
+              Categories
+            </h2>
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaClipboardList className=" w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="whitespace-normal leading-tight">
+                  Product Development
+                </span>
+              </div>
+            </div>
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaLightbulb className=" w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="truncate">Entrepreneurship</span>
+              </div>
+            </div>
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3">
+                <FaMugHot className="text-2xl text-indigo-700 dark:text-indigo-300 flex-shrink-0" />
+                <span className="whitespace-normal leading-tight">
+                  Java Full-Stack Developer Roadmap
+                </span>
+              </div>
+            </div>
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaMobileAlt className="xs:text-2xl w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="whitespace-normal leading-tight">
+                  Android Development
+                </span>
+              </div>
+            </div>
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaBullhorn className="xs:text-2xl w-6 h-6 text-2xl text-indigo-700 dark:text-indigo-300" />
+                <span className="truncate">Marketing</span>
+              </div>
+            </div>
+            <div className="text-xl xs:text-base mx-8 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg cursor-pointer transition-all">
+              <div className="flex justify-start items-center gap-3 ">
+                <FaRobot className="text-2xl text-indigo-700 dark:text-indigo-300 flex-shrink-0" />
+                <span className="whitespace-normal leading-tight">
+                  Artificial Intelligence
+                </span>
+              </div>
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
             </div>
           </div>
 
@@ -322,16 +395,26 @@ const Blog_detail = () => {
               Related Blogs
             </h2>
 
+<<<<<<< HEAD
             <div className='flex items-center justify-center xs:dark:shadow-none hover:shadow-lg duration-200 hover:scale-105 hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer'>
+=======
+
+            <div className="flex items-center justify-center dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md  dark:bg-[#374151] mx-4 py-4 cursor-pointer">
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
               <img
                 className='w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]'
                 src={code}
               />
+<<<<<<< HEAD
               <p className='w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]'>
+=======
+              <p className="w-[60%] dark:text-white  text-indigo-600 xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                 The Best Graphic Design Careers — for Beginners and
                 Professionals{" "}
               </p>
             </div>
+<<<<<<< HEAD
 
             <div className='flex items-center justify-center xs:dark:shadow-none hover:shadow-lg duration-200 hover:scale-105 hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer'>
               <img className='w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]' src={ai} />
@@ -341,11 +424,25 @@ const Blog_detail = () => {
             </div>
 
             <div className='flex items-center justify-center xs:dark:shadow-none hover:shadow-lg duration-200 hover:scale-105 hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md dark:shadow-gray-100 mx-4 py-4 dark:shadow-sm cursor-pointer'>
+=======
+            <div className="flex items-center justify-center dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md  dark:bg-[#374151] mx-4 py-4 cursor-pointer">
+              <img className="w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]" src={ai} />
+              <p className="w-[60%] dark:text-white  xs:w-[90%] text-indigo-600 xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+                The Top Technical Skills All Employees Need in 2022
+              </p>
+            </div>
+            <div className="flex items-center justify-center dark:shadow-none hover:bg-white hover:text-black transition-all xs:text-center xs:flex-col xs:px-0 xs:gap-2 xs:mx-1 gap-10 mt-[2rem] px-4 shadow-md  dark:bg-[#374151] mx-4 py-4 cursor-pointer">
+
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
               <img
                 className='w-[6rem] xs:w-[5.7rem] xs:h-[5.7rem]'
                 src={marketing}
               />
+<<<<<<< HEAD
               <p className='w-[60%]  xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]'>
+=======
+              <p className="w-[60%] text-indigo-600 dark:text-white   xs:w-[90%] xs:text-center xs:text-[0.9rem] font-bold text-[1rem]">
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                 Types Of Quantitative Research for Students and Researchers
               </p>
             </div>
@@ -399,8 +496,12 @@ const Blog_detail = () => {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
+<<<<<<< HEAD
         {/* <h2 className='text-[1.13rem] mt-5 mb-1'>Name</h2>
         <input
+=======
+        <h2 className='text-[1.13rem] mt-5 mb-1'>Name</h2>
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           className='bg-gray-100 w-[100%] p-5 dark:text-black'
           type='text'
           value={name}
@@ -412,7 +513,11 @@ const Blog_detail = () => {
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+<<<<<<< HEAD
         /> */}
+=======
+        />
+>>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
         <div>
           <button
             onClick={handlePostSubmit}
