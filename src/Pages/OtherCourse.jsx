@@ -310,11 +310,13 @@ const OtherCourse = () => {
 
                       <button
                         onClick={() => {
-                          navigate(
-                            `/checkout/other/${id}/${
-                              p.name == "Premium" ? "Premium" : "Plus"
-                            }`
-                          );
+                          if (localStorage.getItem("access_token"))
+                            navigate(
+                              `/checkout/other/${id}/${
+                                p.name == "Premium" ? "Premium" : "Plus"
+                              }`
+                            );
+                          else navigate("/login");
                         }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"

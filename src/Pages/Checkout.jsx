@@ -140,7 +140,9 @@ const Checkout = () => {
           <div className="flex justify-between w-full items-center">
             <div>
               <p className="text-sm text-slate-600 font-semibold dark:text-white">
-                Prabhjot Arora
+                {JSON.parse(localStorage.getItem("userInfo")).first_name +
+                  " " +
+                  JSON.parse(localStorage.getItem("userInfo")).last_name}
               </p>
               {/* <p className="text-sm text-slate-400">8785144645</p> */}
             </div>

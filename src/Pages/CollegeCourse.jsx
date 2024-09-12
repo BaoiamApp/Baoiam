@@ -202,7 +202,9 @@ const CollegeCourse = () => {
             else
               return c.weekTitle ? (
                 <details className="mb-2 border px-6 py-2 w-[40rem] ">
-                  <summary className="font-semibold cursor-pointer list-none">{c.weekTitle}</summary>
+                  <summary className="font-semibold cursor-pointer list-none">
+                    {c.weekTitle}
+                  </summary>
                   <hr className="my-2" />
                   <ul className="list-disc pl-10 ">
                     {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
@@ -321,11 +323,13 @@ const CollegeCourse = () => {
 
                       <button
                         onClick={() => {
-                          navigate(
-                            `/checkout/college/${id}/${
-                              p.name == "Premium" ? "Premium" : "Plus"
-                            }`
-                          );
+                          if (localStorage.getItem("access_token"))
+                            navigate(
+                              `/checkout/college/${id}/${
+                                p.name == "Premium" ? "Premium" : "Plus"
+                              }`
+                            );
+                          else navigate("/login");
                         }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"
