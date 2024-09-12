@@ -43,7 +43,7 @@ export const LeadershipTeam = () => {
                   slidesPerView: 4,
                 },
               }}
-              className='md:h-[350px] w-[60%] md:w-full m-auto rounded-lg flex flex-col justify-center items-center gap-6'
+              className='md:h-[350px] h-[230px] w-[65%] md:w-full m-auto rounded-xl flex flex-col justify-center items-center gap-6'
             >
               {teamData?.map((el) => {
                 return (
