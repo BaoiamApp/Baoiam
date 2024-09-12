@@ -5,7 +5,7 @@ const Phone = () => {
   const [inputValue, setInputValue] = useState("Email");
 
   return (
-    <div className="flex bg-amber-50 dark:bg-black dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
+    <div className="flex bg-amber-50 dark:bg-[#080529] dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
       <div className="w-40 md:w-80 h-full lg:h-96">
         <img src={App_phone} className="w-full h-full" alt="" />
       </div>

@@ -63,7 +63,7 @@ const PAP = () => {
   ];
 
   return (
-    <div className="dark:bg-black dark:text-white">
+    <div className="dark:bg-black dark:text-white overflow-hidden">
       <style>
         {`
           .swiper-button-next, .swiper-button-prev {

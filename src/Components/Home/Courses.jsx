@@ -17,49 +17,48 @@ const Courses = () => {
     {
       title: "12,500+ Hours of Engaging Learning",
       description: "Over 12,500 hours of interactive content designed to boost your growth.",
-      icon: <FaBook className="text-indigo-500 text-4xl" />
+      icon: <FaBook className="dark:text-white text-indigo-500 text-4xl" />
     },
     {
       title: "500+ Real-World Projects",
       description: "Hands-on experience with 500+ real-world projects.",
-      icon: <FaProjectDiagram className="text-indigo-500 text-4xl" />
+      icon: <FaProjectDiagram className="dark:text-white text-indigo-500 text-4xl" />
     },
     {
       title: "75,000+ Learners Worldwide",
       description: "Join a global community of 75,000+ learners.",
-      icon: <FaGlobe className="text-indigo-500 text-4xl" />
+      icon: <FaGlobe className="dark:text-white text-indigo-500 text-4xl" />
     },
     {
       title: "350+ Leading Industry Mentors",
       description: "Guided by over 350 industry experts.",
-      icon: <FaUsers className="text-indigo-500 text-4xl" />
+      icon: <FaUsers className="dark:text-white text-indigo-500 text-4xl" />
     }
   ];
-  
+
   return (
-
     <div className="px-10 dark:bg-[#080529] py-8">
-    <div className="text-center mb-20">
-  <h1 className="text-3xl sm:text-4xl dark:text-white  font-bold text-gray-900 mb-2">Our Key Metrics</h1>
-  <p className="text-base dark:text-gray-300 sm:text-lg text-gray-600">Discover the milestones and achievements that set us apart in the industry.</p>
-</div>
+      <div className="text-center mt-14 mb-10 md:mb-20">
+        <h1 className="text-3xl sm:text-4xl dark:text-white  font-bold text-gray-900 mb-2">Our Key Metrics</h1>
+        <p className="text-base dark:text-gray-300 sm:text-lg text-gray-600">Discover the milestones and achievements that set us apart in the industry.</p>
+      </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {data.map((stat, index) => (
-        <div
-          key={index}
-          className="bg-zinc-100 dark:bg-white bg-opacity-60 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out"
-        >
-          <div className="flex items-center justify-center mb-4"> {/* Centering icon */}
-            {stat.icon}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {data.map((stat, index) => (
+          <div
+            key={index}
+            className="bg-zinc-100 dark:bg-indigo-900 bg-opacity-60 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out"
+          >
+            <div className="flex items-center justify-center mb-4"> {/* Centering icon */}
+              {stat.icon}
+            </div>
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{stat.title}</h2>
+            <p className="text-gray-600 dark:text-white">{stat.description}</p>
           </div>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">{stat.title}</h2>
-          <p className="text-gray-600">{stat.description}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
   )
-  }
+}
 export default Courses
 
