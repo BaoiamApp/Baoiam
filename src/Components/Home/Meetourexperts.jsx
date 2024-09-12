@@ -19,7 +19,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import {
- 
+
   Pagination,
   Navigation,
   Keyboard,
@@ -40,25 +40,21 @@ const ExpertsSection = () => {
     { img: meet10, name: "Surbhi VPandey", role: "Project Manager" },
     { img: meet11, name: "Rakhsha Sawant", role: "Senior Website Developer" },
     { img: meet12, name: "Purab Das", role: "Software Testing Expert" },
-  
+
   ];
 
   return (
     <section className="bg-gradient-to-r from-indigo-800 to-[#6366f1] text-white py-8">
-      <div className="  items-center justify-center p-4 mx-auto ">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 ">
-          <div className="md:w-full text-center flex flex-start">
-            <h2 className="text-3xl font-bold pl-4 text-center">
-              Meet Our Experts
-            </h2>
-          </div>
-          <div className="lg:w-full text-center lg:ml-8 mt-8 lg:mt-0 lg:text-left md:text-left">
-            <div className="text-sm">
-              BAOIAM students get mentored by the industry experts who have
-              achieved mastery in their respective domains &amp; are passionate
-              about helping students to achieve their dreams.
-            </div>
-          </div>
+      <div className="p-4 mx-auto ">
+        <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-4 lg:gap-0 justify-between mb-6 px-4 md:px-8">
+          <h2 className="text-3xl font-bold w-full lg:w-1/2">
+            Meet Our Experts
+          </h2>
+          <p className="text-sm w-full lg:w-1/2">
+            BAOIAM students get mentored by the industry experts who have
+            achieved mastery in their respective domains &amp; are passionate
+            about helping students to achieve their dreams.
+          </p>
         </div>
         <Swiper
           slidesPerView={1}
@@ -85,15 +81,15 @@ const ExpertsSection = () => {
         >
           {experts.map((expert, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center bg-white text-black p-6 lg:m-8 md:m-3 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+              <div className="flex flex-col items-center bg-white text-black p-4 lg:p-6 lg:m-8 md:m-3 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
                 <img
                   src={expert.img}
                   alt={expert.name}
                   className="w-32 h-32 md:w-40 md:h-40 rounded-lg object-cover"
                 />
                 <div className="mt-4 text-center">
-                  <h4 className="text-xl font-bold">{expert.name}</h4>
-                  <p className="text-gray-600">{expert.role}</p>
+                  <h4 className="md:text-lg lg:text-xl font-bold">{expert.name}</h4>
+                  <p className="text-gray-600 text-sm tracking-tight lg:tracking-normal lg:text-base">{expert.role}</p>
                 </div>
               </div>
             </SwiperSlide>
