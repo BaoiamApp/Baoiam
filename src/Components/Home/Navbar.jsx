@@ -430,10 +430,10 @@ const Navbar = ({ theme }) => {
           >
             {isDark ? <BsSun /> : <BsMoonStars />}
           </span>
-          <Link to={"/gcsp"} className="relative group">
+          <Link to={"/gcep"} className="relative group">
             <button
               type="button"
-              class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center me-14 "
+              class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center"
             >
               GCEP
             </button>
@@ -621,8 +621,8 @@ const Navbar = ({ theme }) => {
                     </Link>
                   </li>
                   <li className="flex md:hidden items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <Link to={"/gcsp"} className="ms-3">
-                      GCSP
+                    <Link to={"/gcep"} className="ms-3">
+                      GCEP
                     </Link>
                   </li>
                   <li className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">

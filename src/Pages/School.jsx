@@ -6,6 +6,7 @@ import SkillCatalog from '../Components/School/SkillCatalog'
 import SliderHero from '../Components/School/SliderHero'
 import TypewriterText from '../Components/School/TypewiterText'
 import { Link } from 'react-router-dom'
+import { InstructorSlider } from '../Components/School/InstructorSlider';
 
 
 const School = () => {
@@ -48,6 +49,7 @@ const School = () => {
         <SkillCatalog />
         <Trending />
         <WhyUs />
+        <InstructorSlider/>
       </div>
     </>
   );
