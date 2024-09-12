@@ -10,17 +10,10 @@ import financial_literacy from "../assets/Blogs/financial_literacy.jpg";
 import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
-<<<<<<< HEAD
 import "./Blogs.css";
 import { StatupSlider } from "../Components/Blog Components/StatupSlider";
 import { TechBlogSlider } from "../Components/Blog Components/TechBlogSlider";
 import { BusSlider } from "../Components/Blog Components/BusSlider";
-=======
-import Slider from "react-slick";
-import "./Blogs.css";
-import { Autoplay } from "swiper/modules";
-
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
 
 const blog_list = [
   {
@@ -303,11 +296,7 @@ const Blog = () => {
                   >
                     {item.title}
                   </span>
-<<<<<<< HEAD
                   <h2 className='text-lg font-bold my-2 truncate'>
-=======
-                  <h2 className="text-lg font-bold my-2 truncate">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                     {item.text}
                   </h2>
                   <p className='text-sm'>{item.info}</p>
@@ -324,14 +313,9 @@ const Blog = () => {
         <BusSlider />
       </div>
       {/* readers section */}
-<<<<<<< HEAD
-      {/* <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
-        <h1 className='text-3xl mb-5 font-bold text-center'>
-=======
 
       {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl mb-5 font-bold text-center">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           What Our Readers Are Saying.
         </h1>
 
@@ -362,13 +346,8 @@ const Blog = () => {
         </div>
       </div> */}
       {/* Authors section */}
-<<<<<<< HEAD
-      {/* <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative'>
-        <h1 className='text-3xl mb-5 font-bold text-center'>
-=======
       {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
         <h1 className="text-3xl mb-5 font-bold text-center">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           Meet Our Authors
         </h1>
         <div className=" w-full px-3 flex justify-center flex-col  blog-carousel">
@@ -377,11 +356,7 @@ const Blog = () => {
               return (
                 <div
                   key={id}
-<<<<<<< HEAD
-                  className='flex justify-center p-4 sm:p-6' // Center items in the slider
-=======
                   className="flex justify-center p-4 sm:p-6" // Center items in the slider
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                 >
                   <div
                     onMouseEnter={() => authorCardMouseEnter(id)}

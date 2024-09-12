@@ -20,6 +20,9 @@ import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
+import Review from "../Components/Review/Review";
+import TestimonialCard from "../Components/Review/ReviewNext";
+import Featured from "../Components/Review/FeaturedReview";
 const SchoolCourse = () => {
   const planRef = useRef();
   const enrollNowScroll = () => {
@@ -78,7 +81,6 @@ const SchoolCourse = () => {
     return () => {};
   }, [id]);
 
-
   return (
     <div>
       {/* Banner */}
@@ -131,18 +133,12 @@ const SchoolCourse = () => {
 
         <img
           src={CourseDesc2}
-<<<<<<< HEAD
           alt=''
           className='w-72 h-72 lg:w-full lg:h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black'
-=======
-          alt=""
-          className="w-72 h-72 lg:w-full lg:h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black"
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
         />
       </div>
 
       {/* Course Overview */}
-<<<<<<< HEAD
       <div className='px-8 lg:px-24 my-12 py-12 flex justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-24 w-full'>
         <div className='w-full md:w-[40%]'>
           <img
@@ -158,26 +154,7 @@ const SchoolCourse = () => {
               Overview
             </span>
           </h4>
-
           <ul className='list-inside list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full'>
-=======
-      <div className="px-8 lg:px-24 my-12 py-12 flex justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-24 w-full">
-        <div className="w-full md:w-[40%]">
-          <img
-            src={CourseOverview}
-            alt=""
-            className="w-full md:w-72 h-72 lg:w-full lg:h-96 object-cover shadow-[-15px_15px_#ea580c] lg:shadow-[-20px_20px_#ea580c]"
-          />
-        </div>
-        <div className="w-full md:w-[60%]">
-          <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mt-12 lg:mb-4">
-            Course{" "}
-            <span className="border-b border-orange-500 text-orange-500">
-              Overview
-            </span>
-          </h4>
-          <ul className="list-inside list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
             {!courseDetails.program_overview
               ? subCourse?.overview?.map((v, i) => {
                   return (
@@ -204,32 +181,18 @@ const SchoolCourse = () => {
       </div>
 
       {/* Course Curriculum */}
-<<<<<<< HEAD
       <div className='w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center'>
         <h4 className='text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white'>
           Course{" "}
           <span className='text-orange-500 border-b border-orange-500'>
-=======
-      <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
-        <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
-          Course{" "}
-          <span className="text-orange-500 border-b border-orange-500">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
             Curriculum
           </span>
         </h4>
 
-<<<<<<< HEAD
         <ul className='list-inside list-disc marker:text-orange-500 marker:text-md'>
           {subCourse?.curriculum?.map((c, i) => {
             return (
               <li key={i} className='py-1 text-[0.9rem] lg:text-base'>
-=======
-        <ul className="list-inside list-disc marker:text-orange-500 marker:text-md">
-          {subCourse?.curriculum?.map((c, i) => {
-            return (
-              <li key={i} className="py-1 text-[0.9rem] lg:text-base">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                 {c.substring(2, c.length)}
               </li>
             );
@@ -238,31 +201,19 @@ const SchoolCourse = () => {
       </div>
 
       {/* Course Highlights */}
-<<<<<<< HEAD
       <div className='py-8 px-8 lg:px-24 w-full h-full'>
         <h4 className='text-4xl font-semibold mb-8'>
           Course{" "}
           <span className='border-b text-orange-500 border-orange-500'>
-=======
-      <div className="py-8 px-8 lg:px-24 w-full h-full">
-        <h4 className="text-4xl font-semibold mb-8">
-          Course{" "}
-          <span className="border-b text-orange-500 border-orange-500">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
             Highlights
           </span>
         </h4>
 
-<<<<<<< HEAD
         <div className='flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black'>
-=======
-        <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           {subCourse?.highlights?.map((h, i) => {
             return (
               <div
                 key={i}
-<<<<<<< HEAD
                 className='bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 md:h-[210px] rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64'
               >
                 <span className='text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out'>
@@ -270,15 +221,6 @@ const SchoolCourse = () => {
                 </span>
                 <p className='tracking-tighter'>
                   <span className='text-2xl font-semibold leading-tight tracking-tighter'>
-=======
-                className="bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 md:h-[210px] rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64"
-              >
-                <span className="text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out">
-                  {React.createElement(highlightIcons(h.icon))}
-                </span>
-                <p className="tracking-tighter">
-                  <span className="text-2xl font-semibold leading-tight tracking-tighter">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                     {h.head}
                   </span>{" "}
                   <br /> <span>{h.desc}</span>
@@ -291,7 +233,6 @@ const SchoolCourse = () => {
 
       {/* Join we us */}
       <div
-<<<<<<< HEAD
         id='plans'
         ref={planRef}
         className='my-12 px-8 lg:px-24 w-full h-full'
@@ -304,23 +245,7 @@ const SchoolCourse = () => {
                 Right Course
               </span>
             </h2>
-
             <div className='mb-6 flex justify-center flex-wrap gap-10'>
-=======
-        id="plans"
-        ref={planRef}
-        className="my-12 px-8 lg:px-24 w-full h-full"
-      >
-        <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-            <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">
-              Join With Us Find the{" "}
-              <span className="text-orange-500 border-b border-orange-500">
-                Right Course
-              </span>
-            </h2>
-            <div className="mb-6 flex justify-center flex-wrap gap-10">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
               {subCourse?.plans?.map((p, i) => {
                 return (
                   <div
@@ -329,19 +254,11 @@ const SchoolCourse = () => {
                       p.name === "Premium" ? "border-orange-500 relative" : ""
                     } p-4 pt-6`}
                   >
-<<<<<<< HEAD
                     <div className='mb-12'>
                       {p.name === "Premium" ? (
                         <>
                           <div className='absolute inset-x-0 -top-3 flex justify-center'>
                             <span className='flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white'>
-=======
-                    <div className="mb-12">
-                      {p.name === "Premium" ? (
-                        <>
-                          <div className="absolute inset-x-0 -top-3 flex justify-center">
-                            <span className="flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                               most popular
                             </span>
                           </div>
@@ -349,7 +266,6 @@ const SchoolCourse = () => {
                       ) : (
                         ""
                       )}
-<<<<<<< HEAD
                       <div className='mb-2 text-center text-2xl font-bold text-gray-800 dark:text-white'>
                         {p.name}
                       </div>
@@ -364,32 +280,14 @@ const SchoolCourse = () => {
                             <div key={index} className='flex gap-2'>
                               <MdCheck size={22} className='text-orange-500' />
                               <span className='text-gray-600 dark:text-white'>
-=======
-                      <div className="mb-2 text-center text-2xl font-bold text-gray-800 dark:text-white">
-                        {p.name}
-                      </div>
-
-                      <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
-                        {p.courseName}
-                      </p>
-
-                      <div className="space-y-2">
-                        {p?.courseItems?.map((item, index) => {
-                          return (
-                            <div key={index} className="flex gap-2">
-                              <MdCheck size={22} className="text-orange-500" />
-                              <span className="text-gray-600 dark:text-white">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                                 {item}
                               </span>
                             </div>
                           );
                         })}
                       </div>
-
                     </div>
 
-<<<<<<< HEAD
                     <div className='mt-auto flex flex-col gap-8'>
                       <div className='flex items-end justify-center gap-1'>
                         <span className='self-start text-gray-600 dark:text-white'>
@@ -399,17 +297,6 @@ const SchoolCourse = () => {
                           {p.price}
                         </span>
                         <span className='text-gray-500 dark:text-white'>
-=======
-                    <div className="mt-auto flex flex-col gap-8">
-                      <div className="flex items-end justify-center gap-1">
-                        <span className="self-start text-gray-600 dark:text-white">
-                          ₹
-                        </span>
-                        <span className="text-4xl font-bold text-gray-800 dark:text-white">
-                          {p.price}
-                        </span>
-                        <span className="text-gray-500 dark:text-white">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
                           /Full Course
                         </span>
                       </div>
@@ -428,29 +315,11 @@ const SchoolCourse = () => {
                 );
               })}
             </div>
-<<<<<<< HEAD
-
-            <div className='text-center text-sm text-gray-500 dark:text-white sm:text-base'>
-              Need help deciding?{" "}
-              <Link
-                to={"/"}
-                className='text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400'
-              >
-                Get in touch
-              </Link>
-              .
-            </div>
-=======
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           </div>
         </div>
       </div>
 
       {/* Emi & Placement */}
-<<<<<<< HEAD
-      <div className='w-full h-auto flex justify-center items-center relative'>
-        <div className='relative xs:w-[300px] w-[350px] lg:w-[530px] mx-auto'>
-=======
       <div className='flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32'>
         <div className='border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem]'>
           <p className='text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2'>
@@ -469,24 +338,31 @@ const SchoolCourse = () => {
           </ul>
         </div>
 
-            <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">
-              Need help deciding?{" "}
-              <Link
-                to={"/"}
-                className="text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400"
-              >
-                Get in touch
-              </Link>
-              .
-            </div>
-          </div>
+        <div className='text-center text-sm text-gray-500 dark:text-white sm:text-base'>
+          Need help deciding?{" "}
+          <Link
+            to={"/"}
+            className='text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400'
+          >
+            Get in touch
+          </Link>
+          .
         </div>
       </div>
 
+      {/* <Review /> */}
+
+      {/* <div className="mt-10 mb-10">
+        {" "}
+        <TestimonialCard />
+      </div> */}
+      {/* <div className="mt-10 mb-10">
+        <Featured />
+      </div> */}
+
       {/* Emi & Placement */}
-      <div className="w-full h-auto flex justify-center items-center relative">
-        <div className="relative xs:w-[300px] w-[350px] lg:w-[530px] mx-auto">
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
+      <div className='w-full h-auto flex justify-center items-center relative'>
+        <div className='relative xs:w-[300px] w-[350px] lg:w-[530px] mx-auto'>
           <img
             className='z-0 opacity-40 absolute inset-0 w-full h-full object-cover'
             src='https://images.stockcake.com/public/1/a/3/1a34b575-b411-49cf-8943-922dcb8fc637_large/payment-in-progress-stockcake.jpg'
@@ -515,7 +391,6 @@ const SchoolCourse = () => {
       </div>
 
       {/* Amazing Offer */}
-<<<<<<< HEAD
       <div className='py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-[#F6A611] dark:bg-gray-700 text-center'>
         <h4 className='text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4'>
           Amazing <span className='border-b'>Career</span>
@@ -542,34 +417,6 @@ const SchoolCourse = () => {
               BUY 4 COURSES & GET
             </p>
             <p className='mb-2 text-2xl font-bold text-orange-500'>25% OFF</p>
-=======
-      <div className="py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-[#F6A611] dark:bg-gray-700 text-center">
-        <h4 className="text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
-          Amazing <span className="border-b">Career</span>
-        </h4>
-        <p className="text-sm lg:text-lg">
-          Grab these exclusive offers available only once a year.
-        </p>
-
-        <div className="flex items-center flex-col md:flex-row gap-4 justify-center w-full mt-8">
-          <div className="bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 ">
-            <p className="text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2">
-              BUY 2 COURSES & GET
-            </p>
-            <p className="mb-2 text-2xl font-bold text-orange-500">15% OFF</p>
-          </div>
-          <div className="bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 ">
-            <p className="text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2">
-              BUY 3 COURSES & GET
-            </p>
-            <p className="mb-2 text-2xl font-bold text-orange-500">20% OFF</p>
-          </div>
-          <div className="bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 ">
-            <p className="text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2">
-              BUY 4 COURSES & GET
-            </p>
-            <p className="mb-2 text-2xl font-bold text-orange-500">25% OFF</p>
->>>>>>> 2be7070127c8085da8fca06a55c08d3415d3f6d8
           </div>
         </div>
       </div>
