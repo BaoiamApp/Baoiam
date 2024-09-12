@@ -29,6 +29,7 @@ import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
 import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
+import FAQS from "./Components/FAQ/FAQ"
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -106,6 +107,9 @@ const App = () => {
 
         {/* Hire */}
         <Route path="/hire-from-us" element={<HireFromUs />} />
+
+        {/*FAQ*/}
+        <Route path="/FAQ" element={<FAQS />} />
       </Routes>
       <Footer dark={dark} />
     </div>

@@ -51,7 +51,7 @@ function Footer({dark}) {
                 <Link to={'/team'} className="text-black text-nowrap dark:text-white flex items-center">
                   <MdKeyboardArrowRight size={20} /> Our Team
                 </Link>
-                <Link to={'/faqs'} className="text-black text-nowrap dark:text-white  flex items-center">
+                <Link to={'/FAQ'} className="text-black text-nowrap dark:text-white  flex items-center">
                   <MdKeyboardArrowRight size={20} /> FAQs
                 </Link>
               </div>
