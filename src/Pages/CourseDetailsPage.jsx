@@ -143,15 +143,15 @@ const CourseDetailsPage = () => {
                         </h2>
 
                         <div className="mb-6 flex justify-center flex-wrap gap-10">
-                            {/* {subCourse?.plans?.map((p, i) => {
+                            {courseDetails?.plans?.map((p, i) => {
                                 return (
                                     <div
                                         key={i}
-                                        className={`flex  flex-col  rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""
+                                        className={`flex  flex-col  rounded-lg border ${p.name === "premium" ? "border-orange-500 relative" : ""
                                             } p-4 pt-6`}
                                     >
                                         <div className="mb-12">
-                                            {p.name === "Premium" ? (
+                                            {p.name === "premium" ? (
                                                 <>
                                                     <div className="absolute inset-x-0 -top-3 flex justify-center">
                                                         <span className="flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
@@ -162,15 +162,15 @@ const CourseDetailsPage = () => {
                                             ) : (
                                                 ""
                                             )}
-                                            <div className="mb-2 text-center text-2xl font-bold text-gray-800 dark:text-white">
+                                            <div className="mb-2 text-center capitalize text-2xl font-bold text-gray-800 dark:text-white">
                                                 {p.name}
                                             </div>
 
-                                            <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
+                                            {/* <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
                                                 {p.courseName}
-                                            </p>
+                                            </p> */}
 
-                                            <div className="space-y-2">
+                                            {/* <div className="space-y-2">
                                                 {p?.courseItems?.map((item, index) => {
                                                     return (
                                                         <div key={index} className="flex gap-2">
@@ -181,7 +181,7 @@ const CourseDetailsPage = () => {
                                                         </div>
                                                     );
                                                 })}
-                                            </div>
+                                            </div> */}
                                         </div>
 
                                         <div className="mt-auto flex flex-col gap-8">
@@ -198,7 +198,7 @@ const CourseDetailsPage = () => {
                                             </div>
 
                                             <button
-                                                className={`block  rounded-lg ${p.name === "Premium"
+                                                className={`block  rounded-lg ${p.name === "premium"
                                                     ? "bg-orange-500 text-white"
                                                     : "bg-gray-500"
                                                     } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
@@ -208,7 +208,7 @@ const CourseDetailsPage = () => {
                                         </div>
                                     </div>
                                 );
-                            })} */}
+                            })}
                         </div>
 
                         <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">

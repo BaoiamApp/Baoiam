@@ -98,11 +98,10 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div
-        className={`flex z-50 items-center justify-between px-4 py-2 ${
-          isTransparent
-            ? "bg-white dark:bg-[#080529]"
-            : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
-        }`}
+        className={`flex z-50 items-center justify-between px-4 py-2 ${isTransparent
+          ? "bg-white dark:bg-[#080529]"
+          : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
+          }`}
       >
         {/* Logo */}
 
@@ -112,31 +111,33 @@ const Navbar = ({ theme }) => {
         >
           <img
             src={isDark ? logo : img1}
-            className={`w-full h-full ${
-              isDark ? "object contain" : "object-contain"
-            }`}
+            className={`w-full h-full ${isDark ? "object contain" : "object-contain"
+              }`}
             alt="logo"
           />
         </Link>
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${
-            isDark ? "font-semibold" : "font-medium"
-          } justify-between mt-4`}
+          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
+            } justify-between mt-4`}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-4  ${
-              linkActive === "Home" ? "text-orange-500" : ""
-            }`}
+            className={`mx-4 ${location.pathname === "/" && linkActive === "Home"
+              ? "text-orange-500"
+              : ""
+              }`}
           >
             Home
           </Link>
           <li
             onClick={() => setShow(!show)}
-            className="mx-4 cursor-pointer flex gap-2 items-center"
+            className={`mx-4 cursor-pointer flex gap-2 items-center ${location.pathname === "/course/" && linkActive === "Courses"
+              ? "text-orange-500"
+              : ""
+              }`}
           >
             Courses
             {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -227,9 +228,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "About" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About Us"
+              ? "text-orange-500"
+              : ""
+              } `}
           >
             About Us
           </Link>
@@ -237,9 +239,8 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/pap"}
             onClick={() => handleLinkClick("PAP")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "PAP" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${linkActive === "PAP" ? "text-indigo-600" : ""
+              } `}
           >
             PAP
           </Link>
@@ -247,9 +248,8 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/itie"}
             onClick={() => handleLinkClick("ITIE")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "ITIE" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${linkActive === "ITIE" ? "text-indigo-600" : ""
+              } `}
           >
             ITIE
           </Link>
@@ -257,9 +257,8 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "Blog" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${linkActive === "Blog" ? "text-indigo-600" : ""
+              } `}
           >
             Blog
           </Link>
@@ -267,9 +266,8 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "Contact" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${linkActive === "Contact" ? "text-indigo-600" : ""
+              } `}
           >
             Contact
           </Link>
