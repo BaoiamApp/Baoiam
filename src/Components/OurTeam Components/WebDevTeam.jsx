@@ -42,31 +42,33 @@ export const WebDevTeam = () => {
                   slidesPerView: 4,
                 },
               }}
-              onSlideChange={() => console.log("hi")}
-              onSwiper={(swiper) => console.log("")}
-              className=' md:h-[350px] w-[60%] md:w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-6'
+              className='md:h-[350px] w-[60%] md:w-full m-auto rounded-lg flex flex-col justify-center items-center gap-6'
             >
               {webData?.map((el) => {
                 return (
-                  <SwiperSlide
-                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[300px]  flex flex-col justify-center items-center gap-4'
-                    key={el.id}
-                  >
-                    <img
-                      className='h-full rounded-md  w-full'
-                      src={el.image}
-                      alt=''
-                    />
-                    <div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300 rounded-md'>
-                      <h3 className='text-center text-white font-sans font-medium text-sm md:text-lg'>
-                        {el.name}
-                      </h3>
-                      <p className='text-center text-gray-300 text-xs md:text-sm'>
-                        {el.role}
-                      </p>
-                      <div className=' py-2 flex items-center justify-center gap-2'>
-                        <FaLinkedin className='text-blue-600 text-xl text-center' />
-                        <FaXTwitter className='text-black font-bold' />
+                  <SwiperSlide key={el.id} className='group flip-card'>
+                    <div className='flip-card-inner'>
+                      {/* Front Side (Image) */}
+                      <div className='flip-card-front'>
+                        <img
+                          className='h-full w-full rounded-md'
+                          src={el.image}
+                          alt={el.name}
+                        />
+                      </div>
+
+                      {/* Back Side (Details) */}
+                      <div className='flip-card-back bg-gray-400 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center'>
+                        <h3 className='text-center font-sans font-medium text-sm md:text-lg'>
+                          {el.name}
+                        </h3>
+                        <p className='text-center text-black font-bold text-xs md:text-sm'>
+                          {el.role}
+                        </p>
+                        <div className='py-2 flex items-center justify-center gap-2'>
+                          <FaLinkedin className='text-blue-600 text-xl' />
+                          <FaXTwitter className='text-black' />
+                        </div>
                       </div>
                     </div>
                   </SwiperSlide>

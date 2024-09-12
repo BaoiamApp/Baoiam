@@ -116,8 +116,7 @@ const Navbar = ({ theme }) => {
             Home
           </Link>
           <li
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onClick={() => setShow(!show)}
             className="mx-4 cursor-pointer flex gap-2 items-center"
           >
             Courses
@@ -127,7 +126,6 @@ const Navbar = ({ theme }) => {
           {show && (
             <div
               className="absolute top-[4.5rem] font-normal left-52 bg-white dark:bg-gray-700 border-black/20 border-[1px] rounded-b-3xl text-sm p-1 shadow-lg z-50 dark:text-white"
-              onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               <div className="flex left-1/2">
