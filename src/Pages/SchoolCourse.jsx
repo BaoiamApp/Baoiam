@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
@@ -24,6 +24,7 @@ import Review from "../Components/Review/Review";
 import TestimonialCard from "../Components/Review/ReviewNext";
 import Featured from "../Components/Review/FeaturedReview";
 const SchoolCourse = () => {
+  const navigate = useNavigate()
   const planRef = useRef();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -302,6 +303,9 @@ const SchoolCourse = () => {
                       </div>
 
                       <button
+                      onClick={()=>{
+                        navigate(`/checkout/school/${id}/${p.name == 'Premium' ? 'Premium' : 'Plus'}`)
+                      }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"
                             ? "bg-orange-500 text-white"
