@@ -11,12 +11,14 @@ import { store } from "./Redux/store.js";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
+    <Provider store={store}>
       <Provider store={store}>
         {" "}
         <App />
       </Provider>
 
       <ChatBot />
+    </Provider>
       <ToastContainer />
     </BrowserRouter>
   </StrictMode>

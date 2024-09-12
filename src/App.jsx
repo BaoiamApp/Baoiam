@@ -27,7 +27,7 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
-import TeacherDashboard from './Components/InstructorDashboard/TeacherDashboard'
+import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 
 const App = () => {
@@ -64,7 +64,7 @@ const App = () => {
           element={<div>colleg Sub Category</div>}
         />
 
-        {/* Blogs */}
+        {/* Blog */}
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
         <Route path="/Blog_detail" element={<Blog_detail />} />
 
@@ -86,14 +86,8 @@ const App = () => {
         {/* Privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-        {/* Help Center */}
-        <Route path="/help-center" element={<HelpCenter />} />
-
-        {/* Hire from us */}
-        <Route path="/hire-from-us" element={<HireFromUs />} />
-
         {/* Checkout */}
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
 
         {/* Profile & Dashboard */}
         <Route path="/profile" element={<SideBar />} />
@@ -107,6 +101,11 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
 
+        {/* Help */}
+        <Route path="/help-center" element={<HelpCenter />} />
+
+        {/* Hire */}
+        <Route path="/hire-from-us" element={<HireFromUs />} />
       </Routes>
       <Footer dark={dark} />
     </div>
