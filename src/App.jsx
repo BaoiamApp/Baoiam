@@ -42,7 +42,6 @@ import Login from "./Pages/auth/Login";
 import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CollegeCourse from "./Pages/CollegeCourse";
 import OtherCourse from "./Pages/OtherCourse";
-import axios from "axios";
 
 const App = () => {
   const [dark, setDark] = useState(false);

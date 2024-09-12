@@ -11,6 +11,8 @@ import { RiMenu3Line, RiSearch2Line } from "react-icons/ri";
 import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { deleteUserData } from "../../redux/user/userSlice";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -18,6 +20,7 @@ const Navbar = ({ theme }) => {
   const [delayHide, setDelayHide] = useState(null);
   const [subCateDrop, setSubCateDrop] = useState(false);
   const [schoolCate, setSchoolCate] = useState(false);
+  const dispatch = useDispatch();
   const [collegeCate, setCollegeCate] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [userDrop, setUserDrop] = useState(false);
@@ -406,6 +409,7 @@ const Navbar = ({ theme }) => {
                         localStorage.removeItem("access_token");
                         localStorage.removeItem("userInfo");
                         navigate("/login");
+                        dispatch(deleteUserData());
                       }}
                       className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >

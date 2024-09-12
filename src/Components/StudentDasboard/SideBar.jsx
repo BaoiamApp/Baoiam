@@ -17,29 +17,15 @@ import { RiSecurePaymentFill } from "react-icons/ri";
 import Payment from "./Payment";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setProfile } from "../../redux/user/userSlice";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
   const [activeTab, setActiveTab] = useState("profile"); // Default active tab
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [userInfo, setUserInfo] = useState(() => {
-    const savedData = localStorage.getItem("userInfo");
-    return savedData
-      ? JSON.parse(savedData)
-      : {
-          name: "Name not provided",
-          email: "Email not provided",
-          college: "College not provided",
-          mobile: "Mobile not provided",
-          dob: "DOB not provided",
-          location: "Location not provided",
-          socialLinks: {
-            linkedIn: "",
-            gitHub: "",
-            leetCode: "",
-          },
-        };
-  });
+  const [userInfo, setUserInfo] = useState({});
+  const dispatch = useDispatch();
   const fetchUserDetails = async () => {
     try {
       const { data } = await axios.get(`${apiUrl}/api/auth/users/me/`, {
@@ -49,6 +35,7 @@ const Sidebar = () => {
         },
       });
       console.log(data);
+      dispatch(setProfile(data));
       localStorage.setItem("userInfo", JSON.stringify(data));
       console.log(
         "from local storage:",
@@ -103,7 +90,9 @@ const Sidebar = () => {
 
   const handleLogoutClick = () => {
     // Perform any logout logic here (e.g., clearing authentication tokens)
-    navigate("/"); // Redirect to the home page
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("userInfo");
+    navigate("/login"); // Redirect to the home page
   };
 
   return (

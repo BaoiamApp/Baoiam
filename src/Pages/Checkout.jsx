@@ -18,6 +18,7 @@ import { useParams } from "react-router-dom";
 import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
+const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
 const Checkout = () => {
   const invalidCouponToast = () => toast("Invalid Referral Code!");
@@ -55,9 +56,9 @@ const Checkout = () => {
     const buyCourse = async () => {
       try {
         const { data } = await axios.post(
-          `${apiUrl}/api/orders`,
+          `${apiUrl}/api/orders/`,
           {
-            plan_id: 8,
+            plan_id: 12,
           },
           {
             headers: {
@@ -66,7 +67,28 @@ const Checkout = () => {
             },
           }
         );
-        console.log('FROM CHECKOUT: ',data);
+        const { order_id, total_amount } = data;
+        const options = {
+          key: razorpayKeyId,
+          amount: total_amount,
+          currency: "INR",
+          order_id: order_id,
+          handler: async function (res) {
+            const payment_id = res.razorpay_payment_id;
+            const signature = res.razorpay_signature;
+            await axios.post(`${apiUrl}/api/orders/verify_payment/`, {
+              payment_id,
+              order_id,
+              signature,
+            });
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+        // console.log("FROM CHECKOUT: ", data);
       } catch (err) {
         console.log(err.stack);
       }
