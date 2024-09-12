@@ -69,7 +69,7 @@ export const School = [
           "6. Persuasive Speaking - Techniques for Persuasion; Persuasive Speech Practice",
           "7. Advanced Presentation Skills - Using Visual Aids; Managing Question and Answer Sessions",
           "8. Impromptu Speaking - Thinking on Your Feet; Evaluating Impromptu Performances",
-          '9. Speech Refinement'
+          "9. Speech Refinement",
         ],
         plans: [
           {
@@ -106,25 +106,6 @@ export const School = [
               "Resource Hub",
             ],
           },
-          // {
-          //   id: 3,
-          //   name: "Premium Combo",
-          //   courseName: "English speaking/Public speaking",
-          //   price: 84999.0,
-          //   courseItems: [
-          //     "Live Classes",
-          //     "Doubt clearing sessions",
-          //     "Assessment & case study",
-          //     "50+ Live projects & Internships",
-          //     "Interview preparation",
-          //     "Resume building",
-          //     "Network of top MNC industries & angels",
-          //     "Webinar and seminar access",
-          //     "Placement Assessment",
-          //     "Resource Hub",
-          //     "Placement assistance",
-          //   ],
-          // },
         ],
       },
       {
@@ -671,7 +652,7 @@ export const School = [
           // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
-          '   Introduction to Life Skills',
+          "   Introduction to Life Skills",
           "1. Personal Management - Time Management; Goal Setting; Organization",
           "2. Communication Skills - Verbal Communication; Non-Verbal Communication; Conflict Resolution",
           "3. Financial Literacy - Basic Money Management; Spending and Saving; Introduction to Banking",
@@ -1155,14 +1136,14 @@ export const School = [
           // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
-          `1. Introduction to Entrepreneurship - Overview of Entrepreneurship; Types of Ventures; Entrepreneurial Mindset`
-          ,`2. Ideation and Creativity - Idea Generation; Problem-Solving; Market Research`,
+          `1. Introduction to Entrepreneurship - Overview of Entrepreneurship; Types of Ventures; Entrepreneurial Mindset`,
+          `2. Ideation and Creativity - Idea Generation; Problem-Solving; Market Research`,
           `3. Business Planning - Business Model Canvas; Business Plan Development; Financial Basics`,
           `4. Product Development and Prototyping - Product Development Cycle; Prototyping Techniques; Feedback and Iteration`,
           `5. Marketing and Sales Strategies - Marketing Fundamentals; Sales Techniques; Social Media and Digital Presence`,
           `6. Operations and Management - Operations Management; Leadership and Team Building; Legal and Ethical Considerations`,
           `7. Financial Management - Financial Statements; Funding and Investment; Financial Management Tools`,
-          `8. Launch and Growth Strategies - Business Launch; Scaling Up; Adaptation and Innovation`
+          `8. Launch and Growth Strategies - Business Launch; Scaling Up; Adaptation and Innovation`,
         ],
         plans: [
           {
@@ -1272,8 +1253,8 @@ export const School = [
           `3. Social media advertising and email marketing essential `,
           `4. Analytics and Metrics, influencer Marketing`,
           `5. Developing a Digital Marketing Strategy along with legal and ethical consideration.`,
-          `6. Case study and Analysis `
-            ],
+          `6. Case study and Analysis `,
+        ],
         plans: [
           {
             id: 1,
@@ -1377,13 +1358,14 @@ export const School = [
         curriculum: [
           `1. Introduction to Personal Finance: Financial Literacy Basics, Setting Financial Goals, Creating a Budge`,
           `2. Banking and Saving: Types of Bank Accounts,  Interest Rates and Compound Interest, Online and Mobile Banking
-`,`3. Credit and Debt Management: Understanding Credit, Managing Debt, Avoiding Debt Pitfalls`,
-`4. Investing Basics: Investment Vehicles, Risk and Return, Building an Investment Portfolio`,
-`5. Economics and Financial Markets: Economic Principles, Financial Markets Overview, Global Financial Systems`,
-`6. Insurance and Risk Management: Types of Insurance, Risk Management Strategies, Choosing Insurance Plans`
-,`7. Financial Planning for the Future: Retirement Planning, College Savings Plans, Career and Income Planning
-`
-           ],
+`,
+          `3. Credit and Debt Management: Understanding Credit, Managing Debt, Avoiding Debt Pitfalls`,
+          `4. Investing Basics: Investment Vehicles, Risk and Return, Building an Investment Portfolio`,
+          `5. Economics and Financial Markets: Economic Principles, Financial Markets Overview, Global Financial Systems`,
+          `6. Insurance and Risk Management: Types of Insurance, Risk Management Strategies, Choosing Insurance Plans`,
+          `7. Financial Planning for the Future: Retirement Planning, College Savings Plans, Career and Income Planning
+`,
+        ],
         plans: [
           {
             id: 1,
@@ -1438,7 +1420,6 @@ export const CollegeCourseData = [
     id: 1,
     Cate: "College",
     link: "/courses/college",
-
     subCate: [
       {
         id: 11,
@@ -1500,102 +1481,101 @@ export const CollegeCourseData = [
         ],
         curriculum: [
           {
-            weekTitle:'Introduction to Web Development',
-            topics:[
-              'Overview of web development and the role of a web developer',
-              'Introduction to the basic structure of the web (clients, servers, and browsers)',
-              'Introduction to HTML and CSS'
-            ]
-          } ,
-          {
-            weekTitle:'HTML Basics',
-            topics:[
-              'Understanding HTML syntax and structure',
-              'Creating and formatting web pages with HTML',
-              'Working with text, images, links, and lists.'
-            ]
+            weekTitle: "Introduction to Web Development",
+            topics: [
+              "Overview of web development and the role of a web developer",
+              "Introduction to the basic structure of the web (clients, servers, and browsers)",
+              "Introduction to HTML and CSS",
+            ],
           },
           {
-            weekTitle:'CSS Basics',
-            topics:[
-              'Introduction to CSS and its role in web design.',
-              'CSS syntax and selectors.',
-              'Styling text, backgrounds, and layout using CSS'
-            ]
+            weekTitle: "HTML Basics",
+            topics: [
+              "Understanding HTML syntax and structure",
+              "Creating and formatting web pages with HTML",
+              "Working with text, images, links, and lists.",
+            ],
           },
           {
-            weekTitle:'Advanced HTML and CSS',
-            topics:[
-              'Forms and input elements in HTML',
-              'Advanced CSS techniques: Flexbox and Grid layout',
-              'Responsive design principles and media queries.'
-            ]
+            weekTitle: "CSS Basics",
+            topics: [
+              "Introduction to CSS and its role in web design.",
+              "CSS syntax and selectors.",
+              "Styling text, backgrounds, and layout using CSS",
+            ],
           },
           {
-            weekTitle:'JavaScript Basics',
-            topics:[
-              'Introduction to JavaScript and its role in web development',
-              'Basic JavaScript syntax, variables, and data types',
-              'Functions, loops, and conditional statements'
-            ]
+            weekTitle: "Advanced HTML and CSS",
+            topics: [
+              "Forms and input elements in HTML",
+              "Advanced CSS techniques: Flexbox and Grid layout",
+              "Responsive design principles and media queries.",
+            ],
           },
           {
-            weekTitle:'DOM Manipulation',
-            topics:[
-              'Understanding the Document Object Model (DOM).',
-              'Using JavaScript to interact with and manipulate HTML elements.',
-              'Event handling and basic animations.'
-            ]
+            weekTitle: "JavaScript Basics",
+            topics: [
+              "Introduction to JavaScript and its role in web development",
+              "Basic JavaScript syntax, variables, and data types",
+              "Functions, loops, and conditional statements",
+            ],
           },
           {
-            weekTitle:'Introduction to Web Design',
-            topics:[
-              'Principles of good web design and user experience (UX)',
-              'Color theory, typography, and layout design.',
-              'Tools for wireframing and prototyping.'
-            ]
+            weekTitle: "DOM Manipulation",
+            topics: [
+              "Understanding the Document Object Model (DOM).",
+              "Using JavaScript to interact with and manipulate HTML elements.",
+              "Event handling and basic animations.",
+            ],
           },
           {
-            weekTitle:'Project Work: Personal Web Page',
-            topics:[
-              'Students plan and design a personal web page',
-              'Application of HTML and CSS learned in previous weeks.',
-              'Peer reviews and feedback sessions.'
-            ]
+            weekTitle: "Introduction to Web Design",
+            topics: [
+              "Principles of good web design and user experience (UX)",
+              "Color theory, typography, and layout design.",
+              "Tools for wireframing and prototyping.",
+            ],
           },
           {
-            weekTitle:'Introduction to Web Hosting and Deployment',
-            topics:[
-              'Understanding web hosting and domain names.',
-              'Introduction to version control with Git.',
-              'Deploying a website using GitHub Pages or similar platforms.'
-            ]
+            weekTitle: "Project Work: Personal Web Page",
+            topics: [
+              "Students plan and design a personal web page",
+              "Application of HTML and CSS learned in previous weeks.",
+              "Peer reviews and feedback sessions.",
+            ],
           },
           {
-            weekTitle:'Introduction to Responsive Web Design',
-            topics:[
-              'Designing websites for different devices and screen sizes.',
-              'Advanced CSS techniques for responsive design.',
-              'Testing and optimizing web pages for mobile devices.'
-            ]
+            weekTitle: "Introduction to Web Hosting and Deployment",
+            topics: [
+              "Understanding web hosting and domain names.",
+              "Introduction to version control with Git.",
+              "Deploying a website using GitHub Pages or similar platforms.",
+            ],
           },
           {
-            weekTitle:'JavaScript Projects',
-            topics:[
-              'Implementing interactive features using JavaScript',
-              'Building a simple web application (e.g., a to-do list or a quiz).',
-              'Debugging and troubleshooting JavaScript code.'
-            ]
+            weekTitle: "Introduction to Responsive Web Design",
+            topics: [
+              "Designing websites for different devices and screen sizes.",
+              "Advanced CSS techniques for responsive design.",
+              "Testing and optimizing web pages for mobile devices.",
+            ],
           },
           {
-            weekTitle:'Final Project and Presentation',
-            topics:[
-              'Students work on a final project incorporating HTML, CSS, and JavaScript.',
-              'Presentation of projects to the class',
-              'Course review and reflection on skills learned.'
-            ]
-          }
-          
+            weekTitle: "JavaScript Projects",
+            topics: [
+              "Implementing interactive features using JavaScript",
+              "Building a simple web application (e.g., a to-do list or a quiz).",
+              "Debugging and troubleshooting JavaScript code.",
+            ],
+          },
+          {
+            weekTitle: "Final Project and Presentation",
+            topics: [
+              "Students work on a final project incorporating HTML, CSS, and JavaScript.",
+              "Presentation of projects to the class",
+              "Course review and reflection on skills learned.",
+            ],
+          },
         ],
         plans: [
           {
@@ -2214,91 +2194,91 @@ export const CollegeCourseData = [
           // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
-    {
-      weekTitle:'Introduction to Android Development',
-      topics:[
-        'Overview of app development and its importance.',
-        'Introduction to different types of apps (native, web, hybrid)',
-        'Basic concepts of user interfaces (UI) and user experiences (UX).'
-      ]
-    } 
-  ,{
-    weekTitle:'Setting Up the Development Environment',
-    topics:[
-      'Introduction to integrated development environments (IDEs).',
-      'Setting up tools: Android Studio for Android apps, Xcode for iOS apps.',
-      'Basic navigation of the development environment.'
-    ]
-  },
-  {
-    weekTitle:'Programming Fundamentals'
-    ,topics:[
-      'Introduction to programming languages used in app development (Java/Kotlin for Android, Swift for iOS).',
-      'Basic syntax and programming concepts (variables, data types, control structures).'
-    ]
-  },
-  {
-    weekTitle:'Building User Interfaces',
-    topics:[
-      `Designing app layouts using XML (for Android) or SwiftUI (for iOS).
+          {
+            weekTitle: "Introduction to Android Development",
+            topics: [
+              "Overview of app development and its importance.",
+              "Introduction to different types of apps (native, web, hybrid)",
+              "Basic concepts of user interfaces (UI) and user experiences (UX).",
+            ],
+          },
+          {
+            weekTitle: "Setting Up the Development Environment",
+            topics: [
+              "Introduction to integrated development environments (IDEs).",
+              "Setting up tools: Android Studio for Android apps, Xcode for iOS apps.",
+              "Basic navigation of the development environment.",
+            ],
+          },
+          {
+            weekTitle: "Programming Fundamentals",
+            topics: [
+              "Introduction to programming languages used in app development (Java/Kotlin for Android, Swift for iOS).",
+              "Basic syntax and programming concepts (variables, data types, control structures).",
+            ],
+          },
+          {
+            weekTitle: "Building User Interfaces",
+            topics: [
+              `Designing app layouts using XML (for Android) or SwiftUI (for iOS).
 Understanding layout components, views, and view controllers
 `,
-'Hands-on practice with simple UI elements like buttons, text fields, and images.'
-    ]
-  },
-  {
-    weekTitle:'Handling User Input',
-    topics:[
-      'Capturing and processing user input',
-      'Implementing basic interactivity and navigation within the app'
-    ]
-  },
-  {
-    weekTitle:'Working with Data',
-    topics:[
-      'Introduction to data storage options: local databases and cloud storage.',
-      'Basics of data persistence and retrieval.'
-    ]
-  },
-  {
-    weekTitle:'Integrating APIs and Services',
-    topics:[
-      'Introduction to APIs and how to integrate them into apps.',
-      'Using third-party services and libraries.'
-    ]
-  },
-  {
-    weekTitle:'Debugging and Testing',
-    topics:[
-      'Techniques for debugging code.',
-      'Writing and running tests to ensure app stability and functionality'
-    ]
-  },
-  {
-    weekTitle:'Publishing and Deployment',
-    topics:[
-      'Overview of app deployment processes for Google Play Store and Apple App Store.',
-      'Preparing the app for release and understanding app store guidelines.'
-    ]
-  },
-  {
-    weekTitle:'Project Work - Part 1',
-    topics:[
-      'Students start working on their individual or group projects',
-      'Guidance on project planning and development.',
-      'Continued development and refinement of projects.',
-      'Peer reviews and feedback sessions.'
-    ]
-  },
-  {
-    weekTitle:'Final Presentations and Wrap-Up',
-    topics:[
-      'Presentation of student projects',
-      'Course review and feedback',
-      'Discussion on next steps for further learning and development in app programming.'
-    ]
-  }
-  ],
+              "Hands-on practice with simple UI elements like buttons, text fields, and images.",
+            ],
+          },
+          {
+            weekTitle: "Handling User Input",
+            topics: [
+              "Capturing and processing user input",
+              "Implementing basic interactivity and navigation within the app",
+            ],
+          },
+          {
+            weekTitle: "Working with Data",
+            topics: [
+              "Introduction to data storage options: local databases and cloud storage.",
+              "Basics of data persistence and retrieval.",
+            ],
+          },
+          {
+            weekTitle: "Integrating APIs and Services",
+            topics: [
+              "Introduction to APIs and how to integrate them into apps.",
+              "Using third-party services and libraries.",
+            ],
+          },
+          {
+            weekTitle: "Debugging and Testing",
+            topics: [
+              "Techniques for debugging code.",
+              "Writing and running tests to ensure app stability and functionality",
+            ],
+          },
+          {
+            weekTitle: "Publishing and Deployment",
+            topics: [
+              "Overview of app deployment processes for Google Play Store and Apple App Store.",
+              "Preparing the app for release and understanding app store guidelines.",
+            ],
+          },
+          {
+            weekTitle: "Project Work - Part 1",
+            topics: [
+              "Students start working on their individual or group projects",
+              "Guidance on project planning and development.",
+              "Continued development and refinement of projects.",
+              "Peer reviews and feedback sessions.",
+            ],
+          },
+          {
+            weekTitle: "Final Presentations and Wrap-Up",
+            topics: [
+              "Presentation of student projects",
+              "Course review and feedback",
+              "Discussion on next steps for further learning and development in app programming.",
+            ],
+          },
+        ],
         plans: [
           {
             id: 1,
@@ -2407,73 +2387,73 @@ Understanding layout components, views, and view controllers
           // "Digital resource hub - Guidance from industry experts",
         ],
         curriculum: [
-        {
-          weekTitle:'Introduction to Digital Marketing',
-          topics:[
-            'Overview of digital marketing and its significance.',
-            `Key digital marketing terms and concepts`,
-            `The digital marketing ecosystem: SEO, SEM, content marketing, and social media`
-          ]
-        } ,
-        {
-            weekTitle:'Content Creation and Management',
-            topics:[
-              'Crafting compelling content for various digital platforms',
-              'Basics of graphic design and video production',
-              'Content planning and strategy.'
-            ]
-        },
-        {
-          weekTitle:'Social Media Marketing',
-          topics:[
-            'Introduction to major social media platforms (Facebook, Instagram, Twitter, LinkedIn).',
-            'Creating and managing social media profiles.',
-            'Developing effective social media campaigns.'
-          ]
-        },
-        {
-          weekTitle:'Search Engine Optimization (SEO) and Search Engine Marketing (SEM)'
-          ,topics:[
-            'Understanding SEO fundamentals and techniques',
-            'Basics of SEM and paid advertising (Google Ads, PPC)',
-            'Keyword research and optimization'
-          ]
-        },
-        {
-          weekTitle:'Email Marketing and Automation',
-          topics:[
-            'Designing effective email marketing campaigns',
-            'Understanding email lists, segmentation, and automation tools',
-            'Analyzing email marketing performance'
-          ]
-        },
-        {
-          weekTitle:'Analytics and Data Interpretation',
-          topics:[
-            'Introduction to digital analytics tools (Google Analytics)',
-            'Tracking and measuring campaign performance',
-            'Using data to make informed marketing decisions'
-          ]
-        },
-        {
-          weekTitle:'Ethics and Best Practices',
-          topics:[
-            'Understanding digital marketing regulations and ethical issues.',
-            'Best practices for online advertising and privacy.',
-            'Managing online reputation and brand image.'
-          ]
-        },
-        {
-          weekTitle:'Projects and Assessments',
-          topics:[
-            'Practical Projects: Create and execute digital marketing campaigns for real or simulated businesses.',
-            'Presentations: Present marketing strategies and results',
-            'Quizzes and Exams: Assess understanding of key concepts and tools.',
-            'Group Work: Collaboration on projects'
-          ]
-        }
-      
-      ],
+          {
+            weekTitle: "Introduction to Digital Marketing",
+            topics: [
+              "Overview of digital marketing and its significance.",
+              `Key digital marketing terms and concepts`,
+              `The digital marketing ecosystem: SEO, SEM, content marketing, and social media`,
+            ],
+          },
+          {
+            weekTitle: "Content Creation and Management",
+            topics: [
+              "Crafting compelling content for various digital platforms",
+              "Basics of graphic design and video production",
+              "Content planning and strategy.",
+            ],
+          },
+          {
+            weekTitle: "Social Media Marketing",
+            topics: [
+              "Introduction to major social media platforms (Facebook, Instagram, Twitter, LinkedIn).",
+              "Creating and managing social media profiles.",
+              "Developing effective social media campaigns.",
+            ],
+          },
+          {
+            weekTitle:
+              "Search Engine Optimization (SEO) and Search Engine Marketing (SEM)",
+            topics: [
+              "Understanding SEO fundamentals and techniques",
+              "Basics of SEM and paid advertising (Google Ads, PPC)",
+              "Keyword research and optimization",
+            ],
+          },
+          {
+            weekTitle: "Email Marketing and Automation",
+            topics: [
+              "Designing effective email marketing campaigns",
+              "Understanding email lists, segmentation, and automation tools",
+              "Analyzing email marketing performance",
+            ],
+          },
+          {
+            weekTitle: "Analytics and Data Interpretation",
+            topics: [
+              "Introduction to digital analytics tools (Google Analytics)",
+              "Tracking and measuring campaign performance",
+              "Using data to make informed marketing decisions",
+            ],
+          },
+          {
+            weekTitle: "Ethics and Best Practices",
+            topics: [
+              "Understanding digital marketing regulations and ethical issues.",
+              "Best practices for online advertising and privacy.",
+              "Managing online reputation and brand image.",
+            ],
+          },
+          {
+            weekTitle: "Projects and Assessments",
+            topics: [
+              "Practical Projects: Create and execute digital marketing campaigns for real or simulated businesses.",
+              "Presentations: Present marketing strategies and results",
+              "Quizzes and Exams: Assess understanding of key concepts and tools.",
+              "Group Work: Collaboration on projects",
+            ],
+          },
+        ],
         plans: [
           {
             id: 1,
@@ -2595,103 +2575,80 @@ Understanding layout components, views, and view controllers
         ],
         curriculum: [
           {
-            weekTitle:'Week 1 - UI/UX Introduction (basic level to advance)',
-            topics:[
-              'Primary Research',
-              'Secondary Research'
-            ]
+            weekTitle: "Week 1 - UI/UX Introduction (basic level to advance)",
+            topics: ["Primary Research", "Secondary Research"],
           },
           {
-            weekTitle:'Week 2',
-            topics:[
-              'Quantitative research',
-              'Qualitative research',
-              'Competitive research',
-              'Affinity Mapping 1 to 1 .Students review & performance'
-            ]
+            weekTitle: "Week 2",
+            topics: [
+              "Quantitative research",
+              "Qualitative research",
+              "Competitive research",
+              "Affinity Mapping 1 to 1 .Students review & performance",
+            ],
           },
           {
-            weekTitle:'Week 3',
-            topics:[
-              'Deation & brainstorming',
-              'Empathy mapping',
-              'User persona',
-              'Used Tools(Miro)'
-            ]
+            weekTitle: "Week 3",
+            topics: [
+              "Deation & brainstorming",
+              "Empathy mapping",
+              "User persona",
+              "Used Tools(Miro)",
+            ],
           },
           {
-            weekTitle:'Week 4',
-            topics:[
-              'Information architecture',
-              'User flow',
-              'Wire frames',
-              'Used Tools(Miro)'
-            ]
+            weekTitle: "Week 4",
+            topics: [
+              "Information architecture",
+              "User flow",
+              "Wire frames",
+              "Used Tools(Miro)",
+            ],
           },
           {
-            weekTitle:'Week 5 - UI/UX Introduction (basic level to advance)',
-            topics:[
-              'Figma Tool explanation and practice'
-            ]
+            weekTitle: "Week 5 - UI/UX Introduction (basic level to advance)",
+            topics: ["Figma Tool explanation and practice"],
           },
           {
-            weekTitle:'Week 6',
-            topics:[
-              'Assignments Explanation'
-            ]
+            weekTitle: "Week 6",
+            topics: ["Assignments Explanation"],
           },
           {
-            weekTitle:'Week 7',
-            topics:[
-              'Assignments Review',
-              'Clarification'
-            ]
+            weekTitle: "Week 7",
+            topics: ["Assignments Review", "Clarification"],
           },
           {
-            weekTitle:'Week 8',
-            topics:[
-              'Mini-Project',
-              'Design Principles'
-            ]
+            weekTitle: "Week 8",
+            topics: ["Mini-Project", "Design Principles"],
           },
           {
-            weekTitle:'Week 8 - UI/UX Introduction (basic level to advance)'
-            ,topics:[
-              'Mini-Project',
-              'Clarification'
-            ]
+            weekTitle: "Week 8 - UI/UX Introduction (basic level to advance)",
+            topics: ["Mini-Project", "Clarification"],
           },
           {
-            weekTitle:'Week 10',
-            topics:[
-              'Assistance main project review'
-            ]
+            weekTitle: "Week 10",
+            topics: ["Assistance main project review"],
           },
           {
-            weekTitle:'Week 11',
-            topics:[
-              'Assistance main project review'
-            ]
+            weekTitle: "Week 11",
+            topics: ["Assistance main project review"],
           },
           {
-            weekTitle:'Week 12',
-            topics:[
-              'Interview Questions',
-              'Project Presentation'
-            ]
+            weekTitle: "Week 12",
+            topics: ["Interview Questions", "Project Presentation"],
           },
           {
-            weekTitle:'',
-            topics:[
-              'Grid System',
-              'Color Psychology',
-              'Typography',
-              'Buttons',
-              'Material Design',
-              'Psychology principles and UI design principles',
-              'Project Visual Appearance'
-            ]
-          }
+            weekTitle: "",
+            topics: [
+              "Grid System",
+              "Color Psychology",
+              "Typography",
+              "Buttons",
+              "Material Design",
+              "Psychology principles and UI design principles",
+              "Project Visual Appearance",
+            ],
+          },
         ],
         plans: [
           {
@@ -2813,81 +2770,81 @@ Understanding layout components, views, and view controllers
         ],
         curriculum: [
           {
-            weekTitle:'Introduction to Software Testing',
-            topics:[
-              'What is Software Testing?',
-              'Importance and Goals of Software Testing',
-              'Overview of the Software Development Life Cycle (SDLC).'
-            ]
+            weekTitle: "Introduction to Software Testing",
+            topics: [
+              "What is Software Testing?",
+              "Importance and Goals of Software Testing",
+              "Overview of the Software Development Life Cycle (SDLC).",
+            ],
           },
           {
-            weekTitle:'Types of Software Testing',
-            topics:[
-              'Manual vs. Automated Testing',
-              'Functional Testing: Unit Testing, Integration Testing, System Testing',
-              'Non-Functional Testing: Performance Testing, Usability Testing, Security Testing.'
-            ]
+            weekTitle: "Types of Software Testing",
+            topics: [
+              "Manual vs. Automated Testing",
+              "Functional Testing: Unit Testing, Integration Testing, System Testing",
+              "Non-Functional Testing: Performance Testing, Usability Testing, Security Testing.",
+            ],
           },
           {
-            weekTitle:'Testing Methods and Techniques',
-            topics:[
-              'Black-Box Testing: Testing without knowledge of the internal workings.',
-              'White-Box Testing: Testing with knowledge of internal code',
-              'Gray-Box Testing: Combination of both black-box and white-box.'
-            ]
+            weekTitle: "Testing Methods and Techniques",
+            topics: [
+              "Black-Box Testing: Testing without knowledge of the internal workings.",
+              "White-Box Testing: Testing with knowledge of internal code",
+              "Gray-Box Testing: Combination of both black-box and white-box.",
+            ],
           },
           {
-            weekTitle:'Creating Test Cases',
-            topics:[
-              'What is a Test Case?',
-              'Writing Effective Test Cases.',
-              'Test Case Design Techniques: Equivalence Partitioning, Boundary Value Analysis.'
-            ]
+            weekTitle: "Creating Test Cases",
+            topics: [
+              "What is a Test Case?",
+              "Writing Effective Test Cases.",
+              "Test Case Design Techniques: Equivalence Partitioning, Boundary Value Analysis.",
+            ],
           },
           {
-            weekTitle:'Bug Reporting and Tracking',
-            topics:[
-              'What is a Bug or Defect?',
-              'How to Report Bugs Effectively.',
-              'Introduction to Bug Tracking Tools'
-            ]
+            weekTitle: "Bug Reporting and Tracking",
+            topics: [
+              "What is a Bug or Defect?",
+              "How to Report Bugs Effectively.",
+              "Introduction to Bug Tracking Tools",
+            ],
           },
           {
-            weekTitle:'Introduction to Automated Testing',
-            topics:[
-              'What is Automated Testing?.',
-              'Benefits and Drawbacks of Automation',
-              'Basic Tools and Frameworks: Selenium, JUnit'
-            ]
+            weekTitle: "Introduction to Automated Testing",
+            topics: [
+              "What is Automated Testing?.",
+              "Benefits and Drawbacks of Automation",
+              "Basic Tools and Frameworks: Selenium, JUnit",
+            ],
           },
           {
-            weekTitle:'Hands-On Practice',
-            topics:[
-              'Manual Testing: Hands-on exercises with test cases',
-              'Automated Testing: Simple scripts using a basic tool like Selenium.'
-            ]
+            weekTitle: "Hands-On Practice",
+            topics: [
+              "Manual Testing: Hands-on exercises with test cases",
+              "Automated Testing: Simple scripts using a basic tool like Selenium.",
+            ],
           },
           {
-            weekTitle:'Real-World Applications and Review',
-            topics:[
-              'Case Studies of Software Testing in the Industry',
-              'Recap of Key Concepts'
-            ]
+            weekTitle: "Real-World Applications and Review",
+            topics: [
+              "Case Studies of Software Testing in the Industry",
+              "Recap of Key Concepts",
+            ],
           },
           {
-            weekTitle:'Final Project: Testing a Sample Application',
-            topics:[]
+            weekTitle: "Final Project: Testing a Sample Application",
+            topics: [],
           },
           {
-            weekTitle:'Assessment',
-            topics:[
+            weekTitle: "Assessment",
+            topics: [
               `Quizzes: Short quizzes to assess understanding of key concepts.
 Assignments: Writing test cases and bug reports.
 `,
-`Final Project: Hands-on testing of a sample application.`
-            ]
-          }
-       ],
+              `Final Project: Hands-on testing of a sample application.`,
+            ],
+          },
+        ],
         plans: [
           {
             id: 1,
@@ -3141,75 +3098,73 @@ Assignments: Writing test cases and bug reports.
         ],
         curriculum: [
           {
-            weekTitle:`Week 1 - SEO Fundamentals`,
-            topics:[
-              'Introduction to Search Engines and SEO Basics',
-              'Keyword Research Techniques',
-              'Long-Tail Keyword Research',
-              'Competitive Analysis',
-              'Keyword Selection and Planning',
-              
-            ]
+            weekTitle: `Week 1 - SEO Fundamentals`,
+            topics: [
+              "Introduction to Search Engines and SEO Basics",
+              "Keyword Research Techniques",
+              "Long-Tail Keyword Research",
+              "Competitive Analysis",
+              "Keyword Selection and Planning",
+            ],
           },
           {
-            weekTitle:`Week 2 - On - Page Optimization`,
-            topics:[
-              'On-Page SEO Fundamentals',
-              'Optimizing Meta Tags',
-              'Optimizing Headings and Content',
-              'Content Quality and Relevance',
-              'Content Structure and Formatting'
-            ]
+            weekTitle: `Week 2 - On - Page Optimization`,
+            topics: [
+              "On-Page SEO Fundamentals",
+              "Optimizing Meta Tags",
+              "Optimizing Headings and Content",
+              "Content Quality and Relevance",
+              "Content Structure and Formatting",
+            ],
           },
           {
-            weekTitle:'Week 3 - Advanced On-Page Optimization',
-            topics:[
-              'Advanced Content Optimization',
-              'Keyword Placement and Density',
-              'Content Optimization for Voice Search',
-              'Technical SEO Basics',
-              'Website Crawling and Indexing',
-              'URL Structure and Canonicalization'
-            ]
+            weekTitle: "Week 3 - Advanced On-Page Optimization",
+            topics: [
+              "Advanced Content Optimization",
+              "Keyword Placement and Density",
+              "Content Optimization for Voice Search",
+              "Technical SEO Basics",
+              "Website Crawling and Indexing",
+              "URL Structure and Canonicalization",
+            ],
           },
           {
-            weekTitle:'Week 4 - Off-Page Optimization',
-            topics:[
-              'Link Building Strategies - Types of Backlinks ; Link Building Tactics and Best Practices'
-              ,`Guest Blogging and Outreach Techniques - Guest Blogging Strategies ; Outreach Techniques and Email Templates`
-            ]
+            weekTitle: "Week 4 - Off-Page Optimization",
+            topics: [
+              "Link Building Strategies - Types of Backlinks ; Link Building Tactics and Best Practices",
+              `Guest Blogging and Outreach Techniques - Guest Blogging Strategies ; Outreach Techniques and Email Templates`,
+            ],
           },
           {
-            weekTitle:'Week 5 - Local SEO Optimization',
-            topics:[
-              'Importance of Local SEO - Local SEO Ranking Factors ; Google My Business Optimization',
-              'Local Citations and Reviews Management - Building Local Citations ; Managing Online Reviews and Reputation',
-              
-            ]
+            weekTitle: "Week 5 - Local SEO Optimization",
+            topics: [
+              "Importance of Local SEO - Local SEO Ranking Factors ; Google My Business Optimization",
+              "Local Citations and Reviews Management - Building Local Citations ; Managing Online Reviews and Reputation",
+            ],
           },
           {
-            weekTitle:'Week 6 - Social Media and SEO',
-            topics:[
-              'Social Signals and SEO Impact - Social Media Optimization Strategies ; Integrating Social Media with SEO'
-              ,`Advanced Link Building Techniques - Advanced Link Building Strategies ; Broken Link Building and Link Reclamation`
-            ]
+            weekTitle: "Week 6 - Social Media and SEO",
+            topics: [
+              "Social Signals and SEO Impact - Social Media Optimization Strategies ; Integrating Social Media with SEO",
+              `Advanced Link Building Techniques - Advanced Link Building Strategies ; Broken Link Building and Link Reclamation`,
+            ],
           },
           {
-            weekTitle:'Week 7 - Advanced SEO Techniques',
-            topics:[
-              'Advanced Keyword Research - Semantic SEO and Latent Semantic Indexing (LSI) ; Keyword Expansion and Analysis Tools'
-              , `Advanced On-Page Optimization - Advanced HTML Markup and Structured Data ; Advanced Schema Markup Implementation`
-            ]
+            weekTitle: "Week 7 - Advanced SEO Techniques",
+            topics: [
+              "Advanced Keyword Research - Semantic SEO and Latent Semantic Indexing (LSI) ; Keyword Expansion and Analysis Tools",
+              `Advanced On-Page Optimization - Advanced HTML Markup and Structured Data ; Advanced Schema Markup Implementation`,
+            ],
           },
           {
-            weekTitle:'Week 8 - SEO Tools, Analytics, and Strategy',
-            topics:[
-              'Introduction to SEO Tools - Overview of SEO Tools (e.g., Google Analytics, SEMrush) ; Hands-on Practice with SEO Tools',
-              'Using SEO Tools for Analysis and Reporting - Reporting SEO Performance Metrics ; Analyzing SEO Data and Making Data-Driven Decisions',
-              'Developing an SEO Strategy and Wrap-Up - Setting SEO Goals and KPIs ; Creating an SEO Roadmap and Action Plan'
-            ]
-          }
-          ],
+            weekTitle: "Week 8 - SEO Tools, Analytics, and Strategy",
+            topics: [
+              "Introduction to SEO Tools - Overview of SEO Tools (e.g., Google Analytics, SEMrush) ; Hands-on Practice with SEO Tools",
+              "Using SEO Tools for Analysis and Reporting - Reporting SEO Performance Metrics ; Analyzing SEO Data and Making Data-Driven Decisions",
+              "Developing an SEO Strategy and Wrap-Up - Setting SEO Goals and KPIs ; Creating an SEO Roadmap and Action Plan",
+            ],
+          },
+        ],
         plans: [
           {
             id: 1,
@@ -3274,7 +3229,7 @@ Assignments: Writing test cases and bug reports.
         category: "Business",
         difficultyLevel: "Advanced",
         price: "$109",
-        desc:`In a world where everything is becoming digital, Machine Learning (ML) and Artificial intelligence (AI) are leading industries for change and innovation. With the increase in the need for skilled staff in these areas, students should give themselves the best knowledge to face the future in such an active and challenging field. The course  “Machine Learning with AI” is aimed at students to orient them with the Fundamentals, approaches, and utilization of Machine Learning and Artificial Intelligence.`,
+        desc: `In a world where everything is becoming digital, Machine Learning (ML) and Artificial intelligence (AI) are leading industries for change and innovation. With the increase in the need for skilled staff in these areas, students should give themselves the best knowledge to face the future in such an active and challenging field. The course  “Machine Learning with AI” is aimed at students to orient them with the Fundamentals, approaches, and utilization of Machine Learning and Artificial Intelligence.`,
         highlights: [
           {
             icon: "MdOutlineClass",
@@ -3384,100 +3339,104 @@ Assignments: Writing test cases and bug reports.
           //   ],
           // },
         ],
-        overview:[
-          'The “Machine Learning with AI” course provides students with a broad look at the realm of smart systems, where the learning-by-data and prediction principles will be described. This course has been designed for students who are interested in learning about the basic concepts of ML and AI with an application orientation and a focus on solving real-world problems.',
-          'Across the course, students will be exposed to a range of the most popular ML algorithms, tools, as well as frameworks that will allow for the creation, testing, and fine-tuning of Machine Learning models. ',
-          'The course also focuses on the moral consequences and the effect of AI on society, meaning that the student will be ready to face the issues that arise when designing and implementing AI systems.'
+        overview: [
+          "The “Machine Learning with AI” course provides students with a broad look at the realm of smart systems, where the learning-by-data and prediction principles will be described. This course has been designed for students who are interested in learning about the basic concepts of ML and AI with an application orientation and a focus on solving real-world problems.",
+          "Across the course, students will be exposed to a range of the most popular ML algorithms, tools, as well as frameworks that will allow for the creation, testing, and fine-tuning of Machine Learning models. ",
+          "The course also focuses on the moral consequences and the effect of AI on society, meaning that the student will be ready to face the issues that arise when designing and implementing AI systems.",
         ],
-        curriculum:[
-          {yes:true},
+        curriculum: [
+          { yes: true },
           `The curriculum is designed to provide a balanced mix of theoretical knowledge and practical skills, ensuring that students are well-equipped to pursue careers in AI and ML or further academic research. Below is a breakdown of the key modules covered in the course:`,
           {
-            weekTitle:'Introduction to Machine Learning and AI',
-            topics:[
-              'Overview of AI and ML',
-              'History and evolution of AI',
-              'Applications of AI in various industries'
-            ]
+            weekTitle: "Introduction to Machine Learning and AI",
+            topics: [
+              "Overview of AI and ML",
+              "History and evolution of AI",
+              "Applications of AI in various industries",
+            ],
           },
           {
-            weekTitle:'Mathematical Foundations',
-            topics:[
-              'Linear Algebra',
-              'Probability and Statistics',
-              'Calculus for Machine Learning'
-            ]
+            weekTitle: "Mathematical Foundations",
+            topics: [
+              "Linear Algebra",
+              "Probability and Statistics",
+              "Calculus for Machine Learning",
+            ],
           },
           {
-            weekTitle:'Data Preprocessing',
-            topics:[
-              'Data cleaning and transformation',
-              'Feature selection and extraction',
-              'Handling missing data and outliers'
-            ]
+            weekTitle: "Data Preprocessing",
+            topics: [
+              "Data cleaning and transformation",
+              "Feature selection and extraction",
+              "Handling missing data and outliers",
+            ],
           },
           {
-            weekTitle:'Supervised Learning',
-            topics:[
-              'Linear and Logistic Regression',
-              'Decision Trees and Random Forests',
-              'Support Vector Machines (SVM)',
-              'Model evaluation and validation'
-            ]
+            weekTitle: "Supervised Learning",
+            topics: [
+              "Linear and Logistic Regression",
+              "Decision Trees and Random Forests",
+              "Support Vector Machines (SVM)",
+              "Model evaluation and validation",
+            ],
           },
           {
-            weekTitle:'Unsupervised Learning',
-            topics:[
-              'Clustering techniques (K-means, Hierarchical Clustering)',
-              'Dimensionality Reduction (PCA, LDA)',
-              'Anomaly detection'
-            ]
+            weekTitle: "Unsupervised Learning",
+            topics: [
+              "Clustering techniques (K-means, Hierarchical Clustering)",
+              "Dimensionality Reduction (PCA, LDA)",
+              "Anomaly detection",
+            ],
           },
           {
-            weekTitle:'Neural Networks and Deep Learning',
-            topics:[
-              'Introduction to neural networks',
-              'Convolutional Neural Networks (CNNs)',
-              'Recurrent Neural Networks (RNNs)',
-              'Deep learning frameworks (TensorFlow, PyTorch)'
-            ]
+            weekTitle: "Neural Networks and Deep Learning",
+            topics: [
+              "Introduction to neural networks",
+              "Convolutional Neural Networks (CNNs)",
+              "Recurrent Neural Networks (RNNs)",
+              "Deep learning frameworks (TensorFlow, PyTorch)",
+            ],
           },
           {
-            weekTitle:'Reinforcement Learning',
-            topics:[
-              'Basics of reinforcement learning',
-              'Q-learning and Deep Q Networks (DQN)',
-              'Applications in gaming and robotics'
-            ]
+            weekTitle: "Reinforcement Learning",
+            topics: [
+              "Basics of reinforcement learning",
+              "Q-learning and Deep Q Networks (DQN)",
+              "Applications in gaming and robotics",
+            ],
           },
           {
-            weekTitle:'Natural Language Processing (NLP)',
-            topics:[
-              'Text preprocessing and vectorization',
-              'Sentiment analysis and topic modeling',
-              'Introduction to transformers and GPT models'
-            ]
+            weekTitle: "Natural Language Processing (NLP)",
+            topics: [
+              "Text preprocessing and vectorization",
+              "Sentiment analysis and topic modeling",
+              "Introduction to transformers and GPT models",
+            ],
           },
           {
-            weekTitle:'Model Deployment and Production',
-            topics:[
-              'Model deployment strategies',
-              'Scaling machine learning models',
-              'Monitoring and maintaining AI systems'
-            ]
+            weekTitle: "Model Deployment and Production",
+            topics: [
+              "Model deployment strategies",
+              "Scaling machine learning models",
+              "Monitoring and maintaining AI systems",
+            ],
           },
           {
-            topics:['Understanding bias in AI','Ethical considerations in AI development','Future trends and the impact of AI on society'],
-            weekTitle:'Ethics and AI'
+            topics: [
+              "Understanding bias in AI",
+              "Ethical considerations in AI development",
+              "Future trends and the impact of AI on society",
+            ],
+            weekTitle: "Ethics and AI",
           },
           {
-            weekTitle:'Project',
-            topics:[
-              'Real-world project implementation',
-              'Collaborative work and presentation',
-              'Feedback and improvement strategies'
-            ]
-          }
+            weekTitle: "Project",
+            topics: [
+              "Real-world project implementation",
+              "Collaborative work and presentation",
+              "Feedback and improvement strategies",
+            ],
+          },
         ],
         language: "English",
         courseDuration: "9 weeks",
@@ -3485,6 +3444,49 @@ Assignments: Writing test cases and bug reports.
         courseURL: "https://example.com/entrepreneurship-innovation",
       },
     ],
+  },
+];
+
+export const Highlights = [
+  {
+    icon: "MdOutlineClass",
+    head: "Live online classes",
+    desc: "learn from our experts live",
+  },
+  {
+    icon: "FcAssistant",
+    head: "Placement assistance",
+    desc: "Access support for securing better jobs",
+  },
+  {
+    icon: "GrUserWorker",
+    head: "Internships get hands",
+    desc: "on experience by working in several firms",
+  },
+  {
+    icon: "SlEnvolopeLetter",
+    head: "Letter of recommendation",
+    desc: "enhance your credibility with endorsements from professionals",
+  },
+  {
+    icon: "GoProjectRoadmap",
+    head: "Live projects",
+    desc: "Hands on live project with expert guidance",
+  },
+  {
+    icon: "MdOutlineLiveHelp",
+    head: "Doubt clearing sessions",
+    desc: "get all your doubts cleared by your experts",
+  },
+  {
+    icon: "MdOutlineAssessment",
+    head: "Placement assessment",
+    desc: "get all your doubts cleared by your experts",
+  },
+  {
+    icon: "PiCertificate",
+    head: "Certificate of completion",
+    desc: "Evaluate your readiness for job opportunities",
   },
 ];
 

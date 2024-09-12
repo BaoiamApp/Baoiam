@@ -288,7 +288,7 @@ const Blog = () => {
                 <img
                   className='w-full h-48 object-cover'
                   src={item.imgSrc}
-                  alt={`Blog Post ${i}`}
+                  alt={`${item.title}`}
                 />
                 <div className='p-6 flex-grow'>
                   <span
