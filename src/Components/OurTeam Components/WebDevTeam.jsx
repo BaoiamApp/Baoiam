@@ -24,7 +24,7 @@ export const WebDevTeam = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div className='md:w-[65%]'>
+        <div className='w-[90%] md:w-[65%]'>
           <div>
             <Swiper
               keyboard={{
@@ -42,7 +42,7 @@ export const WebDevTeam = () => {
                   slidesPerView: 4,
                 },
               }}
-              className='md:h-[350px] w-[60%] md:w-full m-auto rounded-lg flex flex-col justify-center items-center gap-6'
+              className='md:h-[350px] h-[230px] w-[65%] md:w-full m-auto rounded-xl flex flex-col justify-center items-center gap-6'
             >
               {webData?.map((el) => {
                 return (
