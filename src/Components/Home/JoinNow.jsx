@@ -7,7 +7,7 @@ const Home = () => {
       <h1 className="text-3xl my-2 text-center font-bold">
         Your Future Starts <span className=""> Here</span>
       </h1>
-      <div className="dark:bg-black px-4 md:px-8 lg:px-16 dark:text-white flex flex-col md:flex-row justify-center my-12 w-full">
+      <div className="dark:bg-[#080529] px-4 md:px-8 lg:px-16 dark:text-white flex flex-col md:flex-row justify-center my-12 w-full">
         <div className="w-full lg:w-[60%] lg:h-[30rem]">
           <img
             className="w-full h-full rounded-lg object-cover"

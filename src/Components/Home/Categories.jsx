@@ -15,7 +15,7 @@ const Categories = () => {
     ];
 
     return (
-        <div className="text-center px-2 py-11 mx-auto ">
+        <div className="text-center dark:bg-[#080529] px-2 py-11 mx-auto ">
             <h1 className="text-3xl tracking-tight font-bold mx-auto mb-4">Advance Your Career Learn in <span className='text-indigo-600'>Baoiam</span></h1>
             <p className="text-sm mx-auto px-2 md:text-lg mb-4 md:mb-6">
                 Upskill in business analytics, health care, graphic design, management, and more.

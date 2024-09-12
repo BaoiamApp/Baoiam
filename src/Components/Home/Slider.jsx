@@ -33,7 +33,7 @@ export default function SliderSection() {
   };
 
   return (
-    <div className="slider-section w-full py-10 relative overflow-hidden">
+    <div className="slider-section dark:bg-[#080529] w-full py-10 relative overflow-hidden">
       <div className="text-center mb-0 lg:mb-8">
         <h2 className="text-4xl font-bold mb-4">Explore Our Courses</h2>
         <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
@@ -43,7 +43,7 @@ export default function SliderSection() {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 border-2 py-2 w-fit text-xs md:text-sm rounded-lg ${
                 selectedCategory === category
-                  ? 'bg-black text-white rounded-xl text-sm transition-all ease-in-out duration-300'
+                  ? 'dark:bg-indigo-900 bg-black text-white rounded-xl text-sm transition-all ease-in-out duration-300'
                   : 'bg-white text-black'
               } hover:bg-gradient-to-l hover:scale-105 transition`}
             >
@@ -83,7 +83,7 @@ export default function SliderSection() {
       >
         {categories[selectedCategory]?.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="card dark:bg-white/10 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out">
+            <div className="card dark:bg-indigo-900 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out">
               <div className="image-container mb-4">
                 <img
                   src={slide.img}
