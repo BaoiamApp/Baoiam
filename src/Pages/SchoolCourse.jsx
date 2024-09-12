@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
@@ -22,6 +22,7 @@ import * as PiIcons from "react-icons/pi";
 import axios from "axios";
 
 const SchoolCourse = () => {
+  const navigate = useNavigate()
   const planRef = useRef();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -301,6 +302,9 @@ const SchoolCourse = () => {
                       </div>
 
                       <button
+                      onClick={()=>{
+                        navigate(`/checkout/school/${id}/${p.name == 'Premium' ? 'Premium' : 'Plus'}`)
+                      }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"
                             ? "bg-orange-500 text-white"

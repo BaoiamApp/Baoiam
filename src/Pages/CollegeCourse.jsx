@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { CollegeCourseData, School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
@@ -23,6 +23,7 @@ import axios from "axios";
 
 const CollegeCourse = () => {
   const planRef = useRef();
+  const navigate = useNavigate();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -32,7 +33,7 @@ const CollegeCourse = () => {
     cate.subCate.find((subCate) => parseInt(subCate.id) === parseInt(id))
   );
   //   console.log("college course:", course);
-  const subCourse = course.subCate.find(
+  const subCourse = course?.subCate.find(
     (subCate) => subCate.id === parseInt(id)
   );
   //   const [subCourse, setsubCourse] = useState([]);
@@ -318,6 +319,13 @@ const CollegeCourse = () => {
                       </div>
 
                       <button
+                        onClick={() => {
+                          navigate(
+                            `/checkout/college/${id}/${
+                              p.name == "Premium" ? "Premium" : "Plus"
+                            }`
+                          );
+                        }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"
                             ? "bg-orange-500 text-white"

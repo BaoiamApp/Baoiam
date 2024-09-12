@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img1 from "../../assets/img1.png";
 import { FaBars, FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 import CoursesList from "../CoursesList";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import { RxCross2 } from "react-icons/rx";
 import { BsMoonStars, BsSun } from "react-icons/bs";
@@ -25,6 +25,9 @@ const Navbar = ({ theme }) => {
   const [linkActive, setLinkActive] = useState("Home");
   const [schoolCourses, setSchoolCourses] = useState([]);
   const [courses, setCourses] = useState([]);
+  const userDropDownRef = useRef();
+  const navigate = useNavigate();
+  const userhandleDropDownRef = useRef();
   const darkTheme = () => {
     setIsDark(!isDark);
     theme();
@@ -47,6 +50,17 @@ const Navbar = ({ theme }) => {
     }
   };
 
+  const HideUserDrop = (event) => {
+    if (
+      userDropDownRef.current &&
+      !userDropDownRef.current.contains(event.target) &&
+      userhandleDropDownRef.current &&
+      !userhandleDropDownRef.current.contains(event.target)
+    ) {
+      setUserDrop(false);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -58,9 +72,11 @@ const Navbar = ({ theme }) => {
     getCourseData();
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("click", HideUserDrop);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", HideUserDrop);
     };
   }, []);
 
@@ -344,31 +360,58 @@ const Navbar = ({ theme }) => {
           <div className="flex items-center gap-4">
             <SearchBox />
 
-            <FaRegUser
-              onClick={() => setUserDrop(!userDrop)}
-              size={18}
-              className="z-10 relative cursor-pointer"
-            />
+            <div ref={userhandleDropDownRef}>
+              <FaRegUser
+                onClick={() => setUserDrop(!userDrop)}
+                size={18}
+                className="z-10 relative cursor-pointer"
+              />
+            </div>
 
             {userDrop && (
-              <div className="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600">
+              <div
+                ref={userDropDownRef}
+                className="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600"
+              >
                 {/* <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                   <div>Bonnie Green</div>
                   <div className="font-medium truncate">name@flowbite.com</div>
                 </div> */}
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                  <Link
-                    to={"/login"}
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    <NavLink to="/login">Login</NavLink>
-                  </Link>
-                  <Link
-                    to={"/signup"}
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    <NavLink to="/signup">Sign Up</NavLink>
-                  </Link>
+                  {!localStorage.getItem("access_token") ? (
+                    <Link
+                      to={"/login"}
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      <NavLink to="/login">Login</NavLink>
+                    </Link>
+                  ) : (
+                    <Link
+                      to={"/profile"}
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      <NavLink to="/profile">Profile</NavLink>
+                    </Link>
+                  )}
+                  {!localStorage.getItem("access_token") ? (
+                    <Link
+                      to={"/signup"}
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      <NavLink to="/signup">Sign Up</NavLink>
+                    </Link>
+                  ) : (
+                    <p
+                      onClick={() => {
+                        localStorage.removeItem("access_token");
+                        localStorage.removeItem("userInfo");
+                        navigate("/login");
+                      }}
+                      className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Logout
+                    </p>
+                  )}
                 </ul>
                 {/* <div className="py-2">
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
@@ -473,7 +516,7 @@ const Navbar = ({ theme }) => {
                           )
                         ) : (
                           <div className="absolute top-56 md:top-24 w-72 right-4 md:right-80 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
-                            <div key={i} className="p-4">
+                            <div className="p-4">
                               <Link
                                 onClick={() => {
                                   setShowmenu(!showmenu);

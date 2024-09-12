@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactForm from "../Components/GSCB/ContactForm";
 import Section2 from "../Components/GSCB/GSCB-Section2";
 import Section1 from "../Components/GSCB/GSCB-Section1";
@@ -6,6 +6,12 @@ import Header from "../Components/GSCB/GSCB-Hero";
 import GSCPBottom from "../Components/GSCB/GSCP-Section3";
 
 const GSCB = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   return (
     <>
       <Header />

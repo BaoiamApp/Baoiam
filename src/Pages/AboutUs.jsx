@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
@@ -44,6 +44,12 @@ import { RiBarChartBoxLine } from "react-icons/ri";
 
 const AboutUs = () => {
   const [data, setData] = useState(swiperData);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   //   const [content, setContent] = useState(
   //     "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
   //   );

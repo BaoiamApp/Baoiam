@@ -39,9 +39,10 @@ import ForgetPassword from "./Pages/auth/ForgetPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
-import TeacherDashboard from './Components/InstructorDashboard/TeacherDashboard'
+import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CollegeCourse from "./Pages/CollegeCourse";
 import OtherCourse from "./Pages/OtherCourse";
+import axios from "axios";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -69,7 +70,7 @@ const App = () => {
 
         {/* <Route path="/course:id" element={<CoursePage />} /> */}
         <Route path="/pap" element={<PAP />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
         <Route path="/courses/school" element={<School />} />
         {/* School Course */}
         <Route path="/course/school/:id" element={<SchoolCourse />} />
@@ -120,12 +121,8 @@ const App = () => {
 
         {/* accounts */}
 
-
-        
-
         <Route path="/help-center" element={<HelpCenter />} />
         <Route path="/hire-from-us" element={<HireFromUs />} />
-
       </Routes>
       <Footer dark={dark} />
     </div>
