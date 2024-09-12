@@ -11,7 +11,6 @@ import ITIE from "./Pages/ITIE";
 import AboutUs from "./Pages/AboutUs";
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
-import SchoolCourse from "./Pages/SchoolCourse";
 import Blogs from "./Pages/Blogs";
 import Career from "./Components/Career/Career";
 import Blog_detail from "./Pages/Blog_detail";
@@ -29,8 +28,7 @@ import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
 import TeacherDashboard from './Components/InstructorDashboard/TeacherDashboard'
-import CollegeCourse from "./Pages/CollegeCourse";
-import OtherCourse from "./Pages/OtherCourse";
+import CourseDetailsPage from "./Pages/CourseDetailsPage";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -58,12 +56,8 @@ const App = () => {
 
         {/* Courses */}
         <Route path="/courses/school" element={<School />} />
-        <Route path="/course/school/:id" element={<SchoolCourse />} />
-        <Route path="/course/college/:id" element={<CollegeCourse />} />
-        <Route path="/courses/school" element={<School />} />
         <Route path="/courses/college" element={<College />} />
-        <Route path="/course/:course" element={<College />} />
-        <Route path="/course/other/:id" element={<OtherCourse />} />
+        <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
 
         <Route
           path="/course/:course"
