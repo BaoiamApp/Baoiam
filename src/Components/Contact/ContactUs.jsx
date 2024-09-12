@@ -1,75 +1,184 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import background from "../../assets/ContactUs/background.jpg";
 import {FaPhoneAlt, FaHeadset, FaInfoCircle, FaUsers, FaHandshake, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaUserGroup } from "react-icons/fa6";
 import { IoIosArrowDown } from 'react-icons/io';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
 
 const ContactUs = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 620);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   return (
     <div className="ContactUs">
 
-      <section className="bg-cover bg-center min-h-screen h-auto text-center text-white flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-12" style={{ backgroundImage: `url(${background})` }}>
-        <div className="h-full flex flex-col justify-center items-center bg-black bg-opacity-50 p-4 sm:p-6 md:p-8 lg:p-12 w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">How can we help?</h1>
-          <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl text-center">Get in touch and let us know how we can help.</p>
+      <section  className="relative bg-cover bg-center md:h-screen lg:h-1/2 text-center text-white flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-12"
+        style={{ backgroundImage: `url(${background})` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mt-8 md:mt-10 w-full justify-center">
-            {[
-                {
-                  title: 'Contact sales',
-                  description: 'Talk to our sales team about purchasing',
-                  buttonText: 'Contact Sales',
-                  icon: <FaPhoneAlt className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5" />,
-                },
-                {
-                  title: 'Contact support',
-                  description: 'Submit a request to get help from our friendly support experts',
-                  buttonText: 'Get Support',
-                  icon: <FaHeadset className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>,
-                },
-                {
-                  title: 'Visit our help center',
-                  description: 'Read helpful articles, watch tutorials, and get help',
-                  buttonText: 'Help Center',
-                  icon: <FaInfoCircle className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>,
-                },
-                {
-                  title: 'Community',
-                  description: 'Search, share, and learn from other scheduling enthusiasts',
-                  buttonText: 'Join Community',
-                  icon: <FaUsers className="text-indigo-600 text-3xl sm:text-4xl absolute top-4 sm:top-5 left-4 sm:left-5"/>
-                }
-            ].map((card, index) => (
-              <div
-                key={index}
-                className="flex flex-col justify-between h-64 md:h-80 w-full max-w-xs p-4 md:p-6 bg-white rounded-2xl shadow-lg border-2 transition-transform transform hover:scale-105 group"
-              >
-                <div className="flex justify-center">
-                  {card.icon}
-                 
-                </div>
+        <div className="relative z-10 h-full flex flex-col justify-center items-center p-4 sm:p-6 md:p-8 lg:p-12 w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">
+            How can we help?
+          </h1>
+          <p className="mb-0 sm:mb-8 text-base sm:text-lg md:text-xl text-center">
+            Get in touch and let us know how we can help.
+          </p>
 
-                <div>
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl text-black font-semibold pt-2 mt-8 sm:mt-10 text-left">
-                        {card.title}
-                    </h2>
-                    <p className="text-base sm:text-lg lg:text-xl text-slate-600 mt-4 sm:mt-5 font-sans text-left">
-                        {card.description}
-                    </p>
-                </div>
+          {isMobile ? (
+                  <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
+                    pagination={{
+                      clickable: true,
+                    }}
+                    navigation={false}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper grid grid-cols-1 gap-6 sm:gap-8 md:gap-12 mt-8 md:mt-10 w-full justify-center"
+                  >
+                    {[
+                      {
+                        title: 'Contact sales',
+                        description: 'Talk to our sales team about purchasing',
+                        buttonText: 'Contact Sales',
+                        icon: (
+                          <FaPhoneAlt className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                      {
+                        title: 'Contact support',
+                        description: 'Submit a request to get help from our friendly support experts',
+                        buttonText: 'Get Support',
+                        icon: (
+                          <FaHeadset className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                      {
+                        title: 'Visit our help center',
+                        description: 'Read helpful articles, watch tutorials, and get help',
+                        buttonText: 'Help Center',
+                        icon: (
+                          <FaInfoCircle className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                      {
+                        title: 'Community',
+                        description: 'Search, share, and learn from other scheduling enthusiasts',
+                        buttonText: 'Join Community',
+                        icon: (
+                          <FaUsers className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                    ].map((card, index) => (
+                      <SwiperSlide
+                        key={index}
+                        className="flex flex-col justify-between h-64 md:h-80 w-full max-w-xs p-4 md:p-6 bg-white rounded-2xl shadow-lg border-2 transition-transform transform hover:scale-105 group"
+                      >
+                        <div className="flex justify-center">{card.icon}</div>
+                        <div>
+                          <h2 className="text-xl sm:text-2xl lg:text-3xl text-black font-semibold pt-2 mt-8 sm:mt-10 text-left">
+                            {card.title}
+                          </h2>
+                          <p className="text-base sm:text-lg lg:text-xl text-slate-700 mt-4 sm:mt-5 font-sans text-left">
+                            {card.description}
+                          </p>
+                        </div>
+                        <div className="flex justify-center mt-auto mb-3">
+                          <p className="text-indigo-700 font-semibold text-lg sm:text-xl lg:text-2xl text-left space-x-2 group-hover:text-black transition-colors">
+                            {card.buttonText}
+                            <span className="text-indigo-700 group-hover:text-black text-2xl sm:text-3xl ml-2">
+                              →
+                            </span>
+                          </p>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mt-8 md:mt-10 w-full justify-center">
+                    {[
+                      {
+                        title: 'Contact sales',
+                        description: 'Talk to our sales team about purchasing',
+                        buttonText: 'Contact Sales',
+                        icon: (
+                          <FaPhoneAlt className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                      {
+                        title: 'Contact support',
+                        description: 'Submit a request to get help from our friendly support experts',
+                        buttonText: 'Get Support',
+                        icon: (
+                          <FaHeadset className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                      {
+                        title: 'Visit our help center',
+                        description: 'Read helpful articles, watch tutorials, and get help',
+                        buttonText: 'Help Center',
+                        icon: (
+                          <FaInfoCircle className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                      {
+                        title: 'Community',
+                        description: 'Search, share, and learn from other scheduling enthusiasts',
+                        buttonText: 'Join Community',
+                        icon: (
+                          <FaUsers className="text-indigo-600 text-3xl sm:text-5xl absolute top-4 sm:top-5 left-4 sm:left-5" />
+                        ),
+                      },
+                    ].map((card, index) => (
+                      <div
+                        key={index}
+                        className="flex flex-col justify-between h-64 md:h-72 w-full max-w-xs p-4 md:p-6 bg-white rounded-2xl shadow-lg border-2 transition-transform transform hover:scale-105 group"
+                      >
+                        <div className="flex justify-center">{card.icon}</div>
+                        <div>
+                          <h2 className="text-xl sm:text-2xl lg:text-3xl text-black font-semibold pt-2 mt-8 sm:mt-12 text-left">
+                            {card.title}
+                          </h2>
+                          <p className="text-base sm:text-lg lg:text-lg text-slate-600 mt-4 sm:mt-5 font-sans text-left">
+                            {card.description}
+                          </p>
+                        </div>
+                        <div className="flex justify-center mt-auto">
+                          <p className="text-indigo-700 font-semibold text-lg sm:text-xl lg:text-xl text-left space-x-2 group-hover:text-black transition-colors">
+                            {card.buttonText}
+                            <span className="text-indigo-700 group-hover:text-black text-2xl sm:text-3xl ml-2">
+                              →
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-
-                <div className="flex justify-center mt-auto">
-                    <p className="text-indigo-700 font-semibold text-lg sm:text-xl lg:text-2xl text-left space-x-2 group-hover:text-black transition-colors">
-                        {card.buttonText}
-                        <span className="text-indigo-700 group-hover:text-black text-2xl sm:text-3xl ml-2">→</span>
-                    </p>
-                </div>
-
-              </div>
-            ))}
-          </div>
 
         </div>
       </section>
@@ -81,7 +190,7 @@ const ContactUs = () => {
           Need some content about joining us in a partner or career adventure!
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-32 mt-16 md:mt-24 cursor-pointer">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 md:px-32 mt-16 md:mt-24 cursor-pointer">
           {[
             {
               title: 'Join our team',
@@ -119,7 +228,7 @@ const ContactUs = () => {
       </section>
 
 
-      <section className="py-16 px-4 md:px-16 bg-white grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-16 px-4 md:px-16 bg-white grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         <div>
           <h2 className="text-4xl font-bold text-indigo-700 mb-6">Connect with us</h2>
@@ -232,6 +341,7 @@ const ContactUs = () => {
         </div>
 
       </section>
+
 
       <section className="py-8 md:py-16 text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">Join us on WhatApp</h2>

@@ -27,9 +27,9 @@ const HireFromUs = () => {
         </section>
 
 
-        <section id='why-choose-us' className="relative px-8 lg:px-20 py-16 bg-gradient-to-r from-white to-indigo-50 text-indigo-500 overflow-hidden">
+        <section id='why-choose-us' className="relative px-8 lg:px-20  py-2 md:py-16 bg-gradient-to-r from-white to-indigo-50 text-indigo-500 overflow-hidden">
         
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 sm:mb-16 relative z-10 text-gray-800">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-2 sm:mb-16 relative z-10 text-gray-800">
                 Why Choose Us?
             </h2>
 
@@ -61,7 +61,7 @@ const HireFromUs = () => {
         </section>
 
 
-        <section className="relative bg-white py-16 px-8 lg:px-20">
+        <section className="relative bg-white py-1 md:py-16 px-8 lg:px-20">
 
             <div className="absolute inset-0 overflow-hidden">
                 <svg className="absolute top-0 left-0 w-full h-full text-gray-100 opacity-40" fill="currentColor" viewBox="0 0 500 500" preserveAspectRatio="none">
@@ -125,7 +125,7 @@ const HireFromUs = () => {
 
 
         <section className="relative bg-gradient-to-r from-indigo-50 via-slate-50 to-indigo-100 py-16 px-8 lg:px-20 overflow-hidden">
-            <h2 className="text-5xl font-extrabold text-center text-gray-800 mb-12 relative z-10">Why <span className='text-amber-600'>Baoiam?</span></h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-center text-gray-800 mb-12 relative z-10">Why <span className='text-amber-600'>Baoiam?</span></h2>
 
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 {[
@@ -139,9 +139,9 @@ const HireFromUs = () => {
                     <div className="flex justify-center mb-6">
                     {why.icon}
                     </div>
-                    <h3 className="text-3xl font-semibold text-center mb-4 text-gray-800">{why.title}</h3>
-                    <ul className="list-disc pl-4 text-gray-600">
-                    {why.details.map((detail, i) => <li key={i} className="mb-2 text-lg">{detail}</li>)}
+                    <h3 className=" text-lg md:text-3xl font-semibold text-center mb-4 text-gray-800">{why.title}</h3>
+                    <ul className="list-disc pl-2 md:pl-4 text-gray-600">
+                    {why.details.map((detail, i) => <li key={i} className="mb-2 text-sm md:text-lg">{detail}</li>)}
                     </ul>
                 </div>
                 ))}
@@ -149,14 +149,14 @@ const HireFromUs = () => {
         </section>
 
 
-        <section className="bg-white py-16 px-8 lg:px-32">
+        <section className="bg-white py-2 md:py-16 px-8 lg:px-32">
             <div className="lg:flex lg:justify-between lg:items-center">
-                <div className='flex flex-col w-2/3 m-5'>
-                <h2 className="text-3xl md:text-5xl font-bold text-amber-600 mb-8 lg:mb-0">Ready to access top talent?</h2>
-                <p className='text-lg md:text-xl mt-5 font-semibold'>Partner with you to create a long-term talent-pool, to source candidates that are aligned to your skill requirements, available all year round! We work closely with you to solve your Entry-Level tech hiring needs.</p>
+                <div className='flex flex-col w-full md:w-2/3 m-1 md:m-5'>
+                <h2 className="text-3xl md:text-5xl font-bold text-amber-600 mb-8 lg:mb-0 text-center md:text-left">Ready to access top talent?</h2>
+                <p className='text-lg md:text-xl mt-2 md:mt-5 font-semibold text-center md:text-left'>Partner with you to create a long-term talent-pool, to source candidates that are aligned to your skill requirements, available all year round! We work closely with you to solve your Entry-Level tech hiring needs.</p>
                 </div>
                 <a href="#contact-form">
-                    <button className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:scale-105 font-semibold text-white text-lg rounded-lg transition-all duration-300">
+                    <button className=" mt-5 ml-5 px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:scale-105 font-semibold text-white text-lg rounded-lg transition-all duration-300">
                         Contact Us Today
                     </button>
                 </a>
@@ -168,8 +168,8 @@ const HireFromUs = () => {
 
             <div className="relative flex flex-col lg:flex-row lg:justify-between lg:items-start space-y-12 lg:space-y-0 lg:space-x-12">
                 <div className="lg:w-1/2 w-full bg-white p-8 shadow-lg rounded-2xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-indigo-600">Access Our Pre-Trained Talent Today</h2>
-                <ul className="space-y-6 text-lg text-gray-700">
+                <h2 className="text-xl md:text-4xl font-bold mb-6 text-indigo-600 text-center md:text-left">Access Our Pre-Trained Talent Today</h2>
+                <ul className=" space-y-3 md:space-y-6 text md:text-lg text-gray-700">
                     {[
                     'Hire from our Pan-India Talent pool, across 100+ colleges',
                     'Pre-Trained Developers available across 10 profiles',
@@ -179,8 +179,8 @@ const HireFromUs = () => {
                     'Solve your long-term Entry-Level Tech recruitment needs'
                     ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-4">
-                        <div className="w-6 h-6 flex justify-center items-center bg-amber-600 text-white rounded-full">
-                        <FaCheck className="text-sm" />
+                        <div className="mt-2 w-5 h-4 md:w-6 md:h-6 flex justify-center items-center bg-amber-600 text-white rounded-full">
+                        <FaCheck className="text-sm p-0.5 md:p-0" />
                         </div>
                         <span>{item}</span>
                     </li>
