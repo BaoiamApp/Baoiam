@@ -16,7 +16,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
       college: userInfo.college,
       location: userInfo.location,
       socialLinks:{
-        linkedIn:userInfo.socialLinks.linkedIn ||'',
+        linkedIn:userInfo.socialLinks.linkedIn,
         gitHub:userInfo.socialLinks.gitHub,
         leetCode:userInfo.socialLinks.leetCode,
       }
@@ -87,7 +87,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
     <section className="max-w-4xl dark:bg-black dark:text-white mx-auto p-6">
       <form className="space-y-8">
         {/* Personal Information Section */}
-        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
+        <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
           <h3 className="text-xl font-bold mb-4">Personal Information</h3>
           <button
             type="button"
@@ -99,7 +99,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* First Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{formData.first}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-2">{formData.first}</label> :
                 <input
                   type="text"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
@@ -112,7 +112,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           
             {/* Last Name */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{formData.last}</label> :
+              {!isEditable.personalInfo ? <label className="block py-1 px-2">{formData.last}</label> :
                 <input
                   type="text"
                   className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
@@ -124,7 +124,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* Mobile Number */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-2">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
                 type="tel"
                 className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Mobile Number"
@@ -136,7 +136,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             {/* Date of Birth */}
             <div>
               {!isEditable.personalInfo ?
-                <label className="block py-1 px-2 text-gray-700">{userInfo.dob}</label> : <input
+                <label className="block py-1 px-2">{userInfo.dob}</label> : <input
                   type="date"
                   className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                   name='dob'
@@ -147,7 +147,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* College/School */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.college}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-2">{userInfo.college}</label> : <input
                 type="text"
                 className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="College or School Name"
@@ -159,7 +159,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* Location */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2 text-gray-700">{userInfo.location}</label> : <input
+              {!isEditable.personalInfo ? <label className="block py-1 px-2">{userInfo.location}</label> : <input
                 type="text"
                 className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
                 placeholder="Location"
@@ -172,7 +172,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
         </div>
 
         {/* Email Section */}
-        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
+        <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
           <h3 className="text-xl py-1 px-2 font-bold mb-4">Email</h3>
           <button
             type="button"
@@ -185,15 +185,15 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             {/* Current Email */}
             {!isEditable.email ? 
             <div className="col-span-1 sm:col-span-2">
-              <label className="block text-gray-700">{userInfo.email || "Email not provided"}</label>
+              <label className="block">{userInfo.email || "Email not provided"}</label>
             </div>
-              : <div>
+              : <div className='space-y-5'>
                 {/* New Email */}
                 <div>
                   
                     <input
                       type="newEmail"
-                      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                      className="mt-1 block px-2 py-1 w-full border-gray-300 rounded-md shadow-sm"
                       placeholder="New Email Address"
                       onChange={(e)=>{
                         setEmail(old=>{
@@ -211,7 +211,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   
                     <input
                       type="confirmEmail"
-                      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                      className="mt-1 block w-full px-2 py-1 border-gray-300 rounded-md shadow-sm"
                       placeholder="Confirm New Email"
                       onChange={(e)=>{
                         setEmail(old=>{
@@ -285,7 +285,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* LinkedIn */}
             <div>
-              {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">{userInfo.socialLinks.linkedIn}</label> :
+              {!isEditable.socialLinks ? <label className="block py-1 px-4">{userInfo.socialLinks.linkedIn}</label> :
                 <input
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
@@ -298,7 +298,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* GitHub */}
             <div>
-              {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">{userInfo.socialLinks.gitHub}</label> :
+              {!isEditable.socialLinks ? <label className="block py-1 px-4">{userInfo.socialLinks.gitHub}</label> :
                 <input
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
@@ -311,7 +311,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
             </div>
             {/* LeetCode */}
             <div>
-              {!isEditable.socialLinks ? <label className="block py-1 px-4 text-gray-700">{userInfo.socialLinks.leetCode}</label> :
+              {!isEditable.socialLinks ? <label className="block py-1 px-4">{userInfo.socialLinks.leetCode}</label> :
                 <input
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
