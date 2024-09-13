@@ -44,13 +44,13 @@ const ExpertsSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-indigo-800 to-[#6366f1] text-white py-8">
+    <section className="bg-white text-white py-8">
       <div className="p-4 mx-auto ">
-        <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-4 lg:gap-0 justify-between mb-6 px-4 md:px-8">
-          <h2 className="text-3xl font-bold w-full lg:w-1/2">
-            Meet Our Experts
+        <div className="flex flex-col  items-center text-center  gap-4 lg:gap-0 justify-between mb-6 px-4 md:px-8">
+          <h2 className="text-3xl font-bold w-full  text-black">
+            Meet Our <span className="text-indigo-600">Experts</span>
           </h2>
-          <p className="text-sm w-full lg:w-1/2">
+          <p className="text-sm w-full  text-black lg:text-lg pt-2">
             BAOIAM students get mentored by the industry experts who have
             achieved mastery in their respective domains &amp; are passionate
             about helping students to achieve their dreams.
@@ -59,9 +59,8 @@ const ExpertsSection = () => {
         <Swiper
           slidesPerView={1}
           spaceBetween={20}
-          pagination={{ clickable: true }}
           navigation
-          modules={[Pagination, Navigation, Keyboard, Scrollbar]}
+          modules={[Navigation, Keyboard, Scrollbar]}
           className="mySwiper"
           breakpoints={{
             // Define breakpoints for responsive behavior
@@ -81,15 +80,19 @@ const ExpertsSection = () => {
         >
           {experts.map((expert, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center bg-white text-black p-4 lg:p-6 lg:m-8 md:m-3 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+              <div className="border border-gray-500 flex flex-col items-center bg-white text-black p-4 lg:p-4 lg:m-3 md:m-2 m-6  rounded-lg  transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
                 <img
                   src={expert.img}
                   alt={expert.name}
-                  className="w-32 h-32 md:w-40 md:h-40 rounded-lg object-cover"
+                  className="w-[15rem] h-[15rem]  rounded-lg object-cover"
                 />
                 <div className="mt-4 text-center">
-                  <h4 className="md:text-lg lg:text-xl font-bold">{expert.name}</h4>
-                  <p className="text-gray-600 text-sm tracking-tight lg:tracking-normal lg:text-base">{expert.role}</p>
+                  <h4 className="md:text-lg lg:text-xl font-bold">
+                    {expert.name}
+                  </h4>
+                  <p className="text-gray-600 text-sm tracking-tight lg:tracking-normal lg:text-base">
+                    {expert.role}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>

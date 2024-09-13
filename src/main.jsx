@@ -6,20 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import ChatBot from "./Components/Chatbot/ChatBot.jsx";
 import { ToastContainer } from "react-toastify";
 import { Provider } from "react-redux";
-import { store } from "./Redux/store.js";
+import store from "./store.js";
+// import { store } from "./Redux/store.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
     <Provider store={store}>
-      <Provider store={store}>
-        {" "}
+      <BrowserRouter>
         <App />
-      </Provider>
-
-      <ChatBot />
+        <ChatBot />
+        <ToastContainer />
+      </BrowserRouter>
     </Provider>
-      <ToastContainer />
-    </BrowserRouter>
   </StrictMode>
 );
