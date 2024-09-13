@@ -132,7 +132,7 @@ function Profile({ userInfo }) {
               {/* Optional: Location on right side if needed */}
               <FiMapPin className="mr-2" />
               <p>{userInfo.location}</p>
-            </div> */}
+            </div> 
           </div>
         </div>
       </div>

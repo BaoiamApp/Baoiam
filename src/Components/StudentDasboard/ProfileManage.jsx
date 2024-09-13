@@ -112,7 +112,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   onChange={handleInputChange}
                   name="first"
                 />
-              )}
+              }
             </div>
 
             {/* Last Name */}
@@ -125,7 +125,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   onChange={handleInputChange}
                   name="last"
                 />
-              )}
+              }
             </div>
             {/* Mobile Number */}
             <div>
@@ -147,7 +147,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   name="dob"
                   onChange={handleInputChange}
                 />
-              )}
+              }
             </div>
             {/* College/School */}
             <div>
@@ -229,7 +229,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                     />
                 </div>
               </div>
-            )}
+            }
           </div>
         </div>
 
@@ -303,7 +303,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   onChange={handleInputChange}
                   name="linkedIn"
                 />
-              )}
+              }
             </div>
             {/* GitHub */}
             <div>
@@ -315,7 +315,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   onChange={handleInputChange}
                   name="gitHub"
                 />
-              )}
+              }
             </div>
             {/* LeetCode */}
             <div>
@@ -327,7 +327,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   onChange={handleInputChange}
                   name="leetCode"
                 />
-              )}
+              }
             </div>
           </div>
         </div>
