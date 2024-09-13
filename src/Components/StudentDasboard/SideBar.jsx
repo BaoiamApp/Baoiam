@@ -18,7 +18,9 @@ import Payment from "./Payment";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setProfile } from "../../redux/user/userSlice";
+// import { setProfile1 } from "../../redux/user/userSlice";
+import { setProfile1 } from "../../Redux/user/userSlice.js";
+// import { setProfile } from "../../redux/user/userSlice";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
@@ -36,7 +38,7 @@ const Sidebar = () => {
         },
       });
       console.log(data);
-      dispatch(setProfile(data));
+      dispatch(setProfile1(data));
       localStorage.setItem("userInfo", JSON.stringify(data));
       console.log(
         "from local storage:",
