@@ -42,7 +42,7 @@ const Checkout = () => {
           return item.id == id;
         });
         setEnrollingCourse(course[0]);
-        console.log(course);
+        console.log("course is: ", course);
       } else if (course == "college") {
         const course = CollegeCourseData[0].subCate.filter((item) => {
           return item.id == id;
@@ -210,6 +210,7 @@ const Checkout = () => {
           <div className="flex justify-between items-center w-full">
             <div className="flex flex-col">
               <div className="rounded-md bg-green-200 p-1 w-fit">
+                <p></p>
                 <p className="text-green-700 px-1 font-medium text-xs">
                   {plan} Plan
                 </p>
