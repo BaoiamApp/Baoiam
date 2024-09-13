@@ -88,6 +88,7 @@
 import React from 'react';
 
 const HelpCenter = () => {
+  document.title = 'Baoiam - Help Center'
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="max-w-6xl mx-auto px-4">

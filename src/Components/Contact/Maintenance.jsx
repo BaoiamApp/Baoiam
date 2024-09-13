@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Error from '../../assets/ITIE&Entre//Error.svg'; 
 
 const Maintenance = () => {
+  document.title = 'Baoiam - Maintenace'
   const navigate = useNavigate(); 
 
   const handleGoHome = () => {

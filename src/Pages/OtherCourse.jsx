@@ -20,9 +20,10 @@ import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 const OtherCourse = () => {
   const planRef = useRef();
+  const navigate = useNavigate();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -280,10 +281,6 @@ const OtherCourse = () => {
                         {p.name}
                       </div>
 
-                      <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
-                        {p.courseName}
-                      </p>
-
                       <div className="space-y-2">
                         {p?.courseItems?.map((item, index) => {
                           return (
@@ -312,6 +309,15 @@ const OtherCourse = () => {
                       </div>
 
                       <button
+                        onClick={() => {
+                          if (localStorage.getItem("access_token"))
+                            navigate(
+                              `/checkout/other/${id}/${
+                                p.name == "Premium" ? "Premium" : "Plus"
+                              }`
+                            );
+                          else navigate("/login");
+                        }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"
                             ? "bg-orange-500 text-white"

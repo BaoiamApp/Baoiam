@@ -10,9 +10,11 @@ import financial_literacy from "../assets/Blogs/financial_literacy.jpg";
 import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
-import Slider from "react-slick";
 import "./Blogs.css";
-import { Autoplay } from "swiper/modules";
+import { StatupSlider } from "../Components/Blog Components/StatupSlider";
+import { TechBlogSlider } from "../Components/Blog Components/TechBlogSlider";
+import { BusSlider } from "../Components/Blog Components/BusSlider";
+
 const blog_list = [
   {
     title: "Akshay Saini",
@@ -166,6 +168,7 @@ const authors_info = [
 ];
 
 const Blog = () => {
+  document.title = 'Baoiam - Blogs'
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -253,77 +256,89 @@ const Blog = () => {
   };
 
   return (
-    <div className="dark:bg-black dark:text-white">
-      <div className="max-w-xll mx-8 py-8 dark:bg-black dark:text-white bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="relative">
+    <div className='dark:bg-black dark:text-white'>
+      <div className='max-w-xll mx-8 py-8 dark:bg-black dark:text-white bg-white shadow-lg rounded-lg overflow-hidden'>
+        <div className='relative'>
           <img
-            className="w-full h-80 object-cover"
-            src="https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Blog Post Image"
+            className='w-full h-80 object-cover'
+            src='https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            alt='Blog Post Image'
           />
-          <div className="absolute inset-0 "></div>
-          <div className="absolute bottom-0 left-0 p-6">
-            <h2 className="text-2xl font-bold text-black">
+          <div className='absolute inset-0 '></div>
+          <div className='absolute bottom-0 left-0 p-6'>
+            <h2 className='text-2xl font-bold text-black'>
               Tempor Consectetur Est Elit
             </h2>
-            <p className="text-black">Consequuntur ex co</p>
+            <p className='text-black'>Consequuntur ex co</p>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-center">
+      <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
+        <h1 className='text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className="text-l  text-center mb-8">
+        <h2 className='text-l  text-center mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div className=' p-6'></div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
           {blog_list.map((item, i) => (
             <Link key={i} to={`/Blog_detail/${i}`}>
-              <div className="bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
+              <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
                 <img
-                  className="w-full h-48 object-cover"
+                  className='w-full h-48 object-cover'
                   src={item.imgSrc}
-                  alt={`Blog Post ${i}`}
+                  alt={`${item.title}`}
                 />
-                <div className="p-6 flex-grow">
+                <div className='p-6 flex-grow'>
                   <span
                     className={`text-sm text-${item.titleColor} font-semibold`}
                   >
                     {item.title}
                   </span>
-                  <h2 className="text-lg font-bold my-2 truncate">
+                  <h2 className='text-lg font-bold my-2 truncate'>
                     {item.text}
                   </h2>
-                  <p className="text-sm">{item.info}</p>
+                  <p className='text-sm'>{item.info}</p>
                 </div>
               </div>
             </Link>
           ))}
         </div>
+
+        {/* slider */}
+
+        <StatupSlider />
+        <TechBlogSlider />
+        <BusSlider />
       </div>
       {/* readers section */}
+
       {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl mb-5 font-bold text-center">
           What Our Readers Are Saying.
         </h1>
 
-        <div className="flex justify-center">
-          <div className="grid mx-auto sm:grid-cols-3 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6">
+        <div className='flex justify-center'>
+          <div className='grid mx-auto sm:grid-cols-3 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6'>
             {readers_impact.map((item, i) => {
               return (
-                <div className="py-3 px-4 mt-10 w-full max-w-[450px]  sm:max-w-[300px] lg:max-w-[450px] dark:shadow-md bg-gradient-to-b cursor-pointer hover:scale-105 transition-all dark:bg-black shadow-lg rounded-md from-[#a5b4fc] to-[#ffffff] dark:from-black dark:shadow-transparent dark:hover:shadow-sm dark:hover:shadow-gray-200 shadow-gray-400 relative ease-in-out">
+                <div
+                  key={i}
+                  className='py-3 px-4 mt-10 w-full max-w-[450px]  sm:max-w-[300px] lg:max-w-[450px] dark:shadow-md bg-gradient-to-b cursor-pointer hover:scale-105 transition-all dark:bg-black shadow-lg rounded-md from-[#a5b4fc] to-[#ffffff] dark:from-black dark:shadow-transparent dark:hover:shadow-sm dark:hover:shadow-gray-200 shadow-gray-400 relative ease-in-out'
+                >
                   {" "}
                   <img
                     src={item.imgSrc}
-                    className="rounded-full object-cover w-[95px] relative bottom-10 h-[95px] xs:w-[75px] xs:h-[75px]"
+                    className='rounded-full object-cover w-[95px] relative bottom-10 h-[95px] xs:w-[75px] xs:h-[75px]'
                   />
-                  <div className="absolute top-5 right-8">
-                    <StarIcon className="h-8 w-8 text-yellow-400" />
+                  <div className='absolute top-5 right-8'>
+                    <StarIcon className='h-8 w-8 text-yellow-400' />
                   </div>
-                  <div className="relative bottom-5 dark:text-white">
-                    <h3 className="m-0 font-bold text-lg">{item.name}</h3>
-                    <h5 className="text-xs">{item.comment}</h5>
+                  <div className='relative bottom-5 dark:text-white'>
+                    <h3 className='m-0 font-bold text-lg'>{item.name}</h3>
+                    <h5 className='text-xs'>{item.comment}</h5>
                   </div>
                 </div>
               );
@@ -347,9 +362,9 @@ const Blog = () => {
                   <div
                     onMouseEnter={() => authorCardMouseEnter(id)}
                     onMouseLeave={() => authorCardMouseLeave()}
-                    className="shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out"
+                    className='shadow-xl relative hover:bg-gradient-to-b lg:max-w-sm hover:shadow-md hover:shadow-black hover:dark:shadow-white rounded-md cursor-pointer hover:scale-105 transition-all ease-in-out'
                   >
-                    <img src={item.imgSrc} className="rounded-md w-full" />
+                    <img src={item.imgSrc} className='rounded-md w-full' />
                     <h2
                       className={`${
                         authorDetailsVisible.display &&
@@ -360,7 +375,7 @@ const Blog = () => {
                     >
                       {item.name}
                       <br />
-                      <span className="text-sm sm:text-xs">
+                      <span className='text-sm sm:text-xs'>
                         Number of blogs: {item.noOfBlogs}
                       </span>
                     </h2>

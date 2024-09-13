@@ -12,6 +12,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 
 
 const TeacherDashboard = () => {
+  document.title = 'Baoiam - Instructor Dashboard'
   const [activeTab, setActiveTab] = useState('My Profile');
   const [isOpen, setIsOpen] = useState(false);
   const openSidebar=()=>{

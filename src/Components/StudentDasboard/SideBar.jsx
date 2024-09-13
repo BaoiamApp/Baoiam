@@ -1,48 +1,65 @@
-import React, { useEffect, useState } from 'react';
-import { FaUser, FaGraduationCap, FaTrophy, FaCog, FaSignOutAlt } from 'react-icons/fa';
-import ProfilePage from './ProfilePage';
-import Certificate from './Certificate'; // Import the Certificate component
-import Courses from './Courses'; // Import the Courses component
-import ProfileManage from './ProfileManage';
-import { MdAccountCircle } from 'react-icons/md';
+import React, { useEffect, useState } from "react";
+import {
+  FaUser,
+  FaGraduationCap,
+  FaTrophy,
+  FaCog,
+  FaSignOutAlt,
+} from "react-icons/fa";
+import ProfilePage from "./ProfilePage";
+import Certificate from "./Certificate"; // Import the Certificate component
+import Courses from "./Courses"; // Import the Courses component
+import ProfileManage from "./ProfileManage";
+import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import Payment from "./Payment";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import axios from "axios";
+import { useDispatch } from "react-redux";
+// import { setProfile1 } from "../../redux/user/userSlice";
+import { setProfile1 } from "../../redux/user/userSlice.js";
+// import { setProfile } from "../../redux/user/userSlice";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
+  document.title = "Baoiam - User Profile";
   const [activeTab, setActiveTab] = useState("profile"); // Default active tab
-  const [isSidebarOpen,setIsSidebarOpen]=useState(false);
-  const [userInfo, setUserInfo] = useState(() => {
-    const savedData = localStorage.getItem("userInfo");
-    return savedData
-      ? JSON.parse(savedData)
-      : {
-          name: "Name not provided",
-          email: "Email not provided",
-          college: "College not provided",
-          mobile: "Mobile not provided",
-          dob: "DOB not provided",
-          location: "Location not provided",
-          socialLinks: {
-            linkedIn: "",
-            gitHub: "",
-            leetCode: "",
-          },
-        };
-  });
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+  const dispatch = useDispatch();
+  const fetchUserDetails = async () => {
+    try {
+      const { data } = await axios.get(`${apiUrl}/api/auth/users/me/`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `JWT ${localStorage.getItem("access_token")}`,
+        },
+      });
+      console.log(data);
+      dispatch(setProfile1(data));
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      console.log(
+        "from local storage:",
+        JSON.parse(localStorage.getItem("userInfo"))
+      );
+      // setUserInfo(localStorage.getItem("userInfo"));
+    } catch (err) {
+      console.log(err.stack);
+    }
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
-  
-  const closeSidebar=()=>{
-    setIsSidebarOpen(false)
-  }
-  
-  const openSidebar=()=>{
-    setIsSidebarOpen(true)
-  }
+  const openSidebar = () => {
+    setIsSidebarOpen(true);
+  };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchUserDetails();
     console.log(userInfo);
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
   }, [userInfo]);
@@ -77,17 +94,18 @@ const Sidebar = () => {
 
   const handleLogoutClick = () => {
     // Perform any logout logic here (e.g., clearing authentication tokens)
-    navigate('/'); // Redirect to the home page
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("userInfo");
+    navigate("/login"); // Redirect to the home page
   };
 
   return (
     <div className="flex relative bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 h-full pt-8 transition duration-500">
       {/* Sidebar */}
-      <div className='absolute py-2 top-0 w-full md:hidden'>
-      <button className='px-4' onClick={openSidebar}>
-        <GiHamburgerMenu />
-      </button>
-      
+      <div className="absolute py-2 top-0 w-full md:hidden">
+        <button className="px-4" onClick={openSidebar}>
+          <GiHamburgerMenu />
+        </button>
       </div>
       {isSidebarOpen && (
         <div
@@ -95,33 +113,46 @@ const Sidebar = () => {
           onClick={closeSidebar}
         ></div>
       )}
-      <div className={`fixed md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64  dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${
+      <div
+        className={`fixed md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64 bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full "
-        }`}>
-          <button className='absolute top-4 right-4 md:hidden'>
-            <IoCloseSharp onClick={closeSidebar} size={24}/>
-          </button>
-        {/* Dashboard Heading */}   
-        <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base text-white font-bold">My Account</h2>
+        }`}
+      >
+        <button className="absolute top-4 right-4 md:hidden">
+          <IoCloseSharp onClick={closeSidebar} size={24} />
+        </button>
+        {/* Dashboard Heading */}
+        <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base text-white font-bold">
+          My Account
+        </h2>
 
         {/* Sidebar Tabs */}
         <ul className="my-6">
           {/* My Profile Tab */}
-          <li onClick={() => setActiveTab('profile')} className={`${tabClassNames('profile')}`}>
-            <FaUser className={ActiveTabColor("profile")}  />
+          <li
+            onClick={() => setActiveTab("profile")}
+            className={`${tabClassNames("profile")}`}
+          >
+            <FaUser className={ActiveTabColor("profile")} />
             <span className=" ">My Profile</span>
           </li>
 
           {/* All Courses Tab */}
-          <li onClick={() => setActiveTab('courses')} className={tabClassNames('courses')}>
-            <FaGraduationCap className={ActiveTabColor("courses")}  />
+          <li
+            onClick={() => setActiveTab("courses")}
+            className={tabClassNames("courses")}
+          >
+            <FaGraduationCap className={ActiveTabColor("courses")} />
             <span className=" ">My Courses</span>
           </li>
 
           {/* Achievements Tab */}
-        
-          <li onClick={() => setActiveTab('achievements')} className={tabClassNames('achievements')}>
-            <FaTrophy className={ActiveTabColor("achievements")}  />
+
+          <li
+            onClick={() => setActiveTab("achievements")}
+            className={tabClassNames("achievements")}
+          >
+            <FaTrophy className={ActiveTabColor("achievements")} />
             <span className=" ">Achievements</span>
           </li>
 
@@ -144,15 +175,11 @@ const Sidebar = () => {
           </li>
 
           {/* Logout Tab */}
-         
-           
-          <li 
-      onClick={handleLogoutClick} 
-      className={tabClassNames('logout')}
-    >
-      <FaSignOutAlt className={ActiveTabColor("logout")} />
-      <span className="">Logout</span>
-    </li>
+
+          <li onClick={handleLogoutClick} className={tabClassNames("logout")}>
+            <FaSignOutAlt className={ActiveTabColor("logout")} />
+            <span className="">Logout</span>
+          </li>
         </ul>
       </div>
 
