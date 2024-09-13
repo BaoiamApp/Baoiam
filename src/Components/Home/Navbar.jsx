@@ -3,7 +3,7 @@ import img1 from "../../assets/img1.png";
 import { FaBars, FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 import CoursesList from "../CoursesList";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { CollegeCourseData, OtherCourseData, School } from "../../Data";
+// import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import { RxCross2 } from "react-icons/rx";
 import { BsMoonStars, BsSun } from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";

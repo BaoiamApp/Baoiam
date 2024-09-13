@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
 import { RxCross2 } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
-import { CollegeCourse, OtherCourse, School } from "../../Data";
+// import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
 const MobNavbar = ({ showmenu, setShowmenu }) => {
@@ -56,7 +56,7 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                                 className="flex justify-between w-full items-center"
                                 type="button"
                             >
-                                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+                                <span className="flex-1  ms-3 text-left rtl:text-right whitespace-nowrap">
                                     Course
                                 </span>
                                 {subCateDrop ? <FaChevronUp /> : <FaChevronDown />}
