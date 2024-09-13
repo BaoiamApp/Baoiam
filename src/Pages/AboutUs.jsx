@@ -4,6 +4,7 @@ import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
 import HeroCard from "../Components/AboutUs/HeroCard";
 import ProgressBar from "../Components/AboutUs/ProgressBar";
+import ServicesTab from "../Components/AboutUs/ServicesTab";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -445,6 +446,7 @@ const AboutUs = () => {
         </div>
       </div> */}
 
+      <ServicesTab/>
       {/* Section 6 */}
       <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
         Our Team
