@@ -135,39 +135,41 @@ const Enterpunership = () => {
   return (
     <div>
       {/*//! Banner */}
-      <div className="flex items-center flex-col-reverse gap-12 mt-8 md:mt-0 md:gap-0 md:flex-row px-8 md:px-20 w-[100vw] h-full md:h-[90vh]">
-        {/* <img src={banner_pap} alt="banner" /> */}
+      <div className="flex items-center flex-col gap-12 mt-8 md:mt-0 md:gap-8 lg:gap-0 md:flex-row px-8 md:px-20 w-full h-full md:h-[90vh]">
+  {/* Image Section */}
+  <div className="w-full md:w-[40%]">
+    <div className="w-full h-72 sm:h-80 md:h-96 lg:h-[30rem] rounded-3xl overflow-hidden">
+      <img
+        src="https://images.stockcake.com/public/7/e/0/7e0f0d57-b367-441d-9530-b81b5378344f_large/botanical-store-owner-stockcake.jpg"
+        className="w-full h-full object-cover"
+        alt="Entrepreneurship"
+      />
+    </div>
+  </div>
 
-        <div className="w-full text-center md:text-left md:w-[60%]">
-        <h1 className="md:text-3xl text-2xl font-bold ">
-             <span className="lg:text-4xl text-indigo-600">ENTREPRENEURSHIP</span>   Course
-            </h1>
-          {/* <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white">
-              Course
-            </h2> */}
+  {/* Text Section */}
+  <div className="w-full text-center md:text-left lg:text-center md:w-[60%]">
+    <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold">
+      <span className="text-indigo-600">ENTREPRENEURSHIP</span> Course
+    </h1>
 
-            <p className="mt-4 pb-5 text-sm sm:text-lg md:text-xl">
-              Welcome to <strong>BAOIAM</strong>, the premier learning platform
-              exclusively for women entrepreneurs! Ignite your entrepreneurial
-              spirit and embark on your journey to success. As a launchpad for
-              aspiring entrepreneurs, we empower you to learn, innovate, and
-              achieve success.
-            </p>
+    <p className="mt-4 pb-5 text-sm sm:text-lg md:text-xl">
+      Welcome to <strong>BAOIAM</strong>, the premier learning platform
+      exclusively for women entrepreneurs! Ignite your entrepreneurial spirit
+      and embark on your journey to success. As a launchpad for aspiring
+      entrepreneurs, we empower you to learn, innovate, and achieve success.
+    </p>
 
-          <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
-            <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
-            <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-              <IoIosArrowRoundForward size={30} />
-            </span>
-            <span class="relative">Attend Info Session</span>
-          </button>
-        </div>
-        <div className="w-full md:w-[40%]">
-          <div className="w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
-            <img src={PHero} className="w-full h-full object-cover" alt="" />
-          </div>
-        </div>
-      </div>
+    <button className="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 sm:px-10 md:px-12 py-3 mt-8 lg:mt-16 text-sm sm:text-base dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+      <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+      <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+        <IoIosArrowRoundForward size={30} />
+      </span>
+      <span className="relative">Attend Info Session</span>
+    </button>
+  </div>
+</div>
+
       {/* <div className="relative h-auto md:h-screen   mx-10">
         <div className="hidden sm:block absolute inset-0">
           <img
@@ -197,45 +199,46 @@ const Enterpunership = () => {
       </div> */}
 
       {/*//! Program Overview */}
-      <div className=" p-6 md:p-10">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          {/* Heading Section */}
-          <div className="text-center my-10">
-            <h1 className="text-[2rem] md:text-5xl font-bold text-indigo-600">
-              Program <span className="text-black dark:text-white">Overview</span>
-            </h1>
-          </div>
+      <div className="p-6 md:p-10">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+    {/* Heading Section */}
+    <div className="text-center my-10">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-600">
+        Program <span className="text-black dark:text-white">Overview</span>
+      </h1>
+    </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 lg:w-1/2 mb-4 md:mb-0">
-              <div className="relative">
-                <img
-                  src='https://images.stockcake.com/public/e/f/c/efc4e6ed-97e3-4349-b133-8c83211049e6_large/businesswomen-discussing-outdoors-stockcake.jpg'
-                  alt="Person"
-                  className="rounded-2xl w-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Text Section */}
-            <div className="w-full md:w-1/2 lg:w-1/2 md:ml-10">
-              <p className="text-base mb-14 md:text-xl font-light">
-                Our Entrepreneurship Courses are formulated in a way that can be
-                easily studied and comprehended. We offer a plethora of courses
-                that are skill-centric and are purely based on practical
-                applications. Students can learn new skills or even hone their
-                existing skills. This gives them a chance to build a strong
-                skillset that can propel them to a new level in their
-                professional lives.
-              </p>
-              <div className="text-indigo-600 font-medium mt-4">
-                ⏳ Enrollment Deadline Approaching Soon!
-              </div>
-            </div>
-          </div>
+    {/* Content Section */}
+    <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+      {/* Image Section */}
+  
+      {/* Text Section */}
+      <div className="w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
+        <p className="text-base sm:text-lg md:text-xl lg:text-xl font-light mb-10">
+          Our Entrepreneurship Courses are formulated in a way that can be
+          easily studied and comprehended. We offer a plethora of courses that
+          are skill-centric and are purely based on practical applications.
+          Students can learn new skills or even hone their existing skills. This
+          gives them a chance to build a strong skillset that can propel them to
+          a new level in their professional lives.
+        </p>
+        <div className="text-indigo-600 font-medium mt-4">
+          ⏳ Enrollment Deadline Approaching Soon!
         </div>
       </div>
+      <div className="w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0">
+        <div className="relative">
+          <img
+            src="https://images.stockcake.com/public/e/f/c/efc4e6ed-97e3-4349-b133-8c83211049e6_large/businesswomen-discussing-outdoors-stockcake.jpg"
+            alt="Person"
+            className="rounded-2xl w-full object-cover h-72 sm:h-96 md:h-full"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* //!Course Highlights */}
       <CourseHighlights />
@@ -243,76 +246,86 @@ const Enterpunership = () => {
       {/* //!Importance and Opportunities */}
 
       <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
-            Importance and <span className="text-indigo-600">Opportunities</span>
-            
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center space-y-8  md:space-y-0 md:space-x-6 mt-16">
-            {cards.map((card, index) => (
-              <div
-                key={index}
-                className="rounded-2xl shadow-xl border border-gray-200 bg-white hover:scale-105 p-8  w-full md:w-1/3 min-h-[300px] flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className=" text-center text-3xl font-bold mb-4">
-                    {card.number}
-                  </h3>
-                  <h4 className="text-xl font-semibold text-indigo-600 mb-4">
-                    {card.title}
-                  </h4>
-                  <p className="text-gray-700 mt-14 leading-relaxed text-justify ">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+  <div className="max-w-7xl mx-auto px-4 text-center">
+    {/* Title */}
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-8">
+      Importance and <span className="text-indigo-600">Opportunities</span>
+    </h2>
+
+    {/* Cards Container */}
+    <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-6 mt-10 md:mt-16">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="rounded-2xl shadow-xl border border-gray-200 bg-white hover:scale-105 hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full md:w-1/3 lg:w-1/4 min-h-[300px] flex flex-col justify-between"
+        >
+          <div>
+            {/* Card Number */}
+            <h3 className="text-center text-2xl sm:text-3xl font-bold mb-4">
+              {card.number}
+            </h3>
+
+            {/* Card Title */}
+            <h4 className="text-xl sm:text-xl font-semibold text-indigo-600 mb-4">
+              {card.title}
+            </h4>
+
+            {/* Card Description */}
+            <p className="text-gray-700 mt-8 leading-relaxed text-justify text-sm sm:text-base">
+              {card.description}
+            </p>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       {/* //!Women Entrepreneurship Program */}
-
       <div className="p-6 md:p-10">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          {/* Heading Section */}
-          <div className="text-center my-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
-          Women  <span className="text-indigo-600">Entrepreneurship</span>  
-          </h2>
-         
-          </div>
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+    {/* Heading Section */}
+    <div className="text-center my-10">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
+      <span className="text-indigo-600">Women</span>   Entrepreneurship
+      </h2>
+    </div>
 
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between">
-            {/* Text Section */}
-            <div className="w-full md:w-1/2 lg:w-1/2 md:ml-10">
-            <p className="text-base mb-14 md:text-xl font-light">
-            Our Women Entrepreneurship Program aims to support and empower
-                women in starting and growing their businesses. This program is
-                specially pieced together by our experts to guide our women
-                entrepreneurs and to teach them to build their strong business
-                empires. It typically includes mentorship, training, and
-                resources to enhance skills, foster networking, and overcome
-                challenges women may face in the business world. The goal is to
-                promote economic independence and gender equality.
-              </p>
-              <div className="text-black font-bold mt-4">
-                ⏳ Enrollment Deadline Approaching Soon!
-              </div>
-            </div>
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 lg:w-1/2 mb-4 md:mb-0">
-              <div className="relative">
-                <img
-                  src={img3}
-                  alt="Person"
-                  className="rounded-2xl w-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+    {/* Content Section: Image and Text */}
+    <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+      {/* Text Section */}
+      <div className="w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
+        <p className="text-base sm:text-lg md:text-xl font-light mb-8">
+          Our Women Entrepreneurship Program aims to support and empower women
+          in starting and growing their businesses. This program is specially
+          pieced together by our experts to guide our women entrepreneurs and to
+          teach them to build their strong business empires. It typically
+          includes mentorship, training, and resources to enhance skills, foster
+          networking, and overcome challenges women may face in the business
+          world. The goal is to promote economic independence and gender
+          equality.
+        </p>
+        <div className="text-black font-bold mt-4">
+          ⏳ Enrollment Deadline Approaching Soon!
         </div>
       </div>
+
+      {/* Image Section */}
+      <div className="w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0">
+        <div className="relative">
+          <img
+            src={img3}
+            alt="Person"
+            className="rounded-2xl w-full object-cover h-72 sm:h-96 md:h-full"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
       {/*//! Testimonials */}
       <div>

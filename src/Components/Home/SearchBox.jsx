@@ -33,38 +33,60 @@ const SearchBox = () => {
     }
 
     return (
-        <div className='flex items-center'>
+        <div className='relative'>
             {/* Desktop and larger screen behavior: Expand inline search */}
             {!isMobile && (
-                <div className={`relative flex items-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? 'w-80' : 'w-10'} bg-transparent px-2`}>
-                    <RiSearch2Line 
-                        onClick={() => setIsExpanded(true)} 
-                        size={20} 
-                        className={`cursor-pointer transition-opacity duration-500 ${isExpanded ? 'opacity-0' : 'opacity-100'}`} 
-                    />
-
-                    {/* Input Field: Expands when the search icon is clicked */}
-                    {isExpanded && (
-                        <input
-                            ref={inputRef}
-                            type="text"
-                            placeholder='Search courses'
-                            className='bg-transparent py-2 pl-2 pr-8 focus:outline-none w-full transition-all duration-500'
-                            value={searchQuery}
-                            onChange={handleSearchChange}
-                        />
-                    )}
-
-                    {/* Close Icon: Appears when the search box is expanded */}
-                    {isExpanded && (
-                        <RxCross2 
-                            onClick={() => { 
-                                setIsExpanded(false);
-                                setSearchQuery('');
-                            }} 
-                            className='absolute right-2 cursor-pointer' 
+                <div className='relative'>
+                    <div className={`absolute right-0 -top-2 flex items-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? 'w-60' : 'w-10'} bg-transparent px-2`}>
+                        <RiSearch2Line 
+                            onClick={() => setIsExpanded(true)} 
                             size={20} 
+                            className={`cursor-pointer transition-opacity duration-500 ${isExpanded ? 'opacity-0' : 'opacity-100'}`} 
                         />
+
+                        {/* Input Field: Expands when the search icon is clicked */}
+                        {isExpanded && (
+                            <input
+                                ref={inputRef}
+                                type="text"
+                                placeholder='Search courses'
+                                className='bg-transparent py-2 pl-2 pr-8 focus:outline-none w-full transition-all duration-500'
+                                value={searchQuery}
+                                onChange={handleSearchChange}
+                            />
+                        )}
+
+                        {/* Close Icon: Appears when the search box is expanded */}
+                        {isExpanded && (
+                            <RxCross2 
+                                onClick={() => { 
+                                    setIsExpanded(false);
+                                    setSearchQuery('');
+                                }} 
+                                className='absolute right-2 cursor-pointer' 
+                                size={20} 
+                            />
+                        )}
+                    </div>
+
+                    {/* Results Box for desktop */}
+                    {isExpanded && searchQuery && (
+                        <div className='absolute top-12 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
+                            {filteredCourses.length > 0 ? (
+                                filteredCourses.map((c, i) => (
+                                    <Link
+                                        to={`/course/school/${c.id}`}
+                                        onClick={() => setIsExpanded(false)} // Collapse search box when a result is clicked
+                                        className='py-2 px-4 block hover:bg-gray-200'
+                                        key={i}
+                                    >
+                                        {c.course}
+                                    </Link>
+                                ))
+                            ) : (
+                                <div className='py-2 px-4 text-gray-500'>No courses found</div>
+                            )}
+                        </div>
                     )}
                 </div>
             )}
@@ -126,26 +148,6 @@ const SearchBox = () => {
                         </div>
                     )}
                 </>
-            )}
-
-            {/* Results Box for desktop */}
-            {!isMobile && isExpanded && searchQuery && (
-                <div className='absolute top-12 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
-                    {filteredCourses.length > 0 ? (
-                        filteredCourses.map((c, i) => (
-                            <Link
-                                to={`/course/school/${c.id}`}
-                                onClick={() => setIsExpanded(false)} // Collapse search box when a result is clicked
-                                className='py-2 px-4 block hover:bg-gray-200'
-                                key={i}
-                            >
-                                {c.course}
-                            </Link>
-                        ))
-                    ) : (
-                        <div className='py-2 px-4 text-gray-500'>No courses found</div>
-                    )}
-                </div>
             )}
         </div>
     )
