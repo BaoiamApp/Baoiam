@@ -13,7 +13,7 @@ import logo from "../../assets/BAOAM.png";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 // import { deleteUserData } from "../../redux/user/userSlice";
-import { deleteUserData1 } from "../../Redux/user/userSlice";
+import { deleteUserData1 } from "../../redux/user/userSlice";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
