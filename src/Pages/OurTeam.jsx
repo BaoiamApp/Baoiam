@@ -3,6 +3,7 @@ import { Advertiseteam } from "../Components/OurTeam Components/Advertiseteam";
 import { LeadershipTeam } from "../Components/OurTeam Components/LeadershipTeam";
 import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 import { WebDevTeam } from "../Components/OurTeam Components/WebDevTeam";
+import JoinUs from "../Components/OurTeam Components/JoinUs";
 
 export const OurTeam = () => {
   document.title = 'Baoiam - Our Team'
@@ -35,6 +36,7 @@ export const OurTeam = () => {
         <LeadershipTeam />
         <Advertiseteam />
       </div>
+      <JoinUs/>
     </div>
   );
 };
