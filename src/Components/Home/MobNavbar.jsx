@@ -18,6 +18,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
 
     const [schoolCourses, setSchoolCourses] = useState([]);
 
+    const changeTheme=()=>{
+        setIsDark(old=>!old);
+    }
+
     useEffect(() => {
 
     }, [activeTab])
@@ -29,10 +33,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
     return (
         <div>
             
-            <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-11/12 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
-                <div className="h-full px-3 py-4 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
+            <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-11/12 md:[90%] h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
+                <div className="h-full px-3 py-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
                     <RxCross2
-                        className="text-black dark:text-white ml-64"
+                        className="text-black dark:text-white absolute top-4 right-4"
                         onClick={() => setShowmenu(old => !old)}
                         size={25}
                     />
@@ -114,7 +118,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                                     </li>
                                     {collegeCate && (
                                         <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                                            {courses[0].subcategories.map((course, i) => {
+                                            {courses[1].subcategories.map((course, i) => {
                                                 return (
                                                     <Link
                                                         onClick={() => {
@@ -225,8 +229,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                         </li>
                     </ul>
                     <div
-                    onClick={()=>setIsDark(old=>!old)}
-                    className="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+                    onClick={changeTheme}
+                    className="flex items-center gap-2 p-2 mt-4 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
                   >
                     {isDark?<BsSun size={18} />:<BsMoonStars size={18} />} Theme
                   </div>
