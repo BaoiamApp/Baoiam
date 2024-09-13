@@ -54,11 +54,12 @@ const Checkout = () => {
   }, []);
   const handleCheckout = () => {
     const buyCourse = async () => {
+      console.log(localStorage.getItem("access_token"));
       try {
         const { data } = await axios.post(
           `${apiUrl}/api/orders/`,
           {
-            plan_id: 12,
+            plan_id: 22,
           },
           {
             headers: {
@@ -68,6 +69,7 @@ const Checkout = () => {
           }
         );
         const { order_id, total_amount } = data;
+        console.log("order_id: " + order_id);
         const options = {
           key: razorpayKeyId,
           amount: total_amount,
@@ -76,17 +78,39 @@ const Checkout = () => {
           handler: async function (res) {
             const payment_id = res.razorpay_payment_id;
             const signature = res.razorpay_signature;
-            await axios.post(`${apiUrl}/api/orders/verify_payment/`, {
-              payment_id,
-              order_id,
-              signature,
-            });
+            console.log("payment_id:", payment_id);
+            console.log("signature:", signature);
+            console.log("order_id:(inside razorpay)", order_id);
+            try {
+              const { data } = await axios.post(
+                `${apiUrl}/api/orders/verify_payment/`,
+                JSON.stringify({
+                  payment_id,
+                  order_id,
+                  signature,
+                }),
+                {
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `JWT ${localStorage.getItem(
+                      "access_token"
+                    )}`,
+                  },
+                }
+              );
+              console.log("data from razorpay:", data);
+              if (data.message == "Payment verified successfully!") {
+                toast.success("Enrollment completed successfully!");
+              }
+            } catch (err) {
+              console.log("err.stack: ", err.stack);
+            }
           },
           theme: {
             color: "#3399cc",
           },
         };
-        const rzp = new window.Razorpay(options);
+        const rzp = window.Razorpay(options);
         rzp.open();
         // console.log("FROM CHECKOUT: ", data);
       } catch (err) {
