@@ -36,12 +36,12 @@ const SearchBox = () => {
         <div className='relative'>
             {/* Desktop and larger screen behavior: Expand inline search */}
             {!isMobile && (
-                <div className='relative'>
-                    <div className={`absolute right-0 -top-2 flex items-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? 'w-60' : 'w-10'} bg-transparent px-2`}>
+                <div className=''>
+                    <div className={`absolute right-0 -top-3 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? 'w-60' : 'w-10'} bg-transparent `}>
                         <RiSearch2Line 
                             onClick={() => setIsExpanded(true)} 
-                            size={20} 
-                            className={`cursor-pointer transition-opacity duration-500 ${isExpanded ? 'opacity-0' : 'opacity-100'}`} 
+                            size={24} 
+                            className={`cursor-pointer mx-auto transition-opacity duration-500 ${isExpanded ? 'opacity-0' : 'opacity-100'}`} 
                         />
 
                         {/* Input Field: Expands when the search icon is clicked */}
@@ -71,7 +71,7 @@ const SearchBox = () => {
 
                     {/* Results Box for desktop */}
                     {isExpanded && searchQuery && (
-                        <div className='absolute top-12 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
+                        <div className='absolute top-12 right-5 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
                             {filteredCourses.length > 0 ? (
                                 filteredCourses.map((c, i) => (
                                     <Link
