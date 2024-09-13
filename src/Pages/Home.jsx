@@ -9,7 +9,10 @@ import Protocol from '../Components/Home/Protocol'
 import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
 import Phone from '../Components/Home/Phone'
+import Meetourexperts from '../Components/Home/Meetourexperts'
+
 const Home = () => {
+    document.title = 'Baoiam - Home'
     return (
         <>
             <Hero />
@@ -20,6 +23,7 @@ const Home = () => {
             <Protocol />
             <JoinNow />
             <How />
+            <Meetourexperts/>
             <Phone />
         </>
     )

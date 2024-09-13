@@ -10,7 +10,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 const domain = import.meta.env.VITE_DOMAIN_URL;
 
 const Login = () => {
-
+  document.title = 'Baoiam - Login'
   axios.defaults.withCredentials = true;
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -19,6 +19,8 @@ const Login = () => {
   const requestRef = useRef(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    if (localStorage.getItem("access_token")) navigate("/profile");
     const values = queryString.parse(location.search);
     const state = values.state || null;
     const code = values.code || null;
@@ -32,9 +34,8 @@ const Login = () => {
   }, [location]);
 
   const googleAuthenticate = async (state, code) => {
-    if (requestRef.current)
-      return;
-    requestRef.current = true; 
+    if (requestRef.current) return;
+    requestRef.current = true;
 
     const details = {
       state: state,
@@ -65,14 +66,14 @@ const Login = () => {
       console.log(response, "response");
       if (response.status == 201) {
         const data = response.data;
-        console.log(data, 'data')
+        console.log(data, "data");
         toast.success("Login succcessful");
 
         localStorage.setItem("access", data.access);
-        localStorage.setItem("authenticated", true); 
+        localStorage.setItem("authenticated", true);
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/profile");
         }, 2000);
       }
     } catch (error) {
@@ -121,6 +122,7 @@ const Login = () => {
       );
       console.log(response);
       if (response.status === 200) {
+        localStorage.setItem("access_token", response.data.access);
         toast.update(toastId, {
           render: "Login successful!",
           type: "success",
@@ -129,7 +131,7 @@ const Login = () => {
         });
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/profile");
         }, 2000);
       } else {
         throw new Error(response.data?.detail || "Login failed.");
@@ -240,9 +242,12 @@ const Login = () => {
                   <input type="checkbox" name="ch" id="ch" className="mr-2" />
                   <span className="text-md">Remember for 30 days</span>
                 </div>
-                <Link to={"/forget-password"} className="font-bold text-md cursor-pointer">
+                <Link
+                  to={"/forget-password"}
+                  className="font-bold text-md cursor-pointer"
+                >
                   Forgot password
-                </Link> 
+                </Link>
               </div>
               <button
                 type="submit"
