@@ -296,10 +296,10 @@ const Navbar = ({ theme }) => {
         {/* Last */}
         <div>
         <div className="flex items-center gap-4 text-black dark:text-white">
-          <div className="flex relative items-center gap-4">
-            <div className="">
+          <div className="flex items-center gap-4">
+          
             <SearchBox />
-            </div>
+           
             <div ref={userhandleDropDownRef}>
               <FaRegUser
                 onClick={() => setUserDrop(!userDrop)}
