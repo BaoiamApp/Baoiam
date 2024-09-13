@@ -11,11 +11,11 @@ const courses = [
 
 const Courses = () => {
   return (
-    <section className="p-6 bg-slate-100 dark:bg-black dark:text-white  ">
+    <section className="p-6 dark:bg-black dark:text-white  ">
       <h2 className="text-3xl font-semibold mb-6 text-center">All Enrolled Courses</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {courses.map((course) => (
-          <div key={course.id} className="shadow-md dark:border dark:border-white rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+          <div key={course.id} className="shadow-md dark:border bg-white dark:border-white rounded-lg overflow-hidden transition-transform transform hover:scale-105">
             <img
               src={course.image}
               alt={course.title}

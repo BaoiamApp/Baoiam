@@ -1,13 +1,28 @@
 import React from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Calendar from './Calendar';
+import Profile from '../StudentDasboard/Profile'
 
 const MyProfile = () => {
+
+  const userInfo={
+    name: "Name not provided",
+    email: "Email not provided",
+    college: "College not provided",
+    mobile: "Mobile not provided",
+    dob: "DOB not provided",
+    location: "Location not provided",
+    socialLinks: {
+      linkedIn: "",
+      gitHub: "",
+      leetCode: "",
+  }
+  }
   return (
     <div className="flex gap-4 flex-col md:flex-row">
       {/* Profile Card */}
       <div className='w-full flex-1 space-y-2 lg:w-2/3'>
-        <div className="bg-white shadow-lg rounded-lg p-6 w-full">
+       {/*  <div className="bg-white shadow-lg rounded-lg p-6 w-full">
           <div className="flex flex-col items-center">
             <img
               src="https://via.placeholder.com/150"
@@ -23,7 +38,8 @@ const MyProfile = () => {
             <p><strong>Date of Birth:</strong> 12th May 1985</p>
             <p><strong>Location:</strong> New York, USA</p>
           </div>
-        </div>
+        </div> */}
+        <Profile userInfo={userInfo} />
 
         {/* Courses Summary Card */}
         <div className="shadow-lg rounded-lg p-6 w-full">
@@ -53,7 +69,7 @@ const MyProfile = () => {
           </ul>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 
