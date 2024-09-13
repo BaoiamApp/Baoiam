@@ -135,40 +135,41 @@ const Enterpunership = () => {
   return (
     <div>
       {/*//! Banner */}
-      <div className="flex items-center flex-col gap-12 mt-8 md:mt-0 md:gap-0 md:flex-row px-8 md:px-20 w-[100vw] h-full md:h-[90vh]">
-        {/* <img src={banner_pap} alt="banner" /> */}
+      <div className="flex items-center flex-col gap-12 mt-8 md:mt-0 md:gap-8 lg:gap-0 md:flex-row px-8 md:px-20 w-full h-full md:h-[90vh]">
+  {/* Image Section */}
+  <div className="w-full md:w-[40%]">
+    <div className="w-full h-72 sm:h-80 md:h-96 lg:h-[30rem] rounded-3xl overflow-hidden">
+      <img
+        src="https://images.stockcake.com/public/7/e/0/7e0f0d57-b367-441d-9530-b81b5378344f_large/botanical-store-owner-stockcake.jpg"
+        className="w-full h-full object-cover"
+        alt="Entrepreneurship"
+      />
+    </div>
+  </div>
 
-        <div className="w-full md:w-[40%]">
-          <div className="w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
-            <img src='https://images.stockcake.com/public/7/e/0/7e0f0d57-b367-441d-9530-b81b5378344f_large/botanical-store-owner-stockcake.jpg' className="w-full h-full object-cover" alt="" />
-          </div>
-        </div>
+  {/* Text Section */}
+  <div className="w-full text-center md:text-left lg:text-center md:w-[60%]">
+    <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold">
+      <span className="text-indigo-600">ENTREPRENEURSHIP</span> Course
+    </h1>
 
-        <div className="w-full text-center md:text-left md:w-[60%]">
-        <h1 className="md:text-3xl text-2xl font-bold ">
-             <span className="lg:text-4xl text-indigo-600">ENTREPRENEURSHIP</span>   Course
-            </h1>
-          {/* <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white">
-              Course
-            </h2> */}
+    <p className="mt-4 pb-5 text-sm sm:text-lg md:text-xl">
+      Welcome to <strong>BAOIAM</strong>, the premier learning platform
+      exclusively for women entrepreneurs! Ignite your entrepreneurial spirit
+      and embark on your journey to success. As a launchpad for aspiring
+      entrepreneurs, we empower you to learn, innovate, and achieve success.
+    </p>
 
-            <p className="mt-4 pb-5 text-sm sm:text-lg md:text-xl">
-              Welcome to <strong>BAOIAM</strong>, the premier learning platform
-              exclusively for women entrepreneurs! Ignite your entrepreneurial
-              spirit and embark on your journey to success. As a launchpad for
-              aspiring entrepreneurs, we empower you to learn, innovate, and
-              achieve success.
-            </p>
+    <button className="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 sm:px-10 md:px-12 py-3 mt-8 lg:mt-16 text-sm sm:text-base dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+      <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+      <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+        <IoIosArrowRoundForward size={30} />
+      </span>
+      <span className="relative">Attend Info Session</span>
+    </button>
+  </div>
+</div>
 
-          <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
-            <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
-            <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-              <IoIosArrowRoundForward size={30} />
-            </span>
-            <span class="relative">Attend Info Session</span>
-          </button>
-        </div>
-      </div>
       {/* <div className="relative h-auto md:h-screen   mx-10">
         <div className="hidden sm:block absolute inset-0">
           <img
@@ -256,7 +257,7 @@ const Enterpunership = () => {
       {cards.map((card, index) => (
         <div
           key={index}
-          className="rounded-2xl shadow-md border border-gray-200 bg-white hover:scale-105 hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full md:w-1/3 lg:w-1/4 min-h-[300px] flex flex-col justify-between"
+          className="rounded-2xl shadow-xl border border-gray-200 bg-white hover:scale-105 hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full md:w-1/3 lg:w-1/4 min-h-[300px] flex flex-col justify-between"
         >
           <div>
             {/* Card Number */}
