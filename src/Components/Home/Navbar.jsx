@@ -17,14 +17,14 @@ const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
-  
+
   const [isDark, setIsDark] = useState(false);
   const [userDrop, setUserDrop] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
   const [linkActive, setLinkActive] = useState("Home");
   const [courses, setCourses] = useState([]);
 
- 
+
 
   const darkTheme = () => {
     setIsDark(old => !old);
@@ -79,12 +79,14 @@ const Navbar = ({ theme }) => {
 
   return (
     <>
+    {showmenu && <div className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 lg:hidden" onClick={()=>setShowmenu(false)}></div>}
       <div
-        className={`flex z-50 items-center justify-between px-4 py-2 sticky top-0 ${isTransparent
-            ? "bg-white dark:bg-[#080529]"
-            : "bg-white/70 backdrop-blur dark:bg-black/30 "
+        className={`flex z-[90] items-center justify-between px-4 py-2 w-full sticky top-0 ${isTransparent
+          ? "bg-white dark:bg-[#080529]"
+          : "bg-white/70 backdrop-blur dark:bg-black/30 "
           }`}
       >
+
         {/* Logo */}
 
         <Link
@@ -334,6 +336,7 @@ const Navbar = ({ theme }) => {
         </div>
 
         {/* Last */}
+        <div>
         <div className="flex items-center gap-4 text-black dark:text-white">
           <div className="flex items-center gap-4">
             <SearchBox />
@@ -382,13 +385,14 @@ const Navbar = ({ theme }) => {
             </button>
           </Link>
           <span
-            onClick={() => setShowmenu(old=>!old)}
+            onClick={() => setShowmenu(old => !old)}
             className="block lg:hidden"
           >
             <RiMenu3Line size={22} />
           </span>
         </div>
-            <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu}/>
+        <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} />
+        </div>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
 const MobNavbar = ({ showmenu, setShowmenu }) => {
-    const mobTabtyles = `flex items-center p-2 text-base font-medium rounded-lg`;
+    const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
     const [activeTab, setActiveTab] = useState('Home');
     const [subCateDrop, setSubCateDrop] = useState(false);
     const [schoolCate, setSchoolCate] = useState(false);
@@ -14,19 +14,20 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
 
     const [schoolCourses, setSchoolCourses] = useState([]);
 
-    useEffect(()=>{
-    
-    },[activeTab])
+    useEffect(() => {
 
-    const closeSideBar=()=>{
+    }, [activeTab])
+
+    const closeSideBar = () => {
         setShowmenu(false)
     }
 
+
     return (
         <div>
-            {showmenu && <div className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-30 z-30 lg:hidden" onClick={closeSideBar}></div>}
-            <aside className={`fixed lg:hidden top-0 left-0 z-40 w-80 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
-                <div className="h-full px-3 py-4 overflow-y-auto rounded-r-lg  bg-white border taxt-[#B1BBF5] dark:text-white dark:bg-black">
+            
+            <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-80 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
+                <div className="h-full px-3 py-4 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
                     <RxCross2
                         className="text-black dark:text-white ml-64"
                         onClick={() => setShowmenu(old => !old)}
@@ -34,55 +35,67 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                     />
 
 
-                    <ul className="space-y-2 font-medium">
-                        <li className={`${mobTabtyles} ${activeTab==='Home' ? 'text-[#1638C9]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("Home") }} >
-                            <Link to={"/"}  className="ms-3">
+                    <ul className="space-y-2 font-medium divide-y ">
+                        <li className={`${mobTabtyles} ${activeTab === 'Home' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("Home");
+                            closeSideBar();
+                        }} >
+                            <Link to={"/"} className="ms-3">
                                 Home
                             </Link>
                         </li>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
 
-                        <li>
+                        <li className={`${mobTabtyles} flex-col items-start ${activeTab === 'Course' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`}>
                             <button
-                                onClick={() => setSubCateDrop(old=>!old)}
+                                onClick={() => {
+                                    setSubCateDrop(old => !old);
+                                    setActiveTab("Course")
+                                }
+                                }
+                                className="flex justify-between w-full items-center"
                                 type="button"
-                                className={style}
                             >
                                 <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
                                     Course
                                 </span>
-                                {subCateDrop?<FaChevronUp />:<FaChevronDown />}
+                                {subCateDrop ? <FaChevronUp /> : <FaChevronDown />}
                             </button>
                             {subCateDrop && (
-                                <ul className="py-2 space-y-2">
+                                <ul className="py-2 relative flex flex-col gap-2 w-full items-start ">
                                     <li
-                                        onClick={() => setSchoolCate(old=>!old)}
-                                        className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 relative"
+                                        onClick={() => {
+                                            setSchoolCate(old => !old)
+                                            setCollegeCate(false)
+                                        }}
+                                        className="flex items-center gap-2 w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:bg-gray-700 relative"
                                     >
                                         School
+                                        {schoolCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {schoolCate && (
-                                        <div className="absolute top-56 md:top-24 w-72 right-4 md:right-80 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
+                                        <div className=" w-72 right-4 md:right-80 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
                                             {School.map((c, i) => {
                                                 return (
                                                     <div key={i} className="p-4">
                                                         <Link
                                                             onClick={() => {
-                                                                setShowmenu(old=>!old)
-                                                                setSubCateDrop(old=>!old)
+                                                                setShowmenu(old => !old)
+                                                                setSubCateDrop(old => !old)
                                                             }}
                                                             to={`${c.link}`}
-                                                            className="font-bold mb-2 px-2 text-base"
+                                                            className="font-bold px-2 text-base"
                                                         >
                                                             {c.Cate}
                                                         </Link>
-                                                        <ul className="flex flex-col">
+                                                        <ul className="flex mt-2 flex-col">
                                                             {c.subCate.map((sub, index) => {
                                                                 return (
                                                                     <Link
                                                                         onClick={() => {
-                                                                            setShowmenu(old=>!old);
-                                                                            setSubCateDrop(old=>!old);
-                                                                            setSchoolCate(old=>!old);
+                                                                            setShowmenu(old => !old);
+                                                                            setSubCateDrop(old => !old);
+                                                                            setSchoolCate(old => !old);
                                                                         }}
                                                                         key={index}
                                                                         to={`/course/${sub.id}`}
@@ -99,34 +112,39 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                                         </div>
                                     )}
                                     <li
-                                        onClick={() => setCollegeCate(old=>!old)}
-                                        className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                        onClick={() => {
+                                            setCollegeCate(old => !old)
+                                            setSchoolCate(false)
+                                        }}
+                                        className="flex items-center gap-2 w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:bg-gray-700"
                                     >
                                         College
+                                        {collegeCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
+
                                     {collegeCate && (
-                                        <div className="absolute top-64 right-4 w-72 text-gray-600 bg-white border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto dark:text-gray-700">
+                                        <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto dark:text-gray-700">
                                             {CollegeCourse.map((c, i) => {
                                                 return (
                                                     <div key={i} className="p-4">
                                                         <Link
                                                             onClick={() => {
-                                                                setShowmenu(old=>!old);
-                                                                setSubCateDrop(old=>!old);
+                                                                setShowmenu(old => !old);
+                                                                setSubCateDrop(old => !old);
                                                             }}
                                                             to={`${c.link}`}
-                                                            className="font-bold mb-2 px-2 text-base"
+                                                            className="font-bold px-2 text-base"
                                                         >
                                                             {c.Cate}
                                                         </Link>
-                                                        <ul className="flex flex-col">
+                                                        <ul className="flex mt-2 flex-col">
                                                             {c.subCate.map((sub, index) => {
                                                                 return (
                                                                     <Link
                                                                         onClick={() => {
-                                                                            setShowmenu(old=>!old);
-                                                                            setSubCateDrop(old=>!old);
-                                                                            setCollegeCate(old=>!old);
+                                                                            setShowmenu(old => !old);
+                                                                            setSubCateDrop(old => !old);
+                                                                            setCollegeCate(old => !old);
                                                                         }}
                                                                         key={index}
                                                                         to={`/course/${sub.id}`}
@@ -145,39 +163,75 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                                 </ul>
                             )}
                         </li>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
 
-                        <li className={`${mobTabtyles} ${activeTab==='About Us'?'text-[#1638C9]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("About Us") }}>
+                        <li className={`${mobTabtyles} ${activeTab === 'About Us' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("About Us")
+                            closeSideBar();
+                        }}> 
+
                             <Link to={"/about-us"} className="ms-3 text-nowrapx" >
                                 About Us
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${activeTab==='PAP'?'text-[#1638C9]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("PAP") }}>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
+
+                        <li className={`${mobTabtyles} ${activeTab === 'PAP' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("PAP")
+                                 closeSideBar();
+                        }}>
+
                             <Link to={"/pap"} className="ms-3" >
                                 PAP
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${activeTab==='ITIE'?'text-[#1638C9]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("ITIE") }}>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
+
+                        <li className={`${mobTabtyles} ${activeTab === 'ITIE' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("ITIE")
+                            closeSideBar();
+                        }}>
+
                             <Link to={"/itie"} className="ms-3" >
                                 ITIE
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${activeTab==='GCSP'?'text-[#1638C9] dark:bg-[#060606]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("GCSP") }}>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
+
+                        <li className={`${mobTabtyles} ${activeTab === 'GCSP' ? 'text-[#1638C9]  dark:text-white dark:bg-[#060606]' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("GCSP")
+                            closeSideBar();
+                        }}>
+
                             <Link to={"/gcsp"} className="ms-3" >
                                 GCSP
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${activeTab==='Blogs'?'text-[#1638C9]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("Blogs") }}>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
+
+                        <li className={`${mobTabtyles} ${activeTab === 'Blogs' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("Blogs")
+                            closeSideBar();
+                        }}>
+
                             <Link to={"/blogs"} className="ms-3" >
                                 Blogs
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${activeTab==='Contact'?'text-[#1638C9]':'text-[#B1BBF5]'}`} onClick={() => { setActiveTab("Contact") }}>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
+
+                        <li className={`${mobTabtyles} ${activeTab === 'Contact' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("Contact")
+                            closeSideBar();
+                        }}>
+
                             <Link to={"/contact"} className="ms-3" >
                                 Contact
                             </Link>
                         </li>
+                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
+
                     </ul>
-                    <hr className=" border-gray-200 border-1 mx-auto w-11/12 dark:border-gray-700 my-4" />
                     {/* <div
                     onClick={darkTheme}
                     className="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"

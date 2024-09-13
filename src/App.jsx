@@ -45,7 +45,6 @@ import ResetPassword from "./Pages/auth/ResetPassword";
 import SignUp from "./Pages/auth/SignUp";
 import Login from './Pages/auth/Login'
 import TeacherDashboard from './Components/InstructorDashboard/TeacherDashboard'
-import VerticalNavbar from './Components/Home/VerticalNavbar'
 
 
 const App = () => {
@@ -120,7 +119,6 @@ const App = () => {
         <Route path="/activate/:uid/:token" element={<ActivateEmail />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
-        <Route path="/test" element={<VerticalNavbar/>} />
 
         {/* accounts */}
 
