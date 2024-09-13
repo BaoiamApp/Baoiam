@@ -47,7 +47,7 @@ const App = () => {
   const [dark, setDark] = useState(false);
 
   const theme = () => {
-    setDark(true);
+    setDark(old=>!old);
     document.body.classList.toggle("dark");
   };
 
