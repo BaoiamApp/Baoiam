@@ -115,6 +115,10 @@ function Profile({ userInfo }) {
               <FaUniversity className="mr-2" />
               <p>{userInfo.college}</p>
             </div>
+          </div>
+          <div className="flex flex-col space-y-4">
+            {" "}
+            {/* Right side with 2 items */}
             <div className="flex items-center">
               <FiPhone className="mr-2" />
               <p>{userInfo.mobile}</p>
@@ -124,9 +128,11 @@ function Profile({ userInfo }) {
               <p>{userInfo.dob}</p>
             </div>
             <div className="flex items-center">
+              {" "}
+              {/* Optional: Location on right side if needed */}
               <FiMapPin className="mr-2" />
               <p>{userInfo.location}</p>
-            </div> */}
+            </div> 
           </div>
         </div>
       </div>

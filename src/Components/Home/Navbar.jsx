@@ -10,94 +10,15 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { RiMenu3Line, RiSearch2Line } from "react-icons/ri";
 import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
+import logoDark from "../../assets/logo-bg-removed.png";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 // import { deleteUserData } from "../../redux/user/userSlice";
 import { deleteUserData1 } from "../../redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
+import Logo from "./Logo";
 
 const Navbar = ({ theme }) => {
-  // const [show, setShow] = useState(false);
-  // const [showmenu, setShowmenu] = useState(false);
-  // const [delayHide, setDelayHide] = useState(null);
-
-  // const dispatch = useDispatch();
-  // const [isDark, setIsDark] = useState(false);
-  // const [userDrop, setUserDrop] = useState(false);
-  // const [isTransparent, setIsTransparent] = useState(true);
-  // const [linkActive, setLinkActive] = useState("Home");
-  // const [courses, setCourses] = useState([]);
-  // const userDropDownRef = useRef();
-  // const navigate = useNavigate();
-  // const userhandleDropDownRef = useRef();
-  // const darkTheme = () => {
-  //   setIsDark(old => !old);
-  //   theme();
-  // };
-
-  // const handleLinkClick = (link) => {
-  //   setLinkActive(link);
-  // };
-
-  // const getCourseData = async () => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       "https://api.baoiam.com/api/categories/"
-  //     );
-  //     setSchoolCourses(data[0].subcategories);
-  //     setCourses(data);
-  //     console.log(data);
-  //   } catch (err) {
-  //     // console.log(err.message);
-  //   }
-  // };
-
-  // const HideUserDrop = (event) => {
-  //   if (
-  //     userDropDownRef.current &&
-  //     !userDropDownRef.current.contains(event.target) &&
-  //     userhandleDropDownRef.current &&
-  //     !userhandleDropDownRef.current.contains(event.target)
-  //   ) {
-  //     setUserDrop(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 0) {
-  //       setIsTransparent(false);
-  //     } else {
-  //       setIsTransparent(true);
-  //     }
-  //   };
-  //   getCourseData();
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   window.addEventListener("click", HideUserDrop);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     window.removeEventListener("click", HideUserDrop);
-  //   };
-  // }, []);
-
-  // useEffect(()=>{
-  // console.log(courses);
-
-  // },[courses])
-
-  // // Function to handle mouse entering the dropdown
-  // const handleMouseEnter = () => {
-  //   if (delayHide) clearTimeout(delayHide); // Clear any existing timeout
-  //   setShow(true);
-  // };
-
-  // // Function to handle mouse leaving the dropdown
-  // const handleMouseLeave = () => {
-  //   const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
-  //   setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
-  // };
 
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
@@ -194,18 +115,7 @@ const Navbar = ({ theme }) => {
 
         {/* Logo */}
 
-        <Link
-          rel="canonical"
-          to={"/"}
-          className={`${isDark ? "w-36 h-20" : "w-40 h-20"}`}
-        >
-          <img
-            src={isDark ? logo : img1}
-            className={`w-full h-full ${isDark ? "object contain" : "object-contain"
-              }`}
-            alt="logo"
-          />
-        </Link>
+        <Logo isDark={isDark}/>
 
         {/* NavLinks */}
         <div
@@ -387,8 +297,9 @@ const Navbar = ({ theme }) => {
         <div>
         <div className="flex items-center gap-4 text-black dark:text-white">
           <div className="flex items-center gap-4">
+          
             <SearchBox />
-
+           
             <div ref={userhandleDropDownRef}>
               <FaRegUser
                 onClick={() => setUserDrop(!userDrop)}
@@ -452,7 +363,7 @@ const Navbar = ({ theme }) => {
 
           <span
             onClick={darkTheme}
-            className="text-xl cursor-pointer"
+            className="text-xl hidden lg:block cursor-pointer"
           >
             {isDark ? <BsSun /> : <BsMoonStars />}
           </span>
@@ -471,10 +382,10 @@ const Navbar = ({ theme }) => {
             <RiMenu3Line size={22} />
           </span>
         </div>
-        <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} />
+        <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} isDark={isDark} setIsDark={darkTheme}/>
         </div>
       </div>
-    </>
+      </>
   );
 };
 

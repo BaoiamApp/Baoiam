@@ -44,11 +44,11 @@ export const TeamSwiper = () => {
                 key={el.id}
               >
                 <img
-                  className='h-full rounded-md  w-full'
+                  className='h-full rounded-md object-cover w-full'
                   src={el.image}
                   alt=''
                 />
-                <div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300 rounded-md'>
+                <div className='absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 hover:backdrop-blur-md  flex flex-col justify-center items-center transition-opacity duration-300 rounded-md'>
                   <h3 className='text-center text-white font-sans font-medium text-sm md:text-lg'>
                     {el.name}
                   </h3>

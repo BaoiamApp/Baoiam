@@ -67,7 +67,7 @@ const Sidebar = () => {
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
     activeTab === tab
-      ? "bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative"
+      ? " glass bg-white backdrop-filter backdrop-blur-lg dark:bg-black dark:text-white p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative"
       : "p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative";
 
   // Function to render content based on the active tab
@@ -100,7 +100,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex relative h-full pt-8 transition duration-500">
+    <div className="flex relative bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 h-full pt-8 transition duration-500">
       {/* Sidebar */}
       <div className="absolute py-2 top-0 w-full md:hidden">
         <button className="px-4" onClick={openSidebar}>
@@ -184,7 +184,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full md:p-6 p-4 rounded-3xl ">{renderContent()}</div>
+      <div className="w-full bg-white dark:bg-black md:p-6 p-4">{renderContent()}</div>
     </div>
   );
 };
