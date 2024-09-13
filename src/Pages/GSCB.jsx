@@ -6,6 +6,7 @@ import Header from "../Components/GSCB/GSCB-Hero";
 import GSCPBottom from "../Components/GSCB/GSCP-Section3";
 
 const GSCB = () => {
+  document.title = 'Baoiam - GCEP'
   useEffect(() => {
     window.scrollTo(0, 0);
 

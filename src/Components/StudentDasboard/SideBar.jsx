@@ -22,6 +22,7 @@ import { setProfile } from "../../redux/user/userSlice";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
+  document.title = "Baoiam - User Profile";
   const [activeTab, setActiveTab] = useState("profile"); // Default active tab
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({});
@@ -55,6 +56,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchUserDetails();
     console.log(userInfo);
     localStorage.setItem("userInfo", JSON.stringify(userInfo));

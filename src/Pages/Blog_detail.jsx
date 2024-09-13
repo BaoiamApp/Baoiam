@@ -37,6 +37,7 @@ const getcmt = [
 ];
 
 const Blog_detail = () => {
+  document.title = 'Baoiam - Blog Detail'
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [email, setEmail] = useState("");
@@ -48,6 +49,7 @@ const Blog_detail = () => {
     console.log(content_data[id].heading1);
     return () => {};
   }, []);
+  document.title = 'Baoiam - Blog Details'
 
   const handlePostSubmit = () => {
     console.log("hi");

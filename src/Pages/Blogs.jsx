@@ -168,6 +168,7 @@ const authors_info = [
 ];
 
 const Blog = () => {
+  document.title = 'Baoiam - Blogs'
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -288,7 +289,7 @@ const Blog = () => {
                 <img
                   className='w-full h-48 object-cover'
                   src={item.imgSrc}
-                  alt={`Blog Post ${i}`}
+                  alt={`${item.title}`}
                 />
                 <div className='p-6 flex-grow'>
                   <span

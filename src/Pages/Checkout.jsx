@@ -14,52 +14,60 @@ import {
 import { FaCheck } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
 const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const invalidCouponToast = () => toast("Invalid Referral Code!");
   const { id, plan, course } = useParams();
+  const [proceedButton, setProceedButton] = useState(
+    `PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`
+  );
   const [referral, setReferral] = useState("");
   const [enrollingCourse, setEnrollingCourse] = useState({});
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
   useEffect(() => {
+    if (!localStorage.getItem("access_token")) navigate("/login");
     // alert('id is:',id , ' and plan is:',plan)
-    window.scrollTo(0, 0);
-    console.log(course, id, plan);
-    if (course == "school") {
-      const course = School[0].subCate.filter((item) => {
-        return item.id == id;
-      });
-      setEnrollingCourse(course[0]);
-      console.log(course);
-    } else if (course == "college") {
-      const course = CollegeCourseData[0].subCate.filter((item) => {
-        return item.id == id;
-      });
-      setEnrollingCourse(course[0]);
-      console.log(course);
-    } else {
-      const course = OtherCourseData[0].subCate.filter((item) => {
-        return item.id == id;
-      });
-      setEnrollingCourse(course[0]);
-      console.log(course);
+    else {
+      window.scrollTo(0, 0);
+      console.log(course, id, plan);
+      if (course == "school") {
+        const course = School[0].subCate.filter((item) => {
+          return item.id == id;
+        });
+        setEnrollingCourse(course[0]);
+        console.log(course);
+      } else if (course == "college") {
+        const course = CollegeCourseData[0].subCate.filter((item) => {
+          return item.id == id;
+        });
+        setEnrollingCourse(course[0]);
+        console.log(course);
+      } else {
+        const course = OtherCourseData[0].subCate.filter((item) => {
+          return item.id == id;
+        });
+        setEnrollingCourse(course[0]);
+        console.log(course);
+      }
     }
     return () => {};
   }, []);
   const handleCheckout = () => {
+    setProceedButton("Loading....");
     const buyCourse = async () => {
       console.log(localStorage.getItem("access_token"));
       try {
         const { data } = await axios.post(
           `${apiUrl}/api/orders/`,
           {
-            plan_id: 22,
+            plan_id: id,
           },
           {
             headers: {
@@ -82,6 +90,7 @@ const Checkout = () => {
             console.log("signature:", signature);
             console.log("order_id:(inside razorpay)", order_id);
             try {
+              setProceedButton("Verifying....");
               const { data } = await axios.post(
                 `${apiUrl}/api/orders/verify_payment/`,
                 JSON.stringify({
@@ -101,8 +110,11 @@ const Checkout = () => {
               console.log("data from razorpay:", data);
               if (data.message == "Payment verified successfully!") {
                 toast.success("Enrollment completed successfully!");
+                setProceedButton("Success");
+                navigate("/profile");
               }
             } catch (err) {
+              toast.error(err.message);
               console.log("err.stack: ", err.stack);
             }
           },
@@ -110,15 +122,25 @@ const Checkout = () => {
             color: "#3399cc",
           },
         };
-        const rzp = window.Razorpay(options);
-        rzp.open();
+        if (window.Razorpay) {
+          const rzp = new window.Razorpay(options);
+          rzp.open();
+        } else {
+          console.error("Razorpay SDK not loaded");
+          toast.error("Payment gateway not available");
+        }
         // console.log("FROM CHECKOUT: ", data);
       } catch (err) {
         console.log(err.stack);
+        console.log(proceedButton);
+        setProceedButton(`PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`);
+        // toast.error("Something went wrong");
       }
     };
     buyCourse();
   };
+
+  document.title = `Baoiam - ${enrollingCourse?.course}`;
 
   return (
     <div className="flex flex-wrap dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
@@ -164,9 +186,9 @@ const Checkout = () => {
           <div className="flex justify-between w-full items-center">
             <div>
               <p className="text-sm text-slate-600 font-semibold dark:text-white">
-                {JSON.parse(localStorage.getItem("userInfo")).first_name +
+                {JSON.parse(localStorage.getItem("userInfo"))?.first_name +
                   " " +
-                  JSON.parse(localStorage.getItem("userInfo")).last_name}
+                  JSON.parse(localStorage.getItem("userInfo"))?.last_name}
               </p>
               {/* <p className="text-sm text-slate-400">8785144645</p> */}
             </div>
@@ -196,7 +218,7 @@ const Checkout = () => {
               <h2 className="font-semibold text-lg mb-2">
                 {/* {plan} | MERN Stack | Java | English */}
                 {course == "school"
-                  ? enrollingCourse.course
+                  ? enrollingCourse?.course
                   : course == "college"
                   ? enrollingCourse.courseName
                   : enrollingCourse.course}
@@ -236,7 +258,7 @@ const Checkout = () => {
               className="px-5 flex-1 py-1 rounded border-indigo-600 hover:bg-indigo-600 hover:text-white transition border-2 w-full"
               onClick={() => {
                 if (!referral) {
-                  toast("Please enter a referral code");
+                  toast.error("Please enter a referral code");
                 } else invalidCouponToast();
               }}
             >
@@ -340,11 +362,19 @@ const Checkout = () => {
         </div>
 
         <button
+          disabled={proceedButton === "Loading...."}
           onClick={handleCheckout}
-          className="w-full flex justify-center rounded-md font-bold text-lg p-2 text-white bg-gradient-to-r from-indigo-800 to-indigo-500"
+          className={`w-full flex  justify-center rounded-md font-bold text-lg p-2 text-white bg-gradient-to-r 
+           
+               from-indigo-800 to-indigo-500
+                ${
+                  proceedButton === "Loading...." &&
+                  "from-slate-400 to-slate-400"
+                }
+          }`}
         >
           <HiShieldCheck className="h-6 w-6 text-white" />
-          &nbsp; PROCEED TO PAY ₹{plan == "Premium" ? 11999 : 2999}
+          &nbsp; {proceedButton}
         </button>
       </div>
     </div>
