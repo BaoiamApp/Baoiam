@@ -11,6 +11,9 @@ import img1 from "../assets/ITIE&Entre/Entrepreneurship/img1.png";
 import img2 from "../assets/ITIE&Entre/Entrepreneurship/img2.png";
 import img3 from "../assets/ITIE&Entre/Entrepreneurship/img3.jpg";
 
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { WiStars } from "react-icons/wi";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -18,6 +21,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import dummy1 from "../assets/ITIE&Entre/ITIE/dummy1.png";
 import dummy2 from "../assets/ITIE&Entre/ITIE/dummy2.png";
+import CourseHighlights from "../Components/CourseDetails/CourseHighlights"
+import { PHero } from "../assets/assets";
 
 import * as MDIcons from "react-icons/md";
 import * as FCIcons from "react-icons/fc";
@@ -130,7 +135,40 @@ const Enterpunership = () => {
   return (
     <div>
       {/*//! Banner */}
-      <div className="relative h-auto md:h-screen   mx-10">
+      <div className="flex items-center flex-col-reverse gap-12 mt-8 md:mt-0 md:gap-0 md:flex-row px-8 md:px-20 w-[100vw] h-full md:h-[90vh]">
+        {/* <img src={banner_pap} alt="banner" /> */}
+
+        <div className="w-full text-center md:text-left md:w-[60%]">
+        <h1 className="md:text-3xl text-2xl font-bold ">
+             <span className="lg:text-4xl text-indigo-600">ENTREPRENEURSHIP</span>   Course
+            </h1>
+          {/* <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white">
+              Course
+            </h2> */}
+
+            <p className="mt-4 pb-5 text-sm sm:text-lg md:text-xl">
+              Welcome to <strong>BAOIAM</strong>, the premier learning platform
+              exclusively for women entrepreneurs! Ignite your entrepreneurial
+              spirit and embark on your journey to success. As a launchpad for
+              aspiring entrepreneurs, we empower you to learn, innovate, and
+              achieve success.
+            </p>
+
+          <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+            <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+            <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+              <IoIosArrowRoundForward size={30} />
+            </span>
+            <span class="relative">Attend Info Session</span>
+          </button>
+        </div>
+        <div className="w-full md:w-[40%]">
+          <div className="w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
+            <img src={PHero} className="w-full h-full object-cover" alt="" />
+          </div>
+        </div>
+      </div>
+      {/* <div className="relative h-auto md:h-screen   mx-10">
         <div className="hidden sm:block absolute inset-0">
           <img
             src={img1}
@@ -140,8 +178,8 @@ const Enterpunership = () => {
         </div>
 
         <div className="relative z-10 flex flex-col justify-center items-center md:items-end px-4 md:px-10 h-full ">
-          <div className="max-w-xl  text-center md:text-center border-2  border-orange-500 sm:border-none  rounded-lg">
-            <h1 className="text-3xl md:text-6xl font-bold text-orange-600">
+          <div className="max-w-xl  text-center md:text-center border-2  border-indigo-500 sm:border-none  rounded-lg">
+            <h1 className="text-3xl md:text-6xl font-bold text-indigo-600">
               ENTREPRENEURSHIP
             </h1>
             <h2 className="text-2xl md:text-4xl font-bold text-black">
@@ -156,15 +194,15 @@ const Enterpunership = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/*//! Program Overview */}
-      <div className="bg-white p-6 md:p-10">
+      <div className=" p-6 md:p-10">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           {/* Heading Section */}
           <div className="text-center my-10">
-            <h1 className="text-3xl md:text-5xl font-bold text-orange-500">
-              Program <span className="text-black">Overview</span>
+            <h1 className="text-[2rem] md:text-5xl font-bold text-indigo-600">
+              Program <span className="text-black dark:text-white">Overview</span>
             </h1>
           </div>
 
@@ -173,7 +211,7 @@ const Enterpunership = () => {
             <div className="w-full md:w-1/2 lg:w-1/2 mb-4 md:mb-0">
               <div className="relative">
                 <img
-                  src={img2}
+                  src='https://images.stockcake.com/public/e/f/c/efc4e6ed-97e3-4349-b133-8c83211049e6_large/businesswomen-discussing-outdoors-stockcake.jpg'
                   alt="Person"
                   className="rounded-2xl w-full object-cover"
                 />
@@ -182,7 +220,7 @@ const Enterpunership = () => {
 
             {/* Text Section */}
             <div className="w-full md:w-1/2 lg:w-1/2 md:ml-10">
-              <p className="text-lg text-justify md:text-xl font-light mt-4">
+              <p className="text-base mb-14 md:text-xl font-light">
                 Our Entrepreneurship Courses are formulated in a way that can be
                 easily studied and comprehended. We offer a plethora of courses
                 that are skill-centric and are purely based on practical
@@ -191,7 +229,7 @@ const Enterpunership = () => {
                 skillset that can propel them to a new level in their
                 professional lives.
               </p>
-              <div className="text-yellow-600 font-medium mt-4">
+              <div className="text-indigo-600 font-medium mt-4">
                 ⏳ Enrollment Deadline Approaching Soon!
               </div>
             </div>
@@ -200,32 +238,15 @@ const Enterpunership = () => {
       </div>
 
       {/* //!Course Highlights */}
-      <div className="py-8 px-8 lg:px-24 w-full h-full">
-        <h4 className="text-4xl font-semibold mb-8 text-orange-500  ">
-          Course{" "}
-          <span className="border-b text-black border-orange-500">
-            Highlights
-          </span>
-        </h4>
-
-        {/* <div className='flex items-center justify-center md:justify-stretch flex-wrap gap-x-6 gap-y-4 text-black'>
-                    {subCourse.highlights.map((h, i) => {
-                        return <div key={i} className='bg-white group hover:scale-105 shadow-2xl px-4 py-8  md:h-52 rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64 h-auto'>
-                            <span className='text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out'>{React.createElement(highlightIcons(h.icon))}</span>
-                            <p className='tracking-tighter'><span className='text-2xl font-semibold leading-tight tracking-tighter'>{h.head}</span> <br /> {h.desc}</p>
-                        </div>
-                    })}
-
-                </div> */}
-      </div>
+      <CourseHighlights />
 
       {/* //!Importance and Opportunities */}
 
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
-            <span className="text-orange-500">Importance</span> and
-            Opportunities
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
+            Importance and <span className="text-indigo-600">Opportunities</span>
+            
           </h2>
           <div className="flex flex-col md:flex-row justify-center space-y-8  md:space-y-0 md:space-x-6 mt-16">
             {cards.map((card, index) => (
@@ -234,10 +255,10 @@ const Enterpunership = () => {
                 className="rounded-2xl shadow-xl border border-gray-200 bg-white hover:scale-105 p-8  w-full md:w-1/3 min-h-[300px] flex flex-col justify-between"
               >
                 <div>
-                  <h3 className=" text-center text-3xl font-bold text-orange-500 mb-4">
+                  <h3 className=" text-center text-3xl font-bold mb-4">
                     {card.number}
                   </h3>
-                  <h4 className="text-xl font-semibold text-blue-900 mb-4">
+                  <h4 className="text-xl font-semibold text-indigo-600 mb-4">
                     {card.title}
                   </h4>
                   <p className="text-gray-700 mt-14 leading-relaxed text-justify ">
@@ -252,21 +273,21 @@ const Enterpunership = () => {
 
       {/* //!Women Entrepreneurship Program */}
 
-      <div className="bg-white p-6 md:p-10">
+      <div className="p-6 md:p-10">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           {/* Heading Section */}
           <div className="text-center my-10">
-            <h1 className="text-3xl md:text-5xl font-bold text-orange-500">
-              Women{" "}
-              <span className="text-blue-900"> Entrepreneurship Program</span>
-            </h1>
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
+          Women  <span className="text-indigo-600">Entrepreneurship</span>  
+          </h2>
+         
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between">
             {/* Text Section */}
             <div className="w-full md:w-1/2 lg:w-1/2 md:ml-10">
-              <p className="text-center md:text-left md:leading-relaxed text-xl mt-4">
-                Our Women Entrepreneurship Program aims to support and empower
+            <p className="text-base mb-14 md:text-xl font-light">
+            Our Women Entrepreneurship Program aims to support and empower
                 women in starting and growing their businesses. This program is
                 specially pieced together by our experts to guide our women
                 entrepreneurs and to teach them to build their strong business
@@ -295,8 +316,8 @@ const Enterpunership = () => {
 
       {/*//! Testimonials */}
       <div>
-        <h1 className="text-3xl md:text-5xl text-center font-semibold my-8 md:my-14 text-orange-600">
-          Our <span className="text-blue-950">Testimonials</span>
+        <h1 className="text-[2rem] md:text-5xl text-center font-semibold my-8 md:my-14">
+          Our <span className="text-indigo-600">Testimonials</span>
         </h1>
 
         <div className="relative w-full px-4 md:px-10 pb-10 md:pb-20">
@@ -316,7 +337,7 @@ const Enterpunership = () => {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="border border-orange-600 shadow-xl rounded-2xl text-center mt-10 px-6 md:px-10 flex flex-col py-10 w-full h-96">
+                <div className="border border-indigo-600 shadow-xl rounded-2xl text-center mt-10 px-6 md:px-10 flex flex-col py-10 w-full h-96">
                   <img
                     className="w-16 md:w-24 h-16 md:h-24 mx-auto rounded-full object-cover"
                     src={testimonial.img}
@@ -342,7 +363,7 @@ const Enterpunership = () => {
 
       {/*//! Join with us */}
 
-      <div className="my-12 px-8 lg:px-24 w-full h-full">
+      {/* <div className="my-12 px-8 lg:px-24 w-full h-full">
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl  md:px-8">
             <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 md:mb-8 lg:text-4xl xl:mb-12">
@@ -350,7 +371,7 @@ const Enterpunership = () => {
               <span className="text-orange-500 border-b border-orange-500">
                 Right Course
               </span>
-            </h2>
+            </h2> */}
 
             {/* <div className="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
                         {subCourse.plans.map((p, i) => {
@@ -395,22 +416,22 @@ const Enterpunership = () => {
                         })}
                     </div> */}
 
-            <div className="text-center text-sm text-gray-500 sm:text-base">
+            {/* <div className="text-center text-sm text-gray-500 sm:text-base">
               Need help deciding?{" "}
               <a
                 href="#"
                 className="text-gray-600 underline transition duration-100 hover:text-orange-600 active:text-orange-400"
               >
                 Get in touch
-              </a>
+              </a> */}
               .
-            </div>
+            {/* </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/*//! Emi & Placement */}
-      <div className="flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32 ">
+      {/* <div className="flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32 ">
         <div className="border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] ">
           <p className="text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2">
             Easy EMI
@@ -443,10 +464,10 @@ const Enterpunership = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
       {/*//! Amazing Career */}
-      <div className="py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600 text-center">
+      {/* <div className="py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600 text-center">
         <h4 className="text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
           Amazing <span className="border-b">Career</span>
         </h4>
@@ -474,7 +495,7 @@ const Enterpunership = () => {
             <p className="mb-2 text-2xl font-bold text-orange-500">25% OFF</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/*//! Faq */}
       <Faq />

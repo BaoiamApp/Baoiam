@@ -235,8 +235,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-4 text-nowrap hover:text-indigo-500 ${linkActive === "About" ? "text-indigo-600" : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/about-us" && linkActive === "About"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             About Us
           </Link>
@@ -244,8 +247,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/pap"}
             onClick={() => handleLinkClick("PAP")}
-            className={`mx-4 hover:text-indigo-500 ${linkActive === "PAP" ? "text-indigo-600" : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/pap" && linkActive === "PAP"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             PAP
           </Link>
@@ -253,8 +259,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/itie"}
             onClick={() => handleLinkClick("ITIE")}
-            className={`mx-4 hover:text-indigo-500 ${linkActive === "ITIE" ? "text-indigo-600" : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/itie" && linkActive === "ITIE"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             ITIE
           </Link>
@@ -262,8 +271,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-4 hover:text-indigo-500 ${linkActive === "Blog" ? "text-indigo-600" : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/blogs" && linkActive === "Blog"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Blog
           </Link>
@@ -284,9 +296,10 @@ const Navbar = ({ theme }) => {
         {/* Last */}
         <div>
         <div className="flex items-center gap-4 text-black dark:text-white">
-          <div className="flex items-center gap-4">
+          <div className="flex relative items-center gap-4">
+            <div className="">
             <SearchBox />
-
+            </div>
             <div ref={userhandleDropDownRef}>
               <FaRegUser
                 onClick={() => setUserDrop(!userDrop)}
@@ -372,7 +385,7 @@ const Navbar = ({ theme }) => {
         <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} isDark={isDark} setIsDark={darkTheme}/>
         </div>
       </div>
-    </>
+      </>
   );
 };
 

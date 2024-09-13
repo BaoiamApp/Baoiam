@@ -1,55 +1,149 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { RiSearch2Line } from 'react-icons/ri'
 import { RxCross2 } from 'react-icons/rx'
 import { School } from '../../Data'
 import { Link } from 'react-router-dom'
 
 const SearchBox = () => {
-    const [boxOpen, setBoxOpen] = useState(false)
+    const [isExpanded, setIsExpanded] = useState(false)
+    const [isMobilePopupOpen, setIsMobilePopupOpen] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
-    const [searchResults, setSearchResults] = useState(false)
-    const [searchBox, setSearchBox] = useState(false)
     const scourse = School[0].subCate;
+    const inputRef = useRef()
 
     const filteredCourses = scourse.filter(course =>
         course.course.toLowerCase().includes(searchQuery.toLowerCase())
     )
 
-    const result = (eve) => {
-        if(searchQuery.length < 0){
-            setSearchBox(false)
-        } else{
-            setSearchQuery(eve)
-            setSearchBox(true)
+    // Detect window resize and toggle between mobile/desktop behavior
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768) // Change behavior for screens smaller than 768px
         }
+        window.addEventListener('resize', handleResize)
+        handleResize() // Initial check on component mount
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value)
     }
 
     return (
-        <div>
-            <RiSearch2Line onClick={() => setBoxOpen(true)} size={20} className='z-10 cursor-pointer' />
+        <div className='flex items-center'>
+            {/* Desktop and larger screen behavior: Expand inline search */}
+            {!isMobile && (
+                <div className={`relative flex items-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? 'w-80' : 'w-10'} bg-transparent px-2`}>
+                    <RiSearch2Line 
+                        onClick={() => setIsExpanded(true)} 
+                        size={20} 
+                        className={`cursor-pointer transition-opacity duration-500 ${isExpanded ? 'opacity-0' : 'opacity-100'}`} 
+                    />
 
-            {boxOpen && (
-                <div className='absolute top-0 left-0 w-[100vw] h-[100vh] z-50 bg-black/50 backdrop-blur-sm flex gap-2 flex-col items-center pt-28 lg:pt-40 transition-transform ease-in-out duration-500'>
-                    <RxCross2 onClick={() => setBoxOpen(false)} className='text-white absolute top-20 right-12 md:right-32 cursor-pointer' size={25} />
-
-                    <span className='text-2xl text-white text-left w-72'>Search</span>
-                    <div className='bg-white relative flex items-center justify-between px-6 py-1 border border-black rounded-3xl'>
+                    {/* Input Field: Expands when the search icon is clicked */}
+                    {isExpanded && (
                         <input
+                            ref={inputRef}
                             type="text"
-                            placeholder='Courses'
-                            className=' py-2 focus:outline-none w-72'
+                            placeholder='Search courses'
+                            className='bg-transparent py-2 pl-2 pr-8 focus:outline-none w-full transition-all duration-500'
                             value={searchQuery}
-                            onChange={(e) => result(e.target.value)}
+                            onChange={handleSearchChange}
                         />
-                        <RiSearch2Line size={20} />
-                    </div>
+                    )}
 
-                    {searchBox && (
-                        <div className='bg-white w-96 h-fit max-h-80 overflow-auto rounded-md py-4 flex flex-col'>
-                            {filteredCourses.map((c, i) => {
-                                return <Link to={`/course/school/${c.id}`} onClick={() => setBoxOpen(false)} className='py-2 px-6 hover:bg-gray-200' key={i}>{c.course}</Link>
-                            })}
+                    {/* Close Icon: Appears when the search box is expanded */}
+                    {isExpanded && (
+                        <RxCross2 
+                            onClick={() => { 
+                                setIsExpanded(false);
+                                setSearchQuery('');
+                            }} 
+                            className='absolute right-2 cursor-pointer' 
+                            size={20} 
+                        />
+                    )}
+                </div>
+            )}
+
+            {/* Mobile and smaller screen behavior: Pop-up modal */}
+            {isMobile && (
+                <>
+                    {/* Clicking the Search Icon on mobile opens the full-screen pop-up */}
+                    <RiSearch2Line 
+                        onClick={() => setIsMobilePopupOpen(true)} 
+                        size={20} 
+                        className='cursor-pointer'
+                    />
+
+                    {/* Full-screen pop-up modal for small screens */}
+                    {isMobilePopupOpen && (
+                        <div className='fixed inset-0 z-50 bg-slate-200/50 backdrop-blur-sm p-4'>
+                            <div className='relative flex flex-col items-start justify-start w-full h-full'>
+                                {/* Close Button */}
+                                <RxCross2 
+                                    onClick={() => setIsMobilePopupOpen(false)} 
+                                    className='text-black absolute top-2 right-2 cursor-pointer' 
+                                    size={25} 
+                                />
+
+                                {/* Search Input Field */}
+                                <div className='bg-white relative  text-black flex items-center w-full px-6 py-1 border border-black rounded-3xl mt-16'>
+                                    <input
+                                        ref={inputRef}
+                                        type="text"
+                                        placeholder='Search courses'
+                                        className='py-2 focus:outline-none w-full'
+                                        value={searchQuery}
+                                        onChange={handleSearchChange}
+                                    />
+                                    <RiSearch2Line size={20} />
+                                </div>
+
+                                {/* Results Box */}
+                                {searchQuery && (
+                                    <div className='bg-white text-black w-full max-h-80 overflow-auto rounded-md py-4 mt-4'>
+                                        {filteredCourses.length > 0 ? (
+                                            filteredCourses.map((c, i) => (
+                                                <Link
+                                                    to={`/course/school/${c.id}`}
+                                                    onClick={() => setIsMobilePopupOpen(false)} // Close the pop-up when a result is clicked
+                                                    className='py-2 px-6 block hover:bg-gray-200'
+                                                    key={i}
+                                                >
+                                                    {c.course}
+                                                </Link>
+                                            ))
+                                        ) : (
+                                            <div className='py-2 px-6 text-gray-500'>No courses found</div>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                         </div>
+                    )}
+                </>
+            )}
+
+            {/* Results Box for desktop */}
+            {!isMobile && isExpanded && searchQuery && (
+                <div className='absolute top-12 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
+                    {filteredCourses.length > 0 ? (
+                        filteredCourses.map((c, i) => (
+                            <Link
+                                to={`/course/school/${c.id}`}
+                                onClick={() => setIsExpanded(false)} // Collapse search box when a result is clicked
+                                className='py-2 px-4 block hover:bg-gray-200'
+                                key={i}
+                            >
+                                {c.course}
+                            </Link>
+                        ))
+                    ) : (
+                        <div className='py-2 px-4 text-gray-500'>No courses found</div>
                     )}
                 </div>
             )}
