@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
-const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
+const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
     const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
     const [activeTab, setActiveTab] = useState('Home');
     const [subCateDrop, setSubCateDrop] = useState(false);
@@ -24,7 +24,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
     const closeSideBar = () => {
         setShowmenu(false)
     }
-
 
     return (
         <div>
@@ -46,8 +45,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 Home
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} flex-col items-start ${activeTab === 'Course' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`}>
                             <button
                                 onClick={() => {
@@ -171,8 +168,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 </ul>
                             )}
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} ${activeTab === 'About Us' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("About Us")
                             closeSideBar();
@@ -182,8 +177,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 About Us
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} ${activeTab === 'PAP' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("PAP")
                                  closeSideBar();
@@ -193,8 +186,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 PAP
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} ${activeTab === 'ITIE' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("ITIE")
                             closeSideBar();
@@ -204,8 +195,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 ITIE
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} ${activeTab === 'GCSP' ? 'text-[#1638C9]  dark:text-white dark:bg-[#060606]' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("GCSP")
                             closeSideBar();
@@ -215,8 +204,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 GCSP
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} ${activeTab === 'Blogs' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("Blogs")
                             closeSideBar();
@@ -226,8 +213,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 Blogs
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                         <li className={`${mobTabtyles} ${activeTab === 'Contact' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("Contact")
                             closeSideBar();
@@ -237,15 +222,13 @@ const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
                                 Contact
                             </Link>
                         </li>
-                        {/* <hr className='border mb-2 w-11/12 border-gray-400 mx-auto ' /> */}
-
                     </ul>
-                    {/* <div
-                    onClick={darkTheme}
+                    <div
+                    onClick={()=>setIsDark(old=>!old)}
                     className="flex items-center gap-2 p-2 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
                   >
                     {isDark?<BsSun size={18} />:<BsMoonStars size={18} />} Theme
-                  </div> */}
+                  </div>
                 </div>
             </aside>
         </div>
