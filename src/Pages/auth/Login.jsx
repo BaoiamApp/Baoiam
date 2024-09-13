@@ -19,6 +19,7 @@ const Login = () => {
   const requestRef = useRef(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (localStorage.getItem("access_token")) navigate("/profile");
     const values = queryString.parse(location.search);
     const state = values.state || null;

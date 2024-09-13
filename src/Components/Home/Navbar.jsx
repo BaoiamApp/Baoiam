@@ -12,7 +12,8 @@ import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { deleteUserData } from "../../redux/user/userSlice";
+// import { deleteUserData } from "../../redux/user/userSlice";
+import { deleteUserData1 } from "../../redux/user/userSlice";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -98,10 +99,11 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div
-        className={`flex z-50 items-center justify-between px-4 py-2 ${isTransparent
-          ? "bg-white dark:bg-[#080529]"
-          : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
-          }`}
+        className={`flex z-50 items-center justify-between px-4 py-2 ${
+          isTransparent
+            ? "bg-white dark:bg-[#080529]"
+            : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
+        }`}
       >
         {/* Logo */}
 
@@ -112,24 +114,27 @@ const Navbar = ({ theme }) => {
         >
           <img
             src={isDark ? logo : img1}
-            className={`w-full h-full ${isDark ? "object contain" : "object-contain"
-              }`}
+            className={`w-full h-full ${
+              isDark ? "object contain" : "object-contain"
+            }`}
             alt="logo"
           />
         </Link>
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
-            } justify-between mt-4`}
+          className={`hidden lg:flex items-center ${
+            isDark ? "font-semibold" : "font-medium"
+          } justify-between mt-4`}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-4 ${location.pathname === "/" && linkActive === "Home"
-              ? "text-orange-500"
-              : ""
-              }`}
+            className={`mx-4 ${
+              location.pathname === "/" && linkActive === "Home"
+                ? "text-orange-500"
+                : ""
+            }`}
           >
             Home
           </Link>
@@ -232,10 +237,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/about-us" && linkActive === "About"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             About Us
           </Link>
@@ -243,10 +249,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/pap"}
             onClick={() => handleLinkClick("PAP")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/pap" && linkActive === "PAP"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/pap" && linkActive === "PAP"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             PAP
           </Link>
@@ -254,10 +261,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/itie"}
             onClick={() => handleLinkClick("ITIE")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/itie" && linkActive === "ITIE"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/itie" && linkActive === "ITIE"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             ITIE
           </Link>
@@ -265,10 +273,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/blogs" && linkActive === "Blog"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Blog
           </Link>
@@ -276,10 +285,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact"
-              ? "text-indigo-600"
-              : ""
-              }`}
+            className={`mx-4 hover:text-indigo-500 ${
+              location.pathname === "/contact" && linkActive === "Contact"
+                ? "text-indigo-600"
+                : ""
+            }`}
           >
             Contact
           </Link>
@@ -336,7 +346,7 @@ const Navbar = ({ theme }) => {
                         localStorage.removeItem("access_token");
                         localStorage.removeItem("userInfo");
                         navigate("/login");
-                        dispatch(deleteUserData());
+                        dispatch(deleteUserData1());
                       }}
                       className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
