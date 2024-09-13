@@ -359,7 +359,7 @@ const Navbar = ({ theme }) => {
 
           <span
             onClick={darkTheme}
-            className="text-xl cursor-pointer"
+            className="text-xl hidden lg:block cursor-pointer"
           >
             {isDark ? <BsSun /> : <BsMoonStars />}
           </span>
@@ -378,7 +378,7 @@ const Navbar = ({ theme }) => {
             <RiMenu3Line size={22} />
           </span>
         </div>
-        <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} isDark={isDark} setIsDark={setIsDark}/>
+        <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} isDark={isDark} setIsDark={darkTheme}/>
         </div>
       </div>
     </>

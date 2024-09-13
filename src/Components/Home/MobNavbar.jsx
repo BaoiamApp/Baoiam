@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
-const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
+const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
     const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
     const [activeTab, setActiveTab] = useState('Home');
     const [subCateDrop, setSubCateDrop] = useState(false);
@@ -18,13 +18,13 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
 
     const [schoolCourses, setSchoolCourses] = useState([]);
 
-    const changeTheme=()=>{
-        setIsDark(old=>!old);
+    const changeTheme = () => {
+        setIsDark();
     }
 
     useEffect(() => {
-
-    }, [activeTab])
+    console.log(isDark);
+    }, [isDark])
 
     const closeSideBar = () => {
         setShowmenu(false)
@@ -32,14 +32,17 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
 
     return (
         <div>
-            
-            <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-11/12 md:[90%] h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
-                <div className="h-full px-3 py-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
-                    <RxCross2
-                        className="text-black dark:text-white absolute top-4 right-4"
-                        onClick={() => setShowmenu(old => !old)}
-                        size={25}
-                    />
+
+            <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
+                <div className="h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
+                    <div className="flex justify-end items-end w-full px-2 py-4 sticky top-0 bg-white dark:bg-[#080529] shadow-md ">
+                        <RxCross2
+                            className="text-black dark:text-white"
+                            onClick={() => setShowmenu(old => !old)}
+                            size={25}
+                        />
+
+                    </div>
 
                     <ul className="space-y-2 font-medium divide-y ">
                         <li className={`${mobTabtyles} ${activeTab === 'Home' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
@@ -75,17 +78,17 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                                         }}
                                         className="flex items-center justify-between gap-2 w-full p-2 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:bg-gray-700 relative"
                                     >
-                                        
+
                                         <div className='flex items-center gap-2'>
-                                            <FaSchool/>
+                                            <FaSchool />
                                             <h1>School</h1>
                                         </div>
                                         {schoolCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {schoolCate && (
                                         <div className=" w-72 right-4 md:right-80 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
-                                            {courses[0].subcategories.map((course, i) => {
-                                                 return (
+                                            {courses[0]?.subcategories.map((course, i) => {
+                                                return (
                                                     <Link
                                                         onClick={() => {
                                                             setShowmenu(old => !old);
@@ -111,14 +114,14 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                                         className="flex items-center justify-between gap-2 w-full p-2 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:bg-gray-700"
                                     >
                                         <div className='flex items-center gap-2'>
-                                            <FaUniversity/>
+                                            <FaUniversity />
                                             <h1>College</h1>
                                         </div>
                                         {collegeCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {collegeCate && (
                                         <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                                            {courses[1].subcategories.map((course, i) => {
+                                            {courses[1]?.subcategories.map((course, i) => {
                                                 return (
                                                     <Link
                                                         onClick={() => {
@@ -145,14 +148,14 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                                         className="flex items-center justify-between gap-2 w-full p-2 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:bg-gray-700"
                                     >
                                         <div className='flex items-center gap-2'>
-                                            <IoBookSharp/>
+                                            <IoBookSharp />
                                             <h1>Others</h1>
                                         </div>
                                         {collegeCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {otherCourses && (
                                         <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                                            {courses[2].subcategories.map((course, i) => {
+                                            {courses[2]?.subcategories.map((course, i) => {
                                                 return (
                                                     <Link
                                                         onClick={() => {
@@ -176,7 +179,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                         <li className={`${mobTabtyles} ${activeTab === 'About Us' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("About Us")
                             closeSideBar();
-                        }}> 
+                        }}>
 
                             <Link to={"/about-us"} className="ms-3 text-nowrapx" >
                                 About Us
@@ -184,7 +187,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                         </li>
                         <li className={`${mobTabtyles} ${activeTab === 'PAP' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
                             setActiveTab("PAP")
-                                 closeSideBar();
+                            closeSideBar();
                         }}>
 
                             <Link to={"/pap"} className="ms-3" >
@@ -229,11 +232,11 @@ const MobNavbar = ({ showmenu, setShowmenu, courses,isDark, setIsDark}) => {
                         </li>
                     </ul>
                     <div
-                    onClick={changeTheme}
-                    className="flex items-center gap-2 p-2 mt-4 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
-                  >
-                    {isDark?<BsSun size={18} />:<BsMoonStars size={18} />} Theme
-                  </div>
+                        onClick={changeTheme}
+                        className="flex items-center gap-2 p-2 px-4 mt-4 text-sm text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+                    >
+                        {isDark ? <BsSun size={18} /> : <BsMoonStars size={18} />} Theme
+                    </div>
                 </div>
             </aside>
         </div>
