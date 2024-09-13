@@ -13,7 +13,7 @@ export const OurTeam = () => {
   }, []);
 
   return (
-    <>
+    <div className=" w-11/12 mx-auto">
       <h1 className="p-6 font-serif text-center text-4xl md:text-5xl font-extrabold">
         Meet Our <span className="text-indigo-800">Team</span>
       </h1>
@@ -31,6 +31,6 @@ export const OurTeam = () => {
       <WebDevTeam />
       </div>
       <TeamSwiper />
-    </>
+    </div>
   );
 };
