@@ -37,7 +37,7 @@ const SearchBox = () => {
             {/* Desktop and larger screen behavior: Expand inline search */}
             {!isMobile && (
                 <div className=''>
-                    <div className={`absolute right-0 -top-3 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? 'w-60' : 'w-10'} bg-transparent `}>
+                    <div className={`absolute right-0 -top-3 flex items-center justify-center border border-gray-400 rounded-full transition-all duration-500 ease-in-out ${isExpanded ? '-top-5 w-60' : 'w-10'} bg-transparent `}>
                         <RiSearch2Line 
                             onClick={() => setIsExpanded(true)} 
                             size={24} 
@@ -71,7 +71,7 @@ const SearchBox = () => {
 
                     {/* Results Box for desktop */}
                     {isExpanded && searchQuery && (
-                        <div className='absolute top-12 right-5 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
+                        <div className='absolute top-7 -right-2 bg-white text-black w-80 max-h-80 overflow-auto shadow-lg rounded-md mt-2'>
                             {filteredCourses.length > 0 ? (
                                 filteredCourses.map((c, i) => (
                                     <Link
