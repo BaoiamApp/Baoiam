@@ -13,7 +13,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
     return (
         <div className='grid md:grid-cols-4 grid-col-1 p-2 mx-auto md:items-center justify-center md:flex-row  gap-2'>
 
-            <h1 className='text-center md:col-span-1 col-span-1 text-lg md:text-2xl p-6 py-4 tracking-wide leading-4 font-bold '>
+            <h1 className='text-center col-span-1 text-lg lg:text-2xl px-4 py-2 tracking-wide leading-4 font-bold '>
                 {heading}
             </h1>
             <div className=' md:col-span-3 col-span-1'>
