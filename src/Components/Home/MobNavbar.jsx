@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
-const MobNavbar = ({ showmenu, setShowmenu }) => {
+const MobNavbar = ({ showmenu, setShowmenu, courses}) => {
     const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
     const [activeTab, setActiveTab] = useState('Home');
     const [subCateDrop, setSubCateDrop] = useState(false);
@@ -33,7 +33,6 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                         onClick={() => setShowmenu(old => !old)}
                         size={25}
                     />
-
 
                     <ul className="space-y-2 font-medium divide-y ">
                         <li className={`${mobTabtyles} ${activeTab === 'Home' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
@@ -74,39 +73,21 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                                         {schoolCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {schoolCate && (
-                                        <div className=" w-72 right-4 md:right-80 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto dark:text-gray-700">
-                                            {School.map((c, i) => {
-                                                return (
-                                                    <div key={i} className="p-4">
-                                                        <Link
-                                                            onClick={() => {
-                                                                setShowmenu(old => !old)
-                                                                setSubCateDrop(old => !old)
-                                                            }}
-                                                            to={`${c.link}`}
-                                                            className="font-bold px-2 text-base"
-                                                        >
-                                                            {c.Cate}
-                                                        </Link>
-                                                        <ul className="flex mt-2 flex-col">
-                                                            {c.subCate.map((sub, index) => {
-                                                                return (
-                                                                    <Link
-                                                                        onClick={() => {
-                                                                            setShowmenu(old => !old);
-                                                                            setSubCateDrop(old => !old);
-                                                                            setSchoolCate(old => !old);
-                                                                        }}
-                                                                        key={index}
-                                                                        to={`/course/${sub.id}`}
-                                                                        className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                                                                    >
-                                                                        {sub.course}
-                                                                    </Link>
-                                                                );
-                                                            })}
-                                                        </ul>
-                                                    </div>
+                                        <div className=" w-72 right-4 md:right-80 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
+                                            {courses[0].subcategories.map((c, i) => {
+                                                 return (
+                                                    <Link
+                                                        onClick={() => {
+                                                            setShowmenu(old => !old);
+                                                            setSubCateDrop(old => !old);
+                                                            setSchoolCate(old => !old);
+                                                        }}
+                                                        key={i}
+                                                        to={`/course/${c.name}`}
+                                                        className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                                    >
+                                                        {c.name}
+                                                    </Link>
                                                 );
                                             })}
                                         </div>
@@ -121,41 +102,22 @@ const MobNavbar = ({ showmenu, setShowmenu }) => {
                                         College
                                         {collegeCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
-
                                     {collegeCate && (
-                                        <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto dark:text-gray-700">
-                                            {CollegeCourse.map((c, i) => {
+                                        <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                                            {courses[0].subcategories.map((c, i) => {
                                                 return (
-                                                    <div key={i} className="p-4">
-                                                        <Link
-                                                            onClick={() => {
-                                                                setShowmenu(old => !old);
-                                                                setSubCateDrop(old => !old);
-                                                            }}
-                                                            to={`${c.link}`}
-                                                            className="font-bold px-2 text-base"
-                                                        >
-                                                            {c.Cate}
-                                                        </Link>
-                                                        <ul className="flex mt-2 flex-col">
-                                                            {c.subCate.map((sub, index) => {
-                                                                return (
-                                                                    <Link
-                                                                        onClick={() => {
-                                                                            setShowmenu(old => !old);
-                                                                            setSubCateDrop(old => !old);
-                                                                            setCollegeCate(old => !old);
-                                                                        }}
-                                                                        key={index}
-                                                                        to={`/course/${sub.id}`}
-                                                                        className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                                                                    >
-                                                                        {sub.courseName}
-                                                                    </Link>
-                                                                );
-                                                            })}
-                                                        </ul>
-                                                    </div>
+                                                    <Link
+                                                        onClick={() => {
+                                                            setShowmenu(old => !old);
+                                                            setSubCateDrop(old => !old);
+                                                            setCollegeCate(old => !old);
+                                                        }}
+                                                        key={i}
+                                                        to={`/course/${c.name}`}
+                                                        className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
+                                                    >
+                                                        {c.name}
+                                                    </Link>
                                                 );
                                             })}
                                         </div>
