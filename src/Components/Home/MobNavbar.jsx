@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { BsMoonStars, BsSun } from 'react-icons/bs';
 import { FaUniversity } from 'react-icons/fa';
 import { FaChevronDown, FaChevronUp, FaSchool } from 'react-icons/fa6';
 import { IoBookSharp } from 'react-icons/io5';
