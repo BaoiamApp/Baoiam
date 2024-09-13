@@ -15,6 +15,12 @@ export {default as Trust} from './GSCP/trust.png'
 export {default as Value} from './GSCP/value.png'
 export {default as GSCP} from './GSCP/GSCP.png'
 
+// About us
+export {default as Service} from  './AboutUs/Service.png'
+export {default as Review} from  './AboutUs/Review.png'
+export {default as Career} from  './AboutUs/Career.png'
+export {default as Perks} from  './AboutUs/Perks.png'
+
 // PAP
 export {default as PHero} from './PAP/pap-hero.png'
 
