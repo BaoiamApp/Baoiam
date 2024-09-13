@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { School } from "../Data";
+import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import {
+  FaArrowRight,
   FaArrowRightLong,
   FaChevronLeft,
   FaChevronRight,
+  FaDownload,
   FaDownLong,
   FaGraduationCap,
 } from "react-icons/fa6";
@@ -18,16 +20,24 @@ import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+const OtherCourse = () => {
+  const planRef = useRef();
+  const navigate = useNavigate();
+  const enrollNowScroll = () => {
+    planRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-const SchoolCourse = () => {
   const { id } = useParams();
-  const course = School.find((cate) =>
-    cate.subCate.find((subCate) => subCate.id === parseInt(id))
+  const course = OtherCourseData.find((cate) =>
+    cate.subCate.find((subCate) => parseInt(subCate.id) === parseInt(id))
   );
+  console.log("other course:", course);
   const subCourse = course.subCate.find(
     (subCate) => subCate.id === parseInt(id)
   );
   //   const [subCourse, setsubCourse] = useState([]);
+  console.log("sub other course:", subCourse);
   const [courseDetails, setCourseDetails] = useState({});
   const getCourseDetails = async () => {
     try {
@@ -92,30 +102,32 @@ const SchoolCourse = () => {
               : courseDetails.title}
           </h3>
           {Object.keys(courseDetails).length == 0 ? (
-            subCourse?.desc?.map((d, i) => {
-              return (
-                <p className="text-[0.8rem] lg:text-base" key={i}>
-                  {d}
-                </p>
-              );
-            })
+            subCourse?.desc
           ) : (
+            // subCourse?.desc?.map((d, i) => {
+            //   return (
+            //     <p className="text-[0.8rem] lg:text-base" key={i}>
+            //       {d}
+            //     </p>
+            //   );
+            // })
             <p className="text-[0.8rem] lg:text-base">
               {courseDetails.description}
             </p>
           )}
 
-          <div className="flex xs:flex-col xs:gap-5 gap-10">
-            <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
+          <div className="flex flex-col md:flex-row lg:flex-row  gap-2">
+            <button
+              onClick={enrollNowScroll}
+              className="pl-4 mr-6 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
+            >
               Enroll Now{" "}
-              <FaArrowRightLong
-                size={22}
-                className="group-hover:animate-pulse"
-              />{" "}
+              <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
             </button>
             <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
               Download Brochure{" "}
-              <FaDownLong size={22} className="group-hover:animate-pulse" />{" "}
+              {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
+              <FaDownload size={18} />
             </button>
           </div>
         </div>
@@ -152,7 +164,8 @@ const SchoolCourse = () => {
                       key={i}
                       className="font-medium text-[0.8rem] lg:text-base"
                     >
-                      {v}
+                      <span className="font-bold">{v.split(":")[0]}:</span>
+                      {v.split(":")[1]}
                     </li>
                   );
                 })
@@ -181,10 +194,17 @@ const SchoolCourse = () => {
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md">
           {subCourse?.curriculum?.map((c, i) => {
-            return (
-              <li key={i} className="py-1 text-[0.9rem] lg:text-base">
-                {c.substring(2, c.length)}
-              </li>
+            return c.weekTitle ? (
+              <details className="mb-2">
+                <summary className="font-semibold">{c.weekTitle}</summary>
+                <ul className="list-disc pl-10 max-w-[380px]">
+                  {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
+                </ul>
+              </details>
+            ) : (
+              <ul className="list-disc ml-5 font-semibold text-[#F97316]">
+                {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
+              </ul>
             );
           })}
         </ul>
@@ -222,7 +242,11 @@ const SchoolCourse = () => {
       </div>
 
       {/* Join we us */}
-      <div className="my-12 px-8 lg:px-24 w-full h-full">
+      <div
+        id="plans"
+        ref={planRef}
+        className="my-12 px-8 lg:px-24 w-full h-full"
+      >
         <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">
@@ -257,10 +281,6 @@ const SchoolCourse = () => {
                         {p.name}
                       </div>
 
-                      <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
-                        {p.courseName}
-                      </p>
-
                       <div className="space-y-2">
                         {p?.courseItems?.map((item, index) => {
                           return (
@@ -289,6 +309,15 @@ const SchoolCourse = () => {
                       </div>
 
                       <button
+                        onClick={() => {
+                          if (localStorage.getItem("access_token"))
+                            navigate(
+                              `/checkout/other/${id}/${
+                                p.name == "Premium" ? "Premium" : "Plus"
+                              }`
+                            );
+                          else navigate("/login");
+                        }}
                         className={`block  rounded-lg ${
                           p.name === "Premium"
                             ? "bg-orange-500 text-white"
@@ -381,4 +410,4 @@ const SchoolCourse = () => {
   );
 };
 
-export default SchoolCourse;
+export default OtherCourse;

@@ -40,8 +40,8 @@ const Partners = () => {
   const visibleImages = images.slice(currentIndex, currentIndex + imagesPerSlide);
 
   return (
-    <div className='m-2'>
-      <h1 className="text-center text-3xl w-[90%] w-[60%] mx-auto font-bold my-9">
+    <div className='m-2 dark:bg-[#080529]'>
+      <h1 className="text-center text-3xl tracking-tight w-full md:w-[60%] mx-auto font-bold my-9">
         We are associated with businesses and non-profits
         <span className='text-indigo-600'> from startups to MNC's</span>
       </h1>
