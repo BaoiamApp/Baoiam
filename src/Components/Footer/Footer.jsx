@@ -62,8 +62,8 @@ function Footer({dark}) {
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">Join Us</p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link to={'/gcsp'} className="text-black text-nowrap dark:text-white flex items-center">
-                  <MdKeyboardArrowRight size={20} /> GCSP
+                <Link to={'/gcep'} className="text-black text-nowrap dark:text-white flex items-center">
+                  <MdKeyboardArrowRight size={20} /> GCEP
                 </Link>
                 <Link to={'/entrepreneurship'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Entrepreneurship
@@ -93,6 +93,9 @@ function Footer({dark}) {
                 </Link>
                 <Link to={'/privacy-policy'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Privacy policy
+                </Link>
+                <Link to={'/help-center'} className="text-black dark:text-white text-nowrap flex items-center">
+                  <MdKeyboardArrowRight size={20} /> Help Center
                 </Link>
 
               </div>
@@ -223,3 +226,5 @@ function Footer({dark}) {
 }
 
 export default Footer;
+
+

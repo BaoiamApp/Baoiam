@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
@@ -43,7 +43,14 @@ import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 
 const AboutUs = () => {
+  document.title = 'Baoiam - About Us'
   const [data, setData] = useState(swiperData);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    return () => {};
+  }, []);
+
   //   const [content, setContent] = useState(
   //     "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
   //   );
@@ -129,21 +136,21 @@ const AboutUs = () => {
     // <div className="dark:bg-black dark:text-white">
     <div>
       {/* Section - 1 */}
-      <div className="mx-auto h-fit sm:h-screen w-full text-white">
-        <div className="relative mx-auto h-screen w-full text-white">
-          <div className="h-[55%] md:h-[70%] w-full image-container">
+      <div className="mx-auto h-fit md:h-screen w-full text-white">
+        <div className="relative mx-auto h-fit md:h-screen w-full text-white">
+          <div className="h-[22rem] sm:h-[23rem] md:h-[70%] w-full image-container">
             <img
               className="w-full h-full object-cover"
               src={aboutus4}
               alt="image"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-black content-overlay flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[55%] md:h-[70%] pt-20 justify-start opacity-60 text-white">
-            {/* bg-#2a272a/30 */}
+          <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
+            {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
-              <p className="text-amber-600 font-medium">
+              <h1 className="text-amber-600 font-medium">
                 We are an EdTech Organization ~
-              </p>
+              </h1>
             </div>
             <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
               Think Big. We make IT, possible!
@@ -152,12 +159,12 @@ const AboutUs = () => {
               We place you at the centre of information networks to advance your
               strategic interests.
             </p>
-            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
               <FaArrowRight className="font-normal" size={18} />
             </button>
           </div>
-          <div className="absolute mx-auto top-[99%] mb-40 sm:top-[85%] md:inset-x-0 md:top-auto gap-4 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
+          <div className="relative -bottom-[28rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-32 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
             {/* <div className="absolute mx-auto sm:inset-x-0 transform -translate-y-1/2 w-full text-black font-bold text-center flex items-center justify-center gap-8"> */}
             <div className="sm:col-span-3 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
@@ -238,7 +245,7 @@ const AboutUs = () => {
             crafted to empower your growth and help you achieve your goals with
             confidence.
           </p>
-          <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-6 lg:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+          <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-6 lg:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>
@@ -300,7 +307,7 @@ const AboutUs = () => {
             We are a team with a variety of skills, each member contributes
             their expertise, and works professionally among members and clients.
           </p>
-          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>
@@ -466,8 +473,8 @@ const AboutUs = () => {
               slidesPerView: 4,
             },
           }}
-          onSlideChange={() => console.log("hi")}
-          onSwiper={(swiper) => console.log("")}
+          // onSlideChange={() => console.log("hi")}
+          // onSwiper={(swiper) => console.log("")}
           className=" md:h-[350px] w-full md:w-[90%] m-auto rounded-lg  flex flex-col justify-center items-center gap-4"
         >
           {data?.map((el) => {

@@ -39,7 +39,7 @@ const ChatBot = () => {
         <>
             <button
                 onClick={() => setChatOpen(!chatOpen)}
-                className="fixed bottom-8 right-8 inline-flex items-center justify-center text-xs font-medium disabled:pointer-events-none disabled:opacity-50 border rounded-full w-14 h-14 bg-indigo-600 hover:bg-indigo-400 m-0 cursor-pointer border-gray-200 bg-none p-0 normal-case leading-5"
+                className="fixed bottom-8 right-8 z-[100] inline-flex items-center justify-center text-xs font-medium disabled:pointer-events-none disabled:opacity-50 border rounded-full w-14 h-14 bg-indigo-600 hover:bg-indigo-400 m-0 cursor-pointer border-gray-200 bg-none p-0 normal-case leading-5"
                 type="button"
             >
                 <svg
