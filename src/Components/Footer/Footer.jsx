@@ -94,6 +94,9 @@ function Footer({dark}) {
                 <Link to={'/privacy-policy'} className="text-black dark:text-white text-nowrap flex items-center">
                   <MdKeyboardArrowRight size={20} /> Privacy policy
                 </Link>
+                <Link to={'/help-center'} className="text-black dark:text-white text-nowrap flex items-center">
+                  <MdKeyboardArrowRight size={20} /> Help Center
+                </Link>
 
               </div>
             </div>

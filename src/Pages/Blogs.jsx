@@ -168,6 +168,7 @@ const authors_info = [
 ];
 
 const Blog = () => {
+  document.title = 'Baoiam - Blogs'
   useEffect(() => {
     window.scrollTo(0, 0);
 

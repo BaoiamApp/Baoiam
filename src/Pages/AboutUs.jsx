@@ -43,6 +43,7 @@ import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 
 const AboutUs = () => {
+  document.title = 'Baoiam - About Us'
   const [data, setData] = useState(swiperData);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -147,9 +148,9 @@ const AboutUs = () => {
           <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
-              <p className="text-amber-600 font-medium">
+              <h1 className="text-amber-600 font-medium">
                 We are an EdTech Organization ~
-              </p>
+              </h1>
             </div>
             <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
               Think Big. We make IT, possible!

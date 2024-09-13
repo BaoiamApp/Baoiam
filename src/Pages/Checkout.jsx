@@ -96,6 +96,8 @@ const Checkout = () => {
     buyCourse();
   };
 
+  document.title = `Baoiam - ${enrollingCourse.course}`
+
   return (
     <div className="flex flex-wrap dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
       {/* left section */}

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const SignUp = () => {
-
+document.title = 'Baoiam - Sign Up'
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',

@@ -5,6 +5,7 @@ import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 import { WebDevTeam } from "../Components/OurTeam Components/WebDevTeam";
 
 export const OurTeam = () => {
+  document.title = 'Baoiam - Our Team'
   useEffect(() => {
     window.scrollTo(0, 0);
 

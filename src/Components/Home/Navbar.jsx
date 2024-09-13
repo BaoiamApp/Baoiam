@@ -98,45 +98,44 @@ const Navbar = ({ theme }) => {
   return (
     <>
       <div
-        className={`flex z-50 items-center justify-between px-4 py-2 ${
-          isTransparent
-            ? "bg-white dark:bg-[#080529]"
-            : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
-        }`}
+        className={`flex z-50 items-center justify-between px-4 py-2 ${isTransparent
+          ? "bg-white dark:bg-[#080529]"
+          : "bg-white/70 backdrop-blur dark:bg-black/30 fixed top-0 right-0 left-0"
+          }`}
       >
         {/* Logo */}
 
         <Link
-          to={"/instructor-dashboard"}
+          rel="canonical"
+          to={"/"}
           className={`${isDark ? "w-36 h-20" : "w-40 h-20"}`}
         >
           <img
             src={isDark ? logo : img1}
-            className={`w-full h-full ${
-              isDark ? "object contain" : "object-contain"
-            }`}
+            className={`w-full h-full ${isDark ? "object contain" : "object-contain"
+              }`}
             alt="logo"
           />
         </Link>
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${
-            isDark ? "font-semibold" : "font-medium"
-          } justify-between mt-4`}
+          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
+            } justify-between mt-4`}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-4  ${
-              linkActive === "Home" ? "text-orange-500" : ""
-            }`}
+            className={`mx-4 ${location.pathname === "/" && linkActive === "Home"
+              ? "text-orange-500"
+              : ""
+              }`}
           >
             Home
           </Link>
           <li
             onClick={() => setShow(!show)}
-            className="mx-4 cursor-pointer flex gap-2 items-center"
+            className={`mx-4 cursor-pointer flex gap-2 items-center`}
           >
             Courses
             {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -152,6 +151,7 @@ const Navbar = ({ theme }) => {
                 {courses[0] && (
                   <div className="p-4">
                     <Link
+                      onClick={() => setShow(false)}
                       to={`/courses/school`}
                       className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline"
                     >
@@ -163,6 +163,7 @@ const Navbar = ({ theme }) => {
                         return (
                           <Link
                             key={index}
+                            onClick={() => setShow(false)}
                             to={`/course/${sub.name}/${sub.id}`}
                             className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                           >
@@ -176,6 +177,7 @@ const Navbar = ({ theme }) => {
                 {courses[1] && (
                   <div className="p-4">
                     <Link
+                      onClick={() => setShow(false)}
                       to={`/courses/college`}
                       className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline"
                     >
@@ -187,6 +189,7 @@ const Navbar = ({ theme }) => {
                         return (
                           <Link
                             key={index}
+                            onClick={() => setShow(false)}
                             to={`/course/${sub.name}/${sub.id}`}
                             className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                           >
@@ -200,6 +203,7 @@ const Navbar = ({ theme }) => {
                 {courses[2] && (
                   <div className="p-4">
                     <Link
+                      onClick={() => setShow(false)}
                       to={`/courses/other`}
                       className="font-semibold mb-2 px-2 text-base text-slate-800 dark:text-white hover:underline"
                     >
@@ -211,6 +215,7 @@ const Navbar = ({ theme }) => {
                         return (
                           <Link
                             key={index}
+                            onClick={() => setShow(false)}
                             to={`/course/${sub.name}/${sub.id}`}
                             className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                           >
@@ -227,9 +232,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "About" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             About Us
           </Link>
@@ -237,9 +243,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/pap"}
             onClick={() => handleLinkClick("PAP")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "PAP" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/pap" && linkActive === "PAP"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             PAP
           </Link>
@@ -247,9 +254,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/itie"}
             onClick={() => handleLinkClick("ITIE")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "ITIE" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/itie" && linkActive === "ITIE"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             ITIE
           </Link>
@@ -257,9 +265,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "Blog" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             Blog
           </Link>
@@ -267,9 +276,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact")}
-            className={`mx-4 hover:text-indigo-500 ${
-              linkActive === "Contact" ? "text-indigo-600" : ""
-            } `}
+            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact"
+              ? "text-indigo-600"
+              : ""
+              }`}
           >
             Contact
           </Link>

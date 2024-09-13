@@ -23,6 +23,7 @@ const CourseDetailsPage = () => {
         }
     };
     console.log(courseDetails);
+    document.title = `Baoiam - ${courseDetails.title}`
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -128,102 +129,104 @@ const CourseDetailsPage = () => {
             <CourseHighlights />
 
             {/* Join we us */}
-            <div
-                id="plans"
-                ref={planRef}
-                className="my-12 px-8 lg:px-24 w-full h-full"
-            >
-                <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
-                    <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-                        <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">
-                            Join With Us Find the{" "}
-                            <span className="text-orange-500 border-b border-orange-500">
-                                Right Course
-                            </span>
-                        </h2>
+            {courseDetails.plans && courseDetails.plans.length > 0 ? (
+                <div
+                    id="plans"
+                    ref={planRef}
+                    className="my-12 px-8 lg:px-24 w-full h-full"
+                >
+                    <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
+                        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+                            <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">
+                                Join With Us Find the{" "}
+                                <span className="text-orange-500 border-b border-orange-500">
+                                    Right Course
+                                </span>
+                            </h2>
 
-                        <div className="mb-6 flex justify-center flex-wrap gap-10">
-                            {/* {subCourse?.plans?.map((p, i) => {
-                                return (
-                                    <div
-                                        key={i}
-                                        className={`flex  flex-col  rounded-lg border ${p.name === "Premium" ? "border-orange-500 relative" : ""
-                                            } p-4 pt-6`}
-                                    >
-                                        <div className="mb-12">
-                                            {p.name === "Premium" ? (
-                                                <>
-                                                    <div className="absolute inset-x-0 -top-3 flex justify-center">
-                                                        <span className="flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
-                                                            most popular
-                                                        </span>
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                ""
-                                            )}
-                                            <div className="mb-2 text-center text-2xl font-bold text-gray-800 dark:text-white">
-                                                {p.name}
-                                            </div>
-
-                                            <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
-                                                {p.courseName}
-                                            </p>
-
-                                            <div className="space-y-2">
-                                                {p?.courseItems?.map((item, index) => {
-                                                    return (
-                                                        <div key={index} className="flex gap-2">
-                                                            <MdCheck size={22} className="text-orange-500" />
-                                                            <span className="text-gray-600 dark:text-white">
-                                                                {item}
+                            <div className="mb-6 flex justify-center flex-wrap gap-10">
+                                {courseDetails?.plans?.map((p, i) => {
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`flex  flex-col  rounded-lg border ${p.name === "premium" ? "border-orange-500 relative" : ""
+                                                } p-4 pt-6`}
+                                        >
+                                            <div className="mb-12">
+                                                {p.name === "premium" ? (
+                                                    <>
+                                                        <div className="absolute inset-x-0 -top-3 flex justify-center">
+                                                            <span className="flex h-6 items-center justify-center rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
+                                                                most popular
                                                             </span>
                                                         </div>
-                                                    );
-                                                })}
+                                                    </>
+                                                ) : (
+                                                    ""
+                                                )}
+                                                <div className="mb-2 text-center capitalize text-2xl font-bold text-gray-800 dark:text-white">
+                                                    {p.name}
+                                                </div>
+
+                                                <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
+                                                    {courseDetails.title}
+                                                </p>
+
+                                                {/* <div className="space-y-2">
+                                             {p?.courseItems?.map((item, index) => {
+                                                 return (
+                                                     <div key={index} className="flex gap-2">
+                                                         <MdCheck size={22} className="text-orange-500" />
+                                                         <span className="text-gray-600 dark:text-white">
+                                                             {item}
+                                                         </span>
+                                                     </div>
+                                                 );
+                                             })}
+                                         </div> */}
+                                            </div>
+
+                                            <div className="mt-auto flex flex-col gap-8">
+                                                <div className="flex items-end justify-center gap-1">
+                                                    <span className="self-start text-gray-600 dark:text-white">
+                                                        ₹
+                                                    </span>
+                                                    <span className="text-4xl font-bold text-gray-800 dark:text-white">
+                                                        {p.price}
+                                                    </span>
+                                                    <span className="text-gray-500 dark:text-white">
+                                                        /Full Course
+                                                    </span>
+                                                </div>
+
+                                                <button
+                                                    className={`block  rounded-lg ${p.name === "premium"
+                                                        ? "bg-orange-500 text-white"
+                                                        : "bg-gray-500"
+                                                        } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                                                >
+                                                    Enroll Now
+                                                </button>
                                             </div>
                                         </div>
+                                    );
+                                })}
+                            </div>
 
-                                        <div className="mt-auto flex flex-col gap-8">
-                                            <div className="flex items-end justify-center gap-1">
-                                                <span className="self-start text-gray-600 dark:text-white">
-                                                    ₹
-                                                </span>
-                                                <span className="text-4xl font-bold text-gray-800 dark:text-white">
-                                                    {p.price}
-                                                </span>
-                                                <span className="text-gray-500 dark:text-white">
-                                                    /Full Course
-                                                </span>
-                                            </div>
-
-                                            <button
-                                                className={`block  rounded-lg ${p.name === "Premium"
-                                                    ? "bg-orange-500 text-white"
-                                                    : "bg-gray-500"
-                                                    } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
-                                            >
-                                                Enroll Now
-                                            </button>
-                                        </div>
-                                    </div>
-                                );
-                            })} */}
-                        </div>
-
-                        <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">
-                            Need help deciding?{" "}
-                            <Link
-                                to={"/"}
-                                className="text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400"
-                            >
-                                Get in touch
-                            </Link>
-                            .
+                            <div className="text-center text-sm text-gray-500 dark:text-white sm:text-base">
+                                Need help deciding?{" "}
+                                <Link
+                                    to={"/"}
+                                    className="text-gray-600 dark:text-orange-500 underline transition duration-100 hover:text-orange-600 active:text-orange-400"
+                                >
+                                    Get in touch
+                                </Link>
+                                .
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            ) : <div className='py-14'></div>}
 
             {/* Emi & Placement */}
             <div className="w-full h-auto flex justify-center items-center relative">
