@@ -5,6 +5,7 @@ import { FaChevronDown, FaChevronUp, FaSchool } from 'react-icons/fa6';
 import { IoBookSharp } from 'react-icons/io5';
 import { RxCross2 } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
@@ -23,7 +24,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
     }
 
     useEffect(() => {
-    console.log(isDark);
+        console.log(isDark);
     }, [isDark])
 
     const closeSideBar = () => {
@@ -35,7 +36,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
 
             <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
                 <div className="h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
-                    <div className="flex justify-end items-end w-full px-2 py-4 sticky top-0 bg-white z-50 dark:bg-[#080529] shadow-md ">
+                    <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 bg-white z-50 dark:bg-[#080529] shadow-md ">
+                       <Logo isDark={isDark}/>
                         <RxCross2
                             className="text-black dark:text-white"
                             onClick={() => setShowmenu(old => !old)}

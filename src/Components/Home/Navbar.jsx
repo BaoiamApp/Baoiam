@@ -10,11 +10,13 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { RiMenu3Line, RiSearch2Line } from "react-icons/ri";
 import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
+import logoDark from "../../assets/logo-bg-removed.png";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 // import { deleteUserData } from "../../redux/user/userSlice";
 import { deleteUserData1 } from "../../redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
+import Logo from "./Logo";
 
 const Navbar = ({ theme }) => {
 
@@ -113,18 +115,7 @@ const Navbar = ({ theme }) => {
 
         {/* Logo */}
 
-        <Link
-          rel="canonical"
-          to={"/"}
-          className={`${isDark ? "w-36 h-20" : "w-40 h-20"}`}
-        >
-          <img
-            src={isDark ? logo : img1}
-            className={`w-full h-full ${isDark ? "object contain" : "object-contain"
-              }`}
-            alt="logo"
-          />
-        </Link>
+        <Logo isDark={isDark}/>
 
         {/* NavLinks */}
         <div
