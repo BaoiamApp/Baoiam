@@ -31,6 +31,7 @@ import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard"
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
+import BookADemo from "./Pages/BookADemo";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -113,6 +114,10 @@ const App = () => {
 
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
+
+        {/* Book a demo */}
+        <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
+
       </Routes>
       <Footer dark={dark} />
     </div>

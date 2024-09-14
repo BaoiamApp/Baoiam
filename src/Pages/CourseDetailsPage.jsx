@@ -26,7 +26,7 @@ const CourseDetailsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getCourseDetails();
-    return () => {};
+    return () => { };
   }, [id]);
 
   const planRef = useRef();
@@ -42,6 +42,14 @@ const CourseDetailsPage = () => {
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
             {courseDetails?.title}
           </h3>
+          <Link to={`/book-a-demo/${courseDetails.id}`} className="relative group">
+            <button
+              type="button"
+              class="hidden sm:flex text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-semibold rounded-lg text-md px-8 py-2.5 text-center"
+            >
+             Book a Demo
+            </button>
+          </Link>
           <p className="text-[0.8rem] lg:text-base">
             {courseDetails?.description}
           </p>
@@ -104,18 +112,6 @@ const CourseDetailsPage = () => {
         </h4>
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md mt-4">
-          {/* {courseDetails.curriculum?.map((c, i) => {
-            return <details key={i} className="mb-2 border px-6 py-2 w-[40rem] ">
-              <summary className="font-semibold cursor-pointer list-none">{c.weekTitle}</summary>
-              <hr className="my-2" />
-              <ul className="list-disc pl-10 ">
-                {c.topics && c.topics.map((topic, id) => <li>{topic}</li>)}
-              </ul>
-            </details>
-          })} */}
-          {/* {courseDetails.curriculum.map((c,i) => {
-            return <li>{c}</li>
-          })} */}
           <li>{courseDetails.curriculum}</li>
         </ul>
       </div>
@@ -144,11 +140,10 @@ const CourseDetailsPage = () => {
                   return (
                     <div
                       key={i}
-                      className={`flex  flex-col  rounded-lg border ${
-                        p.name === "premium" ? "border-orange-500 relative" : ""
-                      } p-4 pt-6`}
+                      className={`flex  flex-col  rounded-lg border ${p.name === "premium" ? "border-orange-500 relative" : ""
+                        } p-4 pt-6`}
                     >
-                      <div className="mb-12">
+                      <div className="mb-8">
                         {p.name === "premium" ? (
                           <>
                             <div className="absolute inset-x-0 -top-3 flex justify-center">
@@ -156,30 +151,58 @@ const CourseDetailsPage = () => {
                                 most popular
                               </span>
                             </div>
+
+                            <div className="mb-2 text-center capitalize text-2xl font-bold text-gray-800 dark:text-white">
+                              {p.name}
+                            </div>
+
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              {courseDetails.title}
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Doubt Support
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Personnal Mentorship
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Course Duration 6 Months
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Experts councelling
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Live Projects 4+
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Dedicated Placement cell
+                            </p>
                           </>
                         ) : (
-                          ""
+                          <>
+                            <div className="mb-2 text-center capitalize text-2xl font-bold text-gray-800 dark:text-white">
+                              {p.name}
+                            </div>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Course Duration 4 Months
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Live classes
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Webinars
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              101 sessions
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Live Projects 2+
+                            </p>
+                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              Interview Preparation
+                            </p>
+                          </>
                         )}
-                        <div className="mb-2 text-center capitalize text-2xl font-bold text-gray-800 dark:text-white">
-                          {p.name}
-                        </div>
-
-                        <p className="mx-auto mb-8 px-8 text-center text-gray-500 font-medium dark:text-white">
-                          {courseDetails.title}
-                        </p>
-
-                        {/* <div className="space-y-2">
-                                             {p?.courseItems?.map((item, index) => {
-                                                 return (
-                                                     <div key={index} className="flex gap-2">
-                                                         <MdCheck size={22} className="text-orange-500" />
-                                                         <span className="text-gray-600 dark:text-white">
-                                                             {item}
-                                                         </span>
-                                                     </div>
-                                                 );
-                                             })}
-                                         </div> */}
                       </div>
 
                       <div className="mt-auto flex flex-col gap-8">
@@ -199,17 +222,19 @@ const CourseDetailsPage = () => {
                           onClick={() => {
                             if (localStorage.getItem("access_token"))
                               navigate(
-                                `/checkout/school/${p.id}/${
-                                  p.name == "premium" ? "Premium" : "Plus"
+                                `/checkout/school/${p.id}/${p.name == "premium" ? "Premium" : "Plus"
+
                                 }`
                               );
                             else navigate("/login");
                           }}
-                          className={`block  rounded-lg ${
-                            p.name === "premium"
+                          className={`block  rounded-lg ${p.name === "premium"
+
+
+
                               ? "bg-orange-500 text-white"
                               : "bg-gray-500"
-                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                            } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                         >
                           Enroll Now
                         </button>

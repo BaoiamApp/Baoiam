@@ -1,117 +1,47 @@
-import React from 'react';
-import { FaCalendarAlt, FaCreditCard, FaPaypal, FaMoneyBillWave, FaCalendarDay, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchOrders } from '../../Redux/slices/orderSlice';
 
 const AllBuys = () => {
-    const purchases = [
-        {
-            courseName: 'React for Beginners',
-            instructorName: 'John Doe',
-            dateOfPurchase: '2024-09-01',
-            paymentMethod: 'Credit Card',
-            validity: 'Lifetime',
-            price: '$29.99',
-            image: 'https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png', // Placeholder image URL
-            rating: 4.5,
-        },
-        {
-            courseName: 'Advanced JavaScript',
-            instructorName: 'Jane Smith',
-            dateOfPurchase: '2024-08-15',
-            paymentMethod: 'PayPal',
-            validity: '1 Year',
-            price: '$49.99',
-            image: 'https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png',
-            rating: 4.0,
-        },
-        {
-            courseName: 'Full Stack Development',
-            instructorName: 'Mark Johnson',
-            dateOfPurchase: '2024-07-20',
-            paymentMethod: 'Debit Card',
-            validity: '6 Months',
-            price: '$59.99',
-            image: 'https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png',
-            rating: 4.8,
-        },
-        {
-            courseName: 'Python for Data Science',
-            instructorName: 'Anna Lee',
-            dateOfPurchase: '2024-06-10',
-            paymentMethod: 'Credit Card',
-            validity: 'Lifetime',
-            price: '$39.99',
-            image: 'https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png',
-            rating: 4.6,
-        },
-        {
-            courseName: 'Machine Learning A-Z',
-            instructorName: 'Michael Brown',
-            dateOfPurchase: '2024-05-22',
-            paymentMethod: 'UPI',
-            validity: '1 Year',
-            price: '$69.99',
-            image: 'https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png',
-            rating: 4.7,
-        },
-    ];
-  
+  const dispatch = useDispatch();
+  const { orders, status, error } = useSelector((state) => state.orders);
 
+  useEffect(() => {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      dispatch(fetchOrders(token));
+    }
+  }, [dispatch]);
 
-  const renderStars = (rating) => {
-    const fullStars = Math.floor(rating);
-    const halfStar = rating % 1 !== 0;
-    const emptyStars = 5 - Math.ceil(rating);
-    
-    return (
-      <div className="flex items-center">
-        {Array(fullStars).fill(<FaStar className="text-yellow-500" />)}
-        {halfStar && <FaStarHalfAlt className="text-yellow-500" />}
-        {Array(emptyStars).fill(<FaStar className="text-gray-300" />)}
-        
-      </div>
-    );
-  };
+  if (status === 'loading') return <p>loading...</p>;
+  if (status === 'failed') return <p>error: {error}</p>;
 
   return (
-    <div className="max-w-screen mx-auto p-4">
-      {/* For larger screens (Card layout with image) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {purchases.map((purchase, index) => (
+    <div className="max-w-screen-lg mx-auto p-6 bg-gray-100">
+      <h2 className="text-2xl font-bold mb-6 text-center">Your Orders</h2>
+      <div className="grid grid-cols-1 gap-6">
+        {orders.map((order, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-black dark:text-white border dark:border-gray-700 shadow-lg rounded-lg p-4 flex flex-col xl:flex-row items-center"
+            className="bg-white dark:bg-gray-800 dark:text-gray-200 shadow-lg rounded-lg p-6"
           >
-            <img
-              src={purchase.image}
-              alt={purchase.courseName}
-              className="w-full lg:w-32 my-2 md:h-32 object-cover rounded-lg mb-4 md:mb-0"
-            />
-            <div className="flex-1 md:ml-4">
-              <h3 className="text-lg font-semibold my-2">{purchase.courseName}</h3>
-              <p className="flex items-center mb-1">
-                <FaCalendarDay className="mr-2" />
-                {purchase.dateOfPurchase}
-              </p>
-              <p className="flex items-center mb-1">
-                <FaCreditCard className="mr-2" />
-                {purchase.paymentMethod}
-              </p>
-              <p className="flex items-center mb-1">
-                <FaMoneyBillWave className="mr-2" />
-                {purchase.price}
-              </p>
-              <p className="flex items-center mb-1">
-                <FaCalendarAlt className="mr-2" />
-                {purchase.validity}
-              </p>
-              <p className="flex items-center mb-1">
-                <FaPaypal className="mr-2" />
-                {purchase.instructorName}
-              </p>
-              <div className="mt-2">
-                {renderStars(purchase.rating)}
-              </div>
-            </div>
+            <h3 className="text-lg font-semibold mb-2">Order ID: {order.order_id}</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">Total Amount: 
+              <span className="font-medium text-indigo-600 dark:text-indigo-400"> {order.total_amount}</span>
+            </p>
+            <p className={`mb-2 text-sm font-medium ${
+              order.status === 'pending'
+                ? 'text-yellow-500'
+                : order.status === 'failed'
+                ? 'text-red-500'
+                : 'text-green-500'
+            }`}>
+              Status: {order.status}
+            </p>
+            <p className="text-gray-500 dark:text-gray-300 text-sm">
+              Order Date: {new Date(order.order_date).toLocaleDateString()}
+            </p>
+
           </div>
         ))}
       </div>
