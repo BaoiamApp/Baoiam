@@ -296,7 +296,7 @@ const Navbar = ({ theme }) => {
         {/* Last */}
         <div>
         <div className="flex items-center gap-4 text-black dark:text-white">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
           
             <SearchBox />
            

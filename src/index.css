@@ -44,7 +44,7 @@ body {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: #1e40af;
+  background-color: white;
   transform: scale(1.1);
 }
 /* Custom CSS for the 3D flip card effect */
