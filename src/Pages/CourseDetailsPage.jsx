@@ -101,7 +101,7 @@ const CourseDetailsPage = () => {
             {/* Course Curriculum */}
             <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
                 <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
-                    Course
+                    Course{" "}
                     <span className="text-orange-500 border-b border-orange-500">
                         Curriculum
                     </span>
