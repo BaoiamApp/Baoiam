@@ -4,6 +4,7 @@ import { FaBook, FaChalkboardTeacher, FaBriefcase } from "react-icons/fa";
 import refer_earn_image from "../assets/Refer/refer1.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import refer from "../assets/Refer/refer2.png";
+import Faq from "./Faq";
 
 const ReferAndEarn = () => {
   return (
@@ -100,61 +101,63 @@ const ReferAndEarn = () => {
         </button>
       </div>
         {/* section-3 */}
-      <div className="flex flex-col lg:flex-row items-center px-4 py-12 lg:py-16">
-        {/* Text Section */}
-        <div className="lg:w-1/2 space-y-6 lg:pr-8">
-          {/* Heading */}
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            WHY REFER BAOIAM?
-          </h2>
+        <div className="flex flex-col lg:flex-row items-center px-4 py-16 lg:px-16 lg:py-20">
+  {/* Text Section */}
+  <div className="lg:w-1/2 space-y-8 lg:pr-12">
+    {/* Heading */}
+    <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-center lg:text-left">
+      WHY <span className="text-indigo-600">Refer</span> BAOIAM?
+    </h2>
 
-          {/* Paragraphs with Icons */}
-          <div className="flex items-center space-x-2">
-            <FaBook className="text-indigo-600 text-2xl" />
-            <h3 className="text-xl font-semibold text-indigo-600">
-              Upskilling Courses
-            </h3>
-          </div>
-          <p className="text-gray-700">
-            Get access to the best curated courses mentored by top-notch
-            experts.
-          </p>
+    {/* Paragraphs with Icons */}
+    <div className="flex items-center space-x-4">
+      <FaBook className="text-indigo-600 text-3xl" />
+      <h3 className="text-xl font-semibold text-indigo-600">
+        Upskilling Courses
+      </h3>
+    </div>
+    <p className="text-gray-600 text-lg lg:text-base leading-relaxed">
+      Get access to the best curated courses mentored by top-notch experts.
+    </p>
 
-          <div className="flex items-center space-x-2">
-            <FaChalkboardTeacher className="text-indigo-600 text-2xl" />
-            <h3 className="text-xl font-semibold text-indigo-600">
-              Experienced Mentors & High-Quality Content
-            </h3>
-          </div>
-          <p className="text-gray-700">
-            Courses crafted just for you that help you enhance your skills and
-            crack your dream job.
-          </p>
+    <div className="flex items-center space-x-4">
+      <FaChalkboardTeacher className="text-indigo-600 text-3xl" />
+      <h3 className="text-xl font-semibold text-indigo-600">
+        Experienced Mentors & High-Quality Content
+      </h3>
+    </div>
+    <p className="text-gray-600 text-lg lg:text-base leading-relaxed">
+      Courses crafted just for you that help you enhance your skills and crack your dream job.
+    </p>
 
-          <div className="flex items-center space-x-2">
-            <FaBriefcase className="text-indigo-600 text-2xl" />
-            <h3 className="text-xl font-semibold text-indigo-600">
-              100% Placement Assistance
-            </h3>
-          </div>
-          <p className="text-gray-700">
-            Learn to crack interviews from our experienced trainers and get
-            placed at top companies.
-          </p>
-        </div>
+    <div className="flex items-center space-x-4">
+      <FaBriefcase className="text-indigo-600 text-3xl" />
+      <h3 className="text-xl font-semibold text-indigo-600">
+        100% Placement Assistance
+      </h3>
+    </div>
+    <p className="text-gray-600 text-lg lg:text-base leading-relaxed">
+      Learn to crack interviews from our experienced trainers and get placed at top companies.
+    </p>
+  </div>
 
-        {/* Image Section */}
-        <div className="lg:w-1/2 mt-8 lg:mt-0">
-          {/* Placeholder for Image */}
-          <div className="lg:w-1/2 mt-8 lg:mt-0">
-            <img
-              src={refer}
-              alt="Why Refer BAOIAM"
-              className="w-full h-64 object-cover rounded-lg"
-            />
-          </div>
-        </div>
-      </div>
+  {/* Image Section */}
+  <div className="lg:w-1/2 mt-10 lg:mt-0">
+    {/* Placeholder for Image */}
+    <div className="w-full h-72 lg:h-96 rounded-lg overflow-hidden flex items-center justify-center">
+      <img
+        src={refer}
+        alt="Why Refer BAOIAM"
+        className="w-full h-full object-contain rounded-lg"
+      />
+    </div>
+  </div>
+</div>
+
+  {/* section-4 */}
+
+   <Faq/>
+
     </>
   );
 };
