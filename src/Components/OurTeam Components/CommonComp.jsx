@@ -13,7 +13,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
     return (
         <div className='grid md:grid-cols-4 grid-col-1 p-2 mx-auto md:items-center justify-center md:flex-row  gap-2'>
 
-            <h1 className='text-center col-span-1 text-lg lg:text-2xl px-4 py-2 tracking-wide leading-4 font-bold '>
+            <h1 className='text-center col-span-1 text-lg lg:text-2xl px-4 py-2 tracking-wide font-bold '>
                 {heading}
             </h1>
             <div className=' md:col-span-3 col-span-1'>
@@ -40,7 +40,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
                                 slidesPerView: 4.5,
                             },
                         }}
-                        className='w-80 md:w-full h-80 mx-auto rounded-xl flex flex-col justify-center items-center gap-6'
+                        className='w-72 md:w-full h-80 mx-auto rounded-xl flex flex-col justify-center items-center gap-6'
                     >
                         {dataArray?.map((el) => {
                             return (
@@ -49,7 +49,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
                                         {/* Front Side (Image) */}
                                         <div className='flip-card-front max-w-80 mx-auto'>
                                             <img
-                                                className='h-full w-80 mx-auto  rounded-md object-cover' 
+                                                className='h-full w-72 mx-auto  rounded-md object-cover' 
                                                 src={el.image}
                                                 alt={el.name}
                                             />

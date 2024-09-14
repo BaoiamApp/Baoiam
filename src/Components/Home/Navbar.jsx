@@ -119,7 +119,7 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden xl:flex items-center ${isDark ? "font-semibold" : "font-medium"
+          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
             } justify-between `}
         >
           <Link
@@ -377,7 +377,7 @@ const Navbar = ({ theme }) => {
           </Link>
           <span
             onClick={() => setShowmenu(old => !old)}
-            className="block xl:hidden"
+            className="block lg:hidden"
           >
             <RiMenu3Line size={22} />
           </span>
