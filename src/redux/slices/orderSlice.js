@@ -1,3 +1,4 @@
+// local
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const apiUrl = import.meta.env.VITE_API_URL;
 import axios from 'axios';
