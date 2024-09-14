@@ -4624,3 +4624,73 @@ export const interestedCheckbox = [
     value: "other",
   },
 ];
+
+
+// PAP page listSlide
+export const listSlide = [
+{
+  id: 1,
+  title: 'Visionary Thinking',
+  icon: 'IoTelescope',
+},
+{
+  id: 2,
+  title: 'Creativity & Innovation',
+  icon: 'MdPalette',
+},
+{
+  id: 3,
+  title: 'Risk Management',
+  icon: 'FaShield',
+},
+{
+  id: 4,
+  title: 'Resilience & Persistence',
+  icon: 'FaTree',
+},
+{
+  id: 5,
+  title: 'Adaptability',
+  icon: 'BsFillPuzzleFill',
+},
+{
+  id: 6,
+  title: 'Resilience & Persistence',
+  icon: 'IoTelescope',
+},
+{
+  id: 7,
+  title: 'Leadership',
+  icon: 'FaGavel',
+},
+{
+  id: 8,
+  title: 'Financial Management',
+  icon: 'BsGraphUpArrow',
+},
+{
+  id: 9,
+  title: 'Networking & Relationship Building',
+  icon: 'BsPeopleFill',
+},
+{
+  id: 10,
+  title: 'Communication & Salesmanship',
+  icon: 'BsMegaphoneFill',
+},
+{
+  id: 11,
+  title: 'Problem Solving',
+  icon: 'FaGear',
+},
+{
+  id: 12,
+  title: 'Product Management & Interpersonal Skills',
+  icon: 'BsClipboardCheckFill',
+},
+{
+  id: 13,
+  title: 'Leveraging AI & technology for automation',
+  icon: 'BsRobot',
+},
+]
