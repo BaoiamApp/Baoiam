@@ -29,13 +29,14 @@ import SignUp from "./Pages/auth/SignUp";
 import Login from "./Pages/auth/Login";
 import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
+import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
 
 const App = () => {
   const [dark, setDark] = useState(false);
 
   const theme = () => {
-    setDark(true);
+    setDark(old=>!old);
     document.body.classList.toggle("dark");
   };
 
@@ -106,7 +107,9 @@ const App = () => {
         <Route path="/help-center" element={<HelpCenter />} />
 
         {/* Hire */}
-        <Route path="/hire-from-us" element={<HireFromUs />} />
+        <Route path="/hire" element={<HireFromUs />} />
+
+        <Route path="/instructor" element={<InstructorCard />} />
 
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />

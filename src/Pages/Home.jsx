@@ -12,6 +12,7 @@ import Phone from '../Components/Home/Phone'
 import Meetourexperts from '../Components/Home/Meetourexperts'
 
 const Home = () => {
+    document.title = 'Baoiam - Home'
     return (
         <>
             <Hero />

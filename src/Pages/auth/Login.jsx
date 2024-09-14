@@ -10,6 +10,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 const domain = import.meta.env.VITE_DOMAIN_URL;
 
 const Login = () => {
+  document.title = 'Baoiam - Login'
   axios.defaults.withCredentials = true;
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -18,6 +19,7 @@ const Login = () => {
   const requestRef = useRef(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (localStorage.getItem("access_token")) navigate("/profile");
     const values = queryString.parse(location.search);
     const state = values.state || null;

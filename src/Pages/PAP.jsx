@@ -41,6 +41,7 @@ import {
 } from "react-icons/bs";
 
 const PAP = () => {
+  document.title = 'Baoiam - PAP'
   const slides = [
     {
       imgSrc: Prasun,

@@ -41,98 +41,18 @@ import { FaBusinessTime } from "react-icons/fa";
 import { AiOutlineCode, AiOutlineClockCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
+import ServicesTab from "../Components/AboutUs/ServicesTab";
 
 const AboutUs = () => {
+  document.title = 'Baoiam - About Us'
   const [data, setData] = useState(swiperData);
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => {};
+    return () => { };
   }, []);
 
-  //   const [content, setContent] = useState(
-  //     "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
-  //   );
-  //   const [activeYear, setActiveYear] = useState("2019");
-
-  //   const handleDivClick = (year) => {
-  //     setActiveYear(year); // Set the clicked year as active
-
-  //     switch (year) {
-  //       case "2019":
-  //         setContent(
-  //           "In 2019, Baoiam was founded in Noida. The inception of our consulting firm was marked by an innovative spirit and a commitment to deliver superior solutions. Throughout this journey, we forged a robust foundation emphasizing service quality and steadfast partnerships. Through unwavering dedication, we successfully cultivated meaningful client relationships and achieved sustainable growth. That year proved to be a historic milestone in shaping our corporate identity, setting standards for excellence, and reaffirming our commitment to client success through an innovative consultative approach."
-  //         );
-  //         break;
-  //       case "2020":
-  //         setContent(
-  //           "In 2020, we expanded our team and services, reaching new markets. Fueled by a commitment to innovation, Lunaria navigated challenges with resilience, expanding its services and client base. The firm's adaptability and visionary approach positioned it as a trusted partner, providing cutting-edge solutions and strategic insights amidst the evolving business environment. Lunaria's journey in 2020 shows its dedication to excellence and its important role in shaping the consulting landscape, this will influence Lunaria's sustainable development in the future."
-  //         );
-  //         break;
-  //       case "2021":
-  //         setContent(
-  //           "In the pivotal year of 2021, Baoiam Consulting Firm navigated the unprecedented challenges brought about by the global pandemic with remarkable resilience and strategic acumen. As the world faced uncertainty, Lunaria emerged as a steadfast partner, offering clients innovative solutions and strategic insights. The Lunaria consulting firm adaptability and visionary approach not only mitigated the impact of the crisis, but positioned Lunaria as a transformative force in the consulting landscape, exemplifying Lunaria's commitment to excellence and client-centric strategies during these critical times."
-  //         );
-  //         break;
-  //       case "2022":
-  //         setContent(
-  //           "In the aftermath of the pandemic in 2022, Baoiam Consulting Firm embarked on a robust business recovery journey. With a resilient spirit and strategic vision, the firm focused on rebuilding and strengthening its operations. Implementing innovative solutions, Lunaria played a pivotal role in guiding clients through the recovery phase, offering tailored strategies for renewed success. The post-pandemic era saw Lunaria's commitment to excellence shine, as it became a trusted partner in navigating the evolving business landscape, exemplifying adaptability, resilience, and a forward-thinking approach in sustainable client fostering."
-  //         );
-  //         break;
-  //       case "2023":
-  //         setContent(
-  //           "In 2023, Baoiam Consulting Firm has emerged as a standout leader in the industry, distinguished for its exceptional performance and client satisfaction. Renowned for innovative strategies, Lunaria continues to set the standard for excellence. With a dedicated team and a client-centric ethos, the firm consistently delivers transformative solutions. Lunaria's commitment to pushing boundaries and exceeding expectations positions it as a trailblazer, earning accolades and solidifying its status as one of the top consulting firms, driving success for clients in a rapidly evolving business landscape."
-  //         );
-  //         break;
-  //       default:
-  //         setContent("Click on a year to see the journey.");
-  //         break;
-  //     }
-  //   };
-
-  // const cardsData = [
-  //   {
-  //     imageSrc: Liam,
-  //     title: "Liam Anderson",
-  //     content: "CEO & Founder",
-  //   },
-  //   {
-  //     imageSrc: Sylphie,
-  //     title: "Sylphie Young",
-  //     content: "VP of Finance & Marketing",
-  //   },
-  //   {
-  //     imageSrc: Henrik,
-  //     title: "Henrik Johansson",
-  //     content: "VP of Product Development",
-  //   },
-  //   {
-  //     imageSrc: Liam,
-  //     title: "Liam Anderson",
-  //     content: "CEO & Founder",
-  //   },
-  // ];
-
-  // const slides = [
-  //   {
-  //     imgSrc: aboutus1,
-  //   },
-  //   {
-  //     imgSrc: aboutus2,
-  //   },
-  //   {
-  //     imgSrc: aboutus3,
-  //   },
-  //   {
-  //     imgSrc: aboutus4,
-  //   },
-  //   {
-  //     imgSrc: aboutus5,
-  //   },
-  // ];
-
   return (
-    // <div className="dark:bg-black dark:text-white">
     <div>
       {/* Section - 1 */}
       <div className="mx-auto h-fit md:h-screen w-full text-white">
@@ -147,9 +67,9 @@ const AboutUs = () => {
           <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
-              <p className="text-amber-600 font-medium">
+              <h1 className="text-amber-600 font-medium">
                 We are an EdTech Organization ~
-              </p>
+              </h1>
             </div>
             <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
               Think Big. We make IT, possible!
@@ -163,14 +83,12 @@ const AboutUs = () => {
               <FaArrowRight className="font-normal" size={18} />
             </button>
           </div>
-          <div className="relative -bottom-[28rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-32 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
-            {/* <div className="absolute mx-auto sm:inset-x-0 transform -translate-y-1/2 w-full text-black font-bold text-center flex items-center justify-center gap-8"> */}
-            <div className="sm:col-span-3 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
+          <div className="relative -bottom-[20rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-48 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
+
+            <div className="sm:col-span-3 grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
               <HeroCard Icon={FaBusinessTime} title="Business Consultation" />
               <HeroCard Icon={AiOutlineCode} title="Website Development" />
-            </div>
-            <div className="sm:col-span-3 sm:flex justify-evenly gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={BiSupport} title="Support Management" />
               <HeroCard Icon={RiBarChartBoxLine} title="Market Research" />
             </div>
@@ -189,56 +107,13 @@ const AboutUs = () => {
               className="w-full h-full lg:w-[450px] lg:h-[400px] rounded-tl-2xl rounded-br-2xl object-cover shadow-[-10px_-15px_#4338ca] sm:shadow-[-15px_-20px_#4338ca] lg:shadow-[-20px_-25px_#4338ca]"
             />
           </div>
-          {/* <div className="w-1/2 pl-20">
-          <div className="w-full md:w-[80%]">
-            
-          </div>
-        </div> */}
-          {/* <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: false,
-              el: ".swiper-pagination-bullet-custom",
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next-custom",
-              prevEl: ".swiper-button-prev-custom",
-            }}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="w-full h-full dark:bg-black dark:text-white"
-          >
-            {slides.map((slide, index) => (
-              <SwiperSlide
-                key={index}
-                className="text-center text-[18px] flex justify-center items-center"
-              >
-                <div className="absolute flex top-16 flex-col border-3xl max-w-[90%] h-[100%] rounded-b-3xl border-slate-400 mb-12">
-                  <div className="relative w-full md:w-[90%] h-[70%] rounded-b-3xl mb-2 px-2 border-slate-400">
-                    <img
-                      src={slide.imgSrc}
-                      alt="image"
-                      className="block w-full h-full object-cover rounded-b-2xl shadow-lg"
-                    />
-                  </div>
-
-                  <div className="absolute top-7 left-7 w-full  md:w-[88%] h-[70%] z-10 border-indigo-700 border-[3px] rounded-2xl"></div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
         </div>
 
         <div className="flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
             Students Success Is Our Focus
           </h2>
-          <p className="text-base sm:text-lg md:text-xl">
+          <p className="text-base sm:text-lg">
             Unlock your potential with our expertly designed courses, tailored
             to provide you with the skills and knowledge needed for success.
             From practical strategies to in-depth expertise, our courses are
@@ -309,6 +184,8 @@ const AboutUs = () => {
         </div>
       </div>
 
+      <ServicesTab />
+
       {/* Section 4 */}
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
         <div className="flex flex-col mt-6 gap-8 mb-10 max-w-full lg:max-w-xs ">
@@ -363,17 +240,17 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row  lg:flex-row mx-auto gap-8 p-6 md:p-10 justify-center items-center max-w-7xl">
         {/* Image Section */}
         <div className="w-full lg:w-1/2  pl-0 lg:pl-20 mb-6 lg:mb-0">
-          
-            <img
-              src={aboutus5}
-              alt="image"
-              className="w-full h-full  sm:w-[750px] sm:h-[350px] md:w-[350px] md:h-[450px] lg:w-[450px] lg:h-[450px] md:w-60 rounded-tl-2xl rounded-br-2xl object-cover shadow-[-10px_-15px_#4338ca] lg:shadow-[-15px_-20px_#4338ca]"
-            />
-         
+
+          <img
+            src={aboutus5}
+            alt="image"
+            className="w-full h-full sm:w-[750px] sm:h-[350px] md:w-[350px] md:h-[450px] lg:w-[450px] lg:h-[490px] rounded-tl-2xl rounded-br-2xl object-cover shadow-[-10px_-15px_#4338ca] lg:shadow-[-15px_-20px_#4338ca]"
+          />
+
         </div>
 
         {/* Text and Progress Bars Section */}
-        <div className="flex flex-col items-start justify-center gap-4 w-full lg:w-1/2">
+        <div className="flex flex-col items-start justify-center gap-2 w-full lg:w-1/2">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
             Who We Are
           </h3>
@@ -388,7 +265,7 @@ const AboutUs = () => {
           </p>
 
           {/* Progress Bars */}
-          <div className="w-full text-slate-800 mx-auto mt-6 space-y-6">
+          <div className="w-full text-slate-800 mx-auto mt-4 space-y-4">
             <ProgressBar percentage={86} title="UI/UX Design" />
             <ProgressBar percentage={80} title="Business Consultation" />
             <ProgressBar percentage={78} title="Website Development" />
@@ -396,80 +273,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-
-      {/* Section 2 */}
-      {/* <div className="flex mx-auto gap-4 mb-16 justify-center items-center">
-        <div className="flex flex-col items-start gap-4 pt-16 ml-10 p-10 w-1/2">
-          <h2 className="text-4xl font-bold">
-            Our Vision for Better Result for Your Success
-          </h2>
-          <h3 className="text-2xl font-semibold">Vision We have</h3>
-          <p className="text-lg">
-            Our vision is to be the cornerstone of client success by providing
-            innovative and sustainable consulting solutions.
-          </p>
-          <h3 className="text-2xl font-semibold">The path we took</h3>
-          <p className="text-lg mb-4">
-            Our mission is to guide businesses in realizing their full potential
-            through customized strategies and high-quality services. Committed
-            to building strong partnerships, we empower growth and create a
-            positive impact in every facet of our consulting journey.
-          </p>
-          <button className="bg-amber-400 text-white rounded-md p-4 font-semibold text-lg">
-            Collaborate with us
-          </button>
-        </div>
-        <div className="w-1/2">
-          <div className="relative overflow-hidden rounded-b-2xl mb-2 px-2 max-w-[90%] h-full border-slate-400">
-            <div className="absolute inset-0 bg-indigo-500 rounded-b-2xl mix-blend-multiply"></div>
-            <img
-              src={aboutus5}
-              alt="image"
-              className="block max-w-full h-[60%] object-contain rounded-b-2xl shadow-lg"
-            />
-            <div className="absolute inset-0 mt-2 flex mx-6 items-center justify-center mb-4">
-              <p className="text-4xl text-white font-semibold">
-                "In the garden of achievement, diligent effort blossoms dreams
-                into reality."
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Section 3 */}
-      {/* <div className="flex mx-auto bg-indigo-500 text-white gap-4 justify-start items-center">
-        <div className="flex flex-col items-start gap-8 ml-10 p-10 w-1/2">
-          <h2 className="text-4xl font-bold">Baoiam Journey Through Time</h2>
-          <div className="flex gap-6 text-lg font-semibold">
-            {["2019", "2020", "2021", "2022", "2023"].map((year) => (
-              <div
-                key={year}
-                onClick={() => handleDivClick(year)}
-                className={`flex rounded-full border-2 border-amber-300 justify-center items-center cursor-pointer h-20 w-20 ${
-                  activeYear === year ? "bg-amber-300" : ""
-                }`} 
-              >
-                <p>{year}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-lg mb-4">{content}</p>
-        </div>
-
-        <div className="w-1/2 py-10">
-          <div className="flex flex-col max-w-[90%] h-[70%] rounded-3xl mb-12 px-2">
-            <div className="relative">
-              <img
-                src={aboutus5}
-                alt="image"
-                className="block max-w-full h-[60%] object-contain rounded-2xl shadow-lg"
-              />
-              <div className="absolute top-10 left-10 w-[100%] h-[100%] z-10 border-amber-300 border-2 rounded-2xl"></div>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       {/* Section 6 */}
       <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
@@ -504,56 +307,37 @@ const AboutUs = () => {
           className="md:h-[350px] w-full md:w-[90%] m-auto rounded-lg flex flex-col justify-center items-center gap-4"
         >
           {data?.map((el) => (
-            <SwiperSlide
-              className="relative cursor-pointer hover:shadow-xl duration-200 hover:scale-105 dark:bg-zinc-900 rounded-md h-[220px] md:h-[330px] w-[180px] md:w-[200px] flex flex-col justify-center items-center gap-4"
-              key={el.id}
-            >
-              <img
-                className="h-full rounded-md w-full object-cover"
-                src={el.image}
-                alt={`${el.name}`}
-              />
-              <div className="absolute inset-0 hover:bg-black hover:bg-opacity-60 opacity-0 hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300 rounded-md">
-                <h3 className="text-center text-white font-sans font-medium text-sm md:text-lg">
-                  {el.name}
-                </h3>
-                <p className="text-center text-gray-300 text-xs md:text-sm">
-                  {el.role}
-                </p>
-                <div className="py-2 flex items-center justify-center gap-2">
-                  <FaLinkedin className="text-blue-600 text-xl text-center bg-white rounded-full w-6 h-6 p-1 opacity-70" />
-                  <FaXTwitter className="text-black font-bold bg-white rounded-full w-6 h-6 p-1 opacity-70" />
+            <SwiperSlide key={el.id} className='group flip-card w-96 h-96'>
+              <div className='flip-card-inner'>
+                {/* Front Side (Image) */}
+                <div className='flip-card-front'>
+                  <img
+                    className='h-full w-full rounded-md object-cover'
+                    src={el.image}
+                    alt={el.name}
+                  />
+                </div>
+
+                {/* Back Side (Details) */}
+                <div className='flip-card-back bg-black/80 text-white rounded-md flex flex-col justify-center items-center'>
+                  <h3 className='text-center font-sans font-medium text-lg'>
+                    {el.name}
+                  </h3>
+                  <p className='text-center font-bold text-xs'>
+                    {el.role}
+                  </p>
+                  <div className='py-2 flex items-center justify-center gap-2'>
+                    <FaLinkedin className='text-xl' />
+                    <FaXTwitter className='' />
+                  </div>
+
+                  <p className="text-xs md:text-sm text-center px-4">{el.desc}</p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-
-      {/* <div className="flex flex-col p-16 py-20 gap-12">
-        <div className="flex flex-col gap-4 justify-center items-center">
-          <p className="text-xl font-semibold text-amber-600">Our Team</p>
-          <h2 className="text-4xl font-bold">Meet The Expert</h2>
-        </div>
-        <div className="flex flex-wrap justify-between px-2">
-          {cardsData.map((card, index) => (
-            <ContentCard
-              key={index}
-              imageSrc={card.imageSrc}
-              title={card.title}
-              content={card.content}
-            />
-          ))}
-        </div>
-        <div className="flex justify-center gap-10">
-          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
-            Collaborate with us
-          </button>
-          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 bg-clip-text text-transparent border-2 border-gradient-to-r from-indigo-700 to-indigo-500 px-6 md:px-8 py-4 dark:text-white dark:border-white overflow-hidden font-medium border border-indigo-600 rounded-full">
-            See Other Members
-          </button>
-        </div>
-      </div> */}
     </div>
   );
 };

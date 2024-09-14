@@ -18,6 +18,7 @@ import image5 from "../../assets/ITIE&Entre/teamwork0.webp";
 import image7 from "../../assets/ITIE&Entre/Biaoam.webp";
 
 const Career = () => {
+  document.title = 'Baoiam - Career'
  
 
 
