@@ -4,20 +4,25 @@ import { FaArrowRight, FaDownload } from "react-icons/fa6";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import CourseHighlights from "../Components/CourseDetails/CourseHighlights";
+import Loader from "../Components/Loader";
 
 const CourseDetailsPage = () => {
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const getCourseDetails = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.get(
         `https://api.baoiam.com/api/courses?subcategory=${id}`
       );
       // console.log(data);
       setCourseDetails(data[0]);
+      setLoading(false);
     } catch (error) {
       console.log(error.stack);
+      setLoading(true);
     }
   };
   console.log(courseDetails);
@@ -26,13 +31,17 @@ const CourseDetailsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getCourseDetails();
-    return () => {};
+    return () => { };
   }, [id]);
 
   const planRef = useRef();
   const enrollNowScroll = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <div>
@@ -94,14 +103,14 @@ const CourseDetailsPage = () => {
         </div>
       </div>
 
-            {/* Course Curriculum */}
-            <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
-                <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
-                    Course{" "}
-                    <span className="text-orange-500 border-b border-orange-500">
-                        Curriculum
-                    </span>
-                </h4>
+      {/* Course Curriculum */}
+      <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
+        <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
+          Course{" "}
+          <span className="text-orange-500 border-b border-orange-500">
+            Curriculum
+          </span>
+        </h4>
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md mt-4">
           {/* {courseDetails.curriculum?.map((c, i) => {
@@ -144,9 +153,8 @@ const CourseDetailsPage = () => {
                   return (
                     <div
                       key={i}
-                      className={`flex  flex-col  rounded-lg border ${
-                        p.name === "premium" ? "border-orange-500 relative" : ""
-                      } p-4 pt-6`}
+                      className={`flex  flex-col  rounded-lg border ${p.name === "premium" ? "border-orange-500 relative" : ""
+                        } p-4 pt-6`}
                     >
                       <div className="mb-12">
                         {p.name === "premium" ? (
@@ -199,17 +207,15 @@ const CourseDetailsPage = () => {
                           onClick={() => {
                             if (localStorage.getItem("access_token"))
                               navigate(
-                                `/checkout/school/${p.id}/${
-                                  p.name == "premium" ? "Premium" : "Plus"
+                                `/checkout/school/${p.id}/${p.name == "premium" ? "Premium" : "Plus"
                                 }`
                               );
                             else navigate("/login");
                           }}
-                          className={`block  rounded-lg ${
-                            p.name === "premium"
-                              ? "bg-orange-500 text-white"
-                              : "bg-gray-500"
-                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                          className={`block  rounded-lg ${p.name === "premium"
+                            ? "bg-orange-500 text-white"
+                            : "bg-gray-500"
+                            } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                         >
                           Enroll Now
                         </button>

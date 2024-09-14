@@ -4654,11 +4654,6 @@ export const listSlide = [
   icon: 'BsFillPuzzleFill',
 },
 {
-  id: 6,
-  title: 'Resilience & Persistence',
-  icon: 'IoTelescope',
-},
-{
   id: 7,
   title: 'Leadership',
   icon: 'FaGavel',

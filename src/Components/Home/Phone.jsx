@@ -11,7 +11,7 @@ const Phone = () => {
       </div>
       <div className="">
         <p className="text-3xl lg:text-5xl font-semibold mb-2 lg:mb-4">
-          Enroll in Course!
+          Take the Leap — Start <br /> Learning Now!
         </p>
         <p className="text-sm lg:text-base">
           Unlock your potential for success with our course.

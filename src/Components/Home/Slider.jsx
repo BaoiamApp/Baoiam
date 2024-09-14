@@ -35,7 +35,7 @@ export default function SliderSection() {
   return (
     <div className="slider-section dark:bg-[#080529] w-full py-10 relative overflow-hidden">
       <div className="text-center mb-0 lg:mb-8">
-        <h2 className="text-4xl font-bold mb-4">Explore Our Courses</h2>
+        <h2 className="text-4xl font-bold mb-4">Dive into Our Course Selection</h2>
         <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
           {categoryKeys.map((category) => (
             <button

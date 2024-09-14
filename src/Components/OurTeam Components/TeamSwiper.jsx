@@ -13,44 +13,50 @@ export const TeamSwiper = () => {
 
   return (
     <>
-      <div className='text-center text-xl md:text-4xl p-6 py-6 tracking-wide leading-4 font-bold'>
-        Our Leaders
+      <div>
+        <h1 className='text-center text-xl md:text-3xl lg:text-4xl p-6 py-6 tracking-wide leading-4 font-semibold'>
+          Visionary leaders
+        </h1>
+
+        <p className="text-xs md:text-sm lg:text-base px-8 lg:px-12 text-center">Our leadership team is committed to revolutionizing learning and equipping individuals with the skills needed to excel in today’s dynamic world. Through innovative technology and personalized solutions, we’re making education more accessible, engaging, and impactful, helping learners reach their fullest potential and confidently shape their futures.
+        </p>
       </div>
       <div className="hidden p-6  md:grid h-full w-full items-center justify-around grid-cols-3 lg:grid-cols-4 gap-6">
         {
-          swiperData.slice(0,8).map(el  => {
+          swiperData.slice(0, 8).map(el => {
             return (
               <div className="group h-96 flip-card">
-              <div className='flip-card-inner'>
-                {/* Front Side (Image) */}
-                <div className='flip-card-front mx-auto'>
-                  <img
-                    className='h-full w-80 sm:w-96 mx-auto  rounded-md object-cover'
-                    src={el.image}
-                    alt={el.name}
-                  />
-                </div>
+                <div className='flip-card-inner'>
+                  {/* Front Side (Image) */}
+                  <div className='flip-card-front mx-auto'>
+                    <img
+                      className='h-full w-80 sm:w-96 mx-auto  rounded-md object-cover'
+                      src={el.image}
+                      alt={el.name}
+                    />
+                  </div>
 
-                {/* Back Side (Details) */}
-                <div className='flip-card-back bg-black/50 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center '>
-                <img
-                    className='h-full  absolute w-80 sm:w-96 mx-auto rounded-md object-cover'
-                    src={el.image}
-                    alt={el.name}
-                  />
-                  <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-md dark:bg-black/80 bg-slate/80"></div>
-                  <h3 className='text-center z-10 font-sans font-medium text-sm md:text-lg'>
-                    {el.name}
-                  </h3>
-                  <p className='text-center z-10 text-white font-bold text-xs md:text-sm'>
-                    {el.role}
-                  </p>
-                  <div className='py-2 flex z-10 items-center justify-center gap-2'>
-                    <FaLinkedin className='text-blue-600 text-xl' />
-                    <FaXTwitter className='text-white' />
+                  {/* Back Side (Details) */}
+                  <div className='flip-card-back bg-black/50 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center '>
+                    <img
+                      className='h-full  absolute w-80 sm:w-96 mx-auto rounded-md object-cover'
+                      src={el.image}
+                      alt={el.name}
+                    />
+                    <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-md dark:bg-black/80 bg-slate/80"></div>
+                    <h3 className='text-center z-10 font-sans font-medium text-sm md:text-lg'>
+                      {el.name}
+                    </h3>
+                    <p className='text-center z-10 text-white font-bold text-xs md:text-sm'>
+                      {el.role}
+                    </p>
+                    <div className='py-2 flex z-10 items-center justify-center gap-2'>
+                      <FaLinkedin className='text-blue-600 text-xl' />
+                      <FaXTwitter className='text-white' />
+                    </div>
+                    <p className="text-xs md:text-sm text-center px-4">{el.desc}</p>
                   </div>
                 </div>
-              </div>
               </div>
             )
           })

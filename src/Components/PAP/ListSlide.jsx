@@ -42,7 +42,7 @@ const ListSlide = ({ listSlide }) => {
         <>
             {listSlide.map((l, i) => {
                 return <div key={i} className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
-                    <span className="relative z-10 flex items-center gap-4 py-4 px-4">
+                    <span className="relative text-sm tracking-tight z-10 flex items-center gap-4 p-4">
                         <span className="text-indigo-600 group-hover:text-white">{React.createElement(highlightIcons(l.icon))}</span>
                         {l.title}
                     </span>

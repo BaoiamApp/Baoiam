@@ -25,6 +25,7 @@ export const Leaderteam1 = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -32,6 +33,7 @@ export const Leaderteam1 = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -39,6 +41,7 @@ export const Leaderteam1 = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -46,6 +49,7 @@ export const Leaderteam1 = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -53,6 +57,7 @@ export const Leaderteam1 = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
 ];
 
@@ -63,6 +68,7 @@ export const Leaderteam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -70,6 +76,7 @@ export const Leaderteam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -77,6 +84,7 @@ export const Leaderteam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -84,6 +92,7 @@ export const Leaderteam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -91,6 +100,7 @@ export const Leaderteam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
 ];
 
@@ -101,6 +111,7 @@ export const AdverseTeam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -108,6 +119,7 @@ export const AdverseTeam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -115,6 +127,7 @@ export const AdverseTeam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -122,6 +135,7 @@ export const AdverseTeam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
@@ -129,6 +143,7 @@ export const AdverseTeam = [
     name: "John William",
     role: "Founder & CEO",
     linkedin: "",
+    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
 ];
 

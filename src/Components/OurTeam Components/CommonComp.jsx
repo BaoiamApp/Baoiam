@@ -9,14 +9,19 @@ import { Keyboard, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const CommonComp = ({ heading, dataArray = [] }) => {
+const CommonComp = ({ heading, desc, dataArray = [] }) => {
     return (
-        <div className='grid md:grid-cols-4 grid-col-1 p-2 mx-auto md:items-center justify-center md:flex-row  gap-2'>
+        <div className='flex flex-col p-2 mx-auto md:items-center justify-center lg:flex-row gap-2 my-4 w-full'>
 
-            <h1 className='text-center col-span-1 text-lg lg:text-2xl px-4 py-2 tracking-wide font-bold '>
-                {heading}
-            </h1>
-            <div className=' md:col-span-3 col-span-1'>
+            <div className='w-full lg:w-[30%]'>
+                <h1 className='text-center text-lg md:text-2xl lg:text-3xl px-4 py-2 tracking-wide font-bold '>
+                    {heading}
+                </h1>
+
+                <p className='text-center text-xs lg:text-sm px-2'>{desc}</p>
+            </div>
+
+            <div className='w-full lg:w-[70%]'>
                 <div>
                     <Swiper
                         keyboard={{
@@ -30,7 +35,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
                             320: {
                                 slidesPerView: 1,
                             },
-                            560 :{
+                            560: {
                                 slidesPerView: 2.5,
                             },
                             768: {
@@ -49,7 +54,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
                                         {/* Front Side (Image) */}
                                         <div className='flip-card-front max-w-80 mx-auto'>
                                             <img
-                                                className='h-full w-72 mx-auto  rounded-md object-cover' 
+                                                className='h-full w-72 mx-auto  rounded-md object-cover'
                                                 src={el.image}
                                                 alt={el.name}
                                             />
@@ -67,6 +72,7 @@ const CommonComp = ({ heading, dataArray = [] }) => {
                                                 <FaLinkedin className='text-blue-600 text-xl' />
                                                 <FaXTwitter className='text-white' />
                                             </div>
+                                            <p className="text-xs md:text-sm text-center px-4">{el.desc}</p>
                                         </div>
                                     </div>
                                 </SwiperSlide>

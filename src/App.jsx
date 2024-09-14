@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Home/Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -31,14 +31,28 @@ import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard"
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
+import Loader from "./Components/Loader";
+import ChatBot from "./Components/Chatbot/ChatBot";
 
 const App = () => {
   const [dark, setDark] = useState(false);
 
   const theme = () => {
-    setDark(old=>!old);
+    setDark(old => !old);
     document.body.classList.toggle("dark");
   };
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <div className="dark:bg-[#080529] w-full h-full dark:text-white ">
@@ -114,6 +128,9 @@ const App = () => {
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
       </Routes>
+      
+      <ChatBot />
+
       <Footer dark={dark} />
     </div>
   );

@@ -39,7 +39,7 @@ const Courses = () => {
   return (
     <div className="px-10 dark:bg-[#080529] py-8">
       <div className="text-center mt-14 mb-10 md:mb-20">
-        <h1 className="text-3xl sm:text-4xl dark:text-white  font-bold text-gray-900 mb-2">Our Key Metrics</h1>
+        <h1 className="text-3xl sm:text-4xl dark:text-white  font-bold text-gray-900 mb-2">What Sets Us Apart</h1>
         <p className="text-base dark:text-gray-300 sm:text-lg text-gray-600">Discover the milestones and achievements that set us apart in the industry.</p>
       </div>
 

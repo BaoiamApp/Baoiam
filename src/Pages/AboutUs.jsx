@@ -68,15 +68,14 @@ const AboutUs = () => {
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
               <h1 className="text-amber-600 font-medium">
-                We are an EdTech Organization ~
+                Transforming education with ed-tech
               </h1>
             </div>
             <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
-              Think Big. We make IT, possible!
+              Reaching higher, while breaking barriers is our aim
             </h2>
             <p className="font-medium">
-              We place you at the centre of information networks to advance your
-              strategic interests.
+              Baoiam is here to advise you on advancing your goals with Strategic Information Needs.
             </p>
             <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
@@ -111,17 +110,13 @@ const AboutUs = () => {
 
         <div className="flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-            Students Success Is Our Focus
+            We're committed to your Success
           </h2>
           <p className="text-base sm:text-lg">
-            Unlock your potential with our expertly designed courses, tailored
-            to provide you with the skills and knowledge needed for success.
-            From practical strategies to in-depth expertise, our courses are
-            crafted to empower your growth and help you achieve your goals with
-            confidence.
+            Uncover your expertise with our proficiently designed courses, crafted to provide you with every skill and knowledge you need to reach the top of the world. From theoretical insights to hands-on practical experience, our courses cater to every student, empowering your growth and backing you to achieve your goals with confidence.
           </p>
           <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
-            Collaborate with us
+            Get to Know Us
           </button>
         </div>
       </div>
@@ -134,13 +129,10 @@ const AboutUs = () => {
             About Us
           </h3>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-            The Easiest Way to Manage Personal Finances
+            Baoiam—a powerhouse of knowledge, fueling success
           </h2>
           <p className="text-base sm:text-lg text-slate-600">
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast of the Semantics, a large
-            language ocean.
+            At Boaiam, we believe in empowering learners in every dynamic situation. With highly in-demand courses, we’re shaping careers through expertly crafted programs that seamlessly blend theory with hands-on experience. we’re here to sharpen your skills from the ground up. Our dedicated team supports you at every stage, ensuring you can rely on us for guidance and assistance whenever needed.
           </p>
           <div className="flex gap-8">
             <div className="flex gap-4 items-center">

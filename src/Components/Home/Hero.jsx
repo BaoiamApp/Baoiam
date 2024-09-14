@@ -14,13 +14,14 @@ const Hero = () => {
       {/* Left Side: Heading and Content */}
       <div className="w-full flex gap-y-1 pb-10 md:pb-0 flex-col lg:w-1/2 text-center md:text-left">
         <h1 className="text-3xl lg:text-5xl font-bold">
-          Boost your<span className="text-indigo-500"> Skillset</span>
+          Boost Your<span className="text-indigo-500"> Skills</span>,
         </h1>
         <h1 className="text-3xl lg:text-5xl font-bold">
-          Accelerate your <span className="text-orange-500">Career.</span>
+          Elevate Your <span className="text-orange-500">Career </span>
+          to New Heights
         </h1>
         <p className="mt-4 dark:text-white text-black lg:text-lg">
-          Gain a competitive edge with exclusive access to top CEOs and industry leaders. Elevate your skills and unlock new opportunities with our expert-led courses.
+          Gain an edge with exclusive insights from top CEOs and industry leaders. Unlock new opportunities with expert-led courses and take your career to the next level.
         </p>
         <div className="mt-8 flex justify-center md:justify-normal lg:justify-start space-x-4">
           <button

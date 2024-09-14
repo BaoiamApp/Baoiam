@@ -96,10 +96,6 @@ const PAP = () => {
       image: Som,
     },
   ];
-  
-
-  
-
 
   return (
     <div className="dark:bg-black dark:text-white overflow-hidden">
@@ -166,26 +162,6 @@ const PAP = () => {
           startup-focused business education is born.
         </p>
 
-        {/* <div className="px-8">
-          <div className="flex flex-col bg-white shadow-xl px-8 pb-8 border-t-4 rounded-xl border-indigo-600 w-[30rem]">
-            <div className="size-16 relative bottom-8">
-              <img
-                className="w-full h-full rounded-full object-cover"
-                src={Chitranshu}
-                alt="image"
-              />
-            </div>
-            <div className="text-left">
-              <h2 className="text-xl font-semibold mb-1">
-                Chitranshu Kankar
-              </h2>
-              <p className="text-gray-400">Sales</p>
-
-              <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem cum error atque odit sit voluptates, laboriosam nostrum ipsa dicta qui distinctio id aliquam velit.</p>
-            </div>
-          </div>
-        </div> */}
-
         <div className="lg:px-20 px-10  flex justify-center lg:mx-10 ">
           <Swiper
             modules={[Autoplay]}
@@ -212,7 +188,7 @@ const PAP = () => {
             }}
           >
             {contentData.map((item, index) => (
-              <SwiperSlide key={index} className="flex justify-center pt-12">
+              <SwiperSlide key={index} className="flex justify-center py-12">
                 <div className="flex flex-col bg-white shadow-xl px-8 pb-0 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
                   <div className="size-16  relative bottom-8 ">
                     <img
@@ -232,49 +208,6 @@ const PAP = () => {
           </Swiper>
         </div>
 
-        {/* <div className="flex p-4 pb-12 justify-evenly items-center flex-wrap gap-6">
-          <div className=" rounded-xl hover:shadow-lg max-w-xs sm:max-w-[38%] lg:max-w-[23%] w-full">
-            <img
-              className="mt-4 mb-2 w-full object-cover"
-              src={Tina}
-              alt="image"
-            />
-            <h2 className="text-transparent bg-clip-text bg-amber-500 font-bold mb-2 text-center">
-              Tina Chahelwani
-            </h2>
-            <p className="mb-4 text-gray-500 text-lg text-center">
-              Business Analytics
-            </p>
-          </div>
-
-          <div className=" rounded-xl hover:shadow-lg max-w-xs sm:max-w-[38%] lg:max-w-[23%] w-full">
-            <img
-              className="mt-4 mb-2 w-full object-cover"
-              src={Som}
-              alt="image"
-            />
-            <h2 className="text-transparent bg-clip-text bg-amber-500 font-bold mb-2 text-center">
-              Som Thirtha
-            </h2>
-            <p className="mb-4 text-gray-500 text-lg text-center">
-              Product Management
-            </p>
-          </div>
-
-          <div className=" rounded-xl hover:shadow-lg max-w-xs sm:max-w-[38%] lg:max-w-[23%] w-full">
-            <img
-              className="mt-4 mb-2 w-full object-cover"
-              src={Aditya}
-              alt="image"
-            />
-            <h2 className="text-transparent bg-clip-text bg-amber-500 font-bold mb-2 text-center">
-              Aditya Vishkarma
-            </h2>
-            <p className="mb-4 text-gray-500 text-lg text-center">
-              User Experience
-            </p>
-          </div>
-        </div> */}
       </div>
 
       {/* section 3 */}
@@ -290,133 +223,8 @@ const PAP = () => {
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-3 gap-x-8 text-left text-[#031864] font-semibold  ">
-          <ul>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4 py-1 px-2">
-                <IoTelescope
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Visionary Thinking
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <MdPalette
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Creativity & Innovation
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <FaShield
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Risk Management
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <FaTree
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Resilience & Persistence
-              </span>
-            </li>
-          </ul>
-          <ul>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <BsFillPuzzleFill
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Adaptability
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <FaGavel
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Leadership
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <BsGraphUpArrow
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Financial Management
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-16 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <BsPeopleFill
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Networking & Relationship Building
-              </span>
-            </li>
-          </ul>
-          <ul>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-16 lg:w-[350px] flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <BsMegaphoneFill
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Communication & Salesmanship
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-16 lg:w-[350px] flex  items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <FaGear
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Problem Solving
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] flex  items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2  ">
-                <BsClipboardCheckFill
-                  className="text-indigo-600 group-hover:text-white "
-                  size={22}
-                />{" "}
-                Product Management & Interpersonal Skills
-              </span>
-            </li>
-            <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full text-sm h-14 lg:w-[350px] w-full flex items-center">
-              {" "}
-              <span className="relative z-10 flex items-center gap-4  px-2">
-                <BsRobot
-                  className="text-indigo-600 group-hover:text-white"
-                  size={22}
-                />{" "}
-                Leveraging AI & technology for automation
-              </span>
-            </li>
-          </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 px-20 lg:grid-cols-3 gap-x-8 text-left text-[#031864] font-semibold  ">
+          <ListSlide listSlide={listSlide} />
         </div>
       </div>
 
