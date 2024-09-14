@@ -121,7 +121,7 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden xl:flex items-center ${
+          className={`hidden lg:flex items-center ${
             isDark ? "font-semibold" : "font-medium"
           } justify-between `}
         >
