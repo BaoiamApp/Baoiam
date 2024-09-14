@@ -98,7 +98,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                                             setSchoolCate(old => !old);
                                                         }}
                                                         key={i}
-                                                        to={`/course/${course.name}`}
+                                                        to={`/course/${course.id}`}
                                                         className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                                                     >
                                                         {course.name}
@@ -132,7 +132,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                                             setCollegeCate(old => !old);
                                                         }}
                                                         key={i}
-                                                        to={`/course/${course.name}`}
+                                                        to={`/course/${course.name}/${course.id}`}
                                                         className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                                                     >
                                                         {course.name}
@@ -166,7 +166,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                                             setOtherCourses(old => !old);
                                                         }}
                                                         key={i}
-                                                        to={`/course/${course.name}`}
+                                                        to={`/course/${course.id}`}
                                                         className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                                                     >
                                                         {course.name}
