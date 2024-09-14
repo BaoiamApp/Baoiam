@@ -35,7 +35,7 @@ const Checkout = () => {
     if (!localStorage.getItem("access_token")) navigate("/login");
     // alert('id is:',id , ' and plan is:',plan)
     else {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
       console.log(course, id, plan);
       if (course == "school") {
         const course = School[0].subCate.filter((item) => {

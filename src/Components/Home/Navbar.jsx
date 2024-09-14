@@ -17,9 +17,9 @@ import { useDispatch } from "react-redux";
 import { deleteUserData1 } from "../../redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
 import Logo from "./Logo";
+import { removeCourse } from "../../redux/course/courseSlice";
 
 const Navbar = ({ theme }) => {
-
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
@@ -100,27 +100,30 @@ const Navbar = ({ theme }) => {
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
 
-
-
-
   return (
     <>
-    {showmenu && <div className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 lg:hidden" onClick={()=>setShowmenu(false)}></div>}
+      {showmenu && (
+        <div
+          className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 lg:hidden"
+          onClick={() => setShowmenu(false)}
+        ></div>
+      )}
       <div
-        className={`flex z-[90] items-center justify-between px-4 py-2 w-full sticky top-0 ${isTransparent
-          ? "bg-white dark:bg-[#080529]"
-          : "bg-white/70 backdrop-blur dark:bg-black/30 "
-          }`}
+        className={`flex z-[90] items-center justify-between px-4 py-2 w-full sticky top-0 ${
+          isTransparent
+            ? "bg-white dark:bg-[#080529]"
+            : "bg-white/70 backdrop-blur dark:bg-black/30 "
+        }`}
       >
-
         {/* Logo */}
 
-        <Logo isDark={isDark}/>
+        <Logo isDark={isDark} />
 
         {/* NavLinks */}
         <div
-          className={`hidden xl:flex items-center ${isDark ? "font-semibold" : "font-medium"
-            } justify-between `}
+          className={`hidden xl:flex items-center ${
+            isDark ? "font-semibold" : "font-medium"
+          } justify-between `}
         >
           <Link
             to={"/"}
@@ -295,97 +298,103 @@ const Navbar = ({ theme }) => {
 
         {/* Last */}
         <div>
-        <div className="flex items-center gap-4 text-black dark:text-white">
-          <div className="flex items-center gap-2">
-          
-            <SearchBox />
-           
-            <div ref={userhandleDropDownRef}>
-              <FaRegUser
-                onClick={() => setUserDrop(!userDrop)}
-                size={18}
-                className="z-10 relative cursor-pointer"
-              />
-            </div>
+          <div className="flex items-center gap-4 text-black dark:text-white">
+            <div className="flex items-center gap-2">
+              <SearchBox />
 
-            {userDrop && (
-              <div
-                ref={userDropDownRef}
-                className="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600"
-              >
-                {/* <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <div ref={userhandleDropDownRef}>
+                <FaRegUser
+                  onClick={() => setUserDrop(!userDrop)}
+                  size={18}
+                  className="z-10 relative cursor-pointer"
+                />
+              </div>
+
+              {userDrop && (
+                <div
+                  ref={userDropDownRef}
+                  className="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600"
+                >
+                  {/* <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                   <div>Bonnie Green</div>
                   <div className="font-medium truncate">name@flowbite.com</div>
                 </div> */}
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                  {!localStorage.getItem("access_token") ? (
-                    <Link
-                      to={"/login"}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      <NavLink to="/login">Login</NavLink>
-                    </Link>
-                  ) : (
-                    <Link
-                      to={"/profile"}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      <NavLink to="/profile">Profile</NavLink>
-                    </Link>
-                  )}
-                  {!localStorage.getItem("access_token") ? (
-                    <Link
-                      to={"/signup"}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      <NavLink to="/signup">Sign Up</NavLink>
-                    </Link>
-                  ) : (
-                    <p
-                      onClick={() => {
-                        localStorage.removeItem("access_token");
-                        localStorage.removeItem("userInfo");
-                        navigate("/login");
-                        dispatch(deleteUserData1());
-                      }}
-                      className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Logout
-                    </p>
-                  )}
-                </ul>
-                {/* <div className="py-2">
+                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                    {!localStorage.getItem("access_token") ? (
+                      <Link
+                        to={"/login"}
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        <NavLink to="/login">Login</NavLink>
+                      </Link>
+                    ) : (
+                      <Link
+                        to={"/profile"}
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        <NavLink to="/profile">Profile</NavLink>
+                      </Link>
+                    )}
+                    {!localStorage.getItem("access_token") ? (
+                      <Link
+                        to={"/signup"}
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        <NavLink to="/signup">Sign Up</NavLink>
+                      </Link>
+                    ) : (
+                      <p
+                        onClick={() => {
+                          localStorage.removeItem("access_token");
+                          localStorage.removeItem("userInfo");
+                          dispatch(removeCourse());
+                          navigate("/login");
+                          dispatch(deleteUserData1());
+                        }}
+                        className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Logout
+                      </p>
+                    )}
+                  </ul>
+                  {/* <div className="py-2">
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                 </div> */}
-              </div>
-            )}
-          </div>
+                </div>
+              )}
+            </div>
 
-          <span
-            onClick={darkTheme}
-            className="text-xl hidden lg:block cursor-pointer"
-          >
-            {isDark ? <BsSun /> : <BsMoonStars />}
-          </span>
-          <Link to={"/gcep"} className="relative group">
-            <button
-              type="button"
-              class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center"
+            <span
+              onClick={darkTheme}
+              className="text-xl hidden lg:block cursor-pointer"
             >
-              GCEP
-            </button>
-          </Link>
-          <span
-            onClick={() => setShowmenu(old => !old)}
-            className="block xl:hidden"
-          >
-            <RiMenu3Line size={22} />
-          </span>
-        </div>
-        <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} isDark={isDark} setIsDark={darkTheme}/>
+              {isDark ? <BsSun /> : <BsMoonStars />}
+            </span>
+            <Link to={"/gcep"} className="relative group">
+              <button
+                type="button"
+                class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center"
+              >
+                GCEP
+              </button>
+            </Link>
+            <span
+              onClick={() => setShowmenu((old) => !old)}
+              className="block xl:hidden"
+            >
+              <RiMenu3Line size={22} />
+            </span>
+          </div>
+          <MobNavbar
+            setShowmenu={setShowmenu}
+            showmenu={showmenu}
+            courses={courses}
+            isDark={isDark}
+            setIsDark={darkTheme}
+          />
         </div>
       </div>
-      </>
+    </>
   );
 };
 

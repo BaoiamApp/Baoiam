@@ -6,11 +6,12 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 const apiUrl = import.meta.env.VITE_API_URL;
 const domain = import.meta.env.VITE_DOMAIN_URL;
 
 const Login = () => {
-  document.title = 'Baoiam - Login'
+  document.title = "Baoiam - Login";
   axios.defaults.withCredentials = true;
   const navigate = useNavigate();
   const [email, setEmail] = useState("");

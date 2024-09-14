@@ -1,13 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRight, FaDownload } from "react-icons/fa6";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import CourseHighlights from "../Components/CourseDetails/CourseHighlights";
-
+import file from "./abc.txt";
+import { useSelector } from "react-redux";
 const CourseDetailsPage = () => {
   const { id } = useParams();
+  const location = useLocation();
   const [courseDetails, setCourseDetails] = useState({});
+  const enrolledCourses = useSelector((state) => state.course.data);
+  console.log("enrolled courses:", enrolledCourses);
   const navigate = useNavigate();
   const getCourseDetails = async () => {
     try {
@@ -24,10 +28,10 @@ const CourseDetailsPage = () => {
   document.title = `Baoiam - ${courseDetails.title}`;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     getCourseDetails();
-    return () => {};
-  }, [id]);
+    // return () => {};
+  }, [location.pathname]);
 
   const planRef = useRef();
   const enrollNowScroll = () => {
@@ -54,11 +58,15 @@ const CourseDetailsPage = () => {
               Enroll Now{" "}
               <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
             </button>
-            <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
+            <a
+              className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
+              href={file}
+              download={true}
+            >
               Download Brochure{" "}
               {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
               <FaDownload size={18} />
-            </button>
+            </a>
           </div>
         </div>
 

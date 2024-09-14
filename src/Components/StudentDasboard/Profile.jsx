@@ -15,6 +15,7 @@ import HeroDp from "../../assets/Images/dp.jpg";
 import { SiLeetcode } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { FadeLoader } from "react-spinners";
 // import { setProfile } from "../../redux/user/userSlice.js";
 
 function Profile({ userInfo }) {
@@ -51,7 +52,7 @@ function Profile({ userInfo }) {
     }
   };
 
-  return (
+  return userInfo?.first_name ? (
     <div className="relative bg-slate-100 dark:bg-black dark:text-white dark:border dark:border-white p-4 py-8 md:p-6 rounded-lg shadow-md">
       {/* {user.profile} */}
       <div className="flex flex-col lg:flex-row items-center gap-4 xl:gap-8 xl:py-4">
@@ -132,10 +133,14 @@ function Profile({ userInfo }) {
               {/* Optional: Location on right side if needed */}
               <FiMapPin className="mr-2" />
               <p>{userInfo.location}</p>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  ) : (
+    <div className="flex justify-center mt-5">
+      <FadeLoader />
     </div>
   );
 }

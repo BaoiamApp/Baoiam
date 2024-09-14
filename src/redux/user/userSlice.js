@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  profile: null,
+  profile: JSON.parse(localStorage.getItem("userInfo")) || null,
 };
 const userSliceReducer = createSlice({
   name: "user",
   initialState,
   reducers: {
     deleteUserData1(state) {
-      state.profile = null;
+      return null;
     },
-    setProfile1(state, action) {
-      state.profile = action.payload;
+    setProfile1(state, action) {;
+      return action.payload;
     },
   },
 });
