@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchEnrolledCourses } from '../../Redux/slices/courseSlice';
+import { fetchEnrolledCourses } from '../../redux/slices/courseSlice';
 
 
 // const courses = [
