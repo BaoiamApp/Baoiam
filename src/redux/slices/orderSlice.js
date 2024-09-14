@@ -12,7 +12,6 @@ export const fetchOrders = createAsyncThunk('orders/fetchOrders', async (accessT
     return response.data;
   });
   
-
 const initialState = {
   orders: [],
   status: 'idle',
@@ -39,4 +38,4 @@ const orderSlice = createSlice({
   },
 });
 
-export default orderSlice.reducer;
+export const orderReducer = orderSlice.reducer;
