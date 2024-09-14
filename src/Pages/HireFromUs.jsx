@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa';
 
 const HireFromUs = () => {
+    document.title = 'Baoiam - Hire from us'
   return (
     <div className="space-y-16">
 

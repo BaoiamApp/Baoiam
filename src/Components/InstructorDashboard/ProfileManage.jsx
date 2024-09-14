@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const ProfileManage = () => {
   return (
-    <div className="text-xl">
-      Profile Manage Content
-    </div>
-  );
-};
+    <div>ProfileManage</div>
+  )
+}
 
-export default ProfileManage;
+export default ProfileManage

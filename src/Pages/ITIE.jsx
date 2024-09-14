@@ -155,8 +155,8 @@ const testimonials = [
 ];
 
 
-
 const ITIE = () => {
+  document.title = 'Baoiam - ITIE'
   const navigate = useNavigate();
   return (
     <div>

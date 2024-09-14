@@ -5,7 +5,7 @@ const Phone = () => {
   const [inputValue, setInputValue] = useState("Email");
 
   return (
-    <div className="flex bg-amber-50 dark:bg-black dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
+    <div className="flex bg-amber-50 dark:bg-[#080529] dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
       <div className="w-40 md:w-80 h-full lg:h-96">
         <img src={App_phone} className="w-full h-full" alt="" />
       </div>
@@ -49,7 +49,7 @@ const Phone = () => {
           <div className="flex items-center flex-col md:flex-row gap-4">
             {inputValue === "Email" ? (
               <input
-                className="outline-none rounded-full border border-black px-2 py-1 lg:px-4 lg:py-2 w-60"
+                className="outline-none  border border-black px-2 py-1 lg:px-4 lg:py-2 w-60"
                 required
                 type="email"
                 placeholder="Email"
@@ -67,7 +67,7 @@ const Phone = () => {
 
             <button
               type="submit"
-              className="text-sm px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 text-white rounded-full"
+              className="text-sm px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 text-white"
             >
               Join now
             </button>

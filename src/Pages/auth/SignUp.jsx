@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const SignUp = () => {
-
+document.title = 'Baoiam - Sign Up'
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
@@ -89,7 +89,7 @@ const SignUp = () => {
 
                             <div className="w-full mb-2 lg:mb-0">
                                 <button type="button" className="group w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300">
-                                    <FaGoogle size={20} className="group-hover:text-blue-600" /> Sign Up with Google
+                                    <FaGoogle size={20} className="group-hover:text-blue-600" onClick={()=>{}}/> Sign Up with Google
                                 </button>
                             </div>
 
