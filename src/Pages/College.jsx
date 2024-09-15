@@ -11,6 +11,7 @@ import cards from "../Components/School/cards.json";
 import Testimonials from "../Components/College/Testimonials";
 import ExploreSubjects from "../Components/College/ExploreSubjects";
 import { CollegeCourseData } from "../Data";
+import axios from "axios";
 
 function College() {
   document.title = 'Baoiam - College'
@@ -24,8 +25,9 @@ function College() {
     className:
       "mySwiper w-full h-full sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144",
   };
+  const [isLoading,setIsLoading]=useState(true);
   const params = useParams();
-  const allCourses = CollegeCourseData[0].subCate;
+  const [allCourses,setAllCourses] =useState([]);
   const [filteredCourses, setFilteredCourses] = useState([...allCourses]);
   const [duration, setDuration] = useState("");
   const [selectedCategory, setSelectedCategory] = useState([]);
@@ -42,10 +44,28 @@ function College() {
     return coursePrice !== "Free";
   };
 
+
+  const getData = async ()=>{
+    setIsLoading(true);
+    try {
+      const response =await axios.get("https://api.baoiam.com/api/courses?category=2");
+      console.log(response.data);
+      setAllCourses(response.data);
+    } catch (error) {
+      console.log("Some Error Occured:",error)
+    }finally{
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(()=>{
+    getData();
+  },[])
+
   useEffect(() => {
     const applyFilters = () => {
       let updatedCourses = allCourses;
-
+      
       if (selectedCategory.length > 0) {
         updatedCourses = updatedCourses.filter((course) =>
           selectedCategory.includes(course.category)
@@ -159,15 +179,15 @@ function College() {
                 courses={filteredCourses}
               />
             </div>
-            {filteredCourses.length ? (
-              <div className="w-11/12 college-card-container grid grid-cols-[repeat(auto-fill,_minmax(252px,1fr))] mx-auto gap-4">
+            {!isLoading?(
+              filteredCourses.length?(<div className="w-11/12 college-card-container grid grid-cols-[repeat(auto-fill,_minmax(252px,1fr))] mx-auto gap-4">
                 {filteredCourses.map((course) => {
                   return <CourseCard course={course} />;
                 })}
-              </div>
+              </div>):<div>NoDataFound!!</div>
             ) : (
               <div className="text-center mx-2 w-full text-3xl flex items-center font-bold py-12 justify-center">
-                No data found!
+                Loading...
               </div>
             )}
           </div>
