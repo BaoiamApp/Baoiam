@@ -4,7 +4,7 @@ import { FaBook } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
-import { addCourse } from "../../redux/course/courseSlice";
+import { addCourse } from "../../redux/slices/courseSlice";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 

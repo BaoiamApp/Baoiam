@@ -4,7 +4,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { AiFillStar } from "react-icons/ai"; // Import star icon
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addRecommendedCourse } from "../../redux/recommendedCourse/recommendedCourseSlice";
+import { addRecommendedCourse } from "../../redux/slices/recommendedCourseSlice";
 import { FadeLoader } from "react-spinners";
 const apiUrl = import.meta.env.VITE_API_URL;
 
