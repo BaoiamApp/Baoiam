@@ -4,6 +4,7 @@ import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
 import HeroCard from "../Components/AboutUs/HeroCard";
 import ProgressBar from "../Components/AboutUs/ProgressBar";
+import OurTeam from "./OurTeamSlide"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +13,7 @@ import { swiperData } from "../Components/OurTeam Components/teamData";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 // import required modules
+import OurTeamSlide from "./OurTeamSlide"
 import {
   Autoplay,
   Pagination,
@@ -47,6 +49,7 @@ import Origin from "../Components/AboutUs/Origin";
 const AboutUs = () => {
   document.title = "Baoiam - About Us";
   const [data, setData] = useState(swiperData);
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
