@@ -31,8 +31,12 @@ import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard"
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
+
+import Refund from "./Components/Refund/Refundpolicy"
+
 import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
+
 
 
 const App = () => {
@@ -112,9 +116,15 @@ const App = () => {
         <Route path="/instructor" element={<InstructorCard />} />
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
+
+
+        {/*Refund Policy */}
+        <Route path="/refund" element={<Refund />} />
+
         <Route path='/ReferAndEarn' element={<ReferAndEarn/>} />
         {/* Book a demo */}
         <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
+
 
       </Routes>
       <Footer dark={dark} />
