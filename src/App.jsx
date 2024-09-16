@@ -31,7 +31,9 @@ import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard"
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
+import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
+
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -103,18 +105,14 @@ const App = () => {
         <Route path="/activate/:uid/:token" element={<ActivateEmail />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
-
         {/* Help */}
         <Route path="/help-center" element={<HelpCenter />} />
-
         {/* Hire */}
         <Route path="/hire" element={<HireFromUs />} />
-
         <Route path="/instructor" element={<InstructorCard />} />
-
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
-
+        <Route path='/ReferAndEarn' element={<ReferAndEarn/>} />
         {/* Book a demo */}
         <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
 
