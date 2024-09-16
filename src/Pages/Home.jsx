@@ -1,8 +1,8 @@
-import React from 'react'
-import Courses from '../Components/Home/Courses'
-import Swiper from '../Components/Home/Swiper'
-import Hero from '../Components/Home/Hero'
-import Categories from '../Components/Home/Categories'
+import React from "react";
+import Courses from "../Components/Home/Courses";
+import Swiper from "../Components/Home/Swiper";
+import Hero from "../Components/Home/Hero";
+import Categories from "../Components/Home/Categories";
 import JoinNow from "../Components/Home/JoinNow";
 import Partners from '../Components/Home/Partners'
 import Protocol from '../Components/Home/Protocol'
@@ -22,7 +22,7 @@ const Home = () => {
             <div className='mx-auto w-full md:w-[85%]'>
                 <img className="w-full h-full" src={SuccessLight} alt="" />
             </div>
-            <Categories />
+//             <Categories />
             <Partners />
             <Protocol />
             <JoinNow />
@@ -33,4 +33,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;
