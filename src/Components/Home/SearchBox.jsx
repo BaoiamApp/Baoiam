@@ -38,7 +38,7 @@ const SearchBox = () => {
             {/* Desktop and larger screen behavior: Expand inline search */}
             {!isMobile && (
                 <div className=''>
-                    <div className={`absolute right-0 -top-3 flex items-center justify-center  rounded-full transition-all duration-500 ease-in-out ${isExpanded ? '-top-5 w-60 border border-gray-400' : 'w-10'} bg-transparent `}>
+                    <div className={`absolute right-0 -top-3 flex items-center justify-center  rounded-full transition-all duration-500 ease-in-out ${isExpanded ? '-top-5 w-52 border border-gray-400' : 'w-10'} bg-transparent `}>
                         <RiSearch2Line 
                             onClick={() => setIsExpanded(true)} 
                             size={22} 
@@ -51,7 +51,7 @@ const SearchBox = () => {
                                 ref={inputRef}
                                 type="text"
                                 placeholder='Search courses'
-                                className='bg-transparent z-30 py-2 pl-2 pr-8 focus:outline-none w-full transition-all duration-500'
+                                className='bg-transparent w-40 mr-8 z-30 py-2 focus:outline-none transition-all duration-500'
                                 value={searchQuery}
                                 onChange={handleSearchChange}
                             />

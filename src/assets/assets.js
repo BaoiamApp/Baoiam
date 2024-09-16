@@ -32,3 +32,7 @@ export {default as Apple} from './footer-desktop-appstore.svg'
 
 // Google Play Store
 export {default as Google_play} from './footer-desktop-playstore.svg'
+
+// Home
+export {default as SuccessDark} from './Home/SuccessDark.png'
+export {default as SuccessLight} from './Home/SuccessLight.png'
