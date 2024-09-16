@@ -88,7 +88,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                         {schoolCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {schoolCate && (
-                                        <div className=" w-72 right-4 md:right-80 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
+                                        <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
+                                            <Link to={'/courses/school'} className='font-semibold px-2 text-black cursor-pointer rounded ' >School</Link>
                                             {courses[0]?.subcategories.map((course, i) => {
                                                 return (
                                                     <Link
@@ -98,7 +99,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                                             setSchoolCate(old => !old);
                                                         }}
                                                         key={i}
-                                                        to={`/course/${course.name}`}
+                                                        to={`/course/${course.id}`}
                                                         className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                                                     >
                                                         {course.name}
@@ -122,7 +123,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                         {collegeCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {collegeCate && (
-                                        <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                                        <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                                            <Link to={'/courses/college'} className='font-semibold px-2 text-black cursor-pointer rounded ' >College</Link>
                                             {courses[1]?.subcategories.map((course, i) => {
                                                 return (
                                                     <Link
@@ -132,7 +134,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                                             setCollegeCate(old => !old);
                                                         }}
                                                         key={i}
-                                                        to={`/course/${course.name}`}
+                                                        to={`/course/${course.name}/${course.id}`}
                                                         className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                                                     >
                                                         {course.name}
@@ -153,10 +155,11 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                             <IoBookSharp />
                                             <h1>Others</h1>
                                         </div>
-                                        {collegeCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
+                                        {otherCourses ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
                                     </li>
                                     {otherCourses && (
-                                        <div className="w-72 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 md:w-96 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                                        <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                                            <Link to={'/courses/other'} className='font-semibold px-2 text-black cursor-pointer rounded ' >Others</Link>
                                             {courses[2]?.subcategories.map((course, i) => {
                                                 return (
                                                     <Link
@@ -166,7 +169,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                                             setOtherCourses(old => !old);
                                                         }}
                                                         key={i}
-                                                        to={`/course/${course.name}`}
+                                                        to={`/course/${course.id}`}
                                                         className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                                                     >
                                                         {course.name}

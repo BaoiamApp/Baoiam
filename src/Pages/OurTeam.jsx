@@ -9,8 +9,6 @@ export const OurTeam = () => {
   document.title = 'Baoiam - Our Team'
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    return () => { };
   }, []);
 
   return (

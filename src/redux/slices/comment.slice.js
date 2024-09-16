@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+// local
 const initialState = {
     comment :[]
 }
