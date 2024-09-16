@@ -31,6 +31,7 @@ import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard"
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
+import Refund from "./Components/Refund/Refundpolicy"
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -113,6 +114,9 @@ const App = () => {
 
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
+
+        {/*Refund Policy */}
+        <Route path="/refund" element={<Refund />} />
       </Routes>
       <Footer dark={dark} />
     </div>
