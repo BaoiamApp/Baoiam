@@ -11,6 +11,8 @@ import uiux from '../assets/ITIE&Entre/ITIE/uiux.png'
 import gaphicsdesigning from '../assets/ITIE&Entre/ITIE/gaphicsdesigning.png'
 import businesscomm from '../assets/ITIE&Entre/ITIE/businesscomm.png'
 import marketing from '../assets/ITIE&Entre/ITIE/marketing.png'
+import CourseHighlights from "../Components/CourseDetails/CourseHighlights";
+import CourseCard from "../Components/CourseDetails/CourseCard";
 
 
 import { PiGraduationCapFill } from "react-icons/pi";
@@ -194,16 +196,15 @@ const ITIE = () => {
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
 
           <div className="w-full md:w-1/2  justify-center md:justify-start md:mr-4 hidden md:block">
-            <img src={intern1} alt="Person" className="rounded-full w-2/3 md:w-4/5 md:ml-20 border-b-8 border-r-8 border-indigo-600 shadow-2xl" />
+            <img src={intern1} alt="Person" 
+            className="rounded-tl-2xl rounded-br-2xl w-2/3 md:w-4/5 md:ml-20 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]" />
           </div>
 
           <div className="w-full md:w-1/2 p-4">
-            <p className="text-gray-600 mb-4 text-lg md:text-xl text-justify mx-4 md:mx-0 ">
+            <p className="text-gray-600 mb-4 text-lg md:text-lg text-justify mx-4 md:mx-0 ">
               ITIE is a program that has been formulated by our team and leading experts for young enthusiasts to build a strong and powerful career path. Through this program, not only do the interns get the chance to learn and hone their skills, but also to monetise their skill by cascading the knowledge they have gained so far into others. Hence, after learning a skill, they will be tested on it and if they clear the tests, they get the opportunity to teach a new intern who wishes to learn the same skill as them. The 'Teacher Interns' will then earn exciting compensation offers and incentives.
             </p>
-            <div className="text-red-500 font-medium text-center md:text-left">
-              ⏳ Enrollment Deadline Approaching Soon!
-            </div>
+            
           </div>
         </div>
       </div>
@@ -211,7 +212,11 @@ const ITIE = () => {
 
       {/* Course Highlight */}
 
-      <div className="max-w-7xl mx-4 md:mx-auto p-4 mt-16 mb-20 flex-col">
+      <div className="my-20 ">
+      <CourseHighlights/>
+      </div>
+
+      {/* <div className="max-w-7xl mx-4 md:mx-auto p-4 mt-16 mb-20 flex-col">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 text-center mb-8">
           Course <span className="text-indigo-600">Highlights</span>
         </h2>
@@ -232,12 +237,12 @@ const ITIE = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
 
       {/* Our courses */}
 
-      <div className="max-w-6xl mx-auto p-6 bg-white">
+      {/* <div className="mx-auto p-6 bg-white">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-black">
           Our <span className="text-indigo-600">Courses</span>
         </h2>
@@ -253,8 +258,8 @@ const ITIE = () => {
           {courses.map((course, index) => (
             <div key={index} className="border-t-4  border border-indigo-600  rounded-t-3xl rounded-b-md hover:shadow-2xl hover:border hover:scale-105 overflow-hidden">
               <img src={course.image} alt={course.title} className="w-full h-48 object-cover" />
-              <div className="p-4 h-full bg-indigo-200">
-                <h3 className="text-lg font-bold text-gray-800">{course.title}</h3>
+              <div className="p-4 h-full bg-indigo-100">
+                <h3 className="text-lg font-bold text-gray-800 bg-indigo-300 mx-8 rounded-full text-center">{course.title}</h3>
                 <div className="flex items-center justify-between ">
                   <div className="flex items-center text-sm text-indigo-600 font-bold my-2 ">
                     <span className="text-indigo-600 mr-2"><GoDotFill size={20} />
@@ -269,15 +274,18 @@ const ITIE = () => {
               </div>
             </div>
           ))}
+          
         </div>
-      </div>
+      </div> */}
+
+      <CourseCard/>
 
 
       {/* Our Testimonials */}
 
 
       <div className="relative">
-        <h1 className="text-3xl md:text-5xl text-center font-semibold my-8 md:my-14 text-black">
+        <h1 className="text-3xl md:text-5xl text-center font-bold my-8 md:my-14 text-black">
           Our <span className="text-indigo-600">Testimonials</span>
         </h1>
 
@@ -318,31 +326,35 @@ const ITIE = () => {
 
       {/* Amazing Career */}
 
-      <div className="flex flex-col items-center justify-center bg-indigo-50 rounded-lg m-3 md:m-10 py-5 md:py-14 px-5 md:px-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center">
-          Amazing <span className="text-indigo-600">Career</span>
-        </h1>
-        <p className="mt-2 text-sm md:text-base lg:text-lg text-gray-500 font-bold text-center">
+
+      <div className="py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-[#F6A611] dark:bg-gray-700 text-center">
+        <h4 className="text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
+          Amazing <span className="border-b">Career</span>
+        </h4>
+        <p className="text-sm lg:text-lg">
           Grab these exclusive offers available only once a year.
         </p>
-        <div className="mt-10 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 lg:space-x-44 ">
-          <div className="bg-white p-4 md:px-6 lg:px-8 rounded-3xl shadow-2xl text-center border-2 border-indigo-700 w-full md:w-auto">
-            <h2 className="text-sm md:text-base lg:text-lg font-semibold text-indigo-900">BUY 2 COURSES & GET MORE</h2>
-            <p className="mt-2 text-xl md:text-2xl lg:text-3xl font-extrabold text-indigo-600">15%</p>
-            <p className="mt-1 text-base md:text-lg lg:text-xl text-indigo-900">OFF</p>
+
+        <div className="flex items-center flex-col md:flex-row gap-4 justify-center w-full mt-8">
+          <div className="bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 ">
+            <p className="text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2">
+              BUY 2 COURSES & GET
+            </p>
+            <p className="mb-2 text-2xl font-bold text-orange-500">15% OFF</p>
           </div>
-          <div className="bg-white p-4 md:px-6 lg:px-8 rounded-3xl shadow-2xl text-center border-2 border-indigo-700 w-full md:w-auto">
-            <h2 className="text-sm md:text-base lg:text-lg font-semibold text-indigo-900">BUY 3 COURSES & GET MORE</h2>
-            <p className="mt-2 text-xl md:text-2xl lg:text-3xl font-extrabold text-indigo-600">20%</p>
-            <p className="mt-1 text-base md:text-lg lg:text-xl text-indigo-900">OFF</p>
+          <div className="bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 ">
+            <p className="text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2">
+              BUY 3 COURSES & GET
+            </p>
+            <p className="mb-2 text-2xl font-bold text-orange-500">20% OFF</p>
           </div>
-          <div className="bg-white p-4 md:px-6 lg:px-8 rounded-3xl shadow-2xl text-center border-2 border-indigo-700 w-full md:w-auto">
-            <h2 className="text-sm md:text-base lg:text-lg font-semibold text-indigo-900">BUY 4 COURSES & GET MORE</h2>
-            <p className="mt-2 text-xl md:text-2xl lg:text-3xl font-extrabold text-indigo-600">25%</p>
-            <p className="mt-1 text-base md:text-lg lg:text-xl text-indigo-900">OFF</p>
+          <div className="bg-white w-80 rounded-3xl px-6 py-4 shadow-xl dark:bg-gray-500 ">
+            <p className="text-center font-semibold text-neutral-500 text-[1rem] dark:text-white lg:text-xl mb-2">
+              BUY 4 COURSES & GET
+            </p>
+            <p className="mb-2 text-2xl font-bold text-orange-500">25% OFF</p>
           </div>
         </div>
-
       </div>
 
 

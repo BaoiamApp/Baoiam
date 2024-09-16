@@ -42,7 +42,7 @@ const [activeTab, setActiveTab] = useState("services");
                   <img
                     src={service}
                     alt="Service"
-                    className="rounded-tl-2xl rounded-br-2xl w-full sm:w-96 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+                    className="rounded-tl-2xl rounded-br-2xl w-full sm:w-5/6 sm:h-96 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
                   />
                 </div>
 
