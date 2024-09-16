@@ -10,23 +10,24 @@ import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
 import Phone from '../Components/Home/Phone'
 import Meetourexperts from '../Components/Home/Meetourexperts'
+import OurTeamSlide from "../Pages/OurTeamSlide"
 
 const Home = () => {
     document.title = 'Baoiam - Home'
     return (
-        <>
-            <Hero />
-            <Courses />
-            <Slider />
-            <Categories />
-            <Partners />
-            <Protocol />
-            <JoinNow />
-            <How />
-            <Meetourexperts/>
-            <Phone />
-        </>
-    )
+      <>
+        <Hero />
+        <Courses />
+        <Slider />
+        <Categories />
+        <Partners />
+        <Protocol />
+        <JoinNow />
+        <How />
+        <OurTeamSlide />
+        <Phone />
+      </>
+    );
 }
 
 export default Home
