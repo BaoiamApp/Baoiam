@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-import categories from '../../assets/swiper-imgs/categories.json'; // Import JSON data
-import { useNavigate } from 'react-router-dom';
+import categories from "../../assets/swiper-imgs/categories.json"; // Import JSON data
+import { useNavigate } from "react-router-dom";
 
 export default function SliderSection() {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState('Category1');
+  const [selectedCategory, setSelectedCategory] = useState("Category1");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const categoryKeys = Object.keys(categories);
@@ -22,7 +22,8 @@ export default function SliderSection() {
     }
 
     if (currentIndex >= categories[selectedCategory]?.length) {
-      const nextCategoryIndex = (categoryKeys.indexOf(selectedCategory) + 1) % categoryKeys.length;
+      const nextCategoryIndex =
+        (categoryKeys.indexOf(selectedCategory) + 1) % categoryKeys.length;
       setSelectedCategory(categoryKeys[nextCategoryIndex]);
       setCurrentIndex(0);
     }
@@ -35,7 +36,9 @@ export default function SliderSection() {
   return (
     <div className="slider-section dark:bg-[#080529] w-full relative py-10   overflow-hidden ">
       <div className="text-center mb-0 lg:mb-8">
-        <h2 className="text-4xl font-bold mb-4">Explore Our Courses</h2>
+        <h2 className="text-4xl font-bold mb-4">
+          Dive into Our Course Selection
+        </h2>
         <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
           {categoryKeys.map((category) => (
             <button
@@ -96,7 +99,6 @@ export default function SliderSection() {
                   className="w-full h-48 object-cover rounded-lg"
                 />
               </div>
-
               {/* Title */}
               <h3 className="text-2xl font-semibold mb-1 text-left pl-5">
                 {slide.title}

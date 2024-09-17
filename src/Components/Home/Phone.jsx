@@ -5,13 +5,13 @@ const Phone = () => {
   const [inputValue, setInputValue] = useState("Email");
 
   return (
-    <div className="flex bg-amber-50 dark:bg-[#080529] dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
-      <div className="w-40 md:w-80 h-full lg:h-96">
-        <img src={App_phone} className="w-full h-full" alt="" />
+    <div className="flex w-full bg-amber-50 dark:bg-[#080529] dark:text-white items-center mx-auto gap-8 md:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
+      <div className="w-40 md:w-1/2 h-full">
+        <img src={App_phone} className="w-[60%] float-right h-full" alt="" />
       </div>
-      <div className="">
+      <div className="w-1/2">
         <p className="text-3xl lg:text-5xl font-semibold mb-2 lg:mb-4">
-          Enroll in Course!
+          Take the Leap—Start Learning Now!
         </p>
         <p className="text-sm lg:text-base">
           Unlock your potential for success with our course.
