@@ -62,7 +62,7 @@ const App = () => {
   }
 
   return (
-    <div className="dark:bg-[#080529] w-full h-full dark:text-white ">
+    <div className="dark:bg-[#080529] w-full max-w-[1440px] mx-auto h-full dark:text-white ">
       <Navbar theme={theme} />
 
       <Routes>
