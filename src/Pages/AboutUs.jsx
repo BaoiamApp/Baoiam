@@ -45,6 +45,7 @@ import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 import ServicesTab from "../Components/AboutUs/ServicesTab";
 import Origin from "../Components/AboutUs/Origin";
+import gsap from 'gsap'
 
 const AboutUs = () => {
   document.title = "Baoiam - About Us";
@@ -53,13 +54,161 @@ const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => {};
+   
+
+//gsap
+
+gsap.fromTo('.anime1',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.3
+})
+
+
+
+gsap.fromTo('.anime2',{opacity:0,x:-50},
+  {opacity:1,
+    x:0,
+    duration:1,
+    ease:'back.inOut',
+    scrollTrigger:{
+      trigger:'.animediv1',
+      start:'top 90%',
+      end:'bottom 100%',
+    }
+    
+  }
+  )
+
+  gsap.fromTo('.anime3',{opacity:0,x:50},
+    {opacity:1,
+      x:0,
+      duration:1,
+      ease:'back.inOut',
+      delay:0.5,
+      scrollTrigger:{
+        trigger:'.animediv1',
+        start:'top 90%',
+        end:'bottom 100%',
+      }
+    }
+    )
+
+
+
+    gsap.fromTo('.anime4',{opacity:0,x:-50},
+      {opacity:1,
+        x:0,
+        duration:1,
+        ease:'back.inOut',
+        scrollTrigger:{
+          trigger:'.animediv2',
+          start:'top 90%',
+          end:'bottom 100%',
+        }
+        
+      }
+      )
+    
+      gsap.fromTo('.anime5',{opacity:0,x:50},
+        {opacity:1,
+          x:0,
+          duration:1,
+          ease:'back.inOut',
+          delay:0.5,
+          scrollTrigger:{
+            trigger:'.animediv2',
+            start:'top 90%',
+            end:'bottom 100%',
+          }
+        }
+        )
+
+        gsap.fromTo('.anime6',{opacity:0,y:30},
+          {opacity:1,
+            y:0,
+            duration:1,
+            ease:'back.inOut',
+           stagger:0.3,
+            scrollTrigger:{
+              trigger:'.animediv4',
+              start:'top 90%',
+              end:'bottom 100%',
+            }
+          }
+          )
+
+          gsap.fromTo('.anime7',{opacity:0},
+            {opacity:1,
+             
+              duration:1,
+              delay:0.8,
+              scrollTrigger:{
+                trigger:'.animediv4',
+                start:'top 90%',
+                end:'bottom 100%',
+              }
+            }
+            )
+
+            gsap.fromTo('.anime9',{opacity:0,x:-50},
+              {opacity:1,
+                x:0,
+                duration:1,
+                ease:'back.inOut',
+                scrollTrigger:{
+                  trigger:'.animediv5',
+                  start:'top 90%',
+                  end:'bottom 100%',
+                  markers:true
+                }
+                
+              }
+              )
+            
+              gsap.fromTo('.anime10',{opacity:0,x:50},
+                {opacity:1,
+                  x:0,
+                  duration:1,
+                  ease:'back.inOut',
+                  delay:0.5,
+                  scrollTrigger:{
+                    trigger:'.animediv5',
+                    start:'top 90%',
+                    end:'bottom 100%',
+                  }
+                }
+                )
+
+
+                gsap.fromTo('.anime11',{opacity:0,y:30},
+                  {opacity:1,
+                    y:0,
+                    duration:1,
+                    ease:'back.inOut',
+                   stagger:0.3,
+                    scrollTrigger:{
+                      trigger:'.animediv6',
+                      start:'top 90%',
+                      end:'bottom 100%',
+                    }
+                  }
+                  )
+    
+
+
+return () => {};
+
+
+
   }, []);
 
   return (
     <div>
       {/* Section - 1 */}
-      <div className="mx-auto h-fit md:h-screen w-full text-white">
+      <div className="  mx-auto h-fit md:h-screen w-full text-white">
         <div className="relative mx-auto h-fit md:h-screen w-full text-white">
           <div className="h-[22rem] sm:h-[23rem] md:h-[70%] w-full image-container">
             <img
@@ -68,27 +217,27 @@ const AboutUs = () => {
               alt="image"
             />
           </div>
-          <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-52 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
+          <div className=" absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-52 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
-            <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
-              <h1 className="text-amber-600 font-medium">
+            <div className="anime1 rounded-3xl py-2 px-4 w-fit bg-white z-10">
+              <h1 className=" text-amber-600 font-medium">
                 Transforming education with ed-tech ~
               </h1>
             </div>
-            <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
+            <h2 className="anime1 text-2xl font-bold md:text-4xl sm:text-3xl">
               Reaching higher, while breaking barriers is our aim!
             </h2>
-            <p className="font-medium">
+            <p className="font-medium anime1">
               Baoiam is here to advise you on advancing your goals with
               Strategic Information Needs.
             </p>
-            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            <button className="anime1 flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300  px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
               <FaArrowRight className="font-normal" size={18} />
             </button>
           </div>
           <div className="relative -bottom-[20rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-48 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
-            <div className="sm:col-span-3 grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
+            <div className="anime1 sm:col-span-3 grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
               <HeroCard Icon={FaBusinessTime} title="Business Consultation" />
               <HeroCard Icon={AiOutlineCode} title="Website Development" />
@@ -100,10 +249,10 @@ const AboutUs = () => {
       </div>
 
       {/* Section - 2 */}
-      <div className="flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
+      <div className="animediv1 flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
         {/* Image Section */}
         <div className="w-full md:w-1/2 h-full md:ml-6">
-          <div className="w-full h-64 sm:h-96 md:h-full rounded-b-3xl mb-2 px-2 border-slate-400">
+          <div className="anime2 w-full h-64 sm:h-96 md:h-full rounded-b-3xl mb-2 px-2 border-slate-400">
             <img
               src={aboutus5}
               alt="image"
@@ -112,7 +261,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
+        <div className="anime3 flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
             We’re committed to your Success
           </h2>
@@ -130,9 +279,9 @@ const AboutUs = () => {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col md:flex-row gap-8 p-4 sm:p-6 md:p-10 mb-16 justify-center items-center mx-auto">
+      <div className="animediv2 flex flex-col md:flex-row gap-8 p-4 sm:p-6 md:p-10 mb-16 justify-center items-center mx-auto">
         {/* Text Section */}
-        <div className="flex flex-col items-start justify-center gap-4 w-full md:w-1/2 pr-0 md:pr-10 lg:pl-10 pl-4">
+        <div className="anime4 flex flex-col items-start justify-center gap-4 w-full md:w-1/2 pr-0 md:pr-10 lg:pl-10 pl-4">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
             Get to Know Us
           </h3>
@@ -178,7 +327,7 @@ const AboutUs = () => {
         </div>
 
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="anime5 w-full md:w-1/2 flex justify-center">
           <div className="w-full md:w-[80%]">
             <img
               src={aboutus5}
@@ -192,24 +341,24 @@ const AboutUs = () => {
       <Origin />
 
       {/* Section 4 */}
-      <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
+      <div className="animediv4 flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
         <div className="flex flex-col mt-6 gap-8 mb-10 max-w-full lg:max-w-xs ">
-          <h2 className="text-amber-600 font-medium text-xl">Our Values</h2>
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          <h2 className="anime6 text-amber-600 font-medium text-xl">Our Values</h2>
+          <h3 className="anime6 text-2xl sm:text-3xl lg:text-4xl font-semibold">
             The standard we promote at work
           </h3>
-          <p className="text-base sm:text-lg text-slate-500">
+          <p className="anime6 text-base sm:text-lg text-slate-500">
             We are a diverse force in today's skill-oriented Era, standing out
             due To our exceptional team coordination. Each members of our team
             demonstrated a high level of commitment, not only to their own work
             but also in their interactions with learners and clients.
           </p>
-          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+          <button className="anime6 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full lg:ml-4">
+        <div className="anime7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full lg:ml-4">
           <ValueCard
             Icon={FaHandsHelping}
             title="Dedication"
@@ -244,9 +393,9 @@ const AboutUs = () => {
       </div>
 
       {/* Section 5 */}
-      <div className="flex flex-col md:flex-row  lg:flex-row mx-auto gap-8 p-6 md:p-10 justify-center items-center max-w-7xl">
+      <div className="animediv5 flex flex-col md:flex-row  lg:flex-row mx-auto gap-8 p-6 md:p-10 justify-center items-center max-w-7xl">
         {/* Image Section */}
-        <div className="w-full lg:w-1/2  pl-0 lg:pl-20 mb-6 lg:mb-0">
+        <div className="anime9 w-full lg:w-1/2  pl-0 lg:pl-20 mb-6 lg:mb-0">
           <img
             src={aboutus5}
             alt="image"
@@ -255,7 +404,7 @@ const AboutUs = () => {
         </div>
 
         {/* Text and Progress Bars Section */}
-        <div className="flex flex-col items-start justify-center gap-2 w-full lg:w-1/2">
+        <div className="anime10 flex flex-col items-start justify-center gap-2 w-full lg:w-1/2">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
             Our profile
           </h3>
@@ -281,11 +430,11 @@ const AboutUs = () => {
       </div>
 
       {/* Section 6 */}
-      <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
+      <div className="animediv6 anime11 text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
         Our Team
       </div>
 
-      <div className="p-6">
+      <div className="p-6 anime11">
         <Swiper
           keyboard={{
             enabled: true,
