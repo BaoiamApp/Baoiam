@@ -8,7 +8,7 @@ import CourseCarousel from "../Components/College/CourseCarousel";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCards } from "swiper/modules";
 import cards from "../Components/School/cards.json";
-import Testimonials from "../Components/College/Testimonials";
+import Testimonials from "../Components/Testmonials/Testimonials";
 import ExploreSubjects from "../Components/College/ExploreSubjects";
 import { CollegeCourseData } from "../Data";
 import axios from "axios";
@@ -194,7 +194,8 @@ function College() {
         </div>
       </div>
       <ExploreSubjects />
-      <Testimonials />
+      {/* <Testimonials /> */}
+      <Testimonials/>
     </div>
   );
 }
