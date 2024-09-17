@@ -1,13 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import Trending from "../Components/School/Trending";
-import WhyUs from "../Components/School/WhyUs";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Trending from '../Components/School/Trending'
+import WhyUs from '../Components/School/WhyUs'
+import SkillCatalog from '../Components/School/SkillCatalog'
+import SliderHero from '../Components/School/SliderHero'
+import TypewriterText from '../Components/School/TypewiterText'
+import { Link } from 'react-router-dom'
+import { InstructorSlider } from '../Components/School/InstructorSlider';
 import Categories from "../Components/Home/Categories";
-import SkillCatalog from "../Components/School/SkillCatalog";
-import SliderHero from "../Components/School/SliderHero";
-import TypewriterText from "../Components/School/TypewiterText";
-import { Link } from "react-router-dom";
-import { InstructorSlider } from "../Components/School/InstructorSlider";
+import Testimonials from '../Components/Testmonials/Testimonials';
+
 
 const School = () => {
   document.title = "Baoiam - School";
@@ -56,7 +58,9 @@ const School = () => {
         <Categories />
         {/* <SkillCatalog /> */}
         <Trending />
-        <InstructorSlider />
+        <WhyUs />
+        {/* <InstructorSlider/> */}
+        <Testimonials/>
       </div>
     </>
   );

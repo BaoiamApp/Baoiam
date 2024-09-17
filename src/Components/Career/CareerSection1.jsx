@@ -21,7 +21,7 @@ export const CareerSection1 = () => {
               <input
                 type='text'
                 placeholder='Type'
-                className='border border-gray-300 rounded-lg p-3 w-full sm:w-auto flex-grow'
+                className='border text-black border-gray-300 rounded-lg p-3 w-full sm:w-auto flex-grow'
               />
               <button className='bg-black dark:bg-white dark:hover:bg-[#d97706] dark:hover:shadow-lg dark:text-black text-white px-6 py-3 rounded-lg transition duration-300 ease-in-out hover:bg-[#d97706] hover:shadow-lg mt-2 sm:mt-0'>
                 Search
