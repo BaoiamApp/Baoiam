@@ -18,7 +18,7 @@ import PlayStorePng from '../../assets/Images/PlayStore.png'
 import CoursesList from "../CoursesList";
 import logo from '../../assets/logo.jpeg'
 
-function Footer({dark}) {
+function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
@@ -176,9 +176,7 @@ function Footer({dark}) {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="flex-1 dark:text-white text-black">
-                    tutors@baoiam.com
-                  </span>
+                  <span className="flex-1 dark:text-white text-black">support@baoiam.com</span>
                 </li>
 
                 {/* Phone */}
@@ -226,7 +224,7 @@ function Footer({dark}) {
                   </svg>
 
                   <address className="-mt-0.5 flex-1 dark:text-white not-italic text-black">
-                    B Block Noida Sector 15 Uttar Pradesh
+                    H Block, Sector 62 <br/>201301<br/>UP Noida, India.
                   </address>
                 </li>
               </ul>
