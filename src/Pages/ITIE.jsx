@@ -13,7 +13,7 @@ import businesscomm from '../assets/ITIE&Entre/ITIE/businesscomm.png'
 import marketing from '../assets/ITIE&Entre/ITIE/marketing.png'
 import CourseHighlights from "../Components/CourseDetails/CourseHighlights";
 import CourseCard from "../Components/CourseDetails/CourseCard";
-import Amazingcareer from "../Components/CourseDetails/amazingcareer";
+import Amazingcareer from "../Components/CourseDetails/Amazingcareer";
 
 import { PiGraduationCapFill } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
