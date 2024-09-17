@@ -43,8 +43,6 @@ import { FaBusinessTime } from "react-icons/fa";
 import { AiOutlineCode, AiOutlineClockCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
-import ServicesTab from "../Components/AboutUs/ServicesTab";
-import Origin from "../Components/AboutUs/Origin";
 import OurTeam from "../Components/AboutUs/OurTeam"
 
 const AboutUs = () => {
@@ -54,7 +52,7 @@ const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => {};
+    return () => { };
   }, []);
 
   return (
@@ -190,7 +188,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <Origin />
 
       {/* Section 4 */}
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
@@ -282,7 +279,7 @@ const AboutUs = () => {
       </div>
 
       {/* Section 6 */}
-     <OurTeam/>
+      <OurTeam />
     </div>
   );
 };
