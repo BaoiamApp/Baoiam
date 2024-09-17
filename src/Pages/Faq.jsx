@@ -137,7 +137,7 @@ const FaqItem = ({ question, answer }) => {
   return (
     <div className="border rounded-lg mx-5 shadow-lg  text-gray-600 px-8 my-4">
       <button
-        className="w-full text-left flex justify-between items-center py-4 text-lg text-black font-bold hover:scale-105 hover:text-indigo-600"
+        className="w-full text-left flex justify-between items-center py-4 text-lg text-black font-bold hover:text-indigo-600"
         onClick={() => setIsOpen(!isOpen)}
       >
         {question}
@@ -157,7 +157,7 @@ const Faq = () => {
   return (
     <div className="max-w-3xl mx-auto my-10 ">
       <h2 className="font-bold text-4xl text-center mb-8 mt-20 mx-5 ">
-        Frequently Asked <span className="text-indigo-600">Questions</span>
+        Frequently Asked <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">Questions</span>
       </h2>
 
       {faqs.map((faq, index) => (

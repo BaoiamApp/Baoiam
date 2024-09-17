@@ -4,7 +4,7 @@ import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
 import HeroCard from "../Components/AboutUs/HeroCard";
 import ProgressBar from "../Components/AboutUs/ProgressBar";
-import OurTeam from "./OurTeamSlide"
+//import OurTeam from "./OurTeamSlide"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,7 +13,7 @@ import { swiperData } from "../Components/OurTeam Components/teamData";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 // import required modules
-import OurTeamSlide from "./OurTeamSlide"
+
 import {
   Autoplay,
   Pagination,
@@ -43,8 +43,7 @@ import { FaBusinessTime } from "react-icons/fa";
 import { AiOutlineCode, AiOutlineClockCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
-import ServicesTab from "../Components/AboutUs/ServicesTab";
-import Origin from "../Components/AboutUs/Origin";
+import OurTeam from "../Components/AboutUs/OurTeam"
 import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 import Testimonials from "../Components/Testmonials/Testimonials";
 
@@ -55,7 +54,7 @@ const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => {};
+    return () => { };
   }, []);
 
   return (
@@ -222,7 +221,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <Origin />
 
       {/* Section 4 */}
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
@@ -377,69 +375,7 @@ const AboutUs = () => {
       </div>
 
       {/* Section 6 */}
-      <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
-        Our Team
-      </div>
-
-      <div className="p-6">
-        <Swiper
-          keyboard={{
-            enabled: true,
-          }}
-          navigation={true}
-          scrollbar={{ draggable: true }}
-          modules={[Keyboard, Pagination, Navigation, Scrollbar]}
-          spaceBetween={24}
-          breakpoints={{
-            320: {
-              slidesPerView: 1, // 1 slide on small screens like mobile
-            },
-            640: {
-              slidesPerView: 2, // 2 slides on small tablets
-            },
-            768: {
-              slidesPerView: 3, // 3 slides on larger tablets
-            },
-            1024: {
-              slidesPerView: 4, // 4 slides on desktops
-            },
-          }}
-          onSlideChange={() => console.log("Slide changed")}
-          onSwiper={(swiper) => console.log("Swiper initialized")}
-          className="md:h-[350px] w-full md:w-[90%] m-auto rounded-lg flex flex-col justify-center items-center gap-4"
-        >
-          {data?.map((el) => (
-            <SwiperSlide key={el.id} className="group flip-card w-96 h-96">
-              <div className="flip-card-inner">
-                {/* Front Side (Image) */}
-                <div className="flip-card-front">
-                  <img
-                    className="h-full w-full rounded-md object-cover"
-                    src={el.image}
-                    alt={el.name}
-                  />
-                </div>
-
-                {/* Back Side (Details) */}
-                <div className="flip-card-back bg-black/80 text-white rounded-md flex flex-col justify-center items-center">
-                  <h3 className="text-center font-sans font-medium text-lg">
-                    {el.name}
-                  </h3>
-                  <p className="text-center font-bold text-xs">{el.role}</p>
-                  <div className="py-2 flex items-center justify-center gap-2">
-                    <FaLinkedin className="text-xl" />
-                    <FaXTwitter className="" />
-                  </div>
-
-                  <p className="text-xs md:text-sm text-center px-4">
-                    {el.desc}
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <OurTeam />
     </div>
   );
 };

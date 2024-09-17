@@ -1,40 +1,41 @@
-import React from "react";
+import React from 'react'
 import * as MDIcons from "react-icons/md";
 import * as FCIcons from "react-icons/fc";
 import * as GRIcons from "react-icons/gr";
 import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
-import { Highlights } from "../../Data";
+import { Highlights } from '../../Data';
 
 const CourseHighlights = () => {
-  // For? maping icons dynamically
-  const highlightIcons = (icon) => {
-    if (icon.startsWith("Md")) {
-      return MDIcons[icon];
-    } else if (icon.startsWith("Fc")) {
-      return FCIcons[icon];
-    } else if (icon.startsWith("Gr")) {
-      return GRIcons[icon];
-    } else if (icon.startsWith("Sl")) {
-      return SLIcons[icon];
-    } else if (icon.startsWith("Go")) {
-      return GOIcons[icon];
-    } else if (icon.startsWith("Pi")) {
-      return PiIcons[icon];
-    } else {
-      return "not found";
-    }
-  };
 
-  return (
-    <div className="py-8 px-8 lg:px-24 w-full h-full">
-      <h4 className="text-4xl font-semibold mb-8">
-        Course{" "}
-        <span className="border-b text-orange-500 border-orange-500">
-          Highlights
-        </span>
-      </h4>
+    // For? maping icons dynamically
+    const highlightIcons = (icon) => {
+        if (icon.startsWith("Md")) {
+            return MDIcons[icon];
+        } else if (icon.startsWith("Fc")) {
+            return FCIcons[icon];
+        } else if (icon.startsWith("Gr")) {
+            return GRIcons[icon];
+        } else if (icon.startsWith("Sl")) {
+            return SLIcons[icon];
+        } else if (icon.startsWith("Go")) {
+            return GOIcons[icon];
+        } else if (icon.startsWith("Pi")) {
+            return PiIcons[icon];
+        } else {
+            return "not found";
+        }
+    };
+
+    return (
+        <div className="py-8 px-8 lg:px-24 w-full h-full">
+            <h4 className="text-4xl font-semibold mb-8">
+                Course{" "}
+                <span className="border-b text-orange-500 border-orange-500">
+                    Highlights
+                </span>
+            </h4>
 
       <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
         {Highlights?.map((h, i) => {
@@ -63,4 +64,4 @@ const CourseHighlights = () => {
   );
 };
 
-export default CourseHighlights;
+export default CourseHighlights

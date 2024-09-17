@@ -17,6 +17,8 @@ import Prasun from "../assets/Prasun.jpg";
 import Surbhi from "../assets/Surbhi.jpg";
 import Prajwal from "../assets/Prajwal.jpg";
 import placement from "../assets/placement.jpg";
+import Subcription from "../Components/Home/Subcription";
+
 import {
   AcademicCapIcon,
   WrenchScrewdriverIcon,
@@ -527,6 +529,7 @@ const PAP = () => {
           />
         </Swiper>
       </div>
+      <Subcription/>
     </div>
   );
 };
