@@ -26,6 +26,7 @@ const Home = () => {
         <How />
         <OurTeamSlide />
         <Phone />
+        
       </>
     );
 }

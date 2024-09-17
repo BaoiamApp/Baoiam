@@ -87,7 +87,7 @@ export default function SliderSection() {
       >
         {categories[selectedCategory]?.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="card dark:bg-indigo-900 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out w-[290px] h-[400px]">
+            <div className="card dark:bg-indigo-900 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out w-[290px] h-[370px]">
               {/* Image Container */}
               <div className="image-container mb-4">
                 <img
@@ -98,7 +98,7 @@ export default function SliderSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold mb-1 text-left pl-5">
+              <h3 className="text-2xl font-semibold mb-1 text-left pl-5">
                 {slide.title}
               </h3>
 
@@ -128,11 +128,20 @@ export default function SliderSection() {
               </div>
 
               {/* Price and Duration in the same row */}
-              <div className="flex justify-between  items-center mb-2 pl-2 pr-5  ">
-                <div className="flex items-center bg-gradient-to-r from-pink-500 to-violet-600 text-white rounded-full px-2 py-0 ml-4 mb-2 mt-2 ">
-                  <span className="font-semibold text-xs">Go Pro</span>
-                  <span className="ml-2 text-lg font-bold">+</span>
+              <div className="flex justify-between items-center mb-5 pl-2 pr-5">
+                {/* Plus button with background and no gap */}
+                <div className="flex items-center">
+                  {/* Premium tag with gradient */}
+                  <span className="font-semibold text-xs bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1 ml-4">
+                    Premium
+                  </span>
+
+                  {/* Plus button */}
+                  <span className="bg-gray-300 text-gray-800 font-bold rounded-lg text-xs pl-3 pr-3  pt-1 pb-1 ml-2">
+                    Plus
+                  </span>
                 </div>
+
                 {/* A separator between price and duration */}
                 <p className="text-base">{slide.duration}</p>
               </div>
