@@ -16,7 +16,7 @@ const Home = () => {
     document.title = 'Baoiam - Home'
     return (
         <>
-            <div className='max-w-11/12 mx-auto'>
+            <div className='max-w-11/12 mt-36 mx-auto'>
             <Hero />
             <Courses />
             <Slider />
