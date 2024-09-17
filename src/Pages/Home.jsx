@@ -15,6 +15,7 @@ const Home = () => {
     document.title = 'Baoiam - Home'
     return (
         <>
+            <div className='max-w-11/12 mx-auto'>
             <Hero />
             <Courses />
             <Slider />
@@ -25,6 +26,7 @@ const Home = () => {
             <How />
             <Meetourexperts/>
             <Phone />
+            </div>
         </>
     )
 }

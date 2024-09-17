@@ -64,7 +64,7 @@ const SearchBox = () => {
                                     setIsExpanded(false);
                                     setSearchQuery('');
                                 }} 
-                                className='absolute right-2 cursor-pointer' 
+                                className='absolute z-30 right-2 cursor-pointer' 
                                 size={20} 
                             />
                         )}
