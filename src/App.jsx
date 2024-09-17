@@ -12,7 +12,7 @@ import AboutUs from "./Pages/AboutUs";
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Blogs from "./Pages/Blogs";
-import Career from "./Components/Career/Career";
+import Career from "./Pages/Career";
 import Blog_detail from "./Pages/Blog_detail";
 import HelpCenter from "./Pages/HelpCenter";
 import HireFromUs from "./Pages/HireFromUs";
@@ -62,7 +62,7 @@ const App = () => {
   }
 
   return (
-    <div className="dark:bg-[#080529] w-full h-full dark:text-white ">
+    <div className="dark:bg-[#080529] w-full max-w-[1440px] mx-auto h-full dark:text-white ">
       <Navbar theme={theme} />
 
       <Routes>

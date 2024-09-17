@@ -61,7 +61,7 @@ export const CareerSection4 = () => {
           {jobs.map((job, index) => (
             <div
               key={index}
-              className='p-6 flex flex-col dark:bg-zinc-900  border border-gray-200 rounded-lg border border-gray-900 hover:shadow-xl transition-shadow duration-300 ease-in-out '
+              className='p-6 flex flex-col dark:bg-zinc-900 dark:border-gray-200 rounded-lg border border-gray-900 hover:shadow-xl transition-shadow duration-300 ease-in-out '
             >
               <h2 className='text-xl font-semibold dark:text-zinc-500 text-gray-800 mb-2'>
                 {job.title}
@@ -71,13 +71,13 @@ export const CareerSection4 = () => {
                 <p className='text-gray-700 mb-4'>{job.location}</p>
               </div>
               <div className='flex flex-row items-center justify-between'>
-                <div className='flex items-center'>
+                <div className='flex  items-center'>
                   <img
                     src={job.logo}
                     alt={job.company}
-                    className='lg:w-10 lg:h-10 md:w-10 md:h-10 sm:w-10 sm:h-10 w-5 h-5 mb-4 border-2 border-gray-300 rounded-full bg-white'
+                    className='sm:w-8 w-4 p-1'
                   />
-                  <p className='text-gray-700 mb-4 ml-0'>{job.company}</p>
+                  <p className='text-gray-700 mx-2'>{job.company}</p>
                 </div>
                 <button className='bg-black text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300 text-sm lg:text-base md:text-base sm:text-base'>
                   Apply Now

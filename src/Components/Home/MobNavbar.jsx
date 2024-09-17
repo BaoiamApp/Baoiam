@@ -34,9 +34,9 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
     return (
         <div>
 
-            <aside className={`fixed lg:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
-                <div className="h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border text-gray-600 dark:text-white dark:bg-[#080529]">
-                    <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 bg-white z-50 dark:bg-[#080529]">
+            <aside className={`fixed xl:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${showmenu ? 'translate-x-0' : '-translate-x-full'}  `}>
+                <div className="h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
+                    <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 bg-white z-50 dark:bg-[#080529] shadow-md ">
                        <Logo isDark={isDark}/>
                         <RxCross2
                             className="text-black dark:text-white"
