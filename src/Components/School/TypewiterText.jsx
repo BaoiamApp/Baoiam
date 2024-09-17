@@ -27,7 +27,7 @@ const TypewriterText = () => {
           </span>
         </h1>
         <p className="mt-4 text-lg sm:text-xl lg:text-2xl">
-          Learn and grow with the best courses available.
+          Level up your skills with top-tier courses.
         </p>
         <div className="relative mt-8 w-full max-w-md mx-auto">
           <input

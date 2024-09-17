@@ -3450,43 +3450,43 @@ Assignments: Writing test cases and bug reports.
 export const Highlights = [
   {
     icon: "MdOutlineClass",
-    head: "Live online classes",
-    desc: "learn from our experts live",
+    head: "Placement Assistance",
+    desc: "We offer placement support by training you for interviews and guiding you to take up the right career path.",
   },
   {
     icon: "FcAssistant",
-    head: "Placement assistance",
-    desc: "Access support for securing better jobs",
+    head: "Placement Mentorship",
+    desc: "This allows for personal guide to enhance your skills ensuring growth and development in all aspects.",
   },
   {
     icon: "GrUserWorker",
-    head: "Internships get hands",
-    desc: "on experience by working in several firms",
+    head: "1:1 Sessions",
+    desc: "This allows for personal attention and customized learning experiences tailored to individual needs.",
   },
-  {
-    icon: "SlEnvolopeLetter",
-    head: "Letter of recommendation",
-    desc: "enhance your credibility with endorsements from professionals",
-  },
+  // {
+  //   icon: "SlEnvolopeLetter",
+  //   head: "Letter of recommendation",
+  //   desc: "enhance your credibility with endorsements from professionals",
+  // },
   {
     icon: "GoProjectRoadmap",
-    head: "Live projects",
-    desc: "Hands on live project with expert guidance",
+    head: "Interview Training",
+    desc: "Prepare, practice, and showcase your unique strengths. Baoiam is here to support you on your journey to a successful interview.",
   },
   {
     icon: "MdOutlineLiveHelp",
-    head: "Doubt clearing sessions",
-    desc: "get all your doubts cleared by your experts",
+    head: "50+ Live Projects",
+    desc: "This gives the students real world experience with practical approach and experiences.",
   },
-  {
-    icon: "MdOutlineAssessment",
-    head: "Placement assessment",
-    desc: "get all your doubts cleared by your experts",
-  },
+  // {
+  //   icon: "MdOutlineAssessment",
+  //   head: "Placement assessment",
+  //   desc: "get all your doubts cleared by your experts",
+  // },
   {
     icon: "PiCertificate",
     head: "Certificate of completion",
-    desc: "Evaluate your readiness for job opportunities",
+    desc: "Evaluate your readiness for potential job opportunities and career growth.",
   },
 ];
 
