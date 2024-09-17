@@ -12,7 +12,7 @@ import AboutUs from "./Pages/AboutUs";
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Blogs from "./Pages/Blogs";
-import Career from "./Components/Career/Career";
+import Career from "./Pages/Career";
 import Blog_detail from "./Pages/Blog_detail";
 import HelpCenter from "./Pages/HelpCenter";
 import HireFromUs from "./Pages/HireFromUs";

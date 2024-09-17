@@ -1,4 +1,4 @@
-import icon1 from "../../assets/ITIE&Entre/graduated (3).png";
+import icon1 from "../../assets/ITIE&Entre/graduated.png";
 import icon2 from "../../assets/ITIE&Entre/knowledge.png";
 import icon3 from "../../assets/ITIE&Entre/education.png";
 import icon4 from "../../assets/ITIE&Entre/deep-learning.png";
@@ -55,7 +55,7 @@ export const CarrerSection2 = () => {
     <>
       <div className='bg-white dark:bg-black flex flex-col'>
         <main className='flex flex-col items-center justify-center px-4 sm:px-8 md:px-15 lg:px-0 xl:px-0 m-4 md:m-8'>
-          <h1 className='text-3xl sm:text-4xl dark:text-zinc-100 lg:text-5xl font-bold mb-6 text-center text-[#0a0a0a] pt-4 sm:pt-5 mb-0'>
+          <h1 className='text-3xl sm:text-4xl dark:text-zinc-100 lg:text-5xl font-bold mb-6 text-center text-[#0a0a0a] pt-4 sm:pt-5'>
             Your Life At BAOIAM
           </h1>
           <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4'>
