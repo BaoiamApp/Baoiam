@@ -1,7 +1,40 @@
 import React from 'react';
 
 const HelpCenter = () => {
+
   document.title = 'Baoiam - Help Center'
+  
+  const cards = [
+    {
+        title: "Getting Started", 
+        description: "Start scheduling by learning the basics"
+    },
+    {
+        title: "Be A Baoiam Pro", 
+        description: "Learn how Calendly works, from availability to team events and beyond"
+    },
+    {
+        title: "Integrations & Apps", 
+        description: "Optimize your meeting lifecycle with tools and workflows"
+    },
+    {
+        title: "Use Cases", 
+        description: "Discover tailored strategies for key industries and job functions"
+    },
+    {
+        title: "Baoiam for Mobile", 
+        description: "Stay productive and schedule on the go with our iOS and Android apps"
+    },
+    {
+        title: "Account Settings", 
+        description: "Manage your subscription, single sign-on, and security"
+    },
+    {
+        title: "Video Tutorials", 
+        description: "Explore our how-to videos and feature overviews"
+    }
+  ]
+
   return (
     <div className="bg-gray-100 min-h-screen py-12">
       <div className="max-w-6xl mx-auto px-4">
@@ -24,43 +57,14 @@ const HelpCenter = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-                {
-                    title: "Getting Started", 
-                    description: "Start scheduling by learning the basics"
-                },
-                {
-                    title: "Be A Baoiam Pro", 
-                    description: "Learn how Calendly works, from availability to team events and beyond"
-                },
-                {
-                    title: "Integrations & Apps", 
-                    description: "Optimize your meeting lifecycle with tools and workflows"
-                },
-                {
-                    title: "Use Cases", 
-                    description: "Discover tailored strategies for key industries and job functions"
-                },
-                {
-                    title: "Baoiam for Mobile", 
-                    description: "Stay productive and schedule on the go with our iOS and Android apps"
-                },
-                {
-                    title: "Account Settings", 
-                    description: "Manage your subscription, single sign-on, and security"
-                },
-                {
-                    title: "Video Tutorials", 
-                    description: "Explore our how-to videos and feature overviews"
-                },
-            ].map((card, index)=>(
-                <div
-                    key={index} 
-                    className="bg-white p-6 min-h-[250px] rounded-2xl shadow-md transition-transform transform hover:scale-105 group cursor-pointer border hover:border-indigo-500"
-                >
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{card.title}</h3>
-                    <p className="text-gray-600 mt-4">{card.description}</p>
-                </div>
+            {cards.map((card, index)=>(
+              <div
+                key={index} 
+                className="bg-white p-6 min-h-[250px] rounded-2xl shadow-md transition-transform transform hover:scale-105 group cursor-pointer border hover:border-indigo-500"
+              >
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">{card.title}</h3>
+                <p className="text-gray-600 mt-4">{card.description}</p>
+              </div>
             ))}
 
         </div>
