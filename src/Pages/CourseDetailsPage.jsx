@@ -4,20 +4,25 @@ import { FaArrowRight, FaDownload } from "react-icons/fa6";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import CourseHighlights from "../Components/CourseDetails/CourseHighlights";
+import Loader from "../Components/Loader";
 
 const CourseDetailsPage = () => {
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const getCourseDetails = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.get(
         `https://api.baoiam.com/api/courses?subcategory=${id}`
       );
       // console.log(data);
       setCourseDetails(data[0]);
+      setLoading(false);
     } catch (error) {
       console.log(error.stack);
+      setLoading(true);
     }
   };
   console.log(courseDetails);
@@ -34,6 +39,10 @@ const CourseDetailsPage = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  if (loading) {
+    return <Loader />
+  }
+
   return (
     <div>
       {/* Course Description */}
@@ -45,24 +54,24 @@ const CourseDetailsPage = () => {
           <Link to={`/book-a-demo/${courseDetails.id}`} className="relative group">
             <button
               type="button"
-              class="hidden sm:flex text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-semibold rounded-lg text-md px-8 py-2.5 text-center"
+              class="flex text-xs md:text-sm lg:text-base text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-semibold rounded-lg px-8 py-2.5 text-center"
             >
-             Book a Demo
+              Book a Demo
             </button>
           </Link>
           <p className="text-[0.8rem] lg:text-base">
             {courseDetails?.description}
           </p>
 
-          <div className="flex flex-col md:flex-row lg:flex-row  gap-2">
+          <div className="flex flex-row  gap-2">
             <button
               onClick={enrollNowScroll}
-              className="pl-4 mr-6 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
+              className="pl-4 mr-6 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
             >
               Enroll Now{" "}
               <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
             </button>
-            <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
+            <button className="pl-4 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
               Download Brochure{" "}
               {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
               <FaDownload size={18} />
@@ -102,14 +111,14 @@ const CourseDetailsPage = () => {
         </div>
       </div>
 
-            {/* Course Curriculum */}
-            <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
-                <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
-                    Course{" "}
-                    <span className="text-orange-500 border-b border-orange-500">
-                        Curriculum
-                    </span>
-                </h4>
+      {/* Course Curriculum */}
+      <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
+        <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
+          Course{" "}
+          <span className="text-orange-500 border-b border-orange-500">
+            Curriculum
+          </span>
+        </h4>
 
         <ul className="list-inside list-disc marker:text-orange-500 marker:text-md mt-4">
           <li>{courseDetails.curriculum}</li>
@@ -232,8 +241,8 @@ const CourseDetailsPage = () => {
 
 
 
-                              ? "bg-orange-500 text-white"
-                              : "bg-gray-500"
+                            ? "bg-orange-500 text-white"
+                            : "bg-gray-500"
                             } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                         >
                           Enroll Now

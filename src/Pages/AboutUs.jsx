@@ -4,6 +4,7 @@ import ContentCard from "../Components/AboutUs/ContentCard";
 import ValueCard from "../Components/AboutUs/ValueCard";
 import HeroCard from "../Components/AboutUs/HeroCard";
 import ProgressBar from "../Components/AboutUs/ProgressBar";
+import OurTeam from "./OurTeamSlide"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +13,7 @@ import { swiperData } from "../Components/OurTeam Components/teamData";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 // import required modules
+import OurTeamSlide from "./OurTeamSlide"
 import {
   Autoplay,
   Pagination,
@@ -42,14 +44,16 @@ import { AiOutlineCode, AiOutlineClockCircle } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 import ServicesTab from "../Components/AboutUs/ServicesTab";
+import Origin from "../Components/AboutUs/Origin";
 
 const AboutUs = () => {
-  document.title = 'Baoiam - About Us'
+  document.title = "Baoiam - About Us";
   const [data, setData] = useState(swiperData);
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => { };
+    return () => {};
   }, []);
 
   return (
@@ -64,19 +68,19 @@ const AboutUs = () => {
               alt="image"
             />
           </div>
-          <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-72 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
+          <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-52 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
               <h1 className="text-amber-600 font-medium">
-                We are an EdTech Organization ~
+                Transforming education with ed-tech ~
               </h1>
             </div>
             <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
-              Think Big. We make IT, possible!
+              Reaching higher, while breaking barriers is our aim!
             </h2>
             <p className="font-medium">
-              We place you at the centre of information networks to advance your
-              strategic interests.
+              Baoiam is here to advise you on advancing your goals with
+              Strategic Information Needs.
             </p>
             <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
@@ -84,7 +88,6 @@ const AboutUs = () => {
             </button>
           </div>
           <div className="relative -bottom-[20rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-48 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
-
             <div className="sm:col-span-3 grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
               <HeroCard Icon={FaBusinessTime} title="Business Consultation" />
@@ -111,14 +114,14 @@ const AboutUs = () => {
 
         <div className="flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-            Students Success Is Our Focus
+            We’re committed to your Success
           </h2>
           <p className="text-base sm:text-lg">
-            Unlock your potential with our expertly designed courses, tailored
-            to provide you with the skills and knowledge needed for success.
-            From practical strategies to in-depth expertise, our courses are
-            crafted to empower your growth and help you achieve your goals with
-            confidence.
+            Uncover your expertise with our proficiently designed courses,
+            crafted to provide you with every skill and knowledge you need to
+            reach the top of the world. From theoretical insights to hands-on
+            practical experience, our courses cater to every student, empowering
+            your growth and backing you to achieve your goals with confidence.
           </p>
           <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
@@ -131,16 +134,18 @@ const AboutUs = () => {
         {/* Text Section */}
         <div className="flex flex-col items-start justify-center gap-4 w-full md:w-1/2 pr-0 md:pr-10 lg:pl-10 pl-4">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
-            About Us
+            Get to Know Us
           </h3>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-            The Easiest Way to Manage Personal Finances
+            Baoiam—a powerhouse of knowledge, fueling success
           </h2>
           <p className="text-base sm:text-lg text-slate-600">
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast of the Semantics, a large
-            language ocean.
+            At Boaiam, we believe in empowering learners in every dynamic
+            situation. With highly in-demand courses, we’re shaping careers
+            through expertly crafted programs that seamlessly blend theory with
+            hands-on experience. we’re here to sharpen your skills from the
+            ground up. Our dedicated team supports you at every stage, ensuring
+            you can rely on us for guidance and assistance whenever needed.
           </p>
           <div className="flex gap-8">
             <div className="flex gap-4 items-center">
@@ -184,18 +189,20 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <ServicesTab />
+      <Origin />
 
       {/* Section 4 */}
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
         <div className="flex flex-col mt-6 gap-8 mb-10 max-w-full lg:max-w-xs ">
           <h2 className="text-amber-600 font-medium text-xl">Our Values</h2>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-            The Values We Maintain At Work
+            The standard we promote at work
           </h3>
           <p className="text-base sm:text-lg text-slate-500">
-            We are a team with a variety of skills, each member contributes
-            their expertise, and works professionally among members and clients.
+            We are a diverse force in today's skill-oriented Era, standing out
+            due To our exceptional team coordination. Each members of our team
+            demonstrated a high level of commitment, not only to their own work
+            but also in their interactions with learners and clients.
           </p>
           <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
@@ -240,28 +247,27 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row  lg:flex-row mx-auto gap-8 p-6 md:p-10 justify-center items-center max-w-7xl">
         {/* Image Section */}
         <div className="w-full lg:w-1/2  pl-0 lg:pl-20 mb-6 lg:mb-0">
-
           <img
             src={aboutus5}
             alt="image"
             className="w-full h-full sm:w-[750px] sm:h-[350px] md:w-[350px] md:h-[450px] lg:w-[450px] lg:h-[490px] rounded-tl-2xl rounded-br-2xl object-cover shadow-[-10px_-15px_#4338ca] lg:shadow-[-15px_-20px_#4338ca]"
           />
-
         </div>
 
         {/* Text and Progress Bars Section */}
         <div className="flex flex-col items-start justify-center gap-2 w-full lg:w-1/2">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
-            Who We Are
+            Our profile
           </h3>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-            Get Expert Advice And Start Saving
+            Key attributes that Define us: commitment, quality and expertise
           </h2>
           <p className="text-base sm:text-lg text-slate-600">
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast of the Semantics, a large
-            language ocean.
+            What Sets Us Apart is our strong commitment to our work. We believe
+            in growing and learning together, even through changing times. Our
+            diverse expertise across various skills is what makes us the
+            preferred choice. Additionally, the exceptional standard of quality
+            we maintain at work is reflects our professionalism.
           </p>
 
           {/* Progress Bars */}
@@ -307,31 +313,31 @@ const AboutUs = () => {
           className="md:h-[350px] w-full md:w-[90%] m-auto rounded-lg flex flex-col justify-center items-center gap-4"
         >
           {data?.map((el) => (
-            <SwiperSlide key={el.id} className='group flip-card w-96 h-96'>
-              <div className='flip-card-inner'>
+            <SwiperSlide key={el.id} className="group flip-card w-96 h-96">
+              <div className="flip-card-inner">
                 {/* Front Side (Image) */}
-                <div className='flip-card-front'>
+                <div className="flip-card-front">
                   <img
-                    className='h-full w-full rounded-md object-cover'
+                    className="h-full w-full rounded-md object-cover"
                     src={el.image}
                     alt={el.name}
                   />
                 </div>
 
                 {/* Back Side (Details) */}
-                <div className='flip-card-back bg-black/80 text-white rounded-md flex flex-col justify-center items-center'>
-                  <h3 className='text-center font-sans font-medium text-lg'>
+                <div className="flip-card-back bg-black/80 text-white rounded-md flex flex-col justify-center items-center">
+                  <h3 className="text-center font-sans font-medium text-lg">
                     {el.name}
                   </h3>
-                  <p className='text-center font-bold text-xs'>
-                    {el.role}
-                  </p>
-                  <div className='py-2 flex items-center justify-center gap-2'>
-                    <FaLinkedin className='text-xl' />
-                    <FaXTwitter className='' />
+                  <p className="text-center font-bold text-xs">{el.role}</p>
+                  <div className="py-2 flex items-center justify-center gap-2">
+                    <FaLinkedin className="text-xl" />
+                    <FaXTwitter className="" />
                   </div>
 
-                  <p className="text-xs md:text-sm text-center px-4">{el.desc}</p>
+                  <p className="text-xs md:text-sm text-center px-4">
+                    {el.desc}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>

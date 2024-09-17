@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Home/Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -12,7 +12,7 @@ import AboutUs from "./Pages/AboutUs";
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Blogs from "./Pages/Blogs";
-import Career from "./Components/Career/Career";
+import Career from "./Pages/Career";
 import Blog_detail from "./Pages/Blog_detail";
 import HelpCenter from "./Pages/HelpCenter";
 import HireFromUs from "./Pages/HireFromUs";
@@ -31,20 +31,38 @@ import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard"
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ"
+
+import Refund from "./Components/Refund/Refundpolicy"
+
 import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
+import Loader from "./Components/Loader";
+import ChatBot from "./Components/Chatbot/ChatBot";
+
 
 
 const App = () => {
   const [dark, setDark] = useState(false);
 
   const theme = () => {
-    setDark(old=>!old);
+    setDark(old => !old);
     document.body.classList.toggle("dark");
   };
 
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  if (loading) {
+    return <Loader />
+  }
+
   return (
-    <div className="dark:bg-[#080529] w-full h-full dark:text-white ">
+    <div className="dark:bg-[#080529] w-full max-w-[1440px] mx-auto h-full dark:text-white ">
       <Navbar theme={theme} />
 
       <Routes>
@@ -112,11 +130,19 @@ const App = () => {
         <Route path="/instructor" element={<InstructorCard />} />
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
-        <Route path='/ReferAndEarn' element={<ReferAndEarn/>} />
+
+
+        {/*Refund Policy */}
+        <Route path="/refund" element={<Refund />} />
+
+        <Route path='/ReferAndEarn' element={<ReferAndEarn />} />
         {/* Book a demo */}
         <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
 
+
       </Routes>
+      <ChatBot />
+
       <Footer dark={dark} />
     </div>
   );

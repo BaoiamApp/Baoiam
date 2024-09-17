@@ -105,9 +105,9 @@ const Navbar = ({ theme }) => {
 
   return (
     <>
-    {showmenu && <div className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 lg:hidden" onClick={()=>setShowmenu(false)}></div>}
+    {showmenu && <div className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 xl:hidden" onClick={()=>setShowmenu(false)}></div>}
       <div
-        className={`flex z-[90] items-center justify-between px-4 py-2 w-full sticky top-0 ${isTransparent
+        className={`flex z-[90] h-28 items-center justify-between px-4 py-2 w-full sticky top-0 ${isTransparent
           ? "bg-white dark:bg-[#080529]"
           : "bg-white/70 backdrop-blur dark:bg-black/30 "
           }`}
@@ -119,7 +119,7 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
+          className={`hidden xl:flex items-center ${isDark ? "font-semibold" : "font-medium"
             } justify-between `}
         >
           <Link
@@ -295,8 +295,8 @@ const Navbar = ({ theme }) => {
 
         {/* Last */}
         <div>
-        <div className="flex items-center gap-4 text-black dark:text-white">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 md:gap-4 text-black dark:text-white">
+          <div className="flex items-center gap-4 md:gap-2">
           
             <SearchBox />
            
@@ -363,7 +363,7 @@ const Navbar = ({ theme }) => {
 
           <span
             onClick={darkTheme}
-            className="text-xl hidden lg:block cursor-pointer"
+            className="text-xl hidden xl:block cursor-pointer"
           >
             {isDark ? <BsSun /> : <BsMoonStars />}
           </span>
@@ -377,7 +377,7 @@ const Navbar = ({ theme }) => {
           </Link>
           <span
             onClick={() => setShowmenu(old => !old)}
-            className="block lg:hidden"
+            className="block xl:hidden"
           >
             <RiMenu3Line size={22} />
           </span>
