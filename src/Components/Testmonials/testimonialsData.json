@@ -1,0 +1,25 @@
+{
+    "title": "Testimonials",
+    "description": "Veniam proident aute magna anim excepteur et ex consectetur velit ullamco veniam minim aute sit. Elit occaecat officia et laboris Lorem minim. Officia do aliqua adipisicing ullamco in.",
+    "testimonials": [
+      {
+        "image": "https://readymadeui.com/team-2.webp",
+        "quote": "I had an enriching experience as an intern at Baoiam Innovations Private Limited, where I was met with supportive mentors and engaging projects, fostering both personal and professional growth.",
+        "name": "Atharv Ingale",
+        "rating": 5
+      },
+      {
+        "image": "https://readymadeui.com/team-3.webp",
+        "quote": "Had a wonderful experience at Baoiam. Learnt a lot of skills like leadership and time-management. Made really good connections and got guidance from qualified mentors.",
+        "name": "Aishwarya Kamble",
+        "rating": 5
+      },
+      {
+        "image": "https://readymadeui.com/team-4.webp",
+        "quote": "A good experience of learning various skills that are necessary for opting for any organisation. Great work culture with supportive colleagues and team members with constant mentor guidance.",
+        "name": "Kaushiki Dey",
+        "rating": 5
+      }
+    ]
+  }
+  

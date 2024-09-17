@@ -7,6 +7,7 @@ import SliderHero from '../Components/School/SliderHero'
 import TypewriterText from '../Components/School/TypewiterText'
 import { Link } from 'react-router-dom'
 import { InstructorSlider } from '../Components/School/InstructorSlider';
+import Testimonials from '../Components/Testmonials/Testimonials';
 
 
 const School = () => {
@@ -50,7 +51,8 @@ const School = () => {
         <SkillCatalog />
         <Trending />
         <WhyUs />
-        <InstructorSlider/>
+        {/* <InstructorSlider/> */}
+        <Testimonials/>
       </div>
     </>
   );
