@@ -9,30 +9,31 @@ import Protocol from '../Components/Home/Protocol'
 import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
 import Phone from '../Components/Home/Phone'
-import Meetourexperts from '../Components/Home/Meetourexperts'
+//import Meetourexperts from '../Components/Home/Meetourexperts'
 import { SuccessLight } from '../assets/assets'
+import OurTeam from "../Components/AboutUs/OurTeam"
 
 const Home = () => {
     document.title = 'Baoiam - Home'
     return (
-        <>
+      <>
             <div className='max-w-11/12 mx-auto'>
-            <Hero />
-            <Courses />
-            <Slider />
-            <div className='mx-auto w-full md:w-[85%]'>
-                <img className="w-full h-full" src={SuccessLight} alt="" />
+        <Hero />
+        <Courses />
+        <Slider />
+        <div className="mx-auto w-full md:w-[85%]">
+          <img className="w-full h-full" src={SuccessLight} alt="" />
+        </div>
+        // <Categories />
+        <Partners />
+        <Protocol />
+        <JoinNow />
+        <How />
+        <OurTeam />
+        <Phone />
             </div>
-//             <Categories />
-            <Partners />
-            <Protocol />
-            <JoinNow />
-            <How />
-            <Meetourexperts />
-            <Phone />
-            </div>
-        </>
-    )
+      </>
+    );
 }
 
 export default Home;
