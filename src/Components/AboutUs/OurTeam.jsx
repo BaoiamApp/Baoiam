@@ -18,11 +18,6 @@ import {
   Scrollbar,
 } from "swiper/modules";
 
-
-
-
-
-
 const TeamComponent = () => {
     const [data, setData] = useState(swiperData);
   return (
