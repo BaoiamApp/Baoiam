@@ -45,6 +45,8 @@ import { BiSupport } from "react-icons/bi";
 import { RiBarChartBoxLine } from "react-icons/ri";
 import ServicesTab from "../Components/AboutUs/ServicesTab";
 import Origin from "../Components/AboutUs/Origin";
+import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
+import Testimonials from "../Components/Testmonials/Testimonials";
 
 const AboutUs = () => {
   document.title = "Baoiam - About Us";
@@ -70,24 +72,23 @@ const AboutUs = () => {
           </div>
           <div className="absolute inset-0 content-overlay bg-gradient-to-r from-black/30 via-black/20 to-black/10 flex flex-col gap-4 sm:gap-6 items-start pl-6 sm:px-8 md:px-24 lg:px-48 xl:px-52 w-[100%] h-[22rem] sm:h-[23rem] md:h-[70%] sm:pt-20  justify-center sm:justify-start text-white">
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
-            <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
+            {/* <div className="rounded-3xl py-2 px-4 w-fit bg-white z-10">
               <h1 className="text-amber-600 font-medium">
                 Transforming education with ed-tech ~
               </h1>
-            </div>
-            <h2 className="text-2xl font-bold md:text-4xl sm:text-3xl">
-              Reaching higher, while breaking barriers is our aim!
+            </div> */}
+            <h2 className="text-2xl font-bold text-center md:text-4xl sm:text-3xl">
+            Join Us on a Journey to Be A One In A Million!
             </h2>
-            <p className="font-medium">
-              Baoiam is here to advise you on advancing your goals with
-              Strategic Information Needs.
+            <p className="font-semibold text-center">
+            At BAOIAM, we believe in empowering individuals with the knowledge and skills needed to stand out in the ever-evolving professional landscape. Our platform offers high-quality, industry-driven courses tailored to help learners achieve their personal and professional goals.
             </p>
-            <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            {/* <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
               Our Team
               <FaArrowRight className="font-normal" size={18} />
-            </button>
+            </button> */}
           </div>
-          <div className="relative -bottom-[20rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-48 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
+          {/* <div className="relative -bottom-[20rem] mt-1 md:absolute mx-auto mb-40 sm:mt-3 md:mt-auto sm:-bottom-40 md:top-auto md:-bottom-48 md:-inset-x-0 sm:grid sm:grid-cols-3 md:grid-cols-5 justify-center transform -translate-y-1/2 w-full text-black font-bold text-center flex flex-col md:flex md:flex-row items-center sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6">
             <div className="sm:col-span-3 grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 md:gap-6 lg:gap-8">
               <HeroCard Icon={MdDesignServices} title="UI/UX Design Services" />
               <HeroCard Icon={FaBusinessTime} title="Business Consultation" />
@@ -95,7 +96,7 @@ const AboutUs = () => {
               <HeroCard Icon={BiSupport} title="Support Management" />
               <HeroCard Icon={RiBarChartBoxLine} title="Market Research" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -114,7 +115,7 @@ const AboutUs = () => {
 
         <div className="flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-            We’re committed to your Success
+         Our Mission
           </h2>
           <p className="text-base sm:text-lg">
             Uncover your expertise with our proficiently designed courses,
@@ -123,9 +124,41 @@ const AboutUs = () => {
             practical experience, our courses cater to every student, empowering
             your growth and backing you to achieve your goals with confidence.
           </p>
-          <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
+          {/* <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
-          </button>
+          </button> */}
+        </div>
+      </div>
+
+      {/* section- 2 b */}
+      <div className="flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
+       
+      
+        <div className="flex flex-col gap-8 justify-center items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+         Our Vision
+          </h2>
+          <p className="text-base sm:text-lg">
+            Uncover your expertise with our proficiently designed courses,
+            crafted to provide you with every skill and knowledge you need to
+            reach the top of the world. From theoretical insights to hands-on
+            practical experience, our courses cater to every student, empowering
+            your growth and backing you to achieve your goals with confidence.
+          </p>
+          {/* <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
+            Collaborate with us
+          </button> */}
+        </div>
+
+ {/* Image Section */}
+        <div className="w-full md:w-1/2 h-full md:ml-6">
+          <div className="w-full h-64 sm:h-96 md:h-full rounded-b-3xl mb-2 px-2 border-slate-400">
+            <img
+              src={aboutus5}
+              alt="image"
+              className="w-full h-full lg:w-[450px] lg:h-[400px] rounded-tl-2xl rounded-br-2xl object-cover shadow-[-10px_-15px_#4338ca] sm:shadow-[-15px_-20px_#4338ca] lg:shadow-[-20px_-25px_#4338ca]"
+            />
+          </div>
         </div>
       </div>
 
@@ -195,10 +228,10 @@ const AboutUs = () => {
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
         <div className="flex flex-col mt-6 gap-8 mb-10 max-w-full lg:max-w-xs ">
           <h2 className="text-amber-600 font-medium text-xl">Our Values</h2>
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          {/* <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
             The standard we promote at work
-          </h3>
-          <p className="text-base sm:text-lg text-slate-500">
+          </h3> */}
+          {/* <p className="text-base sm:text-lg text-slate-500">
             We are a diverse force in today's skill-oriented Era, standing out
             due To our exceptional team coordination. Each members of our team
             demonstrated a high level of commitment, not only to their own work
@@ -206,42 +239,105 @@ const AboutUs = () => {
           </p>
           <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
-          </button>
+          </button> */}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full lg:ml-4">
           <ValueCard
             Icon={FaHandsHelping}
-            title="Dedication"
-            description="Dedication at work is the key to sustained excellence and success."
+            title="Quality Education"
+            description="Providing top-notch content curated by industry experts."
           />
           <ValueCard
             Icon={FaEye}
-            title="Clarity"
-            description="Clear objectives at work pave the way for strategic success."
+            title="Inclusivity"
+            description="Ensuring access to education for learners from all walks of life."
           />
           <ValueCard
             Icon={FaLightbulb}
             title="Innovation"
-            description="Embracing innovation fosters creativity and growth."
+            description="Continuously improving and adapting our courses to meet industry demands."
           />
-          <ValueCard
+          {/* <ValueCard
             Icon={GiTeamIdea}
             title="Synergy"
             description="Workplace synergy through teamwork cultivates a culture of collaboration."
-          />
+          /> */}
           <ValueCard
             Icon={FaChartLine}
-            title="Improvement"
-            description="Commitment to improvement fuels a culture of continuous success."
+            title="Student Success"
+            description=" Prioritizing the success of our learners through personalized learning paths and career support."
           />
-          <ValueCard
+          {/* <ValueCard
             Icon={FaMedal}
             title="Excellence"
             description="Striving for the highest standards in everything we do."
-          />
+          /> */}
         </div>
       </div>
+
+      {/* how it started */}
+
+      {/* team */}
+
+      <TeamSwiper/>
+
+
+      {/* USP */}
+
+      <div className="flex flex-col lg:flex-row items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
+        <div className="flex flex-col mt-6 gap-8 mb-10 max-w-full lg:max-w-xs ">
+          <h2 className="text-amber-600 font-medium text-xl">What Sets Us Apart</h2>
+          {/* <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+            The standard we promote at work
+          </h3> */}
+          {/* <p className="text-base sm:text-lg text-slate-500">
+            We are a diverse force in today's skill-oriented Era, standing out
+            due To our exceptional team coordination. Each members of our team
+            demonstrated a high level of commitment, not only to their own work
+            but also in their interactions with learners and clients.
+          </p>
+          <button className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 w-fit px-6 md:px-8 py-3 lg:py-4 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
+            Collaborate with us
+          </button> */}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full lg:ml-4">
+          <ValueCard
+            Icon={FaHandsHelping}
+            title="Expert-Led Learning"
+            description="Every course is designed and taught by industry leaders."
+          />
+          <ValueCard
+            Icon={FaEye}
+            title="Career-Focused Curriculum"
+            description="Our courses are tailored to equip you with the skills needed to land your dream job."
+          />
+          <ValueCard
+            Icon={FaLightbulb}
+            title="Flexible Learning Paths"
+            description="Learn at your own pace, from anywhere, anytime"
+          />
+          {/* <ValueCard
+            Icon={GiTeamIdea}
+            title="Synergy"
+            description="Workplace synergy through teamwork cultivates a culture of collaboration."
+          /> */}
+          <ValueCard
+            Icon={FaChartLine}
+            title="Affordable Education"
+            description="High-quality courses without the heavy price tag."
+          />
+          {/* <ValueCard
+            Icon={FaMedal}
+            title="Excellence"
+            description="Striving for the highest standards in everything we do."
+          /> */}
+        </div>
+      </div>
+
+       {/* testimonial */}
+       <Testimonials/>
 
       {/* Section 5 */}
       <div className="flex flex-col md:flex-row  lg:flex-row mx-auto gap-8 p-6 md:p-10 justify-center items-center max-w-7xl">
