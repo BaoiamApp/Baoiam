@@ -93,6 +93,12 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} /> GCEP
                 </Link>
                 <Link
+                  to={"/gcep"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> GCSP
+                </Link>
+                <Link
                   to={"/entrepreneurship"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
@@ -103,18 +109,6 @@ function Footer({ dark }) {
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
                   <MdKeyboardArrowRight size={20} /> Career
-                </Link>
-                <Link
-                  to={"/partner"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Partner with us
-                </Link>
-                <Link
-                  to={"/affiliate"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Become an affiliate
                 </Link>
               </div>
             </div>
