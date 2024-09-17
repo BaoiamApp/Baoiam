@@ -40,10 +40,9 @@ export const CareerSection7 = () => {
   return (
     <>
       {/* Slide Section */}
-      <div className=' dark:bg-black relative w-full overflow-hidden    items-center justify-center sm:p-6 md:p-10 m-0'>
+      <div className=' dark:bg-black relative w-full overflow-hidden items-center justify-center sm:px-6 pb-10 md:px-10 m-0'>
         <div
           className='flex transition-transform ease-in-out duration-1000'
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {/* {slides.map((slide, index) => (
             <div
@@ -88,24 +87,25 @@ export const CareerSection7 = () => {
               {slides?.map((slide, index) => {
                 return (
                   <SwiperSlide
-                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md  flex flex-col justify-center items-center gap-4 '
+                    className='relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg  dark:bg-zinc-900 rounded-md  flex flex-col justify-center items-center gap-4 '
                     key={index}
                   >
                     <div
                       className='w-full h-full flex-shrink-0 flex items-center justify-center'
                     >
-                      <div className='flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl transform transition-transform hover:scale-105 hover:shadow-3xl bg-white m-5'>
+                      <div className='flex flex-col sm:flex-row w-full max-w-screen-lg h-full border border-gray-200 shadow-2xl rounded-xl hover:shadow-3xl bg-white m-5'>
 
-                        <div className='flex-1 flex justify-center  m-0 sm:p-4'>
-                          <p className='text-base sm:text-sm md:text-lg lg:text-xl text-black text-center sm:text-left'>
-                            {slide.content}
+                        <div className='flex-1 flex-col gap-4 items-center flex justify-center px-1 py-2 m-0 sm:p-4'>
+                          <h2 className="text-black lg:text-4xl font-semibold ">Lorem, ipsum dolor.</h2>
+                          <p className='text-base sm:text-sm md:text-lg  flex items-center justify-center lg:w-10/12 font-semibold lg:text-xl p-3 text-black text-center  '>
+                            {slide.content.split(".")[0]}.
                           </p>
                         </div>
 
                         <div className='flex-1 h-full'>
                           <img
                             src={slide.image}
-                            alt={`Slide ${index + 1}`}
+                            alt={``}
                             className='w-full h-full object-cover'
                           />
                         </div>

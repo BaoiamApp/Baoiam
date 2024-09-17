@@ -41,7 +41,7 @@ export const CareerSection1 = () => {
                   />
               </div>
               {/* Stats Box */}
-              <div className='absolute z-30 top-2/3 right-1/2 translate-x-1/2 py-2 px-4 transition duration-150 mx-auto bg-white rounded-lg shadow-lg  flex items-center hover:scale-105'>
+              <div className='absolute z-30 bottom-4 right-1/2 translate-x-1/2 py-2 px-4 transition duration-150 mx-auto bg-white rounded-lg shadow-lg  flex items-center hover:scale-105'>
                 <FiBarChart2 className='text-orange-500 w-8 h-8' />
                 <div>
                   <p className='lg:text-xl  md:text-xl text-lg font-bold text-gray-800'>
@@ -54,7 +54,7 @@ export const CareerSection1 = () => {
             </div>
 
               {/* Floating Icons */}
-              <div className='absolute top-[30px] left-12 lg:left-[60px]'>
+              {/* <div className='absolute top-[30px] left-12 lg:left-[60px]'>
                 <FaSlack className='text-blue-600 bg-white p-1 sm:p-2 rounded-full shadow-lg lg:w-12 lg:h-12 md:w-12 md:h-12 sm:w-10 sm:h-10 w-6 h-6' />
               </div>
               <div className='absolute top-36 left-[-10px] lg:left-[25px]'>
@@ -65,7 +65,7 @@ export const CareerSection1 = () => {
               </div>
               <div className='absolute top-8 right-9 lg:right-10 '>
                 <FiBarChart2 className='text-green-600 bg-white p-1 sm:p-2 rounded-full shadow-lg lg:w-12 lg:h-12 md:w-12 md:h-12 sm:w-10 sm:h-10 w-6 h-6' />
-              </div>
+              </div> */}
           </div>
         </main>
       </div> 

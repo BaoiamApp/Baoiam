@@ -23,7 +23,7 @@ const Career = () => {
       <CareerSection5 />
       <CareerSection6 />
       <CareerSection7 />
-      <CareerSection8 />
+      {/* <CareerSection8 /> */}
     </div>
   );
 };
