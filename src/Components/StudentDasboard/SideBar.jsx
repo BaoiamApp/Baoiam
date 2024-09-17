@@ -18,11 +18,13 @@ import Payment from "./Payment";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setProfile } from "../../redux/user/userSlice";
+// import { setProfile1 } from "../../redux/user/userSlice";
+import { setProfile1 } from "../../Redux/user/userSlice.js";
+// import { setProfile } from "../../redux/user/userSlice";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
-  document.title = 'Baoiam - User Profile'
+  document.title = "Baoiam - User Profile";
   const [activeTab, setActiveTab] = useState("profile"); // Default active tab
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({});
@@ -36,7 +38,7 @@ const Sidebar = () => {
         },
       });
       console.log(data);
-      dispatch(setProfile(data));
+      dispatch(setProfile1(data));
       localStorage.setItem("userInfo", JSON.stringify(data));
       console.log(
         "from local storage:",
@@ -56,6 +58,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchUserDetails();
     console.log(userInfo);
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
@@ -64,7 +67,7 @@ const Sidebar = () => {
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
     activeTab === tab
-      ? "bg-white dark:bg-black dark:text-white text-black 3xl p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative"
+      ? " glass bg-white backdrop-filter backdrop-blur-lg dark:bg-black dark:text-white p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer relative"
       : "p-4 rounded-l-full flex gap-2 text-sm lg:text-lg items-center cursor-pointer text-white relative";
 
   // Function to render content based on the active tab
@@ -97,7 +100,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex relative h-full pt-8 transition duration-500">
+    <div className="flex relative bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 h-full pt-8 transition duration-500">
       {/* Sidebar */}
       <div className="absolute py-2 top-0 w-full md:hidden">
         <button className="px-4" onClick={openSidebar}>
@@ -181,7 +184,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full md:p-6 p-4 rounded-3xl ">{renderContent()}</div>
+      <div className="w-full bg-white dark:bg-black md:p-6 p-4">{renderContent()}</div>
     </div>
   );
 };

@@ -15,6 +15,12 @@ export {default as Trust} from './GSCP/trust.png'
 export {default as Value} from './GSCP/value.png'
 export {default as GSCP} from './GSCP/GSCP.png'
 
+// About us
+export {default as Service} from  './AboutUs/Service.png'
+export {default as Review} from  './AboutUs/Review.png'
+export {default as Career} from  './AboutUs/Career.png'
+export {default as Perks} from  './AboutUs/Perks.png'
+
 // PAP
 export {default as PHero} from './PAP/pap-hero.png'
 
@@ -26,3 +32,7 @@ export {default as Apple} from './footer-desktop-appstore.svg'
 
 // Google Play Store
 export {default as Google_play} from './footer-desktop-playstore.svg'
+
+// Home
+export {default as SuccessDark} from './Home/SuccessDark.png'
+export {default as SuccessLight} from './Home/SuccessLight.png'

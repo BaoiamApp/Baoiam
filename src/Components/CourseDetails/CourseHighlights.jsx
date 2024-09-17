@@ -37,28 +37,31 @@ const CourseHighlights = () => {
                 </span>
             </h4>
 
-            <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
-                {Highlights?.map((h, i) => {
-                    return (
-                        <div
-                            key={i}
-                            className="bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 md:h-[210px] rounded-xl flex flex-col gap-4 w-[21rem] lg:w-64"
-                        >
-                            <span className="text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out">
-                                {React.createElement(highlightIcons(h.icon))}
-                            </span>
-                            <p className="tracking-tighter">
-                                <span className="text-2xl font-semibold leading-tight tracking-tighter">
-                                    {h.head}
-                                </span>{" "}
-                                <br /> <span>{h.desc}</span>
-                            </p>
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    )
-}
+      <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
+        {Highlights?.map((h, i) => {
+          return (
+            <div
+            key={i}
+            className="bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 xl:py-0 md:h-[210px] rounded-xl flex flex-col gap-4 w-full sm:w-[21rem] lg:w-[30%]"
+          >
+            <p className="tracking-tighter flex items-center gap-2">
+              <span className="text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out">
+                {React.createElement(highlightIcons(h.icon))}
+              </span>
+              <span className="text-2xl font-semibold leading-tight tracking-tighter">
+                {h.head}
+              </span>
+            </p>
+            <p>
+              <span>{h.desc}</span>
+            </p>
+          </div>
+          
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default CourseHighlights

@@ -14,51 +14,62 @@ import {
 import { FaCheck } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
 const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const invalidCouponToast = () => toast("Invalid Referral Code!");
   const { id, plan, course } = useParams();
+  const [proceedButton, setProceedButton] = useState(
+    `PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`
+  );
   const [referral, setReferral] = useState("");
   const [enrollingCourse, setEnrollingCourse] = useState({});
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
   useEffect(() => {
+    if (!localStorage.getItem("access_token")) navigate("/login");
     // alert('id is:',id , ' and plan is:',plan)
-    window.scrollTo(0, 0);
-    console.log(course, id, plan);
-    if (course == "school") {
-      const course = School[0].subCate.filter((item) => {
-        return item.id == id;
-      });
-      setEnrollingCourse(course[0]);
-      console.log(course);
-    } else if (course == "college") {
-      const course = CollegeCourseData[0].subCate.filter((item) => {
-        return item.id == id;
-      });
-      setEnrollingCourse(course[0]);
-      console.log(course);
-    } else {
-      const course = OtherCourseData[0].subCate.filter((item) => {
-        return item.id == id;
-      });
-      setEnrollingCourse(course[0]);
-      console.log(course);
+    else {
+      window.scrollTo(0, 0);
+      console.log(course, id, plan);
+      if (course == "school") {
+        const course = School[0].subCate.filter((item) => {
+          return item.id == id;
+        });
+        setEnrollingCourse(course[0]);
+        console.log("course is: ", course);
+      } else if (course == "college") {
+        const course = CollegeCourseData[0].subCate.filter((item) => {
+          return item.id == id;
+        });
+        setEnrollingCourse(course[0]);
+        console.log(course);
+      } else {
+        const course = OtherCourseData[0].subCate.filter((item) => {
+          return item.id == id;
+        });
+        setEnrollingCourse(course[0]);
+        console.log(course);
+      }
     }
     return () => {};
   }, []);
+
+
   const handleCheckout = () => {
+    setProceedButton("Loading....");
     const buyCourse = async () => {
+      console.log(localStorage.getItem("access_token"));
       try {
         const { data } = await axios.post(
           `${apiUrl}/api/orders/`,
           {
-            plan_id: 12,
+            plan_id: id,
           },
           {
             headers: {
@@ -67,7 +78,9 @@ const Checkout = () => {
             },
           }
         );
+
         const { order_id, total_amount } = data;
+        console.log("order_id: " + order_id);
         const options = {
           key: razorpayKeyId,
           amount: total_amount,
@@ -76,27 +89,62 @@ const Checkout = () => {
           handler: async function (res) {
             const payment_id = res.razorpay_payment_id;
             const signature = res.razorpay_signature;
-            await axios.post(`${apiUrl}/api/orders/verify_payment/`, {
-              payment_id,
-              order_id,
-              signature,
-            });
+            console.log("payment_id:", payment_id);
+            console.log("signature:", signature);
+            console.log("order_id:(inside razorpay)", order_id);
+            try {
+              setProceedButton("Verifying....");
+              const { data } = await axios.post(
+                `${apiUrl}/api/orders/verify_payment/`,
+                JSON.stringify({
+                  payment_id,
+                  order_id,
+                  signature,
+                }),
+                {
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `JWT ${localStorage.getItem(
+                      "access_token"
+                    )}`,
+                  },
+                }
+              );
+              console.log("data from razorpay:", data);
+              if (data.message == "Payment verified successfully!") {
+                toast.success("Enrollment completed successfully!");
+                setProceedButton("Success");
+                navigate("/profile");
+              }
+            } catch (err) {
+              toast.error(err.message);
+              console.log("err.stack: ", err.stack);
+            }
           },
           theme: {
             color: "#3399cc",
           },
         };
-        const rzp = new window.Razorpay(options);
-        rzp.open();
+        if (window.Razorpay) {
+          const rzp = new window.Razorpay(options);
+          rzp.open();
+        } else {
+          console.error("Razorpay SDK not loaded");
+          toast.error("Payment gateway not available");
+        }
         // console.log("FROM CHECKOUT: ", data);
       } catch (err) {
         console.log(err.stack);
+        console.log(proceedButton);
+        setProceedButton(`PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`);
+        // toast.error("Something went wrong");
       }
     };
     buyCourse();
   };
 
-  document.title = `Baoiam - ${enrollingCourse.course}`
+  document.title = `Baoiam - ${enrollingCourse?.course}`;
+  
 
   return (
     <div className="flex flex-wrap dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
@@ -142,7 +190,9 @@ const Checkout = () => {
           <div className="flex justify-between w-full items-center">
             <div>
               <p className="text-sm text-slate-600 font-semibold dark:text-white">
-                Prabhjot Arora
+                {JSON.parse(localStorage.getItem("userInfo"))?.first_name +
+                  " " +
+                  JSON.parse(localStorage.getItem("userInfo"))?.last_name}
               </p>
               {/* <p className="text-sm text-slate-400">8785144645</p> */}
             </div>
@@ -164,6 +214,7 @@ const Checkout = () => {
           <div className="flex justify-between items-center w-full">
             <div className="flex flex-col">
               <div className="rounded-md bg-green-200 p-1 w-fit">
+                <p></p>
                 <p className="text-green-700 px-1 font-medium text-xs">
                   {plan} Plan
                 </p>
@@ -172,7 +223,7 @@ const Checkout = () => {
               <h2 className="font-semibold text-lg mb-2">
                 {/* {plan} | MERN Stack | Java | English */}
                 {course == "school"
-                  ? enrollingCourse.course
+                  ? enrollingCourse?.course
                   : course == "college"
                   ? enrollingCourse.courseName
                   : enrollingCourse.course}
@@ -212,7 +263,7 @@ const Checkout = () => {
               className="px-5 flex-1 py-1 rounded border-indigo-600 hover:bg-indigo-600 hover:text-white transition border-2 w-full"
               onClick={() => {
                 if (!referral) {
-                  toast("Please enter a referral code");
+                  toast.error("Please enter a referral code");
                 } else invalidCouponToast();
               }}
             >
@@ -221,90 +272,6 @@ const Checkout = () => {
             <ToastContainer />
           </div>
         </div>
-        {/* <div className="mx-2">
-          <p className="text-slate-500 mb-2 font-medium text-base">
-            Get this package to help you crack tech job interviews
-          </p>
-          <div className="w-full bg-zinc-100 border-gray-200 border-[1.5px] rounded-lg px-4 mb-2 pt-2">
-            <div className="flex">
-              <ComputerDesktopIcon className="h-8 w-8 text-blue-500 mr-2 mt-2" />
-              <div className="flex w-full justify-between">
-                <h2 className="text-slate-700 text-xl font-medium">
-                  Career Climber Combo
-                </h2>
-                <p className="text-slate-700 font-meduim text-xl">₹0</p>
-              </div>
-            </div>
-            <div className="flex w-full justify-between">
-              <div className="ml-8 mb-4">
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">DBMS course</p>
-                </div>
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">System Design course</p>
-                </div>
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">Aptitude Preparation course</p>
-                </div>
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">Operating System course</p>
-                </div>
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">
-                    3 Live 1:1 sessions with Industry Experts
-                  </p>
-                </div>
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">Live 1:1 Doubt Support</p>
-                </div>
-                <div className="flex">
-                  <FaCheck className="h-5 w-6 mr-2 mt-1" />
-                  <p className="text-orange-600">Ebook</p>
-                </div>
-              </div>
-              <div className="flex flex-wrap sm:flex-nowrap">
-                <div className="rounded-md bg-green-200 p-1 h-fit w-full">
-                  <p className="text-green-700 px-1 font-medium text-xs">
-                    Save 100%
-                  </p>
-                </div>
-                <span className="ml-4 text-slate-700 line-through">
-                  ₹40,000
-                </span>
-              </div>
-            </div>
-            <hr className="border-t-1 border-gray-300" />
-            <div className="flex w-full justify-between p-4">
-              <div className="bg-blue-100 p-2 rounded-md max-w-[70%]">
-                <p className="text-slate-500 text-sm">
-                  Unlock this exclusive combo offer when you enrol for this
-                  course.
-                </p>
-              </div>
-              <div className="border-gray-200 px-4 border-2 flex flex-col justify-center text-slate-400 rounded-md">
-                <p className="text-lg">Added !</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="flex justify-between px-2 pt-2">
-          <h3 className="text-slate-600 font-medium text-md">Total Discount</h3>
-          <span className="text-green-600 font-medium text-md">- ₹24,049</span>
-        </div> */}
-        {/* <div className="flex ml-2 mb-2">
-          <p className="text-slate-600 text-sm">View more</p>
-          <RiArrowDropDownLine className="text-2xl" />
-        </div> */}
-        {/* <div className="flex w-full p-3 mb-5 rounded-lg bg-orange-50">
-          <PercentBadgeIcon className="h-6 w-6 text-orange-500 bg-white mr-2" />
-          <p className="text-orange-500 font-semibold">Apply Coupon</p>
-        </div> */}
         <hr className="border-t-1 border-gray-300 mb-4" />
         <div className="flex justify-between mb-5">
           <h2 className="text-2xl text-black font-semibold dark:text-white">
@@ -316,11 +283,19 @@ const Checkout = () => {
         </div>
 
         <button
+          disabled={proceedButton === "Loading...."}
           onClick={handleCheckout}
-          className="w-full flex justify-center rounded-md font-bold text-lg p-2 text-white bg-gradient-to-r from-indigo-800 to-indigo-500"
+          className={`w-full flex  justify-center rounded-md font-bold text-lg p-2 text-white bg-gradient-to-r 
+           
+               from-indigo-800 to-indigo-500
+                ${
+                  proceedButton === "Loading...." &&
+                  "from-slate-400 to-slate-400"
+                }
+          }`}
         >
           <HiShieldCheck className="h-6 w-6 text-white" />
-          &nbsp; PROCEED TO PAY ₹{plan == "Premium" ? 11999 : 2999}
+          &nbsp; {proceedButton}
         </button>
       </div>
     </div>

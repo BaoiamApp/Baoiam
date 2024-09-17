@@ -5,13 +5,13 @@ const Phone = () => {
   const [inputValue, setInputValue] = useState("Email");
 
   return (
-    <div className="flex bg-amber-50 dark:bg-[#080529] dark:text-white items-center gap-8 lg:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
-      <div className="w-40 md:w-80 h-full lg:h-96">
-        <img src={App_phone} className="w-full h-full" alt="" />
+    <div className="flex w-full bg-amber-50 dark:bg-[#080529] dark:text-white items-center mx-auto gap-8 md:gap-12 justify-center flex-col md:flex-row mt-12 py-12 px-8 lg:px-20">
+      <div className="w-40 md:w-1/2 h-full">
+        <img src={App_phone} className="w-[60%] float-right h-full" alt="" />
       </div>
-      <div className="">
+      <div className="w-1/2">
         <p className="text-3xl lg:text-5xl font-semibold mb-2 lg:mb-4">
-          Enroll in Course!
+          Take the Leap—Start Learning Now!
         </p>
         <p className="text-sm lg:text-base">
           Unlock your potential for success with our course.
@@ -21,7 +21,7 @@ const Phone = () => {
           <div className="flex items-center gap-4">
             <div
               onClick={() => setInputValue("Email")}
-              className="flex items-center gap-2 text-sm lg:text-lg"
+              className="flex items-center gap-2 text-sm lg:text-lg "
             >
               <input
                 type="radio"
@@ -46,17 +46,17 @@ const Phone = () => {
             </div>
           </div>
 
-          <div className="flex items-center flex-col md:flex-row gap-4">
+          <div className="flex items-center flex-col md:flex-row gap-4 ">
             {inputValue === "Email" ? (
               <input
-                className="outline-none rounded-full border border-black px-2 py-1 lg:px-4 lg:py-2 w-60"
+                className="outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-2 w-60"
                 required
                 type="email"
                 placeholder="Email"
               />
             ) : (
               <input
-                className="outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-1 w-60"
+                className="outline-none rounded-md  border border-black px-2 py-1 lg:px-4 lg:py-1 w-60"
                 required
                 type="tel"
                 inputMode="numeric"
@@ -67,7 +67,7 @@ const Phone = () => {
 
             <button
               type="submit"
-              className="text-sm px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 text-white rounded-full"
+              className="text-sm rounded-md px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 text-white"
             >
               Join now
             </button>
