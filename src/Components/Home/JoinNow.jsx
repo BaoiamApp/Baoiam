@@ -54,19 +54,16 @@ const Home = () => {
             alt="Join Now"
           />
         </div>
-
         {/* Text and Button on the right */}
-        <div className="flex justify-center items-center w-full lg:w-[50%]">
-          <div className="p-6 text-center lg:text-left">
-            <p className="mb-6 text-lg lg:text-xl ">
-              Take the next step toward achieving your personal and professional
-              goals with Baoiam. Join now to receive personalized
-              recommendations from the full Baoiam catalog.
-            </p>
-            <button className="px-6 py-3 font-semibold bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-full text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300">
-              Join Now
-            </button>
-          </div>
+        <div className="p-4 w-full md:w-[60%] lg:w-[40%] text-center  lg:text-center md:text-left mx-auto md:mx-0 lg:mr-20">
+          <p className="mb-6 px-0 text-lg sm:text-xl lg:text-2xl w-full ">
+            Take the next step toward achieving your personal and professional
+            goals with Baoiam. Join now to receive personalized recommendations
+            from the full Baoiam catalog.
+          </p>
+          <button className="px-4 sm:px-6 py-2 sm:py-3 font-semibold bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-full text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300">
+            Join Now
+          </button>
         </div>
       </div>
     </>
