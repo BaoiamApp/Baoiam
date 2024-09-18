@@ -9,7 +9,7 @@ import content_data from "../Data/Content.js";
 import { useParams } from "react-router-dom";
 import data2 from "../Data/Content2.js";
 import { toast } from "react-toastify";
-import axios from "axios";
+
 import {
   FaBullhorn,
   FaClipboardList,
