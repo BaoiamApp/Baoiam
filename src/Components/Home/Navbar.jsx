@@ -175,7 +175,7 @@ const Navbar = ({ theme }) => {
           </Link>
 
           <Link
-            to={"/conatct"}
+            to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
             className={`mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
               ? "text-indigo-600"

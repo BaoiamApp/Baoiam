@@ -209,8 +209,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                 Contact Us
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${location.pathname === "/gcep" && activeTab === 'GCSP' ? 'text-[#1638C9]  dark:text-white dark:bg-[#060606]' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
-                            setActiveTab("GCSP")
+                        <li className={`${mobTabtyles} ${location.pathname === "/gcep" && activeTab === 'GCEP' ? 'text-[#1638C9]  dark:text-white dark:bg-[#060606]' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("GCEP")
                             closeSideBar();
                         }}>
 

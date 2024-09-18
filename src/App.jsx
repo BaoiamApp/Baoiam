@@ -125,7 +125,7 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
         {/* Help */}
-        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/help" element={<HelpCenter />} />
         {/* Hire */}
         <Route path="/hire" element={<HireFromUs />} />
         <Route path="/instructor" element={<InstructorCard />} />
