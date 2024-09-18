@@ -38,8 +38,8 @@ export default function SliderSection() {
     <div className="slider-section dark:bg-[#080529] w-full relative py-20 overflow-hidden ">
       <div className="text-center mb-0 lg:mb-8">
         <h2 className="text-4xl font-bold mb-8">Featured <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent" >Courses</span></h2>
-        <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
-          {["School Courses", "College Courses", "Degree Courses"].map(
+        {/* <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
+          {.map(
             (category) => (
               <button
                 key={category}
@@ -54,7 +54,7 @@ export default function SliderSection() {
               </button>
             )
           )}
-        </div>
+        </div> */}
       </div>
 
       <div className="mx-4 mt-8 md:mx-14">
@@ -89,7 +89,7 @@ export default function SliderSection() {
               spaceBetween: 10,
             },
           }}
-        >{console.log(categories[1])}
+        >
           {categories[selectedCategory]?.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">

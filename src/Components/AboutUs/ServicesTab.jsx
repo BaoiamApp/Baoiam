@@ -9,7 +9,7 @@ const ServicesTab = () => {
     switch (activeTab) {
       case "services":
         return (
-          <div className="p-4 md:mr-20">
+          <div className="p-4">
             <div className="container mx-auto ">
               <div className="text-start ">
                 <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
