@@ -5,7 +5,7 @@ export const School = [
     subCate: [
       {
         id: 1,
-        course: "English speaking/Public speaking",
+        course: "English and Public speaking",
         banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
         desc: [
           " Welcome to the Public Speaking Mastery course, where students embark on an empowering journey to enhance their communication skills and build confidence. You will dive into the art of crafting compelling speeches, mastering effective delivery techniques, and engaging audiences with poise and clarity.",
@@ -1424,6 +1424,7 @@ export const CollegeCourseData = [
       {
         id: 11,
         courseName: "Web Development",
+        banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
         category: "Technology",
         difficultyLevel: "Intermediate",
         price: "Free",
@@ -1640,6 +1641,7 @@ export const CollegeCourseData = [
       {
         id: 12,
         courseName: "Graphic Designing",
+        banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
         desc: `"Unlock Your Creative Potential: Embark on a Journey in Graphic Design! Graphic design, a realm of boundless creativity, beckons those who possess a passion for art, technology, and communication. It's an ideal career path for individuals seeking to blend their artistic flair with modern digital tools. Join us to hone your skills in crafting visually captivating and compelling content. Our program offers live sessions, immersive industry-related projects, and exclusive masterclasses led by seasoned experts. From logo design to poster creation, we'll guide you through every step, empowering you to enhance your digital media skills and unleash your creativity. Designed to elevate your graphic design prowess, our program is tailored for aspiring designers eager to refine their craft and make a meaningful impact in the world of visual communication. Take the first step towards a fulfilling career in graphic design. Join our program and let your creativity flourish!"`,
         category: "Design",
         overview: [
@@ -1648,6 +1650,13 @@ export const CollegeCourseData = [
           `Each project you undertake will not only hone your technical skills but also contribute to a portfolio that showcases your creativity and expertise.`,
           `Invest in our course today, and illuminate your path towards a fulfilling career in design, where every lesson illuminates new possibilities and every project shines as a testament to your talent and dedication."`,
         ],
+        desc: [
+          `"Imagine being able to effortlessly blend colors to create visually stunning compositions that captivate your audience. With our design course, you'll gain a deep understanding of color theory, enabling you to infuse your work with emotion and meaning. Just like a skilled artist painting a masterpiece, you'll learn to wield typography like a brush, crafting text that not only communicates but also evokes a mood or emotion. And when it comes to layout, think of yourself as the director of a symphony, orchestrating elements to guide your audience's eye and create harmonious designs.`,
+          `Through hands-on training with industry-standard software like Adobe Photoshop and Illustrator, you'll transform these concepts into tangible creations, whether it's a captivating logo that instantly resonates with viewers or a sleek website that engages users from the moment they land on the page.`,
+          `Each project you undertake will not only hone your technical skills but also contribute to a portfolio that showcases your creativity and expertise.`,
+          `Invest in our course today, and illuminate your path towards a fulfilling career in design, where every lesson illuminates new possibilities and every project shines as a testament to your talent and dedication."`,
+        ],
+
         highlights: [
           {
             icon: "MdOutlineClass",
@@ -1768,6 +1777,8 @@ export const CollegeCourseData = [
         id: 13,
         courseName: "Human Resource",
         category: "Business",
+        banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
+       
         difficultyLevel: "Intermediate",
         desc: `Unlock your potential in Human Resource Management with our comprehensive course! Covering recruitment, employee relations, and organizational development, this program equips you with the essential skills to excel in HR roles. Navigate HR policies effortlessly and foster a positive workplace culture with confidence. Prepare for key roles in talent management and retention with practical insights and industry projects led by esteemed faculty. Dive into our blend of live sessions and hands-on projects designed to demystify HR management. Enrol now to hone your skills and advance your career in the dynamic field of Human Resources!`,
         overview: [
@@ -1895,6 +1906,8 @@ export const CollegeCourseData = [
       {
         id: 14,
         courseName: "Data Analytics",
+        banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
+       
         desc: `"Unleash Your Analytical Potential with Our Dynamic Data Analytics Program! Discover the power of data analytics and propel your career to new heights with our immersive program tailored to demystify data and supercharge your analytical skills. Through live sessions, hands-on labs, and industry-relevant projects, you'll gain invaluable insights and practical experience that are essential for success in today's data-driven world. Led by distinguished faculty and supplemented with masterclasses, our program ensures you're equipped with the latest techniques and tools to excel in data analytics across diverse industries. Whether you're a seasoned professional or just starting out, our engaging curriculum promises to transform your understanding of data and elevate your analytical capabilities. Don't leave your career to chance – invest in yourself with our comprehensive data analytics program. Enrol today and take the first step towards unlocking a world of opportunities!"`,
         overview: [
           `"Unlock the Power of Data Analytics: Your Comprehensive Guide to Success!`,
@@ -2020,6 +2033,8 @@ export const CollegeCourseData = [
       {
         id: 15,
         courseName: "Product Management",
+        banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
+       
         desc: `"Unlock Your Product Management Potential: Elevate Your Career with Our Comprehensive Course! Discover the strategic art of Product Management and embark on a journey that transforms you into a dynamic leader in the industry. Our course is meticulously designed to guide you through every stage of a product's lifecycle, from conception to market launch, ensuring you master essential skills and strategies along the way. With a focus on market analysis, customer feedback integration, and seamless collaboration with cross-functional teams, our curriculum empowers you to make informed decisions that drive product success. Whether you're a seasoned professional or just starting out, our tailored approach caters to individuals at every career stage, providing you with the tools and insights needed to excel in the field. Gain expertise in product strategy formulation, roadmap planning, and effective stakeholder communication, equipping you to lead with confidence and clarity. Our course isn't just about learning – it's about unlocking your potential to become a standout leader in Product Management. Join us and embark on a transformative journey that will not only enhance your career prospects but also solidify your reputation as a sought-after Product Management expert. Enrol today and make the decision that sets you on the path to unparalleled success!"`,
         overview: [
           `"Transform Your Product Management Career with Our Comprehensive Course!`,
@@ -2149,6 +2164,7 @@ export const CollegeCourseData = [
       },
       {
         id: 16,
+        banner: "https://www.baoiam.com/media/course_banners/Frame_2321.png",
         highlights: [
           {
             icon: "MdOutlineClass",

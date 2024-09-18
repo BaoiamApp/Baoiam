@@ -48,8 +48,10 @@ import OurTeam from "../Components/AboutUs/OurTeam"
 import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 import Testimonials from "../Components/Testmonials/Testimonials";
 import Timeline from "../Components/AboutUs/Timeline";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate()
   document.title = "Baoiam - About Us";
   const [data, setData] = useState(swiperData);
 
