@@ -37,7 +37,9 @@ function Footer({ dark }) {
             </Link>
 
             {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
+            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
               At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
+            </p> */}
             </p> */}
           </div>
 
@@ -54,14 +56,14 @@ function Footer({ dark }) {
                   to={"/about-us"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} />
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
                   About Us
                 </Link>
                 <Link
                   to={"/team"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} />
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
                   Our Team
                 </Link>
 
@@ -69,7 +71,7 @@ function Footer({ dark }) {
                   to={"/blog"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Blog
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Blog
                 </Link>
 
               </div>
@@ -110,7 +112,7 @@ function Footer({ dark }) {
                   to={"/pap"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Pay After Placement
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Pay After Placement
                 </Link>
               </div>
             </div>
@@ -144,13 +146,13 @@ function Footer({ dark }) {
                   to={"/contact"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Contact Us
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Contact Us
                 </Link>
                 <Link
                   to={"/help"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Help Center
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Help Center
                 </Link>
               </div>
             </div>
@@ -259,7 +261,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaFacebook size={22} />
+              <FaFacebook className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Instagram */}
@@ -268,7 +270,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaInstagram size={22} />
+              <FaInstagram className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Linkedin */}
@@ -279,7 +281,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaLinkedin size={22} />
+              <FaLinkedin className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Twitter */}
@@ -288,7 +290,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500"
             >
-              <FaSquareXTwitter size={22} />
+              <FaSquareXTwitter className=" min-w-6 text-xl aspect-square" />
             </Link>
           </div>
         </div>
