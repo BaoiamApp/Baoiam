@@ -162,7 +162,7 @@ const Section1 = ({ dark }) => {
           <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
             <span className="text-2xl font-bold">3</span>
           </div>
-          <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+          <h3 className="text-xl lg:text-2xl font-semibold mb-4 w-full text-center text-gray-800 max-xs:text-lg">
             Tailored Partnership
           </h3>
           <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
