@@ -2,7 +2,7 @@ import React from 'react'
 import Marquee from 'react-fast-marquee'
 
 const BrandMarquee = ({array}) => {
-    const arrayDoubled=[...array,...array];
+    const arrayDoubled=[...array,...array,...array,...array];
     return (
         <div className="flex w-11/12 my-4 mx-auto">
 
