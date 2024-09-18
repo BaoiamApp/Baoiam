@@ -21,7 +21,7 @@ const Phone = () => {
           <div className="flex items-center gap-4">
             <div
               onClick={() => setInputValue("Email")}
-              className="flex items-center gap-2 text-sm lg:text-lg"
+              className="flex items-center gap-2 text-sm lg:text-lg "
             >
               <input
                 type="radio"
@@ -46,17 +46,17 @@ const Phone = () => {
             </div>
           </div>
 
-          <div className="flex items-center flex-col md:flex-row gap-4">
+          <div className="flex items-center flex-col md:flex-row gap-4 ">
             {inputValue === "Email" ? (
               <input
-                className="outline-none  border border-black px-2 py-1 lg:px-4 lg:py-2 w-60"
+                className="outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-2 w-60"
                 required
                 type="email"
                 placeholder="Email"
               />
             ) : (
               <input
-                className="outline-none rounded-md border border-black px-2 py-1 lg:px-4 lg:py-1 w-60"
+                className="outline-none rounded-md  border border-black px-2 py-1 lg:px-4 lg:py-1 w-60"
                 required
                 type="tel"
                 inputMode="numeric"
@@ -67,7 +67,7 @@ const Phone = () => {
 
             <button
               type="submit"
-              className="text-sm px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 text-white"
+              className="text-sm rounded-md px-2 py-1 lg:px-4 lg:py-2 lg:text-base bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 text-white"
             >
               Join now
             </button>
