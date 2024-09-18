@@ -36,20 +36,20 @@ function Footer({ dark }) {
               />
             </Link>
 
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
+            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
               At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
-            </p>
+            </p> */}
           </div>
 
-          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-4 dark:text-white">
+          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-16 dark:text-white">
             {/* Quick Links */}
             <div className="px-4 sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Quick Links
               </p>
 
-              <div className="mt-4 flex flex-col gap-2 text-sm">
-                
+              <div className="mt-4 flex flex-col gap-2 text-xs">
+
                 <Link
                   to={"/about-us"}
                   className="text-black dark:text-white text-nowrap flex items-center"
@@ -64,6 +64,64 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} />
                   Our Team
                 </Link>
+
+                <Link
+                  to={"/blog"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Blog
+                </Link>
+
+              </div>
+            </div>
+
+            {/* Program & Partnership */}
+            <div className="px-4 sm:text-left">
+              <p className="text-lg font-medium text-black dark:text-white text-wrap xl:text-nowrap">
+                Programs & Partnerships
+              </p>
+
+              <div className="mt-4 flex flex-col gap-2 text-xs">
+                <Link
+                  to={"/gcep"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Global Collabo Educational Partnership
+                </Link>
+                <Link
+                  to={"/gcep"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Global Collabo Startup Programs
+                </Link>
+                <Link
+                  to={"/itie"}
+                  className="text-black dark:text-white text-nowrap flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Intern Teach Intern Earn
+                </Link>
+                <Link
+                  to={"/entrepreneurship"}
+                  className="text-black dark:text-white text-nowrap flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Entrepreneurship
+                </Link>
+                <Link
+                  to={"/pap"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Pay After Placement
+                </Link>
+              </div>
+            </div>
+
+            {/* Help & Support */}
+            <div className="px-4 sm:text-left">
+              <p className="text-lg font-medium text-black dark:text-white text-nowrap">
+                Help & Support
+              </p>
+
+              <div className="mt-4 flex flex-col gap-2 text-xs">
                 <Link
                   to={"/hire"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
@@ -81,75 +139,6 @@ function Footer({ dark }) {
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
                   <MdKeyboardArrowRight size={20} /> FAQs
-                </Link>
-                <Link
-                  to={"/blog"}
-                  className="text-black text-nowrap dark:text-white  flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Blog
-                </Link>
-                
-              </div>
-            </div>
-
-            {/* Program & Partnership */}
-            <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black dark:text-white text-wrap xl:text-nowrap">
-                Programs & Partnerships
-              </p>
-
-              <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link
-                  to={"/gcep"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> GCEP (Global Collabo Education Partnership)
-                </Link>
-                <Link
-                  to={"/gcep"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> GCSP (Global Collabo Startup Partnership)
-                </Link>
-                <Link
-                  to={"/itie"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> ITIE (Intern Teach Intern Earn)
-                </Link>
-                <Link
-                  to={"/pap"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Pay After Placement
-                </Link>
-              </div>
-            </div>
-
-            {/* Help & Support */}
-            <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black dark:text-white text-nowrap">
-              Help & Support
-              </p>
-
-              <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link
-                  to={"/terms-conditions"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Terms & Conditions
-                </Link>
-                <Link
-                  to={"/refund"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Refund policy
-                </Link>
-                <Link
-                  to={"/privacy-policy"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Privacy policy
                 </Link>
                 <Link
                   to={"/contact"}
@@ -172,7 +161,7 @@ function Footer({ dark }) {
                 Contact Us
               </p>
 
-              <ul className="mt-4 space-y-4 text-sm">
+              <ul className="mt-4 space-y-4 text-xs">
                 {/* Mail */}
                 <li className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
                   <svg
@@ -306,11 +295,29 @@ function Footer({ dark }) {
 
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="flex items-center justify-between text-left">
-            <p className="text-sm flex items-center gap-2 text-black">
+            <div className="text-xs flex items-center gap-4 text-black">
+              <Link
+                to={"/terms-conditions"}
+                className="text-black dark:text-white text-nowrap flex items-center"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                to={"/refund"}
+                className="text-black dark:text-white text-nowrap flex items-center"
+              >
+                Refund policy
+              </Link>
+              <Link
+                to={"/privacy-policy"}
+                className="text-black dark:text-white text-nowrap flex items-center"
+              >
+                Privacy policy
+              </Link>
               <span className="block dark:text-white sm:inline">
                 All rights reserved.
               </span>
-            </p>
+            </div>
 
             <p className="text-sm dark:text-white text-black order-first">
               &copy; 2023 BAOIAM

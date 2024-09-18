@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { CollegeCourseData, OtherCourseData, School } from '../../Data';
+import { MdSchool } from 'react-icons/md';
+import { FaUniversity } from 'react-icons/fa';
+import { IoBookSharp } from 'react-icons/io5';
 
 const CourseNav = ({ setShow, courses }) => {
-    const [activeTabId, setActiveTabId] = useState(0);
-    const [activeTabIndex, setActiveTabIndex] = useState(0);
+    const [activeTabId, setActiveTabId] = useState(null);
+    const [activeTabIndex, setActiveTabIndex] = useState(null);
 
     const handleTabActiveState = (tabId, index) => {
         setActiveTabId(tabId);
@@ -13,16 +16,35 @@ const CourseNav = ({ setShow, courses }) => {
     };
 
     // will change after api integration
-    const label = [{ title: School[0].Cate, id: 0, link: courses[0].name }, { title: CollegeCourseData[0].Cate, id: 1, link: courses[1].name }, { title: OtherCourseData[0].Cate, id: 2, link: courses[2].name }]
+    const label = [
+        {
+            id: 0,
+            title: School[0].Cate,
+            link: courses[0].name,
+            icon: <MdSchool size={18} />
+        },
+        {
+            id: 1,
+            title: CollegeCourseData[0].Cate,
+            link: courses[1].name,
+            icon: <FaUniversity size={18} />
+        },
+        {
+            id: 2,
+            title: OtherCourseData[0].Cate,
+            link: courses[2].name,
+            icon: <IoBookSharp size={18} />
+        }
+    ]
 
     return (
         <div>
-            <div className="flex flex-col h-fit p-1">
+            <div className="flex flex-col h-fit w-fit p-1">
                 {label.map((c, i) => {
                     return (
-                        <div key={i} className={`flex items-center justify-between py-1 w-48 ${activeTabIndex === i && 'text-amber-600'}`}>
-                            <Link onClick={() => setShow(false)} to={`/courses/${c.link}`} className="hover:underline hover:text-amber-600 font-semibold">
-                                {c.title}
+                        <div key={i} className={`flex items-center justify-between py-3 w-64 ${activeTabIndex === i && 'text-amber-600'}`}>
+                            <Link onClick={() => setShow(false)} to={`/courses/${c.link}`} className="hover:underline hover:text-amber-600 font-semibold flex items-center gap-2">
+                               {c.icon} {c.title}
                             </Link>
                             <button onClick={() => handleTabActiveState(c.id, i)} className={`hover:text-amber-600`}>
                                 <IoIosArrowDown
@@ -35,7 +57,7 @@ const CourseNav = ({ setShow, courses }) => {
             </div>
 
             {activeTabIndex !== null && (
-                <div className="absolute top-6 left-[14.3rem] h-72 w-72 overflow-x-hidden rounded-b-3xl rounded-tr-3xl bg-white dark:bg-gray-700 border-black/20 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
+                <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
                     {courses[activeTabIndex].subcategories.map((sub, index) => {
                         return (
                             <div key={index} className="px-6 py-2 hover:bg-amber-50">
