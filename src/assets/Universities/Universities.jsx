@@ -6,5 +6,7 @@ import Amity from './Amity.png'
 import GLA from './GLA.webp'
 import Rajdhani from './Rajdhani.png'
 import Hansraj from './Hansraj.png'
+import Maitreyi from './Maitreyi.png'
+import RKDF from './RKDF.png'
 
-export const universities = [Alliance, IILM, DU, Amity,GLA,Rajdhani,Hansraj];
+export const universities = [Alliance, IILM, DU, Amity,GLA,Rajdhani,Hansraj,Maitreyi,RKDF];

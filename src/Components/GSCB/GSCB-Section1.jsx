@@ -76,7 +76,7 @@ const Section1 = ({ dark }) => {
       >
         {text.split("").map((letter, index) => (
           <span
-            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-4xl max-xs:leading-[6vw] max-xs:font-medium max-xs:text-[4.5vw] max-md:text-[4.5vw] max-md:leading-[7vw] max-xs:text-white"
+            className="leading-10 text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-2xl font-medium  max-xs:text-white"
             key={index}
             ref={setlettersRef}
           >

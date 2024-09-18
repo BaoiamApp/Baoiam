@@ -13,7 +13,6 @@ import Phone from '../Components/Home/Phone'
 import { SuccessDark, SuccessLight } from '../assets/assets'
 import OurTeam from "../Components/AboutUs/OurTeam"
 import ServicesTab from '../Components/AboutUs/ServicesTab'
-import BrandMarquee from "../Components/Marquee/BrandMarquee";
 
 const Home = ({dark}) => {
     document.title = 'Baoiam - Home'

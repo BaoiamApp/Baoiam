@@ -69,12 +69,12 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col px-6 py-2 items-center">
-    <div className="flex items-center flex-col justify-evenly px-6 py-4">
-      <h1 className="effect text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[6vw] mb-8 md:mb-4 lg:mb-[4vw] text-center max-xs:text-[8vw] max-xs:leading-[10vw]">
+    <section className="flex flex-col px-6 pt-20 items-center">
+    <div className="flex py-16 items-center flex-col justify-evenly px-6">
+      <h1 className="effect text-4xl md:text-5xl lg:text-4xl font-bold leading-tight mb-8 md:mb-4 lg:mb-[4vw] text-center ">
         Global Collabo Educational Partnership
       </h1>
-      <p className="effect text-2xl md:text-3xl lg:text-4xl text-center px-4 lg:px-[10rem] mb-4 md:mb-6 lg:mb-[4vw] max-xs:px-2 max-xs:text-[5vw] max-xs:font-medium md:font-medium md:text-[2.5vw]">
+      <p className="effect text-2xl md:text-3xl lg:text-2xl text-center px-4 lg:px-[10rem] mb-4 md:mb-6 lg:mb-[4vw]  md:font-medium ">
         Uniting educational institutions globally for a brighter future
       </p>
       {/* Uncomment and customize the button and link as needed */}
