@@ -20,13 +20,14 @@ const GSCB = () => {
     <>
       <Header />
 
+      <div className="flex flex-col justify-center items-center gap-4 my-12">
+        <h1 className="text-2xl font-bold">Trusted by a global community of progressive educators</h1>
+        <BrandMarquee array={universities}/>
+      </div>
+
       {/* Section 1 */}
       <Section1 />
 
-      <div className="flex flex-col justify-center items-center gap-4 my-12">
-        <h1 className="text-4xl font-bold">Trusted by a global community of progressive educators</h1>
-        <BrandMarquee array={universities}/>
-      </div>
 
       {/* Section 2 */}
       <Section2 />
