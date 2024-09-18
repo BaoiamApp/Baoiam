@@ -37,7 +37,7 @@ const CourseHighlights = () => {
                 </span>
             </h4>
 
-      <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
+      <div className="en6 flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
         {Highlights?.map((h, i) => {
           return (
             <div
