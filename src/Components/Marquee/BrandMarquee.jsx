@@ -8,11 +8,11 @@ const BrandMarquee = ({array}) => {
 
         <Marquee className='flex gap-4'>{
             arrayDoubled.map((item, index) => (
-                <div key={index} className="flex-shrink-0">
+                <div key={index} className="flex-shrink-0 mx-8 h-fit w-28">
                     <img
                         src={item}
                         alt={`Image `}
-                        className=" h-16 w-28 object-contain"
+                        className=" mx-auto object-cover"
                         />
                 </div>
             ))
