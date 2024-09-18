@@ -52,29 +52,50 @@ const Partners = () => {
   );
 
   return (
-    <div className="m-2 dark:bg-[#080529]">
-      <h1 className="text-center text-xl tracking-tight w-full md:w-[60%] mx-auto font-semibold my-9">
-        We collaborate with organizations{" "}
-        <span className="text-indigo-600">
-          {" "}
-          from startups to multinational firms,
-        </span>{" "}
-        including diverse range of business and non profits
-      </h1>
+    <div className="dark:bg-[#080529]">
+     <div className="my-20">
+       <h2 className="text-3xl text-center sm:text-4xl dark:text-white font-bold text-gray-900">
+       Our Trusted <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+        Business Partners</span></h2>
+        <p className="text-center text-slate-600 dark:text-slate-300 w-full md:w-[60%] mx-auto mb-14 mt-5">
+          We collaborate with organizations from startups to multinational firms,
+          including diverse range of business and non profits
+        </p>
+        <div className="bg-slate-100">
+          <div className="flex justify-between">
+            {visibleImages.map((image, index) => (
+              <div key={index} className="w-full px-2">
+                <img
+                  src={image}
+                  alt={`Slide ${index}`}
+                  className="object-contain w-full h-28"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+     </div>
+     <div className="mt-20">
+     <h2 className="text-3xl text-center sm:text-4xl dark:text-white font-bold text-gray-900">
+     Shaping Futures with <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+     Leading Universities</span></h2>
+      <p className="text-center text-slate-600 dark:text-slate-300 w-full md:w-[60%] mx-auto mb-14 mt-5">
+      Partnering with top universities to provide quality education and access to advanced resources, ensuring students are prepared for future success.</p>
 
-      <div className="px-5 bg-indigo-50">
+      {/* <div className="bg-slate-100">
         <div className="flex justify-between">
           {visibleImages.map((image, index) => (
-            <div key={index} className="w-full  px-2">
+            <div key={index} className="w-full px-2">
               <img
                 src={image}
                 alt={`Slide ${index}`}
-                className="object-contain w-full h-32"
+                className="object-contain w-full h-28"
               />
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
+    </div>
     </div>
   );
 };

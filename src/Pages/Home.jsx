@@ -22,11 +22,11 @@ const Home = () => {
                 <Hero />
                 <Courses />
                 <Slider />
+                {/* <Categories /> */}
+                {/* <ServicesTab /> */}
                 <div className="mx-auto w-full md:w-[85%] mb-8">
                     <img className="w-full h-full" src={SuccessLight} alt="" />
                 </div>
-                {/* <Categories /> */}
-                <ServicesTab />
                 <Partners />
                 <Protocol />
                 <JoinNow />

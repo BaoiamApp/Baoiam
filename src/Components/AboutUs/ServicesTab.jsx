@@ -22,7 +22,7 @@ const ServicesTab = () => {
                     career
                   </span>
                 </h1>
-                <p className="text-gray-500 text-base">
+                <p className="text-gray-500 text-sm">
                   Baoiam provides various services, including personalized
                   career counseling, resume and cover letter writing, interview
                   preparation, and networking opportunities to ensure students'
@@ -31,8 +31,8 @@ const ServicesTab = () => {
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
-                <div className="flex justify-center w-full lg:w-[40%] sm:h-96 lg:mr-8">
+              <div className="flex flex-col lg:flex-row justify-between gap-8 mt-10 sm:mt-8 ">
+                <div className="flex justify-center w-full lg:w-[30%]">
                   <img
                     src={Service}
                     alt="Service"
@@ -135,7 +135,7 @@ const ServicesTab = () => {
                     potential
                   </span>
                 </h1>
-                <p className="text-gray-500 text-base">
+                <p className="text-gray-500 text-sm">
                   Baoiam provides various features like live expert classes,
                   mock tests, and real-time projects to make sure students'
                   career growth is accelerated. These interactive sessions
@@ -146,7 +146,7 @@ const ServicesTab = () => {
 
               {/* Content Section */}
               <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
-                <div className="flex justify-center w-full lg:w-[40%] sm:h-96 lg:mr-8">
+                <div className="flex justify-center w-full lg:w-[30%] ">
                   <img
                     src={Career}
                     alt="Service"
@@ -250,7 +250,7 @@ const ServicesTab = () => {
                   </span>{" "}
                   company culture
                 </h1>
-                <p className="text-gray-500 text-base">
+                <p className="text-gray-500 text-sm">
                   Companies often provide various perks to their employees in
                   order to enhance their overall job satisfaction and wellbeing.
                   Some of the most common perks offered by companies include.
@@ -259,7 +259,7 @@ const ServicesTab = () => {
 
               {/* Content Section */}
               <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
-                <div className="flex justify-center w-full lg:w-[40%] sm:h-96 lg:mr-8">
+                <div className="flex justify-center w-full lg:w-[30%]">
                   <img
                     src={Perks}
                     alt="Service"
@@ -356,21 +356,21 @@ const ServicesTab = () => {
           <div className="p-4 sm:p-8 md:mr-20">
             <div className="container mx-auto">
               <div className="text-start">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                   We don't deliver promises, we{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     believe
                   </span>{" "}
                   in achievements
-                </h1>
-                <p className="text-gray-500 text-base">
+                </h2>
+                <p className="text-gray-500 text-sm">
                   Check out the top reviews from our top performers.
                 </p>
               </div>
 
               {/* Content Section */}
               <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
-                <div className="flex justify-center w-full lg:w-[40%] sm:h-96 lg:mr-8">
+                <div className="flex justify-center w-full lg:w-[30%]">
                   <img
                     src={Review}
                     alt="Service"
@@ -471,7 +471,7 @@ const ServicesTab = () => {
       <div className="p-4 mx-4 sm:mx-10 ">
         <div className="flex flex-col mb-2 sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
           <button
-            className={`text-sm md:text-xl font-bold ${
+            className={`text-sm md:text-base font-semibold ${
               activeTab === "services"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
                 : "text-blue-950"
@@ -481,7 +481,7 @@ const ServicesTab = () => {
             What we provide
           </button>
           <button
-            className={`text-sm md:text-xl font-bold ${
+            className={`text-sm md:text-base font-semibold ${
               activeTab === "features"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
                 : "text-blue-950"
@@ -491,7 +491,7 @@ const ServicesTab = () => {
             Our unique elements
           </button>
           <button
-            className={`text-sm md:text-xl font-bold ${
+            className={`text-sm md:text-base font-semibold ${
               activeTab === "perks"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
                 : "text-blue-950"
@@ -501,7 +501,7 @@ const ServicesTab = () => {
             Rewards
           </button>
           <button
-            className={`text-sm md:text-xl font-bold ${
+            className={`text-sm md:text-base font-semibold ${
               activeTab === "reviews"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
                 : "text-blue-950"
