@@ -1,5 +1,6 @@
 // Logo
-export {default as Logo} from './img1.png'
+export {default as LogoLight} from './logoLight.png'
+export {default as LogoDark} from './logoDark.png'
 
 // Course Section
 export {default as CourseDesc} from './course/course-desc.png'

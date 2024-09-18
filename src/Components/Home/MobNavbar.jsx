@@ -6,6 +6,7 @@ import { IoBookSharp } from 'react-icons/io5';
 import { RxCross2 } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import { MdSchool } from 'react-icons/md';
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 
@@ -82,7 +83,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                     >
 
                                         <div className='flex items-center gap-2'>
-                                            <FaSchool />
+                                            <MdSchool />
                                             <h1>School</h1>
                                         </div>
                                         {schoolCate ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
@@ -190,22 +191,22 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                 About Us
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${location.pathname === "/pap" && activeTab === 'PAP' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
-                            setActiveTab("PAP")
+                        <li className={`${mobTabtyles} ${location.pathname === "/blog" && activeTab === 'Blogs' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("Blogs")
                             closeSideBar();
                         }}>
 
-                            <Link to={"/hire"} className="ms-3" >
-                                Hire From Us
+                            <Link to={"/blog"} className="ms-3" >
+                                Blogs
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${location.pathname === "/itie" && activeTab === 'ITIE' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
-                            setActiveTab("ITIE")
+                        <li className={`${mobTabtyles} ${location.pathname === "/contact" && activeTab === 'Contact Us' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
+                            setActiveTab("Contact Us")
                             closeSideBar();
                         }}>
 
-                            <Link to={"/career"} className="ms-3" >
-                                Career
+                            <Link to={"/contact"} className="ms-3" >
+                                Contact Us
                             </Link>
                         </li>
                         <li className={`${mobTabtyles} ${location.pathname === "/gcep" && activeTab === 'GCSP' ? 'text-[#1638C9]  dark:text-white dark:bg-[#060606]' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
@@ -217,15 +218,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                                 GCEP
                             </Link>
                         </li>
-                        <li className={`${mobTabtyles} ${location.pathname === "/blogs" && activeTab === 'Blogs' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
-                            setActiveTab("Blogs")
-                            closeSideBar();
-                        }}>
-
-                            <Link to={"/blogs"} className="ms-3" >
-                                Blogs
-                            </Link>
-                        </li>
+                        
                     </ul>
                     <div
                         onClick={changeTheme}
