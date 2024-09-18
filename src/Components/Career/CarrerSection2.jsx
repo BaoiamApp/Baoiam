@@ -53,31 +53,31 @@ export const CarrerSection2 = () => {
   ];
   return (
     <>
-      <div className='bg-white dark:bg-black flex flex-col'>
-        <main className='flex flex-col items-center justify-center px-4 sm:px-8 md:px-15 lg:px-0 xl:px-0 m-4 md:m-8'>
-          <h1 className='text-3xl sm:text-4xl dark:text-zinc-100 lg:text-5xl font-bold mb-6 text-center text-[#0a0a0a] pt-4 sm:pt-5'>
-            Your Life At BAOIAM
+      <div className="bg-white dark:bg-black flex flex-col">
+        <main className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-15 lg:px-0 xl:px-0 m-4 md:m-8">
+          <h1 className="text-2xl sm:text-4xl dark:text-zinc-100 lg:text-4xl font-bold mb-6 text-center text-[#0a0a0a] pt-4 sm:pt-5">
+            Employee Benefits and Perks
           </h1>
-          <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4'>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 lg:pl-20 lg:pr-20">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className='p-4 md:p-6 flex flex-col items-center cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-white hover:bg-gray-100 transition border border-gray-300 rounded-lg shadow-sm lg:mt-0'
+                className="p-4 md:p-6 flex flex-col items-center cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-white hover:bg-gray-100 transition border border-gray-300 rounded-lg shadow-sm lg:mt-0"
               >
                 {/* Image Icon */}
                 <img
                   src={benefit.icon}
                   alt={benefit.title}
-                  className='w-12 h-12 mb-4'
+                  className="w-12 h-12 mb-4"
                 />
 
                 {/* Title */}
-                <h2 className='text-lg md:text-lg font-bold dark:text-zinc-400 text-gray-900 text-center mb-2'>
+                <h2 className="text-lg md:text-lg font-bold dark:text-zinc-400 text-gray-900 text-center mb-2">
                   {benefit.title}
                 </h2>
 
                 {/* Description */}
-                <p className='text-sm text-gray-600 text-center'>
+                <p className="text-sm text-gray-600 text-center">
                   {benefit.description}
                 </p>
               </div>
