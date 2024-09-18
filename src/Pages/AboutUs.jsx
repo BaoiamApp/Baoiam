@@ -62,7 +62,7 @@ const AboutUs = () => {
   return (
     <div>
       {/* Section - 1 */}
-      <div className="mx-auto h-fit md:h-screen w-full text-white">
+      <div className="  mx-auto h-fit md:h-screen w-full text-white">
         <div className="relative mx-auto h-fit md:h-screen w-full text-white">
           <div className="h-[22rem] sm:h-[23rem] md:h-[70%] w-full image-container">
             <img
@@ -104,7 +104,7 @@ const AboutUs = () => {
       </div>
 
       {/* Section - 2 */}
-      <div className="flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
+      <div className="animediv1 flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
         {/* Image Section */}
         <div className="w-full md:w-1/2 h-full md:ml-6">
           <div className="w-full h-64 sm:h-96 md:h-full pt-8 rounded-b-3xl mb-2 px-2 border-slate-400">
