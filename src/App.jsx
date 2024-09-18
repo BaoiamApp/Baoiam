@@ -30,16 +30,15 @@ import Login from "./Pages/auth/Login";
 import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
-import FAQS from "./Components/FAQ/FAQ"
+import FAQS from "./Components/FAQ/FAQ";
 import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
-
 
 const App = () => {
   const [dark, setDark] = useState(false);
 
   const theme = () => {
-    setDark(old=>!old);
+    setDark((old) => !old);
     document.body.classList.toggle("dark");
   };
 
@@ -62,12 +61,12 @@ const App = () => {
         {/* Courses */}
         <Route path="/courses/school" element={<School />} />
         <Route path="/courses/college" element={<College />} />
-        <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
+        <Route path="/course/:id" element={<CourseDetailsPage />} />
 
-        <Route
+        {/* <Route
           path="/course/:course"
           element={<div>colleg Sub Category</div>}
-        />
+        /> */}
 
         {/* Blog */}
         <Route path="/Blog_detail/:id" element={<Blog_detail />} />
@@ -112,10 +111,9 @@ const App = () => {
         <Route path="/instructor" element={<InstructorCard />} />
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
-        <Route path='/ReferAndEarn' element={<ReferAndEarn/>} />
+        <Route path="/ReferAndEarn" element={<ReferAndEarn />} />
         {/* Book a demo */}
         <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
-
       </Routes>
       <Footer dark={dark} />
     </div>

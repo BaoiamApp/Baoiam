@@ -120,7 +120,7 @@ const BookADemo = () => {
         <div className="bg-white shadow-lg rounded-lg p-6 text-left flex flex-col justify-between border border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Choose Your Plan</h2>
           <div className="space-y-4">
-            {course?.plans.map((plan, index) => (
+            {course?.plans?.map((plan, index) => (
               <div
                 key={plan.id}
                 className={`flex items-center p-4 rounded-lg border ${selectedPlan === index ? 'border-indigo-500 bg-indigo-100' : 'border-gray-300'}`}

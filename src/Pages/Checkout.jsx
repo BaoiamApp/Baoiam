@@ -15,7 +15,7 @@ import { FaCheck } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
 import { useNavigate, useParams } from "react-router-dom";
-import { School, CollegeCourseData, OtherCourseData } from "../Data";
+// import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
 const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
