@@ -59,9 +59,8 @@ export default function SliderSection() {
 
       <Swiper
         modules={[Navigation]}
-        spaceBetween={0} // Adjust the space between cards
-        slidesPerView={3} // Default number of slides per view
-        dot={false}
+        spaceBetween={0} // Adjust space between cards
+        slidesPerView={1} // Default number of slides for large screens
         loop={true} // Enables loop mode for continuous sliding
         navigation={{
           nextEl: ".swiper-button-next",
@@ -71,20 +70,17 @@ export default function SliderSection() {
         className="swiper-container py-8 px-6 md:px-16"
         onSlideChange={handleSlideChange}
         breakpoints={{
-          317: {
-            slidesPerView: 1,
+          315: {
+            slidesPerView: 1, // 1 slide on phone screens
             spaceBetween: 10,
           },
-          620: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          740: {
-            slidesPerView: 3,
+          640: {
+            slidesPerView: 2, // 2 slides on small screens (smaller tablets)
             spaceBetween: 20,
           },
+
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 4, // 4 slides on large screens (desktops)
             spaceBetween: 30,
           },
         }}

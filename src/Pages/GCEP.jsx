@@ -5,20 +5,30 @@ import Section1 from "../Components/GSCB/GSCB-Section1";
 import Header from "../Components/GSCB/GSCB-Hero";
 import GSCPBottom from "../Components/GSCB/GSCP-Section3";
 
-const GSCB = () => {
+import { universities } from "../assets/Universities/Universities";
+import BrandMarquee from "../Components/Marquee/BrandMarquee";
+
+const GCEP = () => {
   document.title = 'Baoiam - GCEP'
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     return () => {};
   }, []);
 
   return (
     <>
+      
       <Header />
 
       {/* Section 1 */}
       <Section1 />
+
+      <div className="flex flex-col justify-center items-center gap-4  my-12">
+        <h1 className="text-2xl font-bold px-4 text-center">Trusted by a global community of progressive educators</h1>
+        <BrandMarquee array={universities}/>
+      </div>
+
 
       {/* Section 2 */}
       <Section2 />
@@ -32,4 +42,4 @@ const GSCB = () => {
   );
 };
 
-export default GSCB;
+export default GCEP;
