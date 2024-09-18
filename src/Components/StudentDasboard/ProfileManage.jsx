@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { FaCheckCircle } from "react-icons/fa";
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProfileManage = ({ userInfo, setUserInfo }) => {
   const [email, setEmail] = useState({
     newEmail: "",
     confirmEmail: "",
   });
-  const [formData, setFormData] = useState(() => {
-    return {
-      first: userInfo.name?.split(" ")[0],
-      last: userInfo.name?.split(" ")[1],
-      email: userInfo.email,
-      mobile: userInfo.mobile,
-      dob: userInfo.dob,
-      college: userInfo.college,
-      location: userInfo.location,
-      socialLinks: {
-        linkedIn: userInfo.socialLinks?.linkedIn,
-        gitHub: userInfo.socialLinks?.gitHub,
-        leetCode: userInfo.socialLinks?.leetCode,
-      },
-    };
+
+  const [formData, setFormData] = useState({
+    first: userInfo.first_name || "",
+    last: userInfo.last_name || "",
+    email: userInfo.email || "",
+    mobile: userInfo.mobile_number || "",
+    dob: userInfo.dob || "",
+    college: userInfo.college_name || "",
+    school: userInfo.school_name || "",
+    location: userInfo.location || "",
+    socialLinks: {
+      linkedIn: userInfo.linkedin || "",
+      gitHub: userInfo.github || "",
+      instagram: userInfo.instagram || "",
+    },
   });
 
+  // Separate edit states for each section
   const [isEditable, setIsEditable] = useState({
     personalInfo: false,
+    otherInfo: false, // New state for other information
     socialLinks: false,
     email: false,
     password: false,
@@ -31,14 +37,11 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
 
   const handleEditToggle = (section) => {
     if (section === "email" && isEditable.email) {
-      console.log("email", isEditable.email, validateEmail());
       if (validateEmail()) {
-        setFormData((old) => {
-          return {
-            ...old,
-            email: email.newEmail,
-          };
-        });
+        setFormData((prev) => ({
+          ...prev,
+          email: email.newEmail,
+        }));
         setIsEditable((prevState) => ({
           ...prevState,
           [section]: !prevState[section],
@@ -54,38 +57,99 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
 
   const validateEmail = () => {
     return (
-      email.newEmail !== "" &&
-      email.confirmEmail !== "" &&
+      email.newEmail &&
+      email.confirmEmail &&
       email.newEmail === email.confirmEmail
     );
   };
 
   const handleInputChange = (e) => {
     const { name, value, type } = e.target;
-    setFormData((old) => {
-      return type === "url"
-        ? {
-            ...old,
-            socialLinks: { ...old.socialLinks, [name]: value },
-          }
-        : {
-            ...old,
-            [name]: [value],
-          };
-    });
+
+    if (type === "url") {
+      setFormData((prev) => ({
+        ...prev,
+        socialLinks: {
+          ...prev.socialLinks,
+          [name]: value,
+        },
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleSave = async (section) => {
+    try {
+      let transformedData = {};
+      if (section === "personalInfo") {
+        transformedData = {
+          first_name: formData.first,
+          last_name: formData.last,
+          email: formData.email,
+        };
+
+        await axios.patch(`${apiUrl}/api/auth/users/me/`, transformedData, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `JWT ${localStorage.getItem("access_token")}`,
+          },
+        })
+        return;
+
+
+      } else if (section === "otherInfo") {
+        transformedData = {
+          mobile_number: formData.mobile,
+          college_name: formData.college,
+          school_name: formData.school,
+        };
+      } else if (section === "socialLinks") {
+        transformedData = {
+          linkedin: formData.socialLinks.linkedIn,
+          github: formData.socialLinks.gitHub,
+          instagram: formData.socialLinks.instagram,
+        };
+      }
+
+      await axios.put(`${apiUrl}/api/profile/`, transformedData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `JWT ${localStorage.getItem("access_token")}`,
+        },
+      });
+
+      setUserInfo((prev) => ({
+        ...prev,
+        ...transformedData,
+      }));
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
   };
 
   useEffect(() => {
-    setUserInfo((old) => {
-      console.log(formData.first, formData.last);
-      return {
-        name: `${formData.first} ${formData.last}`,
-        ...formData,
-      };
-    });
-  }, [formData]);
-  useEffect(() => {
-    console.log("userInfo - ", userInfo);
+    if (Object.keys(userInfo).length) {
+      setFormData((prev) => ({
+        ...prev,
+        first: userInfo.first_name || "",
+        last: userInfo.last_name || "",
+        email: userInfo.email || "",
+        mobile: userInfo.mobile_number || "",
+        dob: userInfo.dob || "",
+        college: userInfo.college_name || "",
+        school: userInfo.school_name || "",
+        location: userInfo.location || "",
+        socialLinks: {
+          linkedIn: userInfo.linkedin || "",
+          gitHub: userInfo.github || "",
+          instagram: userInfo.instagram || "",
+        },
+      }));
+    }
   }, [userInfo]);
 
   return (
@@ -96,238 +160,188 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           <h3 className="text-xl font-bold mb-4">Personal Information</h3>
           <button
             type="button"
-            onClick={() => handleEditToggle("personalInfo")}
-            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
+            onClick={() => {
+              handleEditToggle("personalInfo");
+              if (isEditable.personalInfo) handleSave("personalInfo");
+            }}
+            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
           >
             {isEditable.personalInfo ? "Save" : "Edit"}
           </button>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* First Name */}
-            <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2">{formData.first}</label> :
-                <input
-                  type="text"
-                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="First Name"
-                  onChange={handleInputChange}
-                  name="first"
-                />
-              }
+          
+          <div className="grid grid-cols-1 gap-6">
+            {/* Email */}
+            <div className="space-x-2">
+              <label><span className="font-bold px-2">Email</span>{formData.email || "Email not provided"}</label>
+              <FaCheckCircle className="text-green-500 inline" size={20} />
             </div>
 
-            {/* Last Name */}
-            <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2">{formData.last}</label> :
-                <input
-                  type="text"
-                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="Last Name"
-                  onChange={handleInputChange}
-                  name="last"
-                />
-              }
+            {/* First and Last Name */}
+            <div className="flex flex-row items-center">
+              {/* First Name */}
+              {!isEditable.personalInfo ? (
+                <label className="py-1 px-2">{formData.first}</label>
+              ) : (
+                <>
+                  <label className="py-1 px-2 font-bold">First name</label>
+                  <input
+                    type="text"
+                    className="py-1 px-2  border-gray-300 rounded-md shadow-sm"
+                    placeholder="First Name"
+                    value={formData.first}
+                    onChange={handleInputChange}
+                    name="first"
+                  />
+                </>
+              )}
+              {/* Last Name */}
+              {!isEditable.personalInfo ? (
+                <label className="py-1 px-2">{formData.last}</label>
+              ) : (
+                <>
+                  <label className="py-1 px-2 font-bold">Last name</label>
+                  <input
+                    type="text"
+                    className="py-1 px-2  border-gray-300 rounded-md shadow-sm"
+                    placeholder="Last Name"
+                    value={formData.last}
+                    onChange={handleInputChange}
+                    name="last"
+                  />
+                </>
+              )}
             </div>
+          </div>
+        </div>
+
+        {/* Other Information Section */}
+        <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
+          <h3 className="text-xl py-1 px-2 font-bold mb-4">Other Information</h3>
+          <button
+            type="button"
+            onClick={() => {
+              handleEditToggle("otherInfo");
+              if (isEditable.otherInfo) handleSave("otherInfo");
+            }}
+            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
+          >
+            {isEditable.otherInfo ? "Save" : "Edit"}
+          </button>
+          <div className="flex items-center space-x-2">
             {/* Mobile Number */}
             <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2">{userInfo.mobile || "Enter Mobile Number"}</label> : <input
-                type="tel"
-                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                placeholder="Mobile Number"
-                onChange={handleInputChange}
-                name="mobile"
-              />
-              }
-            </div>
-            {/* Date of Birth */}
-            <div>
-              {!isEditable.personalInfo ?
-                <label className="block py-1 px-2">{userInfo.dob}</label> : <input
-                  type="date"
-                  className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  name="dob"
+              {!isEditable.otherInfo ? (
+                <label className="block py-1 px-2">{formData.mobile || "Enter Mobile Number"}</label>
+              ) : (
+                <input
+                  type="tel"
+                  className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
+                  placeholder="Mobile Number"
+                  value={formData.mobile}
                   onChange={handleInputChange}
-                />
-              }
-            </div>
-            {/* College/School */}
-            <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2">{userInfo.college}</label> : <input
-                type="text"
-                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                placeholder="College or School Name"
-                onChange={handleInputChange}
-                name="college"
-
-              />
-              }
-            </div>
-            {/* Location */}
-            <div>
-              {!isEditable.personalInfo ? <label className="block py-1 px-2">{userInfo.location}</label> : <input
-                type="text"
-                className=" py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                placeholder="Location"
-                onChange={handleInputChange}
-                name="location"
-              />
-              }
-            </div>
-          </div>
-        </div>
-
-        {/* Email Section */}
-        <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
-          <h3 className="text-xl py-1 px-2 font-bold mb-4">Email</h3>
-          <button
-            type="button"
-            onClick={() => handleEditToggle("email")}
-            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
-          >
-            {isEditable.email ? "Save" : "Edit"}
-          </button>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Current Email */}
-            {!isEditable.email ? 
-            <div className="col-span-1 sm:col-span-2">
-              <label className="block">{userInfo.email || "Email not provided"}</label>
-            </div>
-              : <div className='space-y-5'>
-                {/* New Email */}
-                <div>
-                  
-                    <input
-                      type="newEmail"
-                      className="mt-1 block px-2 py-1 w-full border-gray-300 rounded-md shadow-sm"
-                      placeholder="New Email Address"
-                      onChange={(e)=>{
-                        setEmail(old=>{
-                          return {
-                            ...old,
-                            newEmail:e.target.value,
-                          }
-                        })
-                      }}
-                      name='newEmail'
-                    />
-                </div>
-                {/* Confirm Email */}
-                <div>
-                  
-                    <input
-                      type="confirmEmail"
-                      className="mt-1 block w-full px-2 py-1 border-gray-300 rounded-md shadow-sm"
-                      placeholder="Confirm New Email"
-                      onChange={(e)=>{
-                        setEmail(old=>{
-                          return {
-                            ...old,
-                            confirmEmail:e.target.value,
-                          }
-                        })
-                      }}
-                      name='confirmEmail'
-                    />
-                </div>
-              </div>
-            }
-          </div>
-        </div>
-
-        {/* Password Section */}
-        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
-          <h3 className="text-xl py-1 px-2 font-bold mb-4">Password</h3>
-          <button
-            type="button"
-            onClick={() => handleEditToggle("password")}
-            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
-          >
-            {isEditable.password ? "Save" : "Edit"}
-          </button>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Current Password */}
-            <div>
-              {!isEditable.password ? (
-                <label className="block py-1 px-2 ">Current Password</label>
-              ) : (
-                <input
-                  type="password"
-                  className="py-1 px-2 block  w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="Current Password"
+                  name="mobile"
                 />
               )}
             </div>
-            {/* New Password */}
+
+            {/* College */}
             <div>
-              {!isEditable.password ? (
-                <label className="block py-1 px-2 ">New Password</label>
+              {!isEditable.otherInfo ? (
+                <label className="block py-1 px-2">{formData.college}</label>
               ) : (
                 <input
-                  type="password"
+                  type="text"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="New Password"
+                  placeholder="College Name"
+                  value={formData.college}
+                  onChange={handleInputChange}
+                  name="college"
                 />
               )}
             </div>
-            {/* Confirm New Password */}
+
+            {/* School */}
             <div>
-              {!isEditable.password ? (
-                <label className="block py-1 px-2">Confirm New Password</label>
+              {!isEditable.otherInfo ? (
+                <label className="block py-1 px-2">{formData.school}</label>
               ) : (
                 <input
-                  type="password"
+                  type="text"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="Confirm New Password"
+                  placeholder="School Name"
+                  value={formData.school}
+                  onChange={handleInputChange}
+                  name="school"
                 />
               )}
             </div>
           </div>
         </div>
+
         {/* Social Links Section */}
-        <div className="bg-white dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
+        <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
           <h3 className="text-xl font-bold mb-4">Social Links</h3>
           <button
             type="button"
-            onClick={() => handleEditToggle("socialLinks")}
-            className="absolute top-6 right-6 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600"
+            onClick={() => {
+              handleEditToggle("socialLinks");
+              if (isEditable.socialLinks) handleSave("socialLinks");
+            }}
+            className="absolute top-6 right-6 bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600"
           >
             {isEditable.socialLinks ? "Save" : "Edit"}
           </button>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <div className="grid grid-cols-1 gap-6">
             {/* LinkedIn */}
             <div>
-              {!isEditable.socialLinks ? <label className="block py-1 px-4">{userInfo.socialLinks?.linkedIn}</label> :
+              <label className="block py-1 px-2 font-bold">LinkedIn:</label>
+              {!isEditable.socialLinks ? (
+                <span className="block">{formData.socialLinks.linkedIn || "Not Provided"}</span>
+              ) : (
                 <input
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="LinkedIn Profile URL"
+                  placeholder="LinkedIn URL"
+                  value={formData.socialLinks.linkedIn}
                   onChange={handleInputChange}
                   name="linkedIn"
                 />
-              }
+              )}
             </div>
+
             {/* GitHub */}
             <div>
-              {!isEditable.socialLinks ? <label className="block py-1 px-4">{userInfo.socialLinks?.gitHub}</label> :
+              <label className="block py-1 px-2 font-bold">GitHub:</label>
+              {!isEditable.socialLinks ? (
+                <span className="block">{formData.socialLinks.gitHub || "Not Provided"}</span>
+              ) : (
                 <input
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="GitHub Profile URL"
+                  placeholder="GitHub URL"
+                  value={formData.socialLinks.gitHub}
                   onChange={handleInputChange}
                   name="gitHub"
                 />
-              }
+              )}
             </div>
-            {/* LeetCode */}
+
+            {/* Instagram */}
             <div>
-              {!isEditable.socialLinks ? <label className="block py-1 px-4">{userInfo.socialLinks?.leetCode}</label> :
+              <label className="block py-1 px-2 font-bold">Instagram:</label>
+              {!isEditable.socialLinks ? (
+                <span className="block">{formData.socialLinks.instagram || "Not Provided"}</span>
+              ) : (
                 <input
                   type="url"
                   className="py-1 px-2 block w-full border-gray-300 rounded-md shadow-sm"
-                  placeholder="LeetCode Profile URL"
+                  placeholder="Instagram URL"
+                  value={formData.socialLinks.instagram}
                   onChange={handleInputChange}
-                  name="leetCode"
+                  name="instagram"
                 />
-              }
+              )}
             </div>
           </div>
         </div>

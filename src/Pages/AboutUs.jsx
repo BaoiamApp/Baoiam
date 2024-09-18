@@ -57,14 +57,13 @@ const AboutUs = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     return () => { };
   }, []);
 
   return (
     <div>
       {/* Section - 1 */}
-      <div className="mx-auto h-fit md:h-screen w-full text-white">
+      <div className="  mx-auto h-fit md:h-screen w-full text-white">
         <div className="relative mx-auto h-fit md:h-screen w-full text-white">
           <div className="h-[22rem] sm:h-[23rem] md:h-[70%] w-full image-container">
             <img
@@ -81,10 +80,10 @@ const AboutUs = () => {
               </h1>
             </div> */}
             <h2 className="text-2xl font-bold text-center md:text-4xl sm:text-3xl">
-            Join Us on a Journey to Be A One In A Million!
+              Join Us on a Journey to Be A One In A Million!
             </h2>
             <p className="font-semibold text-center">
-            At BAOIAM, we believe in empowering individuals with the knowledge and skills needed to stand out in the ever-evolving professional landscape. Our platform offers high-quality, industry-driven courses tailored to help learners achieve their personal and professional goals.
+              At BAOIAM, we believe in empowering individuals with the knowledge and skills needed to stand out in the ever-evolving professional landscape. Our platform offers high-quality, industry-driven courses tailored to help learners achieve their personal and professional goals.
             </p>
 
             {/* <button className="flex justify-center items-center gap-1 bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-6 md:px-8 py-2 dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full">
@@ -106,7 +105,7 @@ const AboutUs = () => {
       </div>
 
       {/* Section - 2 */}
-      <div className="flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
+      <div className="animediv1 flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
         {/* Image Section */}
         <div className="w-full md:w-1/2 h-full md:ml-6">
           <div className="w-full h-64 sm:h-96 md:h-full pt-8 rounded-b-3xl mb-2 px-2 border-slate-400">
@@ -120,10 +119,10 @@ const AboutUs = () => {
 
         <div className="flex flex-col gap-8 items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-         Mission
+            Mission
           </h2>
           <p className="text-base sm:text-lg">
-          Our mission is to democratize education by making high-quality learning accessible to everyone, helping learners achieve their true potential and lead fulfilling careers.
+            Our mission is to democratize education by making high-quality learning accessible to everyone, helping learners achieve their true potential and lead fulfilling careers.
           </p>
           {/* <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
@@ -133,21 +132,21 @@ const AboutUs = () => {
 
       {/* section- 2 b */}
       <div className="flex flex-col md:flex-row gap-8 sm:mt-32 md:mt-0 px-4 sm:px-6 md:px-10 lg:px-20 pb-20 w-full items-stretch">
-       
-      
+
+
         <div className="flex flex-col gap-8 items-start w-full md:w-1/2 lg:w-1/2 mr-0 lg:mr-8 px-4 sm:px-6 md:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-         Vision
+            Vision
           </h2>
           <p className="text-base sm:text-lg">
-          We envision a world where everyone has the opportunity to grow and succeed, regardless of their background, through innovative learning solutions
+            We envision a world where everyone has the opportunity to grow and succeed, regardless of their background, through innovative learning solutions
           </p>
           {/* <button className="flex justify-center items-center bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all ease-in-out duration-300 px-4 sm:px-6 md:px-8 lg:px-8 py-2 lg:py-4 sm:py-3 text-white font-medium border border-indigo-600 rounded-full">
             Collaborate with us
           </button> */}
         </div>
 
- {/* Image Section */}
+        {/* Image Section */}
         <div className="w-full md:w-1/2 h-full md:ml-6">
           <div className="w-full h-64 sm:h-96 md:h-full rounded-b-3xl mb-2 px-2 border-slate-400">
             <img
@@ -161,8 +160,8 @@ const AboutUs = () => {
 
       {/* Section 3 */}
       {/* <div className="flex flex-col md:flex-row gap-8 p-4 sm:p-6 md:p-10 mb-16 justify-center items-center mx-auto"> */}
-        {/* Text Section */}
-        {/* <div className="flex flex-col items-start justify-center gap-4 w-full md:w-1/2 pr-0 md:pr-10 lg:pl-10 pl-4">
+      {/* Text Section */}
+      {/* <div className="flex flex-col items-start justify-center gap-4 w-full md:w-1/2 pr-0 md:pr-10 lg:pl-10 pl-4">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
             Get to Know Us
           </h3>
@@ -207,8 +206,8 @@ const AboutUs = () => {
           </div>
         </div> */}
 
-        {/* Image Section */}
-        {/* <div className="w-full md:w-1/2 flex justify-center">
+      {/* Image Section */}
+      {/* <div className="w-full md:w-1/2 flex justify-center">
           <div className="w-full md:w-[80%]">
             <img
               src={aboutus5}
@@ -222,53 +221,53 @@ const AboutUs = () => {
 
       {/* Section 4 */}
       <div className="flex flex-col items-center gap-4 lg:py-10 mb-10 mx-auto p-8 lg:pl-20 lg:pr-20">
-  <div className="w-full text-center">
-    <h2 className="font-bold text-3xl lg:text-4xl">Core Values</h2>
-  </div>
+        <div className="w-full text-center">
+          <h2 className="font-bold text-3xl lg:text-4xl">Core Values</h2>
+        </div>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full">
-  <ValueCard
-    Icon={FaHandsHelping}
-    title="Quality Education"
-    description="Providing top-notch content curated by industry experts."
-  />
-  <ValueCard
-    Icon={FaEye}
-    title="Inclusivity"
-    description="Ensuring access to education for learners from all walks of life."
-  />
-  <ValueCard
-    Icon={FaLightbulb}
-    title="Innovation"
-    description="Continuously improving and adapting our courses to meet industry demands."
-  />
-  <ValueCard
-    Icon={FaChartLine}
-    title="Student Success"
-    description="Prioritizing the success of our learners through personalized learning paths and career support."
-  />
-</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full">
+          <ValueCard
+            Icon={FaHandsHelping}
+            title="Quality Education"
+            description="Providing top-notch content curated by industry experts."
+          />
+          <ValueCard
+            Icon={FaEye}
+            title="Inclusivity"
+            description="Ensuring access to education for learners from all walks of life."
+          />
+          <ValueCard
+            Icon={FaLightbulb}
+            title="Innovation"
+            description="Continuously improving and adapting our courses to meet industry demands."
+          />
+          <ValueCard
+            Icon={FaChartLine}
+            title="Student Success"
+            description="Prioritizing the success of our learners through personalized learning paths and career support."
+          />
+        </div>
 
-</div>
+      </div>
 
 
 
       {/* how it started */}
 
-      <Timeline/>
+      <Timeline />
 
       {/* team */}
 
-      <TeamSwiper/>
+      <TeamSwiper />
 
 
       {/* USP */}
 
       <div className="flex flex-col items-start gap-4 lg:py-10 mb-10  mx-auto p-8 lg:pl-20 lg:pr-20">
-      <div className="w-full text-center">
-    <h2 className="font-bold text-3xl lg:text-4xl">What Makes Us Different</h2>
-  </div>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full">
+        <div className="w-full text-center">
+          <h2 className="font-bold text-3xl lg:text-4xl">What Makes Us Different</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full">
           <ValueCard
             Icon={FaHandsHelping}
             title="Expert-Led Learning"
@@ -302,13 +301,13 @@ const AboutUs = () => {
         </div>
       </div>
 
-       {/* testimonial */}
-       <Testimonials/>
+      {/* testimonial */}
+      <Testimonials />
 
       {/* Section 5 */}
       {/* <div className="flex flex-col md:flex-row  lg:flex-row mx-auto gap-8 p-6 md:p-10 justify-center items-center max-w-7xl"> */}
-        {/* Image Section */}
-        {/* <div className="w-full lg:w-1/2  pl-0 lg:pl-20 mb-6 lg:mb-0">
+      {/* Image Section */}
+      {/* <div className="w-full lg:w-1/2  pl-0 lg:pl-20 mb-6 lg:mb-0">
           <img
             src={aboutus5}
             alt="image"
@@ -316,8 +315,8 @@ const AboutUs = () => {
           />
         </div> */}
 
-        {/* Text and Progress Bars Section */}
-        {/* <div className="flex flex-col items-start justify-center gap-2 w-full lg:w-1/2">
+      {/* Text and Progress Bars Section */}
+      {/* <div className="flex flex-col items-start justify-center gap-2 w-full lg:w-1/2">
           <h3 className="text-amber-600 text-xl sm:text-2xl font-semibold">
             Our profile
           </h3>
@@ -332,8 +331,8 @@ const AboutUs = () => {
             we maintain at work is reflects our professionalism.
           </p> */}
 
-          {/* Progress Bars */}
-          {/* <div className="w-full text-slate-800 mx-auto mt-4 space-y-4">
+      {/* Progress Bars */}
+      {/* <div className="w-full text-slate-800 mx-auto mt-4 space-y-4">
             <ProgressBar percentage={86} title="UI/UX Design" />
             <ProgressBar percentage={80} title="Business Consultation" />
             <ProgressBar percentage={78} title="Website Development" />
@@ -344,7 +343,7 @@ const AboutUs = () => {
 
       {/* Section 6 */}
       {/* <OurTeam /> */}
-      <Subcription/>
+      <Subcription />
     </div>
   );
 };

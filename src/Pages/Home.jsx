@@ -10,12 +10,12 @@ import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
 import Phone from '../Components/Home/Phone'
 //import Meetourexperts from '../Components/Home/Meetourexperts'
-import { SuccessLight } from '../assets/assets'
+import { SuccessDark, SuccessLight } from '../assets/assets'
 import OurTeam from "../Components/AboutUs/OurTeam"
 import ServicesTab from '../Components/AboutUs/ServicesTab'
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Home = ({dark}) => {
     document.title = 'Baoiam - Home'
     const navigate = useNavigate();
     return (
@@ -24,6 +24,9 @@ const Home = () => {
                 <Hero />
                 <Courses />
                 <Slider />
+                <div className="mx-auto w-full md:w-[85%] mb-8">
+                    {dark ? <img className="w-full h-full" src={SuccessDark} alt="" /> : <img className="w-full h-full" src={SuccessLight} alt="" />}
+                </div>
                 {/* <Categories /> */}
                 <ServicesTab />
                 <div className="mx-auto w-full md:w-[85%] my-20">

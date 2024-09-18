@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Home/Navbar";
 import { Route, Routes } from "react-router-dom";
-import GSCB from "./Pages/GSCB";
 import Home from "./Pages/Home";
 import School from "./Pages/School";
 import ContactUs from "./Components/Contact/ContactUs";
@@ -38,6 +37,7 @@ import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
 import Loader from "./Components/Loader";
 import ChatBot from "./Components/Chatbot/ChatBot";
+import GCEP from "./Pages/GCEP";
 
 
 
@@ -68,9 +68,9 @@ const App = () => {
       <div className="mt-28">
       <Routes>
         {/* NavLinks */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home dark={dark} />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/gcep" element={<GSCB />} />
+        <Route path="/gcep" element={<GCEP dark={dark}/>} />
         <Route path="/pap" element={<PAP />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blogs" element={<Blogs />} />
@@ -125,7 +125,7 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/password-reset/:uid/:token" element={<ResetPassword />} />
         {/* Help */}
-        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/help" element={<HelpCenter />} />
         {/* Hire */}
         <Route path="/hire" element={<HireFromUs />} />
         <Route path="/instructor" element={<InstructorCard />} />

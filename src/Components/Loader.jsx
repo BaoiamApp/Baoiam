@@ -16,9 +16,9 @@ const Loader = () => {
             </div> */}
 
             <div className="w-[100vw] h-[100vh] flex items-center justify-center">
-                <div className="p-2 bg-gradient-to-tr animate-spin from-indigo-400 to-blue-700 rounded-full">
+                <div className="p-1 md:p-2 bg-gradient-to-tr animate-spin from-indigo-400 to-blue-700 rounded-full">
                     <div className="bg-white rounded-full">
-                        <div className="w-16 h-16 rounded-full"></div>
+                        <div className="size-8 md:w-16 md:h-16 rounded-full"></div>
                     </div>
                 </div>
             </div>
