@@ -21,7 +21,6 @@ const Home = () => {
         <>
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
-                <BrandMarquee />
                 <Courses />
                 <Slider />
                 <div className="mx-auto w-full md:w-[85%] mb-8">

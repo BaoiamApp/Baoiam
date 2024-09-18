@@ -5,6 +5,9 @@ import Section1 from "../Components/GSCB/GSCB-Section1";
 import Header from "../Components/GSCB/GSCB-Hero";
 import GSCPBottom from "../Components/GSCB/GSCP-Section3";
 
+import { universities } from "../assets/Universities/Universities";
+import BrandMarquee from "../Components/Marquee/BrandMarquee";
+
 const GSCB = () => {
   document.title = 'Baoiam - GCEP'
   useEffect(() => {
@@ -16,6 +19,12 @@ const GSCB = () => {
   return (
     <>
       <Header />
+
+      
+      <div className="flex flex-col justify-center items-center gap-4 my-12">
+        <h1 className="text-4xl font-bold">Our Partners</h1>
+        <BrandMarquee array={universities}/>
+      </div>
 
       {/* Section 1 */}
       <Section1 />
