@@ -13,13 +13,18 @@ import Phone from '../Components/Home/Phone'
 import { SuccessDark, SuccessLight } from '../assets/assets'
 import OurTeam from "../Components/AboutUs/OurTeam"
 import ServicesTab from '../Components/AboutUs/ServicesTab'
-
+import { brands } from "../assets/BrandPartners/Brands";
+import { universities } from "../assets/Universities/Universities";
+import OurReach from "../Components/Home/OurReach";
 const Home = ({dark}) => {
     document.title = 'Baoiam - Home'
     return (
         <>
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
+                    <OurReach title={"College"} array={universities}/>
+                <OurReach  title={"Company"} array={brands}/>
+
                 <Courses />
                 <Slider />
                 <div className="mx-auto w-full md:w-[85%] mb-8">

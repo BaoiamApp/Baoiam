@@ -1,5 +1,5 @@
 import Intel from './Intel.png';
-import Flipkart from './Intel.png';
+import Flipkart from './Flipkart.png';
 import Visa from './Visa.png';
 import Facebook from './Facebook.png';
 import Ola from './Ola.png';
