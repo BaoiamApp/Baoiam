@@ -14,6 +14,7 @@ import {
 import { FaCheck } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
+import { AiOutlineBook } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
@@ -31,35 +32,34 @@ const Checkout = () => {
   const [enrollingCourse, setEnrollingCourse] = useState({});
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
-  useEffect(() => {
-    if (!localStorage.getItem("access_token")) navigate("/login");
-    // alert('id is:',id , ' and plan is:',plan)
-    else {
-      window.scrollTo(0, 0);
-      console.log(course, id, plan);
-      if (course == "school") {
-        const course = School[0].subCate.filter((item) => {
-          return item.id == id;
-        });
-        setEnrollingCourse(course[0]);
-        console.log("course is: ", course);
-      } else if (course == "college") {
-        const course = CollegeCourseData[0].subCate.filter((item) => {
-          return item.id == id;
-        });
-        setEnrollingCourse(course[0]);
-        console.log(course);
-      } else {
-        const course = OtherCourseData[0].subCate.filter((item) => {
-          return item.id == id;
-        });
-        setEnrollingCourse(course[0]);
-        console.log(course);
-      }
-    }
-    return () => {};
-  }, []);
-
+  // useEffect(() => {
+  //   if (!localStorage.getItem("access_token")) navigate("/login");
+  //   // alert('id is:',id , ' and plan is:',plan)
+  //   else {
+  //     window.scrollTo(0, 0);
+  //     console.log(course, id, plan);
+  //     if (course == "school") {
+  //       const course = School[0].subCate.filter((item) => {
+  //         return item.id == id;
+  //       });
+  //       setEnrollingCourse(course[0]);
+  //       console.log("course is: ", course);
+  //     } else if (course == "college") {
+  //       const course = CollegeCourseData[0].subCate.filter((item) => {
+  //         return item.id == id;
+  //       });
+  //       setEnrollingCourse(course[0]);
+  //       console.log(course);
+  //     } else {
+  //       const course = OtherCourseData[0].subCate.filter((item) => {
+  //         return item.id == id;
+  //       });
+  //       setEnrollingCourse(course[0]);
+  //       console.log(course);
+  //     }
+  //   }
+  //   return () => {};
+  // }, []);
 
   const handleCheckout = () => {
     setProceedButton("Loading....");
@@ -144,25 +144,33 @@ const Checkout = () => {
   };
 
   document.title = `Baoiam - ${enrollingCourse?.course}`;
-  
 
   return (
-    <div className="flex flex-wrap dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
+    <div className="flex flex-wrap gap-8 justify-center dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
       {/* left section */}
-      <div className="flex flex-col justify-between w-full lg:w-1/2 py-6 px-6 lg:px-20 ">
-        <div className="flex flex-col py-20">
-          <h2 className="font-semibold text-xl mb-4">
-            Enhance your programming journey by getting Certified
-          </h2>
-          <div className="w-full md:max-w-[80%] lg:max-w-[95%]">
+      <div className="flex flex-col justify-between w-full lg:w-[40%]  dark:border-gray dark:border-[1.5px] border-slate-400 shadow-lg rounded-lg py-6 px-6 lg:px-20 ">
+        <div className="rounded-md bg-green-200 p-1 w-fit mb-1">
+          <p></p>
+          <p className="text-green-700 px-1 font-medium text-xs">{plan} Plan</p>
+        </div>
+        <div className="flex items-center gap-2 pb-4">
+          <AiOutlineBook size={24} className="text-indigo-600" />
+          <h2 className="font-semibold text-2xl">English & Public Speaking</h2>
+          {/*<div className="w-full md:max-w-[80%] lg:max-w-[95%]">
             <img
               className="h-full w-full"
               src={Certificate}
               alt="Certificate"
             />
-          </div>
+          </div> */}
         </div>
-        <div className="flex flex-col max-w-[90%]">
+
+        <p className="">
+          <span className="font-medium">Description:</span> Welcome to the
+          Public Speaking Mastery course, where students embark on an empowering
+          journey to enhance their communication skills and build confidence.
+        </p>
+        <div className="flex flex-col mt-4 max-w-[90%]">
           <div className="flex items-center mb-2">
             <PercentBadgeIcon className="h-8 w-8 mr-2" />
             <p className="text-lg font-semibold">No cost EMI</p>
@@ -183,7 +191,7 @@ const Checkout = () => {
       </div>
 
       {/* right section */}
-      <div className="flex flex-col w-full lg:w-1/2 dark:border-gray dark:border-[1.5px] border-slate-400 shadow-lg py-6 px-6 rounded-lg">
+      <div className="flex flex-col w-full lg:w-[40%] dark:border-gray dark:border-[1.5px] border-slate-400 shadow-lg py-6 px-6 rounded-lg">
         <h1 className="font-semibold text-2xl mb-4">Confirm your order</h1>
         <div className="flex">
           {/* <UserIcon className="h-8 w-8 mr-2 rounded-full border-[1.5px] border-emerald-500 text-white bg-gray-200" /> */}
@@ -196,10 +204,10 @@ const Checkout = () => {
               </p>
               {/* <p className="text-sm text-slate-400">8785144645</p> */}
             </div>
-            <div className="flex items-center cursor-pointer">
+            {/* <div className="flex items-center cursor-pointer">
               <PencilIcon className="h-4 w-4 text-orange-500" />
               <span className="ml-2 text-orange-500">Edit</span>
-            </div>
+            </div> */}
           </div>
         </div>
         <hr className="border-t-1 border-gray-300 mt-4 mb-4" />
@@ -213,12 +221,12 @@ const Checkout = () => {
           </div> */}
           <div className="flex justify-between items-center w-full">
             <div className="flex flex-col">
-              <div className="rounded-md bg-green-200 p-1 w-fit">
+              {/* <div className="rounded-md bg-green-200 p-1 w-fit">
                 <p></p>
                 <p className="text-green-700 px-1 font-medium text-xs">
                   {plan} Plan
                 </p>
-              </div>
+              </div> */}
 
               <h2 className="font-semibold text-lg mb-2">
                 {/* {plan} | MERN Stack | Java | English */}
@@ -234,21 +242,21 @@ const Checkout = () => {
               >
                 {isDescriptionVisible ? "Hide Info" : "View more"}
               </button> */}
-              {isDescriptionVisible && (
+              {/* {isDescriptionVisible && (
                 <p className="w-3/4 mb-5 mt-1 p-3 border-gray-400 border-2 rounded">
                   {enrollingCourse.desc.substring(0, 150) + "..."}
                 </p>
               )}
               <p className="text-slate-500 text-base dark:text-gray-400">
                 English • Batch Starts: 26 Sep 2024
-              </p>
+              </p> */}
             </div>
-            <p className="text-slate-700 dark:text-white  font-medium text-lg">
+            {/* <p className="text-slate-700 dark:text-white  font-medium text-lg">
               ₹{plan == "Premium" ? 11999 : 2999}
-            </p>
+            </p> */}
           </div>
         </div>
-        <div className="mb-5 mx-auto">
+        {/* <div className="mb-5 mx-auto">
           <p className="text-gray-700 text-[12px] font-semibold dark:text-slate-400">
             Have a referral code?
           </p>
@@ -271,7 +279,7 @@ const Checkout = () => {
             </button>
             <ToastContainer />
           </div>
-        </div>
+        </div> */}
         <hr className="border-t-1 border-gray-300 mb-4" />
         <div className="flex justify-between mb-5">
           <h2 className="text-2xl text-black font-semibold dark:text-white">

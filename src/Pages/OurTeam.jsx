@@ -15,16 +15,13 @@ export const OurTeam = () => {
     <div className=" w-11/12 pb-12 mx-auto flex flex-col gap-4">
       <div className="">
         <h1 className="p-6 font-serif text-center text-4xl md:text-5xl font-extrabold">
-          A glance to our <span className="text-indigo-800">team</span>
+          Our Dedicated <span className="text-indigo-800">Team</span> Members
         </h1>
         <div className="p-4 w-[80%] lg:w-[60%] mx-auto">
           <p className="text-md text-center md:text-xl">
-            At BAOIAM, our team drives our vision with passion, creativity, and
-            expertise. From strategic thinkers to hands-on innovators, we are a
-            diverse group committed to shaping the future of education and
-            empowering students globally. Meet the dedicated teams working
-            tirelessly to shape the future of education and empower students
-            worldwide.
+            At BAOIAM, our team is passionate about transforming education. Each
+            member brings a wealth of experience and expertise, working together
+            to create impactful learning solutions.
           </p>
         </div>
       </div>

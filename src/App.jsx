@@ -30,26 +30,24 @@ import Login from "./Pages/auth/Login";
 import TeacherDashboard from "./Components/InstructorDashboard/TeacherDashboard";
 import CourseDetailsPage from "./Pages/CourseDetailsPage";
 import InstructorCard from "./Components/CourseDetails/InstructorCard";
-import FAQS from "./Components/FAQ/FAQ"
+import FAQS from "./Components/FAQ/FAQ";
 
-import Refund from "./Components/Refund/Refundpolicy"
+import Refund from "./Components/Refund/Refundpolicy";
 
 import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
 import Loader from "./Components/Loader";
 import ChatBot from "./Components/Chatbot/ChatBot";
 
-
-
 const App = () => {
   const [dark, setDark] = useState(false);
 
   const theme = () => {
-    setDark(old => !old);
+    setDark((old) => !old);
     document.body.classList.toggle("dark");
   };
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -58,7 +56,7 @@ const App = () => {
   }, []);
 
   if (loading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (
@@ -110,7 +108,8 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Checkout */}
-        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
+        {/* <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} /> */}
+        <Route path="/check" element={<Checkout />} />
 
         {/* Profile & Dashboard */}
         <Route path="/profile" element={<SideBar />} />
@@ -131,15 +130,12 @@ const App = () => {
         {/*FAQ*/}
         <Route path="/FAQ" element={<FAQS />} />
 
-
         {/*Refund Policy */}
         <Route path="/refund" element={<Refund />} />
 
-        <Route path='/ReferAndEarn' element={<ReferAndEarn />} />
+        <Route path="/ReferAndEarn" element={<ReferAndEarn />} />
         {/* Book a demo */}
         <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
-
-
       </Routes>
       <ChatBot />
 

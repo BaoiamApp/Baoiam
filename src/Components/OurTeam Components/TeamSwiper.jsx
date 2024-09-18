@@ -22,22 +22,22 @@ export const TeamSwiper = () => {
             <div className="group h-96 flip-card">
               <div className="flip-card-inner">
                 {/* Front Side (Image) */}
-                <div className="flip-card-front mx-auto">
+                <div className="flip-card-front rounded-lg mx-auto">
                   <img
-                    className="h-full w-80 sm:w-96 mx-auto  rounded-md object-cover"
+                    className="h-full w-80 sm:w-96 mx-auto  rounded-lg object-cover"
                     src={el.image}
                     alt={el.name}
                   />
                 </div>
 
                 {/* Back Side (Details) */}
-                <div className="flip-card-back bg-black/50 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center ">
+                <div className="flip-card-back bg-black/50 bg-opacity-80 text-white rounded-lg flex flex-col justify-center items-center ">
                   <img
-                    className="h-full  absolute w-80 sm:w-96 mx-auto rounded-md object-cover"
+                    className="h-full  absolute w-80 sm:w-96 mx-auto rounded-lg object-cover"
                     src={el.image}
                     alt={el.name}
                   />
-                  <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-md dark:bg-black/80 bg-slate/80"></div>
+                  <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-md rounded-lg dark:bg-black/80 bg-slate/80"></div>
                   <h3 className="text-center z-10 font-sans font-medium text-sm md:text-lg">
                     {el.name}
                   </h3>

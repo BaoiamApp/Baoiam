@@ -10,6 +10,7 @@ import categories from "../../assets/swiper-imgs/categories.json"; // Import JSO
 import { useNavigate } from "react-router-dom";
 
 export default function SliderSection() {
+  const maxLength = 60;
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("Category1");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,7 +35,7 @@ export default function SliderSection() {
   };
 
   return (
-    <div className="slider-section dark:bg-[#080529] w-full relative py-10   overflow-hidden ">
+    <div className="slider-section dark:bg-[#080529] w-full relative py-10 overflow-hidden ">
       <div className="text-center mb-0 lg:mb-8">
         <h2 className="text-4xl font-bold mb-4">
           Dive into Our Course Selection
@@ -90,7 +91,7 @@ export default function SliderSection() {
       >
         {categories[selectedCategory]?.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="card dark:bg-indigo-900 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out w-[290px] h-[370px]">
+            <div className="relative card dark:bg-indigo-900 dark:border shadow-xl rounded-xl mr-8 hover:scale-105 duration-300 ease-out w-[310px] h-[370px]">
               {/* Image Container */}
               <div className="image-container mb-4">
                 <img
@@ -100,19 +101,24 @@ export default function SliderSection() {
                 />
               </div>
               {/* Title */}
-              <h3 className="text-2xl font-semibold mb-1 text-left pl-5">
+              <h3 className="text-xl font-semibold mb-1 text-left pl-5">
                 {slide.title}
               </h3>
+              <p className="pl-5 mb-1">
+                {slide.desc.length > maxLength
+                  ? slide.desc.substring(0, maxLength) + "..."
+                  : slide.desc}
+              </p>
 
               {/* Ratings and Stars */}
-              <div className="flex items-center mb-2 pl-5">
-                {/* Display the numeric rating to the left of stars */}
-                <span className="mr-2 text-gray-700 font-semibold ">
+              {/* <div className="flex items-center mb-2 pl-5"> */}
+              {/* Display the numeric rating to the left of stars */}
+              {/* <span className="mr-2 text-gray-700 font-semibold ">
                   {slide.ratings}
                   {slide.reviews}
-                </span>
+                </span> */}
 
-                {[...Array(5)].map((_, i) => (
+              {/* {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
                     className={`w-5 h-5 ${
@@ -127,31 +133,31 @@ export default function SliderSection() {
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.516 4.674a1 1 0 00.95.69h4.905c.969 0 1.371 1.24.588 1.81l-3.97 2.886a1 1 0 00-.364 1.118l1.516 4.674c.3.921-.755 1.688-1.538 1.118l-3.97-2.886a1 1 0 00-1.176 0l-3.97 2.886c-.783.57-1.838-.197-1.538-1.118l1.516-4.674a1 1 0 00-.364-1.118l-3.97-2.886c-.783-.57-.381-1.81.588-1.81h4.905a1 1 0 00.95-.69l1.516-4.674z"></path>
                   </svg>
                 ))}
-              </div>
+              </div> */}
 
               {/* Price and Duration in the same row */}
-              <div className="flex justify-between items-center mb-5 pl-2 pr-5">
-                {/* Plus button with background and no gap */}
-                <div className="flex items-center">
-                  {/* Premium tag with gradient */}
-                  <span className="font-semibold text-xs bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1 ml-4">
-                    Premium
-                  </span>
+              {/* <div className="flex justify-between items-center mb-5 pl-2 pr-5"> */}
+              {/* Plus button with background and no gap */}
+              <div className="absolute top-4 left-2 flex items-center">
+                {/* Premium tag with gradient */}
+                <span className="bg-gray-200 text-gray-800 font-bold text-xs rounded-lg px-3 py-1 ml-2">
+                  Premium
+                </span>
 
-                  {/* Plus button */}
-                  <span className="bg-gray-300 text-gray-800 font-bold rounded-lg text-xs pl-3 pr-3  pt-1 pb-1 ml-2">
-                    Plus
-                  </span>
-                </div>
-
-                {/* A separator between price and duration */}
-                <p className="text-base">{slide.duration}</p>
+                {/* Plus button */}
+                <span className="bg-gray-200 text-gray-800 font-bold rounded-lg text-xs pl-3 pr-3  pt-1 pb-1 ml-2">
+                  Plus
+                </span>
               </div>
+
+              {/* A separator between price and duration */}
+              {/* <p className="text-base">{slide.duration}</p> */}
+              {/* </div> */}
 
               {/* Button */}
               <button
                 onClick={() => navigate("/Maintenance")}
-                className="bg-gradient-to-r mb-3 text-sm from-indigo-800 to-indigo-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300 flex flex-start ml-5"
+                className="absolute bottom-0 bg-gradient-to-r mb-3 text-sm from-indigo-800 to-indigo-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300 flex flex-start ml-5"
               >
                 Read More
               </button>
