@@ -1,6 +1,11 @@
 // Logo
 export {default as Logo} from './img1.png'
-
+export {default as Alliance} from "./Universities/Alliance.png";
+export {default as IILM} from "./Universities/IILM.png";
+export {default as DU} from "./Universities/DU.webp";
+export {default as Amity} from "./Universities/Amity.png";
+export {default as GLA} from "./Universities/GLA.webp";
+export {default as SharaddhaU} from "./Universities/SharaddhaU.png";
 // Course Section
 export {default as CourseDesc} from './course/course-desc.png'
 export {default as CourseDesc2} from './course/course-desc2.png'
