@@ -24,7 +24,7 @@ const Section1 = ({ dark }) => {
 
   gsap.registerPlugin(ScrollTrigger);
   const text =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga coillo? Voluptatum earum aliquid quasi consequuntur, sapiente nam hic!";
+    "GCEP (Global Collabo Educational Partnership) is an initiative by BAOIAM aimed at building strong, innovative alliances with schools, colleges, and educational institutions worldwide. Through GCEP, we collaborate to enhance the quality of education and create new opportunities for students and educators alike.";
 
   useEffect(() => {
     const color = dark ? "white" : "black";
@@ -45,6 +45,20 @@ const Section1 = ({ dark }) => {
 
   return (
     <section className="flex items-center justify-evenly flex-col">
+      <div
+        ref={triggerRef}
+        className="px-[6vw] max-xs:px-4 max-xs:py-8 max-md:py-0 text-center"
+      >
+        {text.split("").map((letter, index) => (
+          <span
+            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-4xl max-xs:leading-[6vw] max-xs:font-medium max-xs:text-[4.5vw] max-md:text-[4.5vw] max-md:leading-[7vw] max-xs:text-white"
+            key={index}
+            ref={setlettersRef}
+          >
+            {letter}
+          </span>
+        ))}
+      </div>
       <div className="mt-[40px] text-center relative">
         <h2 className="text-[2vw] max-xs:text-[4vw] max-xs:font-[600] max-md:text-[3vw] ">
           Trusted by a global community of progressive educators
@@ -69,20 +83,61 @@ const Section1 = ({ dark }) => {
         </div>
       </div>
 
-      <div
-        ref={triggerRef}
-        className="px-[6vw] max-xs:px-4 max-xs:py-8 max-md:py-0 text-center"
-      >
-        {text.split("").map((letter, index) => (
-          <span
-            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-[3vw] max-xs:leading-[6vw] max-xs:font-medium max-xs:text-[4.5vw] max-md:text-[4.5vw] max-md:leading-[7vw] max-xs:text-white"
-            key={index}
-            ref={setlettersRef}
-          >
-            {letter}
-          </span>
-        ))}
-      </div>
+      {/* Join */}
+
+      <section className="w-full h-full py-24 px-6 lg:px-12 max-xs:px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl lg:text-5xl font-bold max-xs:text-3xl">
+            How to Join GCEP
+          </h2>
+          <p className="text-base lg:text-lg mt-4 max-xs:text-sm">
+            Follow these steps to become a partner and collaborate with us.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-md:grid-cols-1">
+          {/* Step 1 */}
+          <div className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+              <span className="text-2xl font-bold">1</span>
+            </div>
+            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+              Submit an Inquiry
+            </h3>
+            <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
+              Submit an inquiry via the partnership form below.
+            </p>
+          </div>
+
+          {/* Step 2 */}
+          <div className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+              <span className="text-2xl font-bold">2</span>
+            </div>
+            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+              Review & Discuss
+            </h3>
+            <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
+              Our team will review your institution’s goals and discuss how we
+              can collaborate.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+              <span className="text-2xl font-bold">3</span>
+            </div>
+            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+              Tailored Partnership
+            </h3>
+            <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
+              Once approved, we will co-create a tailored partnership plan to
+              meet your educational needs.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
