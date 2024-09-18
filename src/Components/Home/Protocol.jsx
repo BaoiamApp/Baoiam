@@ -9,7 +9,8 @@ const Protocol = () => {
   return (
     <>
 
-      <div className='mt-[4rem]'><h1 className='text-[2rem] my-2 text-center font-bold'>Virtues and protocols <span className='text-indigo-600'>BAOIAM</span> works on</h1></div>
+      <div className='mt-[4rem]'><h1 className='text-[2rem] my-2 text-center font-bold'>Virtues and protocols <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+      BAOIAM</span> works on</h1></div>
 
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 my-14 px-12'>
 
