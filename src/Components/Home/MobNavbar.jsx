@@ -195,8 +195,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                             closeSideBar();
                         }}>
 
-                            <Link to={"/pap"} className="ms-3" >
-                                PAP
+                            <Link to={"/hire"} className="ms-3" >
+                                Hire From Us
                             </Link>
                         </li>
                         <li className={`${mobTabtyles} ${location.pathname === "/itie" && activeTab === 'ITIE' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
@@ -204,8 +204,8 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                             closeSideBar();
                         }}>
 
-                            <Link to={"/itie"} className="ms-3" >
-                                ITIE
+                            <Link to={"/career"} className="ms-3" >
+                                Career
                             </Link>
                         </li>
                         <li className={`${mobTabtyles} ${location.pathname === "/gcep" && activeTab === 'GCSP' ? 'text-[#1638C9]  dark:text-white dark:bg-[#060606]' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
@@ -224,15 +224,6 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
 
                             <Link to={"/blogs"} className="ms-3" >
                                 Blogs
-                            </Link>
-                        </li>
-                        <li className={`${mobTabtyles} ${location.pathname === "/contact" && activeTab === 'Contact' ? 'text-[#1638C9]  dark:text-white' : 'text-gray-600 dark:text-gray-400'}`} onClick={() => {
-                            setActiveTab("Contact")
-                            closeSideBar();
-                        }}>
-
-                            <Link to={"/contact"} className="ms-3" >
-                                Contact
                             </Link>
                         </li>
                     </ul>

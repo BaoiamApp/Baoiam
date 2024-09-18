@@ -40,7 +40,7 @@ const Courses = () => {
 
   return (
     <div className="px-10 dark:bg-[#080529] py-8">
-      <div className="text-center mt-14 mb-10 md:mb-20">
+      <div className="text-center mt-6 mb-10 md:mb-20">
         <h1 className="text-3xl sm:text-4xl dark:text-white  font-bold text-gray-900 mb-2">
           What Sets Us Apart
         </h1>

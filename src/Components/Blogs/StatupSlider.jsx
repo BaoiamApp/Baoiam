@@ -16,39 +16,39 @@ const blog_slider = [
     id: 1,
     pic: carrer1,
     des: "The Best Graphic Design Careers — for Beginners and Professionals",
-    cat: "TECHNOLOGY",
+    cat: "STARTUP",
     icon: stp,
   },
   {
     id: 2,
     pic: datasc,
     des: "The Top Technical Skills All Employees Need in 2022",
-    cat: "TECHNOLOGY",
+    cat: "STARTUP",
     icon: stp,
   },
   {
     id: 3,
     pic: ed_tech,
     des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "TECHNOLOGY",
+    cat: "STARTUP",
     icon: ent,
   },
   {
     id: 4,
     pic: software_testing,
     des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "TECHNOLOGY",
+    cat: "STARTUP",
     icon: tech,
   },
 ];
-export const TechBlogSlider = () => {
+export const StatupSlider = () => {
   return (
-    <div className='my-14'>
+    <div className='my-12'>
       <div>
         {" "}
-        <h1 className='m-8 text-3xl font-bold text-center'>Technology Blogs</h1>
+        <h1 className='m-8 text-3xl font-bold text-center'>Featured Blogs</h1>
       </div>
-      <div className='mb-6 mt-8'>
+      <div className='mb-6 mt-8 px-10'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -78,15 +78,15 @@ export const TechBlogSlider = () => {
                 <img
                   className='h-full rounded-md  w-full'
                   src={el.pic}
-                  alt=''
+                  alt='cat title image'
                 />
                 <div className='flex flex-col justify-center items-center rounded-md'>
                   <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
                     {el.des}
                   </h2>
                   <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='' />
-                    <h3 className='text-red-700 text-sm md:text-md font-bold'>
+                    <img src={el.icon} alt='icon_image' />
+                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
                       {el.cat}
                     </h3>
                   </div>
