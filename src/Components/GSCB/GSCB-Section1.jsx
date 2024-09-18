@@ -80,7 +80,7 @@ const Section1 = ({ dark }) => {
         ref={triggerRef}
         className="px-[6vw] xs:px-4 md:py-12 text-center  "
       >
-        <div className="w-full my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+        <div className="w-full  my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
         {text.split("").map((letter, index) => (
           <span
             className={`leading-[3rem] md:leading-[4rem] dark:drop-shadow-[0_0_0.03rem_white] text-xl md:text-3xl font-medium  max-xs:text-white ${defaultColor}`}
