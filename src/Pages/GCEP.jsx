@@ -11,7 +11,7 @@ import BrandMarquee from "../Components/Marquee/BrandMarquee";
 const GCEP = () => {
   document.title = 'Baoiam - GCEP'
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     return () => {};
   }, []);
@@ -24,8 +24,8 @@ const GCEP = () => {
       {/* Section 1 */}
       <Section1 />
 
-      <div className="flex flex-col justify-center items-center gap-4 my-12">
-        <h1 className="text-2xl font-bold">Trusted by a global community of progressive educators</h1>
+      <div className="flex flex-col justify-center items-center gap-4  my-12">
+        <h1 className="text-2xl font-bold px-4 text-center">Trusted by a global community of progressive educators</h1>
         <BrandMarquee array={universities}/>
       </div>
 
