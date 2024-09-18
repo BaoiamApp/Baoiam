@@ -16,6 +16,7 @@ import { TechBlogSlider } from "../Components/Blogs/TechBlogSlider";
 import { BusSlider } from "../Components/Blogs/BusSlider";
 import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
 import NewsletterBanner from "../Components/Home/Subcription";
+import gsap from "gsap";
 
 const blog_list = [
   {

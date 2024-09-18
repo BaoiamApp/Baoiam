@@ -58,9 +58,8 @@ export default function SliderSection() {
 
       <Swiper
         modules={[Navigation]}
-        spaceBetween={0} // Adjust the space between cards
-        slidesPerView={3} // Default number of slides per view
-        dot={false}
+        spaceBetween={0} // Adjust space between cards
+        slidesPerView={1} // Default number of slides for large screens
         loop={true} // Enables loop mode for continuous sliding
         navigation={{
           nextEl: ".swiper-button-next",
@@ -70,27 +69,24 @@ export default function SliderSection() {
         className="swiper-container py-8 px-6 md:px-16"
         onSlideChange={handleSlideChange}
         breakpoints={{
-          317: {
-            slidesPerView: 1,
+          315: {
+            slidesPerView: 1, // 1 slide on phone screens
             spaceBetween: 10,
           },
-          620: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          740: {
-            slidesPerView: 3,
+          640: {
+            slidesPerView: 2, // 2 slides on small screens (smaller tablets)
             spaceBetween: 20,
           },
+
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 4, // 4 slides on large screens (desktops)
             spaceBetween: 30,
           },
         }}
       >
         {categories[selectedCategory]?.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="card dark:bg-indigo-900 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out w-[290px] h-[370px]">
+            <div className="card dark:bg-indigo-900 dark:border shadow-xl rounded-xl m-2 text-center hover:scale-105 duration-300 ease-out lg:w-[290px] lg:h-[370px] w-full h-[370px]">
               {/* Image Container */}
               <div className="image-container mb-4">
                 <img
@@ -106,8 +102,7 @@ export default function SliderSection() {
 
               {/* Ratings and Stars */}
               <div className="flex items-center mb-2 pl-5">
-                {/* Display the numeric rating to the left of stars */}
-                <span className="mr-2 text-gray-700 font-semibold ">
+                <span className="mr-2 text-gray-700 font-semibold">
                   {slide.ratings}
                   {slide.reviews}
                 </span>
@@ -129,22 +124,16 @@ export default function SliderSection() {
                 ))}
               </div>
 
-              {/* Price and Duration in the same row */}
+              {/* Price and Duration */}
               <div className="flex justify-between items-center mb-5 pl-2 pr-5">
-                {/* Plus button with background and no gap */}
                 <div className="flex items-center">
-                  {/* Premium tag with gradient */}
                   <span className="font-semibold text-xs bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1 ml-4">
                     Premium
                   </span>
-
-                  {/* Plus button */}
-                  <span className="bg-gray-300 text-gray-800 font-bold rounded-lg text-xs pl-3 pr-3  pt-1 pb-1 ml-2">
+                  <span className="bg-gray-300 text-gray-800 font-bold rounded-lg text-xs pl-3 pr-3 pt-1 pb-1 ml-2">
                     Plus
                   </span>
                 </div>
-
-                {/* A separator between price and duration */}
                 <p className="text-base">{slide.duration}</p>
               </div>
 

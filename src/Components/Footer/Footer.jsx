@@ -22,7 +22,7 @@ function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
-        <div className="flex gap-8 flex-col md:flex-row">
+        <div className="flex justify-between lg:gap-20 xl:gap-0 flex-col md:flex-row">
           <div className="">
             <Link
               to={"/"}
@@ -42,7 +42,7 @@ function Footer({ dark }) {
             </p> */}
           </div>
 
-          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-16 dark:text-white">
+          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-12 dark:text-white">
             {/* Quick Links */}
             <div className="px-4 sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
@@ -50,7 +50,13 @@ function Footer({ dark }) {
               </p>
 
               <div className="mt-4 flex flex-col gap-2 text-xs">
-
+                <Link
+                  to={"/team"}
+                  className="text-black dark:text-white text-nowrap flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
+                  Our Team
+                </Link>
                 <Link
                   to={"/about-us"}
                   className="text-black dark:text-white text-nowrap flex items-center"
@@ -59,15 +65,22 @@ function Footer({ dark }) {
                   About Us
                 </Link>
                 <Link
-                  to={"/team"}
+                  to={"/career"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
+                  Careers
+                </Link>
+                <Link
+                  to={"/course"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
-                  Our Team
+                  Course
                 </Link>
 
                 <Link
-                  to={"/blog"}
+                  to={"/blogs"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Blog
@@ -102,16 +115,16 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} /> Intern Teach Intern Earn
                 </Link>
                 <Link
+                  to={"/pap"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Pay After Placement
+                </Link>
+                <Link
                   to={"/entrepreneurship"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight size={20} /> Entrepreneurship
-                </Link>
-                <Link
-                  to={"/pap"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Pay After Placement
                 </Link>
               </div>
             </div>
@@ -130,10 +143,10 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} /> Hire from us
                 </Link>
                 <Link
-                  to={"/career"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  to={"/contact"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Careers
+                  <MdKeyboardArrowRight size={20} /> Contact Us
                 </Link>
                 <Link
                   to={"/FAQ"}
@@ -141,18 +154,12 @@ function Footer({ dark }) {
                 >
                   <MdKeyboardArrowRight size={20} /> FAQs
                 </Link>
-                <Link
-                  to={"/contact"}
-                  className="text-black text-nowrap dark:text-white  flex items-center"
-                >
-                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Contact Us
-                </Link>
-                <Link
+                {/* <Link
                   to={"/help"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Help Center
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -295,7 +302,7 @@ function Footer({ dark }) {
         </div>
 
         <div className="mt-12 border-t border-gray-100 pt-6">
-          <div className="flex items-center justify-between text-left">
+          <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between text-left">
             <div className="text-xs flex items-center gap-4 text-black">
               <Link
                 to={"/terms-conditions"}
@@ -315,13 +322,12 @@ function Footer({ dark }) {
               >
                 Privacy policy
               </Link>
-              <span className="block dark:text-white sm:inline">
-                All rights reserved.
-              </span>
             </div>
 
-            <p className="text-sm dark:text-white text-black order-first">
-              &copy; 2023 BAOIAM
+            <p className="text-xs dark:text-white text-black order-first">
+              BAOIAM &copy; 2023 <span className="dark:text-white">
+                All rights reserved.
+              </span>
             </p>
           </div>
         </div>
