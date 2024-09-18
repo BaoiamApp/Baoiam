@@ -48,10 +48,10 @@ export const BusSlider = () => {
       <div>
         {" "}
         <h1 className='m-8 text-3xl font-bold text-center'>
-          Business & Stratedy Blogs
+          Popular or Most featured articles
         </h1>
       </div>
-      <div className='mb-6 mt-8'>
+      <div className='mb-6 mt-8 px-10'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -81,15 +81,15 @@ export const BusSlider = () => {
                 <img
                   className='h-full rounded-md  w-full'
                   src={el.pic}
-                  alt=''
+                  alt='bus_image'
                 />
                 <div className='flex flex-col justify-center items-center rounded-md'>
                   <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
                     {el.des}
                   </h2>
                   <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='' />
-                    <h3 className='text-red-700 text-sm md:text-md font-bold'>
+                    <img src={el.icon} alt='buss_iconImage' />
+                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
                       {el.cat}
                     </h3>
                   </div>

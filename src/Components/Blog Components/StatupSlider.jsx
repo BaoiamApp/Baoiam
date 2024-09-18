@@ -46,11 +46,9 @@ export const StatupSlider = () => {
     <div className='my-12'>
       <div>
         {" "}
-        <h1 className='m-8 text-3xl underline font-bold text-center'>
-          Startup Blogs
-        </h1>
+        <h1 className='m-8 text-3xl font-bold text-center'>Featured Blogs</h1>
       </div>
-      <div className='mb-6 mt-8'>
+      <div className='mb-6 mt-8 px-10'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -80,15 +78,15 @@ export const StatupSlider = () => {
                 <img
                   className='h-full rounded-md  w-full'
                   src={el.pic}
-                  alt=''
+                  alt='cat title image'
                 />
                 <div className='flex flex-col justify-center items-center rounded-md'>
                   <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
                     {el.des}
                   </h2>
                   <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='' />
-                    <h3 className='text-red-700 text-sm md:text-md font-bold'>
+                    <img src={el.icon} alt='icon_image' />
+                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
                       {el.cat}
                     </h3>
                   </div>
