@@ -10,9 +10,9 @@ const Star = ({ filled }) => (
 const Testimonials = () => {
   return (
     <div className="my-12 relative z-10">
-      <div className="text-center max-w-3xl mx-auto flex flex-col gap-2">
-        <h2 className="font-extrabold text-lg md:text-4xl">{data.title}</h2>
-        <p className="mt-4 leading-relaxed">{data.description}</p>
+      <div className="text-center max-w-3xl mx-auto flex flex-col gap-2 px-4">
+        <h2 className="font-extrabold text-xl md:text-4xl">{data.title}</h2>
+        <p className="mt-2 md:mt-4 leading-relaxed text-xs md:text-base">{data.description}</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4">

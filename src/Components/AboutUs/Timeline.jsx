@@ -7,17 +7,17 @@ const MilestoneCard = ({ icon: Icon, description }) => (
     <div className="bg-indigo-500 text-white rounded-full p-4 mb-4">
       <Icon className="text-3xl" />
     </div>
-    <p className="text-lg font-medium text-gray-800">{description}</p>
+    <p className="font-medium text-gray-800">{description}</p>
   </div>
 );
 
 const Timeline = () => {
   return (
-    <section className="py-12">
+    <section className="pb-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">The Journey</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-sm lg:text-base text-gray-700 max-w-3xl mx-auto">
             Founded in 2020, BAOIAM emerged from a bold vision to connect traditional education with real-world skills. Our founders, fueled by a deep passion for learning and a commitment to accessibility, set out to create a platform that empowers individuals to steer their own career journeys.
           </p>
         </div>

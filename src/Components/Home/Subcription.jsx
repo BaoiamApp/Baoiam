@@ -11,15 +11,13 @@ const NewsletterBanner = () => {
       <div className="min-h-[400px] relative z-50 h-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center px-6 py-12">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-white md:text-5xl text-4xl font-bold">
-            Subscribe to Our Newsletter
+            Become a part of our team
           </h3>
           <p className="text-gray-300 text-sm mt-6">
-            Subscribe to our newsletter and stay up to date with the latest
-            news, updates, and exclusive offers. Get valuable insights. Join our
-            community today!
+            We're looking for people who can care deeply about quality to build with us.
           </p>
 
-          <div className="max-w-lg mx-auto bg-gray-100 flex p-1 rounded-full text-left mt-12 border focus-within:border-gray-700">
+          {/* <div className="max-w-lg mx-auto bg-gray-100 flex p-1 rounded-full text-left mt-12 border focus-within:border-gray-700">
             <input
               type="email"
               placeholder="Enter your email"
@@ -32,7 +30,7 @@ const NewsletterBanner = () => {
             >
               Submit
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

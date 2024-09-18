@@ -15,28 +15,28 @@ export const TeamSwiper = () => {
 
   useEffect(() => {
 
-gsap.fromTo('.t2',{opacity:0,y:30},
-  {
-    opacity:1,
-    duration:1,
-    ease:'power1.inOut',
-    y:0,
-    stagger:0.3,
-    scrollTrigger:{
-      trigger:'.tdiv1',
-      start:'top 40%',
-      end:'bottom 80%'
-    }
-  }
-)
+    gsap.fromTo('.t2', { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: 'power1.inOut',
+        y: 0,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: '.tdiv1',
+          start: 'top 40%',
+          end: 'bottom 80%'
+        }
+      }
+    )
 
 
 
-  },[])
+  }, [])
 
   return (
     <>
-      <div className="tdiv1 t2 text-center text-xl md:text-4xl p-6 py-6 tracking-wide leading-4 font-bold">
+      <div className="tdiv1 t2 text-center text-3xl md:text-4xl p-6 py-6 tracking-wide leading-4 font-bold">
         Our Leaders
       </div>
       <div className="hidden p-6  md:grid h-full w-full items-center justify-around grid-cols-3 lg:grid-cols-4 gap-6">
@@ -89,7 +89,10 @@ gsap.fromTo('.t2',{opacity:0,y:30},
           spaceBetween={24}
           breakpoints={{
             320: {
-              slidesPerView: 3,
+              slidesPerView: 1,
+            },
+            425: {
+              slidesPerView: 2,
             },
             768: {
               slidesPerView: 4,
@@ -97,12 +100,12 @@ gsap.fromTo('.t2',{opacity:0,y:30},
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className=" md:h-[350px] w-full md:w-[90%] m-auto rounded-lg  flex flex-col justify-center items-center gap-4"
+          className="h-72 md:h-[350px] w-full md:w-[90%] m-auto rounded-lg  flex flex-col justify-center items-center gap-4"
         >
           {data?.map((el) => {
             return (
               <SwiperSlide
-                className="relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-[160px] w-[180px] md:h-[330px] md:w-[130px] flex flex-col justify-center items-center gap-4 "
+                className="relative cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-200 rounded-md h-full w-[180px] md:h-[330px] md:w-[130px] flex flex-col justify-center items-center gap-4 "
                 key={el.id}
               >
                 <img

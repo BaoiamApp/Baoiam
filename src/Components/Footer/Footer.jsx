@@ -17,30 +17,31 @@ import AppStorePng from '../../assets/Images/Stores/AppStoreDark.png'
 import PlayStorePng from '../../assets/Images/PlayStore.png'
 import CoursesList from "../CoursesList";
 import logo from '../../assets/logo.jpeg'
+import { LogoDark, LogoLight } from "../../assets/assets";
 
 function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
-        <div className="flex justify-between lg:gap-20 xl:gap-0 flex-col md:flex-row">
-          <div className="">
-            <Link
-              to={"/"}
-              className={`flex justify-center text-teal-600 sm:justify-start ${dark ? "h-40 w-40" : "h-24 w-48"
-                }`}
-            >
-              <img
-                src={dark ? logo : Logo}
-                className="w-full h-full object-cover"
-                alt="Baoiam Innovation brand image."
-              />
-            </Link>
+        <div className="flex justify-between lg:gap-20 xl:gap-8 flex-col md:flex-row">
+            <div>
+              <Link
+                to={"/"}
+                className={`flex justify-center text-teal-600 sm:justify-start w-52`}
+              >
+                <img
+                  src={dark ? LogoDark : LogoLight}
+                  className="w-full h-full object-cover"
+                  alt="Baoiam Innovation brand image."
+                />
+              </Link>
+            </div>
+          {/* <div className="">
 
-            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
-            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
               At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
-            </p> */}
-          </div>
+            </p>
+          </div> */}
 
           <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-12 dark:text-white">
             {/* Quick Links */}
