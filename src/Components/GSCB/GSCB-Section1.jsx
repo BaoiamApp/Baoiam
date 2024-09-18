@@ -84,7 +84,7 @@ const Section1 = ({ dark }) => {
           </span>
         ))}
       </div>
-      <div className="mt-[40px] text-center relative">
+      {/* <div className="mt-[40px] text-center relative">
         <h2 className="text-[2vw] max-xs:text-[4vw] max-xs:font-[600] max-md:text-[3vw] ">
           Trusted by a global community of progressive educators
         </h2>
@@ -106,7 +106,7 @@ const Section1 = ({ dark }) => {
             ))}
           </Marquee>
         </div>
-      </div>
+      </div> */}
 
       {/* Join */}
 
