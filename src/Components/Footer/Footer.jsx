@@ -40,7 +40,6 @@ function Footer({ dark }) {
             {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
               At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
             </p> */}
-            </p> */}
           </div>
 
           <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-16 dark:text-white">
