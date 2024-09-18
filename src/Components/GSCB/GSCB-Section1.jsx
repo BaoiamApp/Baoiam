@@ -30,7 +30,7 @@ const Section1 = ({ dark }) => {
     "GCEP (Global Collabo Educational Partnership) is an initiative by BAOIAM aimed at building strong, innovative alliances with schools, colleges, and educational institutions worldwide. Through GCEP, we collaborate to enhance the quality of education and create new opportunities for students and educators alike.";
 
   useEffect(() => {
-    const color = dark ? "white" : "black";
+    const color ="white";
     const anim = gsap.to(lettersRef.current, {
       scrollTrigger: {
         trigger: triggerRef.current,
@@ -72,48 +72,29 @@ const Section1 = ({ dark }) => {
   }, []);
 
   return (
-    <section className="flex items-center justify-evenly flex-col">
+    <section className="flex items-center justify-evenly flex-col  ">
       <div
         ref={triggerRef}
-        className="px-[6vw] max-xs:px-4 max-xs:py-8 max-md:py-0 text-center"
+        className="px-[6vw] xs:px-4 md:py-12 text-center  "
       >
+        <div className="w-full my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
         {text.split("").map((letter, index) => (
           <span
-            className="leading-[5vw] font-normal text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-4xl max-xs:leading-[6vw] max-xs:font-medium max-xs:text-[4.5vw] max-md:text-[4.5vw] max-md:leading-[7vw] max-xs:text-white"
+            className="leading-[3rem] md:leading-[4rem] dark:text-indigo-700 text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-xl md:text-4xl font-medium  max-xs:text-white"
             key={index}
             ref={setlettersRef}
           >
             {letter}
           </span>
         ))}
+        <div className="w-full my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+
       </div>
-      {/* <div className="mt-[40px] text-center relative">
-        <h2 className="text-[2vw] max-xs:text-[4vw] max-xs:font-[600] max-md:text-[3vw] ">
-          Trusted by a global community of progressive educators
-        </h2>
-
-        <div className="mt-[30px] relative">
-          <div className="absolute top-0 left-0 w-[200px] h-full bg-gradient-to-r from-white to-transparent dark:from-black dark:to-transparent z-10 pointer-events-none"></div>
-
-          <div className="absolute top-0 right-0 w-[200px] h-full bg-gradient-to-l from-white to-transparent dark:from-black dark:to-transparent z-10 pointer-events-none"></div>
-
-          <Marquee className="w-[80vw] mb-[4rem] max-xs:mb-[0rem]" speed={100}>
-            {marquee_imgs.map((el, i) => (
-              <div key={i} className="mr-[-5rem] max-xs:mr-[-6rem]">
-                <img
-                  className="w-[30%] dark:invert dark:brightness-0 dark:contrast-200"
-                  src={el}
-                  alt="img"
-                />
-              </div>
-            ))}
-          </Marquee>
-        </div>
-      </div> */}
+   
 
       {/* Join */}
 
-      <section className="w-full h-full py-24 px-6 lg:px-12 max-xs:px-4">
+      <section className="w-full h-full py-8 px-6 lg:px-12 max-xs:px-4">
       <div className="text-center mb-12">
         <h2 className="text-4xl lg:text-5xl font-bold max-xs:text-3xl">
           How to Join GCEP

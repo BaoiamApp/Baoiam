@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import OurHands from '../../assets/Team/TeamHands.jpg'
 import { Link } from 'react-router-dom'
-import { FaArrowRight } from 'react-icons/fa6'
+import { FaArrowRight } from 'react-icons/fa6';
+import gsap from 'gsap';
 
 const JoinUs = () => {
+
+useEffect(() => {
+
+gsap.fromTo('.t5',{opacity:0,y:30},{
+    opacity:1,
+    y:0,
+    duration:1,
+    ease:'power1.inOut',
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:'.tdiv5',
+        start:'top 100%',
+        end:'bottom 80%'
+    }
+})
+
+},[])
+
+
+
     return (
-        <div className='w-full h-52 md:h-80 my-6 relative '>
+        <div className='tdiv5 t5 w-full h-52 md:h-80 my-6 relative '>
             <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-sm bg-black/80"></div>
             <img src={OurHands} alt="Join Us" className='w-full absolute-z-10 h-full object-cover' />
             <div className="flex absolute top-0 right-0 items-center gap-4 z-20 w-full h-full justify-center flex-col">

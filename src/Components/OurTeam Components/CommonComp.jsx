@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Leaderteam1 } from "./teamData";
 import { FaLinkedin } from "react-icons/fa6";
@@ -8,18 +8,44 @@ import "swiper/css";
 import { Keyboard, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import gsap from "gsap";
+
 
 const CommonComp = ({ heading, para, dataArray = [] }) => {
+
+
+
+  useEffect(() => {
+
+    gsap.fromTo('.t3',{opacity:0,y:30},
+      {
+        opacity:1,
+        y:0,
+        duration:1,
+        stagger:0.3,
+        ease:'power1.inOut',
+        scrollTrigger:{
+          trigger:'.tdiv2',
+          start:'top 80%',
+          end:'bottom 80%'
+        }
+      }
+    )
+    
+    },[])
+
   return (
-    <div className="grid md:grid-cols-4 grid-col-1 p-2 mx-auto md:items-center justify-center md:flex-row  gap-2">
+    <div className="tdiv2 t3 grid md:grid-cols-4 grid-col-1 p-2 mx-auto md:items-center justify-center md:flex-row  gap-2">
       <div className="pr-4">
-        <h1 className="text-center col-span-1 text-lg lg:text-2xl px-4 py-2 tracking-wide font-bold ">
+        <h1 className=" text-center col-span-1 text-lg lg:text-2xl px-4 py-2 tracking-wide font-bold ">
           {heading}
         </h1>
-        <p>{para}</p>
+        <p className="">{para}</p>
       </div>
       <div className=" md:col-span-3 col-span-1">
+       
         <div>
+      
           <Swiper
             keyboard={{
               enabled: true,
@@ -44,10 +70,13 @@ const CommonComp = ({ heading, para, dataArray = [] }) => {
             }}
             className="w-72 md:w-full h-80 mx-auto rounded-xl flex flex-col justify-center items-center gap-6"
           >
+             
             {dataArray?.map((el) => {
-              return (
-                <SwiperSlide key={el.id} className="group flip-card">
+              return (     
+            
+               <SwiperSlide key={el.id} className="group flip-card">
                   <div className="flip-card-inner">
+               
                     {/* Front Side (Image) */}
                     <div className="flip-card-front max-w-80 mx-auto">
                       <img
@@ -56,6 +85,7 @@ const CommonComp = ({ heading, para, dataArray = [] }) => {
                         alt={el.name}
                       />
                     </div>
+                  
 
                     {/* Back Side (Details) */}
                     <div className="flip-card-back bg-black/90 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center">
@@ -71,13 +101,18 @@ const CommonComp = ({ heading, para, dataArray = [] }) => {
                       </div>
                     </div>
                   </div>
+               
                 </SwiperSlide>
+          
               );
             })}
+                  
           </Swiper>
+       
         </div>
+  
       </div>
-    </div>
+     </div>
   );
 };
 
