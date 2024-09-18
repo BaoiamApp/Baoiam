@@ -10,47 +10,70 @@ import ent from "../../assets/Blogs/ent.jpg";
 import stp from "../../assets/Blogs/stup.jpg";
 import tech from "../../assets/Blogs/tech.jpg";
 import software_testing from "../../assets/Blogs/software_testing.png";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 const blog_slider = [
   {
     id: 1,
     pic: carrer1,
     des: "The Best Graphic Design Careers — for Beginners and Professionals",
-    cat: "STARTUP",
+    cat: "BUSINESS & STRATEGY",
     icon: stp,
   },
   {
     id: 2,
     pic: datasc,
     des: "The Top Technical Skills All Employees Need in 2022",
-    cat: "STARTUP",
+    cat: "BUSINESS & STRATEGY",
     icon: stp,
   },
   {
     id: 3,
     pic: ed_tech,
     des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "STARTUP",
+    cat: "BUSINESS & STRATEGY",
     icon: ent,
   },
   {
     id: 4,
     pic: software_testing,
     des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "STARTUP",
+    cat: "BUSINESS & STRATEGY",
     icon: tech,
   },
 ];
-export const StatupSlider = () => {
+
+export const BusSlider = () => {
+
+
+  useEffect(() => {
+  
+    gsap.fromTo('.b5',{opacity:0,y:30},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'back.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.bdiv5',
+        start:'top 90%',
+        end:'bottom 80%'
+      }
+    })
+  
+  },[])
+
+
   return (
-    <div className='my-12'>
+    <div className='bdiv5 my-12'>
       <div>
         {" "}
-        <h1 className='m-8 text-3xl underline font-bold text-center'>
-          Startup Blogs
+        <h1 className='m-8 text-3xl font-bold text-center'>
+          Popular or Most featured articles
         </h1>
       </div>
-      <div className='mb-6 mt-8'>
+      <div className='mb-6 mt-8 px-10'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -69,7 +92,7 @@ export const StatupSlider = () => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className=' w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className='b5 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
         >
           {blog_slider?.map((el) => {
             return (
@@ -80,15 +103,15 @@ export const StatupSlider = () => {
                 <img
                   className='h-full rounded-md  w-full'
                   src={el.pic}
-                  alt=''
+                  alt='bus_image'
                 />
                 <div className='flex flex-col justify-center items-center rounded-md'>
                   <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
                     {el.des}
                   </h2>
                   <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='' />
-                    <h3 className='text-red-700 text-sm md:text-md font-bold'>
+                    <img src={el.icon} alt='buss_iconImage' />
+                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
                       {el.cat}
                     </h3>
                   </div>

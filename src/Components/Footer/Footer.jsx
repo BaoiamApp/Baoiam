@@ -21,14 +21,13 @@ import logo from '../../assets/logo.jpeg'
 function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
-      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
         <div className="flex gap-8 flex-col md:flex-row">
           <div className="">
             <Link
               to={"/"}
-              className={`flex justify-center text-teal-600 sm:justify-start ${
-                dark ? "h-40 w-40" : "h-24 w-48"
-              }`}
+              className={`flex justify-center text-teal-600 sm:justify-start ${dark ? "h-40 w-40" : "h-24 w-48"
+                }`}
             >
               <img
                 src={dark ? logo : Logo}
@@ -37,66 +36,70 @@ function Footer({ dark }) {
               />
             </Link>
 
-            {/* <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa
-              cum itaque neque.
+            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
+            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
+              At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
             </p> */}
           </div>
 
-          <div className="grid grid-cols-1 gap-8 dark:text-white  md:grid-cols-2 lg:grid-cols-4">
-            {/* Company */}
+          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-16 dark:text-white">
+            {/* Quick Links */}
             <div className="px-4 sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
-                Company
+                Quick Links
               </p>
 
-              <div className="mt-4 flex flex-col gap-2 text-sm">
+              <div className="mt-4 flex flex-col gap-2 text-xs">
+
                 <Link
                   to={"/about-us"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} />
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
                   About Us
                 </Link>
                 <Link
-                  to={"/hire"}
-                  className="text-black text-nowrap dark:text-white  flex items-center"
-                >
-                  <MdKeyboardArrowRight size={20} /> Hire from us
-                </Link>
-                <Link
                   to={"/team"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Our Team
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
+                  Our Team
                 </Link>
+
                 <Link
-                  to={"/FAQ"}
+                  to={"/blog"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> FAQs
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Blog
                 </Link>
+
               </div>
             </div>
 
-            {/* Join Us */}
+            {/* Program & Partnership */}
             <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black dark:text-white text-nowrap">
-                Join Us
+              <p className="text-lg font-medium text-black dark:text-white text-wrap xl:text-nowrap">
+                Programs & Partnerships
               </p>
 
-              <div className="mt-4 flex flex-col gap-2 text-sm">
+              <div className="mt-4 flex flex-col gap-2 text-xs">
                 <Link
                   to={"/gcep"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> GCEP
+                  <MdKeyboardArrowRight size={20} /> Global Collabo Educational Partnership
                 </Link>
                 <Link
                   to={"/gcep"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> GCSP
+                  <MdKeyboardArrowRight size={20} /> Global Collabo Startup Programs
+                </Link>
+                <Link
+                  to={"/itie"}
+                  className="text-black dark:text-white text-nowrap flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Intern Teach Intern Earn
                 </Link>
                 <Link
                   to={"/entrepreneurship"}
@@ -105,10 +108,10 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} /> Entrepreneurship
                 </Link>
                 <Link
-                  to={"/career"}
+                  to={"/pap"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Career
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Pay After Placement
                 </Link>
               </div>
             </div>
@@ -119,30 +122,36 @@ function Footer({ dark }) {
                 Help & Support
               </p>
 
-              <div className="mt-4 flex flex-col gap-2 text-sm">
+              <div className="mt-4 flex flex-col gap-2 text-xs">
                 <Link
-                  to={"/terms-conditions"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
+                  to={"/hire"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Terms & Conditions
+                  <MdKeyboardArrowRight size={20} /> Hire from us
                 </Link>
                 <Link
-                  to={"/refund"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
+                  to={"/career"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Refund policy
+                  <MdKeyboardArrowRight size={20} /> Careers
                 </Link>
                 <Link
-                  to={"/privacy-policy"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
+                  to={"/FAQ"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Privacy policy
+                  <MdKeyboardArrowRight size={20} /> FAQs
                 </Link>
                 <Link
-                  to={"/help-center"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
+                  to={"/contact"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Help Center
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Contact Us
+                </Link>
+                <Link
+                  to={"/help"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Help Center
                 </Link>
               </div>
             </div>
@@ -153,7 +162,7 @@ function Footer({ dark }) {
                 Contact Us
               </p>
 
-              <ul className="mt-4 space-y-4 text-sm">
+              <ul className="mt-4 space-y-4 text-xs">
                 {/* Mail */}
                 <li className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
                   <svg
@@ -218,7 +227,7 @@ function Footer({ dark }) {
                   </svg>
 
                   <address className="-mt-0.5 flex-1 dark:text-white not-italic text-black">
-                    H Block, Sector 62 <br/>201301<br/>UP Noida, India.
+                    H Block, Sector 62 <br />201301<br />UP Noida, India.
                   </address>
                 </li>
               </ul>
@@ -251,7 +260,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaFacebook size={22} />
+              <FaFacebook className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Instagram */}
@@ -260,7 +269,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaInstagram size={22} />
+              <FaInstagram className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Linkedin */}
@@ -271,7 +280,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaLinkedin size={22} />
+              <FaLinkedin className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Twitter */}
@@ -280,18 +289,36 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500"
             >
-              <FaSquareXTwitter size={22} />
+              <FaSquareXTwitter className=" min-w-6 text-xl aspect-square" />
             </Link>
           </div>
         </div>
 
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="flex items-center justify-between text-left">
-            <p className="text-sm flex items-center gap-2 text-black">
+            <div className="text-xs flex items-center gap-4 text-black">
+              <Link
+                to={"/terms-conditions"}
+                className="text-black dark:text-white text-nowrap flex items-center"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                to={"/refund"}
+                className="text-black dark:text-white text-nowrap flex items-center"
+              >
+                Refund policy
+              </Link>
+              <Link
+                to={"/privacy-policy"}
+                className="text-black dark:text-white text-nowrap flex items-center"
+              >
+                Privacy policy
+              </Link>
               <span className="block dark:text-white sm:inline">
                 All rights reserved.
               </span>
-            </p>
+            </div>
 
             <p className="text-sm dark:text-white text-black order-first">
               &copy; 2023 BAOIAM

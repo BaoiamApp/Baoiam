@@ -10,6 +10,8 @@ import ent from "../../assets/Blogs/ent.jpg";
 import stp from "../../assets/Blogs/stup.jpg";
 import tech from "../../assets/Blogs/tech.jpg";
 import software_testing from "../../assets/Blogs/software_testing.png";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 const blog_slider = [
   {
@@ -42,13 +44,32 @@ const blog_slider = [
   },
 ];
 export const TechBlogSlider = () => {
+
+
+useEffect(() => {
+  
+  gsap.fromTo('.b4',{opacity:0,y:30},{
+    opacity:1,
+    duration:1,
+    y:0,
+    ease:'back.inOut',
+    stagger:0.3,
+    scrollTrigger:{
+      trigger:'.bdiv3',
+      start:'top 90%',
+      end:'bottom 80%'
+    }
+  })
+
+},[])
+
   return (
-    <div className='my-14'>
+    <div className='bdiv3 my-14'>
       <div>
         {" "}
-        <h1 className='m-8 text-3xl font-bold text-center'>Technology Blogs</h1>
+        <h1 className='m-8 text-3xl font-bold text-center'>Recent Blogs</h1>
       </div>
-      <div className='mb-6 mt-8'>
+      <div className='mb-6 mt-8 px-10'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -67,7 +88,7 @@ export const TechBlogSlider = () => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className=' w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className='b4 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
         >
           {blog_slider?.map((el) => {
             return (
@@ -78,15 +99,15 @@ export const TechBlogSlider = () => {
                 <img
                   className='h-full rounded-md  w-full'
                   src={el.pic}
-                  alt=''
+                  alt='technoloy_image'
                 />
                 <div className='flex flex-col justify-center items-center rounded-md'>
                   <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
                     {el.des}
                   </h2>
                   <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='' />
-                    <h3 className='text-red-700 text-sm md:text-md font-bold'>
+                    <img src={el.icon} alt='tech_iconImage' />
+                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
                       {el.cat}
                     </h3>
                   </div>

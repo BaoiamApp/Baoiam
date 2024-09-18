@@ -1,6 +1,6 @@
 export const School = [
   {
-    Cate: "School",
+    Cate: "Junior Programs",
     link: "/courses/school",
     subCate: [
       {
@@ -1418,7 +1418,7 @@ export const School = [
 export const CollegeCourseData = [
   {
     id: 1,
-    Cate: "College",
+    Cate: "Pre-Univerity Programs",
     link: "/courses/college",
     subCate: [
       {
@@ -3492,7 +3492,7 @@ export const Highlights = [
 
 export const OtherCourseData = [
   {
-    Cate: "Other Courses",
+    Cate: "Professional Degree Courses",
     link: "",
     subCate: [
       {

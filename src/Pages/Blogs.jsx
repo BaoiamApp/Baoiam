@@ -11,9 +11,11 @@ import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
 import "./Blogs.css";
-import { StatupSlider } from "../Components/Blog Components/StatupSlider";
-import { TechBlogSlider } from "../Components/Blog Components/TechBlogSlider";
-import { BusSlider } from "../Components/Blog Components/BusSlider";
+import { StatupSlider } from "../Components/Blogs/StatupSlider"; 
+import { TechBlogSlider } from "../Components/Blogs/TechBlogSlider";
+import { BusSlider } from "../Components/Blogs/BusSlider";
+import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
+import NewsletterBanner from "../Components/Home/Subcription";
 
 const blog_list = [
   {
@@ -168,10 +170,32 @@ const authors_info = [
 ];
 
 const Blog = () => {
-  document.title = 'Baoiam - Blogs'
+  document.title = "Baoiam - Blogs";
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
+  
+    gsap.fromTo('.b1',{opacity:0,y:-60},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'power1.inOut',
+      stagger:0.3,
+    })
 
+    gsap.fromTo('.b2',{opacity:0,y:30},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'back.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.bdiv1',
+        start:'top 70%',
+        end:'bottom 80%'
+      }
+    })
     return () => {};
   }, []);
 
@@ -257,54 +281,45 @@ const Blog = () => {
 
   return (
     <div className='dark:bg-black dark:text-white'>
-      <div className='max-w-xll mx-8 py-8 dark:bg-black dark:text-white bg-white shadow-lg rounded-lg overflow-hidden'>
-        <div className='relative'>
-          <img
-            className='w-full h-80 object-cover'
-            src='https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            alt='Blog Post Image'
-          />
-          <div className='absolute inset-0 '></div>
-          <div className='absolute bottom-0 left-0 p-6'>
-            <h2 className='text-2xl font-bold text-black'>
-              Tempor Consectetur Est Elit
-            </h2>
-            <p className='text-black'>Consequuntur ex co</p>
-          </div>
-        </div>
-      </div>
+      <HeaderBlog searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
         <h1 className='text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className='text-l  text-center mt-2 mb-6'>
+        <h2 className='b2 text-l  text-center mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 
         <div className=' p-6'></div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
-          {blog_list.map((item, i) => (
-            <Link key={i} to={`/Blog_detail/${i}`}>
-              <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
-                <img
-                  className='w-full h-48 object-cover'
-                  src={item.imgSrc}
-                  alt={`${item.title}`}
-                />
-                <div className='p-6 flex-grow'>
-                  <span
-                    className={`text-sm text-${item.titleColor} font-semibold`}
-                  >
-                    {item.title}
-                  </span>
-                  <h2 className='text-lg font-bold my-2 truncate'>
-                    {item.text}
-                  </h2>
-                  <p className='text-sm'>{item.info}</p>
+        <div className='px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+          {blog_list
+            .filter(
+              (item) =>
+                item.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                item.title.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .map((item, i) => (
+              <Link key={i} to={`/Blog_detail/${i}`}>
+                <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
+                  <img
+                    className='w-full h-48 object-cover'
+                    src={item.imgSrc}
+                    alt={`${item.title}`}
+                  />
+                  <div className='p-6 flex-grow'>
+                    <span
+                      className={`text-sm text-${item.titleColor} font-semibold`}
+                    >
+                      {item.title}
+                    </span>
+                    <h2 className='text-lg font-bold my-2 truncate'>
+                      {item.text}
+                    </h2>
+                    <p className='text-sm'>{item.info}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
         </div>
 
         {/* slider */}
@@ -313,6 +328,7 @@ const Blog = () => {
         <TechBlogSlider />
         <BusSlider />
       </div>
+      <NewsletterBanner />
       {/* readers section */}
 
       {/* <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
