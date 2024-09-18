@@ -69,28 +69,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col px-6 pt-20 items-center">
-    <div className="flex py-16 items-center flex-col justify-evenly px-6">
-      <h1 className="effect text-4xl md:text-5xl lg:text-4xl font-bold leading-tight mb-8 md:mb-4 lg:mb-[4vw] text-center ">
-        Global Collabo Educational Partnership
-      </h1>
-      <p className="effect text-2xl md:text-3xl lg:text-2xl text-center px-4 lg:px-[10rem] mb-4 md:mb-6 lg:mb-[4vw]  md:font-medium ">
-        Uniting educational institutions globally for a brighter future
-      </p>
-      {/* Uncomment and customize the button and link as needed */}
-      {/* <a
-        href="#4"
-        className="effect text-lg md:text-xl lg:text-2xl font-semibold gap-3 mb-6 hover:text-slate-600 max-xs:text-[3vw] max-xs:px-4 max-xs:font-semibold md:text-[2.3vw]"
-      >
-        Learn more about the Make Academic Alliance →
-      </a>
-      <button className="effect enlarge shadow-inset px-8 py-3 rounded-full font-bold bg-black text-white hover:bg-white hover:text-black transition-all max-xs:px-4 max-xs:py-2 max-xs:text-[2.5vw]">
-        Click Me
-      </button> */}
-    </div>
-  
-    {/* Uncomment and use the video section as needed */}
-    {/* <div className="w-full h-[75vh] relative overflow-hidden px-4 rounded-3xl max-xs:h-[30vh] max-md:h-[40vh]">
+    <section className="flex flex-col  py-2 items-center">
+       {/* Uncomment and use the video section as needed */}
+    <div className="w-full h-[75vh] relative overflow-hidden">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         loop
@@ -104,17 +85,38 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
   
       <div className="text-white font-extrabold flex flex-col items-center justify-center w-full h-full relative text-center">
-        <div className="sentence gap-4 flex items-center text-center absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] max-xs:gap-1">
-          <h1 className="bg-red-500 p-2 max-xs:p-1">
-            <span className="text-4xl md:text-5xl lg:text-6xl">Responsive</span>
-          </h1>
+        <div className="sentence gap-4 flex items-center text-center absolute w-[65%] justify-center h-full mx-auto px-10 top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] max-xs:gap-1">
+          <h2 className="bg-red-500 p-2">
+            <span className="text-4xl md:text-5xl lg:text-6xl">GCEP</span>
+          </h2>
           <span className="w-1 h-48 bg-black max-xs:h-24"></span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl">Layout</h2>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl">For</h2>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl">Us.</h2>
+          <p className="text-xl text-left md:text-5xl">Global Collabo Educational Partnership</p>
+          {/* <h2 className="text-4xl md:text-5xl lg:text-6xl">Collabo</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl">Educational</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl">Partnership</h2> */}
         </div>
       </div>
-    </div> */}
+    </div>
+    {/* <div className="flex items-center flex-col justify-evenly px-6 py-4">
+      <h1 className="effect text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[6vw] mb-8 md:mb-4 lg:mb-[4vw] text-center max-xs:text-[8vw] max-xs:leading-[10vw]">
+        Global Collabo Educational Partnership
+      </h1>
+      <p className="effect text-2xl md:text-3xl lg:text-4xl text-center px-4 lg:px-[10rem] mb-4 md:mb-6 lg:mb-[4vw] max-xs:px-2 max-xs:text-[5vw] max-xs:font-medium md:font-medium md:text-[2.5vw]">
+        Uniting educational institutions globally for a brighter future
+      </p> */}
+      {/* Uncomment and customize the button and link as needed */}
+      {/* <a
+        href="#4"
+        className="effect text-lg md:text-xl lg:text-2xl font-semibold gap-3 mb-6 hover:text-slate-600 max-xs:text-[3vw] max-xs:px-4 max-xs:font-semibold md:text-[2.3vw]"
+      >
+        Learn more about the Make Academic Alliance →
+      </a>
+      <button className="effect enlarge shadow-inset px-8 py-3 rounded-full font-bold bg-black text-white hover:bg-white hover:text-black transition-all max-xs:px-4 max-xs:py-2 max-xs:text-[2.5vw]">
+        Click Me
+      </button> */}
+    {/* </div> */}
+  
+   
   </section>
   
   );
