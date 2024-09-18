@@ -29,13 +29,15 @@ const Section1 = ({ dark }) => {
   const text =
     "GCEP (Global Collabo Educational Partnership) is an initiative by BAOIAM aimed at building strong, innovative alliances with schools, colleges, and educational institutions worldwide. Through GCEP, we collaborate to enhance the quality of education and create new opportunities for students and educators alike.";
 
+    const color =dark ? "white":"black";
+    const defaultColor=dark?'text-indigo-500':'text-slate-200';
+    
   useEffect(() => {
-    const color = dark ?'white': 'black';
     const anim = gsap.to(lettersRef.current, {
       scrollTrigger: {
         trigger: triggerRef.current,
         scrub: 6,
-        start: "top 90%",
+        start: "top 60%",
         end: "bottom 85%",
       },
       color: color,
@@ -44,7 +46,8 @@ const Section1 = ({ dark }) => {
     return () => {
       anim.kill();
     };
-  }, [lettersRef]);
+  }, [lettersRef,dark]);
+
 
   const stepRefs = useRef([]); // Array to hold references for the steps
 
@@ -63,13 +66,13 @@ const Section1 = ({ dark }) => {
           delay: index * 0.3, // Adding a stagger effect
           scrollTrigger: {
             trigger: step, // Trigger animation for each step
-            start: "top 80%",
+            start: "top 60%",
             toggleActions: "play none none reverse",
           },
         }
       );
     });
-  }, []);
+  }, [dark]);
 
   return (
     <section className="flex items-center justify-evenly flex-col  ">
@@ -80,7 +83,7 @@ const Section1 = ({ dark }) => {
         <div className="w-full  my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
         {text.split("").map((letter, index) => (
           <span
-            className="leading-[3rem] md:leading-[4rem] text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-xl md:text-4xl font-medium  max-xs:text-white"
+            className={`leading-[3rem] md:leading-[4rem] dark:drop-shadow-[0_0_0.03rem_white] text-xl md:text-3xl font-medium  max-xs:text-white ${defaultColor}`}
             key={index}
             ref={setlettersRef}
           >

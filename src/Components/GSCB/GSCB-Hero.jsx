@@ -69,7 +69,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col  py-2 items-center">
+    <section className="flex flex-col items-center">
        {/* Uncomment and use the video section as needed */}
     <div className="w-full h-[75vh] relative overflow-hidden">
       <video
@@ -82,15 +82,15 @@ const HeroSection = () => {
         Your browser does not support HTML5 video.
       </video>
   
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
   
       <div className="text-white font-extrabold flex flex-col items-center justify-center w-full h-full relative text-center">
         <div className="sentence gap-4 flex items-center text-center absolute w-[65%] justify-center h-full mx-auto px-10 top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] max-xs:gap-1">
-          <h2 className="bg-red-500 p-2">
-            <span className="text-4xl md:text-5xl lg:text-6xl">GCEP</span>
+          <h2 className="bg-red-500 py-3">
+            <span className="text-4xl px-4 md:text-4xl lg:text-5xl">GCEP</span>
           </h2>
           <span className="w-1 h-48 bg-black max-xs:h-24"></span>
-          <p className="text-xl text-left md:text-5xl">Global Collabo Educational Partnership</p>
+          <p className="text-xl text-left md:text-5xl">Global Collabo <span className="text-nowrap">Educational Partnership</span></p>
         
         </div>
       </div>
