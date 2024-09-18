@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import img1 from "../../assets/img1.png";
-import logoDark from "../../assets/logo-bg-removed.png";
+import { LogoDark, LogoLight } from '../../assets/assets';
 
 const Logo = ({ isDark }) => {
     return (
@@ -9,10 +8,10 @@ const Logo = ({ isDark }) => {
             <Link
                 rel="canonical"
                 to={"/"}
-                className={`${isDark? 'w-36 h-24':'w-36 h-22'}`}
+                className={`${isDark ? 'w-24 h-16' : 'w-24 h-16'} mb-4 ml-8`}
             >
                 <img
-                    src={isDark ? logoDark:img1}
+                    src={isDark ? LogoDark : LogoLight}
                     className={`w-full h-full`}
                     alt="logo"
                 />
