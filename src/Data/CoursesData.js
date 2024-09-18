@@ -67,17 +67,16 @@ const school = [
     ],
   },
   {
-    id:4,
-    title:'Creative Writing',
-    desc:`Creative writing is a type of writing that goes outside the bounds of normal professional, journalistic, academic, or technical forms of literature, typically identified by an emphasis on narrative craft, character development. It is used in literary tropes or with various traditions of poetry and poetics. Students will engage in writing exercises, workshops, and critiques to refine their craft and discover their unique voice.`,
+    id: 4,
+    title: "Creative Writing",
+    desc: `Creative writing is a type of writing that goes outside the bounds of normal professional, journalistic, academic, or technical forms of literature, typically identified by an emphasis on narrative craft, character development. It is used in literary tropes or with various traditions of poetry and poetics. Students will engage in writing exercises, workshops, and critiques to refine their craft and discover their unique voice.`,
     overview: [
       "Creative writing course develops writing skills. It enhances students' ability to write compelling stories, poems, and essays. It will focus on exploring genres, improving writing technique, foster creativity, peer review, and finally review.",
       "This course encourages students to use their imagination and creativity to generate original ideas for stories, poems, and other forms of writing and experiment with different writing styles and genres to find their unique voice.",
       "Understand different writing techniques and styles used by authors to inspire their own writing with the help of creative writing course.",
       "This course helps in developing the skills to communicate ideas clearly and persuasively through written words. It also enhances the ability to critically evaluate and revise their own and others' writing.",
     ],
-    
-  }
+  },
 ];
 const college = [
   {

@@ -195,7 +195,7 @@ const Navbar = ({ theme }) => {
                           to={`/course/${college.id}`}
                           className="px-2 py-1 text-slate-800 dark:text-slate-200 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:text-slate-500"
                         >
-                          {college.courseName}
+                          {college.course}
                         </Link>
                       ))}
                     </ul>

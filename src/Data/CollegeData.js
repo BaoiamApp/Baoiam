@@ -6,7 +6,7 @@ export const CollegeCourseData = [
     subCate: [
       {
         id: 11,
-        courseName: "Web Development",
+        course: "Web Development",
         category: "Technology",
         difficultyLevel: "Intermediate",
         price: "Free",
@@ -126,7 +126,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -140,7 +140,7 @@ export const CollegeCourseData = [
       },
       {
         id: 12,
-        courseName: "Graphic Designing",
+        course: "Graphic Designing",
         desc: [
           `"Unlock Your Creative Potential: Embark on a Journey in Graphic Design! Graphic design, a realm of boundless creativity, beckons those who possess a passion for art, technology, and communication. It's an ideal career path for individuals seeking to blend their artistic flair with modern digital tools. Join us to hone your skills in crafting visually captivating and compelling content`,
           `. Our program offers live sessions, immersive industry-related projects, and exclusive masterclasses led by seasoned experts. From logo design to poster creation, we'll guide you through every step, empowering you to enhance your digital media skills and unleash your creativity. Designed to elevate your graphic design prowess, our program is tailored for aspiring designers eager to refine their craft and make a meaningful impact in the world of visual communication. Take the first step towards a fulfilling career in graphic design. Join our program and let your creativity flourish!"`,
@@ -172,7 +172,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -185,7 +185,7 @@ export const CollegeCourseData = [
       },
       {
         id: 13,
-        courseName: "Human Resource",
+        course: "Human Resource",
         category: "Business",
         difficultyLevel: "Intermediate",
         desc: [
@@ -218,7 +218,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -231,7 +231,7 @@ export const CollegeCourseData = [
       },
       {
         id: 14,
-        courseName: "Data Analytics",
+        course: "Data Analytics",
         desc: [
           `"Unleash Your Analytical Potential with Our Dynamic Data Analytics Program! Discover the power of data analytics and propel your career to new heights with our immersive program tailored to demystify data and supercharge your analytical skills. Through live sessions, hands-on labs, and industry-relevant projects, you'll gain invaluable insights and practical experience that are essential for success in today's data-driven world.`,
           ` Led by distinguished faculty and supplemented with masterclasses, our program ensures you're equipped with the latest techniques and tools to excel in data analytics across diverse industries. Whether you're a seasoned professional or just starting out, our engaging curriculum promises to transform your understanding of data and elevate your analytical capabilities. Don't leave your career to chance – invest in yourself with our comprehensive data analytics program. Enrol today and take the first step towards unlocking a world of opportunities!"`,
@@ -300,7 +300,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -316,7 +316,7 @@ export const CollegeCourseData = [
       },
       {
         id: 15,
-        courseName: "Product Management",
+        course: "Product Management",
         desc: [
           `"Unlock Your Product Management Potential: Elevate Your Career with Our Comprehensive Course! Discover the strategic art of Product Management and embark on a journey that transforms you into a dynamic leader in the industry. Our course is meticulously designed to guide you through every stage of a product's lifecycle, from conception to market launch, ensuring you master essential skills and strategies along the way. With a focus on market analysis, customer feedback integration, and seamless collaboration with cross-functional teams, our curriculum empowers you to make informed decisions that drive product success.`,
           ` Whether you're a seasoned professional or just starting out, our tailored approach caters to individuals at every career stage, providing you with the tools and insights needed to excel in the field. Gain expertise in product strategy formulation, roadmap planning, and effective stakeholder communication, equipping you to lead with confidence and clarity. Our course isn't just about learning – it's about unlocking your potential to become a standout leader in Product Management. Join us and embark on a transformative journey that will not only enhance your career prospects but also solidify your reputation as a sought-after Product Management expert. Enrol today and make the decision that sets you on the path to unparalleled success!"`,
@@ -349,7 +349,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -460,7 +460,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -474,7 +474,7 @@ export const CollegeCourseData = [
           `Designed with your success in mind, our course covers a myriad of topics including user interface design, data storage, networking, multimedia, and beyond. With a focus on hands-on learning and practical application, you'll emerge equipped with the skills to bring your app ideas to life and publish them on the prestigious Google Play Store.`,
           `Because we believe in the uniqueness of each student, our course is tailored to cater to your individual learning needs, ensuring that you receive the personalized attention you deserve. Join us on this exhilarating journey and unlock your full potential as an Android app developer. Enrol now and take the first step towards making your mark in the ever-evolving world of mobile technology!"`,
         ],
-        courseName: "Android Development",
+        course: "Android Development",
         category: "Technology",
         difficultyLevel: "Advanced",
         price: "$89",
@@ -486,7 +486,7 @@ export const CollegeCourseData = [
       },
       {
         id: 17,
-        courseName: "Digital Marketing",
+        course: "Digital Marketing",
         desc: [
           `"Discover the power of digital marketing with our comprehensive course, designed to equip you with the tools and techniques needed to thrive in today's competitive landscape. Learn the intricacies of promotion strategies, SEO, social media management, content creation, email campaigns, and analytics for unparalleled audience engagement and business growth.`,
           ` Our Digital Marketing Course is your gateway to mastering the art of online influence. Whether you're delving into the mysteries of SEO or harnessing the magic of social media, our expert-led curriculum will empower you to navigate the dynamic realm of digital marketing with confidence. Stay ahead of the curve and amplify your brand's presence in the digital era. Enrol in our course today and unlock the secrets to becoming a formidable force in the ever-evolving world of digital marketing. Don't just adapt to change—embrace it, and propel your career to new heights with our cutting-edge insights and practical skills.`,
@@ -575,7 +575,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -589,7 +589,7 @@ export const CollegeCourseData = [
       },
       {
         id: 18,
-        courseName: "UI/UX Design",
+        course: "UI/UX Design",
         desc: [
           `Unlock the Power of UI/UX: Elevate Your Digital Interactions! UI/UX, shorthand for User Interface and User Experience, lies at the core of our digital interactions. While UI centers on visual components, buttons, and user interaction processes, UX delves deeper into the holistic user experience, encompassing usability, accessibility, and emotional resonance with the design.`,
           ` Embark on an immersive journey in our UI/UX course, where theory seamlessly integrates with hands-on practice. Explore the art of wireframing, prototyping, and usability testing, enhancing your proficiency in crafting user-centric solutions. Join us on this enriching adventure to amplify your skills in UI/UX design and unlock new possibilities in the digital landscape. Elevate your digital interactions and make a lasting impact with our comprehensive UI/UX course!`,
@@ -689,7 +689,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -703,7 +703,7 @@ export const CollegeCourseData = [
       },
       {
         id: 19,
-        courseName: "Software Testing",
+        course: "Software Testing",
         desc: [
           `Join the comprehensive course module of Automation Testing at the leading Software Testing Institute in India! Take your career to the next level with our Software Testing Course. Get hands-on training in the latest tools and techniques in the field of automation testing and learn about different types of Automation Testing frameworks, working with popular Automation Testing tools such as Selenium, Appium, designing and implementing test automation scripts, and understanding Continuous Integration and Continuous Testing.`,
           ` Our course covers the essential concepts and practical skills required for you to succeed as an automation tester. You'll have the confidence and expertise to secure a high-paying position in the industry. Join the online Software Testing Course with BAOIAM with confidence and get ahead of the competition in your career plan.`,
@@ -802,7 +802,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -814,7 +814,7 @@ export const CollegeCourseData = [
       },
       {
         id: 20,
-        courseName: "Entrepreneurship & Innovation",
+        course: "Entrepreneurship & Innovation",
         category: "Business",
         difficultyLevel: "Advanced",
         desc: [
@@ -847,7 +847,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -858,7 +858,7 @@ export const CollegeCourseData = [
       },
       {
         id: 21,
-        courseName: "SEO Development",
+        course: "SEO Development",
         category: "Business",
         desc: [
           `Harness the commanding force of search engines to ascend to the zenith of online presence! SEO, the art of mastering search engine optimization, isn't merely about tweaking website performance; it's about seizing control of the digital realm. With our arsenal of keyword sorcery and content mastery, you'll reign supreme over the competition. `,
@@ -958,7 +958,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -967,7 +967,7 @@ export const CollegeCourseData = [
       },
       {
         id: 22,
-        courseName: "Machine Learning with AI",
+        course: "Machine Learning with AI",
         category: "Business",
         difficultyLevel: "Advanced",
         price: "$109",
@@ -995,7 +995,7 @@ export const CollegeCourseData = [
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
+            course: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],

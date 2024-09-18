@@ -17,13 +17,16 @@ import { HiShieldCheck } from "react-icons/hi";
 import { useNavigate, useParams } from "react-router-dom";
 // import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
+import { School } from "../Data/SchoolData";
+import { CollegeCourseData } from "../Data/CollegeData";
+import { OtherCourseData } from "../Data/OtherCourseData";
 const apiUrl = import.meta.env.VITE_API_URL;
 const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
 const Checkout = () => {
   const navigate = useNavigate();
   const invalidCouponToast = () => toast("Invalid Referral Code!");
-  const { id, plan, course } = useParams();
+  const { id, plan } = useParams();
   const [proceedButton, setProceedButton] = useState(
     `PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`
   );
@@ -36,30 +39,48 @@ const Checkout = () => {
     // alert('id is:',id , ' and plan is:',plan)
     else {
       window.scrollTo(0, 0);
-      console.log(course, id, plan);
-      if (course == "school") {
+      if (id >= 1 && id <= 10) {
         const course = School[0].subCate.filter((item) => {
           return item.id == id;
         });
+        console.log("in checkout:", course);
         setEnrollingCourse(course[0]);
-        console.log("course is: ", course);
-      } else if (course == "college") {
+      } else if (id >= 11 && id <= 22) {
         const course = CollegeCourseData[0].subCate.filter((item) => {
           return item.id == id;
         });
+        console.log("in checkout:", course);
         setEnrollingCourse(course[0]);
-        console.log(course);
       } else {
         const course = OtherCourseData[0].subCate.filter((item) => {
           return item.id == id;
         });
+        console.log("in checkout:", course);
         setEnrollingCourse(course[0]);
-        console.log(course);
       }
+      // console.log(course, id, plan);
+      // if (course == "school") {
+      //   const course = School[0].subCate.filter((item) => {
+      //     return item.id == id;
+      //   });
+      //   setEnrollingCourse(course[0]);
+      //   console.log("course is: ", course);
+      // } else if (course == "college") {
+      //   const course = CollegeCourseData[0].subCate.filter((item) => {
+      //     return item.id == id;
+      //   });
+      //   setEnrollingCourse(course[0]);
+      //   console.log(course);
+      // } else {
+      //   const course = OtherCourseData[0].subCate.filter((item) => {
+      //     return item.id == id;
+      //   });
+      //   setEnrollingCourse(course[0]);
+      //   console.log(course);
+      // }
     }
     return () => {};
   }, []);
-
 
   const handleCheckout = () => {
     setProceedButton("Loading....");
@@ -144,7 +165,6 @@ const Checkout = () => {
   };
 
   document.title = `Baoiam - ${enrollingCourse?.course}`;
-  
 
   return (
     <div className="flex flex-wrap dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
@@ -213,8 +233,8 @@ const Checkout = () => {
           </div> */}
           <div className="flex justify-between items-center w-full">
             <div className="flex flex-col">
+              <p className="font-bold mb-3">{enrollingCourse?.course}</p>
               <div className="rounded-md bg-green-200 p-1 w-fit">
-                <p></p>
                 <p className="text-green-700 px-1 font-medium text-xs">
                   {plan} Plan
                 </p>
@@ -222,11 +242,11 @@ const Checkout = () => {
 
               <h2 className="font-semibold text-lg mb-2">
                 {/* {plan} | MERN Stack | Java | English */}
-                {course == "school"
+                {/* {course == "school"
                   ? enrollingCourse?.course
                   : course == "college"
                   ? enrollingCourse.courseName
-                  : enrollingCourse.course}
+                  : enrollingCourse.course} */}
               </h2>
               {/* <button
                 className="text-[14px] px-3 py-1 rounded-sm ml-5 bg-[#F39B0B] w-[110px] mb-4"

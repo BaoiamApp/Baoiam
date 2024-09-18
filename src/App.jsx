@@ -91,7 +91,7 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Checkout */}
-        <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
+        <Route path="/checkout/:id/:plan?" element={<Checkout />} />
 
         {/* Profile & Dashboard */}
         <Route path="/profile" element={<SideBar />} />

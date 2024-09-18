@@ -82,7 +82,7 @@ const SkillCatalog = () => {
   const navigate = useNavigate();
 
   const static_data = [
-    <Link to="/course/school/1">
+    <Link to="/course/1">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaMicrophone
           className="text-indigo-600 group-hover:text-white"
@@ -91,7 +91,7 @@ const SkillCatalog = () => {
         <span className="truncate">English Speaking/Public Speaking</span>
       </span>
     </Link>,
-    <Link to="/course/school/2">
+    <Link to="/course/2">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaLightbulb
           className="text-indigo-600 group-hover:text-white"
@@ -100,7 +100,7 @@ const SkillCatalog = () => {
         <span className="truncate">Creative writing</span>
       </span>
     </Link>,
-    <Link to="/course/school/3">
+    <Link to="/course/3">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaPaintbrush
           className="text-indigo-600 group-hover:text-white"
@@ -109,13 +109,13 @@ const SkillCatalog = () => {
         <span className="truncate">Art and Craft (DIY)</span>
       </span>
     </Link>,
-    <Link to="/course/school/4">
+    <Link to="/course/4">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaCog className="text-indigo-600 group-hover:text-white" size={22} />{" "}
         <span className="truncate">Critical Thinking & Problem Solving</span>
       </span>
     </Link>,
-    <Link to="/course/school/5">
+    <Link to="/course/5">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaHandsHelping
           className="text-indigo-600 group-hover:text-white"
@@ -124,7 +124,7 @@ const SkillCatalog = () => {
         <span className="truncate">Life Skills</span>
       </span>
     </Link>,
-    <Link to="/course/school/6">
+    <Link to="/course/6">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaCamera
           className="text-indigo-600 group-hover:text-white"
@@ -133,7 +133,7 @@ const SkillCatalog = () => {
         <span className="truncate">Photography & Editing Skills</span>
       </span>
     </Link>,
-    <Link to="/course/school/7">
+    <Link to="/course/7">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaCode className="text-indigo-600 group-hover:text-white" size={22} />{" "}
         <span className="truncate">
@@ -141,7 +141,7 @@ const SkillCatalog = () => {
         </span>
       </span>
     </Link>,
-    <Link to="/course/school/8">
+    <Link to="/course/8">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <FaChartLine
           className="text-indigo-600 group-hover:text-white"
@@ -150,7 +150,7 @@ const SkillCatalog = () => {
         <span className="truncate">Entrepreneurship & Innovation</span>
       </span>
     </Link>,
-    <Link to="/course/school/9">
+    <Link to="/course/9">
       <span className="relative truncate z-10 flex items-center gap-4 py-4 px-4">
         <MdGroup
           className="text-indigo-600 group-hover:text-white flex-shrink-0"
@@ -159,7 +159,7 @@ const SkillCatalog = () => {
         <span className="truncate">Social Media & Digital Marketing</span>
       </span>
     </Link>,
-    <Link to="/course/school/10">
+    <Link to="/course/10">
       <span className="relative z-10 flex items-center gap-4 py-4 px-4">
         <BsBank className="text-indigo-600 group-hover:text-white" size={22} />{" "}
         <span className="truncate">Finance Education</span>
@@ -177,7 +177,7 @@ const SkillCatalog = () => {
         "https://api.baoiam.com/api/courses/?category=1"
       );
       // console.log(data);
-      setSchoolCourses(data);
+      // setSchoolCourses(data);
     } catch (err) {
       console.log(err.message);
     }

@@ -9,10 +9,16 @@ import { School } from "../Data/SchoolData";
 import { CollegeCourseData } from "../Data/CollegeData";
 import { OtherCourseData } from "../Data/OtherCourseData";
 import { school } from "../Data/CoursesData";
+import Brochure from "../brochure.txt";
 const CourseDetailsPage = () => {
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
+  const [showTab, setShowTab] = useState(1);
   const navigate = useNavigate();
+  const [isWeekExpanded, setIsWeekExpanded] = useState({
+    id: null,
+    isTrue: false,
+  });
   const highlights = [
     {
       icon: "MdOutlineClass",
@@ -190,11 +196,15 @@ const CourseDetailsPage = () => {
               Enroll Now{" "}
               <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
             </button>
-            <button className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white">
+            <a
+              href={Brochure}
+              download={true}
+              className="pl-4 pr-6 py-2 border text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
+            >
               Download Brochure{" "}
               {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
               <FaDownload size={18} />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -206,7 +216,7 @@ const CourseDetailsPage = () => {
       </div>
 
       {/* Course Overview */}
-      <div className="px-8 lg:px-24 my-12 py-12 flex justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-24 w-full">
+      <div className="px-8 lg:px-24  my-12 py-12 flex items-center  mt-32 justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-24 w-full">
         <div className="w-full md:w-[40%]">
           <img
             src={CourseOverview}
@@ -214,69 +224,118 @@ const CourseDetailsPage = () => {
             className="w-full md:w-72 h-72 lg:w-full lg:h-96 object-cover shadow-[-15px_15px_#ea580c] lg:shadow-[-20px_20px_#ea580c]"
           />
         </div>
-        <div className="w-full md:w-[60%]">
-          <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mt-12 lg:mb-4">
-            Course{" "}
-            <span className="border-b border-orange-500 text-orange-500">
+        <div className="w-full flex h-[400px] xs:p-2  rounded flex-col justify-center p-5">
+          <div className="flex justify-start border-b border-gray-300">
+            <h3
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${
+                showTab === 1
+                  ? "bg-indigo-700 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
+              onClick={() => setShowTab(1)}
+            >
               Overview
-            </span>
-          </h4>
+            </h3>
+            <h3
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${
+                showTab === 2
+                  ? "bg-indigo-700 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
+              onClick={() => setShowTab(2)}
+            >
+              Curriculum
+            </h3>
+          </div>
 
-          <ul className="list-inside list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
-            {courseDetails.overview?.map(
-              (o, i) => typeof o === "string" && <li>{o}</li>
-            )}
-            {/* {courseDetails.overview?.split(".").map((o, i) => (
+          {showTab == 1 ? (
+            <div className="w-full h-[400px] overflow-auto mt-5 py-5 pt-0 hide-scrollbar">
+              <div className="w-full">
+                {/* <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
+                  Course{" "}
+                  <span className="border-b border-orange-500 text-orange-500">
+                    Overview
+                  </span>
+                </h4> */}
+
+                <ul className="list-inside xs:text-[14px] px-2 list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
+                  {courseDetails.overview?.map(
+                    (o, i) =>
+                      typeof o === "string" && (
+                        <li className="text-black">{o}</li>
+                      )
+                  )}
+                  {/* {courseDetails.overview?.split(".").map((o, i) => (
               <li>{o}</li>
             ))} */}
-          </ul>
-        </div>
-      </div>
+                </ul>
+              </div>
+            </div>
+          ) : (
+            showTab == 2 && (
+              <div className="w-full mt-5 overflow-auto h-[400px] hide-scrollbar pb-3">
+                {/* <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
+                  Course{" "}
+                  <span className="border-b border-orange-500 text-orange-500">
+                    Curriculum
+                  </span>
+                </h4> */}
 
-      {/* Course Curriculum */}
-      <div className="w-full px-8 lg:px-24 my-12 md:my-20 h-full flex flex-col items-center">
-        <h4 className="text-[2rem] lg:text-4xl font-semibold text-neutral-600 mb-2 lg:mb-4 dark:text-white">
-          Course{" "}
-          <span className="text-orange-500 border-b border-orange-500">
-            Curriculum
-          </span>
-        </h4>
-
-        <ul className="list-inside  mt-4">
-          {courseDetails.curriculum?.map((o, i) =>
-            typeof o === "string" ? (
-              <li className="md:w-[520px] sm:w-[430px] xs:w-[320px] px-3 py-4 shadow-md shadow-gray-500 font-bold rounded mt-4">
-                {o}
-              </li>
-            ) : (
-              o.weekTitle && (
-                <details className=" md:w-[520px] sm:w-[430px] xs:w-[320px] cursor-pointer px-3 py-4 rounded mt-4 shadow-gray-400 shadow-md mx-auto">
-                  <summary className="font-bold text-lg flex justify-between w-full">
-                    {/* {o.weekTitle} */}
-                    {o.weekTitle.startsWith("Week")
-                      ? o.weekTitle
-                      : "Week " + (i + 1) + ": " + o.weekTitle}
-                    {o.topics?.length > 0 && (
-                      <p className="rotate-90 mr-5 ml-5">&gt;</p>
-                    )}
-                  </summary>
-                  <ul className="list-disc w-full">
-                    {o.topics?.map((d, i) => (
-                      <li
-                        className="ml-10 mt-2 break-words whitespace-normal"
-                        key={i}
-                      >
-                        {d}
+                <ul className="list-inside  mt-4">
+                  {courseDetails.curriculum?.map((o, i) =>
+                    typeof o === "string" ? (
+                      <li className=" px-3 mx-2 py-4 shadow-md shadow-gray-500 font-bold rounded mt-4">
+                        {o}
                       </li>
-                    ))}
-                  </ul>
-                </details>
-              )
+                    ) : (
+                      o.weekTitle && (
+                        <details
+                          className="text-black bg-white cursor-pointer px-3 py-4 rounded mt-4 shadow-gray-400 shadow-md mx-2"
+                          onClick={() => {
+                            setIsWeekExpanded((prevState) => ({
+                              ...prevState,
+                              [i]: !prevState[i], // Toggle the state for the specific week by index
+                            }));
+                          }}
+                        >
+                          <summary className="font-bold xs:text-[14px] text-lg flex justify-between w-full">
+                            {/* Week Title Handling */}
+                            {o.weekTitle.startsWith("Week")
+                              ? o.weekTitle
+                              : "Week " + (i + 1) + ": " + o.weekTitle}
+
+                            {/* Arrow Rendering */}
+                            {/* {o.topics?.length > 0 && (
+                              <p
+                                className={`mr-5 ml-5 transform ${
+                                  isWeekExpanded[i] ? "-rotate-90" : "rotate-90"
+                                }`}
+                              >
+                                &gt;
+                              </p>
+                            )} */}
+                          </summary>
+
+                          <ul className="list-disc w-full xs:text-[13px]">
+                            {o.topics?.map((d, i) => (
+                              <li
+                                className="ml-10 mt-2 break-words whitespace-normal"
+                                key={i}
+                              >
+                                {d}
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      )
+                    )
+                  )}
+                </ul>
+              </div>
             )
           )}
-        </ul>
+        </div>
       </div>
-
       {/* Course Highlights */}
       <CourseHighlights />
 
@@ -371,7 +430,7 @@ const CourseDetailsPage = () => {
                           onClick={() => {
                             if (localStorage.getItem("access_token"))
                               navigate(
-                                `/checkout/school/${p.id}/${
+                                `/checkout/${id}/${
                                   p.name == "premium" ? "Premium" : "Plus"
                                 }`
                               );

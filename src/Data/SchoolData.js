@@ -77,13 +77,11 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "English speaking/Public speaking",
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "English speaking/Public speaking",
             price: 11999.0,
           },
         ],
@@ -173,13 +171,13 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Creative writing",
+
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Creative writing",
+
             price: 11999.0,
           },
         ],
@@ -246,13 +244,13 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Art and craft (DIY)",
+
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Art and craft (DIY)",
+
             price: 11999.0,
           },
         ],
@@ -323,14 +321,14 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Critical thinking & problem solving",
+
             duration: "12 Months",
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Critical thinking & problem solving",
+
             price: 11999.0,
           },
         ],
@@ -430,13 +428,13 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Life Skills",
+
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Life Skills",
+
             price: 11999.0,
           },
         ],
@@ -470,13 +468,13 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Photography & editing skills",
+
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Photography & editing skills",
+
             price: 11999.0,
           },
         ],
@@ -582,13 +580,13 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Technology Development with AI and Coding",
+
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Technology Development with AI and Coding",
+
             price: 11999.0,
           },
         ],
@@ -684,13 +682,13 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Technology Development with AI and Coding",
+
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Technology Development with AI and Coding",
+
             price: 11999.0,
           },
         ],
@@ -722,13 +720,11 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Technology Development with AI and Coding",
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Technology Development with AI and Coding",
             price: 11999.0,
           },
         ],
@@ -820,13 +816,11 @@ export const School = [
             id: 1,
             name: "plus",
             duration: "12 Months",
-            courseName: "Technology Development with AI and Coding",
             price: 2999.0,
           },
           {
             id: 2,
             name: "premium",
-            courseName: "Technology Development with AI and Coding",
             price: 11999.0,
           },
         ],

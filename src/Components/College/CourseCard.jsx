@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 function CourseCard({ course }) {
   const navigate = useNavigate();
+  console.log("course is:", course);
   return (
     <div className="bg-white relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] rounded-lg overflow-hidden pb-16 mx-auto font-[sans-serif] mt-4">
       <div className="min-h-fit">
@@ -36,15 +37,23 @@ function CourseCard({ course }) {
           {course.courseName}
         </h3>
         <p className="mt-4 text-sm text-gray-500 leading-relaxed">
-          {course.desc?.split(".")[0]}.
+          {typeof course?.desc == "string" ? (
+            course?.desc?.split(".")[0]
+          ) : (
+            <>{course.desc[0].substring(0, 80)}...</>
+            // <>
+            //   {course.desc?.map((item, i) => (
+            //     <p>{item}</p>
+            //   ))}
+            // </>
+          )}
+          .
         </p>
         <div className="absolute bottom-4 w-10/12 flex flex-col items-start gap-4">
           <div className="flex items-center text-gray-500 font-semibold space-x-4">
             <div className="flex items-center">
               <AiOutlineClockCircle className="mr-1" />
-              <span className="text-nowrap text-xs">
-                {course?.duration}
-              </span>
+              <span className="text-nowrap text-xs">{course?.duration}</span>
             </div>
             <div className="flex items-center">
               <FaGraduationCap className="mr-1" />
