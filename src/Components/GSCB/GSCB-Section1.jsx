@@ -43,6 +43,31 @@ const Section1 = ({ dark }) => {
     };
   }, [lettersRef]);
 
+  const stepRefs = useRef([]); // Array to hold references for the steps
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    stepRefs.current.forEach((step, index) => {
+      gsap.fromTo(
+        step,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          delay: index * 0.3, // Adding a stagger effect
+          scrollTrigger: {
+            trigger: step, // Trigger animation for each step
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <section className="flex items-center justify-evenly flex-col">
       <div
@@ -86,58 +111,67 @@ const Section1 = ({ dark }) => {
       {/* Join */}
 
       <section className="w-full h-full py-24 px-6 lg:px-12 max-xs:px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold max-xs:text-3xl">
-            How to Join GCEP
-          </h2>
-          <p className="text-base lg:text-lg mt-4 max-xs:text-sm">
-            Follow these steps to become a partner and collaborate with us.
+      <div className="text-center mb-12">
+        <h2 className="text-4xl lg:text-5xl font-bold max-xs:text-3xl">
+          How to Join GCEP
+        </h2>
+        <p className="text-base lg:text-lg mt-4 max-xs:text-sm">
+          Follow these steps to become a partner and collaborate with us.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-md:grid-cols-1">
+        {/* Step 1 */}
+        <div
+          ref={(el) => (stepRefs.current[0] = el)}
+          className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+            <span className="text-2xl font-bold">1</span>
+          </div>
+          <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+            Submit an Inquiry
+          </h3>
+          <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
+            Submit an inquiry via the partnership form below.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-md:grid-cols-1">
-          {/* Step 1 */}
-          <div className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
-              <span className="text-2xl font-bold">1</span>
-            </div>
-            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
-              Submit an Inquiry
-            </h3>
-            <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
-              Submit an inquiry via the partnership form below.
-            </p>
+        {/* Step 2 */}
+        <div
+          ref={(el) => (stepRefs.current[1] = el)}
+          className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+            <span className="text-2xl font-bold">2</span>
           </div>
-
-          {/* Step 2 */}
-          <div className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
-              <span className="text-2xl font-bold">2</span>
-            </div>
-            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
-              Review & Discuss
-            </h3>
-            <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
-              Our team will review your institution’s goals and discuss how we
-              can collaborate.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
-              <span className="text-2xl font-bold">3</span>
-            </div>
-            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
-              Tailored Partnership
-            </h3>
-            <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
-              Once approved, we will co-create a tailored partnership plan to
-              meet your educational needs.
-            </p>
-          </div>
+          <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+            Review & Discuss
+          </h3>
+          <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
+            Our team will review your institution’s goals and discuss how we
+            can collaborate.
+          </p>
         </div>
-      </section>
+
+        {/* Step 3 */}
+        <div
+          ref={(el) => (stepRefs.current[2] = el)}
+          className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+            <span className="text-2xl font-bold">3</span>
+          </div>
+          <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
+            Tailored Partnership
+          </h3>
+          <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
+            Once approved, we will co-create a tailored partnership plan to
+            meet your educational needs.
+          </p>
+        </div>
+      </div>
+    </section>
     </section>
   );
 };
