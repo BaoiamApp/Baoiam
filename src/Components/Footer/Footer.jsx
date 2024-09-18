@@ -22,7 +22,7 @@ function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
-        <div className="flex justify-between lg:gap-20 xl:gap-0 flex-col md:flex-row">
+        <div className="flex justify-around lg:gap-8 flex-col md:flex-row">
           <div className="">
             <Link
               to={"/"}
@@ -42,14 +42,14 @@ function Footer({ dark }) {
             </p> */}
           </div>
 
-          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-12 dark:text-white">
+          <div className="grid gap-6 md:gap-6 xl:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:flex xl:flex-row dark:text-white">
             {/* Quick Links */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Quick Links
               </p>
 
-              <div className="mt-4 flex flex-col gap-2 text-xs">
+              <div className="mt-4  flex flex-col gap-2 text-xs">
                 <Link
                   to={"/team"}
                   className="text-black dark:text-white text-nowrap flex items-center"
@@ -90,7 +90,7 @@ function Footer({ dark }) {
             </div>
 
             {/* Program & Partnership */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-wrap xl:text-nowrap">
                 Programs & Partnerships
               </p>
@@ -98,15 +98,15 @@ function Footer({ dark }) {
               <div className="mt-4 flex flex-col gap-2 text-xs">
                 <Link
                   to={"/gcep"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  className="text-black text-nowrap max-w-fit hover:text-wrap dark:text-white group flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Global Collabo Educational Partnership
+                  <MdKeyboardArrowRight className="min-w-6" size={20} /> <p className="truncate group-hover:text-wrap">Global Collabo Educational Partnership</p>
                 </Link>
                 <Link
                   to={"/gcep"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  className="text-black text-nowrap max-w-fit  hover:text-wrap group dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Global Collabo Startup Programs
+                  <MdKeyboardArrowRight className="min-w-6" size={20} /> <p className="truncate group-hover:text-wrap">Global Collabo Startup Programs</p>
                 </Link>
                 <Link
                   to={"/itie"}
@@ -130,7 +130,7 @@ function Footer({ dark }) {
             </div>
 
             {/* Help & Support */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Help & Support
               </p>
@@ -164,7 +164,7 @@ function Footer({ dark }) {
             </div>
 
             {/* Contact Us */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Contact Us
               </p>
@@ -241,7 +241,7 @@ function Footer({ dark }) {
             </div>
           </div>
         </div>
-        <div className="mt-8 w-full  px-4 bg-cover object-cover flex flex-col md:flex-row gap-4 items-end md:items-center justify-end">
+        <div className="mt-8 w-full p-4 bg-cover object-cover flex flex-col md:flex-row gap-4 items-end md:items-center justify-end">
           <div className="flex gap-2 h-8 object-cover justify-start">
             <Link to="#" className="">
               <img
