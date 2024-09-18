@@ -10,6 +10,8 @@ import ent from "../../assets/Blogs/ent.jpg";
 import stp from "../../assets/Blogs/stup.jpg";
 import tech from "../../assets/Blogs/tech.jpg";
 import software_testing from "../../assets/Blogs/software_testing.png";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 const blog_slider = [
   {
@@ -43,8 +45,28 @@ const blog_slider = [
 ];
 
 export const BusSlider = () => {
+
+
+  useEffect(() => {
+  
+    gsap.fromTo('.b5',{opacity:0,y:30},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'back.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.bdiv5',
+        start:'top 90%',
+        end:'bottom 80%'
+      }
+    })
+  
+  },[])
+
+
   return (
-    <div className='my-12'>
+    <div className='bdiv5 my-12'>
       <div>
         {" "}
         <h1 className='m-8 text-3xl font-bold text-center'>
@@ -70,7 +92,7 @@ export const BusSlider = () => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className=' w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className='b5 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
         >
           {blog_slider?.map((el) => {
             return (

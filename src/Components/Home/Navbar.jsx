@@ -125,7 +125,7 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-4 ${location.pathname === "/" && linkActive === "Home"
+            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
               ? "text-orange-500"
               : ""
               }`}
@@ -136,7 +136,7 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
               ? "text-indigo-600"
               : ""
               } `}
@@ -146,7 +146,7 @@ const Navbar = ({ theme }) => {
 
           <li
             onClick={() => setShow(!show)}
-            className={`mx-4 cursor-pointer flex gap-2 items-center`}
+            className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}
           >
             Courses
             {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -154,7 +154,7 @@ const Navbar = ({ theme }) => {
 
           {show && (
             <div
-              className="absolute pl-4 pr-2 py-1 top-[4.5rem] font-normal left-[42%] bg-white rounded-b-2xl rounded-tr-2xl dark:bg-gray-700 border-black/20 border-[1px] text-sm shadow-lg z-50 dark:text-white"
+              className="absolute pl-4 pr-2 py-1 top-20 font-normal left-[30%] bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm shadow-lg z-50 dark:text-white"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -163,33 +163,10 @@ const Navbar = ({ theme }) => {
             </div>
           )}
 
-
-          <Link
-            to={"/hire"}
-            onClick={() => handleLinkClick("Hire From Us")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/hire" && linkActive === "Hire From Us"
-              ? "text-indigo-600"
-              : ""
-              } `}
-          >
-            Hire From Us
-          </Link>
-
-          <Link
-            to={"/career"}
-            onClick={() => handleLinkClick("Career")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/career" && linkActive === "Career"
-              ? "text-indigo-600"
-              : ""
-              } `}
-          >
-            Career
-          </Link>
-
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
               ? "text-indigo-600"
               : ""
               } `}
@@ -197,14 +174,25 @@ const Navbar = ({ theme }) => {
             Blog
           </Link>
 
+          <Link
+            to={"/contact"}
+            onClick={() => handleLinkClick("Contact Us")}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
+              ? "text-indigo-600"
+              : ""
+              } `}
+          >
+            Contact Us
+          </Link>
+
         </div>
 
         {/* Last */}
         <div>
           <div className="flex items-center gap-2 md:gap-4 text-black dark:text-white">
-            <div className="flex items-center gap-4 md:gap-2">
+            <div className="flex items-center gap-4 xl:gap-6">
 
-              <SearchBox />
+              <SearchBox courses={courses} />
 
               <div ref={userhandleDropDownRef}>
                 <FaRegUser
@@ -269,7 +257,7 @@ const Navbar = ({ theme }) => {
 
             <span
               onClick={darkTheme}
-              className="text-xl hidden xl:block cursor-pointer"
+              className="text-xl hidden lg:block cursor-pointer"
             >
               {isDark ? <BsSun /> : <BsMoonStars />}
             </span>
