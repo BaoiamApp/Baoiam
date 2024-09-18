@@ -33,6 +33,7 @@ import InstructorCard from "./Components/CourseDetails/InstructorCard";
 import FAQS from "./Components/FAQ/FAQ";
 import ReferAndEarn from "./Pages/ReferAndEarn";
 import BookADemo from "./Pages/BookADemo";
+import Courses from "./Pages/Courses";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -114,6 +115,7 @@ const App = () => {
         <Route path="/ReferAndEarn" element={<ReferAndEarn />} />
         {/* Book a demo */}
         <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
+        <Route path="/courses" element={<Courses />} />
       </Routes>
       <Footer dark={dark} />
     </div>
