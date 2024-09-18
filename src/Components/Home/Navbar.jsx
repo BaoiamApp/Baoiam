@@ -125,7 +125,7 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-4 ${location.pathname === "/" && linkActive === "Home"
+            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
               ? "text-orange-500"
               : ""
               }`}
@@ -136,7 +136,7 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
               ? "text-indigo-600"
               : ""
               } `}
@@ -146,7 +146,7 @@ const Navbar = ({ theme }) => {
 
           <li
             onClick={() => setShow(!show)}
-            className={`mx-4 cursor-pointer flex gap-2 items-center`}
+            className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}
           >
             Courses
             {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -166,7 +166,7 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
               ? "text-indigo-600"
               : ""
               } `}
@@ -177,7 +177,7 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
-            className={`mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
               ? "text-indigo-600"
               : ""
               } `}
@@ -190,7 +190,7 @@ const Navbar = ({ theme }) => {
         {/* Last */}
         <div>
           <div className="flex items-center gap-2 md:gap-4 text-black dark:text-white">
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 xl:gap-6">
 
               <SearchBox courses={courses} />
 
@@ -257,7 +257,7 @@ const Navbar = ({ theme }) => {
 
             <span
               onClick={darkTheme}
-              className="text-xl hidden xl:block cursor-pointer"
+              className="text-xl hidden lg:block cursor-pointer"
             >
               {isDark ? <BsSun /> : <BsMoonStars />}
             </span>

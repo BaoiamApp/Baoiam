@@ -23,7 +23,7 @@ export default function App() {
         grabCursor={swiperSettings.grabCursor}
         modules={[EffectCards, Autoplay]}
         autoplay={swiperSettings.autoplay}
-        className={`w-full h-full md:w-80 md:h-96 lg:w-100 lg:h-120`}
+        className={`w-72 h-80 md:w-80 md:h-96`}
       >
         {slider.map((card, index) => (
           <SwiperSlide

@@ -22,7 +22,7 @@ function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
-        <div className="flex justify-between flex-col md:flex-row">
+        <div className="flex justify-between lg:gap-20 xl:gap-0 flex-col md:flex-row">
           <div className="">
             <Link
               to={"/"}
@@ -50,7 +50,13 @@ function Footer({ dark }) {
               </p>
 
               <div className="mt-4 flex flex-col gap-2 text-xs">
-
+                <Link
+                  to={"/team"}
+                  className="text-black dark:text-white text-nowrap flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
+                  Our Team
+                </Link>
                 <Link
                   to={"/about-us"}
                   className="text-black dark:text-white text-nowrap flex items-center"
@@ -59,11 +65,18 @@ function Footer({ dark }) {
                   About Us
                 </Link>
                 <Link
-                  to={"/team"}
+                  to={"/career"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
+                  Careers
+                </Link>
+                <Link
+                  to={"/course"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
-                  Our Team
+                  Course
                 </Link>
 
                 <Link
@@ -102,16 +115,16 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} /> Intern Teach Intern Earn
                 </Link>
                 <Link
+                  to={"/pap"}
+                  className="text-black text-nowrap dark:text-white flex items-center"
+                >
+                  <MdKeyboardArrowRight size={20} /> Pay After Placement
+                </Link>
+                <Link
                   to={"/entrepreneurship"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight size={20} /> Entrepreneurship
-                </Link>
-                <Link
-                  to={"/pap"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
-                >
-                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Pay After Placement
                 </Link>
               </div>
             </div>
@@ -130,10 +143,10 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight size={20} /> Hire from us
                 </Link>
                 <Link
-                  to={"/career"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  to={"/contact"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Careers
+                  <MdKeyboardArrowRight size={20} /> Contact Us
                 </Link>
                 <Link
                   to={"/FAQ"}
@@ -141,18 +154,12 @@ function Footer({ dark }) {
                 >
                   <MdKeyboardArrowRight size={20} /> FAQs
                 </Link>
-                <Link
-                  to={"/contact"}
-                  className="text-black text-nowrap dark:text-white  flex items-center"
-                >
-                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Contact Us
-                </Link>
-                <Link
+                {/* <Link
                   to={"/help"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Help Center
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -318,7 +325,7 @@ function Footer({ dark }) {
             </div>
 
             <p className="text-xs dark:text-white text-black order-first">
-            BAOIAM &copy; 2023 <span className="dark:text-white">
+              BAOIAM &copy; 2023 <span className="dark:text-white">
                 All rights reserved.
               </span>
             </p>

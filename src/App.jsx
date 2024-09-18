@@ -68,7 +68,7 @@ const App = () => {
       <div className="mt-28">
       <Routes>
         {/* NavLinks */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home dark={dark} />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/gcep" element={<GSCB />} />
         <Route path="/pap" element={<PAP />} />
