@@ -10,14 +10,7 @@ const SearchBox = ({ courses }) => {
     const [isMobilePopupOpen, setIsMobilePopupOpen] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState()
-    // const scourse = courses.subcategories;
     const inputRef = useRef()
-
-    // const filteredCourses = courses.filter(course =>
-    //     course.name.toLowerCase().includes(searchQuery.toLowerCase())
-    // )
-
-    // console.log(filteredCourses);
 
     useEffect(() => {
         axios.get(`https://api.baoiam.com/api/courses/?search=${searchQuery}`)
@@ -30,7 +23,6 @@ const SearchBox = ({ courses }) => {
     }, [searchQuery]);
 
     // console.log(searchResults);
-    
 
     // Detect window resize and toggle between mobile/desktop behavior
     const [isMobile, setIsMobile] = useState(false)
@@ -51,10 +43,10 @@ const SearchBox = ({ courses }) => {
 
     return (
         <div className='relative'>
-            <div className='flex items-center border border-slate-400 rounded-lg pl-4 pr-2 py-1 w-60'>
+            <div className='hidden md:flex items-center border border-slate-400 rounded-lg pl-4 pr-2 py-1 w-44 xl:w-60'>
                 <input
                     type="text"
-                    className='w-44 bg-transparent outline-none'
+                    className='w-32 xl:w-44 bg-transparent outline-none'
                     placeholder='Search...'
                     ref={inputRef}
                     value={searchQuery}
@@ -95,7 +87,7 @@ const SearchBox = ({ courses }) => {
 
                     {/* Full-screen pop-up modal for small screens */}
                     {isMobilePopupOpen && (
-                        <div className='fixed inset-0 z-50 bg-slate-200/50 backdrop-blur-sm p-4'>
+                        <div className='fixed inset-0 z-50 bg-slate-200/50 backdrop-blur-sm p-4 w-[100vw] h-[100vh]'>
                             <div className='relative flex flex-col items-start justify-start w-full h-full'>
                                 {/* Close Button */}
                                 <RxCross2
@@ -120,15 +112,15 @@ const SearchBox = ({ courses }) => {
                                 {/* Results Box */}
                                 {searchQuery && (
                                     <div className='bg-white text-black w-full max-h-80 overflow-auto rounded-md py-4 mt-4'>
-                                        {filteredCourses.length > 0 ? (
-                                            filteredCourses.map((c, i) => (
+                                        {searchResults.length > 0 ? (
+                                            searchResults.map((c, i) => (
                                                 <Link
-                                                    to={`/course/${c.name}/${c.id}`}
+                                                    to={`/course/${c.title}/${c.id}`}
                                                     onClick={() => setIsMobilePopupOpen(false)} // Close the pop-up when a result is clicked
                                                     className='py-2 px-6 block hover:bg-gray-200'
                                                     key={i}
                                                 >
-                                                    {c.name}
+                                                    {c.title}
                                                 </Link>
                                             ))
                                         ) : (
