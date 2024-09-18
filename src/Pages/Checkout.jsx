@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Certificate from "../assets/Certificate.jpg";
+import courseimg from "../assets/download.jpeg";
 import mern from "../assets/mern.png";
 import razorpay from "../assets/razorpay.png";
 import secure from "../assets/secure.png";
@@ -31,6 +32,12 @@ const Checkout = () => {
   const [referral, setReferral] = useState("");
   const [enrollingCourse, setEnrollingCourse] = useState({});
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   // useEffect(() => {
   //   if (!localStorage.getItem("access_token")) navigate("/login");
@@ -149,6 +156,9 @@ const Checkout = () => {
     <div className="flex flex-wrap gap-8 justify-center dark:bg-black dark:text-white py-4 pb-12 px-4 sm:px-14">
       {/* left section */}
       <div className="flex flex-col justify-between w-full lg:w-[40%]  dark:border-gray dark:border-[1.5px] border-slate-400 shadow-lg rounded-lg py-6 px-6 lg:px-20 ">
+        <div className="w-full md:max-w-[80%] lg:max-w-[95%]">
+          <img className="h-full w-full" src={courseimg} alt="Course Img" />
+        </div>
         <div className="rounded-md bg-green-200 p-1 w-fit mb-1">
           <p></p>
           <p className="text-green-700 px-1 font-medium text-xs">{plan} Plan</p>
@@ -156,21 +166,16 @@ const Checkout = () => {
         <div className="flex items-center gap-2 pb-4">
           <AiOutlineBook size={24} className="text-indigo-600" />
           <h2 className="font-semibold text-2xl">English & Public Speaking</h2>
-          {/*<div className="w-full md:max-w-[80%] lg:max-w-[95%]">
-            <img
-              className="h-full w-full"
-              src={Certificate}
-              alt="Certificate"
-            />
-          </div> */}
         </div>
 
-        <p className="">
+        <p className="mb-2">
           <span className="font-medium">Description:</span> Welcome to the
           Public Speaking Mastery course, where students embark on an empowering
           journey to enhance their communication skills and build confidence.
         </p>
-        <div className="flex flex-col mt-4 max-w-[90%]">
+
+        <p className="text-gray-500 font-medium">Duration : 12 months</p>
+        {/* <div className="flex flex-col mt-4 max-w-[90%]">
           <div className="flex items-center mb-2">
             <PercentBadgeIcon className="h-8 w-8 mr-2" />
             <p className="text-lg font-semibold">No cost EMI</p>
@@ -187,7 +192,7 @@ const Checkout = () => {
             <img className="h-14 w-28 mr-4" src={secure} alt="secure img" />
             <img className="h-16 w-28" src={razorpay} alt="razorpay img" />
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* right section */}
@@ -280,6 +285,19 @@ const Checkout = () => {
             <ToastContainer />
           </div>
         </div> */}
+        <hr className="border-t-1 border-gray-300 mb-2" />
+
+        <div className="flex flex-col gap-2 mb-2">
+          <h3 className="font-semibold text-xl">Order Summary</h3>
+          <div className="flex justify-between font-medium">
+            <p className="text-gray-500">Subtotal</p>
+            <p className="text-gray-500">₹ 2541</p>
+          </div>
+          <div className="flex justify-between font-medium">
+            <p className="text-gray-500">GST (18%)</p>
+            <p className="text-gray-500">₹ 458</p>
+          </div>
+        </div>
         <hr className="border-t-1 border-gray-300 mb-4" />
         <div className="flex justify-between mb-5">
           <h2 className="text-2xl text-black font-semibold dark:text-white">
@@ -288,6 +306,27 @@ const Checkout = () => {
           <p className="text-black text-2xl font-semibold dark:text-white">
             ₹{plan == "Premium" ? 11999 : 2999}
           </p>
+        </div>
+
+        <div className="flex items-start space-x-2 mb-4">
+          <input
+            type="checkbox"
+            id="terms"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+            className="h-4 w-4 mt-[2px]"
+          />
+          <label htmlFor="terms" className="text-sm">
+            By proceeding, you agree to our{" "}
+            <a href="/terms-conditions" className="text-blue-500 underline">
+              Terms & Conditions
+            </a>{" "}
+            and{" "}
+            <a href="/privacy-policy" className="text-blue-500 underline">
+              Privacy Policy
+            </a>
+            .
+          </label>
         </div>
 
         <button
