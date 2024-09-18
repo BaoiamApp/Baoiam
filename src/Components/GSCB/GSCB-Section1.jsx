@@ -72,11 +72,11 @@ const Section1 = ({ dark }) => {
     <section className="flex items-center justify-evenly flex-col">
       <div
         ref={triggerRef}
-        className="px-[6vw] max-xs:px-4 max-xs:py-8 max-md:py-0 text-center"
+        className="px-[6vw] xs:px-4 md:py-12 text-center before:w-11/12 "
       >
         {text.split("").map((letter, index) => (
           <span
-            className="leading-10 text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-2xl font-medium  max-xs:text-white"
+            className="leading-[4rem] text-slate-200 dark:drop-shadow-[0_0_0.03rem_white] text-4xl font-medium  max-xs:text-white"
             key={index}
             ref={setlettersRef}
           >

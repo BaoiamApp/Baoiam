@@ -116,15 +116,15 @@ const Cards = () => {
     return (
       <div
         key={index}
-        className={`group flex flex-col h-auto w-full md:h-[90%] md:w-[90%] cursor-pointer gap-6 relative ${cardClass}`}
+        className={`group flex flex-col h-auto w-full rounded-xl overflow-hidden md:h-[90%] md:w-[90%] cursor-pointer gap-6 relative ${cardClass}`}
       >
         <img
-          className="w-full h-full hover:opacity-10 object-cover"
+          className="w-full h-full hover:opacity-10  object-cover"
           src={info.img}
           alt={`img${index + 1}`}
         />
-        <div className="flex flex-col gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/70 transition-all ease-linear text-center pt-16 md:pt-24 text-white">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+        <div className="flex flex-col items-center justify-center px-4 gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/70 transition-all ease-linear text-center text-white">
+          <h3 className="text-2xl md:text-3xl font-bold">
             {info.title}
           </h3>
           <h6 className="text-sm md:text-base tracking-tight">

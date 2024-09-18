@@ -8,7 +8,7 @@ import GSCPBottom from "../Components/GSCB/GSCP-Section3";
 import { universities } from "../assets/Universities/Universities";
 import BrandMarquee from "../Components/Marquee/BrandMarquee";
 
-const GSCB = () => {
+const GCEP = () => {
   document.title = 'Baoiam - GCEP'
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,4 +42,4 @@ const GSCB = () => {
   );
 };
 
-export default GSCB;
+export default GCEP;
