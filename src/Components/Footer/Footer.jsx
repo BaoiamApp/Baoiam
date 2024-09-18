@@ -21,14 +21,13 @@ import logo from '../../assets/logo.jpeg'
 function Footer({ dark }) {
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
-      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
         <div className="flex gap-8 flex-col md:flex-row">
           <div className="">
             <Link
               to={"/"}
-              className={`flex justify-center text-teal-600 sm:justify-start ${
-                dark ? "h-40 w-40" : "h-24 w-48"
-              }`}
+              className={`flex justify-center text-teal-600 sm:justify-start ${dark ? "h-40 w-40" : "h-24 w-48"
+                }`}
             >
               <img
                 src={dark ? logo : Logo}
@@ -37,52 +36,66 @@ function Footer({ dark }) {
               />
             </Link>
 
-            {/* <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa
-              cum itaque neque.
+            {/* <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
+              At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
             </p> */}
           </div>
 
-          <div className="grid grid-cols-1 gap-8 dark:text-white  md:grid-cols-2 lg:grid-cols-4">
-            {/* Company */}
+          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-4 dark:text-white">
+            {/* Quick Links */}
             <div className="px-4 sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
-                Company
+                Quick Links
               </p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
+                
                 <Link
                   to={"/about-us"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} />
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
                   About Us
+                </Link>
+                <Link
+                  to={"/team"}
+                  className="text-black dark:text-white text-nowrap flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
+                  Our Team
                 </Link>
                 <Link
                   to={"/hire"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Hire from us
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Hire from us
                 </Link>
                 <Link
-                  to={"/team"}
+                  to={"/career"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Our Team
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Careers
                 </Link>
                 <Link
                   to={"/FAQ"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> FAQs
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> FAQs
                 </Link>
+                <Link
+                  to={"/blog"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Blog
+                </Link>
+                
               </div>
             </div>
 
-            {/* Join Us */}
+            {/* Program & Partnership */}
             <div className="px-4 sm:text-left">
-              <p className="text-lg font-medium text-black dark:text-white text-nowrap">
-                Join Us
+              <p className="text-lg font-medium text-black dark:text-white text-wrap xl:text-nowrap">
+                Programs & Partnerships
               </p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
@@ -90,25 +103,25 @@ function Footer({ dark }) {
                   to={"/gcep"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> GCEP
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /><p className="text-wrap">Global Collabo Education Partnership</p>
                 </Link>
                 <Link
                   to={"/gcep"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> GCSP
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /><p className="text-wrap">Global Collabo Startup Program</p>
                 </Link>
                 <Link
-                  to={"/entrepreneurship"}
+                  to={"/itie"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Entrepreneurship
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /><p className="text-wrap">Intern Teach Intern Earn</p>
                 </Link>
                 <Link
-                  to={"/career"}
+                  to={"/pap"}
                   className="text-black text-nowrap dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Career
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Pay After Placement
                 </Link>
               </div>
             </div>
@@ -116,7 +129,7 @@ function Footer({ dark }) {
             {/* Help & Support */}
             <div className="px-4 sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
-                Help & Support
+              Help & Support
               </p>
 
               <div className="mt-4 flex flex-col gap-2 text-sm">
@@ -124,25 +137,31 @@ function Footer({ dark }) {
                   to={"/terms-conditions"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Terms & Conditions
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Terms & Conditions
                 </Link>
                 <Link
                   to={"/refund"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Refund policy
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Refund policy
                 </Link>
                 <Link
                   to={"/privacy-policy"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Privacy policy
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Privacy policy
                 </Link>
                 <Link
-                  to={"/help-center"}
-                  className="text-black dark:text-white text-nowrap flex items-center"
+                  to={"/contact"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Help Center
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Contact Us
+                </Link>
+                <Link
+                  to={"/help"}
+                  className="text-black text-nowrap dark:text-white  flex items-center"
+                >
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Help Center
                 </Link>
               </div>
             </div>
@@ -218,7 +237,7 @@ function Footer({ dark }) {
                   </svg>
 
                   <address className="-mt-0.5 flex-1 dark:text-white not-italic text-black">
-                    H Block, Sector 62 <br/>201301<br/>UP Noida, India.
+                    H Block, Sector 62 <br />201301<br />UP Noida, India.
                   </address>
                 </li>
               </ul>
@@ -251,7 +270,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaFacebook size={22} />
+              <FaFacebook className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Instagram */}
@@ -260,7 +279,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaInstagram size={22} />
+              <FaInstagram className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Linkedin */}
@@ -271,7 +290,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black dark:text-white text-nowrap flex items-center hover:text-gray-500"
             >
-              <FaLinkedin size={22} />
+              <FaLinkedin className=" min-w-6 text-xl aspect-square" />
             </Link>
 
             {/* Twitter */}
@@ -280,7 +299,7 @@ function Footer({ dark }) {
               target="_blank"
               className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500"
             >
-              <FaSquareXTwitter size={22} />
+              <FaSquareXTwitter className=" min-w-6 text-xl aspect-square" />
             </Link>
           </div>
         </div>

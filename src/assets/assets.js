@@ -1,5 +1,12 @@
 // Logo
 export {default as Logo} from './img1.png'
+import {default as Alliance} from "./Universities/Alliance.png";
+import {default as IILM} from "./Universities/IILM.png";
+import {default as DU} from "./Universities/DU.webp";
+import {default as Amity} from "./Universities/Amity.png";
+import {default as GLA} from "./Universities/GLA.webp";
+import {default as SharaddhaU} from "./Universities/SharaddhaU.png";
+
 
 // Course Section
 export {default as CourseDesc} from './course/course-desc.png'

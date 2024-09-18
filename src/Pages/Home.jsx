@@ -13,6 +13,7 @@ import Phone from '../Components/Home/Phone'
 import { SuccessLight } from '../assets/assets'
 import OurTeam from "../Components/AboutUs/OurTeam"
 import ServicesTab from '../Components/AboutUs/ServicesTab'
+import BrandMarquee from "../Components/Marquee/BrandMarquee";
 
 const Home = () => {
     document.title = 'Baoiam - Home'
@@ -20,6 +21,7 @@ const Home = () => {
         <>
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
+                <BrandMarquee />
                 <Courses />
                 <Slider />
                 <div className="mx-auto w-full md:w-[85%] mb-8">
