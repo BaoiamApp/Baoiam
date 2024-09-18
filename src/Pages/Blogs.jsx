@@ -14,6 +14,7 @@ import "./Blogs.css";
 import { StatupSlider } from "../Components/Blog Components/StatupSlider";
 import { TechBlogSlider } from "../Components/Blog Components/TechBlogSlider";
 import { BusSlider } from "../Components/Blog Components/BusSlider";
+import gsap from 'gsap';
 
 const blog_list = [
   {
@@ -171,7 +172,27 @@ const Blog = () => {
   document.title = 'Baoiam - Blogs'
   useEffect(() => {
     window.scrollTo(0, 0);
+  
+    gsap.fromTo('.b1',{opacity:0,y:-60},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'power1.inOut',
+      stagger:0.3,
+    })
 
+    gsap.fromTo('.b2',{opacity:0,y:30},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'back.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.bdiv1',
+        start:'top 70%',
+        end:'bottom 80%'
+      }
+    })
     return () => {};
   }, []);
 
@@ -257,7 +278,7 @@ const Blog = () => {
 
   return (
     <div className='dark:bg-black dark:text-white'>
-      <div className='max-w-xll mx-8 py-8 dark:bg-black dark:text-white bg-white shadow-lg rounded-lg overflow-hidden'>
+      <div className='b1 max-w-xll mx-8 py-8 dark:bg-black dark:text-white bg-white shadow-lg rounded-lg overflow-hidden'>
         <div className='relative'>
           <img
             className='w-full h-80 object-cover'
@@ -266,18 +287,18 @@ const Blog = () => {
           />
           <div className='absolute inset-0 '></div>
           <div className='absolute bottom-0 left-0 p-6'>
-            <h2 className='text-2xl font-bold text-black'>
+            <h2 className='b1 text-2xl font-bold text-black'>
               Tempor Consectetur Est Elit
             </h2>
-            <p className='text-black'>Consequuntur ex co</p>
+            <p className='b1 text-black'>Consequuntur ex co</p>
           </div>
         </div>
       </div>
-      <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
-        <h1 className='text-3xl font-bold text-center'>
+      <div className='bdiv1 max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
+        <h1 className='b2 text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className='text-l  text-center mt-2 mb-6'>
+        <h2 className='b2 text-l  text-center mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 
@@ -285,7 +306,7 @@ const Blog = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
           {blog_list.map((item, i) => (
             <Link key={i} to={`/Blog_detail/${i}`}>
-              <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
+              <div className='b2 bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
                 <img
                   className='w-full h-48 object-cover'
                   src={item.imgSrc}

@@ -66,8 +66,6 @@ gsap.fromTo('.anime1',{opacity:0,y:30},{
   stagger:0.3
 })
 
-
-
 gsap.fromTo('.anime2',{opacity:0,x:-50},
   {opacity:1,
     x:0,
@@ -95,9 +93,6 @@ gsap.fromTo('.anime2',{opacity:0,x:-50},
       }
     }
     )
-
-
-
     gsap.fromTo('.anime4',{opacity:0,x:-50},
       {opacity:1,
         x:0,
@@ -108,7 +103,6 @@ gsap.fromTo('.anime2',{opacity:0,x:-50},
           start:'top 90%',
           end:'bottom 100%',
         }
-        
       }
       )
     
@@ -162,7 +156,6 @@ gsap.fromTo('.anime2',{opacity:0,x:-50},
                   trigger:'.animediv5',
                   start:'top 90%',
                   end:'bottom 100%',
-                  markers:true
                 }
                 
               }
@@ -182,7 +175,6 @@ gsap.fromTo('.anime2',{opacity:0,x:-50},
                 }
                 )
 
-
                 gsap.fromTo('.anime11',{opacity:0,y:30},
                   {opacity:1,
                     y:0,
@@ -197,7 +189,6 @@ gsap.fromTo('.anime2',{opacity:0,x:-50},
                   }
                   )
     
-
 
 return () => {};
 

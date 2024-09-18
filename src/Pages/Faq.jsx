@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 
 const faqs = [
   {
@@ -131,11 +132,31 @@ const faqs = [
   },
 ];
 
+
+
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+
+  useEffect(() => {
+
+    gsap.fromTo('.en12',{opacity:0,y:30},{
+      opacity:1,
+      y:0,
+      duration:1,
+      ease:'power1.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.endiv6',
+        start:'top 90%',
+        end:'bottom 80%'
+      }
+    })
+  
+  },[])
+
   return (
-    <div className="border rounded-lg mx-5 shadow-lg  text-gray-600 px-8 my-4">
+    <div className="en12 border rounded-lg mx-5 shadow-lg  text-gray-600 px-8 my-4">
       <button
         className="w-full text-left flex justify-between items-center py-4 text-lg text-black font-bold hover:scale-105 hover:text-indigo-600"
         onClick={() => setIsOpen(!isOpen)}
@@ -153,10 +174,31 @@ const FaqItem = ({ question, answer }) => {
   );
 };
 
+
+
+
+
 const Faq = () => {
+
+  useEffect(() => {
+    gsap.fromTo('.en12',{opacity:0,y:30},{
+      opacity:1,
+      y:0,
+      duration:1,
+      ease:'power1.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.endiv6',
+        start:'top 90%',
+        end:'bottom 80%'
+      }
+    })
+  
+  },[])
+
   return (
-    <div className="max-w-3xl mx-auto my-10 ">
-      <h2 className="font-bold text-4xl text-center mb-8 mt-20 mx-5 ">
+    <div className="endiv6 max-w-3xl mx-auto my-10 ">
+      <h2 className="en12 font-bold text-4xl text-center mb-8 mt-20 mx-5 ">
         Frequently Asked <span className="text-indigo-600">Questions</span>
       </h2>
 

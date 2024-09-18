@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as MDIcons from "react-icons/md";
 import * as FCIcons from "react-icons/fc";
 import * as GRIcons from "react-icons/gr";
@@ -6,6 +6,7 @@ import * as SLIcons from "react-icons/sl";
 import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import { Highlights } from "../../Data";
+import gsap from "gsap";
 
 const CourseHighlights = () => {
   // For? maping icons dynamically
@@ -27,16 +28,34 @@ const CourseHighlights = () => {
     }
   };
 
+  useEffect(() => {
+
+gsap.fromTo('.en6',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'power1.inOut',
+ stagger:0.3,
+ scrollTrigger:{
+  trigger:'.endiv2',
+  start:'top 90%',
+  end:'bottom 80%'
+ }
+})
+
+
+  },[])
+
   return (
-    <div className="py-8 px-8 lg:px-24 w-full h-full">
-      <h4 className="text-4xl font-semibold mb-8">
+    <div className="endiv2 py-8 px-8 lg:px-24 w-full h-full">
+      <h4 className="en6 text-4xl font-semibold mb-8">
         Course{" "}
         <span className="border-b text-orange-500 border-orange-500">
           Highlights
         </span>
       </h4>
 
-      <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
+      <div className="en6 flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
         {Highlights?.map((h, i) => {
           return (
             <div
