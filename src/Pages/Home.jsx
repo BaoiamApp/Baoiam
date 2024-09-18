@@ -16,14 +16,14 @@ import ServicesTab from '../Components/AboutUs/ServicesTab'
 import { brands } from "../assets/BrandPartners/Brands";
 import { universities } from "../assets/Universities/Universities";
 import OurReach from "../Components/Home/OurReach";
-const Home = ({dark}) => {
+const Home = ({ dark }) => {
     document.title = 'Baoiam - Home'
     return (
         <>
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
-                    <OurReach title={"College"} array={universities}/>
-                <OurReach  title={"Company"} array={brands}/>
+                <OurReach title={"College"} array={universities} />
+                <OurReach title={"Company"} array={brands} />
 
                 <Courses />
                 <Slider />
