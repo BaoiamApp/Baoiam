@@ -12,6 +12,18 @@ import Testimonials from "../Components/Testmonials/Testimonials";
 import ExploreSubjects from "../Components/College/ExploreSubjects";
 import { CollegeCourseData } from "../Data";
 import axios from "axios";
+// import Col_AndroidDevelopment from '../assets/CollegeCourseImages/Col-AndroidDevelopment.png'
+import Col_DataAnalysis from '../assets/CollegeCoursesImages/Col-DataAnalysis.png'
+// import Col_DigitalMarketing from '../assets/CollegeCourseImages/Col-DigitalMarketing.png'
+// import Col_EntreprenurshipInnovation from '../assets/CollegeCourseImages/Col-EntreprenurshipInnovation.png'
+// import Col_GraphicDesigning from '../assets/CollegeCourseImages/Col-GraphicDesigning.png'
+// import Col_HumanResource from '../assets/CollegeCourseImages/Col-HumanResource.png'
+// import Col_MachineLearning from '../assets/CollegeCourseImages/Col-MachineLearning.png'
+// import Col_ProductManagement from '../assets/CollegeCourseImages/Col-ProductManagement.png'
+// import Col_SEO from '../assets/CollegeCourseImages/Col-SEO.png'
+// import Col_SoftwareTesting from '../assets/CollegeCourseImages/Col-SoftwareTesting.png'
+// import Col_UIUX from '../assets/CollegeCourseImages/UI-UX.png'
+// import Col_WebDevelopment from '../assets/CollegeCourseImages/Col-WebDevelopment.png'
 
 function College() {
   document.title = 'Baoiam - College'
@@ -25,6 +37,11 @@ function College() {
     className:
       "mySwiper w-full h-full sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144",
   };
+
+  // const slider = [Col_AndroidDevelopment, Col_DataAnalysis, Col_DigitalMarketing, Col_EntreprenurshipInnovation, Col_GraphicDesigning, Col_HumanResource, Col_MachineLearning, Col_ProductManagement, Col_SEO, Col_SoftwareTesting, Col_UIUX, Col_WebDevelopment]
+  const slider = [Col_DataAnalysis];
+
+
   const [isLoading,setIsLoading]=useState(true);
   const params = useParams();
   const [allCourses,setAllCourses] =useState([]);
@@ -121,14 +138,14 @@ function College() {
               autoplay={swiperSettings.autoplay}
               className={`mySwiper w-full h-full sm:w-72 sm:h-80 md:w-80 md:h-96 lg:w-100 lg:h-120 xl:w-120 xl:h-144`}
             >
-              {cards.map((card, index) => (
+              {slider.map((card, index) => (
                 <SwiperSlide
                   key={index}
                   className="flex items-center justify-center rounded-xl text-2xl font-bold text-white"
                   style={{
-                    backgroundColor: card.backgroundColor,
-                    backgroundImage: card.backgroundImage
-                      ? `url(${card.backgroundImage})`
+                    // backgroundColor: card.backgroundColor,
+                    backgroundImage: card
+                      ? `url(${card})`
                       : "none",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",

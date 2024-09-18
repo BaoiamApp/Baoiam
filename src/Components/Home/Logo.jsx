@@ -8,7 +8,7 @@ const Logo = ({ isDark }) => {
             <Link
                 rel="canonical"
                 to={"/"}
-                className={`${isDark ? 'w-24 h-16' : 'w-24 h-16'} mb-4 ml-8`}
+                className={`w-24 h-16 mb-4 ml-4 xl:ml-8`}
             >
                 <img
                     src={isDark ? LogoDark : LogoLight}
