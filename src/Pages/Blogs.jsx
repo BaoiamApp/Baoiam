@@ -16,6 +16,7 @@ import { TechBlogSlider } from "../Components/Blogs/TechBlogSlider";
 import { BusSlider } from "../Components/Blogs/BusSlider";
 import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
 import NewsletterBanner from "../Components/Home/Subcription";
+import gsap from "gsap";
 
 const blog_list = [
   {
@@ -175,7 +176,27 @@ const Blog = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  
+    gsap.fromTo('.b1',{opacity:0,y:-60},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'power1.inOut',
+      stagger:0.3,
+    })
 
+    gsap.fromTo('.b2',{opacity:0,y:30},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'back.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.bdiv1',
+        start:'top 70%',
+        end:'bottom 80%'
+      }
+    })
     return () => {};
   }, []);
 
@@ -266,7 +287,7 @@ const Blog = () => {
         <h1 className='text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className='text-l  text-center mt-2 mb-6'>
+        <h2 className='b2 text-l  text-center mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 

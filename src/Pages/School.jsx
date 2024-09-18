@@ -29,7 +29,7 @@ const School = () => {
         </h2> */}
 
         <div className="flex pt-10 items-center justify-center p-6 w-fit mx-auto">
-          <div className="flex flex-col-reverse lg:flex-row items-center mx-auto w-full">
+          <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-0 justify-between items-center mx-auto w-full">
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                 Step into our school courses
@@ -49,7 +49,7 @@ const School = () => {
               </Link>
             </div>
 
-            <div className="h-96 md:h-full  md:w-[40%] pt-8 md:pt-0">
+            <div className="md:h-full md:w-[40%] pt-8 md:pt-0">
               <SliderHero />
             </div>
           </div>
