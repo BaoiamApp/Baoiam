@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "react-fast-marquee";
+import { BsFillEnvelopeAtFill } from "react-icons/bs";
+import { MdPreview } from "react-icons/md";
+import { FaHandshake } from "react-icons/fa";
 
 const marquee_imgs = [
   "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F4XvJVi6UxVYuBoNcqtYnUO%2F51dc6ab3d5fb7a294e9c1ae82ec60c6f%2FGroup_86352.png&w=1200&q=90",
@@ -127,7 +130,7 @@ const Section1 = ({ dark }) => {
           className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
-            <span className="text-2xl font-bold">1</span>
+            <span className="text-2xl font-bold"><BsFillEnvelopeAtFill /></span>
           </div>
           <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
             Submit an Inquiry
@@ -143,7 +146,7 @@ const Section1 = ({ dark }) => {
           className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
-            <span className="text-2xl font-bold">2</span>
+            <span className="text-2xl font-bold"><MdPreview /></span>
           </div>
           <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
             Review & Discuss
@@ -160,7 +163,7 @@ const Section1 = ({ dark }) => {
           className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
           <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
-            <span className="text-2xl font-bold">3</span>
+            <span className="text-2xl font-bold"><FaHandshake/></span>
           </div>
           <h3 className="text-xl lg:text-2xl font-semibold mb-4 w-full text-center text-gray-800 max-xs:text-lg">
             Tailored Partnership

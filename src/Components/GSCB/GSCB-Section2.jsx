@@ -7,19 +7,19 @@ gsap.registerPlugin(ScrollTrigger);
 const section2 = [
   {
     id: 1,
-    img: "https://images.stockcake.com/public/8/5/b/85b92d0b-f22b-47bb-af9f-98c6a4a4fc90_large/team-success-celebration-stockcake.jpg",
+    img: "https://images.stockcake.com/public/1/c/f/1cf3248f-a7b3-42b9-b403-dcd6e581c864_large/global-collaboration-hub-stockcake.jpg",
     title: "Global Collaboration ",
     desc: "Join a global network of educators and institutions to share knowledge, research, and best practices.",
   },
   {
     id: 2,
-    img: "https://images.stockcake.com/public/9/8/1/981e49df-df7e-4611-8050-bc3273d91f00_large/formal-handshake-agreement-stockcake.jpg",
+    img: "https://images.stockcake.com/public/9/9/3/9937c65f-bb06-4547-9543-42d779319201_large/virtual-reality-exploration-stockcake.jpg",
     title: "Enhanced Learning Resources",
     desc: "Access cutting-edge technology, digital platforms, and content designed to improve student engagement and learning outcomes.",
   },
   {
     id: 3,
-    img: "https://images.stockcake.com/public/1/3/1/13160f49-e156-462a-8938-8f8113757cf4_large/educational-global-event-stockcake.jpg",
+    img: "https://images.stockcake.com/public/f/1/1/f1181b68-648d-4108-b82e-e06a4bbe8fc7_large/innovative-strategy-planning-stockcake.jpg",
     title: "Tailored Solutions",
     desc: "Collaborate with us to develop customized educational programs, courses, and curricula that address the specific needs of your institution.",
   },
@@ -119,11 +119,11 @@ const Cards = () => {
         className={`group flex flex-col h-auto w-full md:h-[90%] md:w-[90%] cursor-pointer gap-6 relative ${cardClass}`}
       >
         <img
-          className="w-full h-full hover:opacity-10 object-cover"
+          className="w-full h-full rounded-xl hover:opacity-10 object-cover"
           src={info.img}
           alt={`img${index + 1}`}
         />
-        <div className="flex flex-col gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/70 transition-all ease-linear text-center pt-16 md:pt-24 text-white">
+        <div className="flex flex-col gap-4 opacity-0 rounded-xl group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/70 transition-all ease-linear text-center pt-16 md:pt-24 text-white">
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">
             {info.title}
           </h3>
