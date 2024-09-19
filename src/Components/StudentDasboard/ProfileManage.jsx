@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { FaCheckCircle } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { setProfile1 } from "../../Redux/user/userSlice.js";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
-const ProfileManage = ({ userInfo, setUserInfo }) => {
-  const [email, setEmail] = useState({
-    newEmail: "",
-    confirmEmail: "",
-  });
+const ProfileManage = () => {
+  const dispatch = useDispatch();
+  
+  // accessing user data from Redux store
+  const userInfo = useSelector((state) => state.user.profile);
+  console.log(userInfo, 'profile management userinfo state check')
+
+  // const [email, setEmail] = useState({
+  //   newEmail: "",
+  //   confirmEmail: "",
+  // });
 
   const [formData, setFormData] = useState({
     first: userInfo.first_name || "",
@@ -26,10 +34,9 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
     },
   });
 
-  // Separate edit states for each section
   const [isEditable, setIsEditable] = useState({
     personalInfo: false,
-    otherInfo: false, // New state for other information
+    otherInfo: false,
     socialLinks: false,
     email: false,
     password: false,
@@ -85,74 +92,68 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
   const handleSave = async (section) => {
     try {
       let transformedData = {};
+      
+      console.log(`Saving ${section}...`);
+  
       if (section === "personalInfo") {
         transformedData = {
           first_name: formData.first,
           last_name: formData.last,
           email: formData.email,
         };
-
-        await axios.patch(`${apiUrl}/api/auth/users/me/`, transformedData, {
+  
+        console.log("Personal Info Data:", transformedData);
+  
+        const { data } = await axios.patch(`${apiUrl}/api/auth/users/me/`, transformedData, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `JWT ${localStorage.getItem("access_token")}`,
           },
-        })
-        return;
+        });
 
+        // dispatching updated data to Redux
+        dispatch(setProfile1(data));
 
-      } else if (section === "otherInfo") {
+        setFormData((prev) => ({
+          ...prev,
+          ...transformedData,
+        }));
+  
+      } else {
         transformedData = {
           mobile_number: formData.mobile,
           college_name: formData.college,
           school_name: formData.school,
-        };
-      } else if (section === "socialLinks") {
-        transformedData = {
           linkedin: formData.socialLinks.linkedIn,
           github: formData.socialLinks.gitHub,
           instagram: formData.socialLinks.instagram,
         };
+  
+        console.log("Other Info Data:", transformedData);
+  
+        await axios.put(`${apiUrl}/api/profile/`, transformedData, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `JWT ${localStorage.getItem("access_token")}`,
+          },
+        });
+
+        // dispatching updated data to Redux
+        dispatch(setProfile1({ ...userInfo, ...transformedData }));
+
+        setFormData((prev) => ({
+          ...prev,
+          ...transformedData,
+        }));
       }
-
-      await axios.put(`${apiUrl}/api/profile/`, transformedData, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `JWT ${localStorage.getItem("access_token")}`,
-        },
-      });
-
-      setUserInfo((prev) => ({
-        ...prev,
-        ...transformedData,
-      }));
+  
     } catch (error) {
       console.error("Error updating profile:", error);
     }
   };
 
-  useEffect(() => {
-    if (Object.keys(userInfo).length) {
-      setFormData((prev) => ({
-        ...prev,
-        first: userInfo.first_name || "",
-        last: userInfo.last_name || "",
-        email: userInfo.email || "",
-        mobile: userInfo.mobile_number || "",
-        dob: userInfo.dob || "",
-        college: userInfo.college_name || "",
-        school: userInfo.school_name || "",
-        location: userInfo.location || "",
-        socialLinks: {
-          linkedIn: userInfo.linkedin || "",
-          gitHub: userInfo.github || "",
-          instagram: userInfo.instagram || "",
-        },
-      }));
-    }
-  }, [userInfo]);
-
   return (
+
     <section className="max-w-4xl dark:bg-black dark:text-white mx-auto p-6">
       <form className="space-y-8">
         {/* Personal Information Section */}
@@ -168,7 +169,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
           >
             {isEditable.personalInfo ? "Save" : "Edit"}
           </button>
-          
+
           <div className="grid grid-cols-1 gap-6">
             {/* Email */}
             <div className="space-x-2">
@@ -186,7 +187,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   <label className="py-1 px-2 font-bold">First name</label>
                   <input
                     type="text"
-                    className="py-1 px-2  border-gray-300 rounded-md shadow-sm"
+                    className="py-1 px-2 border-gray-300 rounded-md shadow-sm"
                     placeholder="First Name"
                     value={formData.first}
                     onChange={handleInputChange}
@@ -202,7 +203,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
                   <label className="py-1 px-2 font-bold">Last name</label>
                   <input
                     type="text"
-                    className="py-1 px-2  border-gray-300 rounded-md shadow-sm"
+                    className="py-1 px-2 border-gray-300 rounded-md shadow-sm"
                     placeholder="Last Name"
                     value={formData.last}
                     onChange={handleInputChange}
@@ -347,6 +348,7 @@ const ProfileManage = ({ userInfo, setUserInfo }) => {
         </div>
       </form>
     </section>
+    
   );
 };
 
