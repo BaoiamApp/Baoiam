@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { setProfile } from "../../redux/user/userSlice.js";
 
 function Profile({ userInfo }) {
+  console.log(userInfo, 'user profile')
   const user = useSelector((state) => {
     console.log(state);
     return state.user;
@@ -119,20 +120,24 @@ function Profile({ userInfo }) {
           <div className="flex flex-col space-y-4">
             {" "}
             {/* Right side with 2 items */}
+            {userInfo.mobile_number && 
+            
             <div className="flex items-center">
               <FiPhone className="mr-2" />
-              <p>{userInfo.mobile}</p>
+              <p>{userInfo.mobile_number}</p>
             </div>
+            }
+
+           {
+            userInfo.dob &&
             <div className="flex items-center">
               <FiCalendar className="mr-2" />
               <p>{userInfo.dob}</p>
             </div>
-            <div className="flex items-center">
-              {" "}
-              {/* Optional: Location on right side if needed */}
-              <FiMapPin className="mr-2" />
-              <p>{userInfo.location}</p>
-            </div> 
+           } 
+
+         
+
           </div>
         </div>
       </div>

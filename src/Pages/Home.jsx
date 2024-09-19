@@ -10,23 +10,27 @@ import How from '../Components/Home/How'
 import Slider from '../Components/Home/Slider'
 import Phone from '../Components/Home/Phone'
 //import Meetourexperts from '../Components/Home/Meetourexperts'
-import { SuccessLight } from '../assets/assets'
+import { SuccessDark, SuccessLight } from '../assets/assets'
 import OurTeam from "../Components/AboutUs/OurTeam"
 import ServicesTab from '../Components/AboutUs/ServicesTab'
-
-const Home = () => {
+import { useNavigate } from "react-router-dom";
+import { brands } from "../assets/BrandPartners/Brands";
+import { universities } from "../assets/Universities/Universities";
+import OurReach from "../Components/Home/OurReach";
+const Home = ({ dark }) => {
     document.title = 'Baoiam - Home'
+    const navigate = useNavigate();
     return (
         <>
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
                 <Courses />
                 <Slider />
-                <div className="mx-auto w-full md:w-[85%] mb-8">
-                    <img className="w-full h-full" src={SuccessLight} alt="" />
-                </div>
                 {/* <Categories /> */}
                 <ServicesTab />
+                <div className="mx-auto w-full md:w-[85%] my-20">
+                    <img className="w-full h-full cursor-pointer" onClick={()=> navigate('/Maintenance')} src={SuccessLight} alt="" />
+                </div>
                 <Partners />
                 <Protocol />
                 <JoinNow />

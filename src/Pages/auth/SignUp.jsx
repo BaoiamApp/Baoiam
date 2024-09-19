@@ -179,11 +179,11 @@ const SignUp = () => {
       <ToastContainer />
       <div
         ref={Anime1}
-        className=" w-[400px] h-[400px] top-[-10%] left-[-5%]  rounded-full bg-gradient-to-tl from-[#bab2fc] to-[#9bdaff] absolute"
+        className=" w-[400px] h-[400px] top-[-10%] left-[-5%]  rounded-full bg-gradient-to-tl from-amber-200 to-amber-300 absolute"
       ></div>
       <div
         ref={Anime2}
-        className=" w-[600px] h-[600px] bottom-[-15%] right-[-5%]   rounded-full bg-gradient-to-tl from-[#bab2fc] to-[#9bdaff]  absolute"
+        className=" w-[600px] h-[600px] bottom-[-15%] right-[-5%]   rounded-full bg-gradient-to-tl from-indigo-200 to-indigo-400  absolute"
       ></div>
       <div className="py-5 ">
         <div className="mx-auto  px-4 sm:px-1 lg:px-8 ">

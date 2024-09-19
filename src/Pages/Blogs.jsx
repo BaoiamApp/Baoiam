@@ -11,11 +11,12 @@ import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
 import "./Blogs.css";
-import { StatupSlider } from "../Components/Blog Components/StatupSlider";
-import { TechBlogSlider } from "../Components/Blog Components/TechBlogSlider";
-import { BusSlider } from "../Components/Blog Components/BusSlider";
-import { HeaderBlog } from "../Components/Blog Components/headerBlog";
+import { StatupSlider } from "../Components/Blogs/StatupSlider"; 
+import { TechBlogSlider } from "../Components/Blogs/TechBlogSlider";
+import { BusSlider } from "../Components/Blogs/BusSlider";
+import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
 import NewsletterBanner from "../Components/Home/Subcription";
+import gsap from "gsap";
 import b1 from "../assets/Blogs/b9.png";
 import b12 from "../assets/Blogs/b12.png";
 import b14 from "../assets/Blogs/b14.png";
@@ -222,7 +223,27 @@ const Blog = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  
+    gsap.fromTo('.b1',{opacity:0,y:-60},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'power1.inOut',
+      stagger:0.3,
+    })
 
+    gsap.fromTo('.b2',{opacity:0,y:30},{
+      opacity:1,
+      duration:1,
+      y:0,
+      ease:'back.inOut',
+      stagger:0.3,
+      scrollTrigger:{
+        trigger:'.bdiv1',
+        start:'top 70%',
+        end:'bottom 80%'
+      }
+    })
     return () => {};
   }, []);
 
@@ -313,7 +334,7 @@ const Blog = () => {
         <h1 className='text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className='text-l  text-center mt-2 mb-6'>
+        <h2 className='b2 text-l  text-center mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 
