@@ -12,7 +12,7 @@ import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
 import logoDark from "../../assets/logo-bg-removed.png";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { deleteUserData } from "../../redux/user/userSlice";
 import { deleteUserData1 } from "../../Redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
@@ -20,6 +20,8 @@ import Logo from "./Logo";
 import CourseNav from "./CourseNav";
 import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
+import { fetchAllCourses } from "../../Redux/slices/courseSlice";
+import { BeatLoader } from "react-spinners";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -45,18 +47,6 @@ const Navbar = ({ theme }) => {
     setLinkActive(link);
   };
 
-  // const getCourseData = async () => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       "https://api.baoiam.com/api/categories/"
-  //     );
-  //     setSchoolCourses(data[0].subcategories);
-  //     setCourses(data);
-  //     console.log(data);
-  //   } catch (err) {
-  //     // console.log(err.message);
-  //   }
-  // };
 
   const HideUserDrop = (event) => {
     if (
@@ -99,9 +89,26 @@ const Navbar = ({ theme }) => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
-    setDropCourse("");
   };
 
+   // redux start
+  const {allCourses, status, error} = useSelector((state) => state.courses);
+   console.log(allCourses, 'all courses navbar')
+   useEffect(() => {
+     if(status==='idle'){
+       dispatch(fetchAllCourses());
+     }
+   }, [dispatch, status]);
+ 
+   if (status === 'loading') {
+     return  <div className="">
+                 <BeatLoader color="#4F46E5" loading={true} size={15} />
+            </div>;;
+   }
+
+  //  console.log(programCourses, 'program courses')
+   // redux end
+ 
   return (
     <>
       {showmenu && (
