@@ -5,15 +5,19 @@ const Phone = () => {
   const [inputValue, setInputValue] = useState("Email");
 
   return (
-    <div className="flex w-full gap-8 pb-20 py-10 dark:bg-[#080529] dark:text-white items-center mx-auto justify-center flex-col md:flex-row">
+    <div className="flex w-full gap-8 pb-20 py-10 dark:text-white items-center mx-auto justify-center flex-col md:flex-row">
       <div className="w-40 md:w-[23%]">
         <img src={App_phone} className="w-full" alt="Android app-Baoiam" />
       </div>
       <div className="md:w-1/3 w-[80%]">
         <p className="text-3xl font-bold">
-          Take the Leap—Start <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Learning</span> Now!
+          Take the Leap—Start{" "}
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Learning
+          </span>{" "}
+          Now!
         </p>
-        <p className="font-medium mt-2 text-slate-600">
+        <p className="font-medium mt-2 dark:text-slate-300 text-slate-600">
           Unlock your potential for success with our courses.
         </p>
 
@@ -77,7 +81,7 @@ const Phone = () => {
               type="email"
               placeholder="Enter your email..."
               required={true}
-              className="w-full outline-none bg-transparent text-sm text-gray-800 px-4 py-1"
+              className="w-full outline-none dark:text-slate-300 dark:placeholder-slate-300 bg-transparent text-sm text-gray-800 px-4 py-1"
             />
 
             <button
@@ -86,7 +90,7 @@ const Phone = () => {
             >
               Submit
             </button>
-            </div>
+          </div>
         </form>
 
         {/* <div className='mt-8'>

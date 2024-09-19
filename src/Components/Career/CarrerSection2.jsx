@@ -72,12 +72,12 @@ export const CarrerSection2 = () => {
                 />
 
                 {/* Title */}
-                <h2 className="text-lg md:text-lg font-bold dark:text-zinc-400 text-gray-900 text-center mb-2">
+                <h2 className="text-lg md:text-lg font-bold dark:text-white text-gray-900 text-center mb-2">
                   {benefit.title}
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 text-center">
+                <p className="text-sm dark:text-slate-300 text-gray-600 text-center">
                   {benefit.description}
                 </p>
               </div>

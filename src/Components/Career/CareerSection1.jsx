@@ -17,7 +17,7 @@ export const CareerSection1 = () => {
                 BAOIAM
               </span>{" "}
             </h3>{" "}
-            <p className="text-sm mt-2 sm:text-lg md:text-xl dark:text-gray-600 text-[#0a0a0a] pt-5">
+            <p className="text-sm mt-2 sm:text-lg md:text-xl dark:text-slate-300 text-[#0a0a0a] pt-5">
               At BAOIAM, we're dedicated to transforming education through
               innovative solutions. Join our dynamic team and contribute to
               shaping the future of learning.

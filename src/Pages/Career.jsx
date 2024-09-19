@@ -7,7 +7,7 @@ import { CareerSection4 } from "../Components/Career/CareerSection4";
 import { CareerSection6 } from "../Components/Career/CareerSection6";
 import { CareerSection7 } from "../Components/Career/CareerSection7";
 //import { CareerSection8 } from "../Components/Career/CareerSection8";
-import  CareerSection9  from "../Components/Career/CareerSection9";
+import CareerSection9 from "../Components/Career/CareerSection9";
 import CareerSection10 from "../Components/Career/CareerSection10";
 //import Testimonals from "../Components/Testmonials/Testimonials"
 
@@ -18,14 +18,14 @@ const Career = () => {
   }, []);
 
   return (
-    <div className="dark:bg-zinc-800 min-h-screen flex flex-col justify-center item-center  text-white relative overflow-x-hidden lg:pb-0">
+    <div className="dark:bg-black min-h-screen flex flex-col justify-center item-center  text-white relative overflow-x-hidden lg:pb-0">
       <CareerSection1 />
       <CarrerSection2 />
       <CareerSection6 />
       <CareerSection7 />
       <CareerSection4 />
       <CareerSection9 />
-      <CareerSection10/>
+      <CareerSection10 />
 
       {/* <CareerSection8 /> */}
     </div>

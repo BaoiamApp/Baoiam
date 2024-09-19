@@ -44,32 +44,32 @@ const blog_slider = [
   },
 ];
 export const StatupSlider = () => {
-
-
-useEffect(() => {
-
-  gsap.fromTo('.b3',{opacity:0,y:30},{
-    opacity:1,
-    duration:1,
-    y:0,
-    ease:'back.inOut',
-    stagger:0.3,
-    scrollTrigger:{
-      trigger:'.bdiv2',
-      start:'top 90%',
-      end:'bottom 80%'
-    }
-  })
-
-},[])
+  useEffect(() => {
+    gsap.fromTo(
+      ".b3",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".bdiv2",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
+  }, []);
 
   return (
-    <div className='bdiv2 my-12'>
+    <div className="bdiv2 my-12">
       <div>
         {" "}
-        <h1 className='m-8 text-3xl font-bold text-center'>Featured Blogs</h1>
+        <h1 className="m-8 text-3xl font-bold text-center">Featured Blogs</h1>
       </div>
-      <div className='mb-6 mt-8 px-10'>
+      <div className="mb-6 mt-8 px-10">
         <Swiper
           keyboard={{
             enabled: true,
@@ -88,26 +88,26 @@ useEffect(() => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className='b3 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className="b3 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4"
         >
           {blog_slider?.map((el) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className="p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4"
                 key={el.id}
               >
                 <img
-                  className='h-full rounded-md  w-full'
+                  className="h-full rounded-md  w-full"
                   src={el.pic}
-                  alt='cat title image'
+                  alt="cat title image"
                 />
-                <div className='flex flex-col justify-center items-center rounded-md'>
-                  <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
+                <div className="flex flex-col justify-center items-center rounded-md">
+                  <h2 className="text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]">
                     {el.des}
                   </h2>
-                  <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='icon_image' />
-                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
+                  <div className="w-full flex gap-2 items-center">
+                    <img src={el.icon} alt="icon_image" />
+                    <h3 className="text-gray-700 text-sm dark:text-slate-300 md:text-md font-bold">
                       {el.cat}
                     </h3>
                   </div>

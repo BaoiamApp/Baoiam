@@ -34,20 +34,22 @@
 
 // export default Home;
 
-
-
 import React from "react";
 import onlinelearning from "../../assets/Onlinelearning.gif";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <>
+    <div className="dark:bg-black">
       <h2 className="text-3xl sm:text-4xl my-2 text-center font-bold">
-        Your <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Future</span> starts here
+        Your{" "}
+        <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+          Future
+        </span>{" "}
+        starts here
       </h2>
-      <div className="dark:bg-[#080529] w-full rounded-3xl overflow-hidden dark:text-white flex flex-col md:flex-row justify-center items-center my-12 ">
+      <div className=" w-full rounded-3xl overflow-hidden dark:text-white flex flex-col md:flex-row justify-center items-center my-12 ">
         {/* Container for the image */}
         <div className="md:w-[25%] w-[70%] ">
           <img
@@ -63,14 +65,16 @@ const Home = () => {
             goals with Baoiam. Join now to receive personalized recommendations
             from the full Baoiam catalog.
           </p>
-          <button onClick={()=> navigate('/courses/school')} className="px-4 sm:px-6 py-2 sm:py-3 font-semibold bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-full text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300">
+          <button
+            onClick={() => navigate("/courses/school")}
+            className="px-4 sm:px-6 py-2 sm:py-3 font-semibold bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-full text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300"
+          >
             Join Now
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Home;
-

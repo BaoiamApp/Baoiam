@@ -64,7 +64,7 @@ const AboutUs = () => {
   // }, []);
 
   return (
-    <div>
+    <div className="dark:bg-black">
       {/* Section - 1 */}
       <div className="  mx-auto  w-full text-white">
         <div className="relative mx-auto h-[20%] w-full text-white">
@@ -121,7 +121,7 @@ const AboutUs = () => {
           </div>
 
           <div className="md:w-[60%] h-full mt-8 lg:mt-0 px-4 md:px-12">
-            <span className="text-indigo-600 font-medium text-xs lg:text-sm">
+            <span className="text-indigo-600 dark:text-indigo-500 font-medium text-xs lg:text-sm">
               Unlocking potential, one learner at a time.
             </span>
             <h4 className="mt-2 text-lg lg:text-2xl font-semibold">
@@ -129,7 +129,7 @@ const AboutUs = () => {
               their full potential and shape a better future.
             </h4>
 
-            <p className="text-xs lg:text-base text-slate-600 mt-4">
+            <p className="text-xs lg:text-base dark:text-slate-300 text-slate-600 mt-4">
               Our mission is to empower individuals with transformative
               educational experiences that unlock their full potential, enabling
               them to contribute meaningfully to society and shape a brighter
@@ -158,7 +158,7 @@ const AboutUs = () => {
           </div>
 
           <div className="md:w-[60%] h-full mt-8 lg:mt-0 px-4 md:px-12">
-            <span className="text-indigo-600 font-medium text-xs lg:text-sm">
+            <span className="text-indigo-600 dark:text-indigo-500  font-medium text-xs lg:text-sm">
               Empowering the next generation with the skills and knowledge they
               need to succeed.
             </span>
@@ -166,7 +166,7 @@ const AboutUs = () => {
               Future-Proofing Education: Preparing Learners for Tomorrow's World
             </h4>
 
-            <p className="text-xs lg:text-base text-slate-600 mt-4">
+            <p className="text-xs lg:text-base dark:text-slate-300 text-slate-600 mt-4">
               {" "}
               In a rapidly evolving world, education must adapt to meet the
               challenges of tomorrow. We are committed to providing innovative
@@ -191,7 +191,7 @@ const AboutUs = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col dark:text-black md:flex-row gap-8">
           <ValueCard
             Icon={FaHandsHelping}
             title="Quality Education"

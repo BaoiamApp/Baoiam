@@ -19,28 +19,30 @@ export const OurTeam = () => {
   }, []);
 
   return (
-    <div className=" w-11/12 pb-12 mx-auto flex flex-col gap-4">
-      <div className="">
-        <h1 className="t1 p-6 font-serif text-center text-4xl md:text-5xl font-extrabold">
-          Our Dedicated <span className="text-indigo-800">Team</span> Members
-        </h1>
-        <div className="p-4 overflow-hidden w-[80%] lg:w-[60%] mx-auto">
-          <p className="t1 text-md text-center md:text-xl">
-            At BAOIAM, our team is passionate about transforming education. Each
-            member brings a wealth of experience and expertise, working together
-            to create impactful learning solutions.
-          </p>
+    <div className="dark:bg-black">
+      <div className=" w-11/12 pb-12 mx-auto flex flex-col gap-4">
+        <div className="">
+          <h1 className="t1 p-6 font-serif text-center text-4xl md:text-5xl font-extrabold">
+            Our Dedicated <span className="text-indigo-800">Team</span> Members
+          </h1>
+          <div className="p-4 overflow-hidden w-[80%] lg:w-[60%] mx-auto">
+            <p className="t1 text-md text-center md:text-xl">
+              At BAOIAM, our team is passionate about transforming education.
+              Each member brings a wealth of experience and expertise, working
+              together to create impactful learning solutions.
+            </p>
+          </div>
         </div>
+        <div className="my-6">
+          <TeamSwiper />
+        </div>
+        <div className="flex flex-col divide-y divi divide-double gap-8">
+          <WebDevTeam />
+          <LeadershipTeam />
+          <Advertiseteam />
+        </div>
+        <JoinUs />
       </div>
-      <div className="my-6">
-        <TeamSwiper />
-      </div>
-      <div className="flex flex-col divide-y divi divide-double gap-8">
-        <WebDevTeam />
-        <LeadershipTeam />
-        <Advertiseteam />
-      </div>
-      <JoinUs />
     </div>
   );
 };

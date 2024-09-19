@@ -45,35 +45,34 @@ const blog_slider = [
 ];
 
 export const BusSlider = () => {
-
-
   useEffect(() => {
-  
-    gsap.fromTo('.b5',{opacity:0,y:30},{
-      opacity:1,
-      duration:1,
-      y:0,
-      ease:'back.inOut',
-      stagger:0.3,
-      scrollTrigger:{
-        trigger:'.bdiv5',
-        start:'top 90%',
-        end:'bottom 80%'
+    gsap.fromTo(
+      ".b5",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".bdiv5",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
       }
-    })
-  
-  },[])
-
+    );
+  }, []);
 
   return (
-    <div className='bdiv5 my-12'>
+    <div className="bdiv5 my-12">
       <div>
         {" "}
-        <h1 className='m-8 text-3xl font-bold text-center'>
+        <h1 className="m-8 text-3xl font-bold text-center">
           Popular or Most featured articles
         </h1>
       </div>
-      <div className='mb-6 mt-8 px-10'>
+      <div className="mb-6 mt-8 px-10">
         <Swiper
           keyboard={{
             enabled: true,
@@ -92,26 +91,26 @@ export const BusSlider = () => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className='b5 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className="b5 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4"
         >
           {blog_slider?.map((el) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className="p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4"
                 key={el.id}
               >
                 <img
-                  className='h-full rounded-md  w-full'
+                  className="h-full rounded-md  w-full"
                   src={el.pic}
-                  alt='bus_image'
+                  alt="bus_image"
                 />
-                <div className='flex flex-col justify-center items-center rounded-md'>
-                  <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
+                <div className="flex flex-col justify-center items-center rounded-md">
+                  <h2 className="text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]">
                     {el.des}
                   </h2>
-                  <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='buss_iconImage' />
-                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
+                  <div className="w-full flex gap-2 items-center">
+                    <img src={el.icon} alt="buss_iconImage" />
+                    <h3 className="text-gray-700 dark:text-slate-300 text-sm md:text-md font-bold">
                       {el.cat}
                     </h3>
                   </div>

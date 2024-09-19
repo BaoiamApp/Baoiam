@@ -44,7 +44,7 @@ import {
 import ListSlide from "../Components/PAP/ListSlide";
 
 const PAP = () => {
-  document.title = 'Baoiam - PAP'
+  document.title = "Baoiam - PAP";
   const slides = [
     {
       imgSrc: Prasun,
@@ -70,65 +70,65 @@ const PAP = () => {
   const listSlide = [
     {
       id: 1,
-      title: 'Visionary Thinking',
-      icon: 'IoTelescope',
+      title: "Visionary Thinking",
+      icon: "IoTelescope",
     },
     {
       id: 2,
-      title: 'Creativity & Innovation',
-      icon: 'MdPalette',
+      title: "Creativity & Innovation",
+      icon: "MdPalette",
     },
     {
       id: 3,
-      title: 'Risk Management',
-      icon: 'FaShield',
+      title: "Risk Management",
+      icon: "FaShield",
     },
     {
       id: 4,
-      title: 'Resilience & Persistence',
-      icon: 'FaTree',
+      title: "Resilience & Persistence",
+      icon: "FaTree",
     },
     {
       id: 5,
-      title: 'Adaptability',
-      icon: 'BsFillPuzzleFill',
+      title: "Adaptability",
+      icon: "BsFillPuzzleFill",
     },
     {
       id: 7,
-      title: 'Leadership',
-      icon: 'FaGavel',
+      title: "Leadership",
+      icon: "FaGavel",
     },
     {
       id: 8,
-      title: 'Financial Management',
-      icon: 'BsGraphUpArrow',
+      title: "Financial Management",
+      icon: "BsGraphUpArrow",
     },
     {
       id: 9,
-      title: 'Networking & Relationship Building',
-      icon: 'BsPeopleFill',
+      title: "Networking & Relationship Building",
+      icon: "BsPeopleFill",
     },
     {
       id: 10,
-      title: 'Communication & Salesmanship',
-      icon: 'BsMegaphoneFill',
+      title: "Communication & Salesmanship",
+      icon: "BsMegaphoneFill",
     },
     {
       id: 11,
-      title: 'Problem Solving',
-      icon: 'FaGear',
+      title: "Problem Solving",
+      icon: "FaGear",
     },
     {
       id: 12,
-      title: 'Product Management & Interpersonal Skills',
-      icon: 'BsClipboardCheckFill',
+      title: "Product Management & Interpersonal Skills",
+      icon: "BsClipboardCheckFill",
     },
     {
       id: 13,
-      title: 'Leveraging AI & technology for automation',
-      icon: 'BsRobot',
+      title: "Leveraging AI & technology for automation",
+      icon: "BsRobot",
     },
-  ]
+  ];
 
   const contentData = [
     {
@@ -221,7 +221,7 @@ const PAP = () => {
           </span>{" "}
           Of Today
         </h2>
-        <p className="mt-2 text-base mb-6 text-slate-600  lg:text-xl">
+        <p className="mt-2 dark:text-slate-300 text-base mb-6 text-slate-600  lg:text-xl">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
@@ -262,7 +262,9 @@ const PAP = () => {
                     />
                   </div>
                   <div className="text-left">
-                    <h2 className="text-xl font-semibold mb-1">{item.name}</h2>
+                    <h2 className="text-xl dark:text-black font-semibold mb-1">
+                      {item.name}
+                    </h2>
                     <p className="text-gray-400">{item.role}</p>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
@@ -271,7 +273,6 @@ const PAP = () => {
             ))}
           </Swiper>
         </div>
-
       </div>
 
       {/* section 3 */}
@@ -283,7 +284,7 @@ const PAP = () => {
           </span>{" "}
           Startup Leader
         </h2>
-        <p className="mt-2 mb-6 text-base text-slate-600  lg:text-xl">
+        <p className="mt-2 mb-6 dark:text-slate-300 text-base text-slate-600  lg:text-xl">
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
@@ -300,7 +301,7 @@ const PAP = () => {
           </span>{" "}
           Hunger For Success
         </h2>
-        <p className="mt-2 text-base text-slate-600  lg:text-xl">
+        <p className="mt-2 text-base text-slate-600 dark:text-slate-300 lg:text-xl">
           <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             The Placement Bootcamp Program
           </span>
@@ -309,7 +310,7 @@ const PAP = () => {
 
         <div className="flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-12">
           <div className="w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
-            <p className="mt-2 text-base text-slate-600  lg:text-xl">
+            <p className="mt-2 text-base dark:text-slate-300 text-slate-600  lg:text-xl">
               Join us on this transformative journey as we empower you to become
               the driving force behind India's startup ecosystem. Whether you
               have a groundbreaking idea or a burning passion for innovation,
@@ -317,7 +318,7 @@ const PAP = () => {
               skills, knowledge, and mindset to thrive in the ever-evolving
               entrepreneurial landscape.
             </p>
-            <p className="mb-4 text-base md:text-xl mt-4 text-indigo-800 font-bold">
+            <p className="mb-4 text-base md:text-xl mt-4 dark:text-indigo-500 text-indigo-800 font-bold">
               Unleash your potential and shape the future of business with us
             </p>
 
@@ -345,7 +346,7 @@ const PAP = () => {
             Bootcamp Program
           </span>
         </h2>
-        <p className="mt-2 text-base mb-6 text-slate-600  lg:text-xl">
+        <p className="mt-2 text-base dark:text-slate-300 mb-6 text-slate-600  lg:text-xl">
           A transformational journey designed to create budding founders of
           future unicorns
         </p>
@@ -353,10 +354,10 @@ const PAP = () => {
         <div className="flex flex-wrap gap-4 mb-10 py-10 max-w-7xl mx-auto justify-evenly lg:ml-10 lg:mr-10">
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <AcademicCapIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Foundation and Knowledge Acquisition:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Lay a strong foundation and acquire the necessary knowledge and
               skills. Study various aspects of entrepreneurship, including
               market analysis, business planning, financial management,
@@ -369,10 +370,10 @@ const PAP = () => {
 
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <WrenchScrewdriverIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Skill Development and Practical Application:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Focus on skill development and practical application. Hands-on
               learning experiences, such as workshops, simulations, and
               real-world projects. Activities that enhance their critical
@@ -385,10 +386,10 @@ const PAP = () => {
 
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <UserGroupIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Mentorship, Networking, and Launch:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Get an opportunity to connect with experienced entrepreneurs,
               industry experts, and mentors who provide guidance and support.
               Receive feedback on their business ideas, refine their strategies,
@@ -401,10 +402,10 @@ const PAP = () => {
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <LightBulbIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Nurturing a leader:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Leadership plays a very crucial and multifaceted role in
               entrepreneurial business. Therefore, it is important to nurture a
               leader who can set a clear vision for the business, develop a
@@ -419,10 +420,10 @@ const PAP = () => {
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <DeviceTabletIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Exposure to new business trends and technology:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Stay informed about new businesses and technology is essential for
               identifying the unique factors that set a business apart.
               Utilizing new and advanced technology can improve efficiency,
@@ -435,10 +436,10 @@ const PAP = () => {
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <PresentationChartBarIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Business Idea Presentation:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               The final business idea will be presented to a panel of experts
               and potential investors. The most promising ideas will have the
               opportunity to secure investment from the panel. Other business
@@ -501,13 +502,13 @@ const PAP = () => {
 
                 {/* Text Content */}
                 <div className="p-4 sm:p-6 rounded-3xl border-slate-400 h-auto shadow-md max-w-[18rem] sm:max-w-xl text-right md:h-[26rem] md:max-w-2xl lg:max-w-3xl">
-                  <span className="text-gray-500 text-xs sm:text-sm block mb-2">
+                  <span className="text-gray-500 dark:text-slate-300 text-xs sm:text-sm block mb-2">
                     {slide.date}
                   </span>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-indigo-700 mb-2 sm:mb-4">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-indigo-700 dark:text-indigo-500 mb-2 sm:mb-4">
                     {slide.title}
                   </div>
-                  <div className="w-full sm:w-1/2 ml-auto text-gray-500 text-sm sm:text-base  lg:text-lg mb-4 text-left">
+                  <div className="w-full sm:w-1/2 ml-auto dark:text-slate-300 text-gray-500 text-sm sm:text-base  lg:text-lg mb-4 text-left">
                     {slide.text}
                   </div>
                 </div>
@@ -529,7 +530,7 @@ const PAP = () => {
           />
         </Swiper>
       </div>
-      <Subcription/>
+      <Subcription />
     </div>
   );
 };

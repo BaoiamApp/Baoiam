@@ -113,7 +113,7 @@ const Navbar = ({ theme }) => {
       <div
         className={`flex z-[90] h-28 items-center justify-between px-4 py-2 w-full fixed top-0 ${
           isTransparent
-            ? "bg-white dark:bg-[#080529]"
+            ? "bg-white dark:bg-black"
             : "bg-white/70 backdrop-blur dark:bg-black/30 "
         }`}
       >

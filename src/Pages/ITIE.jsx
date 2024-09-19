@@ -1,16 +1,16 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
-import img2 from '../assets/ITIE&Entre/ITIE/img2.jpeg'
-import intern1 from '../assets/ITIE&Entre/ITIE/intern1.jpg'
-import productm from '../assets/ITIE&Entre/ITIE/productm .png'
-import hr from '../assets/ITIE&Entre/ITIE/hr.png'
-import dataanalytics from '../assets/ITIE&Entre/ITIE/dataanalytics.png'
-import seo from '../assets/ITIE&Entre/ITIE/seo.png'
-import webd from '../assets/ITIE&Entre/ITIE/webd.png'
-import uiux from '../assets/ITIE&Entre/ITIE/uiux.png'
-import gaphicsdesigning from '../assets/ITIE&Entre/ITIE/gaphicsdesigning.png'
-import businesscomm from '../assets/ITIE&Entre/ITIE/businesscomm.png'
-import marketing from '../assets/ITIE&Entre/ITIE/marketing.png'
+import { useNavigate } from "react-router-dom";
+import img2 from "../assets/ITIE&Entre/ITIE/img2.png";
+import intern1 from "../assets/ITIE&Entre/ITIE/intern1.jpg";
+import productm from "../assets/ITIE&Entre/ITIE/productm .png";
+import hr from "../assets/ITIE&Entre/ITIE/hr.png";
+import dataanalytics from "../assets/ITIE&Entre/ITIE/dataanalytics.png";
+import seo from "../assets/ITIE&Entre/ITIE/seo.png";
+import webd from "../assets/ITIE&Entre/ITIE/webd.png";
+import uiux from "../assets/ITIE&Entre/ITIE/uiux.png";
+import gaphicsdesigning from "../assets/ITIE&Entre/ITIE/gaphicsdesigning.png";
+import businesscomm from "../assets/ITIE&Entre/ITIE/businesscomm.png";
+import marketing from "../assets/ITIE&Entre/ITIE/marketing.png";
 import CourseHighlights from "../Components/CourseDetails/CourseHighlights";
 import CourseCard from "../Components/CourseDetails/CourseCard";
 import Amazingcareer from "../Components/CourseDetails/Amazingcareer";
@@ -18,82 +18,91 @@ import Amazingcareer from "../Components/CourseDetails/Amazingcareer";
 import { PiGraduationCapFill } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
-import Faq from './Faq'
+import Faq from "./Faq";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import dummy1 from '../assets/ITIE&Entre/ITIE/dummy1.png'
-import dummy2 from '../assets/ITIE&Entre/ITIE/dummy2.png'
+import dummy1 from "../assets/ITIE&Entre/ITIE/dummy1.png";
+import dummy2 from "../assets/ITIE&Entre/ITIE/dummy2.png";
 
 const highlights = [
   { title: "Live Online Classes", description: "At your own schedule" },
   { title: "Mobile Friendly", description: "No Laptop? No Problem" },
-  { title: "Paid Internship Opportunities", description: "To Build Your Career" },
+  {
+    title: "Paid Internship Opportunities",
+    description: "To Build Your Career",
+  },
   { title: "Certificate of Completion", description: "From Baoiam Trainings" },
   { title: "Live Projects", description: "For hand-on practice" },
   { title: "Doubt Clearing", description: "Through Q&A forum" },
   { title: "Beginner Friendly", description: "No prior knowledge required" },
-  { title: "12-20 Weeks Duration", description: "2 hours/week (flexible schedule)" },
+  {
+    title: "12-20 Weeks Duration",
+    description: "2 hours/week (flexible schedule)",
+  },
   { title: "Downloadable Resource", description: "With Lifetime Access" },
-  { title: "Professional trainer accreditation", description: "Study From The Best Tutors" },
+  {
+    title: "Professional trainer accreditation",
+    description: "Study From The Best Tutors",
+  },
 ];
 
 const courses = [
   {
-    title: 'Human Resource',
-    duration: '3 months',
-    description: 'Empowering People, Building Teams with Baoiam.',
+    title: "Human Resource",
+    duration: "3 months",
+    description: "Empowering People, Building Teams with Baoiam.",
     image: hr,
   },
   {
-    title: 'Data Analytics',
-    duration: '3 months',
-    description: 'Turn Data in your advantage with BAOIAM',
+    title: "Data Analytics",
+    duration: "3 months",
+    description: "Turn Data in your advantage with BAOIAM",
     image: dataanalytics,
   },
   {
-    title: 'Marketing',
-    duration: '3 months',
-    description: 'Make your products/services irresistible.',
+    title: "Marketing",
+    duration: "3 months",
+    description: "Make your products/services irresistible.",
     image: marketing,
   },
   {
-    title: 'SEO',
-    duration: '3 months',
-    description: 'Attract website traffic and rank higher.',
+    title: "SEO",
+    duration: "3 months",
+    description: "Attract website traffic and rank higher.",
     image: seo,
   },
   {
-    title: 'Web Development',
-    duration: '3 months',
-    description: 'From concept to click, web magic made real.',
+    title: "Web Development",
+    duration: "3 months",
+    description: "From concept to click, web magic made real.",
     image: webd,
   },
   {
-    title: 'UI/UX Designing',
-    duration: '3 months',
-    description: 'Design that sparks curiosity, fuels understanding.',
+    title: "UI/UX Designing",
+    duration: "3 months",
+    description: "Design that sparks curiosity, fuels understanding.",
     image: uiux,
   },
   {
-    title: 'Gaphics Designing',
-    duration: '3 months',
-    description: 'Learn the art of visual imagery.',
+    title: "Gaphics Designing",
+    duration: "3 months",
+    description: "Learn the art of visual imagery.",
     image: gaphicsdesigning,
   },
   {
-    title: 'Product Management',
-    duration: '3 months',
-    description: 'Building products that users love.',
+    title: "Product Management",
+    duration: "3 months",
+    description: "Building products that users love.",
     image: productm,
   },
   {
-    title: 'Business Communication',
-    duration: '3 months',
-    description: 'Mitigate communication barriers.',
+    title: "Business Communication",
+    duration: "3 months",
+    description: "Mitigate communication barriers.",
     image: businesscomm,
   },
 ];
@@ -103,117 +112,147 @@ const testimonials = [
     img: dummy2,
     name: "Tanisha Rajput",
     title: "Web Developer",
-    content: "I would like to thank BAOIAM and its mentors for the guidance which was given to me throughout my journey as a trainee in Web Development. They helped me in learning with ease which eventually landed me a job for a package of 12 LPA. I will always be grateful to BAOIAM for such an amazing opportunity.",
+    content:
+      "I would like to thank BAOIAM and its mentors for the guidance which was given to me throughout my journey as a trainee in Web Development. They helped me in learning with ease which eventually landed me a job for a package of 12 LPA. I will always be grateful to BAOIAM for such an amazing opportunity.",
   },
   {
     img: dummy1,
     name: "Prince Raj",
     title: "HR Generalist",
-    content: "I started my training at BAOIAM as a HR. With all the essential training and knowledge from my mentors, I landed a job for 12 LPA. Cannot thank enough for all the time and energy that BAOIAM and its mentors has invested in me. They truly helped me in getting the most suitable job opportunity.",
+    content:
+      "I started my training at BAOIAM as a HR. With all the essential training and knowledge from my mentors, I landed a job for 12 LPA. Cannot thank enough for all the time and energy that BAOIAM and its mentors has invested in me. They truly helped me in getting the most suitable job opportunity.",
   },
   {
     img: dummy1,
     name: "Vijay Poranki",
     title: "Product Manager",
-    content: "Trained with BAOIAM as a Product Management and it was due to their immense support and guidance, that I subsequently landed a job with 14 LPA. I extend my sincere gratitude to all my mentors and trainers for helping me out in shaping my life.",
+    content:
+      "Trained with BAOIAM as a Product Management and it was due to their immense support and guidance, that I subsequently landed a job with 14 LPA. I extend my sincere gratitude to all my mentors and trainers for helping me out in shaping my life.",
   },
   {
     img: dummy2,
     name: "Rituraj Datta",
     title: "Data Analyst",
-    content: "I would like to thank BAOIAM and its mentors for the guidance which was given to me throughout my journey as a trainee as a Data Analytics. They helped me in learning with ease which eventually landed me a job for a package of 11 LPA. I will always be grateful to BAOIAM for such an amazing opportunity.",
+    content:
+      "I would like to thank BAOIAM and its mentors for the guidance which was given to me throughout my journey as a trainee as a Data Analytics. They helped me in learning with ease which eventually landed me a job for a package of 11 LPA. I will always be grateful to BAOIAM for such an amazing opportunity.",
   },
   {
     img: dummy1,
     name: "Shubham Daiya",
     title: "Android Developer",
-    content: "Started training in BAOIAM and got placed as a Android Developer with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
+    content:
+      "Started training in BAOIAM and got placed as a Android Developer with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     img: dummy1,
     name: "Preetika Rawat",
     title: "Digital Marketer",
-    content: "I started my training at BAOIAM. With all the essential training and knowledge from my mentors, I landed a job for 13 LPA. Cannot thank enough for all the time and energy that BAOIAM and its mentors has invested in me. They truly helped me in getting the most suitable job opportunity.",
+    content:
+      "I started my training at BAOIAM. With all the essential training and knowledge from my mentors, I landed a job for 13 LPA. Cannot thank enough for all the time and energy that BAOIAM and its mentors has invested in me. They truly helped me in getting the most suitable job opportunity.",
   },
   {
     img: dummy1,
     name: "Shubham Daiya",
     title: "Android Developer",
-    content: "Started training in BAOIAM and got placed as a Android Developer with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
+    content:
+      "Started training in BAOIAM and got placed as a Android Developer with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     img: dummy1,
     name: "Harsha Khirwadkar",
     title: "Graphic Designer",
-    content: "I would like to thank BAOIAM and its mentors for the guidance which was given to me throughout my journey as a trainee. They helped me in learning with ease which eventually landed me a job for a package of 10 LPA. I will always be grateful to BAOIAM for such an amazing opportunity.",
+    content:
+      "I would like to thank BAOIAM and its mentors for the guidance which was given to me throughout my journey as a trainee. They helped me in learning with ease which eventually landed me a job for a package of 10 LPA. I will always be grateful to BAOIAM for such an amazing opportunity.",
   },
   {
     img: dummy1,
     name: "Pracheta Bhanjachowdhuri",
     title: "UI/UX Designer",
-    content: "I trained with BAOIAM as a UI/UX Designer and it was due to their immense support and guidance, that I subsequently landed a job with 14 LPA. I extend my sincere gratitude to all my mentors and trainers for helping me out in shaping my life.",
+    content:
+      "I trained with BAOIAM as a UI/UX Designer and it was due to their immense support and guidance, that I subsequently landed a job with 14 LPA. I extend my sincere gratitude to all my mentors and trainers for helping me out in shaping my life.",
   },
-
 ];
 
-
 const ITIE = () => {
-  document.title = 'Baoiam - ITIE'
+  document.title = "Baoiam - ITIE";
   const navigate = useNavigate();
   return (
     <div>
       {/* ITIE */}
-      <div className="flex flex-col md:flex-row items-center justify-center  bg-white p-6 mx-10">
+      <div className="flex flex-col dark:text-white md:flex-row items-center justify-center p-6 mx-10">
         {/* Text Section */}
         <div className="md:w-1/2 text-center md:text-left">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
-            Interns <span className="text-indigo-600">TEACH</span> Interns <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">EARN</span>
+          <h1 className="text-3xl md:text-5xl dark:text-white font-bold text-gray-800">
+            Interns <span className="text-indigo-600">TEACH</span> Interns{" "}
+            <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+              EARN
+            </span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mt-4">
+          <h2 className="text-2xl md:text-3xl dark:text-white font-semibold text-gray-700 mt-4">
             ITIE Revolutionizes Internships
           </h2>
-          <p className="text-gray-600 mt-6">
-            Our mission is all about learning and sharing. Our platform is designed to help you gain knowledge, share your expertise with others, and earn rewards along the way.
+          <p className="text-gray-600 dark:text-slate-300 mt-6">
+            Our mission is all about learning and sharing. Our platform is
+            designed to help you gain knowledge, share your expertise with
+            others, and earn rewards along the way.
           </p>
-          <button className="mt-8 bg-gradient-to-r from-indigo-800 to-indigo-500  text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300 py-2 px-6 rounded-full text-lg" onClick={() => navigate('/maintenance')}>
+          <button
+            className="mt-8 bg-gradient-to-r from-indigo-800 to-indigo-500  text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300 py-2 px-6 rounded-full text-lg"
+            onClick={() => navigate("/maintenance")}
+          >
             I am Interested
-
           </button>
         </div>
 
         {/* Image Section */}
         <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-          <img src={img2} alt="Person pointing" className="w-full h-auto object-cover" />
+          <img
+            src={img2}
+            alt="Person pointing"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
 
       {/* Program Overview */}
 
       <div className="md:mx-10 ">
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-800 text-center mt-10 md:my-10">
-          Program <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">Overview</span>
+        <h1 className="text-3xl md:text-5xl dark:text-white font-bold text-gray-800 text-center mt-10 md:my-10">
+          Program{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Overview
+          </span>
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-
           <div className="w-full md:w-1/2  justify-center md:justify-start md:mr-4 hidden md:block">
-            <img src={intern1} alt="Person" 
-            className="rounded-tl-2xl rounded-br-2xl w-2/3 md:w-4/5 md:ml-20 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]" />
+            <img
+              src={intern1}
+              alt="Person"
+              className="rounded-tl-2xl rounded-br-2xl w-2/3 md:w-4/5 md:ml-20 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+            />
           </div>
 
           <div className="w-full md:w-1/2 p-4">
-            <p className="text-gray-600 mb-4 text-justify mx-4 md:mr-10 md:pr-5 ">
-              ITIE is a program that has been formulated by our team and leading experts for young enthusiasts to build a strong and powerful career path. Through this program, not only do the interns get the chance to learn and hone their skills, but also to monetise their skill by cascading the knowledge they have gained so far into others. Hence, after learning a skill, they will be tested on it and if they clear the tests, they get the opportunity to teach a new intern who wishes to learn the same skill as them. The 'Teacher Interns' will then earn exciting compensation offers and incentives.
+            <p className="text-gray-600 dark:text-slate-300 mb-4 text-justify mx-4 md:mr-10 md:pr-5 ">
+              ITIE is a program that has been formulated by our team and leading
+              experts for young enthusiasts to build a strong and powerful
+              career path. Through this program, not only do the interns get the
+              chance to learn and hone their skills, but also to monetise their
+              skill by cascading the knowledge they have gained so far into
+              others. Hence, after learning a skill, they will be tested on it
+              and if they clear the tests, they get the opportunity to teach a
+              new intern who wishes to learn the same skill as them. The
+              'Teacher Interns' will then earn exciting compensation offers and
+              incentives.
             </p>
-            
           </div>
         </div>
       </div>
 
-
       {/* Course Highlight */}
 
       <div className="md:mt-16 mb-10 ">
-      <CourseHighlights/>
+        <CourseHighlights />
       </div>
 
       {/* <div className="max-w-7xl mx-4 md:mx-auto p-4 mt-16 mb-20 flex-col">
@@ -238,7 +277,6 @@ const ITIE = () => {
           ))}
         </div>
       </div> */}
-
 
       {/* Our courses */}
 
@@ -278,22 +316,23 @@ const ITIE = () => {
         </div>
       </div> */}
 
-      <CourseCard/>
-
+      <CourseCard />
 
       {/* Our Testimonials */}
 
-
       <div className="relative">
         <h1 className="text-3xl md:text-5xl text-center font-bold mt-5 md:mt-20 md:my-10 text-black">
-          Our <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">Testimonials</span>
+          Our{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Testimonials
+          </span>
         </h1>
 
-        <div className="relative w-full px-4 md:px-1 pb-10 md:pb-20 mx-auto max-w-7xl">
+        <div className="relative w-full px-4 md:px-24 pb-10 md:pb-20 mx-auto max-w-7xl">
           <Swiper
             navigation={{
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
+              prevEl: ".swiper-button-prev",
+              nextEl: ".swiper-button-next",
             }}
             modules={[Navigation, Pagination]}
             spaceBetween={25}
@@ -312,9 +351,15 @@ const ITIE = () => {
                     src={testimonial.img}
                     alt="Student img"
                   />
-                  <h3 className="text-lg md:text-xl text-gray-800 font-bold mt-4">{testimonial.name}</h3>
-                  <p className="text-gray-600 font-semibold">{testimonial.title}</p>
-                  <p className="mt-3 text-gray-600  ">{testimonial.content}</p>
+                  <h3 className="text-lg dark:text-white text-gray-800 font-bold mt-4">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-slate-300 font-semibold">
+                    {testimonial.title}
+                  </p>
+                  <p className="mt-3 text-gray-600 text-sm dark:text-slate-300">
+                    {testimonial.content}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
@@ -325,7 +370,7 @@ const ITIE = () => {
       </div>
 
       {/* Amazing Career */}
-            <Amazingcareer/>
+      <Amazingcareer />
 
       {/* <div className="py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-[#F6A611] dark:bg-gray-700 text-center">
         <h4 className="text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
@@ -357,11 +402,8 @@ const ITIE = () => {
         </div>
       </div> */}
 
-
       {/* FAQ Section */}
       <Faq />
-
-
     </div>
   );
 };

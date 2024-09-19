@@ -11,7 +11,7 @@ import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 import software_testing from "../assets/Blogs/software_testing.png";
 import { StarIcon } from "@heroicons/react/16/solid";
 import "./Blogs.css";
-import { StatupSlider } from "../Components/Blogs/StatupSlider"; 
+import { StatupSlider } from "../Components/Blogs/StatupSlider";
 import { TechBlogSlider } from "../Components/Blogs/TechBlogSlider";
 import { BusSlider } from "../Components/Blogs/BusSlider";
 import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
@@ -176,27 +176,35 @@ const Blog = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  
-    gsap.fromTo('.b1',{opacity:0,y:-60},{
-      opacity:1,
-      duration:1,
-      y:0,
-      ease:'power1.inOut',
-      stagger:0.3,
-    })
 
-    gsap.fromTo('.b2',{opacity:0,y:30},{
-      opacity:1,
-      duration:1,
-      y:0,
-      ease:'back.inOut',
-      stagger:0.3,
-      scrollTrigger:{
-        trigger:'.bdiv1',
-        start:'top 70%',
-        end:'bottom 80%'
+    gsap.fromTo(
+      ".b1",
+      { opacity: 0, y: -60 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "power1.inOut",
+        stagger: 0.3,
       }
-    })
+    );
+
+    gsap.fromTo(
+      ".b2",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".bdiv1",
+          start: "top 70%",
+          end: "bottom 80%",
+        },
+      }
+    );
     return () => {};
   }, []);
 
@@ -281,18 +289,18 @@ const Blog = () => {
   };
 
   return (
-    <div className='dark:bg-black dark:text-white'>
+    <div className="dark:bg-black dark:text-white">
       <HeaderBlog searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
-        <h1 className='text-3xl font-bold text-center'>
+      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-center">
           Our Latest Highlights
         </h1>
-        <h2 className='b2 text-l  text-center mt-2 mb-6'>
+        <h2 className="b2 text-l dark:text-slate-300 text-center mt-2 mb-6">
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 
-        <div className=' p-6'></div>
-        <div className='px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+        <div className=" p-6"></div>
+        <div className="px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {blog_list
             .filter(
               (item) =>
@@ -301,22 +309,22 @@ const Blog = () => {
             )
             .map((item, i) => (
               <Link key={i} to={`/Blog_detail/${i}`}>
-                <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
+                <div className="bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ">
                   <img
-                    className='w-full h-48 object-cover'
+                    className="w-full h-48 object-cover"
                     src={item.imgSrc}
                     alt={`${item.title}`}
                   />
-                  <div className='p-6 flex-grow'>
+                  <div className="p-6 flex-grow">
                     <span
                       className={`text-sm text-${item.titleColor} font-semibold`}
                     >
                       {item.title}
                     </span>
-                    <h2 className='text-lg font-bold my-2 truncate'>
+                    <h2 className="text-lg font-bold my-2 truncate">
                       {item.text}
                     </h2>
-                    <p className='text-sm'>{item.info}</p>
+                    <p className="text-sm">{item.info}</p>
                   </div>
                 </div>
               </Link>

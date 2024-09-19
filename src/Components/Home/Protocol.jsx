@@ -5,7 +5,7 @@ import { FaTabletScreenButton } from "react-icons/fa6";
 
 const Protocol = () => {
   return (
-    <div className="md:px-16 ">
+    <div className="md:px-16 dark:bg-black">
       <div className="md:mt-[7rem]">
         <h1 className="text-3xl sm:text-4xl my-2 text-center font-bold">
           Virtues and protocols{" "}
@@ -16,7 +16,7 @@ const Protocol = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 my-14 px-12">
+      <div className="dark:bg-black grid grid-cols-1 lg:grid-cols-3 gap-8 my-14 px-12">
         <div className="flex flex-col items-center">
           <MdOutlineSupportAgent className="text-[4rem] text-indigo-700" />
           <div className=" text-center p-2.5 lg:p-0">

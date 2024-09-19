@@ -54,11 +54,11 @@ export const CareerSection4 = () => {
   return (
     <>
       <div className="dark:bg-black min-h-screen bg-amber-50 flex flex-col items-center justify-center p-8">
-        <h1 className="text-2xl lg:text-4xl md:text-4xl sm:text-3xl font-bold mb-8 text-gray-900">
+        <h1 className="text-2xl lg:text-4xl md:text-4xl sm:text-3xl dark:text-white font-bold mb-8 text-gray-900">
           {" "}
           Current Job Openings
         </h1>
-        <p className="text-gray-600 mb-8 ">
+        <p className="text-gray-600 dark:text-slate-300 mb-8 ">
           Hand-picked jobs featured depending on popularity and benefits
         </p>
         <div className="flex flex-col items-center justify-center py-10">
@@ -69,7 +69,7 @@ export const CareerSection4 = () => {
               className="w-72 h-72 object-cover" // Adjust width and height here
             />
           </div>
-          <h2 className="text-2xl font-bold text-gray-700">
+          <h2 className="text-2xl font-bold dark:text-slate-300 text-gray-700">
             Currently No Open Positions, But Stay Tuned for Future
             Opportunities!
           </h2>

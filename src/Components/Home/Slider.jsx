@@ -7,7 +7,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { School } from "../../Data";
 // import { courseCategories } from "../../assets/swiper-imgs/categories";
-import {categories} from "../../assets/swiper-imgs/categories"; // Import JSON data
+import { categories } from "../../assets/swiper-imgs/categories"; // Import JSON data
 import { useNavigate } from "react-router-dom";
 
 export default function SliderSection() {
@@ -36,9 +36,14 @@ export default function SliderSection() {
   };
 
   return (
-    <div className="slider-section dark:bg-[#080529] w-full relative py-20 overflow-hidden ">
+    <div className="slider-section dark:bg-black w-full relative py-20 overflow-hidden ">
       <div className="text-center mb-0 lg:mb-8">
-        <h2 className="text-4xl font-bold mb-8">Featured <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent" >Courses</span></h2>
+        <h2 className="text-4xl font-bold mb-8">
+          Featured{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Courses
+          </span>
+        </h2>
         {/* <div className="flex gap-3 items-center justify-center mt-8 md:mt-0">
           {.map(
             (category) => (
@@ -93,7 +98,7 @@ export default function SliderSection() {
         >
           {categories[selectedCategory]?.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">
+              <div className="h-[22.5rem] overflow-hidden dark:bg-black dark:border shadow-md rounded-xl m-2">
                 {/* Image Container */}
                 <div className="relative h-[50%]">
                   <img
@@ -102,8 +107,7 @@ export default function SliderSection() {
                     className="w-full h-full object-cover"
                   />
                   {/* Price and Duration in the same row */}
-                <div className="absolute top-3 left-4 flex">
-                 
+                  <div className="absolute top-3 left-4 flex">
                     <span className="text-xs mr-3 bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1">
                       Premium
                     </span>
@@ -111,21 +115,24 @@ export default function SliderSection() {
                     <span className="bg-slate-200 text-gray-800 rounded-lg text-xs px-3 py-1">
                       Plus
                     </span>
-                </div>
+                  </div>
                 </div>
                 <div className="pl-4 h-[45%] flex flex-col justify-between">
                   {/* Title */}
                   <div className="">
-                    <h3 className="text-xl font-semibold my-2 text-nowrap">{slide.course || slide.courseName} </h3>
-                    <p className="text-sm pr-3 text-slate-600">{slide.desc[0].slice(0, 60) + "..."}</p>
-                    
+                    <h3 className="text-xl font-semibold my-2 text-nowrap">
+                      {slide.course || slide.courseName}{" "}
+                    </h3>
+                    <p className="text-sm pr-3 text-slate-300">
+                      {slide.desc[0].slice(0, 60) + "..."}
+                    </p>
                   </div>
                   {/* Button */}
                   <button
                     onClick={() => navigate(`/course/${slide.course}/`)}
                     className="bg-gradient-to-r w-fit mb-4 mt-1 rounded-md text-xs from-indigo-700 to-indigo-400 text-white px-4 py-1 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
                   >
-                  View More
+                    View More
                   </button>
                 </div>
               </div>

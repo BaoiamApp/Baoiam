@@ -298,12 +298,10 @@ const Enterpunership = () => {
         <div className="w-full text-center md:text-left lg:text-center md:w-[60%]">
           <h2 className="text-3xl lg:text-5xl bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent font-bold">
             ENTREPRENEURSHIP{" "}
-            <span className="text-black dark:text-white">
-              Course
-            </span>
+            <span className="text-black dark:text-white">Course</span>
           </h2>
 
-          <p className="mt-2 text-base text-slate-600 lg:text-xl">
+          <p className="mt-2 dark:text-slate-300 text-base text-slate-600 lg:text-xl">
             Welcome to <strong>BAOIAM</strong>, the premier learning platform
             exclusively for women entrepreneurs! Ignite your entrepreneurial
             spirit and embark on your journey to success. As a launchpad for
@@ -353,11 +351,11 @@ const Enterpunership = () => {
           {/* Heading Section */}
           <div className="text-center my-10">
             <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
-            Program{" "}
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-            Overview
-            </span>
-          </h2>
+              Program{" "}
+              <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Overview
+              </span>
+            </h2>
           </div>
 
           {/* Content Section */}
@@ -366,7 +364,7 @@ const Enterpunership = () => {
 
             {/* Text Section */}
             <div className="en4 w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
-              <p className="mt-2 text-base text-slate-600  lg:text-xl">
+              <p className="mt-2 dark:text-slate-300 text-base text-slate-600  lg:text-xl">
                 Our Entrepreneurship Courses are formulated in a way that can be
                 easily studied and comprehended. We offer a plethora of courses
                 that are skill-centric and are purely based on practical
@@ -399,7 +397,9 @@ const Enterpunership = () => {
           {/* Title */}
           <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
             Importance and{" "}
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Opportunities</span>
+            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+              Opportunities
+            </span>
           </h2>
 
           {/* Cards Container */}
@@ -436,7 +436,10 @@ const Enterpunership = () => {
           {/* Heading Section */}
           <div className="en8 text-center my-10">
             <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
-              <span className=" bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Women</span> Entrepreneurship
+              <span className=" bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Women
+              </span>{" "}
+              Entrepreneurship
             </h2>
           </div>
 
@@ -444,7 +447,7 @@ const Enterpunership = () => {
           <div className="flex flex-col-reverse md:flex-row items-center justify-between">
             {/* Text Section */}
             <div className="en9 w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
-              <p className="mt-2 text-base text-slate-600  lg:text-xl">
+              <p className="mt-2 text-base dark:text-slate-300 text-slate-600  lg:text-xl">
                 Our Women Entrepreneurship Program aims to support and empower
                 women in starting and growing their businesses. This program is
                 specially pieced together by our experts to guide our women
@@ -475,10 +478,13 @@ const Enterpunership = () => {
       {/*//! Testimonials */}
       <div className="endiv5">
         <h1 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
-          Our <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Testimonials</span>
+          Our{" "}
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Testimonials
+          </span>
         </h1>
 
-        <div className="en11 relative w-full px-4 md:px-10 pb-10 md:pb-20">
+        <div className="en11 relative w-full px-4 md:px-24 pb-10 md:pb-20">
           <Swiper
             navigation={{
               prevEl: ".swiper-button-prev",
@@ -501,13 +507,15 @@ const Enterpunership = () => {
                     src={testimonial.img}
                     alt="Student img"
                   />
-                  <h3 className="text-lg md:text-xl text-gray-800 font-bold mt-4">
+                  <h3 className="text-lg dark:text-white text-gray-800 font-bold mt-4">
                     {testimonial.name}
                   </h3>
-                  <p className="text-gray-600 font-semibold">
+                  <p className="text-gray-600 dark:text-slate-300 font-semibold">
                     {testimonial.title}
                   </p>
-                  <p className="mt-2 text-gray-500">{testimonial.content}</p>
+                  <p className="mt-2 text-sm dark:text-slate-300 text-gray-500">
+                    {testimonial.content}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}

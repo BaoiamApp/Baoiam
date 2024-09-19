@@ -44,7 +44,7 @@ const JoinUs = () => {
           to={"/career"}
           className="rounded-full gap-2 flex items-center px-6 py-2 justify-center font-medium text-white group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-black dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
         >
-          <button className="relative transition-all ease-in duration-75 dark:bg-gray-900 group-hover:bg-opacity-0">
+          <button className="relative transition-all ease-in duration-75 group-hover:bg-opacity-0">
             Join us
           </button>
           <FaArrowRight />

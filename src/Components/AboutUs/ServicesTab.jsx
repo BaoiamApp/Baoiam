@@ -12,7 +12,7 @@ const ServicesTab = () => {
           <div className="p-4">
             <div className="container mx-auto ">
               <div className="text-start ">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                <h1 className="text-3xl lg:text-4xl dark:bg-black dark:text-white font-bold text-gray-800 mb-4">
                   Expand your{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     knowledge
@@ -22,7 +22,7 @@ const ServicesTab = () => {
                     career
                   </span>
                 </h1>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 dark:text-slate-300 text-sm">
                   Baoiam provides various services, including personalized
                   career counseling, resume and cover letter writing, interview
                   preparation, and networking opportunities to ensure students'
@@ -44,10 +44,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Counseling
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Guiding students with personalized education advice for
                         academic success digitally.
                       </p>
@@ -57,10 +57,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Mentorship
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Guidance, support, and growth through personalized
                         learning from expert mentors.
                       </p>
@@ -70,10 +70,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Assistance
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         We have the best personalized learning, expert guidance,
                         and innovative educational solutions.
                       </p>
@@ -83,10 +83,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Networking
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Building connections for knowledge sharing and growth in
                         educational technology.
                       </p>
@@ -96,10 +96,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Investment
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         We invest in technology, innovation, and personalized
                         learning solutions.
                       </p>
@@ -109,10 +109,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Support
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Provides efficient, personalized assistance for seamless
                         learning experiences and growth.
                       </p>
@@ -129,13 +129,13 @@ const ServicesTab = () => {
           <div className="p-4 sm:p-8 md:mr-20">
             <div className="container mx-auto">
               <div className="text-start">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                <h1 className="text-3xl lg:text-4xl dark:text-white font-bold text-gray-800 mb-4">
                   Accelerate your career, unleash your{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     potential
                   </span>
                 </h1>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 dark:text-slate-300 text-sm">
                   Baoiam provides various features like live expert classes,
                   mock tests, and real-time projects to make sure students'
                   career growth is accelerated. These interactive sessions
@@ -158,10 +158,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Live Experts Classes
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Live expert classes deliver personalized, interactive
                         learning experiences for everyone.
                       </p>
@@ -171,10 +171,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Doubts & Query Sessions
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Empowering learners through interactive doubt resolution
                         and query sessions.
                       </p>
@@ -184,10 +184,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Real-Time Projects
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Empowering students through innovative real-time
                         projects and interactive learning.
                       </p>
@@ -197,10 +197,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Interview Preparations
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Empowering learners with innovative tools for growth and
                         success.
                       </p>
@@ -210,10 +210,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Internships and Trainings
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Offering cutting-edge internships and training programs
                         to boost career skills.
                       </p>
@@ -223,10 +223,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg font-bold dark:text-white text-gray-800 mb-2">
                         Mock and Assessments
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Offering innovative mock assessments to evaluate and
                         enhance learning outcomes.
                       </p>
@@ -243,14 +243,14 @@ const ServicesTab = () => {
           <div className="p-4 sm:p-8 md:mr-20">
             <div className="container mx-auto">
               <div className="text-start">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                <h1 className="text-3xl dark:text-white lg:text-4xl font-bold text-gray-800 mb-4">
                   Perks{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     strengthen & reinforce
                   </span>{" "}
                   company culture
                 </h1>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 dark:text-slate-300 text-sm">
                   Companies often provide various perks to their employees in
                   order to enhance their overall job satisfaction and wellbeing.
                   Some of the most common perks offered by companies include.
@@ -271,10 +271,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         100% Academic and Employment
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Delivering excellence and career success for every
                         learner.
                       </p>
@@ -284,10 +284,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Placement Assistance
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Placement assistance ensures students secure job
                         opportunities with top companies.
                       </p>
@@ -297,10 +297,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Real-Time Group Discussion Rounds
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         We provide revolutionizes learning with cutting-edge
                         technology and innovation.
                       </p>
@@ -310,10 +310,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Personal Interaction
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Transforming education through innovative technology,
                         empowering learners to succeed.
                       </p>
@@ -323,10 +323,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Membership Access
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Unlock exclusive learning with Membership Access:
                         growth, skills, empowerment, and success!
                       </p>
@@ -336,10 +336,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Hackathons and Contest Entries
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Hackathons and contest entries foster innovation,
                         creativity, learning, and growth.
                       </p>
@@ -356,14 +356,14 @@ const ServicesTab = () => {
           <div className="p-4 sm:p-8 md:mr-20">
             <div className="container mx-auto">
               <div className="text-start">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl dark:text-white lg:text-4xl font-bold text-gray-800 mb-4">
                   We don't deliver promises, we{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     believe
                   </span>{" "}
                   in achievements
                 </h2>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 dark:text-slate-300 text-sm">
                   Check out the top reviews from our top performers.
                 </p>
               </div>
@@ -382,10 +382,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Be employed in international firms
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Empowering learners through innovative technology,
                         fostering growth, success, and transformation.
                       </p>
@@ -395,10 +395,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Top tier earning packages
                       </div>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-slate-300 text-sm">
                         Empowering students with cutting-edge skills for success
                         in high-paying careers.
                       </p>
@@ -408,10 +408,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Contest champions
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Contest winners showcase skills, innovation, growth,
                         learning, talent, and transformation.
                       </p>
@@ -421,10 +421,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Proficient expert
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Empowering skilled professionals through innovative
                         technology and accessible learning for growth.
                       </p>
@@ -434,10 +434,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Get funding
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Empower learners globally through innovative technology,
                         fostering growth and success.
                       </p>
@@ -447,10 +447,10 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
+                      <div className="text-lg dark:text-white font-bold text-gray-800 mb-2">
                         Exclusive subscribers
                       </div>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-slate-300 text-sm">
                         Premium members enjoy exclusive access to advanced
                         courses, resources, and support.
                       </p>
@@ -474,7 +474,7 @@ const ServicesTab = () => {
             className={`text-sm md:text-base font-semibold ${
               activeTab === "services"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
+                : "dark:text-white"
             }`}
             onClick={() => setActiveTab("services")}
           >
@@ -484,7 +484,7 @@ const ServicesTab = () => {
             className={`text-sm md:text-base font-semibold ${
               activeTab === "features"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
+                : "dark:text-white"
             }`}
             onClick={() => setActiveTab("features")}
           >
@@ -494,7 +494,7 @@ const ServicesTab = () => {
             className={`text-sm md:text-base font-semibold ${
               activeTab === "perks"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
+                : "dark:text-white"
             }`}
             onClick={() => setActiveTab("perks")}
           >
@@ -504,7 +504,7 @@ const ServicesTab = () => {
             className={`text-sm md:text-base font-semibold ${
               activeTab === "reviews"
                 ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
+                : "dark:text-white"
             }`}
             onClick={() => setActiveTab("reviews")}
           >
