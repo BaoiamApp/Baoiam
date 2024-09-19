@@ -65,7 +65,7 @@ const App = () => {
     <div className="dark:bg-[#080529] w-full max-w-[1440px] mx-auto overflow-hidden h-full dark:text-white ">
       <Navbar theme={theme} />
 
-      <div className="mt-28">
+      <div className="mt-24">
       <Routes>
         {/* NavLinks */}
         <Route path="/" element={<Home dark={dark} />} />

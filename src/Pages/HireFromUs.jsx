@@ -13,12 +13,12 @@ const HireFromUs = () => {
   return (
     <div className="space-y-16 max-w-11/12 mx-auto">
 
-        <section className="relative min-h-[400px]  bg-cover bg-center" style={{ backgroundImage: `url(${hireImage})` }}>
-            <div className="absolute inset-0 gap-4 bg-gradient-to-r from-black via-transparent to-black opacity-90 flex flex-col justify-center items-center">
-            <h1 className="text-2xl md:text-4xl md:pt-36 pt-16 font-extrabold text-white text-center md:mb-6">
+        <section className="relative min-h-[400px] xl:h-[500px] bg-cover bg-center" style={{ backgroundImage: `url(${hireImage})` }}>
+            <div className="absolute inset-0 gap-4 to-black bg-black/50 flex flex-col justify-center items-center">
+            <h1 className="text-2xl md:text-4xl xl:text-5xl md:pt-36 pt-16 font-extrabold text-white text-center md:mb-6">
                 Discover Top Talent with <span className="bg-gradient-to-r from-teal-300 font-bold tracking-wider to-amber-300 bg-clip-text text-transparent">Baoiam</span>
             </h1>
-            <p className="text-base w-10/12 mx-auto md:text-xl text-white text-center">
+            <p className="text-base w-10/12 mx-auto md:text-xl xl:text-2xl text-white text-center">
                 Your trusted partner for finding the right candidates
             </p>
             
