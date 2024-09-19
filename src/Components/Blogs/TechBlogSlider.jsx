@@ -7,6 +7,9 @@ import carrer1 from "../../assets/carrer1.jpg";
 import datasc from "../../assets/datasc.jpg";
 import ed_tech from "../../assets/Blogs/ed_tech.png";
 import software_testing from "../../assets/Blogs/software_testing.png";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { useNavigate } from "react-router-dom";
 
 const blog_slider = [
   {
@@ -39,6 +42,25 @@ const blog_slider = [
   },
 ];
 export const TechBlogSlider = () => {
+const navigate=useNavigate();
+
+useEffect(() => {
+  
+  gsap.fromTo('.b4',{opacity:0,y:30},{
+    opacity:1,
+    duration:1,
+    y:0,
+    ease:'back.inOut',
+    stagger:0.3,
+    scrollTrigger:{
+      trigger:'.bdiv3',
+      start:'top 90%',
+      end:'bottom 80%'
+    }
+  })
+
+},[])
+
   return (
     <div className='my-14'>
       <div>
@@ -64,13 +86,14 @@ export const TechBlogSlider = () => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className=' w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className='b4 w-full  p-6  m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
         >
           {blog_slider?.map((el) => {
             return (
               <SwiperSlide
-                className='p-4 bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300'
+                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
                 key={el.id}
+                onClick={()=>navigate(`/Blog_detail/${el.id}`)}
               >
                 <img
                   className='h-full rounded-md  w-full'

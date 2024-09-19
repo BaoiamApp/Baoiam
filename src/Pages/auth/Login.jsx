@@ -278,24 +278,24 @@ const Login = () => {
           <div className="bg-2 absolute inset-0 opacity-0 bg-gradient-to-tr from-[#F6A411] to-[#3A80F6]"></div>
           <div className="bg-3 absolute inset-0 opacity-0 bg-gradient-to-tl from-[#F6A411] to-[#3A80F6]"></div>
         </div> */}
-
+ 
         <div
           ref={Anime1}
-          className=" w-[600px] h-[600px] top-[-10%] left-[-5%]  rounded-full bg-indigo-600  absolute "
+          className=" w-[600px] h-[600px] top-[-10%] left-[-5%]  rounded-full bg-gradient-to-r from-pink-400 to-violet-600  absolute "
         ></div>
         <div
           ref={Anime2}
-          className=" w-[400px] h-[400px] bottom-[-15%] right-[-5%]  rounded-full bg-indigo-600  absolute "
+          className=" w-[400px] h-[400px] bottom-[-15%] right-[-5%]  rounded-full bg-gradient-to-r from-pink-400 to-violet-600  absolute "
         ></div>
 
         <div className="relative flex flex-col m-6 space-y-8 bg-white md:mx-20 shadow-lg lg:shadow-xl rounded-2xl md:flex-row md:space-y-0 ">
           {/* Left Side */}
           <div className="flex flex-col justify-center px-6 py-6 md:p-14 animate-slideInLeft">
-            <span className="mb-2  text-[2xl] md:text-2xl font-bold text-indigo-500">
-              Welcome back
+            <span className="mb-2  text-2xl md:text-2xl font-bold bg-gradient-to-r from-pink-400 to-violet-600 bg-clip-text text-transparent">
+              Welcome back!
             </span>
             <span className="font-light text-gray-400 text-[2.3vw] md:text-[1.3vw] mb-0 md:mb-6 animate-fadeIn">
-              Welcome back! Please enter your details
+              Please enter your details
             </span>
             <form onSubmit={handleLogin}>
               <div className="py-4 md:py-0 animate-slideInUp">
@@ -372,7 +372,7 @@ const Login = () => {
 
           <div className="relative flex items-center hidden md:block  max-w-[32vw]">
             {/* Background Animation */}
-            <div className="absolute  z-0 bg-indigo-400 overflow-hidden  w-full h-full rounded-r-2xl">
+            <div className="absolute  z-0 bg-gradient-to-br from-pink-400 to-indigo-600 overflow-hidden  w-full h-full rounded-r-2xl">
               {[...Array(10)].map((_, i) => (
                 <div
                   key={i}
