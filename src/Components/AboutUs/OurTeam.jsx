@@ -23,7 +23,7 @@ const TeamComponent = () => {
   return (
     <div className="team-component">
       <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
-        Our Team
+        Our <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Team</span>
       </div>
 
       <div className="p-6">
@@ -41,10 +41,10 @@ const TeamComponent = () => {
           }}
           onSlideChange={() => console.log("Slide changed")}
           onSwiper={(swiper) => console.log("Swiper initialized")}
-          className="md:h-[350px] w-full md:w-[90%] m-auto rounded-lg flex flex-col justify-center items-center gap-4"
+          className="md:h-[350px] w-full md:w-[90%] m-auto flex flex-col justify-center items-center gap-4"
         >
           {data?.map((el) => (
-            <SwiperSlide key={el.id} className="group flip-card w-96 h-96">
+            <SwiperSlide key={el.id} className="group rounded-xl flip-card w-96 h-72 overflow-hidden">
               <div className="flip-card-inner">
                 {/* Front Side (Image) */}
                 <div className="flip-card-front">
@@ -56,16 +56,16 @@ const TeamComponent = () => {
                 </div>
 
                 {/* Back Side (Details) */}
-                <div className="flip-card-back bg-black/80 text-white rounded-md flex flex-col justify-center items-center">
-                  <h3 className="text-center font-sans font-medium text-lg">
+                <div className="flip-card-back bg-black/90 text-white rounded-md flex flex-col justify-center items-center">
+                  <h3 className="text-center font-sans font-bold text-xl text-indigo-500">
                     {el.name}
                   </h3>
-                  <p className="text-center font-bold text-xs">{el.role}</p>
-                  <div className="py-2 flex items-center justify-center gap-2">
-                    <FaLinkedin className="text-xl" />
-                    <FaXTwitter className="text-xl" />
+                  <p className="text-center italic text-sm">({el.role})</p>
+                  <div className="py-2 mb-4 flex items-center justify-center gap-2">
+                    <FaLinkedin className="" />
+                    <FaXTwitter className="" />
                   </div>
-                  <p className="text-xs md:text-sm text-center px-4">
+                  <p className="text-xs text-center px-4">
                     {el.desc}
                   </p>
                 </div>

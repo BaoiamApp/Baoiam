@@ -24,14 +24,8 @@ const Home = ({ dark }) => {
         <>
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
-                <OurReach title={"College"} array={universities} />
-                <OurReach title={"Company"} array={brands} />
-
                 <Courses />
                 <Slider />
-                <div className="mx-auto w-full md:w-[85%] mb-8">
-                    {dark ? <img className="w-full h-full" src={SuccessDark} alt="" /> : <img className="w-full h-full" src={SuccessLight} alt="" />}
-                </div>
                 {/* <Categories /> */}
                 <ServicesTab />
                 <div className="mx-auto w-full md:w-[85%] my-20">

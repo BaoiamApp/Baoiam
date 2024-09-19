@@ -63,3 +63,7 @@ export {default as TechnologyDevelopment} from './SchoolCourseImages/Technology-
 // export {default as Col_SoftwareTesting} from './CollegeCourseImages/Col-SoftwareTesting.png'
 // export {default as Col_UIUX} from './CollegeCourseImages/UI-UX.png'
 // export {default as Col_WebDevelopment} from './CollegeCourseImages/Col-WebDevelopment.png'
+
+
+export {default as Mission} from './mission.png'
+export {default as Vision} from './vision.png'
