@@ -27,34 +27,35 @@ const CourseHighlights = () => {
     }
   };
 
-  return (
-    <div className="py-8 px-8 lg:px-24 w-full h-full">
-      <h4 className="text-4xl font-semibold mb-8">
-        Course{" "}
-        <span className="border-b text-orange-500 border-orange-500">
-          Highlights
-        </span>
-      </h4>
+    return (
+        <div className="py-8 px-8 lg:px-24 w-full h-full">
+            <h4 className="text-4xl mb-8text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
+                Course{" "}
+                <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                    Highlights
+                </span>
+            </h4>
 
       <div className="en6 flex items-center justify-center flex-wrap gap-x-6 gap-y-4 text-black">
         {Highlights?.map((h, i) => {
           return (
             <div
-              key={i}
-              className="bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 xl:py-0 md:h-[210px] rounded-xl flex flex-col gap-4 w-full sm:w-[21rem] lg:w-[30%]"
-            >
-              <p className="tracking-tighter flex items-center gap-2">
-                <span className="text-4xl drop-shadow-2xl group-hover:text-orange-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out">
-                  {React.createElement(highlightIcons(h.icon))}
-                </span>
-                <span className="text-2xl font-semibold leading-tight tracking-tighter">
-                  {h.head}
-                </span>
-              </p>
-              <p>
-                <span>{h.desc}</span>
-              </p>
-            </div>
+            key={i}
+            className="bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 xl:py-0 md:h-[210px] rounded-xl flex flex-col gap-4 w-full sm:w-[21rem] lg:w-[30%]"
+          >
+            <p className="tracking-tighter flex items-center gap-2">
+              <span className="text-4xl drop-shadow-2xl group-hover:text-gradient-to-r from-pink-500  to-violet-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out">
+                {React.createElement(highlightIcons(h.icon))}
+              </span>
+              <span className="text-2xl font-semibold leading-tight tracking-tighter">
+                {h.head}
+              </span>
+            </p>
+            <p>
+              <span>{h.desc}</span>
+            </p>
+          </div>
+          
           );
         })}
       </div>

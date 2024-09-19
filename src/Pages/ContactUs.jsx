@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
   return (
-    <div className="ContactUs my-8">
+    <div className="ContactUs">
       <section className="relative bg-white px-4 py-8 md:py-10 z-10 mt-4 md:mt-14 mb-6 md:mb-6 overflow-hidden">
         <div className="relative max-w-5xl mx-auto text-center z-10">
           <h1 className="text-3xl md:text-5xl font-semibold text-gray-900">
             Get in Touch with Us
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mt-4 md:mt-6">
-            Have any questions, feedback, or need assistance? We're just a message away.<br/> Fill out the form below, and our team will get back to you shortly.
+            Have any questions, feedback, or need assistance? We're just a message away. Fill out the form below, and our team will get back to you shortly.
           </p>
         </div>
       </section>
@@ -116,6 +116,19 @@ const ContactUs = () => {
                   <a href="#" className="underline">B Block Noida Sector 15 Uttar Pradesh</a>
                 </div>
               </div>
+
+              <div className="h-56 w-full mt-6 md:mt-8">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56778.23569201361!2d77.29743635795448!3d28.56460407812812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3036ecb3b95%3A0x927e51f17b1aeb5b!2sB%20Block%2C%20Sector%2015%2C%20Noida%2C%20Uttar%20Pradesh%20201021!5e0!3m2!1sen!2sin!4v1694209323043"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allowFullScreen=""
+                  aria-hidden="false"
+                  tabIndex="0"
+                ></iframe>
+              </div>
+
               <div className="flex justify-start gap-4 mt-6">
                 <Link
                   to={"https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/"}
@@ -149,18 +162,6 @@ const ContactUs = () => {
                   <FaSquareXTwitter size={22} />
                 </Link>
               </div>
-
-              <div className="h-56 w-full mt-6 md:mt-8">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56778.23569201361!2d77.29743635795448!3d28.56460407812812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3036ecb3b95%3A0x927e51f17b1aeb5b!2sB%20Block%2C%20Sector%2015%2C%20Noida%2C%20Uttar%20Pradesh%20201021!5e0!3m2!1sen!2sin!4v1694209323043"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allowFullScreen=""
-                  aria-hidden="false"
-                  tabIndex="0"
-                ></iframe>
-              </div>              
             </div>
           </div>
         </div>
@@ -174,3 +175,53 @@ export default ContactUs;
 
 
 
+
+// const cards = [
+//   {
+//     icon: <FaCommentDots className="text-2xl md:text-4xl" />,
+//     title: 'Chat to sales',
+//     description: 'Speak to our friendly team.',
+//     contact: 'tutors@baoiam.com',
+//   },
+//   {
+//     icon: <FaEnvelope className="text-2xl md:text-4xl" />,
+//     title: 'Chat to support',
+//     description: "We're here to help.",
+//     contact: 'tutors@baoiam.com',
+//   },
+//   {
+//     icon: <FaMapMarkerAlt className="text-2xl md:text-4xl" />,
+//     title: 'Visit us',
+//     description: 'Visit our office HQ.',
+//     contact: 'View on Google Maps',
+//   },
+//   {
+//     icon: <FaPhoneAlt className="text-2xl md:text-4xl" />,
+//     title: 'Call us',
+//     description: 'Mon-Fri from 8am to 5pm.',
+//     contact: '08069640635',
+//   },
+// ];
+
+
+{/* <div className="flex flex-wrap justify-center gap-5 md:gap-10 mt-16">
+{cards.map((card, index) => (
+  <div
+    key={index}
+    className="relative group p-6 w-full md:w-72 rounded-lg bg-white border border-gray-200 shadow cursor-pointer mb-0"
+  >
+    <div className="flex flex-col items-start space-y-4">
+
+      <div className="flex flex-row justify-start mb-4 gap-4">
+        {card.icon}
+        <h3 className="md:text-2xl text-xl font-semibold text-gray-900">{card.title}</h3>
+      </div>
+      <p className="text-gray-600 mb-4">{card.description}</p>
+
+      <p className="underline text-indigo-500 cursor-pointer hover:text-indigo-700">
+        {card.contact}
+      </p>
+    </div>
+  </div>
+))}
+</div> */}
