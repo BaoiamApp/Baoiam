@@ -18,9 +18,10 @@ import { deleteUserData1 } from "../../Redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
 import Logo from "./Logo";
 import CourseNav from "./CourseNav";
+import { CollegeCourseData, OtherCourseData, School } from "../../Data";
+import College from "../../Pages/College";
 
 const Navbar = ({ theme }) => {
-
   const [show, setShow] = useState(false);
   const [showmenu, setShowmenu] = useState(false);
   const [delayHide, setDelayHide] = useState(null);
@@ -44,18 +45,18 @@ const Navbar = ({ theme }) => {
     setLinkActive(link);
   };
 
-  const getCourseData = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://api.baoiam.com/api/categories/"
-      );
-      setSchoolCourses(data[0].subcategories);
-      setCourses(data);
-      console.log(data);
-    } catch (err) {
-      // console.log(err.message);
-    }
-  };
+  // const getCourseData = async () => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       "https://api.baoiam.com/api/categories/"
+  //     );
+  //     setSchoolCourses(data[0].subcategories);
+  //     setCourses(data);
+  //     console.log(data);
+  //   } catch (err) {
+  //     // console.log(err.message);
+  //   }
+  // };
 
   const HideUserDrop = (event) => {
     if (
@@ -76,7 +77,8 @@ const Navbar = ({ theme }) => {
         setIsTransparent(true);
       }
     };
-    getCourseData();
+    // getCourseData();
+    setCourses([School, College, OtherCourseData]);
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("click", HideUserDrop);
@@ -97,38 +99,41 @@ const Navbar = ({ theme }) => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
-    setDropCourse('')
+    setDropCourse("");
   };
-
-
-
 
   return (
     <>
-      {showmenu && <div className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 xl:hidden" onClick={() => setShowmenu(false)}></div>}
+      {showmenu && (
+        <div
+          className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 xl:hidden"
+          onClick={() => setShowmenu(false)}
+        ></div>
+      )}
       <div
         className={`flex z-[90] h-24 items-center justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
           ? "bg-white dark:bg-[#080529]"
           : "bg-white/70 backdrop-blur dark:bg-black/30 "
           }`}
       >
-
         {/* Logo */}
 
         <Logo isDark={isDark} />
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
-            } justify-between `}
+          className={`hidden lg:flex items-center ${
+            isDark ? "font-semibold" : "font-medium"
+          } justify-between `}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
-              ? "text-orange-500"
-              : ""
-              }`}
+            className={`mx-2 xl:mx-4 ${
+              location.pathname === "/" && linkActive === "Home"
+                ? "text-orange-500"
+                : ""
+            }`}
           >
             Home
           </Link>
@@ -136,10 +141,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${
+              location.pathname === "/about-us" && linkActive === "About"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             About Us
           </Link>
@@ -158,18 +164,21 @@ const Navbar = ({ theme }) => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <CourseNav courses={courses} setShow={setShow} />
-
+              <CourseNav
+                courses={[School, CollegeCourseData, OtherCourseData]}
+                setShow={setShow}
+              />
             </div>
           )}
 
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
+              location.pathname === "/blogs" && linkActive === "Blog"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Blog
           </Link>
@@ -177,21 +186,20 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
+              location.pathname === "/contact" && linkActive === "Contact Us"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Contact Us
           </Link>
-
         </div>
 
         {/* Last */}
         <div>
           <div className="flex items-center gap-2 md:gap-4 text-black dark:text-white">
             <div className="flex items-center gap-4 xl:gap-6">
-
               <SearchBox courses={courses} />
 
               <div ref={userhandleDropDownRef}>
@@ -263,13 +271,19 @@ const Navbar = ({ theme }) => {
               </button>
             </Link>
             <span
-              onClick={() => setShowmenu(old => !old)}
+              onClick={() => setShowmenu((old) => !old)}
               className="block lg:hidden"
             >
               <RiMenu3Line size={22} />
             </span>
           </div>
-          <MobNavbar setShowmenu={setShowmenu} showmenu={showmenu} courses={courses} isDark={isDark} setIsDark={darkTheme} />
+          <MobNavbar
+            setShowmenu={setShowmenu}
+            showmenu={showmenu}
+            courses={[School, CollegeCourseData, OtherCourseData]}
+            isDark={isDark}
+            setIsDark={darkTheme}
+          />
         </div>
       </div>
     </>
