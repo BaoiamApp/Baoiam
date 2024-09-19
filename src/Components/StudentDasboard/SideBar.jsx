@@ -7,21 +7,19 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import ProfilePage from "./ProfilePage";
-import Certificate from "./Certificate"; // Import the Certificate component
-import Courses from "./Courses"; // Import the Courses component
+import Certificate from "./Certificate"; 
+import Courses from "./Courses"; 
 import ProfileManage from "./ProfileManage";
 import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import Payment from "./Payment";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setProfile1 } from "../../Redux/user/userSlice.js";
 import Achievements from "./Achievements.jsx";
-
-
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
@@ -30,8 +28,6 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Initialize navigate
-
   const fetchUserDetails = async () => {
     try {
       const { data } = await axios.get(`${apiUrl}/api/profile/`, {
@@ -40,18 +36,33 @@ const Sidebar = () => {
           Authorization: `JWT ${localStorage.getItem("access_token")}`,
         },
       });
-      setUserInfo(data); // Update state with fetched data
+      console.log(data);
       dispatch(setProfile1(data));
       localStorage.setItem("userInfo", JSON.stringify(data));
+      console.log(
+        "from local storage:",
+        JSON.parse(localStorage.getItem("userInfo"))
+      );
+      // setUserInfo(data);
+      // setUserInfo(localStorage.getItem("userInfo"));
     } catch (err) {
-      console.error(err);
+      console.log(err.stack);
     }
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  const openSidebar = () => {
+    setIsSidebarOpen(true);
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchUserDetails();
-  }, []);
+    console.log(userInfo);
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  }, [userInfo]);
 
   // Function to determine class names for the tabs based on active state
   const tabClassNames = (tab) =>
@@ -71,13 +82,18 @@ const Sidebar = () => {
       case "payments":
         return <Payment />;
       case "management":
-        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo} />;
+        return <ProfileManage/>; // Replace with the actual Profile Management component
       default:
         return <ProfilePage userInfo={userInfo} />;
     }
   };
+  const ActiveTabColor = (tab) => {
+    return activeTab === tab ? " text-lg" : " text-lg";
+  };
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleLogoutClick = () => {
+    // Perform any logout logic here (e.g., clearing authentication tokens)
     localStorage.removeItem("access_token");
     localStorage.removeItem("userInfo");
     navigate("/login"); // Redirect to the home page
@@ -87,72 +103,88 @@ const Sidebar = () => {
     <div className="flex relative bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 h-full pt-8 transition duration-500">
       {/* Sidebar */}
       <div className="absolute py-2 top-0 w-full md:hidden">
-        <button className="px-4" onClick={() => setIsSidebarOpen(true)}>
+        <button className="px-4" onClick={openSidebar}>
           <GiHamburgerMenu />
         </button>
       </div>
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
-          onClick={() => setIsSidebarOpen(false)}
+          className="fixed inset-0 bg-black opacity-50 z-40  md:hidden"
+          onClick={closeSidebar}
         ></div>
       )}
       <div
         className={`fixed md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64 bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full "
         }`}
       >
-        <button className="absolute top-4 right-4 md:hidden" onClick={() => setIsSidebarOpen(false)}>
-          <IoCloseSharp size={24} />
+        <button className="absolute top-4 right-4 md:hidden">
+          <IoCloseSharp onClick={closeSidebar} size={24} />
         </button>
+        {/* Dashboard Heading */}
         <h2 className="xl:text-3xl md:text-lg w-fit mx-auto text-base text-white font-bold">
           My Account
         </h2>
+
+        {/* Sidebar Tabs */}
         <ul className="my-6">
+          {/* My Profile Tab */}
           <li
             onClick={() => setActiveTab("profile")}
-            className={tabClassNames("profile")}
+            className={`${tabClassNames("profile")}`}
           >
-            <FaUser className={activeTab === "profile" ? "text-lg" : "text-lg"} />
-            <span>My Profile</span>
+            <FaUser className={ActiveTabColor("profile")} />
+            <span className=" ">My Profile</span>
           </li>
+
+          {/* All Courses Tab */}
           <li
             onClick={() => setActiveTab("courses")}
             className={tabClassNames("courses")}
           >
-            <FaGraduationCap className={activeTab === "courses" ? "text-lg" : "text-lg"} />
-            <span>My Courses</span>
+            <FaGraduationCap className={ActiveTabColor("courses")} />
+            <span className=" ">My Courses</span>
           </li>
+
+          {/* Achievements Tab */}
+
           <li
             onClick={() => setActiveTab("achievements")}
             className={tabClassNames("achievements")}
           >
-            <FaTrophy className={activeTab === "achievements" ? "text-lg" : "text-lg"} />
-            <span>Achievements</span>
+            <FaTrophy className={ActiveTabColor("achievements")} />
+            <span className=" ">Achievements</span>
           </li>
+
+          {/* Payment */}
           <li
             onClick={() => setActiveTab("payments")}
             className={tabClassNames("payments")}
           >
-            <RiSecurePaymentFill className={activeTab === "payments" ? "text-lg" : "text-lg"} />
-            <span>Payment</span>
+            <RiSecurePaymentFill className={ActiveTabColor("payments")} />
+            <span className=" ">Payment</span>
           </li>
+
+          {/* Profile Management Tab */}
           <li
             onClick={() => setActiveTab("management")}
-            className={tabClassNames("management")}
+            className={`${tabClassNames("management")} `}
           >
-            <FaCog className={activeTab === "management" ? "text-lg" : "text-lg"} />
-            <span>Manage</span>
+            <FaCog className={ActiveTabColor("management")} />
+            <span className=" ">Manage</span>
           </li>
+
+          {/* Logout Tab */}
+
           <li onClick={handleLogoutClick} className={tabClassNames("logout")}>
-            <FaSignOutAlt className={activeTab === "logout" ? "text-lg" : "text-lg"} />
-            <span>Logout</span>
+            <FaSignOutAlt className={ActiveTabColor("logout")} />
+            <span className="">Logout</span>
           </li>
         </ul>
       </div>
-      <div className="w-full bg-white dark:bg-black md:p-6 p-4">
-        {renderContent()}
-      </div>
+
+      {/* Main Content Area */}
+      <div className="w-full bg-white dark:bg-black md:p-6 p-4">{renderContent()}</div>
     </div>
   );
 };
