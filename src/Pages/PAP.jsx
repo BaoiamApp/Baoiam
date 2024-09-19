@@ -214,14 +214,14 @@ const PAP = () => {
 
       {/* section 2 */}
       <div className="my-6 py-6 text-center">
-        <h2 className="lg:leading-[3rem] text-2xl font-bold text-black mb-3 sm:text-3xl  md:text-4xl">
+        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
           Mentored By The{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Visionary Entrepreneurs
           </span>{" "}
           Of Today
         </h2>
-        <p className="text-gray-500 font-semibold text-base mb-12">
+        <p className="mt-2 text-base mb-6 text-slate-600  lg:text-xl">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
@@ -254,7 +254,7 @@ const PAP = () => {
             {contentData.map((item, index) => (
               <SwiperSlide key={index} className="flex justify-center pt-12">
                 <div className="flex flex-col bg-white shadow-xl px-8 pb-0 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
-                  <div className="size-16  relative bottom-8 ">
+                  <div className="size-16  relative bottom-11 ">
                     <img
                       className="w-full h-full rounded-full object-cover "
                       src={item.image}
@@ -276,14 +276,14 @@ const PAP = () => {
 
       {/* section 3 */}
       <div className="flex flex-col items-center text-center pb-5 ">
-        <h2 className="text-2xl font-bold text-black sm:text-3xl sm:mb-4 md:text-4xl lg:text-4xl mb-0 mt-5 lg:leading-[1rem] lg:pt-10 md:pt-5">
+        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
           Become A{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Budding
           </span>{" "}
           Startup Leader
         </h2>
-        <p className="text-gray-500 font-semibold my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg mt-0">
+        <p className="mt-2 mb-6 text-base text-slate-600  lg:text-xl">
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
@@ -294,14 +294,14 @@ const PAP = () => {
 
       {/* section 4 */}
       <div className="flex flex-col items-center lg:pb-14 pb-10 px-8 text-center">
-        <h2 className="text-2xl font-bold text-black mb-2 sm:text-3xl md:text-4xl lg:text-4xl lg:leading-[1rem] lg:pt-20 md:pt-5">
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-2 font-bold">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Placement
           </span>{" "}
           Hunger For Success
         </h2>
-        <p className="text-gray-500 text-base mx-4 mt-2 mb-6 p-4 lg:text-lg font-semibold">
-          <span className="text-indigo-800">
+        <p className="mt-2 text-base text-slate-600  lg:text-xl">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             The Placement Bootcamp Program
           </span>
           : A 6 month program for startup founders of tomorrow
@@ -309,7 +309,7 @@ const PAP = () => {
 
         <div className="flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-12">
           <div className="w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
-            <p className="ml-10 mb-4 pr-8 text-base text-gray-500 md:text-xl">
+            <p className="mt-2 text-base text-slate-600  lg:text-xl">
               Join us on this transformative journey as we empower you to become
               the driving force behind India's startup ecosystem. Whether you
               have a groundbreaking idea or a burning passion for innovation,
@@ -317,17 +317,17 @@ const PAP = () => {
               skills, knowledge, and mindset to thrive in the ever-evolving
               entrepreneurial landscape.
             </p>
-            <p className="ml-10 mb-4 pr-8 text-base md:text-xl text-indigo-800 font-bold">
+            <p className="mb-4 text-base md:text-xl mt-4 text-indigo-800 font-bold">
               Unleash your potential and shape the future of business with us
             </p>
 
-            <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
+            <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span class="relative">Click here</span>
             </button>
           </div>
 
-          <div className="max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6">
+          <div className="max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6 mt-10">
             <img
               className="max-w-full max-h-full rounded-2xl object-contain lg:pr-4"
               src={placement}
@@ -339,13 +339,13 @@ const PAP = () => {
 
       {/* section 5 */}
       <div className="flex flex-col items-center text-center px-12 pt-10">
-        <h2 className="text-2xl font-bold text-black mb-2 sm:text-3xl md:text-4xl lg:text-4xl lg:leading-[1rem]">
+        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
           Sneak Peek Of{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Bootcamp Program
           </span>
         </h2>
-        <p className="mt-4 mx-12 mb-2 px-6 pr-8 text-base font-semibold text-gray-500 pb-4 lg:text-lg">
+        <p className="mt-2 text-base mb-6 text-slate-600  lg:text-xl">
           A transformational journey designed to create budding founders of
           future unicorns
         </p>
@@ -451,9 +451,9 @@ const PAP = () => {
 
       {/* Section 6 */}
       <div className="flex flex-col justify-center items-center mb-0 ">
-        <h2 className="text-2xl font-bold text-black text-center m-3 mb-5 sm:mb-5 sm:text-3xl md:text-4xl lg:text-4xl lg:pt-10 md:pt-5">
+        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
           Baoiam’ions{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Experience
           </span>
         </h2>
