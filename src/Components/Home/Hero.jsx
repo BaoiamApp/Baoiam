@@ -14,7 +14,9 @@ const Hero = () => {
       {/* Left Side: Heading and Content */}
       <div className="w-full flex md:pl-5 gap-y-1 pb-10 md:pb-0 flex-col lg:w-1/2 text-center md:text-left">
         <h1 className="text-3xl lg:text-5xl font-bold">
-        Create Your <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">One in a Million </span>Journey 
+        Create Your 
+        <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+          One in a Million </span>Journey 
         </h1>
         <p className="mt-5 dark:text-white text-black">
         Experience personalized learning designed to equip you with the skills to excel. Unlock new opportunities, grow your expertise, and take your next big step with confidence.
