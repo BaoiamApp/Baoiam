@@ -8,7 +8,12 @@ import Loader from "../Components/Loader";
 import Brochure from "../Brochure.txt";
 import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import Testimonials from "../Components/Testmonials/Testimonials";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
+
+
 const CourseDetailsPage = () => {
+
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
   const [showTab, setShowTab] = useState(1);
@@ -22,6 +27,7 @@ const CourseDetailsPage = () => {
     "Regular Quizzes & Assessment",
   ]);
   const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
   // const getCourseDetails = async () => {
   //   // setCourseDetails(data[0]);
@@ -83,9 +89,37 @@ const CourseDetailsPage = () => {
 
   console.log("id is:", id);
 
-  // if (loading) {
-  //   return <Loader />;
-  // }
+ 
+  // redux start
+
+  const { course, status, error } = useSelector((state) => state.courseDetails);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    ;
+    if (status == 'idle') {
+      dispatch(fetchCourseDetails(id));
+    }
+  }, [dispatch, status]);
+
+  if (status === 'loading') {
+    return (
+      <div className="flex justify-center items-center h-[200px]">
+        loading...
+      </div>
+    );
+  }
+  if (status === 'failed') {
+    return (
+      <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
+        <p>Error: {error}</p>
+      </div>
+    );
+  }
+
+  // redux end
+
+
+  console.log(course, 'course api on action')
 
   return (
     <div>
@@ -496,6 +530,8 @@ const CourseDetailsPage = () => {
         </div>
       </div> */}
     </div>
+
+
   );
 };
 

@@ -41,6 +41,7 @@ export default function SliderSection() {
   };
 
 
+
   // redux start
   const dispatch = useDispatch();
   const { programCourses, status, error } = useSelector((state) => state.courses);
