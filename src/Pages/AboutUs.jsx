@@ -125,8 +125,7 @@ const AboutUs = () => {
               Unlocking potential, one learner at a time.
             </span>
             <h4 className="mt-2 text-lg lg:text-2xl font-semibold">
-              Empowering individuals with transformative education to reach
-              their full potential and shape a better future.
+            Transforming Education, Empowering Futures
             </h4>
 
             <p className="text-xs lg:text-base text-slate-600 mt-4">
