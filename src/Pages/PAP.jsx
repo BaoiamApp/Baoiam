@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 // Import Swiper styles
 // import "./style.css";
 import "swiper/css";
@@ -161,6 +162,120 @@ const PAP = () => {
       image: Som,
     },
   ];
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+const tl = gsap.timeline()
+
+tl.fromTo('.pap1',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+})
+
+tl.fromTo('.pap2',{opacity:0,x:50},{
+  opacity:1,
+  x:0,
+  duration:1,
+  ease:'power2.inOut',
+},
+'-=1')
+
+
+gsap.fromTo('.pap3',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv1',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+gsap.fromTo('.pap4',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv2',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+const te = gsap.timeline({
+  scrollTrigger:{
+    trigger:'.papdiv3',
+    start:'top 90%',
+    end:'bottom 80%',
+  }
+})
+
+te.fromTo('.pap5',{opacity:0,y:30},{
+  opacity:1,
+  duration:1,
+  ease:'back.inOut',
+  y:0,
+  stagger:0.2,
+})
+
+te.fromTo('.pap6',{opacity:0,x:-50},{
+  opacity:1,
+  duration:1,
+  ease:'power1.inOut',
+  x:0
+},
+'-=0.3')
+
+te.fromTo('.pap7',{opacity:0,x:50},{
+  opacity:1,
+  duration:1.3,
+  ease:'power1.inOut',
+  x:0
+},
+'-=0.3')
+
+
+
+gsap.fromTo('.pap8',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv4',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+gsap.fromTo('.pap9',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv5',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+
+  },[])
 
 
   useEffect(() => {
@@ -312,12 +427,12 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
             entrepreneurs: Learn, innovate, succeed"
           </p>
 
-          <button class="pap1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+          <button onClick={()=> navigate('/Maintenance')} class="pap1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
             <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
             <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <IoIosArrowRoundForward size={30} />
             </span>
-            <span class="relative">Attend Info Session</span>
+            <span  class="relative">Join Now</span>
           </button>
         </div>
         <div className="w-full md:w-[40%]">
@@ -436,7 +551,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
               Unleash your potential and shape the future of business with us
             </p>
 
-            <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
+            <button onClick={()=> navigate('/Maintenance')}  class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span class="relative">Click here</span>
             </button>
