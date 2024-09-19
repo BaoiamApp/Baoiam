@@ -253,8 +253,8 @@ const PAP = () => {
           >
             {contentData.map((item, index) => (
               <SwiperSlide key={index} className="flex justify-center pt-12">
-                <div className="flex flex-col bg-white shadow-xl px-8 pb-0 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
-                  <div className="size-16  relative bottom-11 ">
+                <div className="flex flex-col bg-white my-4 pb-8 shadow-md px-4 md:pb-8 md:px-8 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
+                  <div className="size-16  relative bottom-11">
                     <img
                       className="w-full h-full rounded-full object-cover "
                       src={item.image}
