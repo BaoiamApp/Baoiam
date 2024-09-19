@@ -1,80 +1,95 @@
-import React, { useState } from 'react';
-import { IoIosArrowDown } from 'react-icons/io';
-import { Link } from 'react-router-dom';
-import { CollegeCourseData, OtherCourseData, School } from '../../Data';
-import { MdSchool } from 'react-icons/md';
-import { FaUniversity } from 'react-icons/fa';
-import { IoBookSharp } from 'react-icons/io5';
+import React, { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { CollegeCourseData, OtherCourseData, School } from "../../Data";
+import { MdSchool } from "react-icons/md";
+import { FaUniversity } from "react-icons/fa";
+import { IoBookSharp } from "react-icons/io5";
 
 const CourseNav = ({ setShow, courses }) => {
-    const [activeTabId, setActiveTabId] = useState(null);
-    const [activeTabIndex, setActiveTabIndex] = useState(null);
+  const [activeTabId, setActiveTabId] = useState(null);
+  const [activeTabIndex, setActiveTabIndex] = useState(null);
 
-    const handleTabActiveState = (tabId, index) => {
-        setActiveTabId(tabId);
-        setActiveTabIndex(index);
-    };
+  const handleTabActiveState = (tabId, index) => {
+    setActiveTabId(tabId);
+    setActiveTabIndex(index);
+  };
+  console.log("inside coursenav:", courses);
+  // will change after api integration
+  const label = [
+    {
+      id: 0,
+      title: "Junior Programs",
+      link: "courses/school",
+      icon: <MdSchool size={18} />,
+    },
+    {
+      id: 1,
+      title: "Pre-University Programs",
+      link: "courses/college",
+      icon: <FaUniversity size={18} />,
+    },
+    {
+      id: 2,
+      title: "Professional Degree Courses",
+      link: "",
+      icon: <IoBookSharp size={18} />,
+    },
+  ];
 
-    // will change after api integration
-    const label = [
-        {
-            id: 0,
-            title: School[0].Cate,
-            link: courses[0].name,
-            icon: <MdSchool size={18} />
-        },
-        {
-            id: 1,
-            title: CollegeCourseData[0].Cate,
-            link: courses[1].name,
-            icon: <FaUniversity size={18} />
-        },
-        {
-            id: 2,
-            title: OtherCourseData[0].Cate,
-            link: courses[2].name,
-            icon: <IoBookSharp size={18} />
-        }
-    ]
-
-    return (
-        <div>
-            <div className="flex flex-col h-fit w-fit p-1">
-                {label.map((c, i) => {
-                    return (
-                        <div key={i} className={`flex items-center justify-between py-3 w-64 ${activeTabIndex === i && 'text-amber-600'}`}>
-                            <Link onClick={() => setShow(false)} to={`/courses/${c.link}`} className="hover:underline hover:text-amber-600 font-semibold flex items-center gap-2">
-                               {c.icon} {c.title}
-                            </Link>
-                            <button onClick={() => handleTabActiveState(c.id, i)} className={`hover:text-amber-600`}>
-                                <IoIosArrowDown
-                                    className={`${activeTabIndex === i && '-rotate-90'}`}
-                                />
-                            </button>
-                        </div>
-                    );
-                })}
+  return (
+    <div>
+      <div className="flex flex-col h-fit w-fit p-1">
+        {label.map((c, i) => {
+          return (
+            <div
+              key={i}
+              className={`flex items-center justify-between py-3 w-64 ${
+                activeTabIndex === i && "text-amber-600"
+              }`}
+            >
+              <Link
+                onClick={() => setShow(false)}
+                to={`/${c.link}`}
+                className="hover:underline hover:text-amber-600 font-semibold flex items-center gap-2"
+              >
+                {c.icon} {c.title}
+              </Link>
+              <button
+                onClick={() => handleTabActiveState(c.id, i)}
+                className={`hover:text-amber-600`}
+              >
+                <IoIosArrowDown
+                  className={`${activeTabIndex === i && "-rotate-90"}`}
+                />
+              </button>
             </div>
+          );
+        })}
+      </div>
 
-            {activeTabIndex !== null && (
-                <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
-                    {courses[activeTabIndex].subcategories.map((sub, index) => {
-                        return (
-                            <div key={index} className="px-6 py-2 hover:bg-amber-50">
-                                <Link onClick={() => setShow(false)} to={`/course/${sub.name}/${sub.id}`} className="text-sm">
-                                    {sub.name}
-                                </Link>
-                            </div>
-                        );
-                    })}
-                </div>
-            )}
+      {activeTabIndex !== null && (
+        <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
+          {courses[activeTabIndex][0].subCate?.map((sub, index) => {
+            return (
+              <div key={index} className="px-6 py-2 hover:bg-amber-50">
+                <Link
+                  onClick={() => setShow(false)}
+                  to={`/course/${sub.id}`}
+                  className="text-sm"
+                >
+                  {sub.course}
+                </Link>
+              </div>
+            );
+          })}
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default CourseNav;
-
 
 // import React, { useState } from 'react';
 // import { IoIosArrowDown } from 'react-icons/io';
