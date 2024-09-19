@@ -3,44 +3,54 @@ import hireImage from '../assets/hireFromUs.jpg';
 import {
   FaUserGraduate, FaBriefcase, FaLevelUpAlt, FaUsers, FaCode, FaDesktop, FaServer,
   FaLaptopCode, FaDatabase, FaAndroid, FaRobot, FaPython, FaJava, FaCogs, FaChalkboardTeacher,
-  FaDollarSign, FaRegHandshake, FaCheck
+  FaDollarSign, FaRegHandshake, FaCheck,
+  FaArrowRight
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const HireFromUs = () => {
     document.title = 'Baoiam - Hire from us'
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 max-w-11/12 mx-auto">
 
-        <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${hireImage})` }}>
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-90 flex flex-col justify-center items-center">
-            <h1 className="text-4xl md:text-7xl font-extrabold text-white text-center mb-6">
-                Discover Top Talent with <span className="text-amber-600">Baoiam</span>
+        <section className="relative min-h-[400px]  bg-cover bg-center" style={{ backgroundImage: `url(${hireImage})` }}>
+            <div className="absolute inset-0 gap-4 bg-gradient-to-r from-black via-transparent to-black opacity-90 flex flex-col justify-center items-center">
+            <h1 className="text-2xl md:text-4xl md:pt-36 pt-16 font-extrabold text-white text-center md:mb-6">
+                Discover Top Talent with <span className="bg-gradient-to-r from-teal-300 font-bold tracking-wider to-amber-300 bg-clip-text text-transparent">Baoiam</span>
             </h1>
-            <p className="text-lg md:text-2xl text-white mb-8 text-center">
+            <p className="text-base w-10/12 mx-auto md:text-xl text-white text-center">
                 Your trusted partner for finding the right candidates
             </p>
-            <a href="#why-choose-us">
-                <button className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:scale-105 text-white text-lg font-semibold rounded-lg transition-all duration-300">
+            
+                {/* <button className="px-6 py-3 bg-gradient-to-r from-pink-500 opacity-100 to-pink-600 hover:scale-105 text-white text-lg font-semibold rounded-lg transition-all duration-300">
+                    
+                </button> */}
+            <Link to={"#why-choose-us"} >
+            <button onClick={()=> navigate('/contact')} className='rounded-full mx-auto  gap-2 flex items-center px-6 py-2 justify-center font-medium text-white group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-black dark:text-white transition-all ease-in-out hover:tracking-wider duration-75'>
+                    <p className='relative transition-all ease-in duration-75 group-hover:bg-opacity-0'> 
                     Get Started
-                </button>
-            </a>
+                </p>
+                    <FaArrowRight />
+                    </button>
+            </Link>
+
             </div>
         </section>
 
 
-        <section id='why-choose-us' className="relative px-8 lg:px-20 py-16 bg-gradient-to-r from-white to-indigo-50 text-indigo-500 overflow-hidden">
+        <section id='why-choose-us' className="relative px-8 lg:px-20 py-16 bg-gradient-to-r from-white to-indigo-100 text-indigo-500 overflow-hidden">
         
             <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-8 sm:mb-16 relative z-10 text-gray-800">
                 Why Choose Us?
             </h2>
 
-            <div className="absolute inset-0 overflow-hidden">
+            {/* <div className="absolute inset-0 overflow-hidden">
                 <svg className="absolute top-0 left-0 w-full h-full text-gray-100 opacity-40" fill="currentColor" viewBox="0 0 500 500" preserveAspectRatio="none">
                 <circle cx="150" cy="150" r="100" />
                 <circle cx="350" cy="350" r="150" />
                 <circle cx="250" cy="50" r="75" />
                 </svg>
-            </div>
+            </div> */}
 
             <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
                 {[
@@ -73,10 +83,10 @@ const HireFromUs = () => {
             </div>
 
             <div className="text-center mb-12 relative z-10">
-                <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-                Discover Our <span className="text-indigo-600">Profiles</span>
+                <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4">
+                Discover Our <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Profiles</span>
                 </h2>
-                <p className="text-lg md:text-xl text-gray-600">
+                <p className="text-lg md:text-xl max-w-6xl mx-auto text-gray-600">
                 Tap into a vast pool of talent from India's largest online tech education platform. Our profiles are curated by experts from IITs, IIITs, and leading tech companies.
                 </p>
             </div>
@@ -85,7 +95,7 @@ const HireFromUs = () => {
                 <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Expertise</h2>
             </div>
 
-            <div className="flex flex-col w-full gap-10 justify-center relative z-10">
+            <div className="flex flex-col xl:flex-row w-full gap-10 justify-center relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                     {[
                         { icon: <FaCode className="text-6xl text-indigo-800" />, title: 'Full Stack Developers' },
@@ -103,7 +113,7 @@ const HireFromUs = () => {
                 </div>
 
                 <div className="w-full">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-6">Other Profiles</h3>
+                    <h3 className="text-2xl font-bold xl:hidden text-gray-800 mb-6">Other Profiles</h3>
                     <ul className="space-y-4">
                         {[
                         { icon: <FaDatabase className="text-4xl text-indigo-500" />, title: 'Data Scientists' },
@@ -155,11 +165,11 @@ const HireFromUs = () => {
                 <h2 className="text-3xl md:text-5xl font-bold text-amber-600 mb-8 lg:mb-0">Ready to access top talent?</h2>
                 <p className='text-lg md:text-xl mt-5 font-semibold'>Partner with you to create a long-term talent-pool, to source candidates that are aligned to your skill requirements, available all year round! We work closely with you to solve your Entry-Level tech hiring needs.</p>
                 </div>
-                <a href="#contact-form">
+                <Link to={"#contact-form"}>
                     <button className="px-8 ml-5 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:scale-105 font-semibold text-white text-lg rounded-lg transition-all duration-300">
                         Contact Us Today
                     </button>
-                </a>
+                </Link>
             </div>
         </section>
       
