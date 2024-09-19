@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee'
 const BrandMarquee = ({array}) => {
     const arrayDoubled=[...array,...array,...array,...array];
     return (
-        <div className="flex w-11/12 my-4 mx-auto">
+        <div className="flex px-14 dark:bg-slate-200 my-4 mx-auto">
 
         <Marquee className='flex gap-4'>{
             arrayDoubled.map((item, index) => (

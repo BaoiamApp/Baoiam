@@ -92,7 +92,7 @@ export default function SliderSection() {
         >
           {categories[selectedCategory]?.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">
+              <div className="h-[22.5rem] overflow-hidden dark:bg-slate-900 dark:border shadow-md dark:shadow-slate-600 rounded-xl m-2">
                 {/* Image Container */}
                 <div className="relative h-[50%]">
                   <img
@@ -116,7 +116,7 @@ export default function SliderSection() {
                   {/* Title */}
                   <div className="">
                     <h3 className="text-xl font-semibold my-2 text-nowrap">{slide.course || slide.courseName} </h3>
-                    <p className="text-sm pr-3 text-slate-600">{slide.desc[0].slice(0, 60) + "..."}</p>
+                    <p className="text-sm pr-3 dark:text-slate-400 text-slate-600">{slide.desc[0].slice(0, 60) + "..."}</p>
                     
                   </div>
                   {/* Button */}

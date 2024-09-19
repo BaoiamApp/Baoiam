@@ -54,7 +54,7 @@ const Courses = () => {
         {data.map((stat, index) => (
           <div
             key={index}
-            className="bg-zinc-100 dark:bg-indigo-900 bg-opacity-60 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            className="bg-zinc-100 dark:bg-black/50 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out"
           >
             <div className="flex items-center justify-center mb-4">
               {" "}
