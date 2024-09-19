@@ -1,4 +1,4 @@
-import bhead from './bhead.jpg';
+import bhead from "../../assets/Blogs/bhead.jpg";
 
 export const HeaderBlog = ({ searchQuery, setSearchQuery }) => {
   return (

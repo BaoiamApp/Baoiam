@@ -17,6 +17,12 @@ import { BusSlider } from "../Components/Blogs/BusSlider";
 import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
 import NewsletterBanner from "../Components/Home/Subcription";
 import gsap from "gsap";
+import b1 from "../assets/Blogs/b9.png";
+import b12 from "../assets/Blogs/b12.png";
+import b14 from "../assets/Blogs/b14.png";
+import y2 from "../assets/Blogs/y2.jpg";
+import e1 from "../assets/Blogs/e1.jpg";
+import g1 from "../assets/Blogs/g1.png";
 
 const blog_list = [
   {
@@ -77,7 +83,6 @@ const blog_list = [
     text: "Unlocking the Future of Education: Ed-Tech Latest Trends ",
     info: "Oct 19, 2022 • 8 mins read",
     titleColor: "blue-500",
-
     imgSrc: ed_tech_latest_trends,
     title: "Akshay Saini",
   },
@@ -87,6 +92,48 @@ const blog_list = [
     titleColor: "blue-500",
     imgSrc: software_testing,
     title: "Amily Clarke",
+  },
+  {
+    info: "Dec 13, 2023 • 25 mins read",
+    text: "A Complete Guide to Graphic Designing",
+    titleColor: "blue-500",
+    imgSrc: b1,
+    title: "charlie Clarke",
+  },
+  {
+    info: "Dec 23, 2020 • 25 mins read",
+    text: "How To Become a Graphic Designer: A Complete Guide",
+    titleColor: "blue-500",
+    imgSrc: b12,
+    title: "Johe Dohn",
+  },
+  {
+    info: "May 23, 2022 • 25 mins read",
+    text: "Case Study: Empowering Students: Bridging the Gap Between Education and Employment",
+    titleColor: "blue-500",
+    imgSrc: b14,
+    title: "Yunus Khan",
+  },
+  {
+    info: "May 23, 2022 • 25 mins read",
+    text: "The digital youth: the impact of social media and digital marketing skills on young gen-z",
+    titleColor: "blue-500",
+    imgSrc: y2,
+    title: "young jang",
+  },
+  {
+    info: "Apr 23, 2018 • 55 mins read",
+    text: "Enhancing your graphics skill : Free and paid resources",
+    titleColor: "blue-500",
+    imgSrc: e1,
+    title: "young jang",
+  },
+  {
+    info: "Apr 23, 2018 • 55 mins read",
+    text: "Graphic Design and AI: The Future of Graphic Designers",
+    titleColor: "blue-500",
+    imgSrc: g1,
+    title: "young jang",
   },
 ];
 
@@ -292,7 +339,7 @@ const Blog = () => {
         </h2>
 
         <div className=' p-6'></div>
-        <div className='px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+        <div className='px-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
           {blog_list
             .filter(
               (item) =>
@@ -307,12 +354,12 @@ const Blog = () => {
                     src={item.imgSrc}
                     alt={`${item.title}`}
                   />
-                  <div className='p-6 flex-grow'>
-                    <span
+                  <div className='p-4 flex-grow'>
+                    {/* <span
                       className={`text-sm text-${item.titleColor} font-semibold`}
                     >
                       {item.title}
-                    </span>
+                    </span> */}
                     <h2 className='text-lg font-bold my-2 truncate'>
                       {item.text}
                     </h2>

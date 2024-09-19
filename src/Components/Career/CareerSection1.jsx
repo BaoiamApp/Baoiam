@@ -33,20 +33,23 @@ export const CareerSection1 = () => {
                 Search
               </button>
             </div> */}
-            <div className="max-w-xl  mx-auto bg-white flex  rounded-full text-left mt-12 border focus-within:border-gray-900 border-gray-500 lg:h-[60px] md:h-[50px] ">
-              <input
-                type="text"
-                placeholder="Search for career opportunities..."
-                className="w-full outline-none bg-transparent lg:text-lg md:text-sm sm:text-sm  text-gray-800 px-4 py-0 text-xs"
-              />
+            <form className="relative" onSubmit={(e) => e.preventDefault()}>
+              <div className="max-w-xl  mx-auto bg-white flex  rounded-full text-left mt-12 border focus-within:border-gray-900 border-gray-500 lg:h-[60px] md:h-[50px] ">
+                <input
+                  type="text"
+                  required
+                  placeholder="Search for career opportunities..."
+                  className="w-full outline-none bg-transparent lg:text-lg md:text-sm sm:text-sm  text-gray-800 px-4 py-0 text-xs"
+                />
 
-              <button
-                type="button"
-                className="bg-gradient-to-r from-indigo-500  to-indigo-800 hover:bg-gradient-to-l transition-all text-white tracking-wide text-xs lg:text-xl md:text-sm sm:text-sm rounded-full lg:px-8 sm:px-6 md:px-8 py-3 px-2 "
-              >
-                Search
-              </button>
-            </div>
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-indigo-500  to-indigo-800 hover:bg-gradient-to-l transition-all text-white tracking-wide text-xs lg:text-xl md:text-sm sm:text-sm rounded-full lg:px-8 sm:px-6 md:px-8 py-3 px-2 "
+                >
+                  Search
+                </button>
+              </div>
+            </form>
           </div>
           {/* Image and Icons Section */}
           <div className="relative aspect-square px-4 lg:w-1/2 h-96 flex justify-center ">
