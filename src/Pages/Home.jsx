@@ -29,9 +29,6 @@ const Home = ({ dark }) => {
 
                 <Courses />
                 <Slider />
-                <div className="mx-auto w-full md:w-[85%] mb-8">
-                    {dark ? <img className="w-full h-full" src={SuccessDark} alt="" /> : <img className="w-full h-full" src={SuccessLight} alt="" />}
-                </div>
                 {/* <Categories /> */}
                 <ServicesTab />
                 <div className="mx-auto w-full md:w-[85%] my-20">
