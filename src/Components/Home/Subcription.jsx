@@ -18,7 +18,7 @@ useEffect(() => {
     scrollTrigger:{
       trigger:'.papdiv6',
       start:'top 90%',
-      end:'bottom 80%'
+      end:'bottom 80%',
     }
   })
 

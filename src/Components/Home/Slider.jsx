@@ -115,7 +115,7 @@ export default function SliderSection() {
             },
           }}
         >
-          {status === 'failed' ? categories[selectedCategory]?.map((slide, index) => (
+           {status === 'failed' ? categories[selectedCategory]?.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">
                 <div className="relative h-[50%]">
@@ -189,8 +189,9 @@ export default function SliderSection() {
                 </div>
               </div>
             </SwiperSlide>
+          
           ))
-           }
+           } 
 
          
         </Swiper>
