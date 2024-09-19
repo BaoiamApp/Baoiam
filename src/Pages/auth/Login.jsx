@@ -281,17 +281,17 @@ const Login = () => {
 
         <div
           ref={Anime1}
-          className=" w-[600px] h-[600px] top-[-10%] left-[-5%]  rounded-full bg-[#1D64DD]  absolute "
+          className=" w-[600px] h-[600px] top-[-10%] left-[-5%]  rounded-full bg-indigo-600  absolute "
         ></div>
         <div
           ref={Anime2}
-          className=" w-[400px] h-[400px] bottom-[-15%] right-[-5%]  rounded-full bg-[#1D64DD]  absolute "
+          className=" w-[400px] h-[400px] bottom-[-15%] right-[-5%]  rounded-full bg-indigo-600  absolute "
         ></div>
 
         <div className="relative flex flex-col m-6 space-y-8 bg-white md:mx-20 shadow-lg lg:shadow-xl rounded-2xl md:flex-row md:space-y-0 ">
           {/* Left Side */}
           <div className="flex flex-col justify-center px-6 py-6 md:p-14 animate-slideInLeft">
-            <span className="mb-2  text-[2xl] md:text-2xl font-bold text-blue-500">
+            <span className="mb-2  text-[2xl] md:text-2xl font-bold text-indigo-500">
               Welcome back
             </span>
             <span className="font-light text-gray-400 text-[2.3vw] md:text-[1.3vw] mb-0 md:mb-6 animate-fadeIn">
@@ -372,12 +372,12 @@ const Login = () => {
 
           <div className="relative flex items-center hidden md:block  max-w-[32vw]">
             {/* Background Animation */}
-            <div className="absolute  z-0 bg-[#3A80F6] overflow-hidden  w-full h-full rounded-r-2xl">
+            <div className="absolute  z-0 bg-indigo-400 overflow-hidden  w-full h-full rounded-r-2xl">
               {[...Array(10)].map((_, i) => (
                 <div
                   key={i}
                   ref={(el) => (cubeRefs.current[i] = el)}
-                  className="absolute w-[10px] h-[10px] border border-[#0035A8]"
+                  className="absolute w-[10px] h-[10px] border border-[#5100a8]"
                   style={{
                     top: `${(i + 2) * 10}%`,
                     left: `${(i + 1) * 10}%`,
