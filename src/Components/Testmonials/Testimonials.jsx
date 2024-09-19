@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import data from './testimonialsData.json';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Star = ({ filled }) => (
   <svg className={`w-4 h-4 ${filled ? 'fill-[#facc15]' : 'fill-[#CED5D8]'}`} viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,21 +12,63 @@ const Star = ({ filled }) => (
 );
 
 const Testimonials = () => {
+  useEffect(() => {
+    // Animating the heading
+    gsap.fromTo(
+      ".testimonials-heading",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".testimonials-heading",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animating the testimonial cards
+    gsap.fromTo(
+      ".testimonial-card",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".testimonial-card",
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
     <div className="my-12 relative z-10">
       <div className="text-center max-w-3xl mx-auto flex flex-col gap-2 px-4">
-        <h2 className="text-3xl md:text-4xl text-center mb-3 font-bold">
-        What Our {" "}
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl text-center mb-3 font-bold testimonials-heading">
+          What Our{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
             Students
-            </span> Say
-          </h2>
-        <p className="mt-2 md:mt-4 text-slate-500 dark:text-slate-300 leading-relaxed text-xs md:text-base">{data.description}</p>
+          </span>{" "}
+          Say
+        </h2>
+        <p className="mt-2 md:mt-4 text-slate-500 dark:text-slate-300 leading-relaxed text-xs md:text-base testimonials-heading">
+          {data.description}
+        </p>
       </div>
 
+      {/* Testimonial Cards */}
       <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4">
         {data.testimonials.map((testimonial, index) => (
-          <div key={index} className="relative w-full mb-6 p-6 rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white">
+          <div key={index} className="relative w-full mb-6 p-6 rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white testimonial-card">
             {/* Profile Image */}
             <img
               src={testimonial.image}
