@@ -20,7 +20,7 @@ import Logo from "./Logo";
 import CourseNav from "./CourseNav";
 import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
-import { fetchAllCourses } from "../../Redux/slices/courseSlice";
+import { fetchAllCourses } from "../../redux/slices/courseSlice";
 import { BeatLoader } from "react-spinners";
 
 const Navbar = ({ theme }) => {
@@ -91,6 +91,7 @@ const Navbar = ({ theme }) => {
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
 
+
    // redux start
   const {allCourses, status, error} = useSelector((state) => state.courses);
    console.log(allCourses, 'all courses navbar')
@@ -106,7 +107,6 @@ const Navbar = ({ theme }) => {
             </div>;;
    }
 
-  //  console.log(programCourses, 'program courses')
    // redux end
  
   return (
