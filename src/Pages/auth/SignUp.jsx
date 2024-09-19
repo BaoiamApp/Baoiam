@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ToastContainer, toast } from "react-toastify";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const SignUp = () => {
@@ -16,6 +17,8 @@ const SignUp = () => {
     last_name: "",
   });
   const [error, setError] = useState(null);
+  const [pass, setPass] = useState(false)
+  const [conPass, setConPass] = useState(false)
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -179,30 +182,17 @@ const SignUp = () => {
       <ToastContainer />
       <div
         ref={Anime1}
-        className=" w-[400px] h-[400px] top-[-10%] left-[-5%]  rounded-full bg-gradient-to-tl from-amber-200 to-amber-300 absolute"
+        className=" w-[400px] h-[400px] top-[-10%] left-[-5%]  rounded-full bg-[#1D64DD] absolute"
       ></div>
       <div
         ref={Anime2}
-        className=" w-[600px] h-[600px] bottom-[-15%] right-[-5%]   rounded-full bg-gradient-to-tl from-indigo-200 to-indigo-400  absolute"
+        className=" w-[600px] h-[600px] bottom-[-15%] right-[-5%]   rounded-full bg-[#1D64DD]  absolute"
       ></div>
-      <div className="py-5 ">
+      <div className="py-5">
         <div className="mx-auto  px-4 sm:px-1 lg:px-8 ">
-          <div className="flex justify-center  md:px-[6rem]  ">
-            {/* <div className="lg:mb-0 mb-10">
-                            <div className="group w-full h-[30rem]">
-                                <div className="relative h-full">
-                                    <img src="https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?cs=srgb&dl=pexels-atbo-66986-245240.jpg&fm=jpg" alt="ContactUs tailwind section" className="w-full h-full lg:rounded-l-2xl rounded-2xl" />
-                                    <div className="absolute bottom-0 w-full lg:p-11 p-5">
-                                        <div className="bg-white rounded-lg p-6 block">
-                                            <h1>Lorem</h1>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt corporis, culpa molestiae quia voluptate ad alias reprehenderit accusantium eius tempora esse ratione doloribus, assumenda sint?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
+          <div className="flex justify-center  lg:px-[6rem]  ">
 
-            <div className="relative  bg-gradient-to-l from-[#8f94fb] to-[#4e54c8] overflow-hidden max-w-[32vw] hidden md:block md:rounded-l-2xl">
+            <div className="relative  bg-[#3A80F6] overflow-hidden w-[40vw] lg:w-[32vw] hidden md:block md:rounded-l-2xl">
               {/* Animated Circles in Background */}
               <ul className="absolute inset-0  z-0">
                 {[...Array(10)].map((_, i) => (
@@ -238,28 +228,28 @@ const SignUp = () => {
               </div>
             </div>
 
-            <div className="bg-slate-100   p-4 md:p-11 rounded-2xl  md:rounded-r-2xl md:rounded-l-none  z-10">
-              <h2 className="text-indigo-600 font-manrope text-3xl md:text-[2.5vw] text-center font-semibold leading-10 mb-8">
+            <div className="bg-slate-100 p-8 lg:p-11 rounded-2xl  md:rounded-r-2xl md:rounded-l-none  z-10">
+              <h2 className="text-blue-500 font-manrope text-3xl md:text-[2.5vw] text-center font-semibold leading-10 mb-8">
                 Sign Up
               </h2>
 
-              <div className="lg:mb-0">
+              {/* <div className="lg:mb-0">
                 <button
                   type="button"
-                  className="group w-full  md:text-[1vw] flex justify-center items-center gap-2 bg-white text-[4vw] md:text-[1vw] text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
+                  className="group w-full flex justify-center items-center gap-2 bg-white text-[4vw] md:text-[1vw] text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
                 >
                   <FaGoogle
                     size={20}
                     className="group-hover:text-blue-600"
-                    onClick={() => {}}
+                    onClick={() => { }}
                   />{" "}
                   Sign Up with Google
                 </button>
-              </div>
+              </div> */}
 
-              <div className="mt-2 mb-6 text-[3vw]  md:text-[1vw] text-gray-600 text-center">
+              {/* <div className="mt-2 mb-6 text-[3vw]  md:text-[1vw] text-gray-600 text-center">
                 <p>or with email</p>
-              </div>
+              </div> */}
 
               <form
                 onSubmit={onSubmit}
@@ -301,7 +291,7 @@ const SignUp = () => {
                     Last name
                   </label>
                 </div>
-                <div className="relative z-0 w-full mb-5 group">
+                <div className="relative z-0 w-full mb-5 col-span-2 group">
                   <input
                     type="email"
                     name="email"
@@ -321,15 +311,16 @@ const SignUp = () => {
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
                   <input
-                    type="password"
+                    type={pass ? "text" : "password"}
                     name="password"
                     id="password"
                     value={formData.password}
                     onChange={onChange}
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer relative"
                     placeholder=" "
                     required
                   />
+                  <span onClick={() => setPass(!pass)} className="cursor-pointer text-slate-500 absolute top-4 right-1">{pass ? <FiEyeOff size={16} /> : <FiEye size={16} />}</span>
                   <label
                     htmlFor="password"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600"
@@ -339,15 +330,16 @@ const SignUp = () => {
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
                   <input
-                    type="password"
+                    type={conPass ? "text" : "password"}
                     name="re_password"
                     id="re_password"
                     value={formData.re_password}
                     onChange={onChange}
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer absolute"
                     placeholder=" "
                     required
                   />
+                  <span onClick={() => setConPass(!conPass)} className="cursor-pointer text-slate-500 absolute top-4 right-1">{conPass ? <FiEyeOff size={16} /> : <FiEye size={16} />}</span>
                   <label
                     htmlFor="re_password"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600"
@@ -356,7 +348,7 @@ const SignUp = () => {
                   </label>
                 </div>
 
-                <div className="flex items-start mb-5 col-span-2">
+                <div className="flex items-center mb-5 col-span-2">
                   <div className="flex items-center h-5">
                     <input
                       id="terms"
@@ -368,18 +360,21 @@ const SignUp = () => {
                   </div>
                   <label
                     htmlFor="terms"
-                    className="ml-2 text-[4vw] md:text-[1vw] font-medium text-gray-900"
+                    className="ml-2 text-xs font-medium text-gray-900"
                   >
                     I agree with the{" "}
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <Link
+                      to="/terms-conditions"
+                      className="text-blue-600 hover:underline"
+                    >
                       terms and conditions
-                    </a>
+                    </Link>
                   </label>
                 </div>
 
                 <button
                   type="submit"
-                  className="text-white  md:text-[1vw] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[3.5vw] w-full px-5 py-2.5 text-center col-span-2"
+                  className="text-white text-xs md:text-sm  bg-black border border-black hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full px-5 py-2.5 text-center col-span-2"
                 >
                   Submit
                 </button>
@@ -391,7 +386,7 @@ const SignUp = () => {
                 </div>
               )}
 
-              <div className="mt-4 text-[3.5vw]  md:text-[1vw] text-gray-600 text-center">
+              <div className="mt-4 text-xs text-gray-600 text-center">
                 <p>
                   Already have an account?{" "}
                   <Link to="/login" className="text-black hover:underline">
