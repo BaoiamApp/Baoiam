@@ -371,9 +371,12 @@ const SignUp = () => {
                     className="ml-2 text-[4vw] md:text-[1vw] font-medium text-gray-900"
                   >
                     I agree with the{" "}
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <Link
+                      to="/terms-conditions"
+                      className="text-blue-600 hover:underline"
+                    >
                       terms and conditions
-                    </a>
+                    </Link>
                   </label>
                 </div>
 

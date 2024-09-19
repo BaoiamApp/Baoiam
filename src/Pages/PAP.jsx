@@ -42,9 +42,10 @@ import {
   BsRobot,
 } from "react-icons/bs";
 import ListSlide from "../Components/PAP/ListSlide";
+import { Link } from "react-router-dom";
 
 const PAP = () => {
-  document.title = 'Baoiam - PAP'
+  document.title = "Baoiam - PAP";
   const slides = [
     {
       imgSrc: Prasun,
@@ -70,65 +71,65 @@ const PAP = () => {
   const listSlide = [
     {
       id: 1,
-      title: 'Visionary Thinking',
-      icon: 'IoTelescope',
+      title: "Visionary Thinking",
+      icon: "IoTelescope",
     },
     {
       id: 2,
-      title: 'Creativity & Innovation',
-      icon: 'MdPalette',
+      title: "Creativity & Innovation",
+      icon: "MdPalette",
     },
     {
       id: 3,
-      title: 'Risk Management',
-      icon: 'FaShield',
+      title: "Risk Management",
+      icon: "FaShield",
     },
     {
       id: 4,
-      title: 'Resilience & Persistence',
-      icon: 'FaTree',
+      title: "Resilience & Persistence",
+      icon: "FaTree",
     },
     {
       id: 5,
-      title: 'Adaptability',
-      icon: 'BsFillPuzzleFill',
+      title: "Adaptability",
+      icon: "BsFillPuzzleFill",
     },
     {
       id: 7,
-      title: 'Leadership',
-      icon: 'FaGavel',
+      title: "Leadership",
+      icon: "FaGavel",
     },
     {
       id: 8,
-      title: 'Financial Management',
-      icon: 'BsGraphUpArrow',
+      title: "Financial Management",
+      icon: "BsGraphUpArrow",
     },
     {
       id: 9,
-      title: 'Networking & Relationship Building',
-      icon: 'BsPeopleFill',
+      title: "Networking & Relationship Building",
+      icon: "BsPeopleFill",
     },
     {
       id: 10,
-      title: 'Communication & Salesmanship',
-      icon: 'BsMegaphoneFill',
+      title: "Communication & Salesmanship",
+      icon: "BsMegaphoneFill",
     },
     {
       id: 11,
-      title: 'Problem Solving',
-      icon: 'FaGear',
+      title: "Problem Solving",
+      icon: "FaGear",
     },
     {
       id: 12,
-      title: 'Product Management & Interpersonal Skills',
-      icon: 'BsClipboardCheckFill',
+      title: "Product Management & Interpersonal Skills",
+      icon: "BsClipboardCheckFill",
     },
     {
       id: 13,
-      title: 'Leveraging AI & technology for automation',
-      icon: 'BsRobot',
+      title: "Leveraging AI & technology for automation",
+      icon: "BsRobot",
     },
-  ]
+  ];
 
   const contentData = [
     {
@@ -271,7 +272,6 @@ const PAP = () => {
             ))}
           </Swiper>
         </div>
-
       </div>
 
       {/* section 3 */}
@@ -321,10 +321,13 @@ const PAP = () => {
               Unleash your potential and shape the future of business with us
             </p>
 
-            <button class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
+            <Link
+              to="/itie"
+              class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50"
+            >
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
-              <span class="relative">Click here</span>
-            </button>
+              <p class="relative">Click here</p>
+            </Link>
           </div>
 
           <div className="max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6">
@@ -529,7 +532,7 @@ const PAP = () => {
           />
         </Swiper>
       </div>
-      <Subcription/>
+      <Subcription />
     </div>
   );
 };

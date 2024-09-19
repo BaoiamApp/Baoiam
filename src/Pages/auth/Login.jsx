@@ -356,9 +356,12 @@ const Login = () => {
             </button>
             <div className="text-center text-[3vw] md:text-[1vw] text-gray-400 animate-fadeIn">
               Don't have an account?{" "}
-              <span className="font-bold text-black cursor-pointer">
+              <Link
+                to="/signup"
+                className="font-bold text-black cursor-pointer"
+              >
                 Sign up for free
-              </span>
+              </Link>
             </div>
           </div>
           {/* Right Side */}
