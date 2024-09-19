@@ -22,20 +22,20 @@ import {
 import { FaMobileAlt, FaUserCircle } from "react-icons/fa";
 import NewsletterBanner from "../Components/Home/Subcription.jsx";
 
-const getcmt = [
-  {
-    id: 1,
-    name: "Ayesha",
-    comment:
-      " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
-  },
-  {
-    id: 1,
-    name: "Ayesha",
-    comment:
-      " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
-  },
-];
+// const getcmt = [
+//   {
+//     id: 1,
+//     name: "Ayesha",
+//     comment:
+//       " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
+//   },
+//   {
+//     id: 1,
+//     name: "Ayesha",
+//     comment:
+//       " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
+//   },
+// ];
 
 const Blog_detail = () => {
   document.title = "Baoiam - Blog Detail";
@@ -195,11 +195,11 @@ const Blog_detail = () => {
       {/* reply section */}
 
       <div className='w-[80%] m-auto py-6 flex '>
-        {getcmt ? (
+        {datacmmt ? (
           <div className='flex flex-col gap-4'>
             <h2 className='font-semibold text-lg text-md'>Comments</h2>
             <div>
-              <div className=' flex flex-col gap-6 md:w-[70%]'>
+              <div className=' flex flex-col gap-6'>
                 {datacmmt.map((el, index) => (
                   <>
                     <div className='border-2 hover:shadow-lg  shadow-gray-400 shadow-sm p-4 bg-zinc-50 rounded-md flex gap-2 items-start'>

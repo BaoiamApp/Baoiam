@@ -15,30 +15,30 @@ const blog_slider = [
   {
     id: 1,
     pic: carrer1,
-    des: "The Best Graphic Design Careers — for Beginners and Professionals",
-    cat: "STARTUP",
-    icon: stp,
+    des: "The Best Graphic Design Careers — Professionals",
+    info: "Sep 13, 2022 • 5 mins read",
+    title: "John Doe",
   },
   {
     id: 2,
     pic: datasc,
     des: "The Top Technical Skills All Employees Need in 2022",
-    cat: "STARTUP",
-    icon: stp,
+    info: "Dec 13, 2023 • 5 mins read",
+    title: "John Doe",
   },
   {
     id: 3,
     pic: ed_tech,
     des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "STARTUP",
-    icon: ent,
+    info: "Jan 13, 2024 • 5 mins read",
+    title: "Kumar shree",
   },
   {
     id: 4,
     pic: software_testing,
     des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "STARTUP",
-    icon: tech,
+    info: "Jan 13, 2024 • 55 mins read",
+    title: "Gunjan Gupta",
   },
 ];
 export const StatupSlider = () => {
@@ -72,7 +72,7 @@ export const StatupSlider = () => {
           {blog_slider?.map((el) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className='p-4 bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '
                 key={el.id}
               >
                 <img
@@ -80,16 +80,12 @@ export const StatupSlider = () => {
                   src={el.pic}
                   alt='cat title image'
                 />
-                <div className='flex flex-col justify-center items-center rounded-md'>
-                  <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
-                    {el.des}
-                  </h2>
-                  <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='icon_image' />
-                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
-                      {el.cat}
-                    </h3>
-                  </div>
+                <div className='p-4 flex-grow'>
+                  {/* <span className={`text-sm text-blue-500 font-semibold`}>
+                    {el.title}
+                  </span> */}
+                  <h2 className='text-lg font-bold my-2 truncate'>{el.des}</h2>
+                  <p className='text-sm'>{el.info}</p>
                 </div>
               </SwiperSlide>
             );
