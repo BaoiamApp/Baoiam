@@ -2,21 +2,24 @@ import React from "react";
 
 const NewsletterSignup = () => {
  return (
-   <div className="relative font-[sans-serif]  dark:before:bg-black dark:before:opacity-80 from-amber-600  to-teal-800  before:absolute before:w-full before:h-full before:inset-0 before:opacity-50 before:z-10">
+   <div className="relative font-[sans-serif] before:bg-black before:opacity-50 dark:before:bg-black dark:before:opacity-80 before:absolute before:w-full before:h-full before:inset-0 before:z-10">
      <img
        src="https://readymadeui.com/cardImg.webp"
        alt="Banner Image"
-       className="absolute inset-0 w-full h-full object-cover object-bottom "
+       className="absolute inset-0 w-full h-full object-cover object-bottom"
      />
      <div className=" relative z-50 h-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center px-6 py-12">
        <div className="max-w-3xl mx-auto text-center">
-         <h3 className="text-white md:text-5xl text-4xl font-bold">
+         <h3 className="text-white md:text-5xl text-3xl font-bold">
            Contact for Recruitment Inquiries
          </h3>
-         <p className="text-gray-300 italic text-lg     mt-4">
+         <p className="text-gray-300 italic lg:text-lg   md:text-lg   sm:text-sm text-sm    mt-4">
            Have questions about our open positions? Contact our HR team at
-           <span className=" text-yellow-500 font-semibold"> recruitment@baoiam.com</span>
-          .
+           <span className=" text-yellow-500 font-semibold">
+             {" "}
+             recruitment@baoiam.com
+           </span>
+           .
          </p>
 
          {/* <div className="max-w-lg mx-auto bg-gray-100 flex p-1 rounded-full text-left mt-12 border focus-within:border-gray-700">
