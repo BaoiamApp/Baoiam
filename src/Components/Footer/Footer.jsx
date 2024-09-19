@@ -7,50 +7,45 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaSquareXTwitter
+  FaSquareXTwitter,
 } from "react-icons/fa6";
 import { TiSocialFacebook } from "react-icons/ti";
 import Logo from "../../assets/img1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import AppStorePng from '../../assets/Images/Stores/AppStoreDark.png'
-import PlayStorePng from '../../assets/Images/PlayStore.png'
+import AppStorePng from "../../assets/Images/Stores/AppStoreDark.png";
+import PlayStorePng from "../../assets/Images/PlayStore.png";
 import CoursesList from "../CoursesList";
-import logo from '../../assets/logo.jpeg'
+import logo from "../../assets/logo.jpeg";
 import { LogoDark, LogoLight } from "../../assets/assets";
 
 function Footer({ dark }) {
+  const navigate = useNavigate()
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
-      <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 lg:pt-24">
-        <div className="flex justify-between lg:gap-20 xl:gap-8 flex-col md:flex-row">
-            <div>
-              <Link
-                to={"/"}
-                className={`flex justify-center text-teal-600 sm:justify-start w-52`}
-              >
-                <img
-                  src={dark ? LogoDark : LogoLight}
-                  className="w-full h-full object-cover"
-                  alt="Baoiam Innovation brand image."
-                />
-              </Link>
+      <div className="mx-auto px-4 pt-7 md:pt-14">
+        <div className="flex md:px-10 flex-col gap-6 md:flex-row w-full">
+         
+            <div
+              onClick={()=> navigate('/')}
+              className={`w-[44%] md:w-[14%] `}
+            >
+              <img
+                src={dark ? LogoDark : LogoLight}
+                className="w-full"
+                alt="Baoiam Innovation brand image."
+              />
             </div>
-          {/* <div className="">
+          
 
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-500 sm:max-w-xs text-left">
-              At BAOIAM we provide innvoative and industry-relevant educational solutions, empowering students to achieve their career goals.
-            </p>
-          </div> */}
-
-          <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-y-12 lg:grid-cols-3 xl:flex xl:flex-row xl:gap-12 dark:text-white">
+          <div className="flex flex-col justify-evenly gap-4 md:pl-8 md:flex-row md:w-[85%] dark:text-white">
             {/* Quick Links */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Quick Links
               </p>
 
-              <div className="mt-4 flex flex-col gap-2 text-xs">
+              <div className="mt-4  flex flex-col gap-2 text-xs">
                 <Link
                   to={"/team"}
                   className="text-black dark:text-white text-nowrap flex items-center"
@@ -73,7 +68,7 @@ function Footer({ dark }) {
                   Careers
                 </Link>
                 <Link
-                  to={"/course"}
+                  to={"/Maintenance"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
@@ -84,14 +79,14 @@ function Footer({ dark }) {
                   to={"/blogs"}
                   className="text-black text-nowrap dark:text-white  flex items-center"
                 >
-                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" /> Blog
+                  <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />{" "}
+                  Blog
                 </Link>
-
               </div>
             </div>
 
             {/* Program & Partnership */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-wrap xl:text-nowrap">
                 Programs & Partnerships
               </p>
@@ -99,15 +94,21 @@ function Footer({ dark }) {
               <div className="mt-4 flex flex-col gap-2 text-xs">
                 <Link
                   to={"/gcep"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  className="text-black text-nowrap max-w-fit hover:text-wrap dark:text-white group flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Global Collabo Educational Partnership
+                  <MdKeyboardArrowRight className="min-w-6" size={20} />{" "}
+                  <p className="truncate group-hover:text-wrap">
+                    Global Collabo Educational Partnership
+                  </p>
                 </Link>
                 <Link
-                  to={"/gcep"}
-                  className="text-black text-nowrap dark:text-white flex items-center"
+                  to={"/Maintenance"}
+                  className="text-black text-nowrap max-w-fit  hover:text-wrap group dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight size={20} /> Global Collabo Startup Programs
+                  <MdKeyboardArrowRight className="min-w-6" size={20} />{" "}
+                  <p className="truncate group-hover:text-wrap">
+                    Global Collabo Startup Program
+                  </p>
                 </Link>
                 <Link
                   to={"/itie"}
@@ -131,7 +132,7 @@ function Footer({ dark }) {
             </div>
 
             {/* Help & Support */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Help & Support
               </p>
@@ -165,7 +166,7 @@ function Footer({ dark }) {
             </div>
 
             {/* Contact Us */}
-            <div className="px-4 sm:text-left">
+            <div className=" sm:text-left">
               <p className="text-lg font-medium text-black dark:text-white text-nowrap">
                 Contact Us
               </p>
@@ -187,7 +188,9 @@ function Footer({ dark }) {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="flex-1 dark:text-white text-black">support@baoiam.com</span>
+                  <span className="flex-1 dark:text-white text-black">
+                    support@baoiam.com
+                  </span>
                 </li>
 
                 {/* Phone */}
@@ -235,14 +238,18 @@ function Footer({ dark }) {
                   </svg>
 
                   <address className="-mt-0.5 flex-1 dark:text-white not-italic text-black">
-                    H Block, Sector 62 <br />201301<br />UP Noida, India.
+                    H Block, Sector 62 <br />
+                    201301
+                    <br />
+                    UP Noida, India.
                   </address>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-8 w-full  px-4 bg-cover object-cover flex flex-col md:flex-row gap-4 items-end md:items-center justify-end">
+
+        <div className="mt-8 w-full p-2 px-10 md:pr-20 bg-cover object-cover flex flex-col md:flex-row-reverse gap-4 items-center justify-between">
           <div className="flex gap-2 h-8 object-cover justify-start">
             <Link to="#" className="">
               <img
@@ -301,10 +308,10 @@ function Footer({ dark }) {
             </Link>
           </div>
         </div>
-
-        <div className="mt-12 border-t border-gray-100 pt-6">
-          <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between text-left">
-            <div className="text-xs flex items-center gap-4 text-black">
+        <hr className="h-[1.4px] bg-slate-500" />
+        <div className="py-4 md:px-20">
+          <div className="flex flex-col gap-2 md:gap-0 md:flex-row items-center justify-between text-left">
+            <div className="text-[0.6rem] md:text-xs flex items-center gap-4 text-black">
               <Link
                 to={"/terms-conditions"}
                 className="text-black dark:text-white text-nowrap flex items-center"
@@ -326,9 +333,8 @@ function Footer({ dark }) {
             </div>
 
             <p className="text-xs dark:text-white text-black order-first">
-              BAOIAM &copy; 2023 <span className="dark:text-white">
-                All rights reserved.
-              </span>
+              BAOIAM &copy; 2023{" "}
+              <span className="dark:text-white">All rights reserved.</span>
             </p>
           </div>
         </div>
@@ -338,5 +344,3 @@ function Footer({ dark }) {
 }
 
 export default Footer;
-
-

@@ -7,20 +7,19 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import ProfilePage from "./ProfilePage";
-import Certificate from "./Certificate"; // Import the Certificate component
-import Courses from "./Courses"; // Import the Courses component
+import Certificate from "./Certificate"; 
+import Courses from "./Courses"; 
 import ProfileManage from "./ProfileManage";
 import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import Payment from "./Payment";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import { useDispatch } from "react-redux";
-// import { setProfile1 } from "../../redux/user/userSlice";
 import { setProfile1 } from "../../Redux/user/userSlice.js";
-// import { setProfile } from "../../redux/user/userSlice";
+import Achievements from "./Achievements.jsx";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
@@ -31,7 +30,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const fetchUserDetails = async () => {
     try {
-      const { data } = await axios.get(`${apiUrl}/api/auth/users/me/`, {
+      const { data } = await axios.get(`${apiUrl}/api/profile/`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `JWT ${localStorage.getItem("access_token")}`,
@@ -44,6 +43,7 @@ const Sidebar = () => {
         "from local storage:",
         JSON.parse(localStorage.getItem("userInfo"))
       );
+      // setUserInfo(data);
       // setUserInfo(localStorage.getItem("userInfo"));
     } catch (err) {
       console.log(err.stack);
@@ -78,11 +78,11 @@ const Sidebar = () => {
       case "courses":
         return <Courses />;
       case "achievements":
-        return <Certificate />;
+        return <Achievements />;
       case "payments":
         return <Payment />;
       case "management":
-        return <ProfileManage userInfo={userInfo} setUserInfo={setUserInfo} />; // Replace with the actual Profile Management component
+        return <ProfileManage/>; // Replace with the actual Profile Management component
       default:
         return <ProfilePage userInfo={userInfo} />;
     }
