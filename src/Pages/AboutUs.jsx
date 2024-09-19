@@ -79,8 +79,7 @@ const AboutUs = () => {
             {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
             <p className="rounded-3xl md:py-1 px-4 w-fit bg-gradient-to-r from-pink-500 text-center  to-violet-600 z-10">
               <span
-                className="
-           text-[0.55rem] md:text-sm font-medium"
+                className="text-[0.55rem] md:text-sm font-medium"
               >
                 Revolutionizing Education Through Innovative Ed-Tech Solutions
               </span>

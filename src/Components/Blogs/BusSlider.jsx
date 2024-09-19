@@ -12,6 +12,7 @@ import tech from "../../assets/Blogs/tech.jpg";
 import software_testing from "../../assets/Blogs/software_testing.png";
 import gsap from "gsap";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const blog_slider = [
   {
@@ -45,7 +46,7 @@ const blog_slider = [
 ];
 
 export const BusSlider = () => {
-
+const navigate=useNavigate();
 
   useEffect(() => {
   
@@ -99,6 +100,7 @@ export const BusSlider = () => {
               <SwiperSlide
                 className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
                 key={el.id}
+                onClick={()=>navigate(`/Blog_detail/${el.id}`)}
               >
                 <img
                   className='h-full rounded-md  w-full'
