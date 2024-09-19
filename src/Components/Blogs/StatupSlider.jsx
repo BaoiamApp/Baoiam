@@ -89,12 +89,12 @@ useEffect(() => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className='b3 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className='b3 w-full m-auto p-6  rounded-lg  flex flex-col justify-center items-center gap-4'
         >
           {blog_slider?.map((el) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
                 key={el.id}
                 onClick={()=>navigate(`/Blog_detail/${el.id}`)}
               >
