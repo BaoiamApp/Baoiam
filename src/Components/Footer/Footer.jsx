@@ -72,7 +72,7 @@ function Footer({ dark }) {
                   Careers
                 </Link>
                 <Link
-                  to={"/course"}
+                  to={"/Maintenance"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
@@ -103,7 +103,7 @@ function Footer({ dark }) {
                   <MdKeyboardArrowRight className="min-w-6" size={20} /> <p className="truncate group-hover:text-wrap">Global Collabo Educational Partnership</p>
                 </Link>
                 <Link
-                  to={"/gcep"}
+                  to={"/Maintenance"}
                   className="text-black text-nowrap max-w-fit  hover:text-wrap group dark:text-white flex items-center"
                 >
                   <MdKeyboardArrowRight className="min-w-6" size={20} /> <p className="truncate group-hover:text-wrap">Global Collabo Startup Programs</p>
