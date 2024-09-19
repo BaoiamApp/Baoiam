@@ -12,7 +12,7 @@ export const CareerSection1 = () => {
           <div className="text-center p-4 lg:w-1/2 lg:text-left ">
             <h3 className="text-4xl dark:text-zinc-100 sm:text-4xl md:text-5xl lg:text-5xl font-bold  text-[#0a0a0a]">
               Career Opportunities at
-              <span className="bg-gradient-to-r from-[#f97316] to-[#f59e0b] text-transparent bg-clip-text leading-[1.3]">
+              <span className="bg-gradient-to-r from-pink-500  to-violet-600 text-transparent bg-clip-text leading-[1.3]">
                 {" "}
                 BAOIAM
               </span>{" "}
@@ -37,12 +37,12 @@ export const CareerSection1 = () => {
               <input
                 type="text"
                 placeholder="Search for career opportunities..."
-                className="w-full outline-none bg-transparent lg:text-sm md:text-sm sm:text-sm  text-gray-800 px-4 py-3 text-xs"
+                className="w-full outline-none bg-transparent lg:text-lg md:text-sm sm:text-sm  text-gray-800 px-4 py-0 text-xs"
               />
 
               <button
                 type="button"
-                className="bg-gradient-to-r from-black to-gray-700 hover:bg-gradient-to-l transition-all text-white tracking-wide text-xs lg:text-sm md:text-sm sm:text-sm rounded-full lg:px-10 sm:px-6 md:px-8 py-3 px-2 "
+                className="bg-gradient-to-r from-indigo-500  to-indigo-800 hover:bg-gradient-to-l transition-all text-white tracking-wide text-xs lg:text-xl md:text-sm sm:text-sm rounded-full lg:px-8 sm:px-6 md:px-8 py-3 px-2 "
               >
                 Search
               </button>
