@@ -8,8 +8,8 @@ const How = () => {
     <>
       <div className="flex justify-center my-4">
         <div className="w-[80%] xl:w-[85%] text-center">
-          <h1 className="text-[2rem] my-5 font-bold">
-            How we <span className="text-indigo-600">Work?</span>
+          <h1 className="text-3xl sm:text-4xl my-5 font-bold">
+            How we <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Work</span>
           </h1>
           <p className="mx-auto w-full lg:w-[80%]">
             We create high-quality courses mentored by experts, offering
