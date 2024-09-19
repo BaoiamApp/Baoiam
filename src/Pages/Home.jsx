@@ -13,9 +13,11 @@ import Phone from '../Components/Home/Phone'
 import { SuccessDark, SuccessLight } from '../assets/assets'
 import OurTeam from "../Components/AboutUs/OurTeam"
 import ServicesTab from '../Components/AboutUs/ServicesTab'
+import { useNavigate } from "react-router-dom";
 
 const Home = ({dark}) => {
     document.title = 'Baoiam - Home'
+    const navigate = useNavigate();
     return (
         <>
             <div className='max-w-11/12 mx-auto'>
@@ -27,6 +29,9 @@ const Home = ({dark}) => {
                 </div>
                 {/* <Categories /> */}
                 <ServicesTab />
+                <div className="mx-auto w-full md:w-[85%] my-20">
+                    <img className="w-full h-full cursor-pointer" onClick={()=> navigate('/Maintenance')} src={SuccessLight} alt="" />
+                </div>
                 <Partners />
                 <Protocol />
                 <JoinNow />
