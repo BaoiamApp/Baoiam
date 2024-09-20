@@ -99,7 +99,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <MdSchool />
-                      <h1>School</h1>
+                      <h1>Junior Programs</h1>
                     </div>
                     {schoolCate ? (
                       <FaChevronUp size={14} />
@@ -143,7 +143,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <FaUniversity />
-                      <h1>College</h1>
+                      <h1>University Programs</h1>
                     </div>
                     {collegeCate ? (
                       <FaChevronUp size={14} />
@@ -187,7 +187,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <IoBookSharp />
-                      <h1>Others</h1>
+                      <h1>Professional Degree Courses</h1>
                     </div>
                     {otherCourses ? (
                       <FaChevronUp size={14} />
