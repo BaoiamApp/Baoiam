@@ -140,7 +140,7 @@ const CourseDetailsPage = () => {
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
             {courseDetails?.title}
           </h3>
-          <Link to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`} className="relative w-fit rounded px-5 py-1 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+          <Link to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`} className="relative w-fit rounded px-5 py-2 md:py-1 text-xs md:text-sm overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="relative">Book a Demo</span>
           </Link>
@@ -148,7 +148,7 @@ const CourseDetailsPage = () => {
 
           <div className="flex gap-2 mt-4">
 
-            <button onClick={enrollNowScroll} class="relative inline-flex items-center bg-orange-400 px-8 md:px-12 py-3 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-orange-400 rounded-lg hover:text-orange-500 group">
+            <button onClick={enrollNowScroll} class="relative inline-flex items-center bg-orange-400 px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-orange-400 rounded-lg hover:text-orange-500 group">
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <IoIosArrowRoundForward size={30} />
@@ -156,7 +156,7 @@ const CourseDetailsPage = () => {
               <span class="relative">Enroll Now</span>
             </button>
             <a href={Brochure}
-              download={true} class="relative inline-flex items-center bg-white px-8 md:px-12 py-3 text-sm dark:text-white dark:border-white overflow-hidden text-orange-400 font-medium border border-orange-400 rounded-lg hover:text-white group">
+              download={true} class="relative inline-flex items-center bg-white px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-orange-400 font-medium border border-orange-400 rounded-lg hover:text-white group">
               <span class="absolute left-0 block w-full h-0 transition-all bg-orange-400 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <FaDownload size={18} />
@@ -169,13 +169,13 @@ const CourseDetailsPage = () => {
         <img
           src={CourseDesc2}
           alt=""
-          className="w-72 h-72 lg:w-full lg:h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black"
+          className="hidden md:block w-72 h-72 lg:w-full lg:h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black"
         />
 
       </div>
 
       {/* Changes */}
-      <div className="px-8 lg:px-24 my-12 py-12 flex items-center justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-12 w-full">
+      <div className="px-8 lg:px-24 my-12 py-12 flex items-center justify-between flex-col md:flex-row gap-12 md:gap-8 lg:gap-12 w-full">
         <div className="w-full md:w-[40%]">
           <img
             src={CourseOverview}
@@ -183,10 +183,10 @@ const CourseDetailsPage = () => {
             className="w-full md:w-72 h-72 lg:w-full lg:h-96 object-cover shadow-[-15px_15px_#ea580c] lg:shadow-[-20px_20px_#ea580c]"
           />
         </div>
-        <div className="w-full flex h-[400px] xs:p-2 rounded flex-col justify-center p-5 md:w-[60%]">
+        <div className="w-full flex h-[400px] xs:p-2 rounded flex-col justify-center md:p-5 md:w-[60%]">
           <div className="flex justify-start border border-gray-300 rounded-2xl overflow-hidden">
             <h3
-              className={`xs:text-[16px] font-bold w-1/2 flex text-lg md:text-xl cursor-pointer text-center py-2 justify-center items-center transition ${showTab === 1
+              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-2 justify-center items-center transition ${showTab === 1
                 ? "bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent"
                 : "text-white bg-orange-400"
                 }`}
@@ -195,7 +195,7 @@ const CourseDetailsPage = () => {
               Course Overview
             </h3>
             <h3
-              className={`xs:text-[16px] font-bold w-1/2 flex text-lg md:text-xl cursor-pointer text-center py-2 justify-center items-center transition ${showTab === 2
+              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-2 justify-center items-center transition ${showTab === 2
                 ? "bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent"
                 : "text-white bg-orange-400"
                 }`}
@@ -217,7 +217,7 @@ const CourseDetailsPage = () => {
                       )
                   )} */}
                   {courseDetails.program_overview?.split(".").map((o, i) => (
-                    <li key={i}>{o}</li>
+                    <li key={i} className="text-sm lg:text-base">{o}</li>
                   ))}
                 </ul>
               </div>
@@ -234,7 +234,7 @@ const CourseDetailsPage = () => {
 
                 <ul className="list-inside list-disc marker:text-orange-600 marker:text-md mt-4">
                   {courseDetails.curriculum?.split(";").map((o, i) => (
-                    <li className="py-1" key={i}>{o}</li>
+                    <li className="py-1 text-sm lg:text-base" key={i}>{o}</li>
                   ))}
                 </ul>
 
