@@ -5,7 +5,15 @@ import Notifications from "./Notifications";
 import CoursesMain from "./CoursesMain";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { BarLoader, BounceLoader, CircleLoader, ClimbingBoxLoader, DotLoader, FadeLoader, HashLoader } from "react-spinners";
+import {
+  BarLoader,
+  BounceLoader,
+  CircleLoader,
+  ClimbingBoxLoader,
+  DotLoader,
+  FadeLoader,
+  HashLoader,
+} from "react-spinners";
 const ProfilePage = ({ userInfo }) => {
   const userInfo2 = useSelector((state) => {
     console.log("state is: ", state);
@@ -14,7 +22,8 @@ const ProfilePage = ({ userInfo }) => {
   console.log("userinfo2: ", userInfo2);
   const navigate = useNavigate();
   useEffect(() => {
-    if (!localStorage.getItem("userInfo")) navigate("/login");
+    if (Object.keys(JSON.parse(localStorage.getItem("userInfo"))).length <= 0)
+      navigate("/login");
 
     return () => {};
   }, []);

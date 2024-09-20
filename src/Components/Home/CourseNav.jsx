@@ -16,24 +16,24 @@ const CourseNav = ({ setShow, course }) => {
   };
   console.log("inside coursenav:", course);
   console.log(course[0].courses);
-  
+
   // will change after api integration
   const label = [
     {
       id: 0,
-      title: "Junior Programs",
+      title: "Junior Courses",
       link: "courses/school",
       icon: <MdSchool size={18} />,
     },
     {
       id: 1,
-      title: "University Programs",
+      title: "University Courses",
       link: "courses/college",
       icon: <FaUniversity size={18} />,
     },
     {
       id: 2,
-      title: "Professional Degree Courses",
+      title: "Other Courses",
       link: "",
       icon: <IoBookSharp size={18} />,
     },
