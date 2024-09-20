@@ -103,7 +103,7 @@ const Navbar = ({ theme }) => {
   }, [dispatch, status]);
 
   if (status === 'loading') {
-    return <div className="">
+    return <div className="flex justify-center items-center h-screen">
       <BeatLoader color="#4F46E5" loading={true} size={15} />
     </div>;;
   }

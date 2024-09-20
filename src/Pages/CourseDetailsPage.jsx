@@ -10,7 +10,9 @@ import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import Testimonials from "../Components/Testmonials/Testimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
-
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { BeatLoader } from "react-spinners";
 
 const CourseDetailsPage = () => {
 
@@ -29,29 +31,29 @@ const CourseDetailsPage = () => {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-  useEffect(() => {
-    const getCourseDetails = async () => {
-      // setCourseDetails(data[0]);
-      try {
-        setLoading(true);
-        const { data } = await axios.get(
-          `https://api.baoiam.com/api/courses?subcategory=${id}`
-        );
-        // console.log(data);
-        setCourseDetails(data[0]);
-        console.log(data[0], "live");
-        console.log(data, "all");
+  // useEffect(() => {
+  //   const getCourseDetails = async () => {
+  //     // setCourseDetails(data[0]);
+  //     try {
+  //       setLoading(true);
+  //       const { data } = await axios.get(
+  //         `https://api.baoiam.com/api/courses?subcategory=${id}`
+  //       );
+  //       // console.log(data);
+  //       setCourseDetails(data[0]);
+  //       console.log(data[0], "live");
+  //       console.log(data, "all");
 
-        setLoading(false);
-      } catch (error) {
-        console.log(error.stack);
-        setLoading(true);
-      }
-    };
-    getCourseDetails()
-  },[id])
-  console.log("course details: ", courseDetails);
-  document.title = `Baoiam - ${courseDetails.title}`;
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.log(error.stack);
+  //       setLoading(true);
+  //     }
+  //   };
+  //   getCourseDetails()
+  // },[id])
+  // console.log("course details: ", courseDetails);
+  // document.title = `Baoiam - ${courseDetails.title}`;
 
   // useEffect(() => {
   //   if (id >= 1 && id <= 10) {
@@ -97,37 +99,73 @@ const CourseDetailsPage = () => {
 
   console.log("id is:", id);
 
-
   // redux start
 
-  // const { course, status, error } = useSelector((state) => state.courseDetails);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   if (status == 'idle') {
-  //     dispatch(fetchCourseDetails(id));
-  //   }
-  // }, [dispatch, status]);
+  const { courses, currentCourseId, status, error } = useSelector((state) => state.courseDetails);
+  const dispatch = useDispatch();
+  const course = courses[id]; // Retrieve the course from the store by its id
+  
+  useEffect(() => {
+    // If the course is not in the store, fetch it
+    if (!course && status !== 'loading') {
+      dispatch(fetchCourseDetails(id));
+    }
+  }, [dispatch, id, course, status]);
+  console.log(course,' course action')
+  console.log(courses,' courses dkdkdkdk action')
+  if (status === 'loading' && !course) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+              <BeatLoader color="#4F46E5" loading={true} size={15} />
+      </div>
+    );
+  }
+  if (status === 'failed') {
+    return (
+      <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
+        <p>Error: {error}</p>
+      </div>
+    );
+  }
 
-  // if (status === 'loading') {
-  //   return (
-  //     <div className="flex justify-center items-center h-[200px]">
-  //       loading...
-  //     </div>
-  //   );
-  // }
-  // if (status === 'failed') {
-  //   return (
-  //     <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
-  //       <p>Error: {error}</p>
-  //     </div>
-  //   );
-  // }
-
-  // // redux end
-
-  // console.log(course, 'course api on action')
+  // redux end
 
 
+  const downloadBrochure = async (brochureUrl) => {
+    if (!brochureUrl) {
+      console.error("Brochure file URL is missing.");
+      return;
+    }
+    const toastId = toast.loading("download starting...");
+
+    try {
+      const response = await axios.get(brochureUrl, {
+        responseType: 'blob',
+      });
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'Brochure.pdf'); 
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link); 
+      toast.update(toastId, {
+        render: "downloaded successfully !!",
+        type: "success",
+        isLoading: false,
+        autoClose: 3000,
+      });
+    } catch (error) {
+      console.error("Error downloading the brochure:", error);
+      toast.update(toastId, {
+        render: error.message,
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+      });
+    }
+  };
 
 
   // I am Fetching all the course data through subcategory of course
@@ -137,10 +175,12 @@ const CourseDetailsPage = () => {
       <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12">
         <div className="flex flex-col gap-4">
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
-            {courseDetails?.title}
+            {/* {courseDetails?.title} */}
+            {course?.title}
           </h3>
           <Link
-            to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`}
+            // to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`}
+            to={`/book-a-demo/${course?.title}/${course?.id}`}
             className="relative group"
           >
             <button
@@ -150,12 +190,8 @@ const CourseDetailsPage = () => {
               Book a Demo
             </button>
           </Link>
-          {/* <p className="text-[0.8rem] lg:text-base">
-            {courseDetails?.desc?.map((detail, id) => {
-              return { detail };
-            })}
-          </p> */}
-          <p className="text-[0.8rem] lg:text-base">{courseDetails.description}</p>
+          {/* <p className="text-[0.8rem] lg:text-base">{courseDetails.description}</p> */}
+          <p className="text-[0.8rem] lg:text-base">{course?.description}</p>
 
           <div className="flex flex-row  gap-2">
             <button
@@ -165,15 +201,16 @@ const CourseDetailsPage = () => {
               Enroll Now{" "}
               <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
             </button>
-            <a
-              href={Brochure}
-              download={true}
+            <button
+              // href={Brochure}
+              // href = {course?.brochure_file}
+              onClick={() => downloadBrochure(course?.brochure_file)}              // download={true}
               className="pl-4 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
             >
               Download Brochure{" "}
               {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
               <FaDownload size={18} />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -217,87 +254,36 @@ const CourseDetailsPage = () => {
           {showTab == 1 ? (
             <div className="w-full h-[400px] overflow-auto mt-5 py-5 pt-0 hide-scrollbar">
               <div className="w-full">
-                {/* <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
-                  Course{" "}
-                  <span className="border-b border-orange-500 text-orange-500">
-                    Overview
-                  </span>
-                </h4> */}
+        
 
                 <ul className="list-inside xs:text-[14px] px-2 list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
-                  {/* {courseDetails.program_overview?.map(
-                    (o, i) =>
-                      typeof o === "string" && (
-                        <li key={i} className="text-black">{o}</li>
-                      )
-                  )} */}
-                  {courseDetails.program_overview?.split(".").map((o, i) => (
+                
+                  {/* {courseDetails.program_overview?.split(".").map((o, i) => (
+                    <li key={i}>{o}</li>
+                  ))} */}
+
+                  {course?.program_overview?.split(".").map((o, i) => (
                     <li key={i}>{o}</li>
                   ))}
+
                 </ul>
               </div>
             </div>
           ) : (
             showTab == 2 && (
               <div className="w-full mt-5 overflow-auto h-[400px] hide-scrollbar pb-3">
-                {/* <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
-                  Course{" "}
-                  <span className="border-b border-orange-500 text-orange-500">
-                    Curriculum
-                  </span>
-                </h4> */}
+      
 
                 <ul className="list-inside  mt-4">
-                  {courseDetails.curriculum?.split(".").map((o, i) => (
+                  {/* {courseDetails.curriculum?.split(".").map((o, i) => (
+                    <li key={i}>{o}</li>
+                  ))} */}
+
+                  {course?.curriculum?.split(".").map((o, i) => (
                     <li key={i}>{o}</li>
                   ))}
                 </ul>
 
-                {/* {courseDetails?.curriculum?.map((o, i) =>
-                  typeof o === "string" ? (
-                    <li className=" px-3 mx-2 py-4 shadow-md shadow-gray-500 font-bold rounded mt-4">
-                      {o}
-                    </li>
-                  ) : (
-                    o.weekTitle && (
-                      <details
-                        className="text-black bg-white cursor-pointer px-3 py-4 rounded mt-4 shadow-gray-400 shadow-md mx-2"
-                        onClick={() => {
-                          setIsWeekExpanded((prevState) => ({
-                            ...prevState,
-                            [i]: !prevState[i], // Toggle the state for the specific week by index
-                          }));
-                        }}
-                      >
-                        <summary className="font-bold xs:text-[14px] text-lg flex justify-between w-full">
-                          {o.weekTitle.startsWith("Week")
-                            ? o.weekTitle
-                            : "Week " + (i + 1) + ": " + o.weekTitle}
-
-                          {o.topics?.length > 0 && (
-                            <p
-                              className={`mr-5 ml-5 transform ${isWeekExpanded[i] ? "-rotate-90" : "rotate-90"
-                                }`}
-                            >
-                              &gt;
-                            </p>
-                          )}
-                        </summary>
-
-                        <ul className="list-disc w-full xs:text-[13px]">
-                          {o.topics?.map((d, i) => (
-                            <li
-                              className="ml-10 mt-2 break-words whitespace-normal"
-                              key={i}
-                            >
-                              {d}
-                            </li>
-                          ))}
-                        </ul>
-                      </details>
-                    )
-                  )
-                )} */}
               </div>
             )
           )}
@@ -347,7 +333,7 @@ const CourseDetailsPage = () => {
       <CourseHighlights />
 
       {/* Join we us */}
-      {courseDetails.plans && courseDetails.plans.length > 0 ? (
+      {course?.plans && course?.plans?.length > 0 ? (
         <div
           id="plans"
           ref={planRef}
@@ -363,7 +349,7 @@ const CourseDetailsPage = () => {
               </h2>
 
               <div className="mb-6 flex justify-center flex-wrap gap-10">
-                {courseDetails?.plans?.map((p, i) => {
+                {course?.plans?.map((p, i) => {
                   return (
                     <div
                       key={i}
@@ -384,7 +370,7 @@ const CourseDetailsPage = () => {
                             </div>
 
                             <p className="mx-auto mb-2 px-8 text-center text-lg text-gray-500 font-medium dark:text-white">
-                              {courseDetails.title}
+                              {course.title}
                             </p>
                             <p className="mx-auto mb-2 px-8 text-gray-500 font-medium text-center dark:text-white">
                               All Contents of Plus
@@ -533,6 +519,10 @@ const CourseDetailsPage = () => {
           </div>
         </div>
       </div> */}
+
+    <ToastContainer />
+
+
     </div>
 
 
