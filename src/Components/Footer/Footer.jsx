@@ -107,7 +107,7 @@ function Footer({ dark }) {
                 >
                   <MdKeyboardArrowRight className="min-w-6" size={20} />{" "}
                   <p className="truncate group-hover:text-wrap">
-                    Global Collabo Startup Program
+                    Bridge
                   </p>
                 </Link>
                 <Link
