@@ -94,7 +94,7 @@ useEffect(() => {
           {blog_slider?.map((el) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md flex flex-col justify-center items-center gap-4' 
                 key={el.id}
                 onClick={()=>navigate(`/Blog_detail/${el.id}`)}
               >
@@ -103,11 +103,11 @@ useEffect(() => {
                   src={el.pic}
                   alt='cat title image'
                 />
-                <div className='p-4 flex-grow'>
+                <div className='flex-grow'>
                   {/* <span className={`text-sm text-blue-500 font-semibold`}>
                     {el.title}
                   </span> */}
-                  <h2 className='text-lg font-bold my-2 truncate'>{el.des}</h2>
+                  <h2 className='text-lg font-bold my-2 text-wrap truncate'>{el.des}</h2>
                   <p className='text-sm'>{el.info}</p>
                 </div>
               </SwiperSlide>
