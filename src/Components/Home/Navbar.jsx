@@ -106,12 +106,12 @@ const Navbar = ({ theme }) => {
     <>
       {showmenu && (
         <div
-          className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 xl:hidden"
+          className="overlay fixed top-0 right-0 w-full  h-full bg-black opacity-40 z-40 xl:hidden"
           onClick={() => setShowmenu(false)}
         ></div>
       )}
       <div
-        className={`flex z-[90] h-24 items-center justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
+        className={`flex z-[90] h-24 items-center max-w-[1440px] justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
           ? "bg-white dark:bg-[#080529]"
           : "bg-white/70 backdrop-blur dark:bg-black/30 "
           }`}
