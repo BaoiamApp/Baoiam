@@ -20,6 +20,7 @@ import Logo from "./Logo";
 import CourseNav from "./CourseNav";
 import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
+import Enroll from "./EnrollNow"
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -200,7 +201,7 @@ const Navbar = ({ theme }) => {
         {/* Last */}
         <div>
           <div className="flex items-center gap-2 md:gap-4 text-black dark:text-white">
-            <div className="flex items-center gap-4 xl:gap-6">
+            <div className="flex items-center gap-6 xl:gap-14 ">
               <SearchBox courses={courses} />
 
               <div ref={userhandleDropDownRef}>
@@ -271,6 +272,10 @@ const Navbar = ({ theme }) => {
                 GCEP
               </button>
             </Link>
+
+            
+             <Enroll/>
+            
             <span
               onClick={() => setShowmenu((old) => !old)}
               className="block lg:hidden"
