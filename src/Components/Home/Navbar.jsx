@@ -12,7 +12,7 @@ import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
 import logoDark from "../../assets/logo-bg-removed.png";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { deleteUserData } from "../../redux/user/userSlice";
 import { deleteUserData1 } from "../../Redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
@@ -20,6 +20,8 @@ import Logo from "./Logo";
 import CourseNav from "./CourseNav";
 import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
+import { fetchAllCourses } from "../../redux/slices/courseSlice";
+import { BeatLoader } from "react-spinners";
 import Enroll from "./EnrollNow"
 
 const Navbar = ({ theme }) => {
@@ -46,18 +48,6 @@ const Navbar = ({ theme }) => {
     setLinkActive(link);
   };
 
-  // const getCourseData = async () => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       "https://api.baoiam.com/api/categories/"
-  //     );
-  //     setSchoolCourses(data[0].subcategories);
-  //     setCourses(data);
-  //     console.log(data);
-  //   } catch (err) {
-  //     // console.log(err.message);
-  //   }
-  // };
 
   const HideUserDrop = (event) => {
     if (
@@ -100,23 +90,39 @@ const Navbar = ({ theme }) => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
-    setDropCourse("");
   };
+
+  // redux start
+  const { allCourses, status, error } = useSelector((state) => state.courses);
+  console.log(allCourses, 'all courses navbar')
+
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchAllCourses());
+    }
+  }, [dispatch, status]);
+
+  if (status === 'loading') {
+    return <div className="">
+      <BeatLoader color="#4F46E5" loading={true} size={15} />
+    </div>;;
+  }
+
+  // redux end
 
   return (
     <>
       {showmenu && (
         <div
-          className="overlay fixed top-0 right-0 w-full h-full bg-black opacity-40 z-40 xl:hidden"
+          className="overlay fixed top-0 right-0 w-full  h-full bg-black opacity-40 z-40 xl:hidden"
           onClick={() => setShowmenu(false)}
         ></div>
       )}
       <div
-        className={`flex z-[90] h-28 items-center justify-between px-4 py-2 w-full fixed top-0 ${
-          isTransparent
-            ? "bg-white dark:bg-[#080529]"
-            : "bg-white/70 backdrop-blur dark:bg-black/30 "
-        }`}
+        className={`flex z-[90] h-24 items-center max-w-[1440px] justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
+          ? "bg-white dark:bg-[#080529]"
+          : "bg-white/70 backdrop-blur dark:bg-black/30 "
+          }`}
       >
         {/* Logo */}
 
@@ -124,18 +130,16 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${
-            isDark ? "font-semibold" : "font-medium"
-          } justify-between `}
+          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
+            } justify-between `}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-2 xl:mx-4 ${
-              location.pathname === "/" && linkActive === "Home"
-                ? "text-orange-500"
-                : ""
-            }`}
+            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
+              ? "text-orange-500"
+              : ""
+              }`}
           >
             Home
           </Link>
@@ -143,21 +147,21 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${
-              location.pathname === "/about-us" && linkActive === "About"
-                ? "text-indigo-600"
-                : ""
-            } `}
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             About Us
           </Link>
 
-          <li
-            onClick={() => setShow(!show)}
-            className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}
-          >
-            Courses
-            {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+          <li className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}>
+            <Link to="/courses">Courses</Link>
+            {show ? (
+              <IoIosArrowUp onClick={() => setShow(!show)} />
+            ) : (
+              <IoIosArrowDown onClick={() => setShow(!show)} />
+            )}
           </li>
 
           {show && (
@@ -167,7 +171,7 @@ const Navbar = ({ theme }) => {
               onMouseLeave={handleMouseLeave}
             >
               <CourseNav
-                courses={[School, CollegeCourseData, OtherCourseData]}
+                course={allCourses}
                 setShow={setShow}
               />
             </div>
@@ -176,11 +180,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
-              location.pathname === "/blogs" && linkActive === "Blog"
-                ? "text-indigo-600"
-                : ""
-            } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             Blog
           </Link>
@@ -188,11 +191,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
-              location.pathname === "/contact" && linkActive === "Contact Us"
-                ? "text-indigo-600"
-                : ""
-            } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             Contact Us
           </Link>
@@ -286,7 +288,7 @@ const Navbar = ({ theme }) => {
           <MobNavbar
             setShowmenu={setShowmenu}
             showmenu={showmenu}
-            courses={[School, CollegeCourseData, OtherCourseData]}
+            course={allCourses}
             isDark={isDark}
             setIsDark={darkTheme}
           />

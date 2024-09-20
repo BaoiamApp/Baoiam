@@ -6,7 +6,7 @@ const BrandMarquee = ({array}) => {
     return (
         <div className="flex w-11/12 my-4 mx-auto">
 
-        <Marquee className='flex gap-4'>{
+        <Marquee speed={100} className='flex gap-4'>{
             arrayDoubled.map((item, index) => (
                 <div key={index} className="flex-shrink-0 mx-8 h-fit w-24 md:w-28">
                     <img

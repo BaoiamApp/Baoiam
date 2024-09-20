@@ -24,8 +24,7 @@ const Protocol = () => {
               FULL-TIME SUPPORT
             </h2>
             <p className="text-sm tracking-tight">
-              Baoiam is the e-learning platform that focuses on the overall
-              skill development of it's learners by furnishing courses in a
+            Baoiam is an e-learning plateform that focuses on the overall skill development of its learners by furnishing courses in a
               variety of disciplines that can help anyone level their skills and
               pursue their passion.{" "}
             </p>
@@ -39,9 +38,7 @@ const Protocol = () => {
               EXPERIENCED TRAINERS
             </h2>
             <p className="text-sm tracking-tight">
-              The guidance and expertise that the learners receives from the
-              course is a lifetime experience. As our skilled trainers give
-              their best to provide you with a remembering experience.{" "}
+            The guidance and expertise that the learners receive from the course is a lifetime experience. As our skilled trainers give their best to provide you with a memorable experience.{" "}
             </p>
           </div>
         </div>

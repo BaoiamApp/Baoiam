@@ -1,6 +1,13 @@
-import bhead from './bhead.jpg';
+import bhead from "../../assets/Blogs/bhead.jpg";
+import { toast } from "react-toastify";
 
 export const HeaderBlog = ({ searchQuery, setSearchQuery }) => {
+  const handleSearch = () => {
+    if (searchQuery == "") {
+      toast.error("Please write something in input feild");
+    }
+  };
+
   return (
     <>
       <div className='relative font-[sans-serif]  before:absolute before:w-full before:h-full before:inset-0 before:bg-black/70 before:z-10'>
@@ -29,6 +36,7 @@ export const HeaderBlog = ({ searchQuery, setSearchQuery }) => {
 
               <button
                 type='button'
+                onClick={handleSearch}
                 className='bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white tracking-wide text-sm rounded-full px-6 py-3'
               >
                 Search

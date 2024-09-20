@@ -17,7 +17,7 @@ const ServicesTab = () => {
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     knowledge
                   </span>
-                  , boost up your{" "}
+                  , boost your{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     career
                   </span>
@@ -25,7 +25,7 @@ const ServicesTab = () => {
                 <p className="text-gray-500 text-sm">
                   Baoiam provides various services, including personalized
                   career counseling, resume and cover letter writing, interview
-                  preparation, and networking opportunities to ensure students'
+                  preparation, and networking opportunity to ensure students'
                   career growth is accelerated.
                 </p>
               </div>
@@ -140,7 +140,7 @@ const ServicesTab = () => {
                   mock tests, and real-time projects to make sure students'
                   career growth is accelerated. These interactive sessions
                   provide students with the oppotunity to learn from the best,
-                  ask questioins, clear doubts, and receive proper feedback.
+                  ask questions, clear doubts, and receive proper feedback.
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ const ServicesTab = () => {
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
                       <div className="text-lg font-bold text-gray-800 mb-2">
-                        Live Experts Classes
+                        Live Expert Classes
                       </div>
                       <p className="text-gray-600 text-sm">
                         Live expert classes deliver personalized, interactive
@@ -224,7 +224,7 @@ const ServicesTab = () => {
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
                       <div className="text-lg font-bold text-gray-800 mb-2">
-                        Mock and Assessments
+                        Mock Assessments
                       </div>
                       <p className="text-gray-500 text-sm">
                         Offering innovative mock assessments to evaluate and
@@ -252,8 +252,8 @@ const ServicesTab = () => {
                 </h1>
                 <p className="text-gray-500 text-sm">
                   Companies often provide various perks to their employees in
-                  order to enhance their overall job satisfaction and wellbeing.
-                  Some of the most common perks offered by companies include.
+                  order to enhance their overall job satisfaction and well being.
+                  Perks offered by our company includes the following.
                 </p>
               </div>
 
@@ -272,7 +272,7 @@ const ServicesTab = () => {
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
                       <div className="text-lg font-bold text-gray-800 mb-2">
-                        100% Academic and Employment
+                        100% Learning and Employment
                       </div>
                       <p className="text-gray-600 text-sm">
                         Delivering excellence and career success for every
@@ -301,7 +301,7 @@ const ServicesTab = () => {
                         Real-Time Group Discussion Rounds
                       </div>
                       <p className="text-gray-500 text-sm">
-                        We provide revolutionizes learning with cutting-edge
+                        We provide revolutionized learning with cutting-edge
                         technology and innovation.
                       </p>
                     </div>
@@ -363,9 +363,9 @@ const ServicesTab = () => {
                   </span>{" "}
                   in achievements
                 </h2>
-                <p className="text-gray-500 text-sm">
+                {/* <p className="text-gray-500 text-sm">
                   Check out the top reviews from our top performers.
-                </p>
+                </p> */}
               </div>
 
               {/* Content Section */}

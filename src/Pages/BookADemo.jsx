@@ -12,13 +12,13 @@ import { BeatLoader, ClipLoader } from 'react-spinners';
 const apiUrl = import.meta.env.VITE_API_URL;
 const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
-const capitalizeTitle = (title) => {
-  return title
-    .toLowerCase()
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-};
+// const capitalizeTitle = (title) => {
+//   return title
+//     .toLowerCase()
+//     .split(' ')
+//     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+//     .join(' ');
+// };
 
 const limitDescription = (description, wordLimit = 20) => {
   const words = description.split(' ');
@@ -28,7 +28,7 @@ const limitDescription = (description, wordLimit = 20) => {
 const BookADemo = () => {
   const dispatch = useDispatch();
   const { course, status, error } = useSelector((state) => state.courseDetails);
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(0);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { courseId } = useParams();
@@ -109,14 +109,24 @@ const BookADemo = () => {
 
   if (status === 'loading') {
     return <div className="flex justify-center items-center h-[90vh]">
-              <BeatLoader color="#4F46E5" loading={true} size={15} />
-           </div>;
+      <BeatLoader color="#4F46E5" loading={true} size={15} />
+    </div>;
   }
   if (status === 'failed') {
     return <div className="flex justify-center text-red-500 items-center h-[90vh]">
-            {error}
-           </div>;;
-  } 
+      {error}
+    </div>;;
+  }
+
+  console.log(course);
+
+  const truncateText = (text) => {
+    if (text.length > 20) {
+      return text.substring(0, 20) + '...';
+    } else {
+      return text;
+    }
+  }
 
   return (
     <section className="min-h-screen bg-gray-100 dark:bg-[#080529] py-12 px-4 relative">
@@ -138,17 +148,18 @@ const BookADemo = () => {
 
           <>
             <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100 mb-8">
-              Demo Course on <span className="text-indigo-600 dark:text-indigo-400">{course?.title}</span>
+              Demo Course on <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">{course?.title}</span>
             </h2>
 
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-left flex flex-col justify-between border border-gray-300 dark:border-gray-700">
+              <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-left flex flex-col border border-gray-300 dark:border-gray-700">
                 <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Choose Your Plan</h2>
                 <div className="space-y-4">
                   {course?.plans.map((plan, index) => (
                     <div
                       key={plan.id}
-                      className={`flex items-center p-4 rounded-lg border ${selectedPlan === index ? 'border-indigo-400 bg-indigo-100 dark:bg-indigo-700' : 'border-gray-300 dark:border-gray-600'}`}
+                      onClick={() => setSelectedPlan(index)}
+                      className={`flex items-center p-4 rounded-lg border ${selectedPlan === index ? 'border-indigo-400 bg-gradient-to-r from-teal-50  to-indigo-100 shadow-lg' : 'border-gray-300 dark:border-gray-600'}`}
                     >
                       <input
                         type="radio"
@@ -159,7 +170,7 @@ const BookADemo = () => {
                         className="form-radio h-5 w-5 text-orange-500 dark:text-orange-400"
                       />
                       <div className="ml-4">
-                        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">{capitalizeTitle(course.plans[index].name)}</h3>
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 capitalize">{course.plans[index].name}</h3>
                         <p className="text-gray-600 dark:text-gray-300 mt-1">{course.plans[index].courseType} Course</p>
                       </div>
                     </div>
@@ -171,16 +182,17 @@ const BookADemo = () => {
                 <div className="flex flex-col space-y-8">
                   <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 border border-gray-300 dark:border-gray-700">
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
-                      <FiBookOpen className="mr-2 text-indigo-600 dark:text-indigo-400" /> {capitalizeTitle(course?.title)}
+                      <FiBookOpen className="mr-2 text-indigo-600 dark:text-indigo-400 capitalize" /> {course?.title}
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      <span className="font-semibold">Description:</span> {limitDescription(course.description)}
+                      <span className="font-semibold">Description:</span> {limitDescription(course?.description)}
+                      {/* <span className="font-semibold">Description:</span> {course?.description} */}
                     </p>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      <span className="font-semibold">Course Type:</span> {course.plans[selectedPlan].name}
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 capitalize">
+                      <span className="font-semibold">Course Type:</span> {course?.plans[selectedPlan].name}
                     </p>
                     <p className="flex items-center text-lg font-bold text-gray-900 dark:text-gray-100">
-                      <FaRupeeSign className="mr-1 text-orange-600 dark:text-orange-400" /> ₹{course.plans[selectedPlan].price}
+                      <FaRupeeSign className="mr-1 text-orange-600 dark:text-orange-400" /> ₹{course?.plans[selectedPlan].price}
                     </p>
                   </div>
 
@@ -190,7 +202,7 @@ const BookADemo = () => {
                     </h2>
 
                     <p className="text-gray-700 dark:text-gray-300 mb-6">
-                      You have selected the <span className="font-semibold">{capitalizeTitle(course?.plans[selectedPlan].name)}</span> for ₹100.
+                      You have selected the <span className="font-semibold">{course?.plans[selectedPlan].name}</span> for ₹100.
                     </p>
 
                     <button
@@ -203,7 +215,7 @@ const BookADemo = () => {
                           <span className="ml-2">Processing...</span>
                         </div>
                       ) : (
-                        "Book a Demo for ₹100" 
+                        "Book a Demo for ₹100"
                       )}
                     </button>
                   </div>

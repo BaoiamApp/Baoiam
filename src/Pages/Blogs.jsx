@@ -1,92 +1,44 @@
 import react, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import screen_time from "../assets/Blogs/screen_time.png";
 import ed_tech from "../assets/Blogs/ed_tech.png";
 import era_of_early_childhood from "../assets/Blogs/era_of_early_childhood.jpg";
-import ed_tech_enhances_critical_thinking from "../assets/Blogs/ed_tech_enhances_critical_thinking.png";
-import new_excited_tech_edu1 from "../assets/Blogs/new_excited_tech_edu1.jpg";
-import web_dev1 from "../assets/Blogs/web_dev1.png";
-import financial_literacy from "../assets/Blogs/financial_literacy.jpg";
-import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
-import software_testing from "../assets/Blogs/software_testing.png";
-import { StarIcon } from "@heroicons/react/16/solid";
 import "./Blogs.css";
-import { StatupSlider } from "../Components/Blogs/StatupSlider"; 
+import { StatupSlider } from "../Components/Blogs/StatupSlider";
 import { TechBlogSlider } from "../Components/Blogs/TechBlogSlider";
 import { BusSlider } from "../Components/Blogs/BusSlider";
 import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
 import NewsletterBanner from "../Components/Home/Subcription";
 import gsap from "gsap";
+import web_dev1 from "../assets/Blogs/web_dev1.png";
 
 const blog_list = [
   {
-    title: "Akshay Saini",
+    title: "John Statham",
     titleColor: "blue-500",
-    imgSrc: screen_time,
-    text: "Balancing Screen Time: Healthy Technology Use In Education",
-    info: "Dec 22, 2022 • 10 mins read",
+    imgSrc: web_dev1,
+    text: "The path to a successful tech career: The Importance of web development skills",
+    info: "Sep 19, 2022 • 8 mins read",
+    des: "The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry.",
+    category: "Science",
   },
+
   {
     title: "Amily Clarke",
     titleColor: "blue-500",
-
     imgSrc: ed_tech,
     text: "Challenges of Implementing Ed-Tech Companies And How  to Overcome Them.",
     info: "Nov 20, 2022 • 10 mins read",
+    des: "Technology change is very rapid. With the change in technology people's preference for content consumption is also changing. ",
+    category: "Education",
   },
   {
     title: "John Watson",
     titleColor: "blue-500",
-
     imgSrc: era_of_early_childhood,
-    text: "The era of early childhood education:  take up changes, block challenges and, exercise of strategic tools ",
+    text: "The era of early childhood education and exercise of strategic tools ",
     info: "Nov 13, 2022 • 3 mins read",
-  },
-  {
-    title: "Jason Adam",
-    titleColor: "blue-500",
-
-    imgSrc: ed_tech_enhances_critical_thinking,
-    text: "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
-    info: "Oct 17, 2022 • 5 mins read",
-  },
-  {
-    title: "Mary Smith",
-    titleColor: "blue-500",
-
-    imgSrc: new_excited_tech_edu1,
-    text: "New and Exciting Technology in Education",
-    info: "Oct 10, 2022 • 10 mins read",
-  },
-  {
-    title: "John Statham",
-    titleColor: "blue-500",
-
-    imgSrc: web_dev1,
-    text: "The path to a successful tech career: The Importance of web development skills",
-    info: "Sep 19, 2022 • 8 mins read",
-  },
-  {
-    title: "John Statham",
-    titleColor: "blue-500",
-    info: "Sep 24, 2022 • 14 mins read",
-    imgSrc: financial_literacy,
-    text: "Mastering Financial Literacy for All: Essential Skills for a Brighter Future",
-  },
-  {
-    text: "Unlocking the Future of Education: Ed-Tech Latest Trends ",
-    info: "Oct 19, 2022 • 8 mins read",
-    titleColor: "blue-500",
-
-    imgSrc: ed_tech_latest_trends,
-    title: "Akshay Saini",
-  },
-  {
-    info: "Sep 13, 2022 • 5 mins read",
-    text: "What is software testing and its importance?",
-    titleColor: "blue-500",
-    imgSrc: software_testing,
-    title: "Amily Clarke",
+    des: "Where your child is growing because this tools provide high enghamenet over learninga and fastest grasping content that enhance learning experience.",
+    category: "Education",
   },
 ];
 
@@ -176,27 +128,35 @@ const Blog = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  
-    gsap.fromTo('.b1',{opacity:0,y:-60},{
-      opacity:1,
-      duration:1,
-      y:0,
-      ease:'power1.inOut',
-      stagger:0.3,
-    })
 
-    gsap.fromTo('.b2',{opacity:0,y:30},{
-      opacity:1,
-      duration:1,
-      y:0,
-      ease:'back.inOut',
-      stagger:0.3,
-      scrollTrigger:{
-        trigger:'.bdiv1',
-        start:'top 70%',
-        end:'bottom 80%'
+    gsap.fromTo(
+      ".b1",
+      { opacity: 0, y: -60 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "power1.inOut",
+        stagger: 0.3,
       }
-    })
+    );
+
+    gsap.fromTo(
+      ".b2",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".bdiv1",
+          start: "top 70%",
+          end: "bottom 80%",
+        },
+      }
+    );
     return () => {};
   }, []);
 
@@ -287,12 +247,12 @@ const Blog = () => {
         <h1 className='text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className='b2 text-l  text-center mt-2 mb-6'>
+        <h2 className='b2 text-lg text-center mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 
         <div className=' p-6'></div>
-        <div className='px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+        <div className='px-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
           {blog_list
             .filter(
               (item) =>
@@ -302,21 +262,34 @@ const Blog = () => {
             .map((item, i) => (
               <Link key={i} to={`/Blog_detail/${i}`}>
                 <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
-                  <img
-                    className='w-full h-48 object-cover'
-                    src={item.imgSrc}
-                    alt={`${item.title}`}
-                  />
-                  <div className='p-6 flex-grow'>
-                    <span
-                      className={`text-sm text-${item.titleColor} font-semibold`}
+                  <div className='relative'>
+                    <img
+                      className='w-full h-48 object-cover'
+                      src={item.imgSrc}
+                      alt={`${item.title}`}
+                    />
+                    {/* Button positioned over the image */}
+                    <button
+                      type='button'
+                      className='absolute bottom-2 left-3  bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white text-sm rounded-full px-4 py-2'
                     >
-                      {item.title}
+                      {item.category}
+                    </button>
+                  </div>
+                  <div className='p-4 flex-grow '>
+                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                    <span
+                      className='text-sm text-gray-500 font-semibold'
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        WebkitLineClamp: 2, // Limit to 2 lines
+                      }}
+                    >
+                      {item.des}
                     </span>
-                    <h2 className='text-lg font-bold my-2 truncate'>
-                      {item.text}
-                    </h2>
-                    <p className='text-sm'>{item.info}</p>
+                    <p className='text-sm font-medium mt-2'>{item.info}</p>
                   </div>
                 </div>
               </Link>
