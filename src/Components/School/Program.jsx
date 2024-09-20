@@ -1,33 +1,74 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const Program = ({title,data}) => {
+// Register ScrollTrigger with GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+const Program = ({ title, data }) => {
+  const titleRef = useRef(null);
+  const buttonRefs = useRef([]);
+
+  useEffect(() => {
+    // Animation for the title
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: -30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    // Animation for each button
+    buttonRefs.current.forEach((button, index) => {
+      gsap.fromTo(
+        button,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: button,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+            delay: index * 0.1, // Stagger the animations
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
-    
-    <div className="p-5 mx-auto lg:w-10/12 mt-10  sm:px- xs:px-4" id="courses">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-          {title} Programs
-        </h1>
-        {/* <ul className="grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-2 gap-x-5 text-left text-[#031864] font-semibold">
-          {static_data.map((ele, id) => {
-            return (
-              <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
-                {ele}
-              </li>
-            );
-          })}
-        </ul> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center mt-8 gap-2 md:gap-4">
-          {data.map((category, index) => (
-            <button
-              key={index}
-              className="dark:bg-indigo-600 w-full px-4 py-2 md:px-6 md:py-2 border border-none bg-slate-100 rounded-md text-sm md:text-base"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+    <div className="p-5 mx-auto lg:w-10/12 mt-10 sm:px-4 xs:px-4" id="courses">
+      <h1
+        ref={titleRef}
+        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4"
+      >
+        {title} Programs
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center mt-8 gap-2 md:gap-4">
+        {data.map((category, index) => (
+          <button
+            key={index}
+            ref={(el) => (buttonRefs.current[index] = el)}
+            className="dark:bg-indigo-600 w-full px-4 py-2 md:px-6 md:py-2 border border-none bg-slate-100 rounded-md text-sm md:text-base"
+          >
+            {category}
+          </button>
+        ))}
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Program
+export default Program;
