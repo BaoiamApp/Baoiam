@@ -1,4 +1,6 @@
-import React, { useEffect, useRef }, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { static_data,static_data2,static_data3 } from "../Data/static_courseData";
+import { fetchAllCourses } from "../redux/slices/courseSlice";
 import { Link } from "react-router-dom";
 import SliderHero from "../Components/School/SliderHero";
 import OurHands from "../assets/Team/TeamHands.jpg";
@@ -37,255 +39,27 @@ import Program from "../Components/School/Program";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch, useSelector } from "react-redux";
-const static_data = [
-  <Link to="/course/1">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaMicrophone
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">English Speaking/Public Speaking</span>
-    </span>
-  </Link>,
-  <Link to="/course/2">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaLightbulb
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Creative Writing</span>
-    </span>
-  </Link>,
-  <Link to="/course/3">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaPaintbrush
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Art and Craft (DIY)</span>
-    </span>
-  </Link>,
-  <Link to="/course/4">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaCog
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Critical Thinking & Problem Solving</span>
-    </span>
-  </Link>,
-  <Link to="/course/5">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaHandsHelping
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Life Skills</span>
-    </span>
-  </Link>,
-  <Link to="/course/6">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaCamera
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Photography & Editing Skills</span>
-    </span>
-  </Link>,
-  <Link to="/course/7">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaCode
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Technology Development with AI & Coding</span>
-    </span>
-  </Link>,
-  <Link to="/course/8">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaChartLine
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Entrepreneurship & Innovation</span>
-    </span>
-  </Link>,
-  <Link to="/course/9">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <MdGroup
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Social Media & Digital Marketing</span>
-    </span>
-  </Link>,
-  <Link to="/course/10">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <BsBank
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Finance Education</span>
-    </span>
-  </Link>,
-];
-const static_data2 = [
-  <Link to="/course/11">
-    <span className="relative z-10 flex items-center gap-4">
-      <MdWeb className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-      <span className="">Web Development</span>
-    </span>
-  </Link>,
-  <Link to="/course/12">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaPalette
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">Graphic Designing</span>
-    </span>
-  </Link>,
-  <Link to="/course/13">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaUserTie
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">Human Resource</span>
-    </span>
-  </Link>,
-  <Link to="/course/14">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaChartLine
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">Data Analytics</span>
-    </span>
-  </Link>,
-  <Link to="/course/15">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaTasks className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-      <span className="">Product Management</span>
-    </span>
-  </Link>,
-  <Link to="/course/16">
-    <span className="relative z-10 flex items-center gap-4">
-      <SiAndroid
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">Android Development</span>
-    </span>
-  </Link>,
-  <Link to="/course/17">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaBullhorn
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">Digital Marketing</span>
-    </span>
-  </Link>,
-  <Link to="/course/18">
-    <span className="relative z-10 flex items-center gap-4">
-      <MdDesignServices
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">UI/UX Design</span>
-    </span>
-  </Link>,
-  <Link to="/course/19">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaBug className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-      <span className="">Software Testing</span>
-    </span>
-  </Link>,
-  <Link to="/course/20">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaLightbulb
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">Entrepreneurship & Innovation</span>
-    </span>
-  </Link>,
-  <Link to="/course/21">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaSearch
-        className="text-indigo-600 group-hover:text-white"
-        size={22}
-      />{" "}
-      <span className="">SEO Development</span>
-    </span>
-  </Link>,
-  <Link to="/course/22">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaRobot className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-      <span className="">Machine Learning with AI</span>
-    </span>
-  </Link>,
-];
-const static_data3 = [
-  <Link to="/course/23">
-    <span className="relative z-10 flex items-center gap-4">
-      <FaGlobe
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">International Business</span>
-    </span>
-  </Link>,
-  <Link to="/course/24">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <GiBrain
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Emotional Intelligence</span>
-    </span>
-  </Link>,
 
-  <Link to="/course/25">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <MdContentPaste
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Executive & Public Relations Content Writing</span>
-    </span>
-  </Link>,
+const schoolIcons=[<FaPaintbrush/>,<FaHandsHelping />,<FaMicrophone />,<FaLightbulb />,<BsBank />,<FaCog />,<FaCamera />,<FaCode />,<FaChartLine />,<MdGroup /> ]
 
-  <Link to="/course/26">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <SiDatabricks
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Data Science</span>
-    </span>
-  </Link>,
-  <Link to="/course/27">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <AiOutlineRobot
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Machine Learning with AI</span>
-    </span>
-  </Link>,
-  <Link to="/course/28">
-    <span className="relative z-10 flex items-center gap-4 ">
-      <FaChartLine
-        className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-        size={22}
-      />
-      <span className="">Data Analytics</span>
-    </span>
-  </Link>,
-];
+const collegeIcons=[<FaTasks/>,<FaSearch />,<MdWeb />,<FaLightbulb />,<FaBug />,<FaRobot />,<FaPalette />,<FaBullhorn />,<SiAndroid />,<FaUserTie />,<MdDesignServices />,<FaChartLine />,<SiDatabricks/>, <BsBank/> ]
 
+const otherIcons=[<SiDatabricks/>,<FaRobot/>,<FaChartLine/>,<FaGlobe/>,<GiBrain/>,<MdContentPaste/>,<FaGlobe/>,]
+
+
+const Courses = () => {
+
+  
+  const [courses, setCourses] = useState([]);
+  const dispatch = useDispatch();
+
+  const { allCourses, status, error } = useSelector((state) => state.courses);
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchAllCourses());
+    }
+  }, [dispatch, status]);
+  
   const textRef = useRef(null);
   const sliderRef = useRef(null);
   const sectionRef = useRef(null);
@@ -383,26 +157,6 @@ const static_data3 = [
   }, []);
 
 
-const schoolIcons=[<FaPaintbrush/>,<FaHandsHelping />,<FaMicrophone />,<FaLightbulb />,<BsBank />,<FaCog />,<FaCamera />,<FaCode />,<FaChartLine />,<MdGroup /> ]
-
-const collegeIcons=[<FaTasks/>,<FaSearch />,<MdWeb />,<FaLightbulb />,<FaBug />,<FaRobot />,<FaPalette />,<FaBullhorn />,<SiAndroid />,<FaUserTie />,<MdDesignServices />,<FaChartLine />,<SiDatabricks/>, <BsBank/> ]
-
-const otherIcons=[<SiDatabricks/>,<FaRobot/>,<FaChartLine/>,<FaGlobe/>,<GiBrain/>,<MdContentPaste/>,<FaGlobe/>,]
-
-
-const Courses = () => {
-  const [courses, setCourses] = useState([]);
-  const dispatch = useDispatch();
-
-  const { allCourses, status, error } = useSelector((state) => state.courses);
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchAllCourses());
-    }
-  }, [dispatch, status]);
-
-  useEffect(()=>console.log(allCourses[2].subcategories.map(item=>item.name)),[])
-
   return (
     <>
       <div className="flex mt-20 justify-center flex-col-reverse lg:flex-row items-center mx-auto w-full p-5 sm:px-6 xs:px-4">
@@ -421,7 +175,7 @@ const Courses = () => {
         <SliderHero />
       </div>
     </div>
-      <<Program title={"Junior"} icons={schoolIcons} data={allCourses[0]?.subcategories||static_data}/>
+      <Program title={"Junior"} icons={schoolIcons} data={allCourses[0]?.subcategories||static_data}/>
       <Program title={"University"} icons={collegeIcons} data={allCourses[1]?.subcategories||static_data2}/>
       <Program title={"Professional Degree"} icons={otherIcons} data={allCourses[2]?.subcategories||static_data3}/>
       <section ref={sectionRef} className="py-16 dark:bg-black dark:text-white">
