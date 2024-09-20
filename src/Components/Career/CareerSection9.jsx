@@ -16,11 +16,13 @@ const Testimonials = () => {
   return (
     <div className="my-12 relative z-10">
       <div className="text-center max-w-3xl mx-auto flex flex-col gap-2">
-        <h2 className="font-extrabold text-2xl md:text-4xl lg:text-4xl sm:text-4xl text-black p-3">{data.title}</h2>
+        <h2 className="font-extrabold text-2xl md:text-4xl lg:text-4xl sm:text-4xl text-black p-3">
+          {data.title}
+        </h2>
         {/* <p className="mt-4 leading-relaxed text-black">{data.description}</p> */}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4">
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4 ">
         {data.testimonials.map((testimonial, index) => (
           <div
             key={index}
@@ -34,7 +36,7 @@ const Testimonials = () => {
             />
             {/* Testimonial Quote */}
             <div className="mt-8 text-center">
-              <p className="text-sm text-gray-800 leading-relaxed">
+              <p className="lg:text-sm md:text-xs sm:text-xs  text-xs text-gray-800 leading-relaxed">
                 {testimonial.quote}
               </p>
             </div>
@@ -46,7 +48,7 @@ const Testimonials = () => {
             </div>
             {/* Name */}
             <div className="mt-2 text-center">
-              <h4 className="text-sm font-bold text-gray-900">
+              <h4 className="lg:text-sm md:text-xs sm:text-xs text-xs font-bold text-gray-900">
                 {testimonial.name}
               </h4>
             </div>

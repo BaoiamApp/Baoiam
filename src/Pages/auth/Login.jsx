@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 const apiUrl = import.meta.env.VITE_API_URL;
 const domain = import.meta.env.VITE_DOMAIN_URL;
 import gsap from "gsap";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Login = () => {
   document.title = "Baoiam - Login";
@@ -18,6 +19,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const location = useLocation();
   const requestRef = useRef(false);
+
+  const [pass, setPass] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -219,65 +222,9 @@ const Login = () => {
 
   return (
     <>
-      {/* <style>
-        {`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-
-          @keyframes slideInLeft {
-            from {
-              transform: translateX(-100%);
-              opacity: 0;
-            }
-            to {
-              transform: translateX(0);
-              opacity: 1;
-            }
-          }
-
-          @keyframes slideInUp {
-            from {
-              transform: translateY(100%);
-              opacity: 0;
-            }
-            to {
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-
-          .animation-container {
-            animation: fadeIn 0.8s ease-in-out forwards;
-          }
-
-          .animate-fadeIn {
-            animation: fadeIn 1.2s ease-in-out forwards;
-          }
-
-          .animate-slideInLeft {
-            animation: slideInLeft 1s ease-in-out forwards;
-          }
-
-          .animate-slideInUp {
-            animation: slideInUp 1s ease-in-out forwards;
-          }
-        `}
-      </style> */}
-
       <ToastContainer />
 
       <div className="flex items-center justify-center py-2 bg-transparent relative overflow-hidden z-3 dark:text-black">
-        {/* <div className="absolute inset-0 z-1 blur-sm dark:hidden">
-          <div className="bg-1 absolute inset-0 bg-gradient-to-b from-[#F6A411] to-[#3A80F6]"></div>
-          <div className="bg-2 absolute inset-0 opacity-0 bg-gradient-to-tr from-[#F6A411] to-[#3A80F6]"></div>
-          <div className="bg-3 absolute inset-0 opacity-0 bg-gradient-to-tl from-[#F6A411] to-[#3A80F6]"></div>
-        </div> */}
 
         <div
           ref={Anime1}
@@ -290,19 +237,19 @@ const Login = () => {
 
         <div className="relative flex flex-col m-6 space-y-8 bg-white md:mx-20 shadow-lg lg:shadow-xl rounded-2xl md:flex-row md:space-y-0 ">
           {/* Left Side */}
-          <div className="flex flex-col justify-center px-6 py-6 md:p-14 animate-slideInLeft">
-            <span className="mb-2  text-[2xl] md:text-2xl font-bold text-blue-500">
+          <div className="flex flex-col justify-center px-6 py-6 lg:p-14 animate-slideInLeft">
+            <span className="mb-2 text-xl md:text-2xl font-bold text-blue-500">
               Welcome back
             </span>
-            <span className="font-light text-gray-400 text-[2.3vw] md:text-[1.3vw] mb-0 md:mb-6 animate-fadeIn">
-              Welcome back! Please enter your details
+            <span className="font-light text-gray-400 text-xs md:text-[1.4vw] lg:text-[1vw] mb-0 md:mb-6 animate-fadeIn">
+              Please enter your details
             </span>
             <form onSubmit={handleLogin}>
               <div className="py-4 md:py-0 animate-slideInUp">
-                <span className="mb-2 text-[4.5vw] md:text-[1.5vw]">Email</span>
+                <span className="mb-2 text-sm md:text-[1.4vw] lg:text-[1.3vw]">Email</span>
                 <input
                   type="text"
-                  className="w-full p-2 text-[4vw] md:text-[1vw] border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                  className="w-full p-2 text-sm md:text-[1.4vw] lg:text-[1vw] border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
                   name="email"
                   id="email"
                   placeholder="Enter your email"
@@ -311,22 +258,25 @@ const Login = () => {
                 />
               </div>
               <div className="py-4 animate-slideInUp">
-                <span className="mb-2 text-[4.5vw] md:text-[1.5vw]">
+                <span className="mb-2 text-sm md:text-[1.4vw] lg:text-[1.3vw]">
                   Password
                 </span>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  className="w-full p-2 text-[4vw] md:text-[1vw] border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <div className="flex items-center  p-2 border border-gray-300 rounded-md">
+                  <input
+                    type={pass ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    className="w-full text-sm md:text-[1.4vw] lg:text-[1vw] placeholder:font-light placeholder:text-gray-500 outline-none"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <span className="cursor-pointer text-slate-500" onClick={() => setPass(!pass)}>{pass ?<FiEyeOff size={17} /> : <FiEye size={17} />}</span>
+                </div>
               </div>
               <div className="flex justify-between mb-4 w-full animate-fadeIn">
                 <div className=" md:mr-24 flex items-center">
-                  <input type="checkbox" name="ch" id="ch" className="mr-2" />
+                  <input type="checkbox" name="ch" id="ch" className="mr-2" required />
                   <span className="text-[3.5vw]  md:text-[1vw]">Remember</span>
                 </div>
                 <Link
@@ -343,7 +293,7 @@ const Login = () => {
                 Sign in
               </button>
             </form>
-            <button
+            {/* <button
               onClick={handleGoogleLogin}
               className="w-full border items-center flex justify-center border-gray-300 text-[4.4vw] md:text-[1vw] p-1 md:p-2 rounded-lg mb-6 hover:bg-black hover:text-white transform hover:scale-105 transition-all duration-300 animate-slideInUp"
             >
@@ -353,8 +303,8 @@ const Login = () => {
                 className=" md:h-4 h-4 inline mr-2"
               />
               Sign in with Google
-            </button>
-            <div className="text-center text-[3vw] md:text-[1vw] text-gray-400 animate-fadeIn">
+            </button> */}
+            <div className="text-center text-[3vw] md:text-[1vw] text-gray-500 animate-fadeIn">
               Don't have an account?{" "}
               <Link
                 to="/signup"
@@ -364,16 +314,8 @@ const Login = () => {
               </Link>
             </div>
           </div>
-          {/* Right Side */}
-          {/* <div className="relative animate-fadeIn">
-            <img
-              src={exampleImage}
-              alt="Example"
-              className="w-full h-full hidden rounded-r-2xl md:block object-cover"
-            />
-          </div> */}
 
-          <div className="relative flex items-center hidden md:block  max-w-[32vw]">
+          <div className="relative hidden md:flex items-center w-[35vw] lg:w-[32vw]">
             {/* Background Animation */}
             <div className="absolute  z-0 bg-[#3A80F6] overflow-hidden  w-full h-full rounded-r-2xl">
               {[...Array(10)].map((_, i) => (

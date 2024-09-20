@@ -12,7 +12,7 @@ import SearchBox from "./SearchBox";
 import logo from "../../assets/BAOAM.png";
 import logoDark from "../../assets/logo-bg-removed.png";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { deleteUserData } from "../../redux/user/userSlice";
 import { deleteUserData1 } from "../../Redux/user/userSlice";
 import MobNavbar from "./MobNavbar";
@@ -20,6 +20,8 @@ import Logo from "./Logo";
 import CourseNav from "./CourseNav";
 import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
+import { fetchAllCourses } from "../../redux/slices/courseSlice";
+import { BeatLoader } from "react-spinners";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -45,18 +47,6 @@ const Navbar = ({ theme }) => {
     setLinkActive(link);
   };
 
-  // const getCourseData = async () => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       "https://api.baoiam.com/api/categories/"
-  //     );
-  //     setSchoolCourses(data[0].subcategories);
-  //     setCourses(data);
-  //     console.log(data);
-  //   } catch (err) {
-  //     // console.log(err.message);
-  //   }
-  // };
 
   const HideUserDrop = (event) => {
     if (
@@ -99,9 +89,26 @@ const Navbar = ({ theme }) => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => setShow(false), 300); // Set a 300ms delay
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
-    setDropCourse("");
   };
 
+
+   // redux start
+  const {allCourses, status, error} = useSelector((state) => state.courses);
+   console.log(allCourses, 'all courses navbar')
+   useEffect(() => {
+     if(status==='idle'){
+       dispatch(fetchAllCourses());
+     }
+   }, [dispatch, status]);
+ 
+   if (status === 'loading') {
+     return  <div className="">
+                 <BeatLoader color="#4F46E5" loading={true} size={15} />
+            </div>;;
+   }
+
+   // redux end
+ 
   return (
     <>
       {showmenu && (
@@ -111,11 +118,10 @@ const Navbar = ({ theme }) => {
         ></div>
       )}
       <div
-        className={`flex z-[90] h-28 items-center justify-between px-4 py-2 w-full fixed top-0 ${
-          isTransparent
-            ? "bg-white dark:bg-[#080529]"
-            : "bg-white/70 backdrop-blur dark:bg-black/30 "
-        }`}
+        className={`flex z-[90] h-24 items-center justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
+          ? "bg-white dark:bg-[#080529]"
+          : "bg-white/70 backdrop-blur dark:bg-black/30 "
+          }`}
       >
         {/* Logo */}
 
@@ -215,12 +221,8 @@ const Navbar = ({ theme }) => {
               {userDrop && (
                 <div
                   ref={userDropDownRef}
-                  className="z-40 absolute top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600"
+                  className="z-40 absolute md:right-40 right-12 top-20 bg-white divide-y divide-gray-100 rounded-lg shadow w-24 md:w-28 dark:bg-gray-700 dark:divide-gray-600"
                 >
-                  {/* <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                  <div>Bonnie Green</div>
-                  <div className="font-medium truncate">name@flowbite.com</div>
-                </div> */}
                   <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                     {!localStorage.getItem("access_token") ? (
                       <Link
@@ -258,9 +260,6 @@ const Navbar = ({ theme }) => {
                       </p>
                     )}
                   </ul>
-                  {/* <div className="py-2">
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                </div> */}
                 </div>
               )}
             </div>

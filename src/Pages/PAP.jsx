@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 // Import Swiper styles
 // import "./style.css";
 import "swiper/css";
@@ -43,6 +44,8 @@ import {
 } from "react-icons/bs";
 import ListSlide from "../Components/PAP/ListSlide";
 import { Link } from "react-router-dom";
+import gsap from 'gsap';
+
 
 const PAP = () => {
   document.title = "Baoiam - PAP";
@@ -161,6 +164,234 @@ const PAP = () => {
       image: Som,
     },
   ];
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+const tl = gsap.timeline()
+
+tl.fromTo('.pap1',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+})
+
+tl.fromTo('.pap2',{opacity:0,x:50},{
+  opacity:1,
+  x:0,
+  duration:1,
+  ease:'power2.inOut',
+},
+'-=1')
+
+
+gsap.fromTo('.pap3',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv1',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+gsap.fromTo('.pap4',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv2',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+const te = gsap.timeline({
+  scrollTrigger:{
+    trigger:'.papdiv3',
+    start:'top 90%',
+    end:'bottom 80%',
+  }
+})
+
+te.fromTo('.pap5',{opacity:0,y:30},{
+  opacity:1,
+  duration:1,
+  ease:'back.inOut',
+  y:0,
+  stagger:0.2,
+})
+
+te.fromTo('.pap6',{opacity:0,x:-50},{
+  opacity:1,
+  duration:1,
+  ease:'power1.inOut',
+  x:0
+},
+'-=0.3')
+
+te.fromTo('.pap7',{opacity:0,x:50},{
+  opacity:1,
+  duration:1.3,
+  ease:'power1.inOut',
+  x:0
+},
+'-=0.3')
+
+
+
+gsap.fromTo('.pap8',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv4',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+gsap.fromTo('.pap9',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv5',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+
+  },[])
+
+
+  useEffect(() => {
+
+const tl = gsap.timeline()
+
+tl.fromTo('.pap1',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+})
+
+tl.fromTo('.pap2',{opacity:0,x:50},{
+  opacity:1,
+  x:0,
+  duration:1,
+  ease:'power2.inOut',
+},
+'-=1')
+
+
+gsap.fromTo('.pap3',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv1',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+gsap.fromTo('.pap4',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv2',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+const te = gsap.timeline({
+  scrollTrigger:{
+    trigger:'.papdiv3',
+    start:'top 90%',
+    end:'bottom 80%',
+  }
+})
+
+te.fromTo('.pap5',{opacity:0,y:30},{
+  opacity:1,
+  duration:1,
+  ease:'back.inOut',
+  y:0,
+  stagger:0.2,
+})
+
+te.fromTo('.pap6',{opacity:0,x:-50},{
+  opacity:1,
+  duration:1,
+  ease:'power1.inOut',
+  x:0
+},
+'-=0.3')
+
+te.fromTo('.pap7',{opacity:0,x:50},{
+  opacity:1,
+  duration:1.3,
+  ease:'power1.inOut',
+  x:0
+},
+'-=0.3')
+
+
+
+gsap.fromTo('.pap8',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv4',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+gsap.fromTo('.pap9',{opacity:0,y:30},{
+  opacity:1,
+  y:0,
+  duration:1,
+  ease:'back.inOut',
+  stagger:0.2,
+  scrollTrigger:{
+    trigger:'.papdiv5',
+    start:'top 90%',
+    end:'bottom 80%'
+  }
+})
+
+
+
+  },[])
 
   return (
     <div className="dark:bg-black dark:text-white overflow-hidden">
@@ -180,11 +411,11 @@ const PAP = () => {
         {/* <img src={banner_pap} alt="banner" /> */}
 
         <div className="w-full text-center md:text-left md:w-[60%]">
-          <span className="text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
+          <span className="pap1 text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
             <WiStars className="animate-pulse" size={25} /> Invest in your
             future, pay after it's proven.
           </span>
-          <h1 className="text-4xl lg:text-6xl mb-4 font-medium">
+          <h1 className="pap1 text-4xl lg:text-6xl mb-4 font-medium">
             Pay After
             <span className="font-light italic text-indigo-700">
               {" "}
@@ -192,37 +423,37 @@ const PAP = () => {
             </span>
           </h1>
 
-          <p className="text-sm lg:text-base md:w-3/4">
+          <p className="pap1 text-sm lg:text-base md:w-3/4">
             The exclusive learning platform for tomorrow's entrepreneur! Fuel
             you entrepreneurship spirit with BAOIAM - "the launchpad for budding
             entrepreneurs: Learn, innovate, succeed"
           </p>
 
-          <button class="relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+          <button onClick={()=> navigate('/Maintenance')} class="pap1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
             <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
             <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <IoIosArrowRoundForward size={30} />
             </span>
-            <span class="relative">Attend Info Session</span>
+            <span  class="relative">Join Now</span>
           </button>
         </div>
         <div className="w-full md:w-[40%]">
-          <div className="w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
+          <div className="pap2 w-full md:w-72 h-96 lg:size-[30rem] rounded-3xl overflow-hidden">
             <img src={PHero} className="w-full h-full object-cover" alt="" />
           </div>
         </div>
       </div>
 
       {/* section 2 */}
-      <div className="my-6 py-6 text-center">
-        <h2 className="lg:leading-[3rem] text-2xl font-bold text-black mb-3 sm:text-3xl  md:text-4xl">
+      <div className="papdiv1 my-6 py-6 text-center">
+        <h2 className="pap3 text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
           Mentored By The{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Visionary Entrepreneurs
           </span>{" "}
           Of Today
         </h2>
-        <p className="text-gray-500 font-semibold text-base mb-12">
+        <p className="pap3 mt-2 text-base mb-6 text-slate-600  lg:text-xl">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
@@ -253,9 +484,9 @@ const PAP = () => {
             }}
           >
             {contentData.map((item, index) => (
-              <SwiperSlide key={index} className="flex justify-center pt-12">
-                <div className="flex flex-col bg-white shadow-xl px-8 pb-0 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
-                  <div className="size-16  relative bottom-8 ">
+              <SwiperSlide key={index} className="pap3 flex justify-center pt-12">
+                <div className="flex flex-col bg-white my-4 pb-8 shadow-md px-4 md:pb-8 md:px-8 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
+                  <div className="size-16  relative bottom-11">
                     <img
                       className="w-full h-full rounded-full object-cover "
                       src={item.image}
@@ -275,15 +506,15 @@ const PAP = () => {
       </div>
 
       {/* section 3 */}
-      <div className="flex flex-col items-center text-center pb-5 ">
-        <h2 className="text-2xl font-bold text-black sm:text-3xl sm:mb-4 md:text-4xl lg:text-4xl mb-0 mt-5 lg:leading-[1rem] lg:pt-10 md:pt-5">
+      <div className="papdiv2 flex flex-col items-center text-center pb-5 ">
+        <h2 className="pap4 text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
           Become A{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Budding
           </span>{" "}
           Startup Leader
         </h2>
-        <p className="text-gray-500 font-semibold my-8 mx-16 text-base sm:my-4 sm:mx-8 lg:text-lg mt-0">
+        <p className="pap4 mt-2 mb-6 text-base text-slate-600  lg:text-xl">
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
@@ -293,23 +524,23 @@ const PAP = () => {
       </div>
 
       {/* section 4 */}
-      <div className="flex flex-col items-center lg:pb-14 pb-10 px-8 text-center">
-        <h2 className="text-2xl font-bold text-black mb-2 sm:text-3xl md:text-4xl lg:text-4xl lg:leading-[1rem] lg:pt-20 md:pt-5">
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+      <div className="papdiv3 flex flex-col items-center lg:pb-14 pb-10 px-8 text-center">
+        <h2 className="pap5 text-3xl md:text-4xl text-center mb-8 lg:mb-2 font-bold">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Placement
           </span>{" "}
           Hunger For Success
         </h2>
-        <p className="text-gray-500 text-base mx-4 mt-2 mb-6 p-4 lg:text-lg font-semibold">
-          <span className="text-indigo-800">
+        <p className="pap5 mt-2 text-base text-slate-600  lg:text-xl">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             The Placement Bootcamp Program
           </span>
           : A 6 month program for startup founders of tomorrow
         </p>
 
         <div className="flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-12">
-          <div className="w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
-            <p className="ml-10 mb-4 pr-8 text-base text-gray-500 md:text-xl">
+          <div className="pap6 w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
+            <p className="mt-2 text-base text-slate-600  lg:text-xl">
               Join us on this transformative journey as we empower you to become
               the driving force behind India's startup ecosystem. Whether you
               have a groundbreaking idea or a burning passion for innovation,
@@ -317,20 +548,19 @@ const PAP = () => {
               skills, knowledge, and mindset to thrive in the ever-evolving
               entrepreneurial landscape.
             </p>
-            <p className="ml-10 mb-4 pr-8 text-base md:text-xl text-indigo-800 font-bold">
+            <p className="mb-4 text-base md:text-xl mt-4 text-indigo-800 font-bold">
               Unleash your potential and shape the future of business with us
             </p>
 
-            <Link
-              to="/itie"
-              class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white ml-10 p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50"
-            >
+
+            <button onClick={()=> navigate('/Maintenance')}  class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
+
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <p class="relative">Click here</p>
             </Link>
           </div>
 
-          <div className="max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6">
+          <div className="pap7 max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6 mt-10">
             <img
               className="max-w-full max-h-full rounded-2xl object-contain lg:pr-4"
               src={placement}
@@ -341,19 +571,19 @@ const PAP = () => {
       </div>
 
       {/* section 5 */}
-      <div className="flex flex-col items-center text-center px-12 pt-10">
-        <h2 className="text-2xl font-bold text-black mb-2 sm:text-3xl md:text-4xl lg:text-4xl lg:leading-[1rem]">
+      <div className="papdiv4 flex flex-col items-center text-center px-12 pt-10">
+        <h2 className="pap8 text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
           Sneak Peek Of{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Bootcamp Program
           </span>
         </h2>
-        <p className="mt-4 mx-12 mb-2 px-6 pr-8 text-base font-semibold text-gray-500 pb-4 lg:text-lg">
+        <p className="pap8 mt-2 text-base mb-6 text-slate-600  lg:text-xl">
           A transformational journey designed to create budding founders of
           future unicorns
         </p>
 
-        <div className="flex flex-wrap gap-4 mb-10 py-10 max-w-7xl mx-auto justify-evenly lg:ml-10 lg:mr-10">
+        <div className="pap8 flex flex-wrap gap-4 mb-10 py-10 max-w-7xl mx-auto justify-evenly lg:ml-10 lg:mr-10">
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <AcademicCapIcon className="h-12 w-12 text-amber-500 mb-4" />
             <p className="text-indigo-700 font-bold mb-4 px-4">
@@ -453,10 +683,10 @@ const PAP = () => {
       </div>
 
       {/* Section 6 */}
-      <div className="flex flex-col justify-center items-center mb-0 ">
-        <h2 className="text-2xl font-bold text-black text-center m-3 mb-5 sm:mb-5 sm:text-3xl md:text-4xl lg:text-4xl lg:pt-10 md:pt-5">
+      <div className="papdiv5 flex flex-col justify-center items-center mb-0 ">
+        <h2 className="pap9 text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
           Baoiam’ions{" "}
-          <span className="text-transparent bg-clip-text bg-indigo-700 ">
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             Experience
           </span>
         </h2>
@@ -483,7 +713,7 @@ const PAP = () => {
           {slides.map((slide, index) => (
             <SwiperSlide
               key={index}
-              className="text-center text-[16px] sm:text-[18px] flex justify-center items-center pt-0  "
+              className="pap9 text-center text-[16px] sm:text-[18px] flex justify-center items-center pt-0  "
             >
               <div className="relative flex flex-col h-auto md:h-[26rem] border-3xl rounded-3xl border-slate-400 mb-12 p-4 sm:p-6 md:p-8  lg:flex-row md:flex-row bottom-20">
                 {/* Image Container */}
