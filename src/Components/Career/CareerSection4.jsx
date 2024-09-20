@@ -69,7 +69,7 @@ export const CareerSection4 = () => {
               className="w-72 h-72 object-cover" // Adjust width and height here
             />
           </div>
-          <h2 className="lg:text-lg md:text-lg sm:text-sm text-sm font-bold text-gray-700">
+          <h2 className="lg:text-lg md:text-lg dark:text-slate-300 sm:text-sm text-sm font-bold text-gray-700">
             Currently No Open Positions, But Stay Tuned for Future
             Opportunities!
           </h2>

@@ -311,7 +311,7 @@ const AboutUs = () => {
               success.
             </h4>
 
-            <p className="text-xs lg:text-base text-slate-600 mt-4">
+            <p className="text-xs lg:text-base dark:text-slate-300 text-slate-600 mt-4">
               Every individual shines with their unique expertise. Discover your
               skills in depth with us. Our transformative courses will equip you
               either upgraded version of yourself, ensuring you never fall

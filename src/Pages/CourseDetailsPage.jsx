@@ -11,9 +11,7 @@ import Testimonials from "../Components/Testmonials/Testimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
 
-
 const CourseDetailsPage = () => {
-
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
   const [showTab, setShowTab] = useState(1);
@@ -48,8 +46,8 @@ const CourseDetailsPage = () => {
         setLoading(true);
       }
     };
-    getCourseDetails()
-  },[id])
+    getCourseDetails();
+  }, [id]);
   console.log("course details: ", courseDetails);
   document.title = `Baoiam - ${courseDetails.title}`;
 
@@ -76,8 +74,6 @@ const CourseDetailsPage = () => {
   //   return () => {};
   // }, [id]);
 
-
-
   // } else if (id >= 11 && id <= 22) {
   //   // setCoursePlusContent(collegeCoursePlusContent);
   //   setCourseDetails(
@@ -96,7 +92,6 @@ const CourseDetailsPage = () => {
   };
 
   console.log("id is:", id);
-
 
   // redux start
 
@@ -127,9 +122,6 @@ const CourseDetailsPage = () => {
 
   // console.log(course, 'course api on action')
 
-
-
-
   // I am Fetching all the course data through subcategory of course
   return (
     <div>
@@ -155,7 +147,9 @@ const CourseDetailsPage = () => {
               return { detail };
             })}
           </p> */}
-          <p className="text-[0.8rem] lg:text-base">{courseDetails.description}</p>
+          <p className="text-[0.8rem] lg:text-base">
+            {courseDetails.description}
+          </p>
 
           <div className="flex flex-row  gap-2">
             <button
@@ -195,19 +189,21 @@ const CourseDetailsPage = () => {
         <div className="w-full flex h-[400px] xs:p-2  rounded flex-col justify-center p-5">
           <div className="flex justify-start border-b border-gray-300">
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 1
-                ? "bg-indigo-700 text-white"
-                : "bg-gray-200 text-gray-700"
-                }`}
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${
+                showTab === 1
+                  ? "bg-indigo-700 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
               onClick={() => setShowTab(1)}
             >
               Overview
             </h3>
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 2
-                ? "bg-indigo-700 text-white"
-                : "bg-gray-200 text-gray-700"
-                }`}
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${
+                showTab === 2
+                  ? "bg-indigo-700 text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}
               onClick={() => setShowTab(2)}
             >
               Curriculum
@@ -353,7 +349,7 @@ const CourseDetailsPage = () => {
           ref={planRef}
           className="my-12 px-8 lg:px-24 w-full h-full"
         >
-          <div className="bg-white dark:bg-[#080529] py-6 sm:py-8 lg:py-12">
+          <div className="bg-white dark:bg-black py-6 sm:py-8 lg:py-12">
             <div className="mx-auto max-w-screen-xl px-4 md:px-8">
               <h2 className="mb-4 text-center text-[1.8rem] font-bold text-gray-800 dark:text-white md:mb-8 lg:text-4xl xl:mb-12">
                 Join With Us Find the{" "}
@@ -367,8 +363,9 @@ const CourseDetailsPage = () => {
                   return (
                     <div
                       key={i}
-                      className={`flex flex-col rounded-lg lg:w-80 border ${p.name === "premium" ? "border-orange-500 relative" : ""
-                        } p-4 pt-6`}
+                      className={`flex flex-col rounded-lg lg:w-80 border ${
+                        p.name === "premium" ? "border-orange-500 relative" : ""
+                      } p-4 pt-6`}
                     >
                       <div className="mb-8">
                         {p.name === "premium" ? (
@@ -436,15 +433,17 @@ const CourseDetailsPage = () => {
                           onClick={() => {
                             if (localStorage.getItem("access_token"))
                               navigate(
-                                `/checkout/${id}/${p.name == "premium" ? "Premium" : "Plus"
+                                `/checkout/${id}/${
+                                  p.name == "premium" ? "Premium" : "Plus"
                                 }`
                               );
                             else navigate("/login");
                           }}
-                          className={`block  rounded-lg ${p.name === "premium"
-                            ? "bg-orange-500 text-white"
-                            : "bg-gray-500"
-                            } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                          className={`block  rounded-lg ${
+                            p.name === "premium"
+                              ? "bg-orange-500 text-white"
+                              : "bg-gray-500"
+                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                         >
                           Enroll Now
                         </button>
@@ -534,8 +533,6 @@ const CourseDetailsPage = () => {
         </div>
       </div> */}
     </div>
-
-
   );
 };
 

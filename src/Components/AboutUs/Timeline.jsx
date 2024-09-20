@@ -68,7 +68,7 @@ const Timeline = () => {
               </span>
             </h2>
           </div>
-          <p className="text-sm lg:text-base text-slate-500 max-w-3xl mx-auto timeline-heading">
+          <p className="text-sm lg:text-base dark:text-slate-300 text-slate-500 max-w-3xl mx-auto timeline-heading">
             Founded in 2020, BAOIAM emerged from a bold vision to connect
             traditional education with real-world skills. Our founders, fueled
             by a deep passion for learning and a commitment to accessibility,

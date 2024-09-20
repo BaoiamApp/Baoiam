@@ -1,9 +1,8 @@
-import  React from "react";
+import React from "react";
 
-import work from "../../assets/Images/work7.jpg"
+import work from "../../assets/Images/work7.jpg";
 import work1 from "../../assets/Images/work8.jpg";
 export const CareerSection7 = () => {
- 
   return (
     <>
       {/* Slide Section */}
@@ -19,10 +18,10 @@ export const CareerSection7 = () => {
             </div>
 
             <div className="md:w-[60%] h-full mt-8 lg:mt-0 px-4 md:px-12">
-              <h2 className="lg:text-3xl text-xl md:text-xl    mb-2 pb-2 font-bold text-black">
+              <h2 className="lg:text-3xl text-xl md:text-xl dark:text-white  mb-2 pb-2 font-bold text-black">
                 Why Work With Us{" "}
               </h2>
-              <p className="text-xs lg:text-base text-slate-600 mt-4 pb-4 mb-4">
+              <p className="text-xs lg:text-base text-slate-600 dark:text-slate-300 mt-4 pb-4 mb-4">
                 At BAOIAM , we create pathways to success, offering limitless
                 opportunities where innovation and creativity thrive. Join our
                 dynamic, inclusive team dedicated to making a difference in your
@@ -43,11 +42,11 @@ export const CareerSection7 = () => {
             </div>
 
             <div className="md:w-[60%] h-full mt-8 lg:mt-0 px-4 md:px-12">
-              <h2 className="lg:text-3xl text-xl md:text-xl   lg:mb-5 font-bold text-black">
+              <h2 className="lg:text-3xl text-xl md:text-xl dark:text-white lg:mb-5 font-bold text-black">
                 Work Environment{" "}
                 <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent"></span>
               </h2>
-              <p className="text-xs lg:text-base text-slate-600 mt-4">
+              <p className="text-xs lg:text-base dark:text-slate-300 text-slate-600 mt-4">
                 {" "}
                 At BAOIAM , we offer an inspiring environment where creativity
                 thrives and collaboration drives innovation. Our inclusive

@@ -62,7 +62,7 @@ export default function SliderSection() {
   // redux end
 
   return (
-    <div className="slider-section dark:bg-[#080529] w-full relative py-20 overflow-hidden ">
+    <div className="slider-section dark:bg-black w-full relative py-20 overflow-hidden ">
       <div className="text-center mb-0 lg:mb-8">
         <h2 className="text-4xl font-bold mb-8">
           Featured{" "}

@@ -16,7 +16,7 @@ const Testimonials = () => {
   return (
     <div className="my-12 relative z-10">
       <div className="text-center max-w-3xl mx-auto flex flex-col gap-2">
-        <h2 className="font-extrabold text-2xl md:text-4xl lg:text-4xl sm:text-4xl text-black p-3">
+        <h2 className="font-extrabold text-2xl dark:text-white md:text-4xl lg:text-4xl sm:text-4xl text-black p-3">
           {data.title}
         </h2>
         {/* <p className="mt-4 leading-relaxed text-black">{data.description}</p> */}
