@@ -91,7 +91,7 @@ const AboutUs = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0,
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".animediv1 h2",

@@ -2681,103 +2681,13 @@ export const OtherCourseData = [
 export const industry = [
   {
     id: 1,
-    label: "Technology - Hardware",
-    value: "Technology - Hardware",
+    label: "School/Institute",
+    value: "School/Institute",
   },
   {
     id: 2,
-    label: "Technology - Software",
-    value: "Technology - Software",
-  },
-  {
-    id: 3,
-    label: "Healthcare",
-    value: "Healthcare",
-  },
-  {
-    id: 4,
-    label: "Finance",
-    value: "Finance",
-  },
-  {
-    id: 5,
-    label: "Education",
-    value: "Education",
-  },
-  {
-    id: 6,
-    label: "Manufacturing",
-    value: "Manufacturing",
-  },
-  {
-    id: 7,
-    label: "Retail",
-    value: "Retail",
-  },
-  {
-    id: 8,
-    label: "Transportation & Logistics",
-    value: "Transportation & Logistics",
-  },
-  {
-    id: 9,
-    label: "Telecommunications",
-    value: "Telecommunications",
-  },
-  {
-    id: 10,
-    label: "Energy",
-    value: "Energy",
-  },
-  {
-    id: 11,
-    label: "Construction",
-    value: "Construction",
-  },
-  {
-    id: 12,
-    label: "Media & Entertainment",
-    value: "Media & Entertainment",
-  },
-  {
-    id: 13,
-    label: "Automotive",
-    value: "Automotive",
-  },
-  {
-    id: 14,
-    label: "Agriculture",
-    value: "Agriculture",
-  },
-  {
-    id: 15,
-    label: "Hospitality",
-    value: "Hospitality",
-  },
-  {
-    id: 16,
-    label: "Real Estate",
-    value: "Real Estate",
-  },
-  {
-    id: 17,
-    label: "Legal",
-    value: "Legal",
-  },
-  {
-    id: 18,
-    label: "Aerospace & Defense",
-    value: "Aerospace & Defense",
-  },
-  {
-    id: 19,
-    label: "Pharmaceuticals",
-    value: "Pharmaceuticals",
-  },
-  {
-    id: 20,
-    label: "Nonprofit",
-    value: "Nonprofit",
+    label: "University",
+    value: "University",
   },
 ];
 

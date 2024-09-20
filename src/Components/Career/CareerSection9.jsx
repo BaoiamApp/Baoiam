@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import data from "./CareerTestimonal.json";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger with GSAP
+gsap.registerPlugin(ScrollTrigger);
 
 const Star = ({ filled }) => (
   <svg
@@ -13,6 +18,29 @@ const Star = ({ filled }) => (
 );
 
 const Testimonials = () => {
+  const testimonialRefs = useRef([]);
+
+  useEffect(() => {
+    testimonialRefs.current.forEach((ref) => {
+      gsap.fromTo(
+        ref,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ref,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            markers: false,
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <div className="my-12 relative z-10">
       <div className="text-center max-w-3xl mx-auto flex flex-col gap-2">
@@ -22,10 +50,11 @@ const Testimonials = () => {
         {/* <p className="mt-4 leading-relaxed text-black">{data.description}</p> */}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4 ">
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4">
         {data.testimonials.map((testimonial, index) => (
           <div
             key={index}
+            ref={(el) => (testimonialRefs.current[index] = el)}
             className="relative w-full mb-6 p-6 rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white"
           >
             {/* Profile Image */}
@@ -36,7 +65,7 @@ const Testimonials = () => {
             />
             {/* Testimonial Quote */}
             <div className="mt-8 text-center">
-              <p className="lg:text-sm md:text-xs sm:text-xs  text-xs text-gray-800 leading-relaxed">
+              <p className="lg:text-sm md:text-xs sm:text-xs text-xs text-gray-800 leading-relaxed">
                 {testimonial.quote}
               </p>
             </div>
