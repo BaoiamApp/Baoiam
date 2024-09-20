@@ -20,7 +20,9 @@ export const CareerSection7 = () => {
 
             <div className="md:w-[60%] h-full mt-8 lg:mt-0 px-4 md:px-12">
               <h2 className="lg:text-3xl text-xl md:text-xl    mb-2 pb-2 font-bold text-black">
-                Why Work With Us{" "}
+                Why <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Work With Us{" "}
+          </span> 
               </h2>
               <p className="text-xs lg:text-base text-slate-600 mt-4 pb-4 mb-4">
                 At BAOIAM , we create pathways to success, offering
@@ -44,7 +46,9 @@ export const CareerSection7 = () => {
 
             <div className="md:w-[60%] h-full mt-8 lg:mt-0 px-4 md:px-12">
               <h2 className="lg:text-3xl text-xl md:text-xl   lg:mb-5 font-bold text-black">
-                Work Environment{" "}
+                Work <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Environment{" "}
+          </span>  
                 <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent"></span>
               </h2>
               <p className="text-xs lg:text-base text-slate-600 mt-4">

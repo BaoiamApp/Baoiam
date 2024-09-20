@@ -27,7 +27,8 @@ gsap.fromTo('.t1',{opacity:0,y:100},
     <div className=" w-11/12 pb-12 mx-auto flex flex-col gap-4">
       <div className="">
         <h1 className="t1 p-6 font-serif text-center text-4xl md:text-5xl font-extrabold">
-          A glance to our <span className="text-indigo-800">team</span>
+          A glance to <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent"> our team</span>
+          
         </h1>
         <div className="p-4 overflow-hidden w-[80%] lg:w-[60%] mx-auto">
           <p className="t1 text-md text-center md:text-xl">
