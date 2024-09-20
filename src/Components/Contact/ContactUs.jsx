@@ -1,111 +1,220 @@
-import React from 'react';
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import { FaFacebook, FaInstagram, FaLinkedin, FaSquareXTwitter } from 'react-icons/fa6';
-import { IoIosArrowDown } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
+import { IoIosArrowDown } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    Name: '',
+    Email: '',
+    Phone: '',
+    CountryCode: '+91',
+    Course: '',
+    Consent: false,
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Prepare the data to be sent in the POST request
+    const data = {
+      name: formData.Name,
+      email: formData.Email,
+      phone: formData.Phone,
+      countryCode: formData.CountryCode,
+      course: formData.Course,
+      consent: formData.Consent,
+    };
+
+    console.log('Form Data:', data);
+
+    try {
+      const response = await axios.post('https://script.google.com/macros/s/AKfycbxLYCWqDnFNQyqZlZWXL40hWnGwT4gqjPvlrrVD6iIfRQDciMWFArlMNz3KmIAQ-g/exec', data, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      
+      console.log('Form successfully submitted', response.data);
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
   return (
     <div className="ContactUs my-8">
       <section className="relative bg-white px-4 py-8 md:py-10 z-10 mt-4 md:mt-14 mb-6 md:mb-6 overflow-hidden">
         <div className="relative max-w-5xl mx-auto text-center z-10">
           <h1 className="text-3xl md:text-5xl font-semibold text-gray-900">
-            Get in Touch with Us
+            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+              Get in Touch
+            </span>{" "}
+            with Us
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mt-4 md:mt-6">
-            Have any questions, feedback, or need assistance? We're just a message away.<br/> Fill out the form below, and our team will get back to you shortly.
+            Have any questions, feedback, or need assistance? We're just a
+            message away.
+            <br /> Fill out the form below, and our team will get back to you
+            shortly.
           </p>
         </div>
       </section>
 
       <section className="py-2 px-4 md:px-6 bg-white rounded-xl">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12">
-
-          <div className="lg:w-3/5 bg-white p-4 md:p-6 lg:p-8 rounded-lg border">
-            <h2 className="text-2xl md:text-3xl font-bold md:mb-8 mb-4">Contact Us</h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="first-name" className="block text-gray-700 mb-2">First Name</label>
-                  <input
-                    id="first-name"
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-md"
-                    placeholder="Enter your first name here..."
-                  />
-                </div>
-                <div>
-                  <label htmlFor="last-name" className="block text-gray-700 mb-2">Last Name</label>
-                  <input
-                    id="last-name"
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-md"
-                    placeholder="Enter your last name here..."
-                  />
-                </div>
+          <div className="lg:w-2/5 bg-white p-4 md:p-6 lg:p-8 rounded-lg border">
+            <h2 className="text-xl md:text-3xl text-center font-bold md:mb-8 mb-4">
+              Ready to enhance your skills?<br/>
+              <span className="text-base font-medium">Share your details and hear from us soon</span>
+            </h2>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {/* Full Name */}
+              <div>
+                <label htmlFor="fullname" className="block text-gray-700 mb-2">Full Name</label>
+                <input
+                  id="fullname"
+                  type="text"
+                  name="Name"
+                  className="w-full p-3 border border-gray-300 rounded-md"
+                  placeholder="Enter your full name"
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
+              {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
                 <input
                   id="email"
                   type="email"
+                  name="Email"
                   className="w-full p-3 border border-gray-300 rounded-md"
-                  placeholder="xyz.@example.com"
+                  placeholder="Enter your E-mail"
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
-                <input
-                  id="phone"
-                  type="tel"
-                  className="w-full p-3 border border-gray-300 rounded-md"
-                  placeholder="+1 (555) 000-0000"
-                />
+              {/* Phone Number with Country Code */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="relative inline-block">
+                  <label htmlFor="countryCode" className="block text-gray-700 mb-2">Country Code</label>
+                  <select
+                    id="countryCode"
+                    name="CountryCode"
+                    className="border p-3 pr-8 rounded focus:outline-none focus:border-gray-300 appearance-none w-full bg-white cursor-pointer"
+                    onChange={handleChange}
+                  >
+                    <option value="+91">🇮🇳 +91 (India)</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center justify-center mt-5 pr-3 pointer-events-none">
+                    <IoIosArrowDown className="text-gray-500" />
+                  </div>
+                </div>
+
+                <div className="col-span-2">
+                  <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
+                  <input
+                    id="phone"
+                    name="Phone"
+                    type="tel"
+                    className="w-full p-3 border border-gray-300 rounded-md"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    minLength="10"
+                    maxLength="10"
+                    required
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
 
+              {/* Inquiry Type */}
               <div className="relative inline-block w-full">
                 <select
-                  className="border p-3 pr-8 rounded focus:outline-none focus:border-gray-300 appearance-none w-full bg-white cursor-pointer"
+                  id="courses"
+                  name="Course"
+                  className="border p-3 pr-10 rounded focus:outline-none focus:border-gray-300 appearance-none w-full bg-white cursor-pointer"
                   required
+                  onChange={handleChange}
                 >
-                  <option value="" className="bg-gray-300">Select Inquiry Type</option>
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Technical Support">Technical Support</option>
-                  <option value="Course-Related Query">Course-Related Query</option>
-                  <option value="Partnership Opportunities">Partnership Opportunities</option>
-                  <option value="Others">Others</option>
+                  <option value="">Select Course</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="English speaking/Public speaking">English speaking/Public speaking</option>
+                  <option value="Creative writing">Creative writing</option>
+                  <option value="Art and craft (DIY)">Art and craft (DIY)</option>
+                  <option value="Critical Thinking & Problem Solving">Critical Thinking & Problem Solving</option>
+                  <option value="Life Skills">Life Skills</option>
+                  <option value="Photography & Editing Skills">Photography & Editing Skills</option>
+                  <option value="Technology Development with AI & Coding">Technology Development with AI & Coding</option>
+                  <option value="Entrepreneurship & Innovation(Junior Program)">Entrepreneurship & Innovation(Junior Program)</option>
+                  <option value="Social Media and Digital Marketing">Social Media and Digital Marketing</option>
+                  <option value="Finance Education">Finance Education</option>
+                  <option value="Graphic Designing">Graphic Designing</option>
+                  <option value="Human Resource">Human Resource</option>
+                  <option value="Data Analytics">Data Analytics</option>
+                  <option value="Product Management">Product Management</option>
+                  <option value="Android Development">Android Development</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Software Testing">Software Testing</option>
+                  <option value="Entrepreneurship & Innovation(Pre University)">Entrepreneurship & Innovation(Pre University)</option>
+                  <option value="SEO Development">SEO Development</option>
+                  <option value="Machine Learning with AI">Machine Learning with AI</option>
+                  <option value="International Business">International Business</option>
+                  <option value="Emotional Intelligence">Emotional Intelligence</option>
+                  <option value="Executive & Public Relations Content Writing">Executive & Public Relations Content Writing</option>
+                  <option value="Data Science">Data Science</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                   <IoIosArrowDown className="text-gray-500" />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  className="w-full p-3 border border-gray-300 rounded-md"
-                  placeholder="Your message here..."
-                ></textarea>
+              {/* Consent Checkbox */}
+              <div className="flex items-center">
+                <input
+                  id="consent"
+                  name="Consent"
+                  type="checkbox"
+                  className="mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="consent" className="text-gray-700">
+                  I consent to receiving updates and notifications from online
+                  Baoiam and its affiliates via email, SMS, WhatsApp, and voice
+                  call, overriding any DNC/NDNC preference.
+                </label>
               </div>
 
-              <button type="submit" className="w-full bg-indigo-500 text-white py-3 rounded-md hover:bg-indigo-600">
+              {/* Submit Button */}
+              <button
+                type="submit"
+                name="Submit"
+                className="w-full bg-indigo-500 text-white py-3 rounded-md hover:bg-indigo-600"
+              >
                 Submit
               </button>
             </form>
           </div>
 
-          <div className="lg:w-2/5 space-y-4">
+          <div className="lg:w-3/5 space-y-4">
             <div className="bg-white p-6 lg:p-8 rounded-lg border">
               <h2 className="text-xl md:text-2xl font-bold mb-4">Contact Information</h2>
-
               <div className="space-y-4">
                 <div className="flex items-center">
                   <FaEnvelope className="mr-4" />
-                  <a href="mailto:tutors@baoiam.com" className="underline">support@baoiam.com</a>
+                  <a href="mailto:support@baoiam.com" className="underline">support@baoiam.com</a>
                 </div>
                 <div className="flex items-center">
                   <FaPhoneAlt className="mr-4" />
@@ -117,35 +226,16 @@ const ContactUs = () => {
                 </div>
               </div>
               <div className="flex justify-start gap-4 mt-6">
-                <Link
-                  to={"https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/"}
-                  target="_blank"
-                  className="text-black dark:text-white hover:text-gray-500"
-                >
+                <Link to="https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/" target="_blank" className="text-black dark:text-white hover:text-gray-500">
                   <FaFacebook size={22} />
                 </Link>
-
-                <Link
-                  to={"https://www.instagram.com/baoiam_innovations/"}
-                  target="_blank"
-                  className="text-black dark:text-white hover:text-gray-500"
-                >
+                <Link to="https://www.instagram.com/baoiam_innovations/" target="_blank" className="text-black dark:text-white hover:text-gray-500">
                   <FaInstagram size={22} />
                 </Link>
-
-                <Link
-                  to={"https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"}
-                  target="_blank"
-                  className="text-black dark:text-white hover:text-gray-500"
-                >
+                <Link to="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/" target="_blank" className="text-black dark:text-white hover:text-gray-500">
                   <FaLinkedin size={22} />
                 </Link>
-
-                <Link
-                  to={"https://twitter.com/BAOIAM1"}
-                  target="_blank"
-                  className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500"
-                >
+                <Link to="https://twitter.com/BAOIAM1" target="_blank" className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500">
                   <FaSquareXTwitter size={22} />
                 </Link>
               </div>
@@ -160,7 +250,7 @@ const ContactUs = () => {
                   aria-hidden="false"
                   tabIndex="0"
                 ></iframe>
-              </div>              
+              </div>
             </div>
           </div>
         </div>
@@ -170,7 +260,3 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
-
-
-
-

@@ -256,16 +256,16 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
             </li>
             <li
               className={`${mobTabtyles} ${
-                location.pathname === "/contact" && activeTab === "Contact Us"
+                location.pathname === "/" && activeTab === ""
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
               }`}
               onClick={() => {
-                setActiveTab("Contact Us");
+                setActiveTab("");
                 closeSideBar();
               }}
             >
-              <Link to={"/contact"} className="ms-3">
+              <Link to={"/"} className="ms-3">
                 Contact Us
               </Link>
             </li>
@@ -282,6 +282,22 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
             >
               <Link to={"/gcep"} className="ms-3">
                 GCEP
+              </Link>
+            </li>
+
+            <li
+              className={`${mobTabtyles} ${
+                location.pathname === "/contact" && activeTab === "Enroll Now"
+                  ? "text-[#1638C9]  dark:text-white dark:bg-[#060606]"
+                  : "text-gray-600 dark:text-gray-400"
+              }`}
+              onClick={() => {
+                setActiveTab("Enroll Now");
+                closeSideBar();
+              }}
+            >
+              <Link to={"/contact"} className="ms-3">
+                Enroll Now
               </Link>
             </li>
           </ul>

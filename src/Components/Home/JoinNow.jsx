@@ -61,7 +61,7 @@ const Home = () => {
           <p className="mb-6">
             Take the next step toward achieving your personal and professional
             goals with Baoiam. Join now to receive personalized recommendations
-            from the full Baoiam catalog.
+            from the full Baoiam catalogue.
           </p>
           <button onClick={()=> navigate('/courses/school')} className="px-4 sm:px-6 py-2 sm:py-3 font-semibold bg-gradient-to-r from-indigo-700 to-indigo-500 rounded-full text-white hover:bg-gradient-to-l transition-all ease-in-out duration-300">
             Join Now

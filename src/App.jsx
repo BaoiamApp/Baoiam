@@ -38,7 +38,13 @@ import BookADemo from "./Pages/BookADemo";
 import Loader from "./Components/Loader";
 import ChatBot from "./Components/Chatbot/ChatBot";
 import GCEP from "./Pages/GCEP";
+
+import { FeaturedBlogDetail } from "./Pages/FeaturedBlogDetail";
+import { RecentBlogDetail } from "./Pages/RecentBlogDetail";
+import { PopularBlogDetail } from "./Pages/PopularBlogDetail";
+
 import Courses from "./Pages/Courses";
+
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -61,21 +67,21 @@ const App = () => {
   }
 
   return (
-    <div className="dark:bg-[#080529] w-full max-w-[1440px] mx-auto overflow-hidden h-full dark:text-white ">
+    <div className='dark:bg-[#080529] w-full max-w-[1440px] mx-auto overflow-hidden h-full dark:text-white '>
       <Navbar theme={theme} />
 
-      <div className="mt-24">
-      <Routes>
-        {/* NavLinks */}
-        <Route path="/" element={<Home dark={dark} />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/gcep" element={<GCEP dark={dark}/>} />
-        <Route path="/pap" element={<PAP />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/ITIE" element={<ITIE />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+      <div className='mt-24'>
+        <Routes>
+          {/* NavLinks */}
+          <Route path='/' element={<Home dark={dark} />} />
+          <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/gcep' element={<GCEP dark={dark} />} />
+          <Route path='/pap' element={<PAP />} />
+          <Route path='/contact' element={<ContactUs />} />
+          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/ITIE' element={<ITIE />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
 
           {/* Courses */}
           <Route path="/courses/school" element={<School />} />
@@ -88,58 +94,63 @@ const App = () => {
         /> */}
 
           {/* Blog */}
-          <Route path="/Blog_detail/:id" element={<Blog_detail />} />
-          <Route path="/Blog_detail" element={<Blog_detail />} />
+          <Route path='/Blog_detail/:id' element={<Blog_detail />} />
+          <Route path='/Blog_detail' element={<Blog_detail />} />
+          <Route path='/Blogdetail/:id' element={<FeaturedBlogDetail />} />
+          <Route path='/Blog-detail/:id' element={<RecentBlogDetail />} />
+          <Route path='/Blogdetails/:id' element={<PopularBlogDetail />} />
 
           {/* Career */}
-          <Route path="/career" element={<Career />} />
+          <Route path='/career' element={<Career />} />
 
           {/* Our Team */}
-          <Route path="/team" element={<OurTeam />} />
+          <Route path='/team' element={<OurTeam />} />
 
           {/* PAP */}
-          <Route path="/pap" element={<PAP />} />
+          <Route path='/pap' element={<PAP />} />
 
           {/* Entrepreneurship */}
-          <Route path="/entrepreneurship" element={<Enterpunership />} />
+          <Route path='/entrepreneurship' element={<Enterpunership />} />
 
           {/* Terms and Conditions */}
-          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path='/terms-conditions' element={<TermsConditions />} />
 
           {/* Privacy policy */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
 
           {/* Checkout */}
+
           <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
           <Route path="/courses" element={<Courses />} />
 
           {/* Profile & Dashboard */}
-          <Route path="/profile" element={<SideBar />} />
-          <Route path="/instructor-dashboard" element={<TeacherDashboard />} />
+          <Route path='/profile' element={<SideBar />} />
+          <Route path='/instructor-dashboard' element={<TeacherDashboard />} />
 
           {/* Maintenace */}
-          <Route path="/Maintenance" element={<Maintenance />} />
+          <Route path='/Maintenance' element={<Maintenance />} />
 
           {/* accounts */}
-          <Route path="/activate/:uid/:token" element={<ActivateEmail />} />
-          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path='/activate/:uid/:token' element={<ActivateEmail />} />
+          <Route path='/forget-password' element={<ForgetPassword />} />
           <Route
-            path="/password-reset/:uid/:token"
+            path='/password-reset/:uid/:token'
             element={<ResetPassword />}
           />
           {/* Help */}
-          <Route path="/help" element={<HelpCenter />} />
+          <Route path='/help' element={<HelpCenter />} />
           {/* Hire */}
-          <Route path="/hire" element={<HireFromUs />} />
-          <Route path="/instructor" element={<InstructorCard />} />
+          <Route path='/hire' element={<HireFromUs />} />
+          <Route path='/instructor' element={<InstructorCard />} />
           {/*FAQ*/}
-          <Route path="/FAQ" element={<FAQS />} />
+          <Route path='/FAQ' element={<FAQS />} />
 
           {/*Refund Policy */}
-          <Route path="/refund" element={<Refund />} />
+          <Route path='/refund' element={<Refund />} />
 
-          <Route path="/ReferAndEarn" element={<ReferAndEarn />} />
+          <Route path='/ReferAndEarn' element={<ReferAndEarn />} />
           {/* Book a demo */}
+
           <Route path="/book-a-demo/:name/:courseId" element={<BookADemo />} />
         </Routes>
         <ChatBot />

@@ -32,6 +32,7 @@ import { SiAndroid, SiDatabricks, SiGoogle } from "react-icons/si";
 import { FiCheckCircle, FiClock, FiTrendingUp } from "react-icons/fi";
 import { CollegeCourseData } from "../Data";
 import { AiOutlineRobot } from "react-icons/ai";
+import Program from "../Components/School/Program";
 
 const Courses = () => {
   const static_data = [
@@ -284,7 +285,7 @@ const Courses = () => {
   ];
   return (
     <>
-      <div className="flex mt-20 flex-col-reverse lg:flex-row items-center mx-auto w-full p-5 sm:px-6 xs:px-4">
+      <div className="flex mt-20 justify-center flex-col-reverse lg:flex-row items-center mx-auto w-full p-5 sm:px-6 xs:px-4">
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4">
             Explore Our Range of Courses for Schools and Colleges
@@ -300,60 +301,9 @@ const Courses = () => {
           <SliderHero />
         </div>
       </div>
-      <div className="p-5 w-full mt-10 sm:px-6 xs:px-4" id="courses">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-          Junior Programs
-        </h1>
-        {/* <ul className="grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-2 gap-x-5 text-left text-[#031864] font-semibold">
-          {static_data.map((ele, id) => {
-            return (
-              <li className="my-6 group rounded-lg hover:before:border-indigo-600 relative overflow-hidden border-l-2 border-indigo-600 bg-white px-3 text-indigo-600 shadow-md transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-gradient-to-r before:from-indigo-600 before:to-indigo-400 before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full">
-                {ele}
-              </li>
-            );
-          })}
-        </ul> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center mt-8 gap-2 md:gap-4">
-          {static_data.map((category, index) => (
-            <button
-              key={index}
-              className="dark:bg-indigo-600 w-full px-4 py-2 md:px-6 md:py-2 border border-none bg-slate-100 rounded-md text-sm md:text-base"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="p-5 w-full mt-10 sm:px-6 xs:px-4">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-          University Programs
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center mt-8 gap-2 md:gap-4">
-          {static_data2.map((category, index) => (
-            <button
-              key={index}
-              className="dark:bg-indigo-600 px-4 py-2 md:px-6 md:py-2 border border-none bg-slate-100 rounded-md text-sm md:text-base"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="p-5 w-full mt-10 sm:px-6 xs:px-4">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-          Professional Degree Programs
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-center mt-8 gap-2 md:gap-4">
-          {static_data3.map((category, index) => (
-            <button
-              key={index}
-              className="dark:bg-indigo-600 px-4 py-2 md:px-6 md:py-2 border border-none bg-slate-100 rounded-md text-sm md:text-base"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+      <Program title={"Junior"} data={static_data}/>
+      <Program title={"University"} data={static_data2}/>
+      <Program title={"Professional Degree"} data={static_data3}/>
       <section className="py-16 dark:bg-black dark:text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
