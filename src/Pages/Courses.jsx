@@ -39,6 +39,7 @@ import Program from "../Components/School/Program";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch, useSelector } from "react-redux";
+import Testimonials from "../Components/Testmonials/Testimonials";
 
 const schoolIcons=[<FaPaintbrush/>,<FaHandsHelping />,<FaMicrophone />,<FaLightbulb />,<BsBank />,<FaCog />,<FaCamera />,<FaCode />,<FaChartLine />,<MdGroup /> ]
 
@@ -154,13 +155,14 @@ const Courses = () => {
         }
       );
     });
+console.log(FaBullhorn);
   }, []);
 
 
   return (
     <>
       <div className="flex mt-20 justify-center flex-col-reverse lg:flex-row items-center mx-auto w-full p-5 sm:px-6 xs:px-4">
-      <div ref={textRef} className="w-full lg:w-1/2 text-center lg:text-left">
+      <div ref={textRef} className="w-11/12 mx-auto my-8 lg:w-1/2 text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4">
           Explore Our Range of Courses for Schools and Colleges
         </h1>
@@ -177,12 +179,14 @@ const Courses = () => {
     </div>
       <Program title={"Junior"} icons={schoolIcons} data={allCourses[0]?.subcategories||static_data}/>
       <Program title={"University"} icons={collegeIcons} data={allCourses[1]?.subcategories||static_data2}/>
-      <Program title={"Professional Degree"} icons={otherIcons} data={allCourses[2]?.subcategories||static_data3}/>
+      <Program title={"Other"} icons={otherIcons} data={allCourses[2]?.subcategories||static_data3}/>
       <section ref={sectionRef} className="py-16 dark:bg-black dark:text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 ref={headingRef} className="text-3xl font-extrabold sm:text-4xl">
-            Why Choose Us?
+            Why <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Choose
+          </span> Us?
           </h2>
           <p ref={paragraphRef} className="mt-4 text-lg">
             We deliver the best service with the highest quality and commitment.
@@ -209,7 +213,7 @@ const Courses = () => {
         </div>
       </div>
     </section>
-      {/* <Testimonials /> */}
+      <Testimonials />
       {/* Call to Action */}
       <div className="w-full h-52 md:h-80 my-6 relative ">
         <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-sm bg-black/80"></div>
