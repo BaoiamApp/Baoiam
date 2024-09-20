@@ -18,10 +18,6 @@ const Hero = () => {
           <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             One in a Million{" "}
           </span>
-          Journey Create Your{" "}
-          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-            One in a Million{" "}
-          </span>{" "}
           Journey
         </h1>
         <p className="mt-5 dark:text-white text-black">
