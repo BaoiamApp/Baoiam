@@ -43,6 +43,7 @@ import {
   BsRobot,
 } from "react-icons/bs";
 import ListSlide from "../Components/PAP/ListSlide";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 const PAP = () => {
@@ -616,7 +617,7 @@ const PAP = () => {
               class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50"
             >
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
-              <span class="relative">Click here</span>
+              <p class="relative">Click here</p>
             </button>
           </div>
 
