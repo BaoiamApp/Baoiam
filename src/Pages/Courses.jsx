@@ -284,10 +284,11 @@ const static_data3 = [
   </Link>,
 ];
 
-const schoolIcons=[<MdContentPaste/>,<FaMicrophone />,<FaMicrophone />,<FaMicrophone />,<FaMicrophone />,<FaMicrophone />,<FaMicrophone />,<FaMicrophone />,<FaMicrophone />,<FaMicrophone /> ]
+const schoolIcons=[<FaPaintbrush/>,<FaHandsHelping />,<FaMicrophone />,<FaLightbulb />,<BsBank />,<FaCog />,<FaCamera />,<FaCode />,<FaChartLine />,<MdGroup /> ]
 
-const collegeIcons=new Array(14).fill(<FaBullhorn/>)
-const otherIcons=new Array(14).fill(<FaCode/>)
+const collegeIcons=[<FaTasks/>,<FaSearch />,<MdWeb />,<FaLightbulb />,<FaBug />,<FaRobot />,<FaPalette />,<FaBullhorn />,<SiAndroid />,<FaUserTie />,<MdDesignServices />,<FaChartLine />,<SiDatabricks/>, <BsBank/> ]
+
+const otherIcons=[<SiDatabricks/>,<FaRobot/>,<FaChartLine/>,<FaGlobe/>,<GiBrain/>,<MdContentPaste/>,<FaGlobe/>,]
 
 
 const Courses = () => {
@@ -301,14 +302,14 @@ const Courses = () => {
     }
   }, [dispatch, status]);
 
-  useEffect(()=>console.log(allCourses),[])
+  useEffect(()=>console.log(allCourses[2].subcategories.map(item=>item.name)),[])
 
   return (
     <>
       <div className="flex mt-20 justify-center flex-col-reverse lg:flex-row items-center mx-auto w-full p-5 sm:px-6 xs:px-4">
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4">
-            Explore Our Range of Courses for Schools and Colleges
+          Explore Our Range of Courses for Schools and Colleges
           </h1>
           <p className="text-base text-slate-600 sm:text-lg md:text-xl mb-6">
             At BAOIAM, we offer a wide range of courses designed for students
