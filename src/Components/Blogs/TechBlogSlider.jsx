@@ -100,11 +100,11 @@ useEffect(() => {
                   src={el.pic}
                   alt='technoloy_image'
                 />
-                <div className='p-4 flex-grow'>
+                <div className='flex-grow'>
                   {/* <span className={`text-sm text-blue-500 font-semibold`}>
                     {el.title}
                   </span> */}
-                  <h2 className='text-lg font-bold my-2 truncate'>{el.des}</h2>
+                  <h2 className='text-lg font-bold text-wrap  my-2 truncate'>{el.des}</h2>
                   <p className='text-sm'>{el.info}</p>
                 </div>
               </SwiperSlide>
