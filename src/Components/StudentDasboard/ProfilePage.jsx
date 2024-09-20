@@ -22,7 +22,10 @@ const ProfilePage = ({ userInfo }) => {
   console.log("userinfo2: ", userInfo2);
   const navigate = useNavigate();
   useEffect(() => {
-    if (Object.keys(JSON.parse(localStorage.getItem("userInfo"))).length <= 0)
+    if (
+      localStorage.getItem("userInfo") &&
+      Object.keys(JSON.parse(localStorage.getItem("userInfo"))).length <= 0
+    )
       navigate("/login");
 
     return () => {};

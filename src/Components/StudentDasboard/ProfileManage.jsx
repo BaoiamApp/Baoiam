@@ -8,11 +8,12 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProfileManage = () => {
   const dispatch = useDispatch();
-  
+
   // accessing user data from Redux store
   const userInfo = useSelector((state) => state.user.profile);
-  console.log(userInfo, 'profile management userinfo state check')
-
+  console.log(userInfo, "profile management userinfo state check");
+  const [animatePing, setAnimatePing] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   // const [email, setEmail] = useState({
   //   newEmail: "",
   //   confirmEmail: "",
@@ -92,33 +93,36 @@ const ProfileManage = () => {
   const handleSave = async (section) => {
     try {
       let transformedData = {};
-      
+
       console.log(`Saving ${section}...`);
-  
+
       if (section === "personalInfo") {
         transformedData = {
           first_name: formData.first,
           last_name: formData.last,
           email: formData.email,
         };
-  
+
         console.log("Personal Info Data:", transformedData);
-  
-        const { data } = await axios.patch(`${apiUrl}/api/auth/users/me/`, transformedData, {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `JWT ${localStorage.getItem("access_token")}`,
-          },
-        });
+
+        const { data } = await axios.patch(
+          `${apiUrl}/api/auth/users/me/`,
+          transformedData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `JWT ${localStorage.getItem("access_token")}`,
+            },
+          }
+        );
 
         // dispatching updated data to Redux
         dispatch(setProfile1(data));
-
+        setShowPopup(true);
         setFormData((prev) => ({
           ...prev,
           ...transformedData,
         }));
-  
       } else {
         transformedData = {
           mobile_number: formData.mobile,
@@ -128,9 +132,9 @@ const ProfileManage = () => {
           github: formData.socialLinks.gitHub,
           instagram: formData.socialLinks.instagram,
         };
-  
+
         console.log("Other Info Data:", transformedData);
-  
+
         await axios.put(`${apiUrl}/api/profile/`, transformedData, {
           headers: {
             "Content-Type": "application/json",
@@ -140,21 +144,59 @@ const ProfileManage = () => {
 
         // dispatching updated data to Redux
         dispatch(setProfile1({ ...userInfo, ...transformedData }));
+        setShowPopup(true);
 
         setFormData((prev) => ({
           ...prev,
           ...transformedData,
         }));
       }
-  
     } catch (error) {
       console.error("Error updating profile:", error);
     }
   };
 
   return (
-
     <section className="max-w-4xl dark:bg-black dark:text-white mx-auto p-6">
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 bg-gray-600 bg-opacity-50 transition-opacity"
+            onClick={() => setShowPopup(false)} // Click outside to close
+          ></div>
+
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-lg p-8 shadow-2xl z-10 text-center">
+            {/* Success Icon */}
+            <FaCheckCircle
+              size={50}
+              className={`text-green-500 mx-auto mb-4 ${
+                animatePing ? "animate-ping" : ""
+              }`}
+            />
+
+            <h2 className="text-2xl font-bold text-indigo-600 mb-4 transition-all duration-300 ease-in-out">
+              Updated Data Successfully!
+            </h2>
+            {/* <p className="text-gray-700 mb-6">
+              Your enrollment was successful. We’re excited to have you on
+              board!
+            </p> */}
+
+            {/* Decorative Element */}
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-t-md"></div>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="bg-gradient-to-br from-purple-600 via-indigo-500 to-indigo-700 text-white px-6 py-2 rounded-full hover:bg-indigo-700 focus:outline-none transition-all"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <form className="space-y-8">
         {/* Personal Information Section */}
         <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
@@ -173,7 +215,10 @@ const ProfileManage = () => {
           <div className="grid grid-cols-1 gap-6">
             {/* Email */}
             <div className="space-x-2">
-              <label><span className="font-bold px-2">Email</span>{formData.email || "Email not provided"}</label>
+              <label>
+                <span className="font-bold px-2">Email</span>
+                {formData.email || "Email not provided"}
+              </label>
               <FaCheckCircle className="text-green-500 inline" size={20} />
             </div>
 
@@ -217,7 +262,9 @@ const ProfileManage = () => {
 
         {/* Other Information Section */}
         <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative">
-          <h3 className="text-xl py-1 px-2 font-bold mb-4">Other Information</h3>
+          <h3 className="text-xl py-1 px-2 font-bold mb-4">
+            Other Information
+          </h3>
           <button
             type="button"
             onClick={() => {
@@ -232,7 +279,9 @@ const ProfileManage = () => {
             {/* Mobile Number */}
             <div>
               {!isEditable.otherInfo ? (
-                <label className="block py-1 px-2">{formData.mobile || "Enter Mobile Number"}</label>
+                <label className="block py-1 px-2">
+                  {formData.mobile || "Enter Mobile Number"}
+                </label>
               ) : (
                 <input
                   type="tel"
@@ -298,7 +347,9 @@ const ProfileManage = () => {
             <div>
               <label className="block py-1 px-2 font-bold">LinkedIn:</label>
               {!isEditable.socialLinks ? (
-                <span className="block">{formData.socialLinks.linkedIn || "Not Provided"}</span>
+                <span className="block">
+                  {formData.socialLinks.linkedIn || "Not Provided"}
+                </span>
               ) : (
                 <input
                   type="url"
@@ -315,7 +366,9 @@ const ProfileManage = () => {
             <div>
               <label className="block py-1 px-2 font-bold">GitHub:</label>
               {!isEditable.socialLinks ? (
-                <span className="block">{formData.socialLinks.gitHub || "Not Provided"}</span>
+                <span className="block">
+                  {formData.socialLinks.gitHub || "Not Provided"}
+                </span>
               ) : (
                 <input
                   type="url"
@@ -332,7 +385,9 @@ const ProfileManage = () => {
             <div>
               <label className="block py-1 px-2 font-bold">Instagram:</label>
               {!isEditable.socialLinks ? (
-                <span className="block">{formData.socialLinks.instagram || "Not Provided"}</span>
+                <span className="block">
+                  {formData.socialLinks.instagram || "Not Provided"}
+                </span>
               ) : (
                 <input
                   type="url"
@@ -348,7 +403,6 @@ const ProfileManage = () => {
         </div>
       </form>
     </section>
-    
   );
 };
 
