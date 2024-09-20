@@ -22,7 +22,7 @@ const EnrollNow = () => {
       <button
         type="button"
         onClick={togglePopup}
-        className="hidden sm:flex text-white bg-gradient-to-r from-indigo-400 via-indigo-600 to-indigo-700 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center mr-10"
+        className="hidden sm:flex text-white bg-gradient-to-r from-green-400 via-green-600 to-green-700 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-base shadow-indgo-500/50 dark:shadow-base dark:shadow-indigo-800/80 font-semibold rounded-lg text-sm px-4 py-2 text-center"
       >
         Enroll Now
       </button>
