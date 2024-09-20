@@ -57,7 +57,7 @@ export default function SliderSection() {
                 <BeatLoader color="#4F46E5" loading={true} size={15} />
            </div>;;
   }
-  console.log(programCourses, 'program courses')
+  // console.log(programCourses, 'program courses')
   // redux end
 
   return (
