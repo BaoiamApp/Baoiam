@@ -9,7 +9,7 @@ import Logo from "./Logo";
 import { MdSchool } from "react-icons/md";
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
-const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
+const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
   const [activeTab, setActiveTab] = useState("Home");
   const [subCateDrop, setSubCateDrop] = useState(false);
@@ -30,6 +30,9 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
   const closeSideBar = () => {
     setShowmenu(false);
   };
+
+  console.log(course);
+  
 
   return (
     <div>
@@ -96,7 +99,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <MdSchool />
-                      <h1>School</h1>
+                      <h1>Junior Programs</h1>
                     </div>
                     {schoolCate ? (
                       <FaChevronUp size={14} />
@@ -112,7 +115,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                       >
                         School
                       </Link>
-                      {courses[0][0]?.subCate?.map((course, i) => {
+                      {course[0]?.courses?.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -121,10 +124,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setSchoolCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -140,7 +143,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <FaUniversity />
-                      <h1>College</h1>
+                      <h1>University Programs</h1>
                     </div>
                     {collegeCate ? (
                       <FaChevronUp size={14} />
@@ -156,7 +159,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                       >
                         College
                       </Link>
-                      {courses[1][0]?.subCate.map((course, i) => {
+                      {course[1]?.courses.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -165,10 +168,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setCollegeCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -184,7 +187,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <IoBookSharp />
-                      <h1>Others</h1>
+                      <h1>Professional Degree Courses</h1>
                     </div>
                     {otherCourses ? (
                       <FaChevronUp size={14} />
@@ -200,7 +203,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                       >
                         Others
                       </Link>
-                      {courses[2][0]?.subCate.map((course, i) => {
+                      {course[2]?.courses.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -209,10 +212,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setOtherCourses((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -253,16 +256,16 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
             </li>
             <li
               className={`${mobTabtyles} ${
-                location.pathname === "/contact" && activeTab === "Contact Us"
+                location.pathname === "/" && activeTab === ""
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
               }`}
               onClick={() => {
-                setActiveTab("Contact Us");
+                setActiveTab("");
                 closeSideBar();
               }}
             >
-              <Link to={"/contact"} className="ms-3">
+              <Link to={"/"} className="ms-3">
                 Contact Us
               </Link>
             </li>
@@ -279,6 +282,22 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
             >
               <Link to={"/gcep"} className="ms-3">
                 GCEP
+              </Link>
+            </li>
+
+            <li
+              className={`${mobTabtyles} ${
+                location.pathname === "/contact" && activeTab === "Enroll Now"
+                  ? "text-[#1638C9]  dark:text-white dark:bg-[#060606]"
+                  : "text-gray-600 dark:text-gray-400"
+              }`}
+              onClick={() => {
+                setActiveTab("Enroll Now");
+                closeSideBar();
+              }}
+            >
+              <Link to={"/contact"} className="ms-3">
+                Enroll Now
               </Link>
             </li>
           </ul>

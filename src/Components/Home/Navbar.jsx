@@ -22,6 +22,7 @@ import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
 import { fetchAllCourses } from "../../redux/slices/courseSlice";
 import { BeatLoader } from "react-spinners";
+import Enroll from "./EnrollNow"
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -91,24 +92,24 @@ const Navbar = ({ theme }) => {
     setDelayHide(timeout); // Store the timeout so it can be cleared if necessary
   };
 
+  // redux start
+  const { allCourses, status, error } = useSelector((state) => state.courses);
+  console.log(allCourses, 'all courses navbar')
 
-   // redux start
-  const {allCourses, status, error} = useSelector((state) => state.courses);
-   console.log(allCourses, 'all courses navbar')
-   useEffect(() => {
-     if(status==='idle'){
-       dispatch(fetchAllCourses());
-     }
-   }, [dispatch, status]);
- 
-   if (status === 'loading') {
-     return  <div className="">
-                 <BeatLoader color="#4F46E5" loading={true} size={15} />
-            </div>;;
-   }
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchAllCourses());
+    }
+  }, [dispatch, status]);
 
-   // redux end
- 
+  if (status === 'loading') {
+    return <div className="">
+      <BeatLoader color="#4F46E5" loading={true} size={15} />
+    </div>;;
+  }
+
+  // redux end
+
   return (
     <>
       {showmenu && (
@@ -129,18 +130,16 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${
-            isDark ? "font-semibold" : "font-medium"
-          } justify-between `}
+          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
+            } justify-between `}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-2 xl:mx-4 ${
-              location.pathname === "/" && linkActive === "Home"
-                ? "text-orange-500"
-                : ""
-            }`}
+            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
+              ? "text-orange-500"
+              : ""
+              }`}
           >
             Home
           </Link>
@@ -148,21 +147,21 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${
-              location.pathname === "/about-us" && linkActive === "About"
-                ? "text-indigo-600"
-                : ""
-            } `}
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             About Us
           </Link>
 
-          <li
-            onClick={() => setShow(!show)}
-            className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}
-          >
-            Courses
-            {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+          <li className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}>
+            <Link to="/courses">Courses</Link>
+            {show ? (
+              <IoIosArrowUp onClick={() => setShow(!show)} />
+            ) : (
+              <IoIosArrowDown onClick={() => setShow(!show)} />
+            )}
           </li>
 
           {show && (
@@ -172,7 +171,7 @@ const Navbar = ({ theme }) => {
               onMouseLeave={handleMouseLeave}
             >
               <CourseNav
-                courses={[School, CollegeCourseData, OtherCourseData]}
+                course={allCourses}
                 setShow={setShow}
               />
             </div>
@@ -181,11 +180,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
-              location.pathname === "/blogs" && linkActive === "Blog"
-                ? "text-indigo-600"
-                : ""
-            } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             Blog
           </Link>
@@ -193,11 +191,10 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
-              location.pathname === "/contact" && linkActive === "Contact Us"
-                ? "text-indigo-600"
-                : ""
-            } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
+              ? "text-indigo-600"
+              : ""
+              } `}
           >
             Contact Us
           </Link>
@@ -206,7 +203,7 @@ const Navbar = ({ theme }) => {
         {/* Last */}
         <div>
           <div className="flex items-center gap-2 md:gap-4 text-black dark:text-white">
-            <div className="flex items-center gap-4 xl:gap-6">
+            <div className="flex items-center gap-6 xl:gap-14 ">
               <SearchBox courses={courses} />
 
               <div ref={userhandleDropDownRef}>
@@ -277,6 +274,10 @@ const Navbar = ({ theme }) => {
                 GCEP
               </button>
             </Link>
+
+            
+             <Enroll/>
+            
             <span
               onClick={() => setShowmenu((old) => !old)}
               className="block lg:hidden"
@@ -287,7 +288,7 @@ const Navbar = ({ theme }) => {
           <MobNavbar
             setShowmenu={setShowmenu}
             showmenu={showmenu}
-            courses={[School, CollegeCourseData, OtherCourseData]}
+            course={allCourses}
             isDark={isDark}
             setIsDark={darkTheme}
           />

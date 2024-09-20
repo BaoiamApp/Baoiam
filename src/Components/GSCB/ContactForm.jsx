@@ -44,7 +44,7 @@ const ContactForm = () => {
         <div className="flex gap-8 w-full max-sm:flex-col max-sm:gap-4">
           <div className="flex-col flex w-1/2 max-sm:w-full">
             <label className="text-lg font-medium dark:text-white" htmlFor="company">
-              Company <span className="text-red-600">*</span>
+              Institute <span className="text-red-600">*</span>
             </label>
             <input
               type="text"
@@ -57,7 +57,7 @@ const ContactForm = () => {
 
           <div className="flex-col flex w-1/2 max-sm:w-full">
             <label className="text-lg font-medium dark:text-white" htmlFor="agency">
-              Company represented (if agency)
+              Designation (if agency)
             </label>
             <input
               type="text"
@@ -110,13 +110,13 @@ const ContactForm = () => {
 
           <div className="flex-col flex w-1/2 max-sm:w-full">
             <label className="text-lg font-medium dark:text-white" htmlFor="industry">
-              Industry
+              Type
             </label>
             <select
               id="industry"
               className="px-4 py-2 border border-black/60 w-full max-sm:py-1"
             >
-              <option value="">Select an Industry</option>
+              <option value="">Select an Type</option>
               {industry.map((i) => (
                 <option key={i.id} value={i.value} className="dark:text-white">
                   {i.label}
@@ -127,7 +127,7 @@ const ContactForm = () => {
         </div>
 
         {/* Interested */}
-        <div className="w-full">
+        {/* <div className="w-full">
           <p className="text-lg font-medium dark:text-white">
             I am interested in... <span className="text-red-600">*</span>
           </p>
@@ -147,12 +147,12 @@ const ContactForm = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Textarea */}
         <div className="w-full">
           <label className="text-lg font-medium dark:text-white" htmlFor="help">
-            How can we help?
+           Write a message...
           </label>
           <textarea
             rows={4}

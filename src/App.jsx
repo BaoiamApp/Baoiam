@@ -38,9 +38,13 @@ import BookADemo from "./Pages/BookADemo";
 import Loader from "./Components/Loader";
 import ChatBot from "./Components/Chatbot/ChatBot";
 import GCEP from "./Pages/GCEP";
+
 import { FeaturedBlogDetail } from "./Pages/FeaturedBlogDetail";
 import { RecentBlogDetail } from "./Pages/RecentBlogDetail";
 import { PopularBlogDetail } from "./Pages/PopularBlogDetail";
+
+import Courses from "./Pages/Courses";
+
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -80,9 +84,9 @@ const App = () => {
           <Route path='/login' element={<Login />} />
 
           {/* Courses */}
-          <Route path='/courses/school' element={<School />} />
-          <Route path='/courses/college' element={<College />} />
-          <Route path='/course/:id' element={<CourseDetailsPage />} />
+          <Route path="/courses/school" element={<School />} />
+          <Route path="/courses/college" element={<College />} />
+          <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
 
           {/* <Route
           path="/course/:course"
@@ -115,7 +119,9 @@ const App = () => {
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
 
           {/* Checkout */}
-          <Route path='/checkout/:course/:id/:plan?' element={<Checkout />} />
+
+          <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
+          <Route path="/courses" element={<Courses />} />
 
           {/* Profile & Dashboard */}
           <Route path='/profile' element={<SideBar />} />
@@ -144,7 +150,8 @@ const App = () => {
 
           <Route path='/ReferAndEarn' element={<ReferAndEarn />} />
           {/* Book a demo */}
-          <Route path='/book-a-demo/:courseId' element={<BookADemo />} />
+
+          <Route path="/book-a-demo/:name/:courseId" element={<BookADemo />} />
         </Routes>
         <ChatBot />
       </div>
