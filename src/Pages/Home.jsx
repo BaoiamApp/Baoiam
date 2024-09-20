@@ -25,9 +25,9 @@ const Home = ({ dark }) => {
             <div className='max-w-11/12 mx-auto'>
                 <Hero />
                 <Courses />
-                <Slider />
+                {/* <Slider /> */}
                 {/* <Categories /> */}
-                <ServicesTab />
+                <ServicesTab /> 
                 <div className="mx-auto w-full md:w-[85%] my-20">
                     <img className="w-full h-full cursor-pointer" onClick={()=> navigate('/Maintenance')} src={SuccessLight} alt="" />
                 </div>
