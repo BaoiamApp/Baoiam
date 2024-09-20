@@ -25,7 +25,7 @@ const CourseNav = ({ setShow, courses }) => {
     },
     {
       id: 1,
-      title: "Pre-University Programs",
+      title: "University Programs",
       link: "courses/college",
       icon: <FaUniversity size={18} />,
     },
@@ -50,8 +50,8 @@ const CourseNav = ({ setShow, courses }) => {
             >
               <Link
                 onClick={() => setShow(false)}
-                to={`/${c.link}`}
-                className="hover:underline hover:text-amber-600 font-semibold flex items-center gap-2"
+                // to={`/${c.link}`}
+                className=" hover:text-amber-600 font-semibold flex items-center gap-2"
               >
                 {c.icon} {c.title}
               </Link>
