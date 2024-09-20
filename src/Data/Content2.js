@@ -599,6 +599,11 @@ In short, all the things you can see on the web are done by a front- end develop
       </div>
     `
   },
+  
+  
+];
+
+export const startContent = [
   {
     head: `
       <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>
@@ -749,14 +754,11 @@ Traditional graphic design relies on designers' intuition, experience, and creat
          <p class="mt-4">
          Are you stuck in your career growth? Are you searching for courses that can lift your career,then Graphics design course is the right choice above all. Boost your creativity with our Graphic Design Course, where imagination meets innovation! This intensive program is your gateway to mastering the art of visual storytelling. Whether you're a beginner or a newcomer designer, you’ll jump into the world of colors, typography, layouts, and cutting-edge design software like Adobe Photoshop, Illustrator, and more.    
          </p>
-              
-       </div>
-    
-       
+          
+       </div>    
       </div>
     `
   }
-  
-];
+]
 
 export default data;
