@@ -9,6 +9,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import new_excited_tech_edu1 from "../../assets/Blogs/new_excited_tech_edu1.jpg";
 import screen_time from "../../assets/Blogs/screen_time.png";
+import { Link } from "react-router-dom";
+import software_testing from "../../assets/Blogs/software_testing.png";
+import { useRef } from "react";
 
 const blog_slider = [
   {
@@ -23,11 +26,11 @@ const blog_slider = [
   {
     title: "Mary Smith",
     titleColor: "blue-500",
-    imgSrc: new_excited_tech_edu1,
-    text: "New and Exciting Technology in Education",
-    info: "Oct 10, 2022 • 10 mins read",
+    imgSrc: software_testing,
+    text: "What is Software Testing and Why is It Important in Software Development?",
+    info: "Oct 10, 2019 • 10 mins read",
     des: "Explore what ed-tech is, how it creates value among the students, its current trends, and how to keep pace in an increasingly connected 5g world.",
-    category: "Career Development",
+    category: "Technology",
   },
   {
     title: "Akshay Saini",
@@ -38,11 +41,19 @@ const blog_slider = [
     des: "As technology has become an integral part of our life, it is really necessary to understand the importance of healthy technology use to maintain your overall well being while learning. ",
     category: "Technology",
   },
+  {
+    title: "Jason Adam",
+    titleColor: "blue-500",
+    imgSrc: ed_tech_enhances_critical_thinking,
+    text: "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
+    info: "Oct 17, 2022 • 5 mins read",
+    des: "Understand the role of critical thinking in contemporary learners.This blog evaluates how Ed-Tech changes the method of students’ critical",
+    category: "Education",
+  },
 ];
 
 export const BusSlider = () => {
-  const navigate = useNavigate();
-
+  const swiperRef = useRef(null);
   useEffect(() => {
     gsap.fromTo(
       ".b5",
@@ -62,6 +73,18 @@ export const BusSlider = () => {
     );
   }, []);
 
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
   return (
     <div className='my-12'>
       <div>
@@ -72,6 +95,7 @@ export const BusSlider = () => {
       </div>
       <div className='mb-6 mt-8 px-10'>
         <Swiper
+          ref={swiperRef}
           keyboard={{
             enabled: true,
           }}
@@ -96,40 +120,52 @@ export const BusSlider = () => {
               <SwiperSlide
                 className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
                 key={item.id}
-                onClick={() => navigate(`/Blog_detail/${i}`)}
               >
-                <div className='relative'>
-                  <img
-                    className='w-full h-48 object-cover'
-                    src={item.imgSrc}
-                    alt={`${item.title}`}
-                  />
-                  {/* Button positioned over the image */}
-                  <button
-                    type='button'
-                    className='absolute bottom-2 left-3  bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white text-sm rounded-full px-4 py-2'
-                  >
-                    {item.category}
-                  </button>
-                </div>
-                <div className='p-4 flex-grow '>
-                  <h2 className='text-lg font-bold my-2'>{item.text}</h2>
-                  <span
-                    className='text-sm text-gray-500 font-semibold'
-                    style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      WebkitLineClamp: 2, // Limit to 2 lines
-                    }}
-                  >
-                    {item.des}
-                  </span>
-                  <p className='text-sm font-medium mt-2'>{item.info}</p>
-                </div>
+                <Link to={`/Blogdetails/${i}`}>
+                  <div className='relative'>
+                    <img
+                      className='w-full h-48 object-cover'
+                      src={item.imgSrc}
+                      alt={`${item.title}`}
+                    />
+                    {/* Button positioned over the image */}
+                    <button
+                      type='button'
+                      className='absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1'
+                    >
+                      {item.category}
+                    </button>
+                  </div>
+                  <div className='p-4 flex-grow '>
+                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                    <span
+                      className='text-sm text-slate-700 font-semibold'
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        WebkitLineClamp: 2, // Limit to 2 lines
+                      }}
+                    >
+                      {item.des}
+                    </span>
+                    <p className='text-xs text-slate-500  font-medium mt-2'>
+                      {item.info}
+                    </p>
+                  </div>
+                </Link>
               </SwiperSlide>
             );
           })}
+          {/* Swiper navigation buttons */}
+          <div
+            className='swiper-button-prev bg-gray-800 p-2 rounded-full'
+            onClick={handlePrev}
+          ></div>
+          <div
+            className='swiper-button-next bg-gray-800 p-2 rounded-full'
+            onClick={handleNext}
+          ></div>
         </Swiper>
       </div>
     </div>
