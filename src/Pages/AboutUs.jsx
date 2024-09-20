@@ -52,21 +52,207 @@ import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 import Testimonials from "../Components/Testmonials/Testimonials";
 import Timeline from "../Components/AboutUs/Timeline";
 import { Mission, Vision } from "../assets/assets";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const AboutUs = () => {
   document.title = "Baoiam - About Us";
   const [data, setData] = useState(swiperData);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
+  useEffect(() => {
+    gsap.fromTo(
+      ".image-container img",
+      { opacity: 0 },
+      { opacity: 1, duration: 1.5, ease: "power3.inOut" }
+    );
 
-  //   return () => { };
-  // }, []);
+    gsap.fromTo(
+      ".content-overlay p",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: "power3.out" }
+    );
+
+    gsap.fromTo(
+      ".content-overlay h2",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.6, ease: "power3.out" }
+    );
+
+    gsap.fromTo(
+      ".content-overlay .lg\\:text-lg",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.9, ease: "power3.out" }
+    );
+    gsap.fromTo(
+      ".animediv1 h2",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".animediv1 h2",
+          start: "top 80%", // Starts when the top of h2 is 80% of the viewport
+          toggleActions: "play none none reverse", // Play when entering, reverse when leaving
+        },
+      }
+    );
+
+    // Animate the image
+    gsap.fromTo(
+      ".animediv1 img",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".animediv1 img",
+          start: "top 80%", // Starts when the image comes into view
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animate the text elements (h4, p, span) with stagger
+    gsap.fromTo(
+      ".animediv1 h4, .animediv1 p, .animediv1 span",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.3,
+        ease: "power3.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".animediv1 h4",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".animediv1 img",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".animediv1 img",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".animediv1 h4, .animediv1 p, .animediv1 span",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.6,
+        ease: "power3.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".animediv1 h4",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".core-values-heading",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".core-values-heading",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".value-card-1",
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".value-card-1",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.fromTo(
+      ".value-card-2",
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".value-card-3",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.fromTo(
+      ".value-card-3",
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".value-card-3",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.fromTo(
+      ".value-card-4",
+      { opacity: 0, x: 100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".value-card-2",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="dark:bg-black">
       {/* Section - 1 */}
-      <div className="  mx-auto  w-full text-white">
+      <div className="mx-auto w-full text-white">
         <div className="relative mx-auto h-[20%] w-full text-white">
           <div className="h-[100vh] md:h-[75vh] w-full image-container">
             <img
@@ -76,12 +262,8 @@ const AboutUs = () => {
             />
           </div>
           <div className="absolute inset-0 content-overlay bg-gradient-to-b from-black/60 via-black/50 md:px-48 to-black/25 flex flex-col gap-4 items-center sm:pt-20 md:pt-32 justify-center sm:justify-start text-white">
-            {/* bg-#2a272a/30 bg-gradient-to-tr from-gray-800/50 via-gray-600/30 to-black/10*/}
-            <p className="rounded-3xl md:py-1 px-4 w-fit bg-gradient-to-r from-pink-500 text-center  to-violet-600 z-10">
-              <span
-                className="
-           text-[0.55rem] md:text-sm font-medium"
-              >
+            <p className="rounded-3xl md:py-1 px-4 w-fit bg-gradient-to-r from-pink-500 text-center to-violet-600 z-10">
+              <span className="text-[0.55rem] md:text-sm font-medium">
                 Revolutionizing Education Through Innovative Ed-Tech Solutions
               </span>
             </p>
@@ -182,36 +364,44 @@ const AboutUs = () => {
 
       {/* Section 4 */}
       <div className="flex flex-col items-center gap-4 mx-auto px-4 sm:px-16 py-20 xl:px-20">
-        <div className="w-full text-center">
+        <div className="w-full text-center core-values-heading">
           <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
             Core{" "}
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
               Values
             </span>
           </h2>
         </div>
 
         <div className="flex flex-col dark:text-black md:flex-row gap-8">
-          <ValueCard
-            Icon={FaHandsHelping}
-            title="Quality Education"
-            description="Providing top-notch content curated by industry experts."
-          />
-          <ValueCard
-            Icon={FaEye}
-            title="Inclusivity"
-            description="Ensuring access to education for learners from all walks of life."
-          />
-          <ValueCard
-            Icon={FaLightbulb}
-            title="Innovation"
-            description="Continuously improving and adapting our courses to meet industry demands."
-          />
-          <ValueCard
-            Icon={FaChartLine}
-            title="Student Success"
-            description="Prioritizing the success of our learners through personalized learning paths and career support."
-          />
+          <div className="value-card-1">
+            <ValueCard
+              Icon={FaHandsHelping}
+              title="Quality Education"
+              description="Providing top-notch content curated by industry experts."
+            />
+          </div>
+          <div className="value-card-2">
+            <ValueCard
+              Icon={FaEye}
+              title="Inclusivity"
+              description="Ensuring access to education for learners from all walks of life."
+            />
+          </div>
+          <div className="value-card-3">
+            <ValueCard
+              Icon={FaLightbulb}
+              title="Innovation"
+              description="Continuously improving and adapting our courses to meet industry demands."
+            />
+          </div>
+          <div className="value-card-4">
+            <ValueCard
+              Icon={FaChartLine}
+              title="Student Success"
+              description="Prioritizing the success of our learners through personalized learning paths and career support."
+            />
+          </div>
         </div>
       </div>
 

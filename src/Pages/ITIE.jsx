@@ -28,6 +28,9 @@ import "swiper/css/pagination";
 import dummy1 from "../assets/ITIE&Entre/ITIE/dummy1.png";
 import dummy2 from "../assets/ITIE&Entre/ITIE/dummy2.png";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 const highlights = [
   { title: "Live Online Classes", description: "At your own schedule" },
   { title: "Mobile Friendly", description: "No Laptop? No Problem" },
@@ -176,12 +179,150 @@ const testimonials = [
 const ITIE = () => {
   document.title = "Baoiam - ITIE";
   const navigate = useNavigate();
+
+  //  gsap
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".text-section h1",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".text-section",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".text-section h2, .text-section p, .text-section button",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.3,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".text-section",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".image-section img",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".image-section",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.fromTo(
+      ".program-overview h1",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".program-overview h1",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // GSAP Animation for the image
+    gsap.fromTo(
+      ".program-overview .image-section img",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".program-overview .image-section",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // GSAP Animation for the paragraph
+    gsap.fromTo(
+      ".program-overview .text-section p",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: ".program-overview .text-section",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.utils.toArray(".swiper-slide").forEach((slide) => {
+      gsap.fromTo(
+        slide,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: slide,
+            start: "top bottom",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    // GSAP animation for Swiper container
+    gsap.fromTo(
+      ".swiper-container",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".swiper-container",
+          start: "top 40%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
     <div>
       {/* ITIE */}
       <div className="flex flex-col dark:text-white md:flex-row items-center justify-center p-6 mx-10">
         {/* Text Section */}
-        <div className="md:w-1/2 text-center md:text-left">
+        <div className="text-section md:w-1/2 text-center md:text-left">
           <h1 className="text-3xl md:text-5xl dark:text-white font-bold text-gray-800">
             Interns <span className="text-indigo-600">TEACH</span> Interns{" "}
             <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
@@ -205,7 +346,7 @@ const ITIE = () => {
         </div>
 
         {/* Image Section */}
-        <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <div className="image-section md:w-1/2 mt-8 md:mt-0 flex justify-center">
           <img
             src={img2}
             alt="Person pointing"
@@ -216,7 +357,7 @@ const ITIE = () => {
 
       {/* Program Overview */}
 
-      <div className="md:mx-10 ">
+      <div className="program-overview md:mx-10 ">
         <h1 className="text-3xl md:text-5xl dark:text-white font-bold text-gray-800 text-center mt-10 md:my-10">
           Program{" "}
           <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
@@ -224,7 +365,7 @@ const ITIE = () => {
           </span>
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <div className="w-full md:w-1/2  justify-center md:justify-start md:mr-4 hidden md:block">
+          <div className="image-section w-full md:w-1/2  justify-center md:justify-start md:mr-4 hidden md:block">
             <img
               src={intern1}
               alt="Person"
@@ -232,7 +373,7 @@ const ITIE = () => {
             />
           </div>
 
-          <div className="w-full md:w-1/2 p-4">
+          <div className="text-section w-full md:w-1/2 p-4">
             <p className="text-gray-600 dark:text-slate-300 mb-4 text-justify mx-4 md:mr-10 md:pr-5 ">
               ITIE is a program that has been formulated by our team and leading
               experts for young enthusiasts to build a strong and powerful

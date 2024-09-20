@@ -17,6 +17,23 @@ import e_learning2 from "../assets/Blogs/e_learning2.jpg";
 import block_chain from "../assets/Blogs/block_chain.jpg";
 import software_testing from "../assets/Blogs/software_testing.png";
 import software_testing2 from "../assets/Blogs/software_testing2.png";
+import b9 from "../assets/Blogs/b9.png"
+import b10 from "../assets/Blogs/b10.png"
+import b11 from "../assets/Blogs/b11.png"
+import b12 from "../assets/Blogs/b12.png"
+import b13 from "../assets/Blogs/b13.png"
+import b14 from "../assets/Blogs/b14.png"
+import b15 from "../assets/Blogs/b15.png"
+import y1 from "../assets/Blogs/y1.jpg"
+import y2 from "../assets/Blogs/y2.jpg"
+import y4 from "../assets/Blogs/y4.jpg"
+import e1 from "../assets/Blogs/e1.jpg"
+import e2 from "../assets/Blogs/e2.jpg"
+import e3 from "../assets/Blogs/e3.jpg"
+import g1 from "../assets/Blogs/g1.png"
+import g2 from "../assets/Blogs/g2.png"
+
+
 
 const data = [
   {
@@ -441,6 +458,307 @@ In short, all the things you can see on the web are done by a front- end develop
       </div>
     `,
   },
+  //add
+  {
+    head: `
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>A Complete Guide to Graphic Designing: Career Paths, Tools, and Opportunities
+</h1>
+      <div class='flex justify-center'><img src="${b9}" class='mb-4 w-full' 
+ /></div>
+      <p>Graphic designing is among the most exciting and fulfilling careers you can pursue in the current world where technology is strongly emphasized. This field can excite any student with a zeal for creativity and a desire to bring stories alive through visuals. Whether you want to develop eye-catching designs for clients and companies, produce easy website and application interfaces, or generate captivating advertising images, the field of graphic designing can provide not only the satisfaction of realizing your creativity but also potentially high income.</p>
+    `,
+    body: `
+      <div>
+        <h2 class='font-bold text-lg mt-7 mb-3'>Why Choose Graphic Designing?</h2>
+        <h4 class='font-bold text-lg mt-7 mb-3'>1. High Demand for Graphic Designers </h2>
+        <ul class='list-disc ml-5'>
+          <li class='mt-2'>The employment rate in graphic designing careers is on the rise. Marketers in today’s businesses require highly skilled individuals to help develop appealing content in different industries.</li>
+          <li class='mt-2'>From web designing to digital marketing, graphic designers are critical in developing brand identity and representation when it comes to advertising or even creating websites, interfaces, etc.</li>
+        </ul>
+         <h4 class='font-bold text-lg mt-7 mb-3'>2. Diverse Career Opportunities </h2>
+        <ul class='list-disc ml-5'>
+          <li class='mt-2'>Graphic design is a diverse field that provides several employment opportunities. There are also options to focus on website design, UX/UI design, branding, advertising, and many more.</li>
+          <li class='mt-2'> As this field is very broad it is flexible in terms of the degree to which one can get a job in the technology, entertainment, health care, and educational sectors among others.</li>
+        </ul>
+     <div class='flex justify-center mb-3 mt-3'><img src="${b10}" class='w-full'/> </div>
+      <p>Working as a graphic designer means that you have the freedom to show your creativity, you can think and create as you wish. The beauty of this career is that within the parameters of your work, you can try out various styles, techniques, and tools, to achieve the most compelling designs.</p>
+        <h2 class='font-bold text-lg mt-7 text-gray-600 mb-3'>Essential Graphic Designing Tools</h2>
+        <p>In graphic designing, one has to be acquainted with different tools and computer software. Here are some of the most commonly used graphic designing tools</p>
+         <div class="mt-2 p-4"> <li class='mt-2'><b>Adobe Photoshop:</b> Perfect for photo enhancement and photo retouching.</li>
+          <li class='mt-4'><b>Adobe Illustrator:</b> Ideal for designing vector graphics as well as illustrations.</li>
+               <li class='mt-4'><b>Adobe InDesign:</b>  Used in body layout design, especially in printed media.</li>
+               <li class='mt-4'><b>Sketch:</b>Frequently used by web and UX designers who work on the interfaces of their web projects.</li>
+               <li class='mt-4'><b>CorelDRAW:</b>FYet another effective instrument allowing to work with vector graphic design.</li>
+          </div>
+          </ul>
+                  <h2 class='font-bold text-2xl text-gray-600  mt-7 mb-3'>Education and Training</h2>
+                       <div class='flex justify-center mb-3 mt-3'><img src="${b11}" class='w-full'/> </div>
+ <h4 class='font-bold text-lg mt-7 mb-3'>1. Graphic Designing Courses </h2>
+        <ul class='list-disc ml-5'>
+          <li class='mt-2'>For aspiring graphic designers, the first step towards this vocation is to sit for a graphic designing course. These courses include areas like design fundamentals, typography, color, and an understanding of the software.</li>
+          <li class='mt-2'>Baoiam Innovations provides an affordable but extensive graphic designing course that will enable a student to learn and make it in the profession.</li>
+        </ul>
+        <h4 class='font-bold text-lg mt-7 mb-3'>2. Online vs. Traditional Education </h2>
+        <ul class='list-disc ml-5'>
+          <li class='mt-2'>Online graphic designing courses are flexible and convenient as there are no fixed times and you can learn at your convenience. They are especially a good fit for students who have other commitments that they have to attend to.</li>
+          <li class='mt-2'> On the other hand, traditional education offers an organized learning system that allows the students to directly communicate with the tutors and fellow learners.</li>
+        </ul>
+         <h4 class='font-bold text-lg mt-7 mb-3'>3. Certification Programs </h2>
+        <p>With an added certification in graphic design, the chances of employment become more appealing to potential employers. It is also essential to recognize that most websites specialized in certification programs emphasize skills and tools.</p>
+        </div>
+    `,
+  },
+  {
+    head: `
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>How To Become a Graphic Designer: A Complete Guide
+</h1>
+      <div class='flex justify-center'><img src="${b12}" class='mb-4 w-full' 
+ /></div>
+      <p>Are you passionate about creativity and visual storytelling?Are you someone who enjoys bringing your ideas to life through design?  If this sounds like you, a career in graphic design might be perfect for you! Whether you're starting from scratch or want to make your career in it , this guide will help you in everything you need to know to become a successful graphic designer.</p>`,
+    body: `
+      <div>
+        <h2 class='font-bold text-lg mt-7 mb-3'>What is Graphic Design?</h2>
+        <p>Graphic design is the art of creating your ideas visually.It helps you to present your ideas, messages, and emotions through a combination of images, typography, and layout. You can create logos, style and layout websites, create packaging templates and social media posts if you know graphic designing .</p>
+        <p class="mt-4">In today's digital world, where everything is about creating and enhancing your thoughts and ideas visually, graphic designers are in high demand across industries, making this career path not only creatively fulfilling but also financially rewarding.</p>
+         <div class="mt-2 p-4"> 
+         <h2>Why Choose Graphic Design as a Career?</h2>
+         <li class='mt-2'><b>Creative Freedom:</b> You get the chance to turn you ideas into visually compelling designs.</li>
+          <li class='mt-4'><b>Adobe Illustrator:</b> Ideal for designing vector graphics as well as illustrations.</li>
+               <li class='mt-4'><b>Versatile Opportunities:</b>Graphic designers gets the chance to work in various fields like advertising, branding, web design, packaging, etc.</li>
+               <li class='mt-4'><b>Growing Demand:</b> With the digital age, businesses need designers for websites, apps, marketing materials, and more.</li>
+               <li class='mt-4'><b>Freelancing Potential:</b>You can also do graphic designing as a freelancer where you will have the opportunity to choose whom to work with and what time is suitable for you.</li>
+          </div>
+          </ul>
+          <h2 class='font-bold text-2xl text-gray-600  mt-7 mb-3'>Step-by-Step Guide to Becoming a Graphic Designer</h2>
+           <h4 class='font-bold text-lg mt-7 mb-3'>1. Learn the Basic Fundamentals of Design </h4>
+           <p class="mt-4">Before you get into graphic design tools and software, it’s essential to understand the basics:</p>
+        <ul class='list-disc ml-5'>
+          <li class='mt-2'><b>Color Theory:</b> How different colors work together.</li>
+          <li class='mt-2'><b>Typography:</b> The art of selecting and arranging typefaces for readability and style.</li>
+         <li class='mt-2'><b>Composition and Layout:</b> How to organize design elements, do styling and layout.</li>
+          </ul>
+        <h4 class='font-bold text-lg mt-7 mb-3'>How to learn these Basic Fundamentals: </h4>
+<ul class='list-disc ml-5'>
+          <li class='mt-2'><b>books:</b></li>
+          </ul>
+          <p class="text-gray-500 mt-2">(i)"The Elements of Graphic Design" by Alex W. White</p>
+         <p class="text-gray-500 mt-2"> (ii) "Graphic Design: The New Basics" by Ellen Lupton</p>
+    <ul class='list-disc ml-5 mt-4'>
+          <li class='mt-2'><b>YouTube Channels </b> like The Futur, Satori Graphics, or Will Paterson have free videos on color theory, typography, and composition.</li>
+ <li class='mt-2'>
+        Online Platforms like <b>Baoiam</b> 
+        <a class="text-blue-500" href="https://www.baoiam.com">https://www.baoiam.com</a>,
+        <b>Udemy</b> 
+        <a class="text-blue-500" href="https://www.udemy.com/">https://www.udemy.com/</a>, 
+        <b>Coursera</b> 
+        <a class="text-blue-500" href="https://www.coursera.org/">https://www.coursera.org/</a>, or 
+        <b>Skillshare</b> 
+        <a class="text-blue-500" href="https://www.skillshare.com/en/">https://www.skillshare.com/en/</a> 
+        have courses from beginner to intermediate levels on graphic design fundamentals.
+    </li>          
+    </ul>
+              <h2 class='font-bold text-2xl text-black  mt-7 mb-3'>Conclusion</h2>
+    <p class="mt-4">Graphic designing is one of the most dynamic and demanding fields in today’s digital world. By understanding the basics of graphic design, mastering essential tools, building a strong portfolio, and staying updated on trends, you will form a strong foundation for a successful career. Gaining real-world experience through freelancing, internships, and online projects will further sharpen your skills and prepare you for the professional world. This will give you various opportunities to learn and grow.</p>
+          <div class='flex justify-center mb-3 mt-3'><img src="${b13}" class='w-full'/> </div>
+    `,
+  },
+  {
+    head: `
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>
+        Case Study: Empowering Students: Bridging the Gap Between Education and Employment
+      </h1>
+      <div class='flex justify-center'>
+        <img src="${b14}" class='mb-4 w-full' />
+      </div>
+      <p>As unemployment remains high and the job market becomes increasingly saturated, students need help finding the work they want to do even though they have relevant degrees and marketable skills. Most of them fail to secure employment opportunities that suit their qualifications because they lack relevant work experience, have few acquaintances in the job market, and face high skill demands. Students get frustrated with the knowledge they acquired in their academies and are unable to fit the details into their jobs.</p>`,
+    body: `
+      <div>
+        <h2 class='font-bold text-lg mt-7 mb-3'>The Challenge</h2>
+        <p>Consider a group of students from diverse academic disciplines who excelled in their studies but had not secured a job on their first attempt. These learners worked hard in their classes and graduated with degrees in fields such as business management, IT, and engineering. But when they entered the job market, they found that employers sought not just theoretical knowledge, but practical experience, specialized skills, and specific knowledge areas that conventional formal education failed to provide.</p>
+        <p class="mt-4">These students did not have the opportunity to face reality and had no evidence to present to employers. Many struggled to know how and where to apply for jobs, how to prepare their CVs, and even how to communicate during interviews. Consequently, they ended up in jobs that were below their expectations, in places where they could not progress to higher ranks or develop a passionate interest.</p>
+        <div class="mt-2 p-4">
+          <h2>The Solution: Baoiam Innovations</h2>
+          <p class="mt-2">Realizing this gap between education and work, Baoiam Innovations provided a solution. Baoiam specializes in offering a skills-oriented approach to subjects necessary to operate in the world today. These courses go beyond theory and are designed to impart practical skills that help students stand out in the job market.</p>
+        </div>
+        <div class='flex justify-center'>
+          <img src="${b14}" class='mb-4 w-full' />
+        </div>
+        <p class="mt-2">Baoiam provides education in areas with high demand and promising job markets, such as entrepreneurship, web development, data analytics, and digital marketing. Every course involves contributions from professional staff, imparting knowledge and trends that can be put into practice. In addition, Baoiam offers live projects, live classes, and masterclasses to give students a real-world touch in their respective fields.</p>
+        <h2 class='font-bold text-2xl text-gray-600 mt-4 mb-3'>The SUCCESS FUSION PROGRAM</h2>
+        <p class="mt-4">Among the key services offered by <a class="text-blue-600" href="https://www.baoiam.com/">Baoiam</a> is the SUCCESS FUSION PROGRAM, which provides learners with a structured approach to understanding the current job market landscape. This program helps students acquire both tangible and intangible factors needed to become successful employees. It includes combat training, mentorship from industry professionals, and career planning to ensure students find employers that best fit their skills.</p>
+        <h2 class='font-bold text-2xl text-gray-600 mt-4 mb-3'>Placement and Career Support</h2>
+        <p class="mt-4"><a class="text-blue-600" href="https://www.baoiam.com/">Baoiam</a> goes beyond skill enhancement, offering placement services and helping students secure jobs of their choice. Through resume-building workshops, mock interviews, and networking opportunities, Baoiam ensures that students are fully prepared to face the job market with confidence.</p>
+        <div class='flex justify-center mb-3 mt-3'>
+          <img src="${b15}" class='w-full' />
+        </div>
+        <h2 class='font-bold text-2xl text-gray-600 mt-4 mb-3'>Financial Flexibility</h2>
+        <p class="mt-4">Recognizing that financial constraints often prevent students from pursuing further education, <a class="text-blue-600" href="https://www.baoiam.com/">Baoiam</a> offers affordable payment methods, such as EMI plans and Pay After Placement. This allows students to focus on their studies without financial pressure, paying for courses only after securing a job.</p>
+        <h2 class='font-bold text-2xl text-gray-600 mt-4 mb-3'>Success Stories</h2>
+        <p class="mt-4">Take the case of Riya, a business management graduate who struggled to find a job despite her qualifications. After joining <a class="text-blue-600" href="https://www.baoiam.com/course/categories/8/">Baoiam’s Digital Marketing</a> course and SUCCESS FUSION PROGRAM, Riya gained hands-on experience in <a class="text-blue-600" href="https://www.baoiam.com/course/categories/9">SEO</a>, social media marketing, and analytics. With Baoiam's career guidance and placement services, she secured a marketing executive role at a leading company.</p>
+        <p class="mt-4">Sourav, a software engineering graduate, faced difficulties entering the crowded IT field. After joining Baoiam's Web Development Course, he received training in advanced coding and practical project work. Baoiam’s mentorship and placement services helped Sourav become a full-stack developer at a growing firm where he longed to work.</p>
+      </div>
+    `
+  },
+  
+  
 ];
+
+export const startContent = [
+  {
+    head: `
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>
+       The digital youth: the impact of social media and digital marketing skills on young gen-z
+      </h1>
+      <div class='flex justify-center'>
+        <img src="${y2}" class='mb-4 w-full' />
+      </div>
+      <p>Uncover the impact of social media and digital marketing skills and how to unlock endless opportunities for today’s youth. From freelancing and personal branding to entrepreneurial success, these essential skills are the key to thriving in the digital era.</p>`,
+    body: `
+      <div>
+        <h2 class='font-bold text-lg mt-7 mb-3'>The Role of Social Media and Digital Marketing in Shaping the Youth</h2>
+        <p class="mt-5">
+       The influence of digital marketing and social media on today's age is Lunatic. In this fast-paced era where change is the only constant, staying ahead means embracing challenges and adaptability at every stage. Social media platforms are for everyone, offering easy and reliable tools that help us stay ahead in this fast-moving new generation. From the youth's point of view, social media is a gadget, and with its help, they can easily showcase their lives, talents, and creativity. Before the digital era, achieving your dreams was often challenging. Today, the landscape has shifted, making it more accessible to turn aspirations into reality. 
+        </p>
+        <p class="mt-5 mb-4">
+        Digital marketing is a tool for advertising on various social media platforms it includes online ads, emails, and websites to reach and connect with people. With the help of digital marketing, any business can grow from scratch, because connecting with millions of potential customers is just a click away.         </p>
+        <div class='flex justify-center'>
+        <img src="${y1}" class='mb-4 w-full' />
+      </div>
+        <div class="mt-2 p-4">
+          <h2 class="font-extrabold text-xl md:text-2xl">The upsides of adapting these skills</h2>
+          <h2 class="underline font-bold mt-4 text-black"><i>1. Showcasing talent has never been easier: </i></h2>
+         <p class="m-6">
+         In this rapidly flourishing age of youth, social media plays a vital role in showing the expertise. "Find a community that matches your interests, become an active member, and grow with them. Gain immense support, valuable opinions, and encouragement from your audience, helping you stay ahead in your field.
+         </p>
+
+          <h2 class="underline font-bold mt-4 text-black"><i>2. For bold, young entrepreneurs: </i></h2>
+         <p class="m-6">
+        With the easy way of learning and promoting your business, anyone can become a corporate Monarch overnight. If you have an innovation in mind anyone can start a Groundbreaking Venture from scratch, With a bit of activity and the immense support of digital marketing and media, you can achieve rapid and significant growth        
+         </p>
+
+          <h2 class="underline font-bold mt-4 text-black"><i>3. Skills that keep you ahead of the curve: </i></h2>
+         <p class="m-6">
+         By cultivating an innovative mindset, you can develop skills that set you apart—skills others may find difficult to acquire. Social media serves as an excellent platform to showcase your distinct talents, helping you build a following and offer guidance to those in need. In today’s digital world, promoting your business online remains not just relevant but vital. With the right strategies, you can effortlessly attract potential customers globally and keep your business on a path of growth and success. Innovation ensures your brand never fades, no matter the trends.
+         </p>
+
+           <h2 class="underline font-bold mt-4 text-black"><i>4. Dive into a vast pool of opportunities: </i></h2>
+         <p class="m-6">
+          You can never go wrong by actively showcasing yourself for a job, especially in today's media-driven world. Every industry, big or small, is heavily active on social platforms, allowing companies to connect with you directly and without barriers. Being present on social media is like securing your future, positioning yourself for endless opportunities, and staying ahead in the professional landscape.        
+          </p>   
+
+          <h2 class="underline font-bold mt-4 text-black"><i>5. Personal Branding and Networking: </i></h2>
+         <p class="m-6">
+          Imagine two people starting a business—one with a strong network and the other without. While both can succeed, a person with a wide network can effortlessly generate customers from scratch. This is exactly what mastering digital marketing and social media does for you. It arms you with powerful, strategic tools to reach and engage your audience effectively in today’s fast-paced era.
+          </p>   
+          <p class="m-4">
+          With the right digital marketing know-how, building a brand is no longer a difficult task. Social media allows you to connect with people across the globe, target specific audiences, and create meaningful interactions, turning potential customers into loyal advocates. It’s not just about having a business—it’s about using the immense reach of digital platforms to grow it quickly and efficiently. In today’s world, the knowledge of digital marketing is your gateway to business success
+          </p>
+          
+           <h2 class="underline font-bold mt-4 text-black"><i>6. Unlock the Freelancing Opportunities Everyone’s Buzzing About!: </i></h2>
+         <p class="m-6">
+          Digital marketing is one of the most sought-after skills that everyone is eager to learn—and for good reason. It offers the freedom to work remotely, without needing formal degrees or high grades. Once you master these skills, a world of endless opportunities opens up. The demand for freelancers with SEO expertise and digital marketing know-how is skyrocketing, as businesses everywhere seek to elevate their brands.
+          </p>   
+          <p class="m-4">
+           Becoming proficient in digital marketing means you’ll always be in demand, whether you choose to freelance or work with top companies. Freelancing, in particular, can become your favorite career option, serving up flexibility, high earnings, and the ability to work on your terms.
+          </p>
+          
+           <h2 class="underline font-bold mt-4 text-black"><i>7. Becoming a Visionary Leader: </i></h2>
+         <p class="m-6">
+         A leader with exceptional strategies will consistently drive their team to success. With advanced skills, such a leader can guide the team to new heights and achieve remarkable progress. Your team members always seek to be part of the best group, looking up to you as their role model. As a leader, possessing strong communication skills and expertise in social media and digital marketing will greatly enhance your ability to inspire and guide your team to success.
+          </p> 
+
+            <h2 class="underline font-bold mt-4 text-black"><i>Conclusion: </i></h2>
+         <p class="m-6">
+         Digital marketing and social media marketing skills are no longer advanced; they are essential foundational skills that every professional must have. Mastering these abilities will unlock countless opportunities, positioning you for success in various paths—whether it's freelancing, full-time employment, or building your brand. You can take control of your career, be your boss, and thrive in the digital realm          </p> 
+        </div>
+        <div class='flex justify-center'>
+          <img src="${y4}" class='mb-4 w-full' />
+        </div>
+       
+      </div>
+    `
+  },
+  {
+    head: `
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>
+         ENHANCING YOUR GRAPHICS SKILL: FREE AND PAID RESOURCES 
+      </h1>
+      <div class='flex justify-center'>
+        <img src="${e1}" class='mb-4 w-full' />
+      </div>
+      <p>
+       In the dynamic digital world of creative design, having the right tools can transform influential creative ideas into stunning realities. Here’s a popular list of both free and paid graphic design tools that we recommend for professionals and beginners alike, reflecting your creative insight and versatility make a creative one.      </p>`,
+    body: `
+      <div>
+        <h2 class='font-bold text-lg mt-7 mb-3'>ENHANCING YOUR GRAPHICS SKILL: FREE AND PAID RESOURCES:</h2>
+        <p class="mt-5 mb-4">
+        In the dynamic digital world of creative design, having the right tools can transform influential creative ideas into stunning realities. Here’s a popular list of both free and paid graphic design tools that we recommend for professionals and beginners alike, reflecting your creative insight and versatility make a creative one. </p>
+        <div class='flex justify-center'>
+        <img src="${e2}" class='mb-4 w-full' />
+      </div>
+        <div class="mt-2 p-4">
+          <h2 class="font-extrabold text-xl md:text-2xl">GRAPHICS DESIGN COURSE AT A GLANCE-</h2>
+         <p class="mt-4">
+         Are you stuck in your career growth? Are you searching for courses that can lift your career,then Graphics design course is the right choice above all. Boost your creativity with our Graphic Design Course, where imagination meets innovation! This intensive program is your gateway to mastering the art of visual storytelling. Whether you're a beginner or a newcomer designer, you’ll jump into the world of colors, typography, layouts, and cutting-edge design software like Adobe Photoshop, Illustrator, and more.    
+         </p>
+         <p class="mt-4">
+         From crafting stunning logos to designing eye-catching social media content, you'll develop the skills on how to bring new ideas into work. By the end of the course, you'll not only have an attractive portfolio but also the courage to stand out in the competitive design world. And you are Ready to create something extraordinary? If you are passionate about the graphics design course, then you can click Baoiam to know every detail at an affordable price.
+          </p>
+          <div class='flex justify-center'>
+        <img src="${e3}" class='mb-4 w-full' />
+      </div>
+
+           <h2 class="underline font-bold mt-4 text-black">THE CORE CRITERIA OF GRAPHIC DESIGN:</h2>
+           <p class="mt-4">
+           The eligibility criteria for a graphic design course can be depending on the level of the program like certificate, diploma, undergraduate, or postgraduate and the institution offering it. However, there are some general requirements needed in this course.
+           </p>
+          <p class="mt-4">
+          <b>Basic Art/Design Knowledge:</b> This course may require a basic understanding of design or artistic skills, although this is not always mandatory.
+          </p>
+          <p class="mt-4">
+          <b>Educational Qualification:</b> Completion of high school (10th or 12th grade, depending on the institution).
+          </p>
+          <p class="mt-4">
+          <b>Entrance Exam/Portfolio:</b> Some ranking institutions may demand for a portfolio of previous work or conduct an entrance test to assess your design skills in graphics design.
+          </p>          
+       </div>
+    
+       
+      </div>
+    `
+  },
+  {
+    head: `
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>
+          Graphic Design and AI: The Future of Graphic Designers      </h1>
+      <div class='flex justify-center'>
+        <img src="${g1}" class='mb-4 w-full' />
+      </div>
+      <p>
+        With the growing presence of brands and individuals on social media, graphic design has become a highly sought-after skill. At the same time, advancements in Artificial Intelligence (AI) are reshaping the design landscape. It's crucial to explore how AI could be both an advantage and a challenge for graphic designers.
+            </p>`,
+    body: `
+      <div>
+        <h2 class='font-bold text-lg mt-7 mb-3'>What is AI Graphic Design?</h2>
+        <p class="mt-5 mb-4">
+Graphic design involves creating visuals to communicate messages through elements like typography, imagery, and colour. It merges aesthetics with functionality across various mediums, including print, digital, and multimedia. AI enhances graphic design by leveraging algorithms to improve the design process and effectiveness.
+         </p>
+           <p class="mt-5 mb-4">
+Traditional graphic design relies on designers' intuition, experience, and creativity. In contrast, AI uses machine learning algorithms to generate data-driven designs. Tools such as DALL-E and CLIP, powered by GPT-3, create content that resonates with target audiences. AI also accelerates the creation process, boosting efficiency.
+         </p>
+        <div class='flex justify-center'>
+        <img src="${g2}" class='mb-4 w-full' />
+      </div>
+        <div class="mt-2 p-4">
+          <h2 class="font-extrabold text-xl md:text-2xl">GRAPHICS DESIGN COURSE AT A GLANCE-</h2>
+         <p class="mt-4">
+         Are you stuck in your career growth? Are you searching for courses that can lift your career,then Graphics design course is the right choice above all. Boost your creativity with our Graphic Design Course, where imagination meets innovation! This intensive program is your gateway to mastering the art of visual storytelling. Whether you're a beginner or a newcomer designer, you’ll jump into the world of colors, typography, layouts, and cutting-edge design software like Adobe Photoshop, Illustrator, and more.    
+         </p>
+          
+       </div>    
+      </div>
+    `
+  }
+]
 
 export default data;

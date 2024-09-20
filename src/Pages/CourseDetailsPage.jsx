@@ -8,7 +8,12 @@ import Loader from "../Components/Loader";
 import Brochure from "../Brochure.txt";
 import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import Testimonials from "../Components/Testmonials/Testimonials";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
+
+
 const CourseDetailsPage = () => {
+
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
   const [showTab, setShowTab] = useState(1);
@@ -22,47 +27,52 @@ const CourseDetailsPage = () => {
     "Regular Quizzes & Assessment",
   ]);
   const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
-  // const getCourseDetails = async () => {
-  //   // setCourseDetails(data[0]);
-  //   try {
-  //     setLoading(true);
-  //     const { data } = await axios.get(
-  //       `https://api.baoiam.com/api/courses?subcategory=${id}`
-  //     );
-  //     // console.log(data);
-  //     setCourseDetails(data[0]);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     console.log(error.stack);
-  //     setLoading(true);
-  //   }
-  // };
+  const getCourseDetails = async () => {
+    // setCourseDetails(data[0]);
+    try {
+      setLoading(true);
+      const { data } = await axios.get(
+        `https://api.baoiam.com/api/courses?id=${id}`
+      );
+      // console.log(data);
+      setCourseDetails(data[0]);
+      setLoading(false);
+    } catch (error) {
+      console.log(error.stack);
+      setLoading(true);
+    }
+  };
   console.log("course details: ", courseDetails);
-  // document.title = `Baoiam - ${courseDetails.title}`;
+  document.title = `Baoiam - ${courseDetails.title}`;
+
+  // useEffect(() => {
+  //   if (id >= 1 && id <= 10) {
+  //     // setCoursePlusContent(schoolCoursePlusContent);
+  //     // console.log("school is : ", school[0].id);
+  //     const d = School.filter((data) => data.id == id);
+  //     console.log("d is:", d);
+  //     setCourseDetails(School[0].subCate.filter((data) => data.id == id)[0]);
+  //     console.log("course details:", courseDetails);
+  //   } else if (id >= 11 && id <= 22) {
+  //     // setCoursePlusContent(collegeCoursePlusContent);
+  //     setCourseDetails(
+  //       CollegeCourseData[0].subCate.filter((data) => data.id == id)[0]
+  //     );
+  //   } else {
+  //     // setCoursePlusContent(otherCoursePlusContent);
+  //     setCourseDetails(
+  //       OtherCourseData[0].subCate.filter((data) => data.id == id)[0]
+  //     );
+  //   }
+
+  //   return () => {};
+  // }, [id]);
 
   useEffect(() => {
-    if (id >= 1 && id <= 10) {
-      // setCoursePlusContent(schoolCoursePlusContent);
-      // console.log("school is : ", school[0].id);
-      const d = School.filter((data) => data.id == id);
-      console.log("d is:", d);
-      setCourseDetails(School[0].subCate.filter((data) => data.id == id)[0]);
-      console.log("course details:", courseDetails);
-    } else if (id >= 11 && id <= 22) {
-      // setCoursePlusContent(collegeCoursePlusContent);
-      setCourseDetails(
-        CollegeCourseData[0].subCate.filter((data) => data.id == id)[0]
-      );
-    } else {
-      // setCoursePlusContent(otherCoursePlusContent);
-      setCourseDetails(
-        OtherCourseData[0].subCate.filter((data) => data.id == id)[0]
-      );
-    }
-
-    return () => {};
-  }, [id]);
+    getCourseDetails()
+  },[])
 
   // } else if (id >= 11 && id <= 22) {
   //   // setCoursePlusContent(collegeCoursePlusContent);
@@ -83,9 +93,37 @@ const CourseDetailsPage = () => {
 
   console.log("id is:", id);
 
-  // if (loading) {
-  //   return <Loader />;
-  // }
+ 
+  // redux start
+
+  const { course, status, error } = useSelector((state) => state.courseDetails);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    ;
+    if (status == 'idle') {
+      dispatch(fetchCourseDetails(id));
+    }
+  }, [dispatch, status]);
+
+  if (status === 'loading') {
+    return (
+      <div className="flex justify-center items-center h-[200px]">
+        loading...
+      </div>
+    );
+  }
+  if (status === 'failed') {
+    return (
+      <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
+        <p>Error: {error}</p>
+      </div>
+    );
+  }
+
+  // redux end
+
+
+  console.log(course, 'course api on action')
 
   return (
     <div>
@@ -93,7 +131,7 @@ const CourseDetailsPage = () => {
       <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12">
         <div className="flex flex-col gap-4">
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
-            {courseDetails?.course}
+            {courseDetails?.title}
           </h3>
           <Link
             to={`/book-a-demo/${courseDetails.id}`}
@@ -111,9 +149,9 @@ const CourseDetailsPage = () => {
               return { detail };
             })}
           </p> */}
-          {courseDetails?.desc?.map((detail, id) => {
-            return <p className="text-[0.8rem] lg:text-base">{detail}</p>;
-          })}
+          {/* {courseDetails.description?.map((detail, id) => {
+            return <p key={id} className="text-[0.8rem] lg:text-base">{detail}</p>;
+          })} */}
 
           <div className="flex flex-row  gap-2">
             <button
@@ -496,6 +534,8 @@ const CourseDetailsPage = () => {
         </div>
       </div> */}
     </div>
+
+
   );
 };
 

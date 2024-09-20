@@ -97,6 +97,16 @@ const Partners = () => {
 
         <BrandMarquee array={universities} />
         {/* <div className="bg-slate-100">
+     </div>
+     <div className="my-20">
+     <h2 className="text-3xl text-center sm:text-4xl px-2 dark:text-white font-bold text-gray-900">
+     Shaping Future with <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+     Leading Universities</span></h2>
+      <p className="text-center px-4 text-slate-600 dark:text-slate-300 w-full md:w-[60%] mx-auto mb-14 mt-6 md:mt-10">
+      Partnering with top universities to provide quality education and access to advanced resources, ensuring students are prepared for future success.</p>
+      
+      <BrandMarquee array={universities} />
+      {/* <div className="bg-slate-100">
         <div className="flex justify-between">
           {visibleImages.map((image, index) => (
             <div key={index} className="w-full px-2">

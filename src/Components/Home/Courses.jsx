@@ -16,7 +16,7 @@ const Courses = () => {
     {
       title: "Extensive Learning Hours",
       description:
-        "Engage with thousands of hours of interactive content crafted to enhance your skills and knowledge.",
+        "Engage in thousands of hours of interactive content crafted to enhance your skills and knowledge.",
       icon: <FaBook className="text-indigo-700 text-4xl" />,
     },
     {

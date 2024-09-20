@@ -1,32 +1,35 @@
-import icon1 from "../../assets/ITIE&Entre/graduated.png";
-import icon2 from "../../assets/ITIE&Entre/knowledge.png";
-import icon3 from "../../assets/ITIE&Entre/education.png";
-import icon4 from "../../assets/ITIE&Entre/deep-learning.png";
-import icon5 from "../../assets/ITIE&Entre/academic.png";
-import icon6 from "../../assets/ITIE&Entre/machine-learning.png";
-import icon7 from "../../assets/ITIE&Entre/online-lesson.png";
+import icon1 from "../../assets/Images/bank.png";
+//import icon2 from "../../assets/Images/breakfast (1).png";
+import icon3 from "../../assets/Images/condo.png";
+import icon4 from "../../assets/Images/food-serve.png";
+//import icon5 from "../../assets/Images/graduate.png";
+import icon6 from "../../assets/Images/learning (2).png";
+import icon7 from "../../assets/Images/placeholder.png";
+import icon8 from "../../assets/Images/medal.png"
+import icon9 from "../../assets/Images/office (1).png"
+import icon10 from "../../assets/Images/technical-support.png"
 
 export const CarrerSection2 = () => {
   const benefits = [
     {
       title: "Large Beautiful Office",
       description: "Enjoy a spacious beautiful office .",
-      icon: icon3,
+      icon: icon3 ,
     },
     {
       title: "Great Co-Workers",
       description: "Work with supportive colleagues.",
-      icon: icon5,
+      icon: icon9,
     },
     {
       title: "Easy Location",
       description: "Conveniently located office .",
-      icon: icon6,
+      icon: icon7,
     },
     {
       title: "Education Opportunities",
       description: "Continuous learning and development.",
-      icon: icon4,
+      icon: icon6,
     },
     {
       title: "Free Lunch & Snacks",
@@ -36,13 +39,13 @@ export const CarrerSection2 = () => {
     {
       title: "Performance Awards",
       description: "Get rewarded .",
-      icon: icon7,
+      icon: icon8,
     },
 
     {
       title: "Technical Support",
       description: "You get support .",
-      icon: icon2,
+      icon: icon10,
     },
 
     {

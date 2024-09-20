@@ -63,23 +63,23 @@ const App = () => {
     <div className="dark:bg-black w-full max-w-[1440px] mx-auto overflow-hidden h-full dark:text-white ">
       <Navbar theme={theme} />
 
-      <div className="mt-28">
-        <Routes>
-          {/* NavLinks */}
-          <Route path="/" element={<Home dark={dark} />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/gcep" element={<GCEP dark={dark} />} />
-          <Route path="/pap" element={<PAP />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/ITIE" element={<ITIE />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+      <div className="mt-24">
+      <Routes>
+        {/* NavLinks */}
+        <Route path="/" element={<Home dark={dark} />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/gcep" element={<GCEP dark={dark}/>} />
+        <Route path="/pap" element={<PAP />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/ITIE" element={<ITIE />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
 
           {/* Courses */}
           <Route path="/courses/school" element={<School />} />
           <Route path="/courses/college" element={<College />} />
-          <Route path="/course/:id" element={<CourseDetailsPage />} />
+          <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
 
           {/* <Route
           path="/course/:course"
