@@ -297,7 +297,7 @@ const Courses = () => {
             content to help you succeed academically.
           </p>
         </div>
-        <div className="h-96 md:h-full  md:w-[40%] pt-8 md:pt-0">
+        <div className="h-96 md:h-full md:w-[40%] pt-8 md:pt-0">
           <SliderHero />
         </div>
       </div>

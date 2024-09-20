@@ -5,7 +5,7 @@ const Program = ({title,data}) => {
     
     <div className="p-5 mx-auto lg:w-10/12 mt-10  sm:px- xs:px-4" id="courses">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-          {title} Programs
+        Catalogue of {title} Courses
         </h1>
         {/* <ul className="grid grid-cols-1 md:grid-cols-2 px-8 lg:grid-cols-2 gap-x-5 text-left text-[#031864] font-semibold">
           {static_data.map((ele, id) => {
