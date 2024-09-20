@@ -138,7 +138,7 @@ const App = () => {
 
           <Route path="/ReferAndEarn" element={<ReferAndEarn />} />
           {/* Book a demo */}
-          <Route path="/book-a-demo/:courseId" element={<BookADemo />} />
+          <Route path="/book-a-demo/:name/:courseId" element={<BookADemo />} />
         </Routes>
         <ChatBot />
       </div>

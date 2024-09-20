@@ -29,21 +29,27 @@ const CourseDetailsPage = () => {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-  const getCourseDetails = async () => {
-    // setCourseDetails(data[0]);
-    try {
-      setLoading(true);
-      const { data } = await axios.get(
-        `https://api.baoiam.com/api/courses?id=${id}`
-      );
-      // console.log(data);
-      setCourseDetails(data[0]);
-      setLoading(false);
-    } catch (error) {
-      console.log(error.stack);
-      setLoading(true);
-    }
-  };
+  useEffect(() => {
+    const getCourseDetails = async () => {
+      // setCourseDetails(data[0]);
+      try {
+        setLoading(true);
+        const { data } = await axios.get(
+          `https://api.baoiam.com/api/courses?subcategory=${id}`
+        );
+        // console.log(data);
+        setCourseDetails(data[0]);
+        console.log(data[0], "live");
+        console.log(data, "all");
+
+        setLoading(false);
+      } catch (error) {
+        console.log(error.stack);
+        setLoading(true);
+      }
+    };
+    getCourseDetails()
+  },[id])
   console.log("course details: ", courseDetails);
   document.title = `Baoiam - ${courseDetails.title}`;
 
@@ -70,9 +76,7 @@ const CourseDetailsPage = () => {
   //   return () => {};
   // }, [id]);
 
-  useEffect(() => {
-    getCourseDetails()
-  },[])
+
 
   // } else if (id >= 11 && id <= 22) {
   //   // setCoursePlusContent(collegeCoursePlusContent);
@@ -93,38 +97,40 @@ const CourseDetailsPage = () => {
 
   console.log("id is:", id);
 
- 
+
   // redux start
 
-  const { course, status, error } = useSelector((state) => state.courseDetails);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    ;
-    if (status == 'idle') {
-      dispatch(fetchCourseDetails(id));
-    }
-  }, [dispatch, status]);
+  // const { course, status, error } = useSelector((state) => state.courseDetails);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   if (status == 'idle') {
+  //     dispatch(fetchCourseDetails(id));
+  //   }
+  // }, [dispatch, status]);
 
-  if (status === 'loading') {
-    return (
-      <div className="flex justify-center items-center h-[200px]">
-        loading...
-      </div>
-    );
-  }
-  if (status === 'failed') {
-    return (
-      <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
-        <p>Error: {error}</p>
-      </div>
-    );
-  }
+  // if (status === 'loading') {
+  //   return (
+  //     <div className="flex justify-center items-center h-[200px]">
+  //       loading...
+  //     </div>
+  //   );
+  // }
+  // if (status === 'failed') {
+  //   return (
+  //     <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
+  //       <p>Error: {error}</p>
+  //     </div>
+  //   );
+  // }
 
-  // redux end
+  // // redux end
+
+  // console.log(course, 'course api on action')
 
 
-  console.log(course, 'course api on action')
 
+
+  // I am Fetching all the course data through subcategory of course
   return (
     <div>
       {/* Course Description */}
@@ -134,7 +140,7 @@ const CourseDetailsPage = () => {
             {courseDetails?.title}
           </h3>
           <Link
-            to={`/book-a-demo/${courseDetails.id}`}
+            to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`}
             className="relative group"
           >
             <button
@@ -149,9 +155,7 @@ const CourseDetailsPage = () => {
               return { detail };
             })}
           </p> */}
-          {/* {courseDetails.description?.map((detail, id) => {
-            return <p key={id} className="text-[0.8rem] lg:text-base">{detail}</p>;
-          })} */}
+          <p className="text-[0.8rem] lg:text-base">{courseDetails.description}</p>
 
           <div className="flex flex-row  gap-2">
             <button
@@ -191,21 +195,19 @@ const CourseDetailsPage = () => {
         <div className="w-full flex h-[400px] xs:p-2  rounded flex-col justify-center p-5">
           <div className="flex justify-start border-b border-gray-300">
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${
-                showTab === 1
-                  ? "bg-indigo-700 text-white"
-                  : "bg-gray-200 text-gray-700"
-              }`}
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 1
+                ? "bg-indigo-700 text-white"
+                : "bg-gray-200 text-gray-700"
+                }`}
               onClick={() => setShowTab(1)}
             >
               Overview
             </h3>
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${
-                showTab === 2
-                  ? "bg-indigo-700 text-white"
-                  : "bg-gray-200 text-gray-700"
-              }`}
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 2
+                ? "bg-indigo-700 text-white"
+                : "bg-gray-200 text-gray-700"
+                }`}
               onClick={() => setShowTab(2)}
             >
               Curriculum
@@ -223,15 +225,15 @@ const CourseDetailsPage = () => {
                 </h4> */}
 
                 <ul className="list-inside xs:text-[14px] px-2 list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
-                  {courseDetails.overview?.map(
+                  {/* {courseDetails.program_overview?.map(
                     (o, i) =>
                       typeof o === "string" && (
-                        <li className="text-black">{o}</li>
+                        <li key={i} className="text-black">{o}</li>
                       )
-                  )}
-                  {/* {courseDetails.overview?.split(".").map((o, i) => (
-              <li>{o}</li>
-            ))} */}
+                  )} */}
+                  {courseDetails.program_overview?.split(".").map((o, i) => (
+                    <li key={i}>{o}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -246,55 +248,56 @@ const CourseDetailsPage = () => {
                 </h4> */}
 
                 <ul className="list-inside  mt-4">
-                  {courseDetails?.curriculum?.map((o, i) =>
-                    typeof o === "string" ? (
-                      <li className=" px-3 mx-2 py-4 shadow-md shadow-gray-500 font-bold rounded mt-4">
-                        {o}
-                      </li>
-                    ) : (
-                      o.weekTitle && (
-                        <details
-                          className="text-black bg-white cursor-pointer px-3 py-4 rounded mt-4 shadow-gray-400 shadow-md mx-2"
-                          onClick={() => {
-                            setIsWeekExpanded((prevState) => ({
-                              ...prevState,
-                              [i]: !prevState[i], // Toggle the state for the specific week by index
-                            }));
-                          }}
-                        >
-                          <summary className="font-bold xs:text-[14px] text-lg flex justify-between w-full">
-                            {/* Week Title Handling */}
-                            {o.weekTitle.startsWith("Week")
-                              ? o.weekTitle
-                              : "Week " + (i + 1) + ": " + o.weekTitle}
-
-                            {/* Arrow Rendering */}
-                            {/* {o.topics?.length > 0 && (
-                              <p
-                                className={`mr-5 ml-5 transform ${
-                                  isWeekExpanded[i] ? "-rotate-90" : "rotate-90"
-                                }`}
-                              >
-                                &gt;
-                              </p>
-                            )} */}
-                          </summary>
-
-                          <ul className="list-disc w-full xs:text-[13px]">
-                            {o.topics?.map((d, i) => (
-                              <li
-                                className="ml-10 mt-2 break-words whitespace-normal"
-                                key={i}
-                              >
-                                {d}
-                              </li>
-                            ))}
-                          </ul>
-                        </details>
-                      )
-                    )
-                  )}
+                  {courseDetails.curriculum?.split(".").map((o, i) => (
+                    <li key={i}>{o}</li>
+                  ))}
                 </ul>
+
+                {/* {courseDetails?.curriculum?.map((o, i) =>
+                  typeof o === "string" ? (
+                    <li className=" px-3 mx-2 py-4 shadow-md shadow-gray-500 font-bold rounded mt-4">
+                      {o}
+                    </li>
+                  ) : (
+                    o.weekTitle && (
+                      <details
+                        className="text-black bg-white cursor-pointer px-3 py-4 rounded mt-4 shadow-gray-400 shadow-md mx-2"
+                        onClick={() => {
+                          setIsWeekExpanded((prevState) => ({
+                            ...prevState,
+                            [i]: !prevState[i], // Toggle the state for the specific week by index
+                          }));
+                        }}
+                      >
+                        <summary className="font-bold xs:text-[14px] text-lg flex justify-between w-full">
+                          {o.weekTitle.startsWith("Week")
+                            ? o.weekTitle
+                            : "Week " + (i + 1) + ": " + o.weekTitle}
+
+                          {o.topics?.length > 0 && (
+                            <p
+                              className={`mr-5 ml-5 transform ${isWeekExpanded[i] ? "-rotate-90" : "rotate-90"
+                                }`}
+                            >
+                              &gt;
+                            </p>
+                          )}
+                        </summary>
+
+                        <ul className="list-disc w-full xs:text-[13px]">
+                          {o.topics?.map((d, i) => (
+                            <li
+                              className="ml-10 mt-2 break-words whitespace-normal"
+                              key={i}
+                            >
+                              {d}
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    )
+                  )
+                )} */}
               </div>
             )
           )}
@@ -364,9 +367,8 @@ const CourseDetailsPage = () => {
                   return (
                     <div
                       key={i}
-                      className={`flex  flex-col  rounded-lg border ${
-                        p.name === "premium" ? "border-orange-500 relative" : ""
-                      } p-4 pt-6`}
+                      className={`flex flex-col rounded-lg lg:w-80 border ${p.name === "premium" ? "border-orange-500 relative" : ""
+                        } p-4 pt-6`}
                     >
                       <div className="mb-8">
                         {p.name === "premium" ? (
@@ -381,10 +383,10 @@ const CourseDetailsPage = () => {
                               {p.name}
                             </div>
 
-                            <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                            <p className="mx-auto mb-2 px-8 text-center text-lg text-gray-500 font-medium dark:text-white">
                               {courseDetails.title}
                             </p>
-                            <p className="mx-auto font-extrabold mb-2 px-8 text-center text-black dark:text-white">
+                            <p className="mx-auto mb-2 px-8 text-gray-500 font-medium text-center dark:text-white">
                               All Contents of Plus
                             </p>
                             <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
@@ -434,17 +436,15 @@ const CourseDetailsPage = () => {
                           onClick={() => {
                             if (localStorage.getItem("access_token"))
                               navigate(
-                                `/checkout/${id}/${
-                                  p.name == "premium" ? "Premium" : "Plus"
+                                `/checkout/${id}/${p.name == "premium" ? "Premium" : "Plus"
                                 }`
                               );
                             else navigate("/login");
                           }}
-                          className={`block  rounded-lg ${
-                            p.name === "premium"
-                              ? "bg-orange-500 text-white"
-                              : "bg-gray-500"
-                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                          className={`block  rounded-lg ${p.name === "premium"
+                            ? "bg-orange-500 text-white"
+                            : "bg-gray-500"
+                            } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                         >
                           Enroll Now
                         </button>

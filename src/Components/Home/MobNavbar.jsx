@@ -9,7 +9,7 @@ import Logo from "./Logo";
 import { MdSchool } from "react-icons/md";
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
-const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
+const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
   const [activeTab, setActiveTab] = useState("Home");
   const [subCateDrop, setSubCateDrop] = useState(false);
@@ -30,6 +30,9 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
   const closeSideBar = () => {
     setShowmenu(false);
   };
+
+  console.log(course);
+  
 
   return (
     <div>
@@ -112,7 +115,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                       >
                         School
                       </Link>
-                      {courses[0][0]?.subCate?.map((course, i) => {
+                      {course[0]?.courses?.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -121,10 +124,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setSchoolCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -156,7 +159,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                       >
                         College
                       </Link>
-                      {courses[1][0]?.subCate.map((course, i) => {
+                      {course[1]?.courses.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -165,10 +168,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setCollegeCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -200,7 +203,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                       >
                         Others
                       </Link>
-                      {courses[2][0]?.subCate.map((course, i) => {
+                      {course[2]?.courses.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -209,10 +212,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setOtherCourses((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}

@@ -70,14 +70,48 @@ const CourseNav = ({ setShow, course }) => {
         })}
       </div>
 
-      {activeTabIndex !== null && (
+      {activeTabIndex === 0 && (
         <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
           {course[0].courses?.map((sub, index) => {
             return (
               <div key={index} className="px-6 py-2 hover:bg-amber-50">
                 <Link
                   onClick={() => setShow(false)}
-                  to={`/course/${sub.title}/${sub.id}`}
+                  to={`/course/${sub.title}/${sub.subcategory}`}
+                  className="text-sm"
+                >
+                  {sub.title}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {activeTabIndex === 1 && (
+        <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
+          {course[1].courses?.map((sub, index) => {
+            return (
+              <div key={index} className="px-6 py-2 hover:bg-amber-50">
+                <Link
+                  onClick={() => setShow(false)}
+                  to={`/course/${sub.title}/${sub.subcategory}`}
+                  className="text-sm"
+                >
+                  {sub.title}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {activeTabIndex === 2 && (
+        <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
+          {course[2].courses?.map((sub, index) => {
+            return (
+              <div key={index} className="px-6 py-2 hover:bg-amber-50">
+                <Link
+                  onClick={() => setShow(false)}
+                  to={`/course/${sub.title}/${sub.subcategory}`}
                   className="text-sm"
                 >
                   {sub.title}
