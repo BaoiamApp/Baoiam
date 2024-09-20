@@ -12,28 +12,19 @@ import { BeatLoader, ClipLoader } from 'react-spinners';
 const apiUrl = import.meta.env.VITE_API_URL;
 const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
-// const capitalizeTitle = (title) => {
-//   return title
-//     .toLowerCase()
-//     .split(' ')
-//     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-//     .join(' ');
-// };
-
-const limitDescription = (description, wordLimit = 20) => {
-  const words = description.split(' ');
-  return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : description;
-};
-
 const BookADemo = () => {
   const dispatch = useDispatch();
-  const { course, status, error } = useSelector((state) => state.courseDetails);
+  const { courses, status, error } = useSelector((state) => state.courseDetails);
   const [selectedPlan, setSelectedPlan] = useState(0);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { courseId } = useParams();
 
+  // change previously it was course so to make changes throughout ( global course variable )
+  const course = courses[courseId]
+  // change previously it was course so to make changes throughout 
   useEffect(() => {
+    
     dispatch(fetchCourseDetails(courseId));
   }, [dispatch, courseId]);
 
@@ -120,13 +111,7 @@ const BookADemo = () => {
 
   console.log(course);
 
-  const truncateText = (text) => {
-    if (text.length > 20) {
-      return text.substring(0, 20) + '...';
-    } else {
-      return text;
-    }
-  }
+
 
   return (
     <section className="min-h-screen bg-gray-100 dark:bg-[#080529] py-12 px-4 relative">
@@ -171,7 +156,7 @@ const BookADemo = () => {
                       />
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 capitalize">{course.plans[index].name}</h3>
-                        <p className="text-gray-600 dark:text-gray-300 mt-1">{course.plans[index].courseType} Course</p>
+                        <p className="text-gray-600 dark:text-gray-300 mt-1">{course.plans[index].name} Course</p>
                       </div>
                     </div>
                   ))}
@@ -185,7 +170,7 @@ const BookADemo = () => {
                       <FiBookOpen className="mr-2 text-indigo-600 dark:text-indigo-400 capitalize" /> {course?.title}
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      <span className="font-semibold">Description:</span> {limitDescription(course?.description)}
+                      <span className="font-semibold">Description:</span> {course?.description.slice(0,100)+ "..."}
                       {/* <span className="font-semibold">Description:</span> {course?.description} */}
                     </p>
                     <p className="text-gray-700 dark:text-gray-300 mb-4 capitalize">

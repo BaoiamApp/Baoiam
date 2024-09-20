@@ -11,7 +11,11 @@ const Phone = () => {
       </div>
       <div className="md:w-1/3 w-[80%]">
         <p className="text-3xl font-bold">
-          Take the Leap—Start <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Learning</span> Now!
+          Take the Leap—Start{" "}
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Learning
+          </span>{" "}
+          Now!
         </p>
         <p className="font-medium mt-2 text-slate-600">
           Unlock your potential for success with our courses.
@@ -76,17 +80,16 @@ const Phone = () => {
             <input
               type="email"
               placeholder="Enter your email..."
-              required={true}
+              required
               className="w-full outline-none bg-transparent text-sm text-gray-800 px-4 py-1"
             />
-
-            <button
-              type="button"
-              className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white tracking-wide text-sm rounded-full px-6 py-2"
-            >
+           <button
+    type="submit" // Change to 'submit'
+    className="bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white tracking-wide text-sm rounded-full px-6 py-2"
+  >
               Submit
             </button>
-            </div>
+          </div>
         </form>
 
         {/* <div className='mt-8'>
