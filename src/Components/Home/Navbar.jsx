@@ -94,7 +94,7 @@ const Navbar = ({ theme }) => {
   // redux start
   const { allCourses, status, error } = useSelector((state) => state.courses);
   console.log(allCourses, 'all courses navbar')
-  
+
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchAllCourses());
@@ -136,8 +136,8 @@ const Navbar = ({ theme }) => {
             to={"/"}
             onClick={() => handleLinkClick("Home")}
             className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
-                ? "text-orange-500"
-                : ""
+              ? "text-orange-500"
+              : ""
               }`}
           >
             Home
@@ -147,8 +147,8 @@ const Navbar = ({ theme }) => {
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
             className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
-                ? "text-indigo-600"
-                : ""
+              ? "text-indigo-600"
+              : ""
               } `}
           >
             About Us
@@ -180,8 +180,8 @@ const Navbar = ({ theme }) => {
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
             className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
-                ? "text-indigo-600"
-                : ""
+              ? "text-indigo-600"
+              : ""
               } `}
           >
             Blog
@@ -191,8 +191,8 @@ const Navbar = ({ theme }) => {
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
             className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
-                ? "text-indigo-600"
-                : ""
+              ? "text-indigo-600"
+              : ""
               } `}
           >
             Contact Us
@@ -283,7 +283,7 @@ const Navbar = ({ theme }) => {
           <MobNavbar
             setShowmenu={setShowmenu}
             showmenu={showmenu}
-            courses={[School, CollegeCourseData, OtherCourseData]}
+            course={allCourses}
             isDark={isDark}
             setIsDark={darkTheme}
           />
