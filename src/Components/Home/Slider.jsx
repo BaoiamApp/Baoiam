@@ -182,7 +182,7 @@ export default function SliderSection() {
                   </div>
                   {/* Button */}
                   <button
-                    onClick={() => navigate(`/course/${slide.title}/${slide.subcategory}`)}
+                    onClick={() => navigate(`/course/${slide.title}/${slide.id}`)}
                     className="bg-gradient-to-r w-fit mb-4 mt-1 rounded-md text-xs from-indigo-700 to-indigo-400 text-white px-4 py-2 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
                   >
                   View More
