@@ -22,21 +22,6 @@ import {
 import { FaMobileAlt, FaUserCircle } from "react-icons/fa";
 import NewsletterBanner from "../Components/Home/Subcription.jsx";
 
-// const getcmt = [
-//   {
-//     id: 1,
-//     name: "Ayesha",
-//     comment:
-//       " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
-//   },
-//   {
-//     id: 1,
-//     name: "Ayesha",
-//     comment:
-//       " Flat view is a good match for blogs or news articles, where the aim is to keep things brief.",
-//   },
-// ];
-
 const Blog_detail = () => {
   document.title = "Baoiam - Blog Detail";
   const [name, setName] = useState("");
@@ -86,9 +71,10 @@ const Blog_detail = () => {
           {" "}
           HOME / ARTICLES / SINGLE ARTICLE{" "}
         </p>
-        <h1 className="text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black">
+        {/* <h1 className='text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black'>
           {content_data[id].heading1}
-        </h1>
+        </h1>{" "}
+        */}
       </div>
       <div className="w-[80%] lg:flex lg:flex-row  flex-col gap-[2rem] mx-[10%] mt-[10%]">
         <div className="w-[100%] lg:w-[70%] lg:flex lg:flex-col  flex-col">

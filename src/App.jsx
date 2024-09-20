@@ -38,6 +38,11 @@ import BookADemo from "./Pages/BookADemo";
 import Loader from "./Components/Loader";
 import ChatBot from "./Components/Chatbot/ChatBot";
 import GCEP from "./Pages/GCEP";
+
+import { FeaturedBlogDetail } from "./Pages/FeaturedBlogDetail";
+import { RecentBlogDetail } from "./Pages/RecentBlogDetail";
+import { PopularBlogDetail } from "./Pages/PopularBlogDetail";
+
 import Courses from "./Pages/Courses";
 
 const App = () => {
@@ -65,17 +70,17 @@ const App = () => {
       <Navbar theme={theme} />
 
       <div className="mt-24">
-      <Routes>
-        {/* NavLinks */}
-        <Route path="/" element={<Home dark={dark} />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/gcep" element={<GCEP dark={dark}/>} />
-        <Route path="/pap" element={<PAP />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/ITIE" element={<ITIE />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Routes>
+          {/* NavLinks */}
+          <Route path="/" element={<Home dark={dark} />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/gcep" element={<GCEP dark={dark} />} />
+          <Route path="/pap" element={<PAP />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/ITIE" element={<ITIE />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
 
           {/* Courses */}
           <Route path="/courses/school" element={<School />} />
@@ -90,6 +95,9 @@ const App = () => {
           {/* Blog */}
           <Route path="/Blog_detail/:id" element={<Blog_detail />} />
           <Route path="/Blog_detail" element={<Blog_detail />} />
+          <Route path="/Blogdetail/:id" element={<FeaturedBlogDetail />} />
+          <Route path="/Blog-detail/:id" element={<RecentBlogDetail />} />
+          <Route path="/Blogdetails/:id" element={<PopularBlogDetail />} />
 
           {/* Career */}
           <Route path="/career" element={<Career />} />
@@ -110,6 +118,7 @@ const App = () => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
           {/* Checkout */}
+
           <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
           <Route path="/courses" element={<Courses />} />
 
@@ -140,6 +149,7 @@ const App = () => {
 
           <Route path="/ReferAndEarn" element={<ReferAndEarn />} />
           {/* Book a demo */}
+
           <Route path="/book-a-demo/:name/:courseId" element={<BookADemo />} />
         </Routes>
         <ChatBot />

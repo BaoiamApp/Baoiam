@@ -10,6 +10,9 @@ import { HeaderBlog } from "../Components/Blogs/HeaderBlog";
 import NewsletterBanner from "../Components/Home/Subcription";
 import gsap from "gsap";
 import web_dev1 from "../assets/Blogs/web_dev1.png";
+import new_excited_tech_edu1 from "../assets/Blogs/new_excited_tech_edu1.jpg";
+import financial_literacy from "../assets/Blogs/financial_literacy.jpg";
+import ed_tech_latest_trends from "../assets/Blogs/ed_tech_latest_trends.png";
 
 const blog_list = [
   {
@@ -38,6 +41,33 @@ const blog_list = [
     text: "The era of early childhood education and exercise of strategic tools ",
     info: "Nov 13, 2022 • 3 mins read",
     des: "Where your child is growing because this tools provide high enghamenet over learninga and fastest grasping content that enhance learning experience.",
+    category: "Education",
+  },
+  {
+    title: "John Statham",
+    titleColor: "blue-500",
+    imgSrc: new_excited_tech_edu1,
+    text: "The Rise of EdTech: How It’s Shaping Modern Education",
+    info: "Sep 19, 2022 • 8 mins read",
+    des: "The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry.",
+    category: "Science",
+  },
+  {
+    title: "John Statham",
+    titleColor: "blue-500",
+    imgSrc: financial_literacy,
+    text: "Mastering Financial Literacy for All: Essential Skills for a Future",
+    info: "Sep 19, 2022 • 8 mins read",
+    des: "The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry.",
+    category: "Finance",
+  },
+  {
+    title: "John Statham",
+    titleColor: "blue-500",
+    imgSrc: ed_tech_latest_trends,
+    text: "Unlocking the Future of Education: Ed-Tech Latest Trends ",
+    info: "Sep 19, 2021 • 8 mins read",
+    des: "Financial literacy for all is no longer a luxury but a necessity in today's globalised speedy world.",
     category: "Education",
   },
 ];
@@ -271,7 +301,7 @@ const Blog = () => {
                     {/* Button positioned over the image */}
                     <button
                       type="button"
-                      className="absolute bottom-2 left-3  bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white text-sm rounded-full px-4 py-2"
+                      className="absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1"
                     >
                       {item.category}
                     </button>
@@ -279,7 +309,7 @@ const Blog = () => {
                   <div className="p-4 flex-grow ">
                     <h2 className="text-lg font-bold my-2">{item.text}</h2>
                     <span
-                      className="text-sm text-gray-500 font-semibold"
+                      className="text-sm text-slate-700 font-semibold"
                       style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
@@ -289,7 +319,9 @@ const Blog = () => {
                     >
                       {item.des}
                     </span>
-                    <p className="text-sm font-medium mt-2">{item.info}</p>
+                    <p className="text-xs text-slate-500 font-medium mt-2">
+                      {item.info}
+                    </p>
                   </div>
                 </div>
               </Link>
@@ -298,7 +330,7 @@ const Blog = () => {
 
         {/* slider */}
 
-        <StatupSlider />
+        <StatupSlider blog_list={blog_list} />
         <TechBlogSlider />
         <BusSlider />
       </div>

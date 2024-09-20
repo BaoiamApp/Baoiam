@@ -3,19 +3,13 @@ import "swiper/css";
 import { Keyboard, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import carrer1 from "../../assets/carrer1.jpg";
-import datasc from "../../assets/datasc.jpg";
-import ed_tech from "../../assets/Blogs/ed_tech.png";
-import ent from "../../assets/Blogs/ent.jpg";
-import stp from "../../assets/Blogs/stup.jpg";
-import tech from "../../assets/Blogs/tech.jpg";
-import software_testing from "../../assets/Blogs/software_testing.png";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
 import y2 from "../../assets/Blogs/y2.jpg";
 import e1 from "../../assets/Blogs/e1.jpg";
 import g1 from "../../assets/Blogs/g1.png";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const blog_slider = [
   {
@@ -45,9 +39,18 @@ const blog_slider = [
     des: "AI enhances graphic design by leveraging algorithms to improve the design process and effectiveness.",
     category: "Educational",
   },
+  {
+    info: "May 23, 2022 • 25 mins read",
+    text: "The digital youth: social media, digital marketing on youth",
+    titleColor: "blue-500",
+    imgSrc: y2,
+    title: "young jang",
+    des: "The influence of digital marketing and social media on today's age is Lunatic. In",
+    category: "Digital Marketing",
+  },
 ];
 export const StatupSlider = () => {
-  const navigate = useNavigate();
+  const swiperRef = useRef(null);
   useEffect(() => {
     gsap.fromTo(
       ".b3",
@@ -67,6 +70,18 @@ export const StatupSlider = () => {
     );
   }, []);
 
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
   return (
     <div className="bdiv2 my-12">
       <div>
@@ -78,6 +93,7 @@ export const StatupSlider = () => {
           keyboard={{
             enabled: true,
           }}
+          ref={swiperRef}
           navigation={true}
           Scrollbar={{ draggable: true }}
           modules={[Keyboard, Pagination, Navigation, Scrollbar]}
@@ -99,7 +115,6 @@ export const StatupSlider = () => {
               <SwiperSlide
                 className="p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4"
                 key={item.id}
-                onClick={() => navigate(`/Blog_detail/${i}`)}
               >
                 <div className="relative">
                   <img
@@ -130,9 +145,51 @@ export const StatupSlider = () => {
                   </span>
                   <p className="text-sm font-medium mt-2">{item.info}</p>
                 </div>
+                <Link to={`/Blogdetail/${i}`}>
+                  <div className="relative">
+                    <img
+                      className="w-full h-48 object-cover"
+                      src={item.imgSrc}
+                      alt={`${item.title}`}
+                    />
+                    {/* Button positioned over the image */}
+                    <button
+                      type="button"
+                      className="absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1"
+                    >
+                      {item.category}
+                    </button>
+                  </div>
+                  <div className="p-4 flex-grow ">
+                    <h2 className="text-lg font-bold my-2">{item.text}</h2>
+                    <span
+                      className="text-sm text-slate-700 font-semibold"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        WebkitLineClamp: 2, // Limit to 2 lines
+                      }}
+                    >
+                      {item.des}
+                    </span>
+                    <p className="text-xs text-slate-500  font-medium mt-2">
+                      {item.info}
+                    </p>
+                  </div>
+                </Link>
               </SwiperSlide>
             );
           })}
+          {/* Swiper navigation buttons */}
+          <div
+            className="swiper-button-prev bg-gray-800 p-2 rounded-full"
+            onClick={handlePrev}
+          ></div>
+          <div
+            className="swiper-button-next bg-gray-800 p-2 rounded-full"
+            onClick={handleNext}
+          ></div>
         </Swiper>
       </div>
     </div>
