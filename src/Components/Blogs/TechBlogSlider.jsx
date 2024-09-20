@@ -62,7 +62,7 @@ export const TechBlogSlider = () => {
   }, []);
 
   return (
-    <div className="bdiv3 my-14">
+    <div className="my-14">
       <div>
         {" "}
         <h1 className="m-8 text-3xl font-bold text-center">Recent Blogs</h1>

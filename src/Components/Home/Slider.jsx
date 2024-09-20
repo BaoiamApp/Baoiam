@@ -14,7 +14,6 @@ import { fetchProgramCourses } from "../../redux/slices/courseSlice"; // Adjust 
 import { BeatLoader } from "react-spinners";
 
 export default function SliderSection() {
-  const maxLength = 60;
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("Category1");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,7 +62,7 @@ export default function SliderSection() {
   // redux end
 
   return (
-    <div className="slider-section dark:bg-black w-full relative py-20 overflow-hidden ">
+    <div className="slider-section dark:bg-[#080529] w-full relative py-20 overflow-hidden ">
       <div className="text-center mb-0 lg:mb-8">
         <h2 className="text-4xl font-bold mb-8">
           Featured{" "}
@@ -123,82 +122,90 @@ export default function SliderSection() {
             },
           }}
         >
-          {categories[selectedCategory]?.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="h-[22.5rem] overflow-hidden dark:bg-black dark:border shadow-md rounded-xl m-2">
-                {/* Image Container */}
-                <div className="relative h-[50%]">
-                  <img
-                    src={slide.banner}
-                    alt={slide.course}
-                    className="w-full h-full object-cover"
-                  />
-                <div className="absolute top-3 left-4 flex">
-                 
-                    <span className="text-xs mr-3 bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1">
-                      Premium
-                    </span>
-                    <span className="bg-slate-200 text-gray-800 rounded-lg text-xs px-3 py-1">
-                      Plus
-                    </span>
-                </div>
-                </div>
-                <div className="pl-4 h-[45%] flex flex-col justify-between">
-                  <div className="">
-                    <h3 className="text-xl font-semibold my-2 text-nowrap">{slide.course || slide.courseName} </h3>
-                    <p className="text-sm pr-3 text-slate-600">{slide.desc[0].slice(0, 60) + "..."}</p>
-                    
+          {status === "failed"
+            ? categories[selectedCategory]?.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">
+                    <div className="relative h-[50%]">
+                      <img
+                        src={slide.banner}
+                        alt={slide.course}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-3 left-4 flex">
+                        <span className="text-xs mr-3 bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1">
+                          Premium
+                        </span>
+                        <span className="bg-slate-200 text-gray-800 rounded-lg text-xs px-3 py-1">
+                          Plus
+                        </span>
+                      </div>
+                    </div>
+                    <div className="pl-4 h-[45%] flex flex-col justify-between">
+                      <div className="">
+                        <h3 className="text-xl font-semibold my-2 text-nowrap">
+                          {slide.course || slide.courseName}{" "}
+                        </h3>
+                        <p className="text-sm pr-3 text-slate-600">
+                          {slide.desc[0].slice(0, 60) + "..."}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => navigate(`/course/${slide.course}/`)}
+                        className="bg-gradient-to-r w-fit mb-4 mt-1 rounded-md text-xs from-indigo-700 to-indigo-400 text-white px-4 py-1 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
+                      >
+                        View More
+                      </button>
+                    </div>
                   </div>
-                  <button
-                    onClick={() => navigate(`/course/${slide.course}/`)}
-                    className="bg-gradient-to-r w-fit mb-4 mt-1 rounded-md text-xs from-indigo-700 to-indigo-400 text-white px-4 py-1 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
-                  >
-                  View More
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))
-          :  programCourses?.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">
-                {/* Image Container */}
-                <div className="relative h-[50%]">
-                  <img
-                    src={slide.thumbnail_image}
-                    alt={slide.title}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Price and Duration in the same row */}
-                <div className="absolute top-3 left-4 flex">
-                 
-                    <span className="text-xs mr-3 bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1">
-                      Premium
-                    </span>
-                    {/* Plus button */}
-                    <span className="bg-slate-200 text-gray-800 rounded-lg text-xs px-3 py-1">
-                      Plus
-                    </span>
-                </div>
-                </div>
-                <div className="pl-4 h-[45%] flex flex-col justify-between">
-                  {/* Title */}
-                  <div className="">
-                    <h3 className="text-xl font-semibold my-2 text-nowrap">{ slide.title.slice(0, 20) + "..." } </h3>
-                    <p className="text-sm pr-3 text-slate-600">{slide.description.slice(0, 60) + "..."}</p>
-                    
+                </SwiperSlide>
+              ))
+            : programCourses?.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="h-[22.5rem] overflow-hidden dark:bg-indigo-900 dark:border shadow-md rounded-xl m-2">
+                    {/* Image Container */}
+                    <div className="relative h-[50%]">
+                      <img
+                        src={slide.thumbnail_image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Price and Duration in the same row */}
+                      <div className="absolute top-3 left-4 flex">
+                        <span className="text-xs mr-3 bg-gradient-to-r from-orange-600 to-amber-500 text-white rounded-lg px-3 py-1">
+                          Premium
+                        </span>
+                        {/* Plus button */}
+                        <span className="bg-slate-200 text-gray-800 rounded-lg text-xs px-3 py-1">
+                          Plus
+                        </span>
+                      </div>
+                    </div>
+                    <div className="pl-4 h-[45%] flex flex-col justify-between">
+                      {/* Title */}
+                      <div className="">
+                        <h3 className="text-xl font-semibold my-2 text-nowrap">
+                          {slide.title.slice(0, 20) + "..."}{" "}
+                        </h3>
+                        <p className="text-sm pr-3 text-slate-600">
+                          {slide.description.slice(0, 60) + "..."}
+                        </p>
+                      </div>
+                      {/* Button */}
+                      <button
+                        onClick={() =>
+                          navigate(
+                            `/course/${slide.title}/${slide.subcategory}`
+                          )
+                        }
+                        className="bg-gradient-to-r w-fit mb-4 mt-1 rounded-md text-xs from-indigo-700 to-indigo-400 text-white px-4 py-2 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
+                      >
+                        View More
+                      </button>
+                    </div>
                   </div>
-                  {/* Button */}
-                  <button
-                    onClick={() => navigate(`/course/${slide.course}/`)}
-                    className="bg-gradient-to-r w-fit mb-4 mt-1 rounded-md text-xs from-indigo-700 to-indigo-400 text-white px-4 py-1 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
-                  >
-                  View More
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
+                </SwiperSlide>
+              ))}
         </Swiper>
       </div>
 

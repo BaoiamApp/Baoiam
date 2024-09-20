@@ -1,5 +1,3 @@
-import React from "react";
-import { FaUsers, FaBuilding, FaChalkboardTeacher } from "react-icons/fa";
 import React, { useEffect } from "react";
 import { FaUsers, FaBuilding, FaChalkboardTeacher } from "react-icons/fa";
 import gsap from "gsap";
