@@ -118,35 +118,6 @@ export const TechBlogSlider = () => {
                 className="p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4"
                 key={item.id}
               >
-                <div className="relative">
-                  <img
-                    className="w-full h-48 object-cover"
-                    src={item.imgSrc}
-                    alt={`${item.title}`}
-                  />
-                  {/* Button positioned over the image */}
-                  <button
-                    type="button"
-                    className="absolute bottom-2 left-3  bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white text-sm rounded-full px-4 py-2"
-                  >
-                    {item.category}
-                  </button>
-                </div>
-                <div className="p-4 flex-grow ">
-                  <h2 className="text-lg font-bold my-2">{item.text}</h2>
-                  <span
-                    className="text-sm text-gray-500 font-semibold"
-                    style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      WebkitLineClamp: 2, // Limit to 2 lines
-                    }}
-                  >
-                    {item.des}
-                  </span>
-                  <p className="text-sm font-medium mt-2">{item.info}</p>
-                </div>
                 <Link to={`/Blog-detail/${i}`}>
                   <div className="relative">
                     <img
@@ -165,7 +136,7 @@ export const TechBlogSlider = () => {
                   <div className="p-4 flex-grow ">
                     <h2 className="text-lg font-bold my-2">{item.text}</h2>
                     <span
-                      className="text-sm text-slate-700 font-semibold"
+                      className="text-sm text-slate-700 dark:text-slate-300 font-semibold"
                       style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
@@ -175,7 +146,7 @@ export const TechBlogSlider = () => {
                     >
                       {item.des}
                     </span>
-                    <p className="text-xs text-slate-500  font-medium mt-2">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-2">
                       {item.info}
                     </p>
                   </div>

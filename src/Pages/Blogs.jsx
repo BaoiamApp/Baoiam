@@ -309,7 +309,7 @@ const Blog = () => {
                   <div className="p-4 flex-grow ">
                     <h2 className="text-lg font-bold my-2">{item.text}</h2>
                     <span
-                      className="text-sm text-slate-700 font-semibold"
+                      className="text-sm text-slate-700 dark:text-slate-300 font-semibold"
                       style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
@@ -319,7 +319,7 @@ const Blog = () => {
                     >
                       {item.des}
                     </span>
-                    <p className="text-xs text-slate-500 font-medium mt-2">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-2">
                       {item.info}
                     </p>
                   </div>
