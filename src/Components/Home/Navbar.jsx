@@ -105,10 +105,12 @@ const Navbar = ({ theme }) => {
   if (status === 'loading') {
     return <div className="">
       <BeatLoader color="#4F46E5" loading={true} size={15} />
-    </div>;;
+    </div>;
   }
 
   // redux end
+
+
 
   return (
     <>
