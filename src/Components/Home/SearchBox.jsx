@@ -4,6 +4,7 @@ import { RxCross2 } from 'react-icons/rx'
 import { School } from '../../Data'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { FaBullseye } from 'react-icons/fa6'
 
 const SearchBox = ({ courses }) => {
     const [isExpanded, setIsExpanded] = useState(false)
@@ -61,7 +62,7 @@ const SearchBox = ({ courses }) => {
                         searchResults.map((c, i) => (
                             <Link
                                 to={`/course/${c.title}/${c.id}`}
-                                onClick={() => setIsExpanded(false)} // Collapse search box when a result is clicked
+                                onClick={() => {setIsExpanded(false); setSearchQuery('')}} // Collapse search box when a result is clicked
                                 className='py-2 px-4 block hover:bg-gray-200'
                                 key={i}
                             >
@@ -116,7 +117,7 @@ const SearchBox = ({ courses }) => {
                                             searchResults.map((c, i) => (
                                                 <Link
                                                     to={`/course/${c.title}/${c.id}`}
-                                                    onClick={() => setIsMobilePopupOpen(false)} // Close the pop-up when a result is clicked
+                                                    onClick={() => {setIsMobilePopupOpen(false); setSearchQuery('')}} // Close the pop-up when a result is clicked
                                                     className='py-2 px-6 block hover:bg-gray-200'
                                                     key={i}
                                                 >

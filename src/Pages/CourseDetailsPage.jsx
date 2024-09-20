@@ -12,7 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { BeatLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners"; import { IoIosArrowRoundForward } from "react-icons/io";
+
 
 const CourseDetailsPage = () => {
 
@@ -97,26 +98,26 @@ const CourseDetailsPage = () => {
     planRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  console.log("id is:", id);
+  // console.log("id is:", id);
 
   // redux start
 
   const { courses, currentCourseId, status, error } = useSelector((state) => state.courseDetails);
   const dispatch = useDispatch();
   const course = courses[id]; // Retrieve the course from the store by its id
-  
+
   useEffect(() => {
     // If the course is not in the store, fetch it
     if (!course && status !== 'loading') {
       dispatch(fetchCourseDetails(id));
     }
   }, [dispatch, id, course, status]);
-  console.log(course,' course action')
-  console.log(courses,' courses dkdkdkdk action')
+  console.log(course, ' course action')
+  // console.log(courses, ' courses dkdkdkdk action')
   if (status === 'loading' && !course) {
     return (
       <div className="flex justify-center items-center h-screen">
-              <BeatLoader color="#4F46E5" loading={true} size={15} />
+        <BeatLoader color="#4F46E5" loading={true} size={15} />
       </div>
     );
   }
@@ -146,10 +147,10 @@ const CourseDetailsPage = () => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', 'Brochure.pdf'); 
+      link.setAttribute('download', 'Brochure.pdf');
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link); 
+      document.body.removeChild(link);
       toast.update(toastId, {
         render: "downloaded successfully !!",
         type: "success",
@@ -172,56 +173,51 @@ const CourseDetailsPage = () => {
   return (
     <div>
       {/* Course Description */}
-      <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12">
-        <div className="flex flex-col gap-4">
+      <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 mt-32 mb-14">
+        <div className="flex flex-col gap-4 w-[60%]">
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
             {/* {courseDetails?.title} */}
             {course?.title}
           </h3>
-          <Link
-            // to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`}
-            to={`/book-a-demo/${course?.title}/${course?.id}`}
-            className="relative group"
-          >
-            <button
-              type="button"
-              class="flex text-xs md:text-sm lg:text-base text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-semibold rounded-lg px-8 py-2.5 text-center"
-            >
-              Book a Demo
-            </button>
+          <Link to={`/book-a-demo/${course?.title}/${course?.id}`} className="relative w-fit rounded px-5 py-2 text-xs md:text-sm overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+            <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+            <span className="relative">Book a Demo</span>
           </Link>
           {/* <p className="text-[0.8rem] lg:text-base">{courseDetails.description}</p> */}
           <p className="text-[0.8rem] lg:text-base">{course?.description}</p>
 
-          <div className="flex flex-row  gap-2">
-            <button
-              onClick={enrollNowScroll}
-              className="pl-4 mr-6 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
-            >
-              Enroll Now{" "}
-              <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
+          <div className="flex gap-2 mt-4">
+
+            <button onClick={enrollNowScroll} className="relative inline-flex items-center bg-orange-400 px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-orange-400 rounded-lg hover:text-orange-500 group">
+              <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+              <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                <IoIosArrowRoundForward size={30} />
+              </span>
+              <span className="relative">Enroll Now</span>
             </button>
-            <button
-              // href={Brochure}
-              // href = {course?.brochure_file}
-              onClick={() => downloadBrochure(course?.brochure_file)}              // download={true}
-              className="pl-4 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
-            >
-              Download Brochure{" "}
-              {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
-              <FaDownload size={18} />
+
+            <button onClick={() => downloadBrochure(course?.brochure_file)} className="relative inline-flex items-center bg-white px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-orange-400 font-medium border border-orange-400 rounded-lg hover:text-white group">
+              <span className="absolute left-0 block w-full h-0 transition-all bg-orange-400 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+              <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                <FaDownload size={18} />
+              </span>
+              <span className="relative">Download Brochure</span>
             </button>
           </div>
         </div>
 
-        <img
-          src={CourseDesc2}
-          alt=""
-          className="w-72 h-72 lg:w-full lg:h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black"
-        />
+        <div className="w-[40%] h-96 rounded-[2rem] overflow-hidden">
+          <img
+            src={course?.thumbnail_image ? course?.thumbnail_image : CourseDesc2}
+            alt=""
+            className="hidden md:block w-full h-full object-cover shadow-2xl shadow-black"
+          />
+        </div>
+
       </div>
+
       {/* Changes */}
-      <div className="px-8 lg:px-24  my-12 py-12 flex items-center  mt-32 justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-24 w-full">
+      <div className="px-8 lg:px-24 my-12 py-12 flex items-center justify-between flex-col md:flex-row gap-12 md:gap-8 lg:gap-12 w-full">
         <div className="w-full md:w-[40%]">
           <img
             src={CourseOverview}
@@ -229,21 +225,21 @@ const CourseDetailsPage = () => {
             className="w-full md:w-72 h-72 lg:w-full lg:h-96 object-cover shadow-[-15px_15px_#ea580c] lg:shadow-[-20px_20px_#ea580c]"
           />
         </div>
-        <div className="w-full flex h-[400px] xs:p-2  rounded flex-col justify-center p-5">
-          <div className="flex justify-start border-b border-gray-300">
+        <div className="w-full flex h-[400px] xs:p-2 rounded flex-col justify-center md:p-5 md:w-[60%]">
+          <div className="flex justify-start border border-gray-300 rounded-2xl overflow-hidden">
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 1
-                ? "bg-indigo-700 text-white"
-                : "bg-gray-200 text-gray-700"
+              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-3 justify-center items-center transition ${showTab === 1
+                ? "text-black"
+                : "text-white bg-orange-400"
                 }`}
               onClick={() => setShowTab(1)}
             >
-              Overview
+              Course Overview
             </h3>
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 2
-                ? "bg-indigo-700 text-white"
-                : "bg-gray-200 text-gray-700"
+              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-3 justify-center items-center transition ${showTab === 2
+                ? "text-black"
+                : "text-white bg-orange-400"
                 }`}
               onClick={() => setShowTab(2)}
             >
@@ -254,16 +250,16 @@ const CourseDetailsPage = () => {
           {showTab == 1 ? (
             <div className="w-full h-[400px] overflow-auto mt-5 py-5 pt-0 hide-scrollbar">
               <div className="w-full">
-        
 
                 <ul className="list-inside xs:text-[14px] px-2 list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
-                
-                  {/* {courseDetails.program_overview?.split(".").map((o, i) => (
-                    <li key={i}>{o}</li>
-                  ))} */}
-
+                  {/* {courseDetails.program_overview?.map(
+                    (o, i) =>
+                      typeof o === "string" && (
+                        <li key={i} className="text-black">{o}</li>
+                      )
+                  )} */}
                   {course?.program_overview?.split(".").map((o, i) => (
-                    <li key={i}>{o}</li>
+                    <li key={i} className="text-sm lg:text-base">{o}</li>
                   ))}
 
                 </ul>
@@ -272,15 +268,11 @@ const CourseDetailsPage = () => {
           ) : (
             showTab == 2 && (
               <div className="w-full mt-5 overflow-auto h-[400px] hide-scrollbar pb-3">
-      
 
-                <ul className="list-inside  mt-4">
-                  {/* {courseDetails.curriculum?.split(".").map((o, i) => (
-                    <li key={i}>{o}</li>
-                  ))} */}
 
-                  {course?.curriculum?.split(".").map((o, i) => (
-                    <li key={i}>{o}</li>
+                <ul className="list-inside list-disc marker:text-orange-600 marker:text-md mt-4">
+                  {course?.curriculum?.split(";").map((o, i) => (
+                    <li className="py-1 text-sm lg:text-base" key={i}>{o}</li>
                   ))}
                 </ul>
 
@@ -397,7 +389,7 @@ const CourseDetailsPage = () => {
                               Course Duration: {p.duration}
                             </p> */}
                             {coursePlusContent.map((content, i) => (
-                              <p className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              <p key={i} className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
                                 {content}
                               </p>
                             ))}
@@ -520,7 +512,7 @@ const CourseDetailsPage = () => {
         </div>
       </div> */}
 
-    <ToastContainer />
+      <ToastContainer />
 
 
     </div>

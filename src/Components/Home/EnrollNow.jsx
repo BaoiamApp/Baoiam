@@ -19,12 +19,18 @@ const EnrollNow = () => {
   return (
     <div>
       {/* Enroll Now Button */}
-      <button
+      {/* <button
         type="button"
         onClick={togglePopup}
         className="hidden sm:flex text-white bg-gradient-to-r from-green-400 via-green-600 to-green-700 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-base shadow-indgo-500/50 dark:shadow-base dark:shadow-indigo-800/80 font-semibold rounded-lg text-sm px-4 py-2 text-center"
       >
         Enroll Now
+      </button> */}
+
+      <button type="button"
+        onClick={togglePopup} className="relative w-fit rounded-lg px-5 py-1 md:py-2 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+        <span className="relative text-xs md:text-sm"> Enroll Now</span>
       </button>
 
       {/* Popup Modal */}
@@ -41,9 +47,8 @@ const EnrollNow = () => {
             {/* Success Icon */}
             <FaCheckCircle
               size={50}
-              className={`text-green-500 mx-auto mb-4 ${
-                animatePing ? "animate-ping" : ""
-              }`}
+              className={`text-green-500 mx-auto mb-4 ${animatePing ? "animate-ping" : ""
+                }`}
             />
 
             <h2 className="text-2xl font-bold text-indigo-600 mb-4 transition-all duration-300 ease-in-out">
