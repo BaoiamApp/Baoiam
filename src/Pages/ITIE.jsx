@@ -181,7 +181,6 @@ const ITIE = () => {
   const navigate = useNavigate();
 
   //  gsap
-
   useEffect(() => {
     
     gsap.fromTo(
@@ -301,7 +300,6 @@ const ITIE = () => {
       }
     );
   }, []);
-
 
   return (
     <div>

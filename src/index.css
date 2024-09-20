@@ -8,7 +8,7 @@ html,
 body {
   scroll-behavior: smooth;
   ::-webkit-scrollbar {
-    width: 0px;
+    width: 1px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: #747474;

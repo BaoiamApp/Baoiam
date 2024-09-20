@@ -10,6 +10,7 @@ import { CollegeCourseData, OtherCourseData, School } from "../Data";
 import Testimonials from "../Components/Testmonials/Testimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 
 const CourseDetailsPage = () => {
@@ -49,7 +50,7 @@ const CourseDetailsPage = () => {
       }
     };
     getCourseDetails()
-  },[id])
+  }, [id])
   console.log("course details: ", courseDetails);
   document.title = `Baoiam - ${courseDetails.title}`;
 
@@ -134,45 +135,33 @@ const CourseDetailsPage = () => {
   return (
     <div>
       {/* Course Description */}
-      <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 my-12">
+      <div className="flex items-center flex-col md:flex-row gap-12 md:gap-4 lg:gap-24 justify-between px-4 lg:px-24 mt-32 mb-14">
         <div className="flex flex-col gap-4">
           <h3 className="text-[1.7rem] lg:text-4xl font-bold text-neutral-600 dark:text-white">
             {courseDetails?.title}
           </h3>
-          <Link
-            to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`}
-            className="relative group"
-          >
-            <button
-              type="button"
-              class="flex text-xs md:text-sm lg:text-base text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-semibold rounded-lg px-8 py-2.5 text-center"
-            >
-              Book a Demo
-            </button>
+          <Link to={`/book-a-demo/${courseDetails.title}/${courseDetails.id}`} className="relative w-fit rounded px-5 py-1 overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+            <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+            <span className="relative">Book a Demo</span>
           </Link>
-          {/* <p className="text-[0.8rem] lg:text-base">
-            {courseDetails?.desc?.map((detail, id) => {
-              return { detail };
-            })}
-          </p> */}
           <p className="text-[0.8rem] lg:text-base">{courseDetails.description}</p>
 
-          <div className="flex flex-row  gap-2">
-            <button
-              onClick={enrollNowScroll}
-              className="pl-4 mr-6 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
-            >
-              Enroll Now{" "}
-              <FaArrowRight size={22} className="group-hover:animate-pulse" />{" "}
+          <div className="flex gap-2 mt-4">
+
+            <button onClick={enrollNowScroll} class="relative inline-flex items-center bg-orange-400 px-8 md:px-12 py-3 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-orange-400 rounded-lg hover:text-orange-500 group">
+              <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+              <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                <IoIosArrowRoundForward size={30} />
+              </span>
+              <span class="relative">Enroll Now</span>
             </button>
-            <a
-              href={Brochure}
-              download={true}
-              className="pl-4 pr-6 py-2 border text-xs md:text-sm lg:text-base border-orange-400 text-orange-400 font-semibold w-fit flex items-center gap-4 group hover:bg-orange-400 transition duration-300 hover:text-white"
-            >
-              Download Brochure{" "}
-              {/* <FaDownLong size={22} className="group-hover:animate-pulse" />{" "} */}
-              <FaDownload size={18} />
+            <a href={Brochure}
+              download={true} class="relative inline-flex items-center bg-white px-8 md:px-12 py-3 text-sm dark:text-white dark:border-white overflow-hidden text-orange-400 font-medium border border-orange-400 rounded-lg hover:text-white group">
+              <span class="absolute left-0 block w-full h-0 transition-all bg-orange-400 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
+              <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                <FaDownload size={18} />
+              </span>
+              <span class="relative">Download Brochure</span>
             </a>
           </div>
         </div>
@@ -182,9 +171,11 @@ const CourseDetailsPage = () => {
           alt=""
           className="w-72 h-72 lg:w-full lg:h-96 rounded-ss-[7rem] rounded-ee-[7rem] shadow-2xl shadow-black"
         />
+
       </div>
+
       {/* Changes */}
-      <div className="px-8 lg:px-24  my-12 py-12 flex items-center  mt-32 justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-24 w-full">
+      <div className="px-8 lg:px-24 my-12 py-12 flex items-center justify-between flex-col-reverse md:flex-row gap-12 md:gap-8 lg:gap-12 w-full">
         <div className="w-full md:w-[40%]">
           <img
             src={CourseOverview}
@@ -192,21 +183,21 @@ const CourseDetailsPage = () => {
             className="w-full md:w-72 h-72 lg:w-full lg:h-96 object-cover shadow-[-15px_15px_#ea580c] lg:shadow-[-20px_20px_#ea580c]"
           />
         </div>
-        <div className="w-full flex h-[400px] xs:p-2  rounded flex-col justify-center p-5">
-          <div className="flex justify-start border-b border-gray-300">
+        <div className="w-full flex h-[400px] xs:p-2 rounded flex-col justify-center p-5 md:w-[60%]">
+          <div className="flex justify-start border border-gray-300 rounded-2xl overflow-hidden">
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 1
-                ? "bg-indigo-700 text-white"
-                : "bg-gray-200 text-gray-700"
+              className={`xs:text-[16px] font-bold w-1/2 flex text-lg md:text-xl cursor-pointer text-center py-2 justify-center items-center transition ${showTab === 1
+                ? "bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent"
+                : "text-white bg-orange-400"
                 }`}
               onClick={() => setShowTab(1)}
             >
-              Overview
+              Course Overview
             </h3>
             <h3
-              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 2
-                ? "bg-indigo-700 text-white"
-                : "bg-gray-200 text-gray-700"
+              className={`xs:text-[16px] font-bold w-1/2 flex text-lg md:text-xl cursor-pointer text-center py-2 justify-center items-center transition ${showTab === 2
+                ? "bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent"
+                : "text-white bg-orange-400"
                 }`}
               onClick={() => setShowTab(2)}
             >
@@ -217,12 +208,6 @@ const CourseDetailsPage = () => {
           {showTab == 1 ? (
             <div className="w-full h-[400px] overflow-auto mt-5 py-5 pt-0 hide-scrollbar">
               <div className="w-full">
-                {/* <h4 className="text-[1.6rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
-                  Course{" "}
-                  <span className="border-b border-orange-500 text-orange-500">
-                    Overview
-                  </span>
-                </h4> */}
 
                 <ul className="list-inside xs:text-[14px] px-2 list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
                   {/* {courseDetails.program_overview?.map(
@@ -247,9 +232,9 @@ const CourseDetailsPage = () => {
                   </span>
                 </h4> */}
 
-                <ul className="list-inside  mt-4">
-                  {courseDetails.curriculum?.split(".").map((o, i) => (
-                    <li key={i}>{o}</li>
+                <ul className="list-inside list-disc marker:text-orange-600 marker:text-md mt-4">
+                  {courseDetails.curriculum?.split(";").map((o, i) => (
+                    <li className="py-1" key={i}>{o}</li>
                   ))}
                 </ul>
 

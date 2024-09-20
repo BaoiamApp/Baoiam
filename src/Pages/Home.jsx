@@ -20,6 +20,7 @@ import OurReach from "../Components/Home/OurReach";
 const Home = ({ dark }) => {
     document.title = 'Baoiam - Home'
     const navigate = useNavigate();
+    
     return (
         <>
             <div className='max-w-11/12 mx-auto'>
