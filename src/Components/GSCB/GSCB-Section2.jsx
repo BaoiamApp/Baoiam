@@ -100,42 +100,50 @@ const Cards = () => {
   }, []);
 
   return (
-    <section className="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24 px-6 md:px-12 lg:px-24 items-center">
-  <h3 className="col-span-full text-center text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-    Why Join GCEP?
-  </h3>
-  {section2.map((info, index) => {
-    const cardClass =
-      index === 0
-        ? "card-1"
-        : index === 1
-        ? "card-2"
-        : index === 2
-        ? "card-3"
-        : "card-4";
-    return (
-      <div
-        key={index}
-        className={`group flex flex-col h-auto w-full rounded-xl overflow-hidden md:h-[90%] md:w-[90%] cursor-pointer gap-6 relative ${cardClass}`}
-      >
-        <img
-          className="w-full h-full hover:opacity-10  object-cover"
-          src={info.img}
-          alt={`img${index + 1}`}
-        />
-        <div className="flex flex-col items-center justify-center px-4 gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/70 transition-all ease-linear text-center text-white">
-          <h3 className="text-2xl md:text-3xl font-bold">
-            {info.title}
-          </h3>
-          <h6 className="text-sm md:text-base tracking-tight">
-            {info.desc}
-          </h6>
-        </div>
+    <section className="w-full h-full mt-24 px-6 md:px-12 lg:px-24">
+      {/* Heading wrapper */}
+      <div className="flex justify-center mb-8 lg:mb-5">
+        <h2 className="text-3xl md:text-4xl font-bold text-left">
+          Why{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Join GCEP
+          </span>{" "}
+          ?
+        </h2>
       </div>
-    );
-  })}
-</section>
 
+      {/* Cards grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+        {section2.map((info, index) => {
+          const cardClass =
+            index === 0
+              ? "card-1"
+              : index === 1
+              ? "card-2"
+              : index === 2
+              ? "card-3"
+              : "card-4";
+          return (
+            <div
+              key={index}
+              className={`group flex flex-col h-auto w-full rounded-xl overflow-hidden md:h-[90%] md:w-[90%] cursor-pointer gap-6 relative ${cardClass}`}
+            >
+              <img
+                className="w-full h-full hover:opacity-10 object-cover"
+                src={info.img}
+                alt={`img${index + 1}`}
+              />
+              <div className="flex flex-col items-center justify-center px-4 gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/70 transition-all ease-linear text-center text-white">
+                <h3 className="text-2xl md:text-3xl font-bold">{info.title}</h3>
+                <h6 className="text-sm md:text-base tracking-tight">
+                  {info.desc}
+                </h6>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 

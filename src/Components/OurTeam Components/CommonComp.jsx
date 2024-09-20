@@ -68,7 +68,7 @@ const CommonComp = ({ heading, para, dataArray = [] }) => {
                 slidesPerView: 4.5,
               },
             }}
-            className="w-72 md:w-full h-80 mx-auto rounded-xl flex flex-col justify-center items-center gap-6"
+            className="w-72 md:w-full h-80 mx-auto rounded-2xl flex flex-col justify-center items-center gap-6"
           >
              
             {dataArray?.map((el) => {
@@ -78,9 +78,9 @@ const CommonComp = ({ heading, para, dataArray = [] }) => {
                   <div className="flip-card-inner">
                
                     {/* Front Side (Image) */}
-                    <div className="flip-card-front max-w-80 mx-auto">
+                    <div className="flip-card-front  rounded-2xl max-w-80 mx-auto">
                       <img
-                        className="h-full w-72 mx-auto  rounded-md object-cover"
+                        className="h-full w-72 mx-auto  rounded-2xl object-cover"
                         src={el.image}
                         alt={el.name}
                       />
@@ -88,7 +88,7 @@ const CommonComp = ({ heading, para, dataArray = [] }) => {
                   
 
                     {/* Back Side (Details) */}
-                    <div className="flip-card-back bg-black/90 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center">
+                    <div className="flip-card-back bg-black/90 bg-opacity-80 text-white rounded-2xl flex flex-col justify-center items-center">
                       <h3 className="text-center font-sans font-medium text-sm md:text-lg">
                         {el.name}
                       </h3>

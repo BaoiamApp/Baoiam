@@ -99,8 +99,8 @@ const Section1 = ({ dark }) => {
 
       <section className="w-full h-full py-8 px-6 lg:px-12 max-xs:px-4">
       <div className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl font-bold max-xs:text-3xl">
-          How to Join GCEP
+        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
+          How to <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent"> Join GCEP</span> ?
         </h2>
         <p className="text-base lg:text-lg mt-4 max-xs:text-sm">
           Follow these steps to become a partner and collaborate with us.
@@ -113,7 +113,7 @@ const Section1 = ({ dark }) => {
           ref={(el) => (stepRefs.current[0] = el)}
           className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
-          <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+          <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
             <span className="text-2xl font-bold"><BsFillEnvelopeAtFill /></span>
           </div>
           <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
@@ -129,7 +129,7 @@ const Section1 = ({ dark }) => {
           ref={(el) => (stepRefs.current[1] = el)}
           className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
-          <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+          <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
             <span className="text-2xl font-bold"><MdPreview /></span>
           </div>
           <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
@@ -146,7 +146,7 @@ const Section1 = ({ dark }) => {
           ref={(el) => (stepRefs.current[2] = el)}
           className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
         >
-          <div className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-16 h-16 mb-6">
+          <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
             <span className="text-2xl font-bold"><FaHandshake/></span>
           </div>
           <h3 className="text-xl lg:text-2xl font-semibold mb-4 w-full text-center text-gray-800 max-xs:text-lg">
