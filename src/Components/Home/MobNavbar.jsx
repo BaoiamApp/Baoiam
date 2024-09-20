@@ -96,7 +96,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <MdSchool />
-                      <h1>School</h1>
+                      <h1>Junior Programs</h1>
                     </div>
                     {schoolCate ? (
                       <FaChevronUp size={14} />
@@ -105,13 +105,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                     )}
                   </li>
                   {schoolCate && (
-                    <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
-                      <Link
-                        to={"/courses/school"}
-                        className="font-semibold px-2 text-black cursor-pointer rounded "
-                      >
-                        School
-                      </Link>
+                    <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y pt-0 gap-2">
                       {courses[0][0]?.subCate?.map((course, i) => {
                         return (
                           <Link
@@ -140,7 +134,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <FaUniversity />
-                      <h1>College</h1>
+                      <h1>University Programs</h1>
                     </div>
                     {collegeCate ? (
                       <FaChevronUp size={14} />
@@ -149,13 +143,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                     )}
                   </li>
                   {collegeCate && (
-                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                      <Link
-                        to={"/courses/college"}
-                        className="font-semibold px-2 text-black cursor-pointer rounded "
-                      >
-                        College
-                      </Link>
+                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x pt-0">
                       {courses[1][0]?.subCate.map((course, i) => {
                         return (
                           <Link
@@ -184,7 +172,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <IoBookSharp />
-                      <h1>Others</h1>
+                      <h1>Professional Degree Courses</h1>
                     </div>
                     {otherCourses ? (
                       <FaChevronUp size={14} />
@@ -193,13 +181,7 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                     )}
                   </li>
                   {otherCourses && (
-                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                      <Link
-                        to={"/courses/other"}
-                        className="font-semibold px-2 text-black cursor-pointer rounded "
-                      >
-                        Others
-                      </Link>
+                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x pt-0">
                       {courses[2][0]?.subCate.map((course, i) => {
                         return (
                           <Link

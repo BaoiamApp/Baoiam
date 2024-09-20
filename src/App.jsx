@@ -38,6 +38,7 @@ import BookADemo from "./Pages/BookADemo";
 import Loader from "./Components/Loader";
 import ChatBot from "./Components/Chatbot/ChatBot";
 import GCEP from "./Pages/GCEP";
+import Courses from "./Pages/Courses";
 
 const App = () => {
   const [dark, setDark] = useState(false);
@@ -110,6 +111,7 @@ const App = () => {
 
           {/* Checkout */}
           <Route path="/checkout/:course/:id/:plan?" element={<Checkout />} />
+          <Route path="/courses" element={<Courses />} />
 
           {/* Profile & Dashboard */}
           <Route path="/profile" element={<SideBar />} />

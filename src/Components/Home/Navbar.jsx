@@ -154,12 +154,13 @@ const Navbar = ({ theme }) => {
             About Us
           </Link>
 
-          <li
-            onClick={() => setShow(!show)}
-            className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}
-          >
-            Courses
-            {show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+          <li className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}>
+            <Link to="/courses">Courses</Link>
+            {show ? (
+              <IoIosArrowUp onClick={() => setShow(!show)} />
+            ) : (
+              <IoIosArrowDown onClick={() => setShow(!show)} />
+            )}
           </li>
 
           {show && (
