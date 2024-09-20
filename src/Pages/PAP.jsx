@@ -557,7 +557,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <p class="relative">Click here</p>
-            </Link>
+            </button>
           </div>
 
           <div className="pap7 max-w-[90%] mx-10 md:max-w-[70%] lg:max-w-[43%] mr-6 mb-6 mt-10">
