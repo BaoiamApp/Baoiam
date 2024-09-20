@@ -119,10 +119,11 @@ const Navbar = ({ theme }) => {
         ></div>
       )}
       <div
-        className={`flex z-[90] h-24 items-center max-w-[1440px] justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
-          ? "bg-white dark:bg-[#080529]"
-          : "bg-white/70 backdrop-blur dark:bg-black/30 "
-          }`}
+        className={`flex z-[90] h-24 items-center max-w-[1440px] justify-between px-4 py-1 w-full fixed top-0 ${
+          isTransparent
+            ? "bg-white dark:bg-[#080529]"
+            : "bg-white/70 backdrop-blur dark:bg-black/30 "
+        }`}
       >
         {/* Logo */}
 
@@ -130,16 +131,18 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium"
-            } justify-between `}
+          className={`hidden lg:flex items-center ${
+            isDark ? "font-semibold" : "font-medium text-sm"
+          } justify-between `}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
-              ? "text-orange-500"
-              : ""
-              }`}
+            className={`mx-2 xl:mx-4 ${
+              location.pathname === "/" && linkActive === "Home"
+                ? "text-orange-500"
+                : ""
+            }`}
           >
             Home
           </Link>
@@ -147,15 +150,18 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${
+              location.pathname === "/about-us" && linkActive === "About"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             About Us
           </Link>
 
-          <li className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center`}>
+          <li
+            className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center hover:text-indigo-500`}
+          >
             <Link to="/courses">Courses</Link>
             {show ? (
               <IoIosArrowUp onClick={() => setShow(!show)} />
@@ -170,20 +176,18 @@ const Navbar = ({ theme }) => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <CourseNav
-                course={allCourses}
-                setShow={setShow}
-              />
+              <CourseNav course={allCourses} setShow={setShow} />
             </div>
           )}
 
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
+              location.pathname === "/blogs" && linkActive === "Blog"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Blog
           </Link>
@@ -191,10 +195,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
+              location.pathname === "/contact" && linkActive === "Contact Us"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Contact Us
           </Link>
@@ -209,7 +214,7 @@ const Navbar = ({ theme }) => {
               <div ref={userhandleDropDownRef}>
                 <FaRegUser
                   onClick={() => setUserDrop(!userDrop)}
-                  size={18}
+                  size={15}
                   className="z-10 relative cursor-pointer"
                 />
               </div>
@@ -262,22 +267,23 @@ const Navbar = ({ theme }) => {
 
             <span
               onClick={darkTheme}
-              className="text-xl hidden lg:block cursor-pointer"
+              className="text-base hidden lg:block cursor-pointer "
             >
               {isDark ? <BsSun /> : <BsMoonStars />}
             </span>
+
+            <Enroll />
             <Link to={"/gcep"} className="relative group">
               <button
                 type="button"
-                class="hidden sm:flex text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-lg shadow-amber-500/50 dark:shadow-lg dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-8 py-2.5 text-center"
+                className="hidden sm:flex text-black bg-gradient-to-br from-green-400 via-teal-500 to-blue-500  hover:bg-gradient-to-br focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 shadow-base shadow-amber-500/50 dark:shadow-base dark:shadow-amber-800/80 font-semibold rounded-lg text-sm px-0.5 py-0.5 text-center lg:mr-10 md:mr-5"
               >
-                GCEP
+                <span className="flex items-center justify-center w-full h-full bg-white rounded-md px-8 py-1.5 ">
+                  GCEP
+                </span>
               </button>
             </Link>
 
-            
-             <Enroll/>
-            
             <span
               onClick={() => setShowmenu((old) => !old)}
               className="block lg:hidden"
