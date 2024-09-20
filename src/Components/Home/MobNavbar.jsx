@@ -9,7 +9,7 @@ import Logo from "./Logo";
 import { MdSchool } from "react-icons/md";
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
-const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
+const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   const mobTabtyles = `flex items-center p-2 pt-4 text-base font-medium rounded-lg`;
   const [activeTab, setActiveTab] = useState("Home");
   const [subCateDrop, setSubCateDrop] = useState(false);
@@ -30,6 +30,9 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
   const closeSideBar = () => {
     setShowmenu(false);
   };
+
+  console.log(course);
+  
 
   return (
     <div>
@@ -105,8 +108,14 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                     )}
                   </li>
                   {schoolCate && (
-                    <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y pt-0 gap-2">
-                      {courses[0][0]?.subCate?.map((course, i) => {
+                    <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
+                      <Link
+                        to={"/courses/school"}
+                        className="font-semibold px-2 text-black cursor-pointer rounded "
+                      >
+                        School
+                      </Link>
+                      {course[0]?.courses?.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -115,10 +124,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setSchoolCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -143,8 +152,14 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                     )}
                   </li>
                   {collegeCate && (
-                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x pt-0">
-                      {courses[1][0]?.subCate.map((course, i) => {
+                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                      <Link
+                        to={"/courses/college"}
+                        className="font-semibold px-2 text-black cursor-pointer rounded "
+                      >
+                        College
+                      </Link>
+                      {course[1]?.courses.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -153,10 +168,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setCollegeCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}
@@ -181,8 +196,14 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                     )}
                   </li>
                   {otherCourses && (
-                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x pt-0">
-                      {courses[2][0]?.subCate.map((course, i) => {
+                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
+                      <Link
+                        to={"/courses/other"}
+                        className="font-semibold px-2 text-black cursor-pointer rounded "
+                      >
+                        Others
+                      </Link>
+                      {course[2]?.courses.map((course, i) => {
                         return (
                           <Link
                             onClick={() => {
@@ -191,10 +212,10 @@ const MobNavbar = ({ showmenu, setShowmenu, courses, isDark, setIsDark }) => {
                               setOtherCourses((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.id}`}
+                            to={`/course/${course.title}/${course.subcategory}`}
                             className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
-                            {course.course}
+                            {course.title}
                           </Link>
                         );
                       })}

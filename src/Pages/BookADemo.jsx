@@ -186,6 +186,7 @@ const BookADemo = () => {
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
                       <span className="font-semibold">Description:</span> {limitDescription(course?.description)}
+                      {/* <span className="font-semibold">Description:</span> {course?.description} */}
                     </p>
                     <p className="text-gray-700 dark:text-gray-300 mb-4 capitalize">
                       <span className="font-semibold">Course Type:</span> {course?.plans[selectedPlan].name}
