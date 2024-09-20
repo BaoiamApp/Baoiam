@@ -9,9 +9,8 @@ import tech from "../assets/tech.jpg";
 import critical from "../assets/critical.jpg";
 import content_data from "../Data/Content.js";
 import { useParams } from "react-router-dom";
-import data2 from "../Data/Content2.js";
+import data2, { recentContent, startContent } from "../Data/Content2.js";
 import { toast } from "react-toastify";
-import axios from "axios";
 import {
   FaBullhorn,
   FaClipboardList,
@@ -22,7 +21,7 @@ import {
 import { FaMobileAlt, FaUserCircle } from "react-icons/fa";
 import NewsletterBanner from "../Components/Home/Subcription.jsx";
 
-const Blog_detail = () => {
+export const RecentBlogDetail = () => {
   document.title = "Baoiam - Blog Detail";
   const [comment, setComment] = useState("");
   const [datacmmt, setDatacmmt] = useState([]);
@@ -30,8 +29,8 @@ const Blog_detail = () => {
   const { id } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(content_data);
-    console.log(content_data[id].heading1);
+    console.log(recentContent);
+    console.log(recentContent[id].heading1);
     return () => {};
   }, []);
   document.title = "Baoiam - Blog Details";
@@ -61,7 +60,7 @@ const Blog_detail = () => {
     //     console.log(err);
     //   });
   };
-  console.log(datacmmt, "cc");
+
   return (
     <>
       <div className='h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-purple-100'>
@@ -70,27 +69,31 @@ const Blog_detail = () => {
           HOME / ARTICLES / SINGLE ARTICLE{" "}
         </p>
         {/* <h1 className='text-[1.3rem] sm:text-[3vw] pt-6 w-[100%] font-extrabold dark:text-black'>
-          {content_data[id].heading1}
-        </h1> */}
+      {recentContent[id].heading1}
+    </h1> */}
       </div>
       <div className='w-[80%] lg:flex lg:flex-row  flex-col gap-[2rem] mx-[10%] mt-[10%]'>
         <div className='w-[100%] lg:w-[70%] lg:flex lg:flex-col  flex-col'>
           {/* {data.map((d) => {
-            return (
-              <>
-                <div className="w-[100%] lg:w-[90%] flex flex-col">
-                  <h2 className="text-[1.9rem] p-3 mt-[2rem] font-bold">
-                    {d.heading}
-                  </h2>
-                  <p className="p-3">{d.data}</p>
-                </div>
-              </>
-            );
-          })} */}
+        return (
+          <>
+            <div className="w-[100%] lg:w-[90%] flex flex-col">
+              <h2 className="text-[1.9rem] p-3 mt-[2rem] font-bold">
+                {d.heading}
+              </h2>
+              <p className="p-3">{d.data}</p>
+            </div>
+          </>
+        );
+      })} */}
 
           <div>
-            <div dangerouslySetInnerHTML={{ __html: data2[id].head }}></div>
-            <div dangerouslySetInnerHTML={{ __html: data2[id].body }}></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: recentContent[id].head }}
+            ></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: recentContent[id].body }}
+            ></div>
           </div>
         </div>
         <div className='w-[100%] lg:w-[40%] mt-5'>
@@ -287,5 +290,3 @@ const Blog_detail = () => {
     </>
   );
 };
-
-export default Blog_detail;

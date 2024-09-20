@@ -9,6 +9,8 @@ import b14 from "../../assets/Blogs/b14.png";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const blog_slider = [
   {
@@ -38,9 +40,18 @@ const blog_slider = [
     des: "These students did not have the opportunity to face reality and had no evidence to present themselves to the employers. ",
     category: "Finance",
   },
+  {
+    info: "Dec 13, 2023 • 25 mins read",
+    text: "A Complete Guide to Graphic Designing",
+    titleColor: "blue-500",
+    imgSrc: b1,
+    title: "charlie Clarke",
+    des: "Graphic design is a diverse field that provides several employment opportunities. ",
+    category: "Science",
+  },
 ];
 export const TechBlogSlider = () => {
-  const navigate = useNavigate();
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -61,6 +72,18 @@ export const TechBlogSlider = () => {
     );
   }, []);
 
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
   return (
     <div className='my-14'>
       <div>
@@ -72,6 +95,7 @@ export const TechBlogSlider = () => {
           keyboard={{
             enabled: true,
           }}
+          ref={swiperRef}
           navigation={true}
           Scrollbar={{ draggable: true }}
           modules={[Keyboard, Pagination, Navigation, Scrollbar]}
@@ -93,40 +117,52 @@ export const TechBlogSlider = () => {
               <SwiperSlide
                 className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
                 key={item.id}
-                onClick={() => navigate(`/Blog_detail/${i}`)}
               >
-                <div className='relative'>
-                  <img
-                    className='w-full h-48 object-cover'
-                    src={item.imgSrc}
-                    alt={`${item.title}`}
-                  />
-                  {/* Button positioned over the image */}
-                  <button
-                    type='button'
-                    className='absolute bottom-2 left-3  bg-gradient-to-r from-indigo-700 to-indigo-500 hover:bg-gradient-to-l transition-all text-white text-sm rounded-full px-4 py-2'
-                  >
-                    {item.category}
-                  </button>
-                </div>
-                <div className='p-4 flex-grow '>
-                  <h2 className='text-lg font-bold my-2'>{item.text}</h2>
-                  <span
-                    className='text-sm text-gray-500 font-semibold'
-                    style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      WebkitLineClamp: 2, // Limit to 2 lines
-                    }}
-                  >
-                    {item.des}
-                  </span>
-                  <p className='text-sm font-medium mt-2'>{item.info}</p>
-                </div>
+                <Link to={`/Blog-detail/${i}`}>
+                  <div className='relative'>
+                    <img
+                      className='w-full h-48 object-cover'
+                      src={item.imgSrc}
+                      alt={`${item.title}`}
+                    />
+                    {/* Button positioned over the image */}
+                    <button
+                      type='button'
+                      className='absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1'
+                    >
+                      {item.category}
+                    </button>
+                  </div>
+                  <div className='p-4 flex-grow '>
+                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                    <span
+                      className='text-sm text-slate-700 font-semibold'
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        WebkitLineClamp: 2, // Limit to 2 lines
+                      }}
+                    >
+                      {item.des}
+                    </span>
+                    <p className='text-xs text-slate-500  font-medium mt-2'>
+                      {item.info}
+                    </p>
+                  </div>
+                </Link>
               </SwiperSlide>
             );
           })}
+          {/* Swiper navigation buttons */}
+          <div
+            className='swiper-button-prev bg-gray-800 p-2 rounded-full'
+            onClick={handlePrev}
+          ></div>
+          <div
+            className='swiper-button-next bg-gray-800 p-2 rounded-full'
+            onClick={handleNext}
+          ></div>
         </Swiper>
       </div>
     </div>
