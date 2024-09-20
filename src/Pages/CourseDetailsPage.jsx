@@ -73,6 +73,29 @@ const CourseDetailsPage = () => {
   //       OtherCourseData[0].subCate.filter((data) => data.id == id)[0]
   //     );
   //   }
+  // useEffect(() => {
+  //   if (id >= 1 && id <= 10) {
+  //     // setCoursePlusContent(schoolCoursePlusContent);
+  //     // console.log("school is : ", school[0].id);
+  //     const d = School.filter((data) => data.id == id);
+  //     console.log("d is:", d);
+  //     setCourseDetails(School[0].subCate.filter((data) => data.id == id)[0]);
+  //     console.log("course details:", courseDetails);
+  //   } else if (id >= 11 && id <= 22) {
+  //     // setCoursePlusContent(collegeCoursePlusContent);
+  //     setCourseDetails(
+  //       CollegeCourseData[0].subCate.filter((data) => data.id == id)[0]
+  //     );
+  //   } else {
+  //     // setCoursePlusContent(otherCoursePlusContent);
+  //     setCourseDetails(
+  //       OtherCourseData[0].subCate.filter((data) => data.id == id)[0]
+  //     );
+  //   }
+
+  //   return () => {};
+  // }, [id]);
+
 
   //   return () => {};
   // }, [id]);
@@ -127,8 +150,7 @@ const CourseDetailsPage = () => {
     );
   }
 
-  // redux end
-
+  // // redux end
 
   const downloadBrochure = async (brochureUrl) => {
     if (!brochureUrl) {
@@ -235,11 +257,19 @@ const CourseDetailsPage = () => {
                 ? "bg-indigo-700 text-white"
                 : "bg-gray-200 text-gray-700"
                 }`}
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 1
+                ? "bg-indigo-700 text-white"
+                : "bg-gray-200 text-gray-700"
+                }`}
               onClick={() => setShowTab(1)}
             >
               Overview
             </h3>
             <h3
+              className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 2
+                ? "bg-indigo-700 text-white"
+                : "bg-gray-200 text-gray-700"
+                }`}
               className={`xs:text-[16px] font-bold flex-1 text-lg md:text-xl cursor-pointer text-center py-2 transition ${showTab === 2
                 ? "bg-indigo-700 text-white"
                 : "bg-gray-200 text-gray-700"
@@ -354,6 +384,8 @@ const CourseDetailsPage = () => {
                       key={i}
                       className={`flex flex-col rounded-lg lg:w-80 border ${p.name === "premium" ? "border-orange-500 relative" : ""
                         } p-4 pt-6`}
+                      className={`flex flex-col rounded-lg lg:w-80 border ${p.name === "premium" ? "border-orange-500 relative" : ""
+                        } p-4 pt-6`}
                     >
                       <div className="mb-8">
                         {p.name === "premium" ? (
@@ -371,6 +403,7 @@ const CourseDetailsPage = () => {
                             <p className="mx-auto mb-2 px-8 text-center text-lg text-gray-500 font-medium dark:text-white">
                               {course.title}
                             </p>
+                            <p className="mx-auto mb-2 px-8 text-gray-500 font-medium text-center dark:text-white">
                             <p className="mx-auto mb-2 px-8 text-gray-500 font-medium text-center dark:text-white">
                               All Contents of Plus
                             </p>
@@ -422,10 +455,15 @@ const CourseDetailsPage = () => {
                             if (localStorage.getItem("access_token"))
                               navigate(
                                 `/checkout/${id}/${p.name == "premium" ? "Premium" : "Plus"
+                                `/checkout/${id}/${p.name == "premium" ? "Premium" : "Plus"
                                 }`
                               );
                             else navigate("/login");
                           }}
+                          className={`block  rounded-lg ${p.name === "premium"
+                            ? "bg-orange-500 text-white"
+                            : "bg-gray-500"
+                            } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                           className={`block  rounded-lg ${p.name === "premium"
                             ? "bg-orange-500 text-white"
                             : "bg-gray-500"

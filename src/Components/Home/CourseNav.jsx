@@ -6,7 +6,7 @@ import { MdSchool } from "react-icons/md";
 import { FaUniversity } from "react-icons/fa";
 import { IoBookSharp } from "react-icons/io5";
 
-const CourseNav = ({ setShow, courses }) => {
+const CourseNav = ({ setShow, course }) => {
   const [activeTabId, setActiveTabId] = useState(null);
   const [activeTabIndex, setActiveTabIndex] = useState(null);
 
@@ -14,7 +14,9 @@ const CourseNav = ({ setShow, courses }) => {
     setActiveTabId(tabId);
     setActiveTabIndex(index);
   };
-  console.log("inside coursenav:", courses);
+  console.log("inside coursenav:", course);
+  console.log(course[0].courses);
+  
   // will change after api integration
   const label = [
     {
@@ -25,7 +27,7 @@ const CourseNav = ({ setShow, courses }) => {
     },
     {
       id: 1,
-      title: "Pre-University Programs",
+      title: "University Programs",
       link: "courses/college",
       icon: <FaUniversity size={18} />,
     },
@@ -50,8 +52,8 @@ const CourseNav = ({ setShow, courses }) => {
             >
               <Link
                 onClick={() => setShow(false)}
-                to={`/${c.link}`}
-                className="hover:underline hover:text-amber-600 font-semibold flex items-center gap-2"
+                // to={`/${c.link}`}
+                className=" hover:text-amber-600 font-semibold flex items-center gap-2"
               >
                 {c.icon} {c.title}
               </Link>
@@ -68,17 +70,51 @@ const CourseNav = ({ setShow, courses }) => {
         })}
       </div>
 
-      {activeTabIndex !== null && (
+      {activeTabIndex === 0 && (
         <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
-          {courses[activeTabIndex][0].subCate?.map((sub, index) => {
+          {course[0].courses?.map((sub, index) => {
             return (
               <div key={index} className="px-6 py-2 hover:bg-amber-50">
                 <Link
                   onClick={() => setShow(false)}
-                  to={`/course/${sub.id}`}
+                  to={`/course/${sub.title}/${sub.subcategory}`}
                   className="text-sm"
                 >
-                  {sub.course}
+                  {sub.title}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {activeTabIndex === 1 && (
+        <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
+          {course[1].courses?.map((sub, index) => {
+            return (
+              <div key={index} className="px-6 py-2 hover:bg-amber-50">
+                <Link
+                  onClick={() => setShow(false)}
+                  to={`/course/${sub.title}/${sub.subcategory}`}
+                  className="text-sm"
+                >
+                  {sub.title}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {activeTabIndex === 2 && (
+        <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
+          {course[2].courses?.map((sub, index) => {
+            return (
+              <div key={index} className="px-6 py-2 hover:bg-amber-50">
+                <Link
+                  onClick={() => setShow(false)}
+                  to={`/course/${sub.title}/${sub.subcategory}`}
+                  className="text-sm"
+                >
+                  {sub.title}
                 </Link>
               </div>
             );

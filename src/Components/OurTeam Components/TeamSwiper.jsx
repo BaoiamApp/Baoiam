@@ -37,7 +37,9 @@ export const TeamSwiper = () => {
   return (
     <>
       <div className="tdiv1 t2 text-center text-3xl md:text-4xl p-6 py-6 tracking-wide leading-4 font-bold">
-        Our Leaders
+        Our <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Leaders
+            </span>
       </div>
       <div className="hidden p-6  md:grid h-full w-full items-center justify-around grid-cols-3 lg:grid-cols-4 gap-6">
         {swiperData.slice(0, 8).map((el) => {

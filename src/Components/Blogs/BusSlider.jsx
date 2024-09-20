@@ -3,70 +3,90 @@ import "swiper/css";
 import { Keyboard, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import carrer1 from "../../assets/carrer1.jpg";
-import datasc from "../../assets/datasc.jpg";
-import ed_tech from "../../assets/Blogs/ed_tech.png";
-import ent from "../../assets/Blogs/ent.jpg";
-import stp from "../../assets/Blogs/stup.jpg";
-import tech from "../../assets/Blogs/tech.jpg";
-import software_testing from "../../assets/Blogs/software_testing.png";
+import ed_tech_enhances_critical_thinking from "../../assets/Blogs/ed_tech_enhances_critical_thinking.png";
 import gsap from "gsap";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import new_excited_tech_edu1 from "../../assets/Blogs/new_excited_tech_edu1.jpg";
+import screen_time from "../../assets/Blogs/screen_time.png";
+import { Link } from "react-router-dom";
+import software_testing from "../../assets/Blogs/software_testing.png";
+import { useRef } from "react";
 
 const blog_slider = [
   {
-    id: 1,
-    pic: carrer1,
-    des: "The Best Graphic Design Careers — for Beginners and Professionals",
-    cat: "BUSINESS & STRATEGY",
-    icon: stp,
+    title: "Jason Adam",
+    titleColor: "blue-500",
+    imgSrc: ed_tech_enhances_critical_thinking,
+    text: "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
+    info: "Oct 17, 2022 • 5 mins read",
+    des: "Understand the role of critical thinking in contemporary learners.This blog evaluates how Ed-Tech changes the method of students’ critical",
+    category: "Education",
   },
   {
-    id: 2,
-    pic: datasc,
-    des: "The Top Technical Skills All Employees Need in 2022",
-    cat: "BUSINESS & STRATEGY",
-    icon: stp,
+    title: "Mary Smith",
+    titleColor: "blue-500",
+    imgSrc: software_testing,
+    text: "What is Software Testing and Why is It Important in Software Development?",
+    info: "Oct 10, 2019 • 10 mins read",
+    des: "Explore what ed-tech is, how it creates value among the students, its current trends, and how to keep pace in an increasingly connected 5g world.",
+    category: "Technology",
   },
   {
-    id: 3,
-    pic: ed_tech,
-    des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "BUSINESS & STRATEGY",
-    icon: ent,
+    title: "Akshay Saini",
+    titleColor: "blue-500",
+    imgSrc: screen_time,
+    text: "Balancing Screen Time: Healthy Technology Use In Education",
+    info: "Dec 22, 2022 • 10 mins read",
+    des: "As technology has become an integral part of our life, it is really necessary to understand the importance of healthy technology use to maintain your overall well being while learning. ",
+    category: "Technology",
   },
   {
-    id: 4,
-    pic: software_testing,
-    des: "Types Of Quantitative Research for Students and Researchers",
-    cat: "BUSINESS & STRATEGY",
-    icon: tech,
+    title: "Jason Adam",
+    titleColor: "blue-500",
+    imgSrc: ed_tech_enhances_critical_thinking,
+    text: "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
+    info: "Oct 17, 2022 • 5 mins read",
+    des: "Understand the role of critical thinking in contemporary learners.This blog evaluates how Ed-Tech changes the method of students’ critical",
+    category: "Education",
   },
 ];
 
 export const BusSlider = () => {
-
-
+  const swiperRef = useRef(null);
   useEffect(() => {
-  
-    gsap.fromTo('.b5',{opacity:0,y:30},{
-      opacity:1,
-      duration:1,
-      y:0,
-      ease:'back.inOut',
-      stagger:0.3,
-      scrollTrigger:{
-        trigger:'.bdiv5',
-        start:'top 90%',
-        end:'bottom 80%'
+    gsap.fromTo(
+      ".b5",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        y: 0,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".bdiv5",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
       }
-    })
-  
-  },[])
+    );
+  }, []);
 
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
 
   return (
-    <div className='bdiv5 my-12'>
+    <div className='my-12'>
       <div>
         {" "}
         <h1 className='m-8 text-3xl font-bold text-center'>
@@ -75,6 +95,7 @@ export const BusSlider = () => {
       </div>
       <div className='mb-6 mt-8 px-10'>
         <Swiper
+          ref={swiperRef}
           keyboard={{
             enabled: true,
           }}
@@ -92,33 +113,59 @@ export const BusSlider = () => {
           }}
           onSlideChange={() => console.log("hi")}
           onSwiper={(swiper) => console.log("")}
-          className='b5 w-full m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          className='b5 w-full m-auto p-6  rounded-lg  flex flex-col justify-center items-center gap-4'
         >
-          {blog_slider?.map((el) => {
+          {blog_slider?.map((item, i) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-lg duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
-                key={el.id}
+                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                key={item.id}
               >
-                <img
-                  className='h-full rounded-md  w-full'
-                  src={el.pic}
-                  alt='bus_image'
-                />
-                <div className='flex flex-col justify-center items-center rounded-md'>
-                  <h2 className='text-sm  my-3 md:text-lg font-bold xs:text-[0.98rem]'>
-                    {el.des}
-                  </h2>
-                  <div className='w-full flex gap-2 items-center'>
-                    <img src={el.icon} alt='buss_iconImage' />
-                    <h3 className='text-gray-700 text-sm md:text-md font-bold'>
-                      {el.cat}
-                    </h3>
+                <Link to={`/Blogdetails/${i}`}>
+                  <div className='relative'>
+                    <img
+                      className='w-full h-48 object-cover'
+                      src={item.imgSrc}
+                      alt={`${item.title}`}
+                    />
+                    {/* Button positioned over the image */}
+                    <button
+                      type='button'
+                      className='absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1'
+                    >
+                      {item.category}
+                    </button>
                   </div>
-                </div>
+                  <div className='p-4 flex-grow '>
+                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                    <span
+                      className='text-sm text-slate-700 font-semibold'
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        WebkitLineClamp: 2, // Limit to 2 lines
+                      }}
+                    >
+                      {item.des}
+                    </span>
+                    <p className='text-xs text-slate-500  font-medium mt-2'>
+                      {item.info}
+                    </p>
+                  </div>
+                </Link>
               </SwiperSlide>
             );
           })}
+          {/* Swiper navigation buttons */}
+          <div
+            className='swiper-button-prev bg-gray-800 p-2 rounded-full'
+            onClick={handlePrev}
+          ></div>
+          <div
+            className='swiper-button-next bg-gray-800 p-2 rounded-full'
+            onClick={handleNext}
+          ></div>
         </Swiper>
       </div>
     </div>

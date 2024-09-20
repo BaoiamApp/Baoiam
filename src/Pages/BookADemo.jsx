@@ -102,6 +102,8 @@ const BookADemo = () => {
     return <div className="flex justify-center items-center h-[90vh]">
       <BeatLoader color="#4F46E5" loading={true} size={15} />
     </div>;
+      <BeatLoader color="#4F46E5" loading={true} size={15} />
+    </div>;
   }
   if (status === 'failed') {
     return <div className="flex justify-center text-red-500 items-center h-[90vh]">
@@ -134,15 +136,19 @@ const BookADemo = () => {
           <>
             <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100 mb-8">
               Demo Course on <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">{course?.title}</span>
+              Demo Course on <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">{course?.title}</span>
             </h2>
 
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-left flex flex-col border border-gray-300 dark:border-gray-700">
               <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-left flex flex-col border border-gray-300 dark:border-gray-700">
                 <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Choose Your Plan</h2>
                 <div className="space-y-4">
                   {course?.plans.map((plan, index) => (
                     <div
                       key={plan.id}
+                      onClick={() => setSelectedPlan(index)}
+                      className={`flex items-center p-4 rounded-lg border ${selectedPlan === index ? 'border-indigo-400 bg-gradient-to-r from-teal-50  to-indigo-100 shadow-lg' : 'border-gray-300 dark:border-gray-600'}`}
                       onClick={() => setSelectedPlan(index)}
                       className={`flex items-center p-4 rounded-lg border ${selectedPlan === index ? 'border-indigo-400 bg-gradient-to-r from-teal-50  to-indigo-100 shadow-lg' : 'border-gray-300 dark:border-gray-600'}`}
                     >
@@ -168,6 +174,7 @@ const BookADemo = () => {
                   <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 border border-gray-300 dark:border-gray-700">
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
                       <FiBookOpen className="mr-2 text-indigo-600 dark:text-indigo-400 capitalize" /> {course?.title}
+                      <FiBookOpen className="mr-2 text-indigo-600 dark:text-indigo-400 capitalize" /> {course?.title}
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
                       <span className="font-semibold">Description:</span> {course?.description.slice(0,100)+ "..."}
@@ -175,8 +182,11 @@ const BookADemo = () => {
                     </p>
                     <p className="text-gray-700 dark:text-gray-300 mb-4 capitalize">
                       <span className="font-semibold">Course Type:</span> {course?.plans[selectedPlan].name}
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 capitalize">
+                      <span className="font-semibold">Course Type:</span> {course?.plans[selectedPlan].name}
                     </p>
                     <p className="flex items-center text-lg font-bold text-gray-900 dark:text-gray-100">
+                      <FaRupeeSign className="mr-1 text-orange-600 dark:text-orange-400" /> ₹{course?.plans[selectedPlan].price}
                       <FaRupeeSign className="mr-1 text-orange-600 dark:text-orange-400" /> ₹{course?.plans[selectedPlan].price}
                     </p>
                   </div>
@@ -187,6 +197,7 @@ const BookADemo = () => {
                     </h2>
 
                     <p className="text-gray-700 dark:text-gray-300 mb-6">
+                      You have selected the <span className="font-semibold">{course?.plans[selectedPlan].name}</span> for ₹100.
                       You have selected the <span className="font-semibold">{course?.plans[selectedPlan].name}</span> for ₹100.
                     </p>
 
@@ -200,6 +211,7 @@ const BookADemo = () => {
                           <span className="ml-2">Processing...</span>
                         </div>
                       ) : (
+                        "Book a Demo for ₹100"
                         "Book a Demo for ₹100"
                       )}
                     </button>

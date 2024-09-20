@@ -56,11 +56,13 @@ export const CarrerSection2 = () => {
   ];
   return (
     <>
-      <div className="bg-white dark:bg-black flex flex-col">
+      <div className="bg-white text-black dark:text-white dark:bg-black flex flex-col">
         <main className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-15 lg:px-0 xl:px-0 m-4 md:m-8">
-          <h1 className="text-2xl sm:text-4xl dark:text-zinc-100 lg:text-4xl font-bold mb-6 text-center text-[#0a0a0a] pt-4 sm:pt-5">
-            Employee Benefits and Perks
-          </h1>
+          <h2 className="text-3xl  md:text-4xl text-center mb-8 lg:mb-12 font-bold">
+            Employee <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Benefits and Perks
+          </span> 
+          </h2>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 lg:pl-20 lg:pr-20">
             {benefits.map((benefit, index) => (
               <div

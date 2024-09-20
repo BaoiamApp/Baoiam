@@ -22,7 +22,7 @@ const Testimonials = () => {
         {/* <p className="mt-4 leading-relaxed text-black">{data.description}</p> */}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-10 ">
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4 ">
         {data.testimonials.map((testimonial, index) => (
           <div
             key={index}
