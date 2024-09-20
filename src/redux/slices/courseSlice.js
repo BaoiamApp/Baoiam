@@ -15,7 +15,6 @@ export const fetchEnrolledCourses = createAsyncThunk(
   }
 );
 
-
 // Async thunk to fetch program list of courses ->
 export const fetchProgramCourses = createAsyncThunk(
   'courses/fetchProgramCourses', 
@@ -26,11 +25,23 @@ export const fetchProgramCourses = createAsyncThunk(
 );
 
 
+// Async thunk to fetch program list of courses ->
+export const fetchAllCourses = createAsyncThunk(
+  'courses/fetchAllCourses', 
+  async () => {
+    const response = await axios.get(`${apiUrl}/api/categories/`); 
+    console.log(response, 'response thunk')
+    return response.data;
+  }
+);
+
+
 const coursesSlice = createSlice({
   name: 'courses',
   initialState: {
     enrolledCourses: [],
     programCourses: [],
+    allCourses: [],
     status: 'idle', 
     error: null,
   },
@@ -61,6 +72,20 @@ const coursesSlice = createSlice({
         state.programCourses = action.payload;
       })
       .addCase(fetchProgramCourses.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+
+      // Handle fetchAllCourses
+      builder
+      .addCase(fetchAllCourses.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchAllCourses.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.allCourses = action.payload;
+      })
+      .addCase(fetchAllCourses.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });

@@ -27,9 +27,9 @@ const Home = ({ dark }) => {
                 <Courses />
                 {/* <Slider /> */}
                 {/* <Categories /> */}
-                <ServicesTab />
+                <ServicesTab /> 
                 <div className="mx-auto w-full md:w-[85%] my-20">
-                    <img className="w-full h-full cursor-pointer" onClick={()=> navigate('/Maintenance')} src={SuccessLight} alt="" />
+                    <img className="w-full h-full cursor-pointer" onClick={()=> navigate('/Maintenance')} src={dark?SuccessDark:SuccessLight} alt="" />
                 </div>
                 <Partners />
                 <Protocol />
