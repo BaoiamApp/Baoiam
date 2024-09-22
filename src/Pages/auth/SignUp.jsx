@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ToastContainer, toast } from "react-toastify";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { FaCheckCircle } from "react-icons/fa";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const SignUp = () => {
@@ -17,11 +18,24 @@ const SignUp = () => {
     last_name: "",
   });
   const [error, setError] = useState(null);
-  const [pass, setPass] = useState(false)
-  const [conPass, setConPass] = useState(false)
+  const [pass, setPass] = useState(false);
+  const [conPass, setConPass] = useState(false);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const [showPopup, setShowPopup] = useState(false);
+  const [animatePing, setAnimatePing] = useState(false);
+
+  // Function to toggle the popup
+  const togglePopup = () => {
+    setShowPopup(true);
+    setAnimatePing(true);
+
+    // Remove ping animation after a short duration
+    setTimeout(() => {
+      setAnimatePing(false);
+    }, 1000); // Adjust duration as needed
   };
 
   const onSubmit = async (e) => {
@@ -39,10 +53,10 @@ const SignUp = () => {
       if (!response.ok) {
         console.log("response recieved");
         const errorData = await response.json();
-        console.log(errorData);
+        console.log("errorData : ", errorData);
         // setError(errorData);
         toast.update(toastId, {
-          render: `kindly try again with correct information!`,
+          render: `${errorData.password[0]}`,
           type: "error",
           isLoading: false,
           autoClose: 2000,
@@ -57,9 +71,10 @@ const SignUp = () => {
         isLoading: false,
         autoClose: 2000,
       });
+      togglePopup();
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/login");
       }, 2000);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -72,6 +87,8 @@ const SignUp = () => {
   const Anime2 = useRef(null);
 
   useEffect(() => {
+    if (localStorage.getItem("access_token")) navigate("/profile");
+
     const te = gsap.timeline({ repeat: -1, yoyo: true });
 
     // GSAP Timeline for background fading animations
@@ -173,6 +190,42 @@ const SignUp = () => {
 
   return (
     <section className="relative overflow-hidden">
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 bg-gray-600 bg-opacity-50 transition-opacity"
+            onClick={() => setShowPopup(false)} // Click outside to close
+          ></div>
+
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-lg p-8 shadow-2xl z-10 text-center">
+            {/* Success Icon */}
+            <FaCheckCircle
+              size={50}
+              className={`text-green-500 mx-auto mb-4 ${
+                animatePing ? "animate-ping" : ""
+              }`}
+            />
+
+            <h2 className="text-2xl font-bold text-indigo-600 mb-4 transition-all duration-300 ease-in-out">
+              Registered Successfully!!
+            </h2>
+            <p className="text-gray-700 mb-6">Thank you for registering.</p>
+
+            {/* Decorative Element */}
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-t-md"></div>
+
+            {/* Close Button */}
+            {/* <button
+              onClick={() => setShowPopup(false)}
+              className="bg-gradient-to-br from-purple-600 via-indigo-500 to-indigo-700 text-white px-6 py-2 rounded-full hover:bg-indigo-700 focus:outline-none transition-all"
+            >
+              Close
+            </button> */}
+          </div>
+        </div>
+      )}
       {/* <div className="absolute inset-0 blur-sm dark:hidden">
         <div className="bg-1 absolute inset-0 bg-gradient-to-b from-[#f9dea1] to-[#9bdaff]"></div>
         <div className="bg-2 absolute inset-0 opacity-0 bg-gradient-to-tr from-[#f9c3f5] to-[#9bdaff]"></div>
@@ -191,7 +244,6 @@ const SignUp = () => {
       <div className="py-5">
         <div className="mx-auto  px-4 sm:px-1 lg:px-8 ">
           <div className="flex justify-center  lg:px-[6rem]  ">
-
             <div className="relative  bg-[#3A80F6] overflow-hidden w-[40vw] lg:w-[32vw] hidden md:block md:rounded-l-2xl">
               {/* Animated Circles in Background */}
               <ul className="absolute inset-0  z-0">
@@ -320,7 +372,12 @@ const SignUp = () => {
                     placeholder=" "
                     required
                   />
-                  <span onClick={() => setPass(!pass)} className="cursor-pointer text-slate-500 absolute top-4 right-1">{pass ? <FiEyeOff size={16} /> : <FiEye size={16} />}</span>
+                  <span
+                    onClick={() => setPass(!pass)}
+                    className="cursor-pointer text-slate-500 absolute top-4 right-1"
+                  >
+                    {pass ? <FiEyeOff size={16} /> : <FiEye size={16} />}
+                  </span>
                   <label
                     htmlFor="password"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600"
@@ -339,7 +396,12 @@ const SignUp = () => {
                     placeholder=" "
                     required
                   />
-                  <span onClick={() => setConPass(!conPass)} className="cursor-pointer text-slate-500 absolute top-4 right-1">{conPass ? <FiEyeOff size={16} /> : <FiEye size={16} />}</span>
+                  <span
+                    onClick={() => setConPass(!conPass)}
+                    className="cursor-pointer text-slate-500 absolute top-4 right-1"
+                  >
+                    {conPass ? <FiEyeOff size={16} /> : <FiEye size={16} />}
+                  </span>
                   <label
                     htmlFor="re_password"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600"

@@ -28,26 +28,15 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const dispatch = useDispatch();
-  const fetchUserDetails = async () => {
-    try {
-      const { data } = await axios.get(`${apiUrl}/api/profile/`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `JWT ${localStorage.getItem("access_token")}`,
-        },
-      });
-      console.log(data);
-      dispatch(setProfile1(data));
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      console.log(
-        "from local storage:",
-        JSON.parse(localStorage.getItem("userInfo"))
-      );
-      // setUserInfo(data);
-      // setUserInfo(localStorage.getItem("userInfo"));
-    } catch (err) {
-      console.log(err.stack);
-    }
+  const getUserDetails = async () => {
+    const { data } = await axios.get(`${apiUrl}/api/auth/users/me/`, {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem("access_token")}`,
+      },
+    });
+    console.log("user data got:", data);
+    localStorage.setItem("userInfo", JSON.stringify(data));
+    dispatch(setProfile1(data));
   };
   const closeSidebar = () => {
     setIsSidebarOpen(false);
@@ -59,9 +48,13 @@ const Sidebar = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchUserDetails();
-    console.log(userInfo);
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    if (localStorage.getItem("access_token")) {
+      getUserDetails();
+      console.log(userInfo);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    } else {
+      navigate("/login");
+    }
   }, [userInfo]);
 
   // Function to determine class names for the tabs based on active state
@@ -96,10 +89,13 @@ const Sidebar = () => {
     // Perform any logout logic here (e.g., clearing authentication tokens)
     localStorage.removeItem("access_token");
     localStorage.removeItem("userInfo");
-    navigate('/login', { replace: true });
+    navigate("/login", { replace: true });
   };
 
-  if (localStorage.getItem("access_token") || localStorage.getItem("userInfo") === null){
+  if (
+    localStorage.getItem("access_token") ||
+    localStorage.getItem("userInfo") === null
+  ) {
     return (
       <div className="flex relativez-40 h-full pt-8 my-8 transition duration-500">
         {/* Sidebar */}
@@ -115,8 +111,9 @@ const Sidebar = () => {
           ></div>
         )}
         <div
-          className={`fixed md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64 rounded-r-3xl bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full "
-            }`}
+          className={`fixed md:static pl-3.5 py-8 top-0 left-0 h-full md:h-auto w-64 rounded-r-3xl bg-gradient-to-r z-40 from-indigo-700 to-indigo-500 dark:bg-black dark:text-white transition-transform transform duration-200 md:translate-x-0 ${
+            isSidebarOpen ? "translate-x-0" : "-translate-x-full "
+          }`}
         >
           <button className="absolute top-4 right-4 md:hidden">
             <IoCloseSharp onClick={closeSidebar} size={24} />
@@ -184,11 +181,15 @@ const Sidebar = () => {
         </div>
 
         {/* Main Content Area */}
-        <div className="w-full bg-white dark:bg-black px-6">{renderContent()}</div>
+        <div className="w-full bg-white dark:bg-black px-6">
+          {renderContent()}
+        </div>
       </div>
     );
-  }else{
-    return <div onMouseEnter={handleLogoutClick} className="w-screen h-screen"></div>;
+  } else {
+    return (
+      <div onMouseEnter={handleLogoutClick} className="w-screen h-screen"></div>
+    );
   }
 };
 
