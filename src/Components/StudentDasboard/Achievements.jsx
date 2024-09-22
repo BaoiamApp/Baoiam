@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import { FaAward } from 'react-icons/fa';
-import { gsap } from 'gsap';
+import React, { useEffect, useRef } from "react";
+import { FaAward } from "react-icons/fa";
+import { gsap } from "gsap";
 
 function Achievements() {
   const achievements = [
-    { id: 1, name: 'No Crertifications Earned by far' },
+    { id: 1, name: "No Certifications Earned by far" },
     // { id: 2, name: 'React Badge' },
     // Uncomment the below line to simulate no certificates
     // achievements = []

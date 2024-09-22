@@ -53,10 +53,10 @@ const SignUp = () => {
       if (!response.ok) {
         console.log("response recieved");
         const errorData = await response.json();
-        console.log(errorData);
+        console.log("errorData : ", errorData);
         // setError(errorData);
         toast.update(toastId, {
-          render: `kindly try again with correct information!`,
+          render: `${errorData.password[0]}`,
           type: "error",
           isLoading: false,
           autoClose: 2000,
@@ -74,7 +74,7 @@ const SignUp = () => {
       togglePopup();
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/login");
       }, 2000);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -87,6 +87,8 @@ const SignUp = () => {
   const Anime2 = useRef(null);
 
   useEffect(() => {
+    if (localStorage.getItem("access_token")) navigate("/profile");
+
     const te = gsap.timeline({ repeat: -1, yoyo: true });
 
     // GSAP Timeline for background fading animations
@@ -215,12 +217,12 @@ const SignUp = () => {
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-t-md"></div>
 
             {/* Close Button */}
-            <button
+            {/* <button
               onClick={() => setShowPopup(false)}
               className="bg-gradient-to-br from-purple-600 via-indigo-500 to-indigo-700 text-white px-6 py-2 rounded-full hover:bg-indigo-700 focus:outline-none transition-all"
             >
               Close
-            </button>
+            </button> */}
           </div>
         </div>
       )}
