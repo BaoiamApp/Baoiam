@@ -19,7 +19,7 @@ const EnrollNow = () => {
   const location = useLocation();
   if (location.pathname !== "/404")
     return (
-      <div>
+      <div className="hidden sm:block">
         {/* Enroll Now Button */}
         {/* <button
         type="button"

@@ -35,256 +35,129 @@ import { AiOutlineRobot } from "react-icons/ai";
 import Program from "../Components/School/Program";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSelector } from "react-redux";
 
 const Courses = () => {
-  const static_data = [
-    <Link to="/course/1">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaMicrophone
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">English Speaking/Public Speaking</span>
-      </span>
-    </Link>,
-    <Link to="/course/2">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaLightbulb
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Creative Writing</span>
-      </span>
-    </Link>,
-    <Link to="/course/3">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaPaintbrush
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Art and Craft (DIY)</span>
-      </span>
-    </Link>,
-    <Link to="/course/4">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaCog
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Critical Thinking & Problem Solving</span>
-      </span>
-    </Link>,
-    <Link to="/course/5">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaHandsHelping
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Life Skills</span>
-      </span>
-    </Link>,
-    <Link to="/course/6">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaCamera
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Photography & Editing Skills</span>
-      </span>
-    </Link>,
-    <Link to="/course/7">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaCode
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Technology Development with AI & Coding</span>
-      </span>
-    </Link>,
-    <Link to="/course/8">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaChartLine
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Entrepreneurship & Innovation</span>
-      </span>
-    </Link>,
-    <Link to="/course/9">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <MdGroup
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Social Media & Digital Marketing</span>
-      </span>
-    </Link>,
-    <Link to="/course/10">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <BsBank
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Finance Education</span>
-      </span>
-    </Link>,
-  ];
-  const static_data2 = [
-    <Link to="/course/11">
-      <span className="relative z-10 flex items-center gap-4">
-        <MdWeb className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-        <span className="">Web Development</span>
-      </span>
-    </Link>,
-    <Link to="/course/12">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaPalette
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">Graphic Designing</span>
-      </span>
-    </Link>,
-    <Link to="/course/13">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaUserTie
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">Human Resource</span>
-      </span>
-    </Link>,
-    <Link to="/course/14">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaChartLine
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">Data Analytics</span>
-      </span>
-    </Link>,
-    <Link to="/course/15">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaTasks className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-        <span className="">Product Management</span>
-      </span>
-    </Link>,
-    <Link to="/course/16">
-      <span className="relative z-10 flex items-center gap-4">
-        <SiAndroid
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">Android Development</span>
-      </span>
-    </Link>,
-    <Link to="/course/17">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaBullhorn
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">Digital Marketing</span>
-      </span>
-    </Link>,
-    <Link to="/course/18">
-      <span className="relative z-10 flex items-center gap-4">
-        <MdDesignServices
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">UI/UX Design</span>
-      </span>
-    </Link>,
-    <Link to="/course/19">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaBug className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-        <span className="">Software Testing</span>
-      </span>
-    </Link>,
-    <Link to="/course/20">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaLightbulb
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">Entrepreneurship & Innovation</span>
-      </span>
-    </Link>,
-    <Link to="/course/21">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaSearch
-          className="text-indigo-600 group-hover:text-white"
-          size={22}
-        />{" "}
-        <span className="">SEO Development</span>
-      </span>
-    </Link>,
-    <Link to="/course/22">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaRobot className="text-indigo-600 group-hover:text-white" size={22} />{" "}
-        <span className="">Machine Learning with AI</span>
-      </span>
-    </Link>,
-  ];
-  const static_data3 = [
-    <Link to="/course/23">
-      <span className="relative z-10 flex items-center gap-4">
-        <FaGlobe
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">International Business</span>
-      </span>
-    </Link>,
-    <Link to="/course/24">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <GiBrain
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Emotional Intelligence</span>
-      </span>
-    </Link>,
+  const { allCourses, status, error } = useSelector((state) => state.courses);
+  useEffect(() => {
+    console.log("allCourses: ", allCourses);
 
-    <Link to="/course/25">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <MdContentPaste
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Executive & Public Relations Content Writing</span>
-      </span>
-    </Link>,
+    return () => {};
+  }, []);
 
-    <Link to="/course/26">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <SiDatabricks
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Data Science</span>
+  // const static_data = [
+  //   <Link to="/course/1">
+  //     <span className="relative z-10 flex items-center gap-4">
+  //       <FaMicrophone
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">English Speaking/Public Speaking</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/2">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaLightbulb
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Creative Writing</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/3">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaPaintbrush
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Art and Craft (DIY)</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/4">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaCog
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Critical Thinking & Problem Solving</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/5">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaHandsHelping
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Life Skills</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/6">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaCamera
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Photography & Editing Skills</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/7">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaCode
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Technology Development with AI & Coding</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/8">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <FaChartLine
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Entrepreneurship & Innovation</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/9">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <MdGroup
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Social Media & Digital Marketing</span>
+  //     </span>
+  //   </Link>,
+  //   <Link to="/course/10">
+  //     <span className="relative z-10 flex items-center gap-4 ">
+  //       <BsBank
+  //         className="text-indigo-600 flex-shrink-0 group-hover:text-white"
+  //         size={22}
+  //       />
+  //       <span className="">Finance Education</span>
+  //     </span>
+  //   </Link>,
+  // ];
+  const static_data = allCourses[0].courses.map((course) => (
+    <Link to={`/course/${course.title}/${course.id}`}>
+            <span className="relative z-10 flex items-center gap-4 ">
+ <span className="">{course.title}</span>
       </span>
-    </Link>,
-    <Link to="/course/27">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <AiOutlineRobot
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Machine Learning with AI</span>
+    </Link>
+  ));
+  const static_data2 = allCourses[1].courses.map((course) => (
+    <Link to={`/course/${course.title}/${course.id}`}>
+            <span className="relative z-10 flex items-center gap-4 ">
+ <span className="">{course.title}</span>
       </span>
-    </Link>,
-    <Link to="/course/28">
-      <span className="relative z-10 flex items-center gap-4 ">
-        <FaChartLine
-          className="text-indigo-600 flex-shrink-0 group-hover:text-white"
-          size={22}
-        />
-        <span className="">Data Analytics</span>
+    </Link>
+  ));
+  const static_data3 = allCourses[2].courses.map((course) => (
+    <Link to={`/course/${course.title}/${course.id}`}>
+            <span className="relative z-10 flex items-center gap-4 ">
+ <span className="">{course.title}</span>
       </span>
-    </Link>,
-  ];
+    </Link>
+  ));
 
   const textRef = useRef(null);
   const sliderRef = useRef(null);
@@ -385,55 +258,77 @@ const Courses = () => {
   return (
     <>
       <div className="flex mt-20 justify-center flex-col-reverse lg:flex-row items-center mx-auto w-full p-5 sm:px-6 xs:px-4">
-      <div ref={textRef} className="w-full lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4">
-          Explore Our Range of Courses for Schools and Colleges
-        </h1>
-        <p className="text-base text-slate-600 sm:text-lg md:text-xl mb-6">
-          At BAOIAM, we offer a wide range of courses designed for students
-          from schools and colleges. Whether you're preparing for board exams
-          or pursuing a degree, our courses provide comprehensive, engaging
-          content to help you succeed academically.
-        </p>
-      </div>
-      <div ref={sliderRef} className="h-96 md:h-full md:w-[40%] pt-8 md:pt-0">
-        <SliderHero />
-      </div>
-    </div>
-      <Program title={"Junior"} data={static_data}/>
-      <Program title={"University"} data={static_data2}/>
-      <Program title={"Professional Degree"} data={static_data3}/>
-      <section ref={sectionRef} className="py-16 dark:bg-black dark:text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 ref={headingRef} className="text-3xl font-extrabold sm:text-4xl">
-            Why Choose Us?
-          </h2>
-          <p ref={paragraphRef} className="mt-4 text-lg">
-            We deliver the best service with the highest quality and commitment.
+        <div ref={textRef} className="w-full lg:w-1/2 text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4">
+            Explore Our Range of Courses for Schools and Colleges
+          </h1>
+          <p className="text-base text-slate-600 sm:text-lg md:text-xl mb-6">
+            At BAOIAM, we offer a wide range of courses designed for students
+            from schools and colleges. Whether you're preparing for board exams
+            or pursuing a degree, our courses provide comprehensive, engaging
+            content to help you succeed academically.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {["Expert Mentors", "Engaging Content", "Flexible Learning", "Certification"].map((title, index) => (
-            <div ref={(el) => (benefitsRef.current[index] = el)} key={index} className="flex flex-col items-center">
-              <div className="bg-indigo-600 p-4 rounded-full mb-4">
-                {index === 0 && <FiCheckCircle className="h-10 w-10 text-white" />}
-                {index === 1 && <FiTrendingUp className="h-10 w-10 text-white" />}
-                {index === 2 && <FiClock className="h-10 w-10 text-white" />}
-                {index === 3 && <FaHandsHelping className="h-10 w-10 text-white" />}
-              </div>
-              <h3 className="text-xl font-bold">{title}</h3>
-              <p className="mt-2 text-center">
-                {index === 0 && "Courses led by experienced teachers and professionals."}
-                {index === 1 && "Interactive lessons with quizzes, assignments, and projects."}
-                {index === 2 && "Study at your own pace, anytime, anywhere."}
-                {index === 3 && "Receive certificates upon completion of courses."}
-              </p>
-            </div>
-          ))}
+        <div ref={sliderRef} className="h-96 md:h-full md:w-[40%] pt-8 md:pt-0">
+          <SliderHero />
         </div>
       </div>
-    </section>
+      <Program title={"Junior"} data={static_data} />
+      <Program title={"University"} data={static_data2} />
+      <Program title={"Professional Degree"} data={static_data3} />
+      <section ref={sectionRef} className="py-16 dark:bg-black dark:text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2
+              ref={headingRef}
+              className="text-3xl font-extrabold sm:text-4xl"
+            >
+              Why Choose Us?
+            </h2>
+            <p ref={paragraphRef} className="mt-4 text-lg">
+              We deliver the best service with the highest quality and
+              commitment.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              "Expert Mentors",
+              "Engaging Content",
+              "Flexible Learning",
+              "Certification",
+            ].map((title, index) => (
+              <div
+                ref={(el) => (benefitsRef.current[index] = el)}
+                key={index}
+                className="flex flex-col items-center"
+              >
+                <div className="bg-indigo-600 p-4 rounded-full mb-4">
+                  {index === 0 && (
+                    <FiCheckCircle className="h-10 w-10 text-white" />
+                  )}
+                  {index === 1 && (
+                    <FiTrendingUp className="h-10 w-10 text-white" />
+                  )}
+                  {index === 2 && <FiClock className="h-10 w-10 text-white" />}
+                  {index === 3 && (
+                    <FaHandsHelping className="h-10 w-10 text-white" />
+                  )}
+                </div>
+                <h3 className="text-xl font-bold">{title}</h3>
+                <p className="mt-2 text-center">
+                  {index === 0 &&
+                    "Courses led by experienced teachers and professionals."}
+                  {index === 1 &&
+                    "Interactive lessons with quizzes, assignments, and projects."}
+                  {index === 2 && "Study at your own pace, anytime, anywhere."}
+                  {index === 3 &&
+                    "Receive certificates upon completion of courses."}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* <Testimonials /> */}
       {/* Call to Action */}
       <div className="w-full h-52 md:h-80 my-6 relative ">
