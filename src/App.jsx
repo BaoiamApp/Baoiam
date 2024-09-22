@@ -85,14 +85,9 @@ const App = () => {
           <Route path="/login" element={<Login />} />
 
           {/* Courses */}
-          {/* <Route path="/courses/school" element={<School />} /> */}
-          <Route path="/courses/college" element={<College />} />
           <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
 
-          {/* <Route
-          path="/course/:course"
-          element={<div>colleg Sub Category</div>}
-        /> */}
+     
 
           {/* Blog */}
           <Route path="/Blog_detail/:id" element={<Blog_detail />} />
@@ -139,8 +134,10 @@ const App = () => {
             element={<ResetPassword />}
           />
           {/* Help */}
-          <Route path="/help" element={<HelpCenter />} />
+          {/* <Route path='/help' element={<HelpCenter />} /> */}
           {/* Hire */}
+          <Route path='/hire' element={<HireFromUs />} />
+          {/* <Route path='/instructor' element={<InstructorCard />} /> */}
           <Route path="/hire" element={<HireFromUs />} />
           <Route path="/instructor" element={<InstructorCard />} />
           {/*FAQ*/}

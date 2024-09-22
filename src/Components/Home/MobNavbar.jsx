@@ -36,12 +36,12 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   return (
     <div>
       <aside
-        className={`fixed xl:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${
+        className={`fixed lg:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${
           showmenu ? "translate-x-0" : "-translate-x-full"
         }  `}
       >
-        <div className="h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-black">
-          <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 z-50 dark:bg-black">
+        <div className="block lg:hidden h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
+          <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 z-50 dark:bg-[#080529]">
             <Logo isDark={isDark} />
             <RxCross2
               className="text-black dark:text-white"
@@ -117,8 +117,8 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                               setSchoolCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.title}/${course.subcategory}`}
-                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:text-black"
+                            to={`/course/${course.title}/${course.id}`}
+                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
                             {course.title}
                           </Link>
@@ -155,8 +155,8 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                               setCollegeCate((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.title}/${course.subcategory}`}
-                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:text-black"
+                            to={`/course/${course.title}/${course.id}`}
+                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
                             {course.title}
                           </Link>
@@ -193,8 +193,8 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                               setOtherCourses((old) => !old);
                             }}
                             key={i}
-                            to={`/course/${course.title}/${course.subcategory}`}
-                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200 dark:text-black"
+                            to={`/course/${course.title}/${course.id}`}
+                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
                           >
                             {course.title}
                           </Link>
