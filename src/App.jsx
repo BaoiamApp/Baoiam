@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Home/Navbar";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import School from "./Pages/School";
 import ContactUs from "./Components/Contact/ContactForm";
@@ -49,7 +49,7 @@ import EnrollNowButton from "./Components/EnrollNowButton/EnrollNowButton";
 
 const App = () => {
   const [dark, setDark] = useState(false);
-
+  const location = useLocation();
   const theme = () => {
     setDark((old) => !old);
     document.body.classList.toggle("dark");
@@ -62,6 +62,12 @@ const App = () => {
       setLoading(false);
     }, 3000);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    return () => {};
+  }, [location.pathname]);
 
   if (loading) {
     return <Loader />;
@@ -86,8 +92,6 @@ const App = () => {
 
           {/* Courses */}
           <Route path="/course/:name/:id" element={<CourseDetailsPage />} />
-
-     
 
           {/* Blog */}
           <Route path="/Blog_detail/:id" element={<Blog_detail />} />
@@ -136,7 +140,7 @@ const App = () => {
           {/* Help */}
           {/* <Route path='/help' element={<HelpCenter />} /> */}
           {/* Hire */}
-          <Route path='/hire' element={<HireFromUs />} />
+          <Route path="/hire" element={<HireFromUs />} />
           {/* <Route path='/instructor' element={<InstructorCard />} /> */}
           <Route path="/hire" element={<HireFromUs />} />
           <Route path="/instructor" element={<InstructorCard />} />

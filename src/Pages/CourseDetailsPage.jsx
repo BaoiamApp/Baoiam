@@ -11,12 +11,11 @@ import Testimonials from "../Components/Testmonials/Testimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourseDetails } from "../redux/slices/courseDetailSlice";
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { BeatLoader } from "react-spinners"; import { IoIosArrowRoundForward } from "react-icons/io";
-
+import "react-toastify/dist/ReactToastify.css";
+import { BeatLoader } from "react-spinners";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const CourseDetailsPage = () => {
-
   const { id } = useParams();
   const [courseDetails, setCourseDetails] = useState({});
   const [showTab, setShowTab] = useState(1);
@@ -79,8 +78,6 @@ const CourseDetailsPage = () => {
   //   return () => {};
   // }, [id]);
 
-
-
   // } else if (id >= 11 && id <= 22) {
   //   // setCoursePlusContent(collegeCoursePlusContent);
   //   setCourseDetails(
@@ -102,26 +99,28 @@ const CourseDetailsPage = () => {
 
   // redux start
 
-  const { courses, currentCourseId, status, error } = useSelector((state) => state.courseDetails);
+  const { courses, currentCourseId, status, error } = useSelector(
+    (state) => state.courseDetails
+  );
   const dispatch = useDispatch();
   const course = courses[id]; // Retrieve the course from the store by its id
 
   useEffect(() => {
     // If the course is not in the store, fetch it
-    if (!course && status !== 'loading') {
+    if (!course && status !== "loading") {
       dispatch(fetchCourseDetails(id));
     }
   }, [dispatch, id, course, status]);
-  console.log(course, ' course action')
+  console.log(course, " course action");
   // console.log(courses, ' courses dkdkdkdk action')
-  if (status === 'loading' && !course) {
+  if (status === "loading" && !course) {
     return (
       <div className="flex justify-center items-center h-screen">
         <BeatLoader color="#4F46E5" loading={true} size={15} />
       </div>
     );
   }
-  if (status === 'failed') {
+  if (status === "failed") {
     return (
       <div className="text-center p-4 bg-red-100 text-red-600 rounded-lg ">
         <p>Error: {error}</p>
@@ -130,7 +129,6 @@ const CourseDetailsPage = () => {
   }
 
   // redux end
-
 
   const downloadBrochure = async (brochureUrl) => {
     if (!brochureUrl) {
@@ -141,13 +139,13 @@ const CourseDetailsPage = () => {
 
     try {
       const response = await axios.get(brochureUrl, {
-        responseType: 'blob',
+        responseType: "blob",
       });
 
       const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = url;
-      link.setAttribute('download', 'Brochure.pdf');
+      link.setAttribute("download", "Brochure.pdf");
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -168,7 +166,6 @@ const CourseDetailsPage = () => {
     }
   };
 
-
   // I am Fetching all the course data through subcategory of course
   return (
     <div>
@@ -179,7 +176,10 @@ const CourseDetailsPage = () => {
             {/* {courseDetails?.title} */}
             {course?.title}
           </h3>
-          <Link to={`/book-a-demo/${course?.title}/${course?.id}`} className="relative w-fit rounded px-5 py-2 text-xs md:text-sm overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+          <Link
+            to={`/book-a-demo/${course?.title}/${course?.id}`}
+            className="relative w-fit rounded px-5 py-2 text-xs md:text-sm overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
+          >
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="relative">Book a Demo</span>
           </Link>
@@ -187,8 +187,10 @@ const CourseDetailsPage = () => {
           <p className="text-[0.8rem] lg:text-base">{course?.description}</p>
 
           <div className="flex gap-2 mt-4">
-
-            <button onClick={enrollNowScroll} className="relative inline-flex items-center bg-orange-400 px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-orange-400 rounded-lg hover:text-orange-500 group">
+            <button
+              onClick={enrollNowScroll}
+              className="relative inline-flex items-center bg-orange-400 px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-orange-400 rounded-lg hover:text-orange-500 group"
+            >
               <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <IoIosArrowRoundForward size={30} />
@@ -196,7 +198,10 @@ const CourseDetailsPage = () => {
               <span className="relative">Enroll Now</span>
             </button>
 
-            <button onClick={() => downloadBrochure(course?.brochure_file)} className="relative inline-flex items-center bg-white px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-orange-400 font-medium border border-orange-400 rounded-lg hover:text-white group">
+            <button
+              onClick={() => downloadBrochure(course?.brochure_file)}
+              className="relative inline-flex items-center bg-white px-8 md:px-12 py-2 md:py-3 text-xs md:text-sm dark:text-white dark:border-white overflow-hidden text-orange-400 font-medium border border-orange-400 rounded-lg hover:text-white group"
+            >
               <span className="absolute left-0 block w-full h-0 transition-all bg-orange-400 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <FaDownload size={18} />
@@ -208,12 +213,13 @@ const CourseDetailsPage = () => {
 
         <div className="w-[40%] h-96 rounded-[2rem] overflow-hidden">
           <img
-            src={course?.thumbnail_image ? course?.thumbnail_image : CourseDesc2}
+            src={
+              course?.thumbnail_image ? course?.thumbnail_image : CourseDesc2
+            }
             alt=""
             className="hidden md:block w-full h-full object-cover shadow-2xl shadow-black"
           />
         </div>
-
       </div>
 
       {/* Changes */}
@@ -228,19 +234,17 @@ const CourseDetailsPage = () => {
         <div className="w-full flex h-[400px] xs:p-2 rounded flex-col justify-center md:p-5 md:w-[60%]">
           <div className="flex justify-start border border-gray-300 rounded-2xl overflow-hidden">
             <h3
-              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-3 justify-center items-center transition ${showTab === 1
-                ? "text-black"
-                : "text-white bg-orange-400"
-                }`}
+              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-3 justify-center items-center transition ${
+                showTab === 1 ? "text-black" : "text-white bg-orange-400"
+              }`}
               onClick={() => setShowTab(1)}
             >
               Course Overview
             </h3>
             <h3
-              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-3 justify-center items-center transition ${showTab === 2
-                ? "text-black"
-                : "text-white bg-orange-400"
-                }`}
+              className={`xs:text-[16px] font-bold w-1/2 flex text-sm lg:text-xl cursor-pointer text-center py-3 justify-center items-center transition ${
+                showTab === 2 ? "text-black" : "text-white bg-orange-400"
+              }`}
               onClick={() => setShowTab(2)}
             >
               Curriculum
@@ -250,7 +254,6 @@ const CourseDetailsPage = () => {
           {showTab == 1 ? (
             <div className="w-full h-[400px] overflow-auto mt-5 py-5 pt-0 hide-scrollbar">
               <div className="w-full">
-
                 <ul className="list-inside xs:text-[14px] px-2 list-disc marker:text-orange-600 marker:text-md flex flex-col gap-2 w-full">
                   {/* {courseDetails.program_overview?.map(
                     (o, i) =>
@@ -258,24 +261,27 @@ const CourseDetailsPage = () => {
                         <li key={i} className="text-black">{o}</li>
                       )
                   )} */}
-                  {course?.program_overview?.split(".").map((o, i) => (
-                    <li key={i} className="text-sm lg:text-base">{o}</li>
-                  ))}
-
+                  {course?.program_overview?.split(".").map(
+                    (o, i, arr) =>
+                      i < arr.length - 1 && (
+                        <li key={i} className="text-sm lg:text-base">
+                          {o}
+                        </li>
+                      )
+                  )}
                 </ul>
               </div>
             </div>
           ) : (
             showTab == 2 && (
               <div className="w-full mt-5 overflow-auto h-[400px] hide-scrollbar pb-3">
-
-
                 <ul className="list-inside list-disc marker:text-orange-600 marker:text-md mt-4">
                   {course?.curriculum?.split(";").map((o, i) => (
-                    <li className="py-1 text-sm lg:text-base" key={i}>{o}</li>
+                    <li className="py-1 text-sm lg:text-base" key={i}>
+                      {o}
+                    </li>
                   ))}
                 </ul>
-
               </div>
             )
           )}
@@ -345,8 +351,9 @@ const CourseDetailsPage = () => {
                   return (
                     <div
                       key={i}
-                      className={`flex flex-col rounded-lg lg:w-80 border ${p.name === "premium" ? "border-orange-500 relative" : ""
-                        } p-4 pt-6`}
+                      className={`flex flex-col rounded-lg lg:w-80 border ${
+                        p.name === "premium" ? "border-orange-500 relative" : ""
+                      } p-4 pt-6`}
                     >
                       <div className="mb-8">
                         {p.name === "premium" ? (
@@ -389,7 +396,10 @@ const CourseDetailsPage = () => {
                               Course Duration: {p.duration}
                             </p> */}
                             {coursePlusContent.map((content, i) => (
-                              <p key={i} className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white">
+                              <p
+                                key={i}
+                                className="mx-auto mb-2 px-8 text-center text-gray-500 font-medium dark:text-white"
+                              >
                                 {content}
                               </p>
                             ))}
@@ -414,15 +424,17 @@ const CourseDetailsPage = () => {
                           onClick={() => {
                             if (localStorage.getItem("access_token"))
                               navigate(
-                                `/checkout/${id}/${p.name == "premium" ? "Premium" : "Plus"
+                                `/checkout/${id}/${
+                                  p.name == "premium" ? "Premium" : "Plus"
                                 }`
                               );
                             else navigate("/login");
                           }}
-                          className={`block  rounded-lg ${p.name === "premium"
-                            ? "bg-orange-500 text-white"
-                            : "bg-gray-500"
-                            } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
+                          className={`block  rounded-lg ${
+                            p.name === "premium"
+                              ? "bg-orange-500 text-white"
+                              : "bg-gray-500"
+                          } px-8 py-3 text-center text-sm font-semibold text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 hover:text-gray-500 focus-visible:ring active:text-gray-700 md:text-base`}
                         >
                           Enroll Now
                         </button>
@@ -513,11 +525,7 @@ const CourseDetailsPage = () => {
       </div> */}
 
       <ToastContainer />
-
-
     </div>
-
-
   );
 };
 
