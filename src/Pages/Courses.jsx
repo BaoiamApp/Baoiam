@@ -137,24 +137,24 @@ const Courses = () => {
   //     </span>
   //   </Link>,
   // ];
-  const static_data = allCourses[0].courses.map((course) => (
+  const static_data = allCourses[0]?.courses.map((course) => (
     <Link to={`/course/${course.title}/${course.id}`}>
-            <span className="relative z-10 flex items-center gap-4 ">
- <span className="">{course.title}</span>
+      <span className="relative z-10 flex items-center gap-4 ">
+        <span className="">{course.title}</span>
       </span>
     </Link>
   ));
-  const static_data2 = allCourses[1].courses.map((course) => (
+  const static_data2 = allCourses[1]?.courses.map((course) => (
     <Link to={`/course/${course.title}/${course.id}`}>
-            <span className="relative z-10 flex items-center gap-4 ">
- <span className="">{course.title}</span>
+      <span className="relative z-10 flex items-center gap-4 ">
+        <span className="">{course.title}</span>
       </span>
     </Link>
   ));
-  const static_data3 = allCourses[2].courses.map((course) => (
+  const static_data3 = allCourses[2]?.courses.map((course) => (
     <Link to={`/course/${course.title}/${course.id}`}>
-            <span className="relative z-10 flex items-center gap-4 ">
- <span className="">{course.title}</span>
+      <span className="relative z-10 flex items-center gap-4 ">
+        <span className="">{course.title}</span>
       </span>
     </Link>
   ));

@@ -20,18 +20,18 @@ const ProfileManage = () => {
   // });
 
   const [formData, setFormData] = useState({
-    first: userInfo.first_name || "",
-    last: userInfo.last_name || "",
-    email: userInfo.email || "",
-    mobile: userInfo.mobile_number || "",
-    dob: userInfo.dob || "",
-    college: userInfo.college_name || "",
-    school: userInfo.school_name || "",
-    location: userInfo.location || "",
+    first: userInfo?.first_name || "",
+    last: userInfo?.last_name || "",
+    email: userInfo?.email || "",
+    mobile: userInfo?.mobile_number || "",
+    dob: userInfo?.dob || "",
+    college: userInfo?.college_name || "",
+    school: userInfo?.school_name || "",
+    location: userInfo?.location || "",
     socialLinks: {
-      linkedIn: userInfo.linkedin || "",
-      gitHub: userInfo.github || "",
-      instagram: userInfo.instagram || "",
+      linkedIn: userInfo?.linkedin || "",
+      gitHub: userInfo?.github || "",
+      instagram: userInfo?.instagram || "",
     },
   });
 
@@ -105,12 +105,16 @@ const ProfileManage = () => {
 
         console.log("Personal Info Data:", transformedData);
 
-        const { data } = await axios.patch(`${apiUrl}/api/auth/users/me/`, transformedData, {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `JWT ${localStorage.getItem("access_token")}`,
-          },
-        });
+        const { data } = await axios.patch(
+          `${apiUrl}/api/auth/users/me/`,
+          transformedData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `JWT ${localStorage.getItem("access_token")}`,
+            },
+          }
+        );
 
         // dispatching updated data to Redux
         dispatch(setProfile1(data));
@@ -119,7 +123,6 @@ const ProfileManage = () => {
           ...prev,
           ...transformedData,
         }));
-
       } else {
         transformedData = {
           mobile_number: formData.mobile,
@@ -223,7 +226,10 @@ const ProfileManage = () => {
             <div className="flex flex-row items-center">
               {/* First Name */}
               {!isEditable.personalInfo ? (
-                <label className="py-1"><span className="font-bold px-2">First Name:</span> {formData.first}</label>
+                <label className="py-1">
+                  <span className="font-bold px-2">First Name:</span>{" "}
+                  {formData.first}
+                </label>
               ) : (
                 <>
                   <label className="py-1 px-2 font-bold">First Name:</label>
@@ -239,7 +245,10 @@ const ProfileManage = () => {
               )}
               {/* Last Name */}
               {!isEditable.personalInfo ? (
-                <label className="py-1"><span className="font-bold px-2">Last Name:</span> {formData.last}</label>
+                <label className="py-1">
+                  <span className="font-bold px-2">Last Name:</span>{" "}
+                  {formData.last}
+                </label>
               ) : (
                 <>
                   <label className="py-1 px-2 font-bold">Last Name: </label>
@@ -259,7 +268,9 @@ const ProfileManage = () => {
 
         {/* Other Information Section */}
         <div className="dark:bg-black dark:text-white dark:border dark:border-white p-6 rounded-lg shadow-md relative bg-indigo-500 text-white">
-          <h3 className="text-xl py-1 px-2 font-bold mb-4">Other Information</h3>
+          <h3 className="text-xl py-1 px-2 font-bold mb-4">
+            Other Information
+          </h3>
           <button
             type="button"
             onClick={() => {
@@ -274,7 +285,10 @@ const ProfileManage = () => {
             {/* Mobile Number */}
             <div>
               {!isEditable.otherInfo ? (
-                <label className="block py-1 px-2"><span className="font-bold px-2">Mobile:</span> {formData.mobile || "Enter Mobile Number"}</label>
+                <label className="block py-1 px-2">
+                  <span className="font-bold px-2">Mobile:</span>{" "}
+                  {formData.mobile || "Enter Mobile Number"}
+                </label>
               ) : (
                 <div className="flex items-center">
                   <label className="py-1 px-2 font-bold w-full">Mobile: </label>
@@ -293,10 +307,15 @@ const ProfileManage = () => {
             {/* College */}
             <div>
               {!isEditable.otherInfo ? (
-                <label className="block py-1 px-2"><span className="font-bold px-2">College:</span> {formData.college}</label>
+                <label className="block py-1 px-2">
+                  <span className="font-bold px-2">College:</span>{" "}
+                  {formData.college}
+                </label>
               ) : (
                 <div className="flex items-center">
-                  <label className="py-1 px-2 font-bold w-full">College: </label>
+                  <label className="py-1 px-2 font-bold w-full">
+                    College:{" "}
+                  </label>
                   <input
                     type="text"
                     className="py-1 px-2 block w-full border-b border-white shadow-sm text-white bg-transparent outline-none"
@@ -312,7 +331,10 @@ const ProfileManage = () => {
             {/* School */}
             <div>
               {!isEditable.otherInfo ? (
-                <label className="block py-1 px-2"><span className="font-bold px-2">School:</span> {formData.school}</label>
+                <label className="block py-1 px-2">
+                  <span className="font-bold px-2">School:</span>{" "}
+                  {formData.school}
+                </label>
               ) : (
                 <div className="flex items-center">
                   <label className="py-1 px-2 font-bold w-full">School: </label>
@@ -405,7 +427,6 @@ const ProfileManage = () => {
         </div>
       </form>
     </section>
-
   );
 };
 

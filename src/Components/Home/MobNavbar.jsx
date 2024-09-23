@@ -4,7 +4,7 @@ import { FaUniversity } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp, FaSchool } from "react-icons/fa6";
 import { IoBookSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import { MdSchool } from "react-icons/md";
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
@@ -16,7 +16,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   const [schoolCate, setSchoolCate] = useState(false);
   const [collegeCate, setCollegeCate] = useState(false);
   const [otherCourses, setOtherCourses] = useState(false);
-
+  const navigate = useNavigate();
   const [schoolCourses, setSchoolCourses] = useState([]);
 
   const changeTheme = () => {
@@ -75,8 +75,10 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
             >
               <button
                 onClick={() => {
-                  setSubCateDrop((old) => !old);
-                  setActiveTab("Course");
+                  navigate("/Maintenance");
+
+                  // setSubCateDrop((old) => !old);
+                  // setActiveTab("Course");
                 }}
                 className="flex justify-between w-full items-center"
                 type="button"

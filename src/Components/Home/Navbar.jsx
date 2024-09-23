@@ -93,6 +93,7 @@ const Navbar = ({ theme }) => {
 
   // redux start
   const { allCourses, status, error } = useSelector((state) => state.courses);
+  console.log("in navbar:", allCourses);
   // console.log(allCourses, 'all courses navbar')
 
   useEffect(() => {
@@ -161,11 +162,22 @@ const Navbar = ({ theme }) => {
           <li
             className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center hover:text-indigo-500`}
           >
-            <Link to="/courses">Courses</Link>
+            {/* <Link to="/courses">Courses</Link> */}
+            <Link to="/Maintenance">Courses</Link>
             {show ? (
-              <IoIosArrowUp onClick={() => setShow(!show)} />
+              <IoIosArrowUp
+                onClick={() => {
+                  // setShow(!show)
+                  navigate("/Maintenance");
+                }}
+              />
             ) : (
-              <IoIosArrowDown onClick={() => setShow(!show)} />
+              <IoIosArrowDown
+                onClick={() => {
+                  // setShow(!show)
+                  navigate("/Maintenance");
+                }}
+              />
             )}
           </li>
 
