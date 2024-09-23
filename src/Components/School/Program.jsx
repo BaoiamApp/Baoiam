@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -18,11 +18,11 @@ const Program = ({ title, data }) => {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
           trigger: titleRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
+          start: "top 80%",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -36,11 +36,11 @@ const Program = ({ title, data }) => {
           opacity: 1,
           y: 0,
           duration: 0.6,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: button,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
+            start: "top 80%",
+            toggleActions: "play none none reverse",
             delay: index * 0.1, // Stagger the animations
           },
         }
@@ -57,7 +57,7 @@ const Program = ({ title, data }) => {
         {title} Programs
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center mt-8 gap-2 md:gap-4">
-        {data.map((category, index) => (
+        {data?.map((category, index) => (
           <button
             key={index}
             ref={(el) => (buttonRefs.current[index] = el)}

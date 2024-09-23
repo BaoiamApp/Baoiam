@@ -4,7 +4,7 @@ import Navbar from "./Components/Home/Navbar";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import School from "./Pages/School";
-import ContactUs from "./Components/Contact/ContactForm";
+import ContactUs from "./Pages/ContactUs";
 import Maintenance from "./Components/Contact/Maintenance";
 import ITIE from "./Pages/ITIE";
 import AboutUs from "./Pages/AboutUs";
