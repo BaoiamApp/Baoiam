@@ -20,7 +20,7 @@ const Login = () => {
   const location = useLocation();
   const requestRef = useRef(false);
 
-  const [pass, setPass] = useState(false)
+  const [pass, setPass] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -142,7 +142,7 @@ const Login = () => {
       }
     } catch (error) {
       toast.update(toastId, {
-        render: error.message,
+        render: error.response.data.detail,
         type: "error",
         isLoading: false,
         autoClose: 3000,
@@ -225,7 +225,6 @@ const Login = () => {
       <ToastContainer />
 
       <div className="flex items-center justify-center py-2 bg-transparent relative overflow-hidden z-3 dark:text-black">
-
         <div
           ref={Anime1}
           className=" w-[600px] h-[600px] top-[-10%] left-[-5%]  rounded-full bg-[#1D64DD]  absolute "
@@ -246,7 +245,9 @@ const Login = () => {
             </span>
             <form onSubmit={handleLogin}>
               <div className="py-4 md:py-0 animate-slideInUp">
-                <span className="mb-2 text-sm md:text-[1.4vw] lg:text-[1.3vw]">Email</span>
+                <span className="mb-2 text-sm md:text-[1.4vw] lg:text-[1.3vw]">
+                  Email
+                </span>
                 <input
                   type="text"
                   className="w-full p-2 text-sm md:text-[1.4vw] lg:text-[1vw] border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
@@ -271,12 +272,17 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <span className="cursor-pointer text-slate-500" onClick={() => setPass(!pass)}>{pass ?<FiEyeOff size={17} /> : <FiEye size={17} />}</span>
+                  <span
+                    className="cursor-pointer text-slate-500"
+                    onClick={() => setPass(!pass)}
+                  >
+                    {pass ? <FiEyeOff size={17} /> : <FiEye size={17} />}
+                  </span>
                 </div>
               </div>
               <div className="flex justify-between mb-4 w-full animate-fadeIn">
                 <div className=" md:mr-24 flex items-center">
-                  <input type="checkbox" name="ch" id="ch" className="mr-2" required />
+                  <input type="checkbox" name="ch" id="ch" className="mr-2" />
                   <span className="text-[3.5vw]  md:text-[1vw]">Remember</span>
                 </div>
                 <Link

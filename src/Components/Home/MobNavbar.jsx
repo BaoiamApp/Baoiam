@@ -4,7 +4,7 @@ import { FaUniversity } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp, FaSchool } from "react-icons/fa6";
 import { IoBookSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import { MdSchool } from "react-icons/md";
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
@@ -16,7 +16,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   const [schoolCate, setSchoolCate] = useState(false);
   const [collegeCate, setCollegeCate] = useState(false);
   const [otherCourses, setOtherCourses] = useState(false);
-
+  const navigate = useNavigate();
   const [schoolCourses, setSchoolCourses] = useState([]);
 
   const changeTheme = () => {
@@ -31,8 +31,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
     setShowmenu(false);
   };
 
-  // console.log(course);
-  
+  console.log(course);
 
   return (
     <div>
@@ -63,7 +62,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                 closeSideBar();
               }}
             >
-              <Link to={"/"} className="ms-3">
+              <Link to={"/"} className="ms-3 dark:text-white">
                 Home
               </Link>
             </li>
@@ -76,13 +75,15 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
             >
               <button
                 onClick={() => {
-                  setSubCateDrop((old) => !old);
-                  setActiveTab("Course");
+                  navigate("/Maintenance");
+
+                  // setSubCateDrop((old) => !old);
+                  // setActiveTab("Course");
                 }}
                 className="flex justify-between w-full items-center"
                 type="button"
               >
-                <span className="flex-1  ms-3 text-left rtl:text-right whitespace-nowrap">
+                <span className="flex-1 dark:text-white ms-3 text-left rtl:text-right whitespace-nowrap">
                   Course
                 </span>
                 {subCateDrop ? <FaChevronUp /> : <FaChevronDown />}
@@ -99,7 +100,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <MdSchool />
-                      <h1>Junior Programs</h1>
+                      <h1 className="dark:text-gray-300">Junior Courses</h1>
                     </div>
                     {schoolCate ? (
                       <FaChevronUp size={14} />
@@ -109,12 +110,6 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   </li>
                   {schoolCate && (
                     <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
-                      <Link
-                        to={"/courses/school"}
-                        className="font-semibold px-2 text-black cursor-pointer rounded "
-                      >
-                        School
-                      </Link>
                       {course[0]?.courses?.map((course, i) => {
                         return (
                           <Link
@@ -143,7 +138,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <FaUniversity />
-                      <h1>University Programs</h1>
+                      <h1 className="dark:text-gray-300">University Courses</h1>
                     </div>
                     {collegeCate ? (
                       <FaChevronUp size={14} />
@@ -153,12 +148,6 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   </li>
                   {collegeCate && (
                     <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                      <Link
-                        to={"/courses/college"}
-                        className="font-semibold px-2 text-black cursor-pointer rounded "
-                      >
-                        College
-                      </Link>
                       {course[1]?.courses.map((course, i) => {
                         return (
                           <Link
@@ -187,7 +176,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   >
                     <div className="flex items-center gap-2">
                       <IoBookSharp />
-                      <h1>Professional Degree Courses</h1>
+                      <h1 className="dark:text-gray-300">Other Courses</h1>
                     </div>
                     {otherCourses ? (
                       <FaChevronUp size={14} />
@@ -197,12 +186,6 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   </li>
                   {otherCourses && (
                     <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                      <Link
-                        to={"/courses/other"}
-                        className="font-semibold px-2 text-black cursor-pointer rounded "
-                      >
-                        Others
-                      </Link>
                       {course[2]?.courses.map((course, i) => {
                         return (
                           <Link
@@ -235,7 +218,10 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                 closeSideBar();
               }}
             >
-              <Link to={"/about-us"} className="ms-3 text-nowrapx">
+              <Link
+                to={"/about-us"}
+                className="ms-3 text-nowrapx dark:text-white"
+              >
                 About Us
               </Link>
             </li>
@@ -250,7 +236,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                 closeSideBar();
               }}
             >
-              <Link to={"/blogs"} className="ms-3">
+              <Link to={"/blogs"} className="ms-3 dark:text-white">
                 Blogs
               </Link>
             </li>
@@ -265,7 +251,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                 closeSideBar();
               }}
             >
-              <Link to={"/"} className="ms-3">
+              <Link to={"/"} className="ms-3 dark:text-white">
                 Contact Us
               </Link>
             </li>
@@ -280,24 +266,8 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                 closeSideBar();
               }}
             >
-              <Link to={"/gcep"} className="ms-3">
+              <Link to={"/gcep"} className="ms-3 dark:text-white">
                 GCEP
-              </Link>
-            </li>
-
-            <li
-              className={`${mobTabtyles} ${
-                location.pathname === "/contact" && activeTab === "Enroll Now"
-                  ? "text-[#1638C9]  dark:text-white dark:bg-[#060606]"
-                  : "text-gray-600 dark:text-gray-400"
-              }`}
-              onClick={() => {
-                setActiveTab("Enroll Now");
-                closeSideBar();
-              }}
-            >
-              <Link to={"/contact"} className="ms-3">
-                Enroll Now
               </Link>
             </li>
           </ul>

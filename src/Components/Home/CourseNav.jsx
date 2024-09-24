@@ -15,25 +15,25 @@ const CourseNav = ({ setShow, course }) => {
     setActiveTabIndex(index);
   };
   console.log("inside coursenav:", course);
-  console.log(course[0].courses);
-  
+  // console.log(course[0].courses);
+
   // will change after api integration
   const label = [
     {
       id: 0,
-      title: "Junior Programs",
+      title: "Junior Courses",
       link: "courses/school",
       icon: <MdSchool size={18} />,
     },
     {
       id: 1,
-      title: "University Programs",
+      title: "University Courses",
       link: "courses/college",
       icon: <FaUniversity size={18} />,
     },
     {
       id: 2,
-      title: "Professional Degree Courses",
+      title: "Other Courses",
       link: "",
       icon: <IoBookSharp size={18} />,
     },
@@ -57,8 +57,11 @@ const CourseNav = ({ setShow, course }) => {
               >
                 {c.icon} {c.title}
               </Link>
+              {/* Maintenance */}
               <button
-                onClick={() => handleTabActiveState(c.id, i)}
+                onClick={() => {
+                  // handleTabActiveState(c.id, i)
+                }}
                 className={`hover:text-amber-600`}
               >
                 <IoIosArrowDown
@@ -72,7 +75,7 @@ const CourseNav = ({ setShow, course }) => {
 
       {activeTabIndex === 0 && (
         <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
-          {course[0].courses?.map((sub, index) => {
+          {course[0]?.courses?.map((sub, index) => {
             return (
               <div key={index} className="px-6 py-2 hover:bg-amber-50">
                 <Link
@@ -89,7 +92,7 @@ const CourseNav = ({ setShow, course }) => {
       )}
       {activeTabIndex === 1 && (
         <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
-          {course[1].courses?.map((sub, index) => {
+          {course[1]?.courses?.map((sub, index) => {
             return (
               <div key={index} className="px-6 py-2 hover:bg-amber-50">
                 <Link
@@ -106,7 +109,7 @@ const CourseNav = ({ setShow, course }) => {
       )}
       {activeTabIndex === 2 && (
         <div className="absolute top-8 left-72 h-fit w-72 overflow-x-hidden bg-white dark:bg-gray-700 border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white overflow-y-auto">
-          {course[2].courses?.map((sub, index) => {
+          {course[2]?.courses?.map((sub, index) => {
             return (
               <div key={index} className="px-6 py-2 hover:bg-amber-50">
                 <Link

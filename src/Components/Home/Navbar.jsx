@@ -22,7 +22,7 @@ import { CollegeCourseData, OtherCourseData, School } from "../../Data";
 import College from "../../Pages/College";
 import { fetchAllCourses } from "../../redux/slices/courseSlice";
 import { BeatLoader } from "react-spinners";
-import Enroll from "./EnrollNow"
+import Enroll from "./EnrollNow";
 
 const Navbar = ({ theme }) => {
   const [show, setShow] = useState(false);
@@ -47,7 +47,6 @@ const Navbar = ({ theme }) => {
   const handleLinkClick = (link) => {
     setLinkActive(link);
   };
-
 
   const HideUserDrop = (event) => {
     if (
@@ -94,10 +93,11 @@ const Navbar = ({ theme }) => {
 
   // redux start
   const { allCourses, status, error } = useSelector((state) => state.courses);
+  console.log("in navbar:", allCourses);
   // console.log(allCourses, 'all courses navbar')
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchAllCourses());
     }
   }, [dispatch, status]);
@@ -121,10 +121,11 @@ const Navbar = ({ theme }) => {
         ></div>
       )}
       <div
-        className={`flex z-[90] h-24 items-center max-w-[1440px] justify-between px-4 py-1 w-full fixed top-0 ${isTransparent
-          ? "bg-white dark:bg-[#080529]"
-          : "bg-white/70 backdrop-blur dark:bg-black/30 "
-          }`}
+        className={`flex z-[90] h-24 items-center max-w-[1440px] justify-between px-4 py-1 w-full fixed top-0 ${
+          isTransparent
+            ? "bg-white dark:bg-[#080529]"
+            : "bg-white/70 backdrop-blur dark:bg-black/30 "
+        }`}
       >
         {/* Logo */}
 
@@ -132,16 +133,18 @@ const Navbar = ({ theme }) => {
 
         {/* NavLinks */}
         <div
-          className={`hidden lg:flex items-center ${isDark ? "font-semibold" : "font-medium text-sm"
-            } justify-between `}
+          className={`hidden lg:flex items-center ${
+            isDark ? "font-semibold" : "font-medium text-sm"
+          } justify-between `}
         >
           <Link
             to={"/"}
             onClick={() => handleLinkClick("Home")}
-            className={`mx-2 xl:mx-4 ${location.pathname === "/" && linkActive === "Home"
-              ? "text-orange-500"
-              : ""
-              }`}
+            className={`mx-2 xl:mx-4 ${
+              location.pathname === "/" && linkActive === "Home"
+                ? "text-orange-500"
+                : ""
+            }`}
           >
             Home
           </Link>
@@ -149,10 +152,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/about-us"}
             onClick={() => handleLinkClick("About")}
-            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${location.pathname === "/about-us" && linkActive === "About"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 text-nowrap hover:text-indigo-500 ${
+              location.pathname === "/about-us" && linkActive === "About"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             About Us
           </Link>
@@ -160,11 +164,22 @@ const Navbar = ({ theme }) => {
           <li
             className={`mx-2 xl:mx-4 cursor-pointer flex gap-2 items-center hover:text-indigo-500`}
           >
-            <Link to="/courses">Courses</Link>
+            {/* <Link to="/courses">Courses</Link> */}
+            <Link to="/Maintenance">Courses</Link>
             {show ? (
-              <IoIosArrowUp onClick={() => setShow(!show)} />
+              <IoIosArrowUp
+                onClick={() => {
+                  // setShow(!show)
+                  navigate("/Maintenance");
+                }}
+              />
             ) : (
-              <IoIosArrowDown onClick={() => setShow(!show)} />
+              <IoIosArrowDown
+                onClick={() => {
+                  // setShow(!show)
+                  navigate("/Maintenance");
+                }}
+              />
             )}
           </li>
 
@@ -181,10 +196,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/blogs"}
             onClick={() => handleLinkClick("Blog")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/blogs" && linkActive === "Blog"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
+              location.pathname === "/blogs" && linkActive === "Blog"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Blog
           </Link>
@@ -192,10 +208,11 @@ const Navbar = ({ theme }) => {
           <Link
             to={"/contact"}
             onClick={() => handleLinkClick("Contact Us")}
-            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${location.pathname === "/contact" && linkActive === "Contact Us"
-              ? "text-indigo-600"
-              : ""
-              } `}
+            className={`mx-2 xl:mx-4 hover:text-indigo-500 ${
+              location.pathname === "/contact" && linkActive === "Contact Us"
+                ? "text-indigo-600"
+                : ""
+            } `}
           >
             Contact Us
           </Link>
@@ -248,8 +265,8 @@ const Navbar = ({ theme }) => {
                         onClick={() => {
                           localStorage.removeItem("access_token");
                           localStorage.removeItem("userInfo");
-                          navigate("/login");
                           dispatch(deleteUserData1());
+                          navigate("/login");
                         }}
                         className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
